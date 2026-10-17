@@ -1,6 +1,6 @@
-.page.pokemon-page { padding-top: 14px; outline: none; }
+.page.pokemon-page { padding-top: 14px; padding-inline: max(var(--page-gutter), env(safe-area-inset-left)) max(var(--page-gutter), env(safe-area-inset-right)); outline: none; }
 .pokemon-collection { min-width: 0; }
-.pokemon-selection p, .collection-note { color: #a2a9b4; font-size: .8rem; }
+.collection-note { color: #a2a9b4; font-size: .8rem; }
 .collection-toolbar { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; }
 .collection-search { flex: 1 1 0; min-width: 0; font-size: .8rem; color: #a2a9b4; }
 .collection-search input { display: block; width: 100%; min-width: 0; margin-top: 0; height: 40px; padding: 9px 10px; border: 1px solid #424852; border-radius: 10px; background: #202328; color: #f3f4f6; font: inherit; font-size: 1rem; }
@@ -12,7 +12,7 @@
 .collection-view button { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; }
 .collection-filters { margin: 0 0 8px; flex-wrap: nowrap; }
 .collection-filters button { flex: 1; min-width: 0; padding-inline: 4px; }
- .collection-dropdowns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 8px 0 12px; }
+.collection-dropdowns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 8px 0 12px; }
 .collection-dropdowns select { min-width: 0; width: 100%; min-height: 36px; padding: 6px 3px; border: 1px solid #424852; border-radius: 8px; color: #c6cfda; background: #202328; font: inherit; font-size: .7rem; }
 .collection-dropdowns select:focus-visible { outline: 2px solid var(--pokemon-medium); }
 .pokemon-card-top { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 2px; font-size: .6rem; color: #aab5c5; font-variant-numeric: tabular-nums; }
@@ -23,18 +23,30 @@
 .pokemon-card .pokemon-sprite { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
 .pokemon-name { font-size: clamp(.65rem, 2.8vw, .9rem); font-weight: 600; max-width: 100%; overflow-wrap: anywhere; }
 .shiny-star { color: #ffd85c; }
-.box-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; margin-inline: -14px; }
+.box-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; margin-inline: 0; }
 .box-grid .pokemon-card { padding: 0; min-height: 44px; border: 0; border-radius: 0; background: transparent; justify-content: center; }
 .box-grid .pokemon-card[aria-pressed="true"] { background: transparent; }
 .box-grid .pokemon-sprite { width: 100%; max-width: 73.6px; aspect-ratio: 1; image-rendering: pixelated; }
-.pokemon-selection { margin-top: 20px; padding: 16px; border: 1px solid #1e88ff70; border-radius: 13px; background: #202831; }
-.selection-heading { display: flex; justify-content: space-between; gap: 8px; }
-.selection-heading h2 { font-size: 1rem; margin: 0; }
-.selection-heading p { overflow-wrap: anywhere; }
-.selection-heading button { align-self: start; width: 44px; height: 44px; background: transparent; border: 0; font-size: 1.5rem; }
 .collection-empty { padding: 30px 0; color: #a2a9b4; }
-@media (min-width: 600px) { .pokemon-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; } .box-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; } }
-@media (min-width: 900px) { .pokemon-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } .box-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .pokemon-collection .pokemon-grid:not(.box-grid) { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 
 .pokemon-types { display: flex; justify-content: center; align-items: center; gap: 3px; margin-top: 3px; height: 14px; }
 .pokemon-types img { display: block; flex: 0 0 auto; width: 17.5px; height: 17.5px; object-fit: contain; }
+
+/* Connected collection controls; keep shared profile controls unchanged. */
+.collection-controls { background: #17191c; border-radius: 0; overflow: hidden; margin-bottom: 8px; }
+.collection-controls .collection-filters { gap: 1px; margin: 0; border-bottom: 1px solid #17191c; }
+.collection-controls .collection-segments button { border-radius: 0; border-color: transparent; background: #24272d; }
+.collection-controls button[aria-pressed="true"] { border-color: var(--pokemon-medium); background: #1e88ff22; }
+.collection-controls .collection-toolbar { gap: 0; border-bottom: 1px solid #17191c; }
+.collection-controls .collection-search input { height: 38px; padding-block: 7px; border: 0; border-radius: 0; background: #24272d; }
+.collection-controls .collection-view { gap: 1px; background: #17191c; border-left: 1px solid #17191c; }
+.collection-controls .collection-view button { width: 38px; height: 38px; }
+.collection-controls .collection-dropdowns { gap: 1px; margin: 0; }
+.collection-controls select { min-height: 34px; padding-block: 5px; border: 0; border-radius: 0; background: #24272d; }
+.collection-controls :is(button, input, select):focus-visible { outline: 2px solid var(--pokemon-medium); outline-offset: -3px; }
+
+/* Gallery is one graphite surface with thin page-colored seams. Box stays bare. */
+.pokemon-collection .pokemon-grid:not(.box-grid) { gap: 1px; border-radius: 0; overflow: hidden; background: #17191c; }
+.pokemon-collection .pokemon-grid:not(.box-grid) .pokemon-card { border: 0; border-radius: 0; }
+.pokemon-collection .pokemon-grid:not(.box-grid) .pokemon-card:focus-visible { outline-offset: -3px; }

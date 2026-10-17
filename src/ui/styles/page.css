@@ -1,3 +1,4 @@
+:root { --page-gutter: 12px; }
 .page { max-width: 960px; margin: 0 auto; padding: 42px max(24px, env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); }
 h1 { margin: 0 0 26px; font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 650; line-height: 1.15; letter-spacing: -.045em; overflow-wrap: anywhere; }
 h1:focus { outline: none; }

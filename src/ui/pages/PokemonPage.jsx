@@ -1,15 +1,34 @@
-import React, {useMemo, useState} from 'react';
-import {identifyPokemon, filterPokemon, loadRoles, storeRole, roles, locationName} from '../../storage/pokemonRoles.js';
+import React, {useMemo, useState, useRef, useCallback, useEffect, useLayoutEffect} from 'react';
+import {identifyPokemon, filterPokemon, loadRoles, storeRole, locationName} from '../../storage/pokemonRoles.js';
 import '../styles/pokemon.css';
 import {filterDetails, representedGames, originGames, typeOptions, collectionImage} from '../collectionFilters.js';
+import PokemonProfile from './PokemonProfile.jsx';
 import pokemonTypes from '../../data/pokemonTypes.json';
 
-export default function PokemonPage({snapshot}) {
+export default function PokemonPage({snapshot, onSubpageChange}) {
   const [view, setView] = useState('Gallery');
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('All');
   const [details, setDetails] = useState({generation: 'All', type: 'All', game: 'All'});
   const [selected, setSelected] = useState(null);
+  const collectionScroll = useRef(0);
+  const originButton = useRef(null);
+  const wasSelected = useRef(false);
+  const closeProfile = useCallback(() => setSelected(null), []);
+  useEffect(() => {
+    onSubpageChange?.(selected ? {onBack: closeProfile} : null);
+    return () => onSubpageChange?.(null);
+  }, [selected, closeProfile, onSubpageChange]);
+  useLayoutEffect(() => {
+    if (selected) { window.scrollTo({top:0}); document.getElementById('pokemon-profile-title')?.focus({preventScroll:true}); }
+    else if (wasSelected.current) { originButton.current?.focus({preventScroll:true}); window.scrollTo({top:collectionScroll.current}); }
+    wasSelected.current = Boolean(selected);
+  }, [selected]);
+  function openProfile(pokemon, event) {
+    collectionScroll.current = window.scrollY;
+    originButton.current = event.currentTarget;
+    setSelected(pokemon.identity);
+  }
   const [roleState, setRoleState] = useState(() => {
     try { return {assigned: loadRoles(window.localStorage), error: ''}; }
     catch { return {assigned: {}, error: 'Saved roles could not be loaded. Browser storage may be unavailable.'}; }
@@ -24,7 +43,10 @@ export default function PokemonPage({snapshot}) {
     catch { setRoleState(previous => ({...previous, error: 'Role could not be saved. Browser storage may be unavailable or full.'})); }
   }
   if (!snapshot) return <div className="placeholder"><p>Import your Emerald save in Settings to view your Pokémon.</p></div>;
-  return <section className="pokemon-collection" aria-label="Pokémon collection">
+  return <>
+    {pokemon && <PokemonProfile key={pokemon.identity} pokemon={pokemon} role={roleState.assigned[pokemon.identity] ?? 'Collection'} onAssign={assign} error={roleState.error} />}
+    <section hidden={Boolean(pokemon)} className="pokemon-collection" aria-label="Pokémon collection">
+    <div className="collection-controls">
     <div className="collection-segments collection-filters" aria-label="Filter Pokémon">{['All', 'Frontier', 'Utility', 'Shinies'].map(name => <button key={name} type="button" aria-pressed={filter === name} onClick={() => setFilter(name)}>{name}</button>)}</div>
     <div className="collection-toolbar">
       <div className="collection-search"><input aria-label="Search Pokémon" type="search" placeholder="Species or nickname" value={query} onChange={e => setQuery(e.target.value)} /></div>
@@ -42,15 +64,11 @@ export default function PokemonPage({snapshot}) {
         <option value="All">Game: All</option>{games.map(game => <option key={game.id} value={game.id}>{game.name}</option>)}
       </select>
     </div>
+    </div>
     {records.some(p => !originGames[p.origin?.gameId]) && <p className="collection-note">Origin game is unavailable or unrecognized for some Pokémon. They appear with Game: All.</p>}
     {roleState.error && <p role="alert">{roleState.error}</p>}
-    {pokemon && <section className="pokemon-selection" aria-label="Selected Pokémon">
-      <div className="selection-heading"><div><h2>{pokemon.isEgg ? 'Egg · ' : ''}{pokemon.speciesName} {pokemon.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}</h2><p>{pokemon.nickname} · {locationName(pokemon.source)}</p></div><button type="button" onClick={() => setSelected(null)} aria-label="Clear selection">×</button></div>
-      {pokemon.source.kind === 'daycare' && <p>Level at deposit; Day Care experience is applied on withdrawal.</p>}
-      <div className="collection-segments" aria-label="Assign role">{roles.map(role => <button type="button" key={role} aria-pressed={(roleState.assigned[pokemon.identity] ?? 'Collection') === role} onClick={() => assign(role)}>{role}</button>)}</div>
-    </section>}
     <div className={`pokemon-grid ${view === 'Box' ? 'box-grid' : ''}`}>
-      {visible.map(p => <button type="button" key={p.identity} className="pokemon-card" aria-pressed={selected === p.identity} aria-label={`${p.speciesName}, ${p.nickname}, ${p.isEgg ? 'Egg' : `level ${p.recorded?.level ?? p.derivedLevel}`}${p.shiny ? ', shiny' : ''}, ${locationName(p.source)}, ${roleState.assigned[p.identity] ?? 'Collection'}`} onClick={() => setSelected(p.identity)}>
+      {visible.map(p => <button type="button" key={p.identity} className="pokemon-card" aria-pressed={selected === p.identity} aria-label={`${p.speciesName}, ${p.nickname}, ${p.isEgg ? 'Egg' : `level ${p.recorded?.level ?? p.derivedLevel}`}${p.shiny ? ', shiny' : ''}, ${locationName(p.source)}, ${roleState.assigned[p.identity] ?? 'Collection'}`} onClick={event => openProfile(p, event)}>
         {view === 'Gallery' && <span className="pokemon-card-top"><span>#{String(p.nationalDexId).padStart(3, '0')}</span><span>{p.isEgg ? 'Egg' : `Lv. ${p.recorded?.level ?? p.derivedLevel}`} {p.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}</span></span>}
         <img className="pokemon-sprite" loading="lazy" alt="" src={collectionImage(p, view)} />
         {view === 'Gallery' && <><span className="pokemon-name">{p.speciesName}</span><span className="pokemon-types">{pokemonTypes[p.nationalDexId].slice(0, 2).map(type => <img key={type} src={`/types/icons/${type}.png`} alt={`${type} type`} width="14" height="14" />)}</span></>}
@@ -58,5 +76,5 @@ export default function PokemonPage({snapshot}) {
       </button>)}
     </div>
     {!visible.length && <p className="collection-empty">No Pokémon match this search or filter.</p>}
-  </section>;
+  </section></>;
 }
