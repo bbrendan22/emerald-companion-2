@@ -1,0 +1,11 @@
+/* Reusable dashboard primitives; opt in without affecting other page layouts. */
+.dashboard-card { min-width: 0; padding: 14px; background: #202328; border: 2px solid var(--dashboard-accent, var(--trainer-medium)); border-radius: 16px; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; }
+.section-heading h2 { color: var(--dashboard-highlight, var(--trainer-neon)); margin: 0; font-size: 1rem; font-weight: 600; letter-spacing: -.025em; }
+.section-heading > span { color: var(--dashboard-accent, var(--trainer-medium)); font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.stat-tile { min-width: 0; padding: 10px 8px; border-radius: 10px; background: color-mix(in srgb, var(--stat-color, var(--trainer-medium)) 6%, #1b1e22); border-top: 2px solid color-mix(in srgb, var(--stat-color, var(--trainer-medium)) 55%, transparent); }
+.dashboard-help { margin-top: 8px; color: #a2a9b4; font-size: .6875rem; line-height: 1.7; }
+.dashboard-help summary { cursor: pointer; width: fit-content; padding: 5px 0; }
+.dashboard-help summary:focus-visible { outline: 2px solid var(--trainer-medium); outline-offset: 4px; border-radius: 2px; }
+.dashboard-help p { margin: 8px 0 0; max-width: 70ch; }
+@media (min-width: 600px) { .dashboard-card { padding: 18px; } }

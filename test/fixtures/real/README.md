@@ -1,0 +1,13 @@
+# Private real-save fixture
+
+One user-supplied raw 131,072-byte Emerald save is present locally. It must remain private. Every file in this directory except this README is ignored by Git, including `expected.private.json`; do not place fixtures in `public/`, copy them into application source, or force-add them. No Git repository was initialized for this project.
+
+`expected.private.json` was generated once using the separately implemented `../inspect_real_save.py` Python stdlib reader. Its SHA-256 binds the expectations to the exact fixture. It contains both slot diagnostics, current raw Pokémon fields and Trainer field expectations. It contains a combined Trainer-identity digest rather than plaintext Trainer name, Trainer ID or Secret ID. A digest is still treated as private data.
+
+The reader uses literal retail offsets, struct unpacking, independently generated permutations and Python integer checksum arithmetic, with no production-code/data imports. Expectations were checked against the read-only 1.0 parser and direct party-stat bytes. This verifies binary interpretation; it is not an in-game or third-party-editor confirmation. Reader sources are linked in the project README.
+
+Run `npm test` from the project root: seven private integration tests run when the fixture is available. Without a `.sav`, these tests explicitly skip. A present fixture with missing expectations or a changed hash fails until independently reviewed; expectations are never automatically regenerated.
+
+Still useful for future coverage: in-game confirmation of the summary and party, an occupied Day Care save, eggs, non-English names and known partial/link-save cases. The current fixture has no eggs and both Day Care slots are empty. See the project-root `REAL_SAVE_VALIDATION.md` for the sanitized validation report.
+
+Stage 2 adds `hall-of-fame.expected.private.json`, generated once by the independent `../inspect_hall_of_fame.py` reader. It is bound to the same fixture SHA-256 and contains private raw Hall of Fame fields plus Champion status. The existing manifest is never replaced. This audit found one retained six-member team, including one shiny; both special-sector checksums pass. It is not an in-game screen confirmation.

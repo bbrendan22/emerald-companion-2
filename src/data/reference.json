@@ -1,0 +1,8196 @@
+{
+  "species": {
+    "1": {
+      "nationalDexId": 1,
+      "name": "Bulbasaur",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 49,
+        "defense": 49,
+        "speed": 45,
+        "spAttack": 65,
+        "spDefense": 65
+      }
+    },
+    "2": {
+      "nationalDexId": 2,
+      "name": "Ivysaur",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 62,
+        "defense": 63,
+        "speed": 60,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "3": {
+      "nationalDexId": 3,
+      "name": "Venusaur",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 83,
+        "speed": 80,
+        "spAttack": 100,
+        "spDefense": 100
+      }
+    },
+    "4": {
+      "nationalDexId": 4,
+      "name": "Charmander",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 39,
+        "attack": 52,
+        "defense": 43,
+        "speed": 65,
+        "spAttack": 60,
+        "spDefense": 50
+      }
+    },
+    "5": {
+      "nationalDexId": 5,
+      "name": "Charmeleon",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 58,
+        "attack": 64,
+        "defense": 58,
+        "speed": 80,
+        "spAttack": 80,
+        "spDefense": 65
+      }
+    },
+    "6": {
+      "nationalDexId": 6,
+      "name": "Charizard",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "speed": 100,
+        "spAttack": 109,
+        "spDefense": 85
+      }
+    },
+    "7": {
+      "nationalDexId": 7,
+      "name": "Squirtle",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 44,
+        "attack": 48,
+        "defense": 65,
+        "speed": 43,
+        "spAttack": 50,
+        "spDefense": 64
+      }
+    },
+    "8": {
+      "nationalDexId": 8,
+      "name": "Wartortle",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 59,
+        "attack": 63,
+        "defense": 80,
+        "speed": 58,
+        "spAttack": 65,
+        "spDefense": 80
+      }
+    },
+    "9": {
+      "nationalDexId": 9,
+      "name": "Blastoise",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 79,
+        "attack": 83,
+        "defense": 100,
+        "speed": 78,
+        "spAttack": 85,
+        "spDefense": 105
+      }
+    },
+    "10": {
+      "nationalDexId": 10,
+      "name": "Caterpie",
+      "genderRatio": 127,
+      "abilities": [
+        19
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 30,
+        "defense": 35,
+        "speed": 45,
+        "spAttack": 20,
+        "spDefense": 20
+      }
+    },
+    "11": {
+      "nationalDexId": 11,
+      "name": "Metapod",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 20,
+        "defense": 55,
+        "speed": 30,
+        "spAttack": 25,
+        "spDefense": 25
+      }
+    },
+    "12": {
+      "nationalDexId": 12,
+      "name": "Butterfree",
+      "genderRatio": 127,
+      "abilities": [
+        14
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 45,
+        "defense": 50,
+        "speed": 70,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "13": {
+      "nationalDexId": 13,
+      "name": "Weedle",
+      "genderRatio": 127,
+      "abilities": [
+        19
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 35,
+        "defense": 30,
+        "speed": 50,
+        "spAttack": 20,
+        "spDefense": 20
+      }
+    },
+    "14": {
+      "nationalDexId": 14,
+      "name": "Kakuna",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 25,
+        "defense": 50,
+        "speed": 35,
+        "spAttack": 25,
+        "spDefense": 25
+      }
+    },
+    "15": {
+      "nationalDexId": 15,
+      "name": "Beedrill",
+      "genderRatio": 127,
+      "abilities": [
+        68
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 40,
+        "speed": 75,
+        "spAttack": 45,
+        "spDefense": 80
+      }
+    },
+    "16": {
+      "nationalDexId": 16,
+      "name": "Pidgey",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 40,
+        "speed": 56,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "17": {
+      "nationalDexId": 17,
+      "name": "Pidgeotto",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 63,
+        "attack": 60,
+        "defense": 55,
+        "speed": 71,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "18": {
+      "nationalDexId": 18,
+      "name": "Pidgeot",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 83,
+        "attack": 80,
+        "defense": 75,
+        "speed": 91,
+        "spAttack": 70,
+        "spDefense": 70
+      }
+    },
+    "19": {
+      "nationalDexId": 19,
+      "name": "Rattata",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 30,
+        "attack": 56,
+        "defense": 35,
+        "speed": 72,
+        "spAttack": 25,
+        "spDefense": 35
+      }
+    },
+    "20": {
+      "nationalDexId": 20,
+      "name": "Raticate",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 81,
+        "defense": 60,
+        "speed": 97,
+        "spAttack": 50,
+        "spDefense": 70
+      }
+    },
+    "21": {
+      "nationalDexId": 21,
+      "name": "Spearow",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 60,
+        "defense": 30,
+        "speed": 70,
+        "spAttack": 31,
+        "spDefense": 31
+      }
+    },
+    "22": {
+      "nationalDexId": 22,
+      "name": "Fearow",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 65,
+        "speed": 100,
+        "spAttack": 61,
+        "spDefense": 61
+      }
+    },
+    "23": {
+      "nationalDexId": 23,
+      "name": "Ekans",
+      "genderRatio": 127,
+      "abilities": [
+        22,
+        61
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 60,
+        "defense": 44,
+        "speed": 55,
+        "spAttack": 40,
+        "spDefense": 54
+      }
+    },
+    "24": {
+      "nationalDexId": 24,
+      "name": "Arbok",
+      "genderRatio": 127,
+      "abilities": [
+        22,
+        61
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 69,
+        "speed": 80,
+        "spAttack": 65,
+        "spDefense": 79
+      }
+    },
+    "25": {
+      "nationalDexId": 25,
+      "name": "Pikachu",
+      "genderRatio": 127,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 30,
+        "speed": 90,
+        "spAttack": 50,
+        "spDefense": 40
+      }
+    },
+    "26": {
+      "nationalDexId": 26,
+      "name": "Raichu",
+      "genderRatio": 127,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "speed": 100,
+        "spAttack": 90,
+        "spDefense": 80
+      }
+    },
+    "27": {
+      "nationalDexId": 27,
+      "name": "Sandshrew",
+      "genderRatio": 127,
+      "abilities": [
+        8
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 85,
+        "speed": 40,
+        "spAttack": 20,
+        "spDefense": 30
+      }
+    },
+    "28": {
+      "nationalDexId": 28,
+      "name": "Sandslash",
+      "genderRatio": 127,
+      "abilities": [
+        8
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 110,
+        "speed": 65,
+        "spAttack": 45,
+        "spDefense": 55
+      }
+    },
+    "29": {
+      "nationalDexId": 29,
+      "name": "Nidoran♀",
+      "genderRatio": 254,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 47,
+        "defense": 52,
+        "speed": 41,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "30": {
+      "nationalDexId": 30,
+      "name": "Nidorina",
+      "genderRatio": 254,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 62,
+        "defense": 67,
+        "speed": 56,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "31": {
+      "nationalDexId": 31,
+      "name": "Nidoqueen",
+      "genderRatio": 254,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 82,
+        "defense": 87,
+        "speed": 76,
+        "spAttack": 75,
+        "spDefense": 85
+      }
+    },
+    "32": {
+      "nationalDexId": 32,
+      "name": "Nidoran♂",
+      "genderRatio": 0,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 46,
+        "attack": 57,
+        "defense": 40,
+        "speed": 50,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "33": {
+      "nationalDexId": 33,
+      "name": "Nidorino",
+      "genderRatio": 0,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 61,
+        "attack": 72,
+        "defense": 57,
+        "speed": 65,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "34": {
+      "nationalDexId": 34,
+      "name": "Nidoking",
+      "genderRatio": 0,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 81,
+        "attack": 92,
+        "defense": 77,
+        "speed": 85,
+        "spAttack": 85,
+        "spDefense": 75
+      }
+    },
+    "35": {
+      "nationalDexId": 35,
+      "name": "Clefairy",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 45,
+        "defense": 48,
+        "speed": 35,
+        "spAttack": 60,
+        "spDefense": 65
+      }
+    },
+    "36": {
+      "nationalDexId": 36,
+      "name": "Clefable",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 95,
+        "attack": 70,
+        "defense": 73,
+        "speed": 60,
+        "spAttack": 85,
+        "spDefense": 90
+      }
+    },
+    "37": {
+      "nationalDexId": 37,
+      "name": "Vulpix",
+      "genderRatio": 191,
+      "abilities": [
+        18
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 38,
+        "attack": 41,
+        "defense": 40,
+        "speed": 65,
+        "spAttack": 50,
+        "spDefense": 65
+      }
+    },
+    "38": {
+      "nationalDexId": 38,
+      "name": "Ninetales",
+      "genderRatio": 191,
+      "abilities": [
+        18
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 73,
+        "attack": 76,
+        "defense": 75,
+        "speed": 100,
+        "spAttack": 81,
+        "spDefense": 100
+      }
+    },
+    "39": {
+      "nationalDexId": 39,
+      "name": "Jigglypuff",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 115,
+        "attack": 45,
+        "defense": 20,
+        "speed": 20,
+        "spAttack": 45,
+        "spDefense": 25
+      }
+    },
+    "40": {
+      "nationalDexId": 40,
+      "name": "Wigglytuff",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 140,
+        "attack": 70,
+        "defense": 45,
+        "speed": 45,
+        "spAttack": 75,
+        "spDefense": 50
+      }
+    },
+    "41": {
+      "nationalDexId": 41,
+      "name": "Zubat",
+      "genderRatio": 127,
+      "abilities": [
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35,
+        "speed": 55,
+        "spAttack": 30,
+        "spDefense": 40
+      }
+    },
+    "42": {
+      "nationalDexId": 42,
+      "name": "Golbat",
+      "genderRatio": 127,
+      "abilities": [
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 70,
+        "speed": 90,
+        "spAttack": 65,
+        "spDefense": 75
+      }
+    },
+    "43": {
+      "nationalDexId": 43,
+      "name": "Oddish",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 50,
+        "defense": 55,
+        "speed": 30,
+        "spAttack": 75,
+        "spDefense": 65
+      }
+    },
+    "44": {
+      "nationalDexId": 44,
+      "name": "Gloom",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 70,
+        "speed": 40,
+        "spAttack": 85,
+        "spDefense": 75
+      }
+    },
+    "45": {
+      "nationalDexId": 45,
+      "name": "Vileplume",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 85,
+        "speed": 50,
+        "spAttack": 100,
+        "spDefense": 90
+      }
+    },
+    "46": {
+      "nationalDexId": 46,
+      "name": "Paras",
+      "genderRatio": 127,
+      "abilities": [
+        27
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 70,
+        "defense": 55,
+        "speed": 25,
+        "spAttack": 45,
+        "spDefense": 55
+      }
+    },
+    "47": {
+      "nationalDexId": 47,
+      "name": "Parasect",
+      "genderRatio": 127,
+      "abilities": [
+        27
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 95,
+        "defense": 80,
+        "speed": 30,
+        "spAttack": 60,
+        "spDefense": 80
+      }
+    },
+    "48": {
+      "nationalDexId": 48,
+      "name": "Venonat",
+      "genderRatio": 127,
+      "abilities": [
+        14
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 55,
+        "defense": 50,
+        "speed": 45,
+        "spAttack": 40,
+        "spDefense": 55
+      }
+    },
+    "49": {
+      "nationalDexId": 49,
+      "name": "Venomoth",
+      "genderRatio": 127,
+      "abilities": [
+        19
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 65,
+        "defense": 60,
+        "speed": 90,
+        "spAttack": 90,
+        "spDefense": 75
+      }
+    },
+    "50": {
+      "nationalDexId": 50,
+      "name": "Diglett",
+      "genderRatio": 127,
+      "abilities": [
+        8,
+        71
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 10,
+        "attack": 55,
+        "defense": 25,
+        "speed": 95,
+        "spAttack": 35,
+        "spDefense": 45
+      }
+    },
+    "51": {
+      "nationalDexId": 51,
+      "name": "Dugtrio",
+      "genderRatio": 127,
+      "abilities": [
+        8,
+        71
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 80,
+        "defense": 50,
+        "speed": 120,
+        "spAttack": 50,
+        "spDefense": 70
+      }
+    },
+    "52": {
+      "nationalDexId": 52,
+      "name": "Meowth",
+      "genderRatio": 127,
+      "abilities": [
+        53
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35,
+        "speed": 90,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "53": {
+      "nationalDexId": 53,
+      "name": "Persian",
+      "genderRatio": 127,
+      "abilities": [
+        7
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 70,
+        "defense": 60,
+        "speed": 115,
+        "spAttack": 65,
+        "spDefense": 65
+      }
+    },
+    "54": {
+      "nationalDexId": 54,
+      "name": "Psyduck",
+      "genderRatio": 127,
+      "abilities": [
+        6,
+        13
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 52,
+        "defense": 48,
+        "speed": 55,
+        "spAttack": 65,
+        "spDefense": 50
+      }
+    },
+    "55": {
+      "nationalDexId": 55,
+      "name": "Golduck",
+      "genderRatio": 127,
+      "abilities": [
+        6,
+        13
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 78,
+        "speed": 85,
+        "spAttack": 95,
+        "spDefense": 80
+      }
+    },
+    "56": {
+      "nationalDexId": 56,
+      "name": "Mankey",
+      "genderRatio": 127,
+      "abilities": [
+        72
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 80,
+        "defense": 35,
+        "speed": 70,
+        "spAttack": 35,
+        "spDefense": 45
+      }
+    },
+    "57": {
+      "nationalDexId": 57,
+      "name": "Primeape",
+      "genderRatio": 127,
+      "abilities": [
+        72
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 105,
+        "defense": 60,
+        "speed": 95,
+        "spAttack": 60,
+        "spDefense": 70
+      }
+    },
+    "58": {
+      "nationalDexId": 58,
+      "name": "Growlithe",
+      "genderRatio": 63,
+      "abilities": [
+        22,
+        18
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 70,
+        "defense": 45,
+        "speed": 60,
+        "spAttack": 70,
+        "spDefense": 50
+      }
+    },
+    "59": {
+      "nationalDexId": 59,
+      "name": "Arcanine",
+      "genderRatio": 63,
+      "abilities": [
+        22,
+        18
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 110,
+        "defense": 80,
+        "speed": 95,
+        "spAttack": 100,
+        "spDefense": 80
+      }
+    },
+    "60": {
+      "nationalDexId": 60,
+      "name": "Poliwag",
+      "genderRatio": 127,
+      "abilities": [
+        11,
+        6
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 50,
+        "defense": 40,
+        "speed": 90,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "61": {
+      "nationalDexId": 61,
+      "name": "Poliwhirl",
+      "genderRatio": 127,
+      "abilities": [
+        11,
+        6
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 65,
+        "speed": 90,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "62": {
+      "nationalDexId": 62,
+      "name": "Poliwrath",
+      "genderRatio": 127,
+      "abilities": [
+        11,
+        6
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 85,
+        "defense": 95,
+        "speed": 70,
+        "spAttack": 70,
+        "spDefense": 90
+      }
+    },
+    "63": {
+      "nationalDexId": 63,
+      "name": "Abra",
+      "genderRatio": 63,
+      "abilities": [
+        28,
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 25,
+        "attack": 20,
+        "defense": 15,
+        "speed": 90,
+        "spAttack": 105,
+        "spDefense": 55
+      }
+    },
+    "64": {
+      "nationalDexId": 64,
+      "name": "Kadabra",
+      "genderRatio": 63,
+      "abilities": [
+        28,
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 35,
+        "defense": 30,
+        "speed": 105,
+        "spAttack": 120,
+        "spDefense": 70
+      }
+    },
+    "65": {
+      "nationalDexId": 65,
+      "name": "Alakazam",
+      "genderRatio": 63,
+      "abilities": [
+        28,
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 50,
+        "defense": 45,
+        "speed": 120,
+        "spAttack": 135,
+        "spDefense": 85
+      }
+    },
+    "66": {
+      "nationalDexId": 66,
+      "name": "Machop",
+      "genderRatio": 63,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 80,
+        "defense": 50,
+        "speed": 35,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "67": {
+      "nationalDexId": 67,
+      "name": "Machoke",
+      "genderRatio": 63,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 100,
+        "defense": 70,
+        "speed": 45,
+        "spAttack": 50,
+        "spDefense": 60
+      }
+    },
+    "68": {
+      "nationalDexId": 68,
+      "name": "Machamp",
+      "genderRatio": 63,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 130,
+        "defense": 80,
+        "speed": 55,
+        "spAttack": 65,
+        "spDefense": 85
+      }
+    },
+    "69": {
+      "nationalDexId": 69,
+      "name": "Bellsprout",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 35,
+        "speed": 40,
+        "spAttack": 70,
+        "spDefense": 30
+      }
+    },
+    "70": {
+      "nationalDexId": 70,
+      "name": "Weepinbell",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 50,
+        "speed": 55,
+        "spAttack": 85,
+        "spDefense": 45
+      }
+    },
+    "71": {
+      "nationalDexId": 71,
+      "name": "Victreebel",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 105,
+        "defense": 65,
+        "speed": 70,
+        "spAttack": 100,
+        "spDefense": 60
+      }
+    },
+    "72": {
+      "nationalDexId": 72,
+      "name": "Tentacool",
+      "genderRatio": 127,
+      "abilities": [
+        29,
+        64
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 40,
+        "defense": 35,
+        "speed": 70,
+        "spAttack": 50,
+        "spDefense": 100
+      }
+    },
+    "73": {
+      "nationalDexId": 73,
+      "name": "Tentacruel",
+      "genderRatio": 127,
+      "abilities": [
+        29,
+        64
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 70,
+        "defense": 65,
+        "speed": 100,
+        "spAttack": 80,
+        "spDefense": 120
+      }
+    },
+    "74": {
+      "nationalDexId": 74,
+      "name": "Geodude",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 80,
+        "defense": 100,
+        "speed": 20,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "75": {
+      "nationalDexId": 75,
+      "name": "Graveler",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 95,
+        "defense": 115,
+        "speed": 35,
+        "spAttack": 45,
+        "spDefense": 45
+      }
+    },
+    "76": {
+      "nationalDexId": 76,
+      "name": "Golem",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 110,
+        "defense": 130,
+        "speed": 45,
+        "spAttack": 55,
+        "spDefense": 65
+      }
+    },
+    "77": {
+      "nationalDexId": 77,
+      "name": "Ponyta",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        18
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 85,
+        "defense": 55,
+        "speed": 90,
+        "spAttack": 65,
+        "spDefense": 65
+      }
+    },
+    "78": {
+      "nationalDexId": 78,
+      "name": "Rapidash",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        18
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 100,
+        "defense": 70,
+        "speed": 105,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "79": {
+      "nationalDexId": 79,
+      "name": "Slowpoke",
+      "genderRatio": 127,
+      "abilities": [
+        12,
+        20
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 65,
+        "defense": 65,
+        "speed": 15,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "80": {
+      "nationalDexId": 80,
+      "name": "Slowbro",
+      "genderRatio": 127,
+      "abilities": [
+        12,
+        20
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 95,
+        "attack": 75,
+        "defense": 110,
+        "speed": 30,
+        "spAttack": 100,
+        "spDefense": 80
+      }
+    },
+    "81": {
+      "nationalDexId": 81,
+      "name": "Magnemite",
+      "genderRatio": 255,
+      "abilities": [
+        42,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 25,
+        "attack": 35,
+        "defense": 70,
+        "speed": 45,
+        "spAttack": 95,
+        "spDefense": 55
+      }
+    },
+    "82": {
+      "nationalDexId": 82,
+      "name": "Magneton",
+      "genderRatio": 255,
+      "abilities": [
+        42,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 60,
+        "defense": 95,
+        "speed": 70,
+        "spAttack": 120,
+        "spDefense": 70
+      }
+    },
+    "83": {
+      "nationalDexId": 83,
+      "name": "Farfetch'd",
+      "genderRatio": 127,
+      "abilities": [
+        51,
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 52,
+        "attack": 65,
+        "defense": 55,
+        "speed": 60,
+        "spAttack": 58,
+        "spDefense": 62
+      }
+    },
+    "84": {
+      "nationalDexId": 84,
+      "name": "Doduo",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 85,
+        "defense": 45,
+        "speed": 75,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "85": {
+      "nationalDexId": 85,
+      "name": "Dodrio",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 110,
+        "defense": 70,
+        "speed": 100,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "86": {
+      "nationalDexId": 86,
+      "name": "Seel",
+      "genderRatio": 127,
+      "abilities": [
+        47
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 45,
+        "defense": 55,
+        "speed": 45,
+        "spAttack": 45,
+        "spDefense": 70
+      }
+    },
+    "87": {
+      "nationalDexId": 87,
+      "name": "Dewgong",
+      "genderRatio": 127,
+      "abilities": [
+        47
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 70,
+        "defense": 80,
+        "speed": 70,
+        "spAttack": 70,
+        "spDefense": 95
+      }
+    },
+    "88": {
+      "nationalDexId": 88,
+      "name": "Grimer",
+      "genderRatio": 127,
+      "abilities": [
+        1,
+        60
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 50,
+        "speed": 25,
+        "spAttack": 40,
+        "spDefense": 50
+      }
+    },
+    "89": {
+      "nationalDexId": 89,
+      "name": "Muk",
+      "genderRatio": 127,
+      "abilities": [
+        1,
+        60
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 105,
+        "attack": 105,
+        "defense": 75,
+        "speed": 50,
+        "spAttack": 65,
+        "spDefense": 100
+      }
+    },
+    "90": {
+      "nationalDexId": 90,
+      "name": "Shellder",
+      "genderRatio": 127,
+      "abilities": [
+        75
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 30,
+        "attack": 65,
+        "defense": 100,
+        "speed": 40,
+        "spAttack": 45,
+        "spDefense": 25
+      }
+    },
+    "91": {
+      "nationalDexId": 91,
+      "name": "Cloyster",
+      "genderRatio": 127,
+      "abilities": [
+        75
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 95,
+        "defense": 180,
+        "speed": 70,
+        "spAttack": 85,
+        "spDefense": 45
+      }
+    },
+    "92": {
+      "nationalDexId": 92,
+      "name": "Gastly",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 30,
+        "attack": 35,
+        "defense": 30,
+        "speed": 80,
+        "spAttack": 100,
+        "spDefense": 35
+      }
+    },
+    "93": {
+      "nationalDexId": 93,
+      "name": "Haunter",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 50,
+        "defense": 45,
+        "speed": 95,
+        "spAttack": 115,
+        "spDefense": 55
+      }
+    },
+    "94": {
+      "nationalDexId": 94,
+      "name": "Gengar",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 60,
+        "speed": 110,
+        "spAttack": 130,
+        "spDefense": 75
+      }
+    },
+    "95": {
+      "nationalDexId": 95,
+      "name": "Onix",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 45,
+        "defense": 160,
+        "speed": 70,
+        "spAttack": 30,
+        "spDefense": 45
+      }
+    },
+    "96": {
+      "nationalDexId": 96,
+      "name": "Drowzee",
+      "genderRatio": 127,
+      "abilities": [
+        15
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 48,
+        "defense": 45,
+        "speed": 42,
+        "spAttack": 43,
+        "spDefense": 90
+      }
+    },
+    "97": {
+      "nationalDexId": 97,
+      "name": "Hypno",
+      "genderRatio": 127,
+      "abilities": [
+        15
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 85,
+        "attack": 73,
+        "defense": 70,
+        "speed": 67,
+        "spAttack": 73,
+        "spDefense": 115
+      }
+    },
+    "98": {
+      "nationalDexId": 98,
+      "name": "Krabby",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        75
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 30,
+        "attack": 105,
+        "defense": 90,
+        "speed": 50,
+        "spAttack": 25,
+        "spDefense": 25
+      }
+    },
+    "99": {
+      "nationalDexId": 99,
+      "name": "Kingler",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        75
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 130,
+        "defense": 115,
+        "speed": 75,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "100": {
+      "nationalDexId": 100,
+      "name": "Voltorb",
+      "genderRatio": 255,
+      "abilities": [
+        43,
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 30,
+        "defense": 50,
+        "speed": 100,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "101": {
+      "nationalDexId": 101,
+      "name": "Electrode",
+      "genderRatio": 255,
+      "abilities": [
+        43,
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 70,
+        "speed": 140,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "102": {
+      "nationalDexId": 102,
+      "name": "Exeggcute",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 40,
+        "defense": 80,
+        "speed": 40,
+        "spAttack": 60,
+        "spDefense": 45
+      }
+    },
+    "103": {
+      "nationalDexId": 103,
+      "name": "Exeggutor",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 95,
+        "attack": 95,
+        "defense": 85,
+        "speed": 55,
+        "spAttack": 125,
+        "spDefense": 65
+      }
+    },
+    "104": {
+      "nationalDexId": 104,
+      "name": "Cubone",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        31
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 50,
+        "defense": 95,
+        "speed": 35,
+        "spAttack": 40,
+        "spDefense": 50
+      }
+    },
+    "105": {
+      "nationalDexId": 105,
+      "name": "Marowak",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        31
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 80,
+        "defense": 110,
+        "speed": 45,
+        "spAttack": 50,
+        "spDefense": 80
+      }
+    },
+    "106": {
+      "nationalDexId": 106,
+      "name": "Hitmonlee",
+      "genderRatio": 0,
+      "abilities": [
+        7
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 120,
+        "defense": 53,
+        "speed": 87,
+        "spAttack": 35,
+        "spDefense": 110
+      }
+    },
+    "107": {
+      "nationalDexId": 107,
+      "name": "Hitmonchan",
+      "genderRatio": 0,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 105,
+        "defense": 79,
+        "speed": 76,
+        "spAttack": 35,
+        "spDefense": 110
+      }
+    },
+    "108": {
+      "nationalDexId": 108,
+      "name": "Lickitung",
+      "genderRatio": 127,
+      "abilities": [
+        20,
+        12
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 55,
+        "defense": 75,
+        "speed": 30,
+        "spAttack": 60,
+        "spDefense": 75
+      }
+    },
+    "109": {
+      "nationalDexId": 109,
+      "name": "Koffing",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 65,
+        "defense": 95,
+        "speed": 35,
+        "spAttack": 60,
+        "spDefense": 45
+      }
+    },
+    "110": {
+      "nationalDexId": 110,
+      "name": "Weezing",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 120,
+        "speed": 60,
+        "spAttack": 85,
+        "spDefense": 70
+      }
+    },
+    "111": {
+      "nationalDexId": 111,
+      "name": "Rhyhorn",
+      "genderRatio": 127,
+      "abilities": [
+        31,
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 85,
+        "defense": 95,
+        "speed": 25,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "112": {
+      "nationalDexId": 112,
+      "name": "Rhydon",
+      "genderRatio": 127,
+      "abilities": [
+        31,
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 105,
+        "attack": 130,
+        "defense": 120,
+        "speed": 40,
+        "spAttack": 45,
+        "spDefense": 45
+      }
+    },
+    "113": {
+      "nationalDexId": 113,
+      "name": "Chansey",
+      "genderRatio": 254,
+      "abilities": [
+        30,
+        32
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 250,
+        "attack": 5,
+        "defense": 5,
+        "speed": 50,
+        "spAttack": 35,
+        "spDefense": 105
+      }
+    },
+    "114": {
+      "nationalDexId": 114,
+      "name": "Tangela",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 55,
+        "defense": 115,
+        "speed": 60,
+        "spAttack": 100,
+        "spDefense": 40
+      }
+    },
+    "115": {
+      "nationalDexId": 115,
+      "name": "Kangaskhan",
+      "genderRatio": 254,
+      "abilities": [
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 105,
+        "attack": 95,
+        "defense": 80,
+        "speed": 90,
+        "spAttack": 40,
+        "spDefense": 80
+      }
+    },
+    "116": {
+      "nationalDexId": 116,
+      "name": "Horsea",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 30,
+        "attack": 40,
+        "defense": 70,
+        "speed": 60,
+        "spAttack": 70,
+        "spDefense": 25
+      }
+    },
+    "117": {
+      "nationalDexId": 117,
+      "name": "Seadra",
+      "genderRatio": 127,
+      "abilities": [
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 65,
+        "defense": 95,
+        "speed": 85,
+        "spAttack": 95,
+        "spDefense": 45
+      }
+    },
+    "118": {
+      "nationalDexId": 118,
+      "name": "Goldeen",
+      "genderRatio": 127,
+      "abilities": [
+        33,
+        41
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 67,
+        "defense": 60,
+        "speed": 63,
+        "spAttack": 35,
+        "spDefense": 50
+      }
+    },
+    "119": {
+      "nationalDexId": 119,
+      "name": "Seaking",
+      "genderRatio": 127,
+      "abilities": [
+        33,
+        41
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 80,
+        "attack": 92,
+        "defense": 65,
+        "speed": 68,
+        "spAttack": 65,
+        "spDefense": 80
+      }
+    },
+    "120": {
+      "nationalDexId": 120,
+      "name": "Staryu",
+      "genderRatio": 255,
+      "abilities": [
+        35,
+        30
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 30,
+        "attack": 45,
+        "defense": 55,
+        "speed": 85,
+        "spAttack": 70,
+        "spDefense": 55
+      }
+    },
+    "121": {
+      "nationalDexId": 121,
+      "name": "Starmie",
+      "genderRatio": 255,
+      "abilities": [
+        35,
+        30
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 75,
+        "defense": 85,
+        "speed": 115,
+        "spAttack": 100,
+        "spDefense": 85
+      }
+    },
+    "122": {
+      "nationalDexId": 122,
+      "name": "Mr. Mime",
+      "genderRatio": 127,
+      "abilities": [
+        43
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 65,
+        "speed": 90,
+        "spAttack": 100,
+        "spDefense": 120
+      }
+    },
+    "123": {
+      "nationalDexId": 123,
+      "name": "Scyther",
+      "genderRatio": 127,
+      "abilities": [
+        68
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 80,
+        "speed": 105,
+        "spAttack": 55,
+        "spDefense": 80
+      }
+    },
+    "124": {
+      "nationalDexId": 124,
+      "name": "Jynx",
+      "genderRatio": 254,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 50,
+        "defense": 35,
+        "speed": 95,
+        "spAttack": 115,
+        "spDefense": 95
+      }
+    },
+    "125": {
+      "nationalDexId": 125,
+      "name": "Electabuzz",
+      "genderRatio": 63,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 83,
+        "defense": 57,
+        "speed": 105,
+        "spAttack": 95,
+        "spDefense": 85
+      }
+    },
+    "126": {
+      "nationalDexId": 126,
+      "name": "Magmar",
+      "genderRatio": 63,
+      "abilities": [
+        49
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 95,
+        "defense": 57,
+        "speed": 93,
+        "spAttack": 100,
+        "spDefense": 85
+      }
+    },
+    "127": {
+      "nationalDexId": 127,
+      "name": "Pinsir",
+      "genderRatio": 127,
+      "abilities": [
+        52
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 125,
+        "defense": 100,
+        "speed": 85,
+        "spAttack": 55,
+        "spDefense": 70
+      }
+    },
+    "128": {
+      "nationalDexId": 128,
+      "name": "Tauros",
+      "genderRatio": 0,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 95,
+        "speed": 110,
+        "spAttack": 40,
+        "spDefense": 70
+      }
+    },
+    "129": {
+      "nationalDexId": 129,
+      "name": "Magikarp",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 55,
+        "speed": 80,
+        "spAttack": 15,
+        "spDefense": 20
+      }
+    },
+    "130": {
+      "nationalDexId": 130,
+      "name": "Gyarados",
+      "genderRatio": 127,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 95,
+        "attack": 125,
+        "defense": 79,
+        "speed": 81,
+        "spAttack": 60,
+        "spDefense": 100
+      }
+    },
+    "131": {
+      "nationalDexId": 131,
+      "name": "Lapras",
+      "genderRatio": 127,
+      "abilities": [
+        11,
+        75
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 130,
+        "attack": 85,
+        "defense": 80,
+        "speed": 60,
+        "spAttack": 85,
+        "spDefense": 95
+      }
+    },
+    "132": {
+      "nationalDexId": 132,
+      "name": "Ditto",
+      "genderRatio": 255,
+      "abilities": [
+        7
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 48,
+        "attack": 48,
+        "defense": 48,
+        "speed": 48,
+        "spAttack": 48,
+        "spDefense": 48
+      }
+    },
+    "133": {
+      "nationalDexId": 133,
+      "name": "Eevee",
+      "genderRatio": 31,
+      "abilities": [
+        50
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 55,
+        "defense": 50,
+        "speed": 55,
+        "spAttack": 45,
+        "spDefense": 65
+      }
+    },
+    "134": {
+      "nationalDexId": 134,
+      "name": "Vaporeon",
+      "genderRatio": 31,
+      "abilities": [
+        11
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 130,
+        "attack": 65,
+        "defense": 60,
+        "speed": 65,
+        "spAttack": 110,
+        "spDefense": 95
+      }
+    },
+    "135": {
+      "nationalDexId": 135,
+      "name": "Jolteon",
+      "genderRatio": 31,
+      "abilities": [
+        10
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 60,
+        "speed": 130,
+        "spAttack": 110,
+        "spDefense": 95
+      }
+    },
+    "136": {
+      "nationalDexId": 136,
+      "name": "Flareon",
+      "genderRatio": 31,
+      "abilities": [
+        18
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 130,
+        "defense": 60,
+        "speed": 65,
+        "spAttack": 95,
+        "spDefense": 110
+      }
+    },
+    "137": {
+      "nationalDexId": 137,
+      "name": "Porygon",
+      "genderRatio": 255,
+      "abilities": [
+        36
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 60,
+        "defense": 70,
+        "speed": 40,
+        "spAttack": 85,
+        "spDefense": 75
+      }
+    },
+    "138": {
+      "nationalDexId": 138,
+      "name": "Omanyte",
+      "genderRatio": 31,
+      "abilities": [
+        33,
+        75
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 40,
+        "defense": 100,
+        "speed": 35,
+        "spAttack": 90,
+        "spDefense": 55
+      }
+    },
+    "139": {
+      "nationalDexId": 139,
+      "name": "Omastar",
+      "genderRatio": 31,
+      "abilities": [
+        33,
+        75
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 60,
+        "defense": 125,
+        "speed": 55,
+        "spAttack": 115,
+        "spDefense": 70
+      }
+    },
+    "140": {
+      "nationalDexId": 140,
+      "name": "Kabuto",
+      "genderRatio": 31,
+      "abilities": [
+        33,
+        4
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 30,
+        "attack": 80,
+        "defense": 90,
+        "speed": 55,
+        "spAttack": 55,
+        "spDefense": 45
+      }
+    },
+    "141": {
+      "nationalDexId": 141,
+      "name": "Kabutops",
+      "genderRatio": 31,
+      "abilities": [
+        33,
+        4
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 115,
+        "defense": 105,
+        "speed": 80,
+        "spAttack": 65,
+        "spDefense": 70
+      }
+    },
+    "142": {
+      "nationalDexId": 142,
+      "name": "Aerodactyl",
+      "genderRatio": 31,
+      "abilities": [
+        69,
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 105,
+        "defense": 65,
+        "speed": 130,
+        "spAttack": 60,
+        "spDefense": 75
+      }
+    },
+    "143": {
+      "nationalDexId": 143,
+      "name": "Snorlax",
+      "genderRatio": 31,
+      "abilities": [
+        17,
+        47
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 160,
+        "attack": 110,
+        "defense": 65,
+        "speed": 30,
+        "spAttack": 65,
+        "spDefense": 110
+      }
+    },
+    "144": {
+      "nationalDexId": 144,
+      "name": "Articuno",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 85,
+        "defense": 100,
+        "speed": 85,
+        "spAttack": 95,
+        "spDefense": 125
+      }
+    },
+    "145": {
+      "nationalDexId": 145,
+      "name": "Zapdos",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 90,
+        "defense": 85,
+        "speed": 100,
+        "spAttack": 125,
+        "spDefense": 90
+      }
+    },
+    "146": {
+      "nationalDexId": 146,
+      "name": "Moltres",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 100,
+        "defense": 90,
+        "speed": 90,
+        "spAttack": 125,
+        "spDefense": 85
+      }
+    },
+    "147": {
+      "nationalDexId": 147,
+      "name": "Dratini",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 41,
+        "attack": 64,
+        "defense": 45,
+        "speed": 50,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "148": {
+      "nationalDexId": 148,
+      "name": "Dragonair",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 61,
+        "attack": 84,
+        "defense": 65,
+        "speed": 70,
+        "spAttack": 70,
+        "spDefense": 70
+      }
+    },
+    "149": {
+      "nationalDexId": 149,
+      "name": "Dragonite",
+      "genderRatio": 127,
+      "abilities": [
+        39
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 91,
+        "attack": 134,
+        "defense": 95,
+        "speed": 80,
+        "spAttack": 100,
+        "spDefense": 100
+      }
+    },
+    "150": {
+      "nationalDexId": 150,
+      "name": "Mewtwo",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 106,
+        "attack": 110,
+        "defense": 90,
+        "speed": 130,
+        "spAttack": 154,
+        "spDefense": 90
+      }
+    },
+    "151": {
+      "nationalDexId": 151,
+      "name": "Mew",
+      "genderRatio": 255,
+      "abilities": [
+        28
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 100,
+        "speed": 100,
+        "spAttack": 100,
+        "spDefense": 100
+      }
+    },
+    "152": {
+      "nationalDexId": 152,
+      "name": "Chikorita",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 49,
+        "defense": 65,
+        "speed": 45,
+        "spAttack": 49,
+        "spDefense": 65
+      }
+    },
+    "153": {
+      "nationalDexId": 153,
+      "name": "Bayleef",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 62,
+        "defense": 80,
+        "speed": 60,
+        "spAttack": 63,
+        "spDefense": 80
+      }
+    },
+    "154": {
+      "nationalDexId": 154,
+      "name": "Meganium",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 100,
+        "speed": 80,
+        "spAttack": 83,
+        "spDefense": 100
+      }
+    },
+    "155": {
+      "nationalDexId": 155,
+      "name": "Cyndaquil",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 39,
+        "attack": 52,
+        "defense": 43,
+        "speed": 65,
+        "spAttack": 60,
+        "spDefense": 50
+      }
+    },
+    "156": {
+      "nationalDexId": 156,
+      "name": "Quilava",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 58,
+        "attack": 64,
+        "defense": 58,
+        "speed": 80,
+        "spAttack": 80,
+        "spDefense": 65
+      }
+    },
+    "157": {
+      "nationalDexId": 157,
+      "name": "Typhlosion",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "speed": 100,
+        "spAttack": 109,
+        "spDefense": 85
+      }
+    },
+    "158": {
+      "nationalDexId": 158,
+      "name": "Totodile",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 64,
+        "speed": 43,
+        "spAttack": 44,
+        "spDefense": 48
+      }
+    },
+    "159": {
+      "nationalDexId": 159,
+      "name": "Croconaw",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 80,
+        "speed": 58,
+        "spAttack": 59,
+        "spDefense": 63
+      }
+    },
+    "160": {
+      "nationalDexId": 160,
+      "name": "Feraligatr",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 85,
+        "attack": 105,
+        "defense": 100,
+        "speed": 78,
+        "spAttack": 79,
+        "spDefense": 83
+      }
+    },
+    "161": {
+      "nationalDexId": 161,
+      "name": "Sentret",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 46,
+        "defense": 34,
+        "speed": 20,
+        "spAttack": 35,
+        "spDefense": 45
+      }
+    },
+    "162": {
+      "nationalDexId": 162,
+      "name": "Furret",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 85,
+        "attack": 76,
+        "defense": 64,
+        "speed": 90,
+        "spAttack": 45,
+        "spDefense": 55
+      }
+    },
+    "163": {
+      "nationalDexId": 163,
+      "name": "Hoothoot",
+      "genderRatio": 127,
+      "abilities": [
+        15,
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 30,
+        "defense": 30,
+        "speed": 50,
+        "spAttack": 36,
+        "spDefense": 56
+      }
+    },
+    "164": {
+      "nationalDexId": 164,
+      "name": "Noctowl",
+      "genderRatio": 127,
+      "abilities": [
+        15,
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 100,
+        "attack": 50,
+        "defense": 50,
+        "speed": 70,
+        "spAttack": 76,
+        "spDefense": 96
+      }
+    },
+    "165": {
+      "nationalDexId": 165,
+      "name": "Ledyba",
+      "genderRatio": 127,
+      "abilities": [
+        68,
+        48
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 20,
+        "defense": 30,
+        "speed": 55,
+        "spAttack": 40,
+        "spDefense": 80
+      }
+    },
+    "166": {
+      "nationalDexId": 166,
+      "name": "Ledian",
+      "genderRatio": 127,
+      "abilities": [
+        68,
+        48
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 35,
+        "defense": 50,
+        "speed": 85,
+        "spAttack": 55,
+        "spDefense": 110
+      }
+    },
+    "167": {
+      "nationalDexId": 167,
+      "name": "Spinarak",
+      "genderRatio": 127,
+      "abilities": [
+        68,
+        15
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 60,
+        "defense": 40,
+        "speed": 30,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "168": {
+      "nationalDexId": 168,
+      "name": "Ariados",
+      "genderRatio": 127,
+      "abilities": [
+        68,
+        15
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 90,
+        "defense": 70,
+        "speed": 40,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "169": {
+      "nationalDexId": 169,
+      "name": "Crobat",
+      "genderRatio": 127,
+      "abilities": [
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 85,
+        "attack": 90,
+        "defense": 80,
+        "speed": 130,
+        "spAttack": 70,
+        "spDefense": 80
+      }
+    },
+    "170": {
+      "nationalDexId": 170,
+      "name": "Chinchou",
+      "genderRatio": 127,
+      "abilities": [
+        10,
+        35
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 38,
+        "defense": 38,
+        "speed": 67,
+        "spAttack": 56,
+        "spDefense": 56
+      }
+    },
+    "171": {
+      "nationalDexId": 171,
+      "name": "Lanturn",
+      "genderRatio": 127,
+      "abilities": [
+        10,
+        35
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 125,
+        "attack": 58,
+        "defense": 58,
+        "speed": 67,
+        "spAttack": 76,
+        "spDefense": 76
+      }
+    },
+    "172": {
+      "nationalDexId": 172,
+      "name": "Pichu",
+      "genderRatio": 127,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 20,
+        "attack": 40,
+        "defense": 15,
+        "speed": 60,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "173": {
+      "nationalDexId": 173,
+      "name": "Cleffa",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 25,
+        "defense": 28,
+        "speed": 15,
+        "spAttack": 45,
+        "spDefense": 55
+      }
+    },
+    "174": {
+      "nationalDexId": 174,
+      "name": "Igglybuff",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 30,
+        "defense": 15,
+        "speed": 15,
+        "spAttack": 40,
+        "spDefense": 20
+      }
+    },
+    "175": {
+      "nationalDexId": 175,
+      "name": "Togepi",
+      "genderRatio": 31,
+      "abilities": [
+        55,
+        32
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 20,
+        "defense": 65,
+        "speed": 20,
+        "spAttack": 40,
+        "spDefense": 65
+      }
+    },
+    "176": {
+      "nationalDexId": 176,
+      "name": "Togetic",
+      "genderRatio": 31,
+      "abilities": [
+        55,
+        32
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 40,
+        "defense": 85,
+        "speed": 40,
+        "spAttack": 80,
+        "spDefense": 105
+      }
+    },
+    "177": {
+      "nationalDexId": 177,
+      "name": "Natu",
+      "genderRatio": 127,
+      "abilities": [
+        28,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 50,
+        "defense": 45,
+        "speed": 70,
+        "spAttack": 70,
+        "spDefense": 45
+      }
+    },
+    "178": {
+      "nationalDexId": 178,
+      "name": "Xatu",
+      "genderRatio": 127,
+      "abilities": [
+        28,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 75,
+        "defense": 70,
+        "speed": 95,
+        "spAttack": 95,
+        "spDefense": 70
+      }
+    },
+    "179": {
+      "nationalDexId": 179,
+      "name": "Mareep",
+      "genderRatio": 127,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 40,
+        "defense": 40,
+        "speed": 35,
+        "spAttack": 65,
+        "spDefense": 45
+      }
+    },
+    "180": {
+      "nationalDexId": 180,
+      "name": "Flaaffy",
+      "genderRatio": 127,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 55,
+        "defense": 55,
+        "speed": 45,
+        "spAttack": 80,
+        "spDefense": 60
+      }
+    },
+    "181": {
+      "nationalDexId": 181,
+      "name": "Ampharos",
+      "genderRatio": 127,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 75,
+        "defense": 75,
+        "speed": 55,
+        "spAttack": 115,
+        "spDefense": 90
+      }
+    },
+    "182": {
+      "nationalDexId": 182,
+      "name": "Bellossom",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 85,
+        "speed": 50,
+        "spAttack": 90,
+        "spDefense": 100
+      }
+    },
+    "183": {
+      "nationalDexId": 183,
+      "name": "Marill",
+      "genderRatio": 127,
+      "abilities": [
+        47,
+        37
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 20,
+        "defense": 50,
+        "speed": 40,
+        "spAttack": 20,
+        "spDefense": 50
+      }
+    },
+    "184": {
+      "nationalDexId": 184,
+      "name": "Azumarill",
+      "genderRatio": 127,
+      "abilities": [
+        47,
+        37
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 100,
+        "attack": 50,
+        "defense": 80,
+        "speed": 50,
+        "spAttack": 50,
+        "spDefense": 80
+      }
+    },
+    "185": {
+      "nationalDexId": 185,
+      "name": "Sudowoodo",
+      "genderRatio": 127,
+      "abilities": [
+        5,
+        69
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 100,
+        "defense": 115,
+        "speed": 30,
+        "spAttack": 30,
+        "spDefense": 65
+      }
+    },
+    "186": {
+      "nationalDexId": 186,
+      "name": "Politoed",
+      "genderRatio": 127,
+      "abilities": [
+        11,
+        6
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 75,
+        "defense": 75,
+        "speed": 70,
+        "spAttack": 90,
+        "spDefense": 100
+      }
+    },
+    "187": {
+      "nationalDexId": 187,
+      "name": "Hoppip",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 35,
+        "attack": 35,
+        "defense": 40,
+        "speed": 50,
+        "spAttack": 35,
+        "spDefense": 55
+      }
+    },
+    "188": {
+      "nationalDexId": 188,
+      "name": "Skiploom",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 45,
+        "defense": 50,
+        "speed": 80,
+        "spAttack": 45,
+        "spDefense": 65
+      }
+    },
+    "189": {
+      "nationalDexId": 189,
+      "name": "Jumpluff",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 55,
+        "defense": 70,
+        "speed": 110,
+        "spAttack": 55,
+        "spDefense": 85
+      }
+    },
+    "190": {
+      "nationalDexId": 190,
+      "name": "Aipom",
+      "genderRatio": 127,
+      "abilities": [
+        50,
+        53
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 70,
+        "defense": 55,
+        "speed": 85,
+        "spAttack": 40,
+        "spDefense": 55
+      }
+    },
+    "191": {
+      "nationalDexId": 191,
+      "name": "Sunkern",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 30,
+        "attack": 30,
+        "defense": 30,
+        "speed": 30,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "192": {
+      "nationalDexId": 192,
+      "name": "Sunflora",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 75,
+        "defense": 55,
+        "speed": 30,
+        "spAttack": 105,
+        "spDefense": 85
+      }
+    },
+    "193": {
+      "nationalDexId": 193,
+      "name": "Yanma",
+      "genderRatio": 127,
+      "abilities": [
+        3,
+        14
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 45,
+        "speed": 95,
+        "spAttack": 75,
+        "spDefense": 45
+      }
+    },
+    "194": {
+      "nationalDexId": 194,
+      "name": "Wooper",
+      "genderRatio": 127,
+      "abilities": [
+        6,
+        11
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 45,
+        "defense": 45,
+        "speed": 15,
+        "spAttack": 25,
+        "spDefense": 25
+      }
+    },
+    "195": {
+      "nationalDexId": 195,
+      "name": "Quagsire",
+      "genderRatio": 127,
+      "abilities": [
+        6,
+        11
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 95,
+        "attack": 85,
+        "defense": 85,
+        "speed": 35,
+        "spAttack": 65,
+        "spDefense": 65
+      }
+    },
+    "196": {
+      "nationalDexId": 196,
+      "name": "Espeon",
+      "genderRatio": 31,
+      "abilities": [
+        28
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 60,
+        "speed": 110,
+        "spAttack": 130,
+        "spDefense": 95
+      }
+    },
+    "197": {
+      "nationalDexId": 197,
+      "name": "Umbreon",
+      "genderRatio": 31,
+      "abilities": [
+        28
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 95,
+        "attack": 65,
+        "defense": 110,
+        "speed": 65,
+        "spAttack": 60,
+        "spDefense": 130
+      }
+    },
+    "198": {
+      "nationalDexId": 198,
+      "name": "Murkrow",
+      "genderRatio": 127,
+      "abilities": [
+        15
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 42,
+        "speed": 91,
+        "spAttack": 85,
+        "spDefense": 42
+      }
+    },
+    "199": {
+      "nationalDexId": 199,
+      "name": "Slowking",
+      "genderRatio": 127,
+      "abilities": [
+        12,
+        20
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 95,
+        "attack": 75,
+        "defense": 80,
+        "speed": 30,
+        "spAttack": 100,
+        "spDefense": 110
+      }
+    },
+    "200": {
+      "nationalDexId": 200,
+      "name": "Misdreavus",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 60,
+        "speed": 85,
+        "spAttack": 85,
+        "spDefense": 85
+      }
+    },
+    "201": {
+      "nationalDexId": 201,
+      "name": "Unown",
+      "genderRatio": 255,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 48,
+        "attack": 72,
+        "defense": 48,
+        "speed": 48,
+        "spAttack": 72,
+        "spDefense": 48
+      }
+    },
+    "202": {
+      "nationalDexId": 202,
+      "name": "Wobbuffet",
+      "genderRatio": 127,
+      "abilities": [
+        23
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 190,
+        "attack": 33,
+        "defense": 58,
+        "speed": 33,
+        "spAttack": 33,
+        "spDefense": 58
+      }
+    },
+    "203": {
+      "nationalDexId": 203,
+      "name": "Girafarig",
+      "genderRatio": 127,
+      "abilities": [
+        39,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 80,
+        "defense": 65,
+        "speed": 85,
+        "spAttack": 90,
+        "spDefense": 65
+      }
+    },
+    "204": {
+      "nationalDexId": 204,
+      "name": "Pineco",
+      "genderRatio": 127,
+      "abilities": [
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 90,
+        "speed": 15,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "205": {
+      "nationalDexId": 205,
+      "name": "Forretress",
+      "genderRatio": 127,
+      "abilities": [
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 75,
+        "attack": 90,
+        "defense": 140,
+        "speed": 40,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "206": {
+      "nationalDexId": 206,
+      "name": "Dunsparce",
+      "genderRatio": 127,
+      "abilities": [
+        32,
+        50
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 100,
+        "attack": 70,
+        "defense": 70,
+        "speed": 45,
+        "spAttack": 65,
+        "spDefense": 65
+      }
+    },
+    "207": {
+      "nationalDexId": 207,
+      "name": "Gligar",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        8
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 75,
+        "defense": 105,
+        "speed": 85,
+        "spAttack": 35,
+        "spDefense": 65
+      }
+    },
+    "208": {
+      "nationalDexId": 208,
+      "name": "Steelix",
+      "genderRatio": 127,
+      "abilities": [
+        69,
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 75,
+        "attack": 85,
+        "defense": 200,
+        "speed": 30,
+        "spAttack": 55,
+        "spDefense": 65
+      }
+    },
+    "209": {
+      "nationalDexId": 209,
+      "name": "Snubbull",
+      "genderRatio": 191,
+      "abilities": [
+        22,
+        50
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 80,
+        "defense": 50,
+        "speed": 30,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "210": {
+      "nationalDexId": 210,
+      "name": "Granbull",
+      "genderRatio": 191,
+      "abilities": [
+        22,
+        22
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 120,
+        "defense": 75,
+        "speed": 45,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "211": {
+      "nationalDexId": 211,
+      "name": "Qwilfish",
+      "genderRatio": 127,
+      "abilities": [
+        38,
+        33
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 95,
+        "defense": 75,
+        "speed": 85,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "212": {
+      "nationalDexId": 212,
+      "name": "Scizor",
+      "genderRatio": 127,
+      "abilities": [
+        68
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 130,
+        "defense": 100,
+        "speed": 65,
+        "spAttack": 55,
+        "spDefense": 80
+      }
+    },
+    "213": {
+      "nationalDexId": 213,
+      "name": "Shuckle",
+      "genderRatio": 127,
+      "abilities": [
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 230,
+        "speed": 5,
+        "spAttack": 10,
+        "spDefense": 230
+      }
+    },
+    "214": {
+      "nationalDexId": 214,
+      "name": "Heracross",
+      "genderRatio": 127,
+      "abilities": [
+        68,
+        62
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 125,
+        "defense": 75,
+        "speed": 85,
+        "spAttack": 40,
+        "spDefense": 95
+      }
+    },
+    "215": {
+      "nationalDexId": 215,
+      "name": "Sneasel",
+      "genderRatio": 127,
+      "abilities": [
+        39,
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 55,
+        "attack": 95,
+        "defense": 55,
+        "speed": 115,
+        "spAttack": 35,
+        "spDefense": 75
+      }
+    },
+    "216": {
+      "nationalDexId": 216,
+      "name": "Teddiursa",
+      "genderRatio": 127,
+      "abilities": [
+        53
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 80,
+        "defense": 50,
+        "speed": 40,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "217": {
+      "nationalDexId": 217,
+      "name": "Ursaring",
+      "genderRatio": 127,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 130,
+        "defense": 75,
+        "speed": 55,
+        "spAttack": 75,
+        "spDefense": 75
+      }
+    },
+    "218": {
+      "nationalDexId": 218,
+      "name": "Slugma",
+      "genderRatio": 127,
+      "abilities": [
+        40,
+        49
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 40,
+        "defense": 40,
+        "speed": 20,
+        "spAttack": 70,
+        "spDefense": 40
+      }
+    },
+    "219": {
+      "nationalDexId": 219,
+      "name": "Magcargo",
+      "genderRatio": 127,
+      "abilities": [
+        40,
+        49
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 50,
+        "defense": 120,
+        "speed": 30,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "220": {
+      "nationalDexId": 220,
+      "name": "Swinub",
+      "genderRatio": 127,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 50,
+        "defense": 40,
+        "speed": 50,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "221": {
+      "nationalDexId": 221,
+      "name": "Piloswine",
+      "genderRatio": 127,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 80,
+        "speed": 50,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "222": {
+      "nationalDexId": 222,
+      "name": "Corsola",
+      "genderRatio": 191,
+      "abilities": [
+        55,
+        30
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 55,
+        "defense": 85,
+        "speed": 35,
+        "spAttack": 65,
+        "spDefense": 85
+      }
+    },
+    "223": {
+      "nationalDexId": 223,
+      "name": "Remoraid",
+      "genderRatio": 127,
+      "abilities": [
+        55
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 65,
+        "defense": 35,
+        "speed": 65,
+        "spAttack": 65,
+        "spDefense": 35
+      }
+    },
+    "224": {
+      "nationalDexId": 224,
+      "name": "Octillery",
+      "genderRatio": 127,
+      "abilities": [
+        21
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 75,
+        "attack": 105,
+        "defense": 75,
+        "speed": 45,
+        "spAttack": 105,
+        "spDefense": 75
+      }
+    },
+    "225": {
+      "nationalDexId": 225,
+      "name": "Delibird",
+      "genderRatio": 127,
+      "abilities": [
+        72,
+        55
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 55,
+        "defense": 45,
+        "speed": 75,
+        "spAttack": 65,
+        "spDefense": 45
+      }
+    },
+    "226": {
+      "nationalDexId": 226,
+      "name": "Mantine",
+      "genderRatio": 127,
+      "abilities": [
+        33,
+        11
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 40,
+        "defense": 70,
+        "speed": 70,
+        "spAttack": 80,
+        "spDefense": 140
+      }
+    },
+    "227": {
+      "nationalDexId": 227,
+      "name": "Skarmory",
+      "genderRatio": 127,
+      "abilities": [
+        51,
+        5
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 140,
+        "speed": 70,
+        "spAttack": 40,
+        "spDefense": 70
+      }
+    },
+    "228": {
+      "nationalDexId": 228,
+      "name": "Houndour",
+      "genderRatio": 127,
+      "abilities": [
+        48,
+        18
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 60,
+        "defense": 30,
+        "speed": 65,
+        "spAttack": 80,
+        "spDefense": 50
+      }
+    },
+    "229": {
+      "nationalDexId": 229,
+      "name": "Houndoom",
+      "genderRatio": 127,
+      "abilities": [
+        48,
+        18
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 75,
+        "attack": 90,
+        "defense": 50,
+        "speed": 95,
+        "spAttack": 110,
+        "spDefense": 80
+      }
+    },
+    "230": {
+      "nationalDexId": 230,
+      "name": "Kingdra",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 75,
+        "attack": 95,
+        "defense": 95,
+        "speed": 85,
+        "spAttack": 95,
+        "spDefense": 95
+      }
+    },
+    "231": {
+      "nationalDexId": 231,
+      "name": "Phanpy",
+      "genderRatio": 127,
+      "abilities": [
+        53
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 60,
+        "defense": 60,
+        "speed": 40,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "232": {
+      "nationalDexId": 232,
+      "name": "Donphan",
+      "genderRatio": 127,
+      "abilities": [
+        5
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 90,
+        "attack": 120,
+        "defense": 120,
+        "speed": 50,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "233": {
+      "nationalDexId": 233,
+      "name": "Porygon2",
+      "genderRatio": 255,
+      "abilities": [
+        36
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 85,
+        "attack": 80,
+        "defense": 90,
+        "speed": 60,
+        "spAttack": 105,
+        "spDefense": 95
+      }
+    },
+    "234": {
+      "nationalDexId": 234,
+      "name": "Stantler",
+      "genderRatio": 127,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 73,
+        "attack": 95,
+        "defense": 62,
+        "speed": 85,
+        "spAttack": 85,
+        "spDefense": 65
+      }
+    },
+    "235": {
+      "nationalDexId": 235,
+      "name": "Smeargle",
+      "genderRatio": 127,
+      "abilities": [
+        20
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 55,
+        "attack": 20,
+        "defense": 35,
+        "speed": 75,
+        "spAttack": 20,
+        "spDefense": 45
+      }
+    },
+    "236": {
+      "nationalDexId": 236,
+      "name": "Tyrogue",
+      "genderRatio": 0,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 35,
+        "defense": 35,
+        "speed": 35,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "237": {
+      "nationalDexId": 237,
+      "name": "Hitmontop",
+      "genderRatio": 0,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 95,
+        "defense": 95,
+        "speed": 70,
+        "spAttack": 35,
+        "spDefense": 110
+      }
+    },
+    "238": {
+      "nationalDexId": 238,
+      "name": "Smoochum",
+      "genderRatio": 254,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 30,
+        "defense": 15,
+        "speed": 65,
+        "spAttack": 85,
+        "spDefense": 65
+      }
+    },
+    "239": {
+      "nationalDexId": 239,
+      "name": "Elekid",
+      "genderRatio": 63,
+      "abilities": [
+        9
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 63,
+        "defense": 37,
+        "speed": 95,
+        "spAttack": 65,
+        "spDefense": 55
+      }
+    },
+    "240": {
+      "nationalDexId": 240,
+      "name": "Magby",
+      "genderRatio": 63,
+      "abilities": [
+        49
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 75,
+        "defense": 37,
+        "speed": 83,
+        "spAttack": 70,
+        "spDefense": 55
+      }
+    },
+    "241": {
+      "nationalDexId": 241,
+      "name": "Miltank",
+      "genderRatio": 254,
+      "abilities": [
+        47
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 95,
+        "attack": 80,
+        "defense": 105,
+        "speed": 100,
+        "spAttack": 40,
+        "spDefense": 70
+      }
+    },
+    "242": {
+      "nationalDexId": 242,
+      "name": "Blissey",
+      "genderRatio": 254,
+      "abilities": [
+        30,
+        32
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 255,
+        "attack": 10,
+        "defense": 10,
+        "speed": 55,
+        "spAttack": 75,
+        "spDefense": 135
+      }
+    },
+    "243": {
+      "nationalDexId": 243,
+      "name": "Raikou",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 85,
+        "defense": 75,
+        "speed": 115,
+        "spAttack": 115,
+        "spDefense": 100
+      }
+    },
+    "244": {
+      "nationalDexId": 244,
+      "name": "Entei",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 115,
+        "attack": 115,
+        "defense": 85,
+        "speed": 100,
+        "spAttack": 90,
+        "spDefense": 75
+      }
+    },
+    "245": {
+      "nationalDexId": 245,
+      "name": "Suicune",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 75,
+        "defense": 115,
+        "speed": 85,
+        "spAttack": 90,
+        "spDefense": 115
+      }
+    },
+    "246": {
+      "nationalDexId": 246,
+      "name": "Larvitar",
+      "genderRatio": 127,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 64,
+        "defense": 50,
+        "speed": 41,
+        "spAttack": 45,
+        "spDefense": 50
+      }
+    },
+    "247": {
+      "nationalDexId": 247,
+      "name": "Pupitar",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 84,
+        "defense": 70,
+        "speed": 51,
+        "spAttack": 65,
+        "spDefense": 70
+      }
+    },
+    "248": {
+      "nationalDexId": 248,
+      "name": "Tyranitar",
+      "genderRatio": 127,
+      "abilities": [
+        45
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 134,
+        "defense": 110,
+        "speed": 61,
+        "spAttack": 95,
+        "spDefense": 100
+      }
+    },
+    "249": {
+      "nationalDexId": 249,
+      "name": "Lugia",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 106,
+        "attack": 90,
+        "defense": 130,
+        "speed": 110,
+        "spAttack": 90,
+        "spDefense": 154
+      }
+    },
+    "250": {
+      "nationalDexId": 250,
+      "name": "Ho-Oh",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 106,
+        "attack": 130,
+        "defense": 90,
+        "speed": 90,
+        "spAttack": 110,
+        "spDefense": 154
+      }
+    },
+    "251": {
+      "nationalDexId": 251,
+      "name": "Celebi",
+      "genderRatio": 255,
+      "abilities": [
+        30
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 100,
+        "speed": 100,
+        "spAttack": 100,
+        "spDefense": 100
+      }
+    },
+    "277": {
+      "nationalDexId": 252,
+      "name": "Treecko",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35,
+        "speed": 70,
+        "spAttack": 65,
+        "spDefense": 55
+      }
+    },
+    "278": {
+      "nationalDexId": 253,
+      "name": "Grovyle",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 45,
+        "speed": 95,
+        "spAttack": 85,
+        "spDefense": 65
+      }
+    },
+    "279": {
+      "nationalDexId": 254,
+      "name": "Sceptile",
+      "genderRatio": 31,
+      "abilities": [
+        65
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 65,
+        "speed": 120,
+        "spAttack": 105,
+        "spDefense": 85
+      }
+    },
+    "280": {
+      "nationalDexId": 255,
+      "name": "Torchic",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 60,
+        "defense": 40,
+        "speed": 45,
+        "spAttack": 70,
+        "spDefense": 50
+      }
+    },
+    "281": {
+      "nationalDexId": 256,
+      "name": "Combusken",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 60,
+        "speed": 55,
+        "spAttack": 85,
+        "spDefense": 60
+      }
+    },
+    "282": {
+      "nationalDexId": 257,
+      "name": "Blaziken",
+      "genderRatio": 31,
+      "abilities": [
+        66
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 120,
+        "defense": 70,
+        "speed": 80,
+        "spAttack": 110,
+        "spDefense": 70
+      }
+    },
+    "283": {
+      "nationalDexId": 258,
+      "name": "Mudkip",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 70,
+        "defense": 50,
+        "speed": 40,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "284": {
+      "nationalDexId": 259,
+      "name": "Marshtomp",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 70,
+        "speed": 50,
+        "spAttack": 60,
+        "spDefense": 70
+      }
+    },
+    "285": {
+      "nationalDexId": 260,
+      "name": "Swampert",
+      "genderRatio": 31,
+      "abilities": [
+        67
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 110,
+        "defense": 90,
+        "speed": 60,
+        "spAttack": 85,
+        "spDefense": 90
+      }
+    },
+    "286": {
+      "nationalDexId": 261,
+      "name": "Poochyena",
+      "genderRatio": 127,
+      "abilities": [
+        50
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 35,
+        "speed": 35,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "287": {
+      "nationalDexId": 262,
+      "name": "Mightyena",
+      "genderRatio": 127,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 90,
+        "defense": 70,
+        "speed": 70,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "288": {
+      "nationalDexId": 263,
+      "name": "Zigzagoon",
+      "genderRatio": 127,
+      "abilities": [
+        53
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 38,
+        "attack": 30,
+        "defense": 41,
+        "speed": 60,
+        "spAttack": 30,
+        "spDefense": 41
+      }
+    },
+    "289": {
+      "nationalDexId": 264,
+      "name": "Linoone",
+      "genderRatio": 127,
+      "abilities": [
+        53
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 78,
+        "attack": 70,
+        "defense": 61,
+        "speed": 100,
+        "spAttack": 50,
+        "spDefense": 61
+      }
+    },
+    "290": {
+      "nationalDexId": 265,
+      "name": "Wurmple",
+      "genderRatio": 127,
+      "abilities": [
+        19
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 45,
+        "attack": 45,
+        "defense": 35,
+        "speed": 20,
+        "spAttack": 20,
+        "spDefense": 30
+      }
+    },
+    "291": {
+      "nationalDexId": 266,
+      "name": "Silcoon",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 35,
+        "defense": 55,
+        "speed": 15,
+        "spAttack": 25,
+        "spDefense": 25
+      }
+    },
+    "292": {
+      "nationalDexId": 267,
+      "name": "Beautifly",
+      "genderRatio": 127,
+      "abilities": [
+        68
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 70,
+        "defense": 50,
+        "speed": 65,
+        "spAttack": 90,
+        "spDefense": 50
+      }
+    },
+    "293": {
+      "nationalDexId": 268,
+      "name": "Cascoon",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 35,
+        "defense": 55,
+        "speed": 15,
+        "spAttack": 25,
+        "spDefense": 25
+      }
+    },
+    "294": {
+      "nationalDexId": 269,
+      "name": "Dustox",
+      "genderRatio": 127,
+      "abilities": [
+        19
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 70,
+        "speed": 65,
+        "spAttack": 50,
+        "spDefense": 90
+      }
+    },
+    "295": {
+      "nationalDexId": 270,
+      "name": "Lotad",
+      "genderRatio": 127,
+      "abilities": [
+        33,
+        44
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 30,
+        "defense": 30,
+        "speed": 30,
+        "spAttack": 40,
+        "spDefense": 50
+      }
+    },
+    "296": {
+      "nationalDexId": 271,
+      "name": "Lombre",
+      "genderRatio": 127,
+      "abilities": [
+        33,
+        44
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 50,
+        "speed": 50,
+        "spAttack": 60,
+        "spDefense": 70
+      }
+    },
+    "297": {
+      "nationalDexId": 272,
+      "name": "Ludicolo",
+      "genderRatio": 127,
+      "abilities": [
+        33,
+        44
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 70,
+        "defense": 70,
+        "speed": 70,
+        "spAttack": 90,
+        "spDefense": 100
+      }
+    },
+    "298": {
+      "nationalDexId": 273,
+      "name": "Seedot",
+      "genderRatio": 127,
+      "abilities": [
+        34,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 40,
+        "defense": 50,
+        "speed": 30,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "299": {
+      "nationalDexId": 274,
+      "name": "Nuzleaf",
+      "genderRatio": 127,
+      "abilities": [
+        34,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 70,
+        "defense": 40,
+        "speed": 60,
+        "spAttack": 60,
+        "spDefense": 40
+      }
+    },
+    "300": {
+      "nationalDexId": 275,
+      "name": "Shiftry",
+      "genderRatio": 127,
+      "abilities": [
+        34,
+        48
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 100,
+        "defense": 60,
+        "speed": 80,
+        "spAttack": 90,
+        "spDefense": 60
+      }
+    },
+    "301": {
+      "nationalDexId": 290,
+      "name": "Nincada",
+      "genderRatio": 127,
+      "abilities": [
+        14
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 31,
+        "attack": 45,
+        "defense": 90,
+        "speed": 40,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "302": {
+      "nationalDexId": 291,
+      "name": "Ninjask",
+      "genderRatio": 127,
+      "abilities": [
+        3
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 61,
+        "attack": 90,
+        "defense": 45,
+        "speed": 160,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "303": {
+      "nationalDexId": 292,
+      "name": "Shedinja",
+      "genderRatio": 255,
+      "abilities": [
+        25
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 1,
+        "attack": 90,
+        "defense": 45,
+        "speed": 40,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "304": {
+      "nationalDexId": 276,
+      "name": "Taillow",
+      "genderRatio": 127,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 55,
+        "defense": 30,
+        "speed": 85,
+        "spAttack": 30,
+        "spDefense": 30
+      }
+    },
+    "305": {
+      "nationalDexId": 277,
+      "name": "Swellow",
+      "genderRatio": 127,
+      "abilities": [
+        62
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 60,
+        "speed": 125,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "306": {
+      "nationalDexId": 285,
+      "name": "Shroomish",
+      "genderRatio": 127,
+      "abilities": [
+        27
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 60,
+        "attack": 40,
+        "defense": 60,
+        "speed": 35,
+        "spAttack": 40,
+        "spDefense": 60
+      }
+    },
+    "307": {
+      "nationalDexId": 286,
+      "name": "Breloom",
+      "genderRatio": 127,
+      "abilities": [
+        27
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 60,
+        "attack": 130,
+        "defense": 80,
+        "speed": 70,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "308": {
+      "nationalDexId": 327,
+      "name": "Spinda",
+      "genderRatio": 127,
+      "abilities": [
+        20
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 60,
+        "speed": 60,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "309": {
+      "nationalDexId": 278,
+      "name": "Wingull",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 30,
+        "defense": 30,
+        "speed": 85,
+        "spAttack": 55,
+        "spDefense": 30
+      }
+    },
+    "310": {
+      "nationalDexId": 279,
+      "name": "Pelipper",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 100,
+        "speed": 65,
+        "spAttack": 85,
+        "spDefense": 70
+      }
+    },
+    "311": {
+      "nationalDexId": 283,
+      "name": "Surskit",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 30,
+        "defense": 32,
+        "speed": 65,
+        "spAttack": 50,
+        "spDefense": 52
+      }
+    },
+    "312": {
+      "nationalDexId": 284,
+      "name": "Masquerain",
+      "genderRatio": 127,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 60,
+        "defense": 62,
+        "speed": 60,
+        "spAttack": 80,
+        "spDefense": 82
+      }
+    },
+    "313": {
+      "nationalDexId": 320,
+      "name": "Wailmer",
+      "genderRatio": 127,
+      "abilities": [
+        41,
+        12
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 130,
+        "attack": 70,
+        "defense": 35,
+        "speed": 60,
+        "spAttack": 70,
+        "spDefense": 35
+      }
+    },
+    "314": {
+      "nationalDexId": 321,
+      "name": "Wailord",
+      "genderRatio": 127,
+      "abilities": [
+        41,
+        12
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 170,
+        "attack": 90,
+        "defense": 45,
+        "speed": 60,
+        "spAttack": 90,
+        "spDefense": 45
+      }
+    },
+    "315": {
+      "nationalDexId": 300,
+      "name": "Skitty",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 45,
+        "defense": 45,
+        "speed": 50,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "316": {
+      "nationalDexId": 301,
+      "name": "Delcatty",
+      "genderRatio": 191,
+      "abilities": [
+        56
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 65,
+        "defense": 65,
+        "speed": 70,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "317": {
+      "nationalDexId": 352,
+      "name": "Kecleon",
+      "genderRatio": 127,
+      "abilities": [
+        16
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 70,
+        "speed": 40,
+        "spAttack": 60,
+        "spDefense": 120
+      }
+    },
+    "318": {
+      "nationalDexId": 343,
+      "name": "Baltoy",
+      "genderRatio": 255,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 40,
+        "defense": 55,
+        "speed": 55,
+        "spAttack": 40,
+        "spDefense": 70
+      }
+    },
+    "319": {
+      "nationalDexId": 344,
+      "name": "Claydol",
+      "genderRatio": 255,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 70,
+        "defense": 105,
+        "speed": 75,
+        "spAttack": 70,
+        "spDefense": 120
+      }
+    },
+    "320": {
+      "nationalDexId": 299,
+      "name": "Nosepass",
+      "genderRatio": 127,
+      "abilities": [
+        5,
+        42
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 30,
+        "attack": 45,
+        "defense": 135,
+        "speed": 30,
+        "spAttack": 45,
+        "spDefense": 90
+      }
+    },
+    "321": {
+      "nationalDexId": 324,
+      "name": "Torkoal",
+      "genderRatio": 127,
+      "abilities": [
+        73
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 140,
+        "speed": 20,
+        "spAttack": 85,
+        "spDefense": 70
+      }
+    },
+    "322": {
+      "nationalDexId": 302,
+      "name": "Sableye",
+      "genderRatio": 127,
+      "abilities": [
+        51
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 75,
+        "speed": 50,
+        "spAttack": 65,
+        "spDefense": 65
+      }
+    },
+    "323": {
+      "nationalDexId": 339,
+      "name": "Barboach",
+      "genderRatio": 127,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 48,
+        "defense": 43,
+        "speed": 60,
+        "spAttack": 46,
+        "spDefense": 41
+      }
+    },
+    "324": {
+      "nationalDexId": 340,
+      "name": "Whiscash",
+      "genderRatio": 127,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 110,
+        "attack": 78,
+        "defense": 73,
+        "speed": 60,
+        "spAttack": 76,
+        "spDefense": 71
+      }
+    },
+    "325": {
+      "nationalDexId": 370,
+      "name": "Luvdisc",
+      "genderRatio": 191,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 43,
+        "attack": 30,
+        "defense": 55,
+        "speed": 97,
+        "spAttack": 40,
+        "spDefense": 65
+      }
+    },
+    "326": {
+      "nationalDexId": 341,
+      "name": "Corphish",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        75
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 43,
+        "attack": 80,
+        "defense": 65,
+        "speed": 35,
+        "spAttack": 50,
+        "spDefense": 35
+      }
+    },
+    "327": {
+      "nationalDexId": 342,
+      "name": "Crawdaunt",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        75
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 63,
+        "attack": 120,
+        "defense": 85,
+        "speed": 55,
+        "spAttack": 90,
+        "spDefense": 55
+      }
+    },
+    "328": {
+      "nationalDexId": 349,
+      "name": "Feebas",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 20,
+        "attack": 15,
+        "defense": 20,
+        "speed": 80,
+        "spAttack": 10,
+        "spDefense": 55
+      }
+    },
+    "329": {
+      "nationalDexId": 350,
+      "name": "Milotic",
+      "genderRatio": 127,
+      "abilities": [
+        63
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 95,
+        "attack": 60,
+        "defense": 79,
+        "speed": 81,
+        "spAttack": 100,
+        "spDefense": 125
+      }
+    },
+    "330": {
+      "nationalDexId": 318,
+      "name": "Carvanha",
+      "genderRatio": 127,
+      "abilities": [
+        24
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 90,
+        "defense": 20,
+        "speed": 65,
+        "spAttack": 65,
+        "spDefense": 20
+      }
+    },
+    "331": {
+      "nationalDexId": 319,
+      "name": "Sharpedo",
+      "genderRatio": 127,
+      "abilities": [
+        24
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 120,
+        "defense": 40,
+        "speed": 95,
+        "spAttack": 95,
+        "spDefense": 40
+      }
+    },
+    "332": {
+      "nationalDexId": 328,
+      "name": "Trapinch",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        71
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 100,
+        "defense": 45,
+        "speed": 10,
+        "spAttack": 45,
+        "spDefense": 45
+      }
+    },
+    "333": {
+      "nationalDexId": 329,
+      "name": "Vibrava",
+      "genderRatio": 127,
+      "abilities": [
+        26,
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 70,
+        "defense": 50,
+        "speed": 70,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "334": {
+      "nationalDexId": 330,
+      "name": "Flygon",
+      "genderRatio": 127,
+      "abilities": [
+        26,
+        26
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 100,
+        "defense": 80,
+        "speed": 100,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "335": {
+      "nationalDexId": 296,
+      "name": "Makuhita",
+      "genderRatio": 63,
+      "abilities": [
+        47,
+        62
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 72,
+        "attack": 60,
+        "defense": 30,
+        "speed": 25,
+        "spAttack": 20,
+        "spDefense": 30
+      }
+    },
+    "336": {
+      "nationalDexId": 297,
+      "name": "Hariyama",
+      "genderRatio": 63,
+      "abilities": [
+        47,
+        62
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 144,
+        "attack": 120,
+        "defense": 60,
+        "speed": 50,
+        "spAttack": 40,
+        "spDefense": 60
+      }
+    },
+    "337": {
+      "nationalDexId": 309,
+      "name": "Electrike",
+      "genderRatio": 127,
+      "abilities": [
+        9,
+        31
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 40,
+        "speed": 65,
+        "spAttack": 65,
+        "spDefense": 40
+      }
+    },
+    "338": {
+      "nationalDexId": 310,
+      "name": "Manectric",
+      "genderRatio": 127,
+      "abilities": [
+        9,
+        31
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 75,
+        "defense": 60,
+        "speed": 105,
+        "spAttack": 105,
+        "spDefense": 60
+      }
+    },
+    "339": {
+      "nationalDexId": 322,
+      "name": "Numel",
+      "genderRatio": 127,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 40,
+        "speed": 35,
+        "spAttack": 65,
+        "spDefense": 45
+      }
+    },
+    "340": {
+      "nationalDexId": 323,
+      "name": "Camerupt",
+      "genderRatio": 127,
+      "abilities": [
+        40
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 100,
+        "defense": 70,
+        "speed": 40,
+        "spAttack": 105,
+        "spDefense": 75
+      }
+    },
+    "341": {
+      "nationalDexId": 363,
+      "name": "Spheal",
+      "genderRatio": 127,
+      "abilities": [
+        47
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 40,
+        "defense": 50,
+        "speed": 25,
+        "spAttack": 55,
+        "spDefense": 50
+      }
+    },
+    "342": {
+      "nationalDexId": 364,
+      "name": "Sealeo",
+      "genderRatio": 127,
+      "abilities": [
+        47
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 90,
+        "attack": 60,
+        "defense": 70,
+        "speed": 45,
+        "spAttack": 75,
+        "spDefense": 70
+      }
+    },
+    "343": {
+      "nationalDexId": 365,
+      "name": "Walrein",
+      "genderRatio": 127,
+      "abilities": [
+        47
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 110,
+        "attack": 80,
+        "defense": 90,
+        "speed": 65,
+        "spAttack": 95,
+        "spDefense": 90
+      }
+    },
+    "344": {
+      "nationalDexId": 331,
+      "name": "Cacnea",
+      "genderRatio": 127,
+      "abilities": [
+        8
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 85,
+        "defense": 40,
+        "speed": 35,
+        "spAttack": 85,
+        "spDefense": 40
+      }
+    },
+    "345": {
+      "nationalDexId": 332,
+      "name": "Cacturne",
+      "genderRatio": 127,
+      "abilities": [
+        8
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 115,
+        "defense": 60,
+        "speed": 55,
+        "spAttack": 115,
+        "spDefense": 60
+      }
+    },
+    "346": {
+      "nationalDexId": 361,
+      "name": "Snorunt",
+      "genderRatio": 127,
+      "abilities": [
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 50,
+        "defense": 50,
+        "speed": 50,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "347": {
+      "nationalDexId": 362,
+      "name": "Glalie",
+      "genderRatio": 127,
+      "abilities": [
+        39
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 80,
+        "speed": 80,
+        "spAttack": 80,
+        "spDefense": 80
+      }
+    },
+    "348": {
+      "nationalDexId": 337,
+      "name": "Lunatone",
+      "genderRatio": 255,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 55,
+        "defense": 65,
+        "speed": 70,
+        "spAttack": 95,
+        "spDefense": 85
+      }
+    },
+    "349": {
+      "nationalDexId": 338,
+      "name": "Solrock",
+      "genderRatio": 255,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 95,
+        "defense": 85,
+        "speed": 70,
+        "spAttack": 55,
+        "spDefense": 65
+      }
+    },
+    "350": {
+      "nationalDexId": 298,
+      "name": "Azurill",
+      "genderRatio": 191,
+      "abilities": [
+        47,
+        37
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 20,
+        "defense": 40,
+        "speed": 20,
+        "spAttack": 20,
+        "spDefense": 40
+      }
+    },
+    "351": {
+      "nationalDexId": 325,
+      "name": "Spoink",
+      "genderRatio": 127,
+      "abilities": [
+        47,
+        20
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 25,
+        "defense": 35,
+        "speed": 60,
+        "spAttack": 70,
+        "spDefense": 80
+      }
+    },
+    "352": {
+      "nationalDexId": 326,
+      "name": "Grumpig",
+      "genderRatio": 127,
+      "abilities": [
+        47,
+        20
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 80,
+        "attack": 45,
+        "defense": 65,
+        "speed": 80,
+        "spAttack": 90,
+        "spDefense": 110
+      }
+    },
+    "353": {
+      "nationalDexId": 311,
+      "name": "Plusle",
+      "genderRatio": 127,
+      "abilities": [
+        57
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 40,
+        "speed": 95,
+        "spAttack": 85,
+        "spDefense": 75
+      }
+    },
+    "354": {
+      "nationalDexId": 312,
+      "name": "Minun",
+      "genderRatio": 127,
+      "abilities": [
+        58
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 40,
+        "defense": 50,
+        "speed": 95,
+        "spAttack": 75,
+        "spDefense": 85
+      }
+    },
+    "355": {
+      "nationalDexId": 303,
+      "name": "Mawile",
+      "genderRatio": 127,
+      "abilities": [
+        52,
+        22
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 50,
+        "attack": 85,
+        "defense": 85,
+        "speed": 50,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "356": {
+      "nationalDexId": 307,
+      "name": "Meditite",
+      "genderRatio": 127,
+      "abilities": [
+        74
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 30,
+        "attack": 40,
+        "defense": 55,
+        "speed": 60,
+        "spAttack": 40,
+        "spDefense": 55
+      }
+    },
+    "357": {
+      "nationalDexId": 308,
+      "name": "Medicham",
+      "genderRatio": 127,
+      "abilities": [
+        74
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 75,
+        "speed": 80,
+        "spAttack": 60,
+        "spDefense": 75
+      }
+    },
+    "358": {
+      "nationalDexId": 333,
+      "name": "Swablu",
+      "genderRatio": 127,
+      "abilities": [
+        30
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 45,
+        "attack": 40,
+        "defense": 60,
+        "speed": 50,
+        "spAttack": 40,
+        "spDefense": 75
+      }
+    },
+    "359": {
+      "nationalDexId": 334,
+      "name": "Altaria",
+      "genderRatio": 127,
+      "abilities": [
+        30
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 75,
+        "attack": 70,
+        "defense": 90,
+        "speed": 80,
+        "spAttack": 70,
+        "spDefense": 105
+      }
+    },
+    "360": {
+      "nationalDexId": 360,
+      "name": "Wynaut",
+      "genderRatio": 127,
+      "abilities": [
+        23
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 95,
+        "attack": 23,
+        "defense": 48,
+        "speed": 23,
+        "spAttack": 23,
+        "spDefense": 48
+      }
+    },
+    "361": {
+      "nationalDexId": 355,
+      "name": "Duskull",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 20,
+        "attack": 40,
+        "defense": 90,
+        "speed": 25,
+        "spAttack": 30,
+        "spDefense": 90
+      }
+    },
+    "362": {
+      "nationalDexId": 356,
+      "name": "Dusclops",
+      "genderRatio": 127,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 40,
+        "attack": 70,
+        "defense": 130,
+        "speed": 25,
+        "spAttack": 60,
+        "spDefense": 130
+      }
+    },
+    "363": {
+      "nationalDexId": 315,
+      "name": "Roselia",
+      "genderRatio": 127,
+      "abilities": [
+        30,
+        38
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 60,
+        "defense": 45,
+        "speed": 65,
+        "spAttack": 100,
+        "spDefense": 80
+      }
+    },
+    "364": {
+      "nationalDexId": 287,
+      "name": "Slakoth",
+      "genderRatio": 127,
+      "abilities": [
+        54
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 60,
+        "speed": 30,
+        "spAttack": 35,
+        "spDefense": 35
+      }
+    },
+    "365": {
+      "nationalDexId": 288,
+      "name": "Vigoroth",
+      "genderRatio": 127,
+      "abilities": [
+        72
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 80,
+        "speed": 90,
+        "spAttack": 55,
+        "spDefense": 55
+      }
+    },
+    "366": {
+      "nationalDexId": 289,
+      "name": "Slaking",
+      "genderRatio": 127,
+      "abilities": [
+        54
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 150,
+        "attack": 160,
+        "defense": 100,
+        "speed": 100,
+        "spAttack": 95,
+        "spDefense": 65
+      }
+    },
+    "367": {
+      "nationalDexId": 316,
+      "name": "Gulpin",
+      "genderRatio": 127,
+      "abilities": [
+        64,
+        60
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 70,
+        "attack": 43,
+        "defense": 53,
+        "speed": 40,
+        "spAttack": 43,
+        "spDefense": 53
+      }
+    },
+    "368": {
+      "nationalDexId": 317,
+      "name": "Swalot",
+      "genderRatio": 127,
+      "abilities": [
+        64,
+        60
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 100,
+        "attack": 73,
+        "defense": 83,
+        "speed": 55,
+        "spAttack": 73,
+        "spDefense": 83
+      }
+    },
+    "369": {
+      "nationalDexId": 357,
+      "name": "Tropius",
+      "genderRatio": 127,
+      "abilities": [
+        34
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 99,
+        "attack": 68,
+        "defense": 83,
+        "speed": 51,
+        "spAttack": 72,
+        "spDefense": 87
+      }
+    },
+    "370": {
+      "nationalDexId": 293,
+      "name": "Whismur",
+      "genderRatio": 127,
+      "abilities": [
+        43
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 64,
+        "attack": 51,
+        "defense": 23,
+        "speed": 28,
+        "spAttack": 51,
+        "spDefense": 23
+      }
+    },
+    "371": {
+      "nationalDexId": 294,
+      "name": "Loudred",
+      "genderRatio": 127,
+      "abilities": [
+        43
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 84,
+        "attack": 71,
+        "defense": 43,
+        "speed": 48,
+        "spAttack": 71,
+        "spDefense": 43
+      }
+    },
+    "372": {
+      "nationalDexId": 295,
+      "name": "Exploud",
+      "genderRatio": 127,
+      "abilities": [
+        43
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 104,
+        "attack": 91,
+        "defense": 63,
+        "speed": 68,
+        "spAttack": 91,
+        "spDefense": 63
+      }
+    },
+    "373": {
+      "nationalDexId": 366,
+      "name": "Clamperl",
+      "genderRatio": 127,
+      "abilities": [
+        75
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 35,
+        "attack": 64,
+        "defense": 85,
+        "speed": 32,
+        "spAttack": 74,
+        "spDefense": 55
+      }
+    },
+    "374": {
+      "nationalDexId": 367,
+      "name": "Huntail",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 55,
+        "attack": 104,
+        "defense": 105,
+        "speed": 52,
+        "spAttack": 94,
+        "spDefense": 75
+      }
+    },
+    "375": {
+      "nationalDexId": 368,
+      "name": "Gorebyss",
+      "genderRatio": 127,
+      "abilities": [
+        33
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 55,
+        "attack": 84,
+        "defense": 105,
+        "speed": 52,
+        "spAttack": 114,
+        "spDefense": 75
+      }
+    },
+    "376": {
+      "nationalDexId": 359,
+      "name": "Absol",
+      "genderRatio": 127,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 130,
+        "defense": 60,
+        "speed": 75,
+        "spAttack": 75,
+        "spDefense": 60
+      }
+    },
+    "377": {
+      "nationalDexId": 353,
+      "name": "Shuppet",
+      "genderRatio": 127,
+      "abilities": [
+        15
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 44,
+        "attack": 75,
+        "defense": 35,
+        "speed": 45,
+        "spAttack": 63,
+        "spDefense": 33
+      }
+    },
+    "378": {
+      "nationalDexId": 354,
+      "name": "Banette",
+      "genderRatio": 127,
+      "abilities": [
+        15
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 64,
+        "attack": 115,
+        "defense": 65,
+        "speed": 65,
+        "spAttack": 83,
+        "spDefense": 63
+      }
+    },
+    "379": {
+      "nationalDexId": 336,
+      "name": "Seviper",
+      "genderRatio": 127,
+      "abilities": [
+        61
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 73,
+        "attack": 100,
+        "defense": 60,
+        "speed": 65,
+        "spAttack": 100,
+        "spDefense": 60
+      }
+    },
+    "380": {
+      "nationalDexId": 335,
+      "name": "Zangoose",
+      "genderRatio": 127,
+      "abilities": [
+        17
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 73,
+        "attack": 115,
+        "defense": 60,
+        "speed": 90,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "381": {
+      "nationalDexId": 369,
+      "name": "Relicanth",
+      "genderRatio": 31,
+      "abilities": [
+        33,
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 90,
+        "defense": 130,
+        "speed": 55,
+        "spAttack": 45,
+        "spDefense": 65
+      }
+    },
+    "382": {
+      "nationalDexId": 304,
+      "name": "Aron",
+      "genderRatio": 127,
+      "abilities": [
+        5,
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 70,
+        "defense": 100,
+        "speed": 30,
+        "spAttack": 40,
+        "spDefense": 40
+      }
+    },
+    "383": {
+      "nationalDexId": 305,
+      "name": "Lairon",
+      "genderRatio": 127,
+      "abilities": [
+        5,
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 140,
+        "speed": 40,
+        "spAttack": 50,
+        "spDefense": 50
+      }
+    },
+    "384": {
+      "nationalDexId": 306,
+      "name": "Aggron",
+      "genderRatio": 127,
+      "abilities": [
+        5,
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 180,
+        "speed": 50,
+        "spAttack": 60,
+        "spDefense": 60
+      }
+    },
+    "385": {
+      "nationalDexId": 351,
+      "name": "Castform",
+      "genderRatio": 127,
+      "abilities": [
+        59
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "baseStats": {
+        "hp": 70,
+        "attack": 70,
+        "defense": 70,
+        "speed": 70,
+        "spAttack": 70,
+        "spDefense": 70
+      }
+    },
+    "386": {
+      "nationalDexId": 313,
+      "name": "Volbeat",
+      "genderRatio": 0,
+      "abilities": [
+        35,
+        68
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 65,
+        "attack": 73,
+        "defense": 55,
+        "speed": 85,
+        "spAttack": 47,
+        "spDefense": 75
+      }
+    },
+    "387": {
+      "nationalDexId": 314,
+      "name": "Illumise",
+      "genderRatio": 254,
+      "abilities": [
+        12
+      ],
+      "growthRate": "GROWTH_FLUCTUATING",
+      "baseStats": {
+        "hp": 65,
+        "attack": 47,
+        "defense": 55,
+        "speed": 85,
+        "spAttack": 73,
+        "spDefense": 75
+      }
+    },
+    "388": {
+      "nationalDexId": 345,
+      "name": "Lileep",
+      "genderRatio": 31,
+      "abilities": [
+        21
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 66,
+        "attack": 41,
+        "defense": 77,
+        "speed": 23,
+        "spAttack": 61,
+        "spDefense": 87
+      }
+    },
+    "389": {
+      "nationalDexId": 346,
+      "name": "Cradily",
+      "genderRatio": 31,
+      "abilities": [
+        21
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 86,
+        "attack": 81,
+        "defense": 97,
+        "speed": 43,
+        "spAttack": 81,
+        "spDefense": 107
+      }
+    },
+    "390": {
+      "nationalDexId": 347,
+      "name": "Anorith",
+      "genderRatio": 31,
+      "abilities": [
+        4
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 45,
+        "attack": 95,
+        "defense": 50,
+        "speed": 75,
+        "spAttack": 40,
+        "spDefense": 50
+      }
+    },
+    "391": {
+      "nationalDexId": 348,
+      "name": "Armaldo",
+      "genderRatio": 31,
+      "abilities": [
+        4
+      ],
+      "growthRate": "GROWTH_ERRATIC",
+      "baseStats": {
+        "hp": 75,
+        "attack": 125,
+        "defense": 100,
+        "speed": 45,
+        "spAttack": 70,
+        "spDefense": 80
+      }
+    },
+    "392": {
+      "nationalDexId": 280,
+      "name": "Ralts",
+      "genderRatio": 127,
+      "abilities": [
+        28,
+        36
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 28,
+        "attack": 25,
+        "defense": 25,
+        "speed": 40,
+        "spAttack": 45,
+        "spDefense": 35
+      }
+    },
+    "393": {
+      "nationalDexId": 281,
+      "name": "Kirlia",
+      "genderRatio": 127,
+      "abilities": [
+        28,
+        36
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 38,
+        "attack": 35,
+        "defense": 35,
+        "speed": 50,
+        "spAttack": 65,
+        "spDefense": 55
+      }
+    },
+    "394": {
+      "nationalDexId": 282,
+      "name": "Gardevoir",
+      "genderRatio": 127,
+      "abilities": [
+        28,
+        36
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 68,
+        "attack": 65,
+        "defense": 65,
+        "speed": 80,
+        "spAttack": 125,
+        "spDefense": 115
+      }
+    },
+    "395": {
+      "nationalDexId": 371,
+      "name": "Bagon",
+      "genderRatio": 127,
+      "abilities": [
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 45,
+        "attack": 75,
+        "defense": 60,
+        "speed": 50,
+        "spAttack": 40,
+        "spDefense": 30
+      }
+    },
+    "396": {
+      "nationalDexId": 372,
+      "name": "Shelgon",
+      "genderRatio": 127,
+      "abilities": [
+        69
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 65,
+        "attack": 95,
+        "defense": 100,
+        "speed": 50,
+        "spAttack": 60,
+        "spDefense": 50
+      }
+    },
+    "397": {
+      "nationalDexId": 373,
+      "name": "Salamence",
+      "genderRatio": 127,
+      "abilities": [
+        22
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 95,
+        "attack": 135,
+        "defense": 80,
+        "speed": 100,
+        "spAttack": 110,
+        "spDefense": 80
+      }
+    },
+    "398": {
+      "nationalDexId": 374,
+      "name": "Beldum",
+      "genderRatio": 255,
+      "abilities": [
+        29
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 40,
+        "attack": 55,
+        "defense": 80,
+        "speed": 30,
+        "spAttack": 35,
+        "spDefense": 60
+      }
+    },
+    "399": {
+      "nationalDexId": 375,
+      "name": "Metang",
+      "genderRatio": 255,
+      "abilities": [
+        29
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 60,
+        "attack": 75,
+        "defense": 100,
+        "speed": 50,
+        "spAttack": 55,
+        "spDefense": 80
+      }
+    },
+    "400": {
+      "nationalDexId": 376,
+      "name": "Metagross",
+      "genderRatio": 255,
+      "abilities": [
+        29
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 135,
+        "defense": 130,
+        "speed": 70,
+        "spAttack": 95,
+        "spDefense": 90
+      }
+    },
+    "401": {
+      "nationalDexId": 377,
+      "name": "Regirock",
+      "genderRatio": 255,
+      "abilities": [
+        29
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 100,
+        "defense": 200,
+        "speed": 50,
+        "spAttack": 50,
+        "spDefense": 100
+      }
+    },
+    "402": {
+      "nationalDexId": 378,
+      "name": "Regice",
+      "genderRatio": 255,
+      "abilities": [
+        29
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 50,
+        "defense": 100,
+        "speed": 50,
+        "spAttack": 100,
+        "spDefense": 200
+      }
+    },
+    "403": {
+      "nationalDexId": 379,
+      "name": "Registeel",
+      "genderRatio": 255,
+      "abilities": [
+        29
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 75,
+        "defense": 150,
+        "speed": 50,
+        "spAttack": 75,
+        "spDefense": 150
+      }
+    },
+    "404": {
+      "nationalDexId": 382,
+      "name": "Kyogre",
+      "genderRatio": 255,
+      "abilities": [
+        2
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 90,
+        "speed": 90,
+        "spAttack": 150,
+        "spDefense": 140
+      }
+    },
+    "405": {
+      "nationalDexId": 383,
+      "name": "Groudon",
+      "genderRatio": 255,
+      "abilities": [
+        70
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 150,
+        "defense": 140,
+        "speed": 90,
+        "spAttack": 100,
+        "spDefense": 90
+      }
+    },
+    "406": {
+      "nationalDexId": 384,
+      "name": "Rayquaza",
+      "genderRatio": 255,
+      "abilities": [
+        77
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 105,
+        "attack": 150,
+        "defense": 90,
+        "speed": 95,
+        "spAttack": 150,
+        "spDefense": 90
+      }
+    },
+    "407": {
+      "nationalDexId": 380,
+      "name": "Latias",
+      "genderRatio": 254,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 90,
+        "speed": 110,
+        "spAttack": 110,
+        "spDefense": 130
+      }
+    },
+    "408": {
+      "nationalDexId": 381,
+      "name": "Latios",
+      "genderRatio": 0,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 80,
+        "attack": 90,
+        "defense": 80,
+        "speed": 110,
+        "spAttack": 130,
+        "spDefense": 110
+      }
+    },
+    "409": {
+      "nationalDexId": 385,
+      "name": "Jirachi",
+      "genderRatio": 255,
+      "abilities": [
+        32
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 100,
+        "speed": 100,
+        "spAttack": 100,
+        "spDefense": 100
+      }
+    },
+    "410": {
+      "nationalDexId": 386,
+      "name": "Deoxys",
+      "genderRatio": 255,
+      "abilities": [
+        46
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "baseStats": {
+        "hp": 50,
+        "attack": 95,
+        "defense": 90,
+        "speed": 180,
+        "spAttack": 95,
+        "spDefense": 90
+      }
+    },
+    "411": {
+      "nationalDexId": 358,
+      "name": "Chimecho",
+      "genderRatio": 127,
+      "abilities": [
+        26
+      ],
+      "growthRate": "GROWTH_FAST",
+      "baseStats": {
+        "hp": 65,
+        "attack": 50,
+        "defense": 70,
+        "speed": 65,
+        "spAttack": 95,
+        "spDefense": 80
+      }
+    }
+  },
+  "moves": {
+    "0": {
+      "name": "Unavailable",
+      "pp": 0
+    },
+    "1": {
+      "name": "Pound",
+      "pp": 35
+    },
+    "2": {
+      "name": "Karate Chop",
+      "pp": 25
+    },
+    "3": {
+      "name": "DoubleSlap",
+      "pp": 10
+    },
+    "4": {
+      "name": "Comet Punch",
+      "pp": 15
+    },
+    "5": {
+      "name": "Mega Punch",
+      "pp": 20
+    },
+    "6": {
+      "name": "Pay Day",
+      "pp": 20
+    },
+    "7": {
+      "name": "Fire Punch",
+      "pp": 15
+    },
+    "8": {
+      "name": "Ice Punch",
+      "pp": 15
+    },
+    "9": {
+      "name": "ThunderPunch",
+      "pp": 15
+    },
+    "10": {
+      "name": "Scratch",
+      "pp": 35
+    },
+    "11": {
+      "name": "ViceGrip",
+      "pp": 30
+    },
+    "12": {
+      "name": "Guillotine",
+      "pp": 5
+    },
+    "13": {
+      "name": "Razor Wind",
+      "pp": 10
+    },
+    "14": {
+      "name": "Swords Dance",
+      "pp": 30
+    },
+    "15": {
+      "name": "Cut",
+      "pp": 30
+    },
+    "16": {
+      "name": "Gust",
+      "pp": 35
+    },
+    "17": {
+      "name": "Wing Attack",
+      "pp": 35
+    },
+    "18": {
+      "name": "Whirlwind",
+      "pp": 20
+    },
+    "19": {
+      "name": "Fly",
+      "pp": 15
+    },
+    "20": {
+      "name": "Bind",
+      "pp": 20
+    },
+    "21": {
+      "name": "Slam",
+      "pp": 20
+    },
+    "22": {
+      "name": "Vine Whip",
+      "pp": 10
+    },
+    "23": {
+      "name": "Stomp",
+      "pp": 20
+    },
+    "24": {
+      "name": "Double Kick",
+      "pp": 30
+    },
+    "25": {
+      "name": "Mega Kick",
+      "pp": 5
+    },
+    "26": {
+      "name": "Jump Kick",
+      "pp": 25
+    },
+    "27": {
+      "name": "Rolling Kick",
+      "pp": 15
+    },
+    "28": {
+      "name": "Sand Attack",
+      "pp": 15
+    },
+    "29": {
+      "name": "Headbutt",
+      "pp": 15
+    },
+    "30": {
+      "name": "Horn Attack",
+      "pp": 25
+    },
+    "31": {
+      "name": "Fury Attack",
+      "pp": 20
+    },
+    "32": {
+      "name": "Horn Drill",
+      "pp": 5
+    },
+    "33": {
+      "name": "Tackle",
+      "pp": 35
+    },
+    "34": {
+      "name": "Body Slam",
+      "pp": 15
+    },
+    "35": {
+      "name": "Wrap",
+      "pp": 20
+    },
+    "36": {
+      "name": "Take Down",
+      "pp": 20
+    },
+    "37": {
+      "name": "Thrash",
+      "pp": 20
+    },
+    "38": {
+      "name": "Double Edge",
+      "pp": 15
+    },
+    "39": {
+      "name": "Tail Whip",
+      "pp": 30
+    },
+    "40": {
+      "name": "Poison Sting",
+      "pp": 35
+    },
+    "41": {
+      "name": "Twineedle",
+      "pp": 20
+    },
+    "42": {
+      "name": "Pin Missile",
+      "pp": 20
+    },
+    "43": {
+      "name": "Leer",
+      "pp": 30
+    },
+    "44": {
+      "name": "Bite",
+      "pp": 25
+    },
+    "45": {
+      "name": "Growl",
+      "pp": 40
+    },
+    "46": {
+      "name": "Roar",
+      "pp": 20
+    },
+    "47": {
+      "name": "Sing",
+      "pp": 15
+    },
+    "48": {
+      "name": "Supersonic",
+      "pp": 20
+    },
+    "49": {
+      "name": "SonicBoom",
+      "pp": 20
+    },
+    "50": {
+      "name": "Disable",
+      "pp": 20
+    },
+    "51": {
+      "name": "Acid",
+      "pp": 30
+    },
+    "52": {
+      "name": "Ember",
+      "pp": 25
+    },
+    "53": {
+      "name": "Flamethrower",
+      "pp": 15
+    },
+    "54": {
+      "name": "Mist",
+      "pp": 30
+    },
+    "55": {
+      "name": "Water Gun",
+      "pp": 25
+    },
+    "56": {
+      "name": "Hydro Pump",
+      "pp": 5
+    },
+    "57": {
+      "name": "Surf",
+      "pp": 15
+    },
+    "58": {
+      "name": "Ice Beam",
+      "pp": 10
+    },
+    "59": {
+      "name": "Blizzard",
+      "pp": 5
+    },
+    "60": {
+      "name": "Psybeam",
+      "pp": 20
+    },
+    "61": {
+      "name": "Bubble Beam",
+      "pp": 20
+    },
+    "62": {
+      "name": "Aurora Beam",
+      "pp": 20
+    },
+    "63": {
+      "name": "Hyper Beam",
+      "pp": 5
+    },
+    "64": {
+      "name": "Peck",
+      "pp": 35
+    },
+    "65": {
+      "name": "Drill Peck",
+      "pp": 20
+    },
+    "66": {
+      "name": "Submission",
+      "pp": 25
+    },
+    "67": {
+      "name": "Low Kick",
+      "pp": 20
+    },
+    "68": {
+      "name": "Counter",
+      "pp": 20
+    },
+    "69": {
+      "name": "Seismic Toss",
+      "pp": 20
+    },
+    "70": {
+      "name": "Strength",
+      "pp": 15
+    },
+    "71": {
+      "name": "Absorb",
+      "pp": 20
+    },
+    "72": {
+      "name": "Mega Drain",
+      "pp": 10
+    },
+    "73": {
+      "name": "Leech Seed",
+      "pp": 10
+    },
+    "74": {
+      "name": "Growth",
+      "pp": 40
+    },
+    "75": {
+      "name": "Razor Leaf",
+      "pp": 25
+    },
+    "76": {
+      "name": "SolarBeam",
+      "pp": 10
+    },
+    "77": {
+      "name": "Poison Powder",
+      "pp": 35
+    },
+    "78": {
+      "name": "Stun Spore",
+      "pp": 30
+    },
+    "79": {
+      "name": "Sleep Powder",
+      "pp": 15
+    },
+    "80": {
+      "name": "Petal Dance",
+      "pp": 20
+    },
+    "81": {
+      "name": "String Shot",
+      "pp": 40
+    },
+    "82": {
+      "name": "Dragon Rage",
+      "pp": 10
+    },
+    "83": {
+      "name": "Fire Spin",
+      "pp": 15
+    },
+    "84": {
+      "name": "Thunder Shock",
+      "pp": 30
+    },
+    "85": {
+      "name": "Thunderbolt",
+      "pp": 15
+    },
+    "86": {
+      "name": "Thunder Wave",
+      "pp": 20
+    },
+    "87": {
+      "name": "Thunder",
+      "pp": 10
+    },
+    "88": {
+      "name": "Rock Throw",
+      "pp": 15
+    },
+    "89": {
+      "name": "Earthquake",
+      "pp": 10
+    },
+    "90": {
+      "name": "Fissure",
+      "pp": 5
+    },
+    "91": {
+      "name": "Dig",
+      "pp": 10
+    },
+    "92": {
+      "name": "Toxic",
+      "pp": 10
+    },
+    "93": {
+      "name": "Confusion",
+      "pp": 25
+    },
+    "94": {
+      "name": "Psychic",
+      "pp": 10
+    },
+    "95": {
+      "name": "Hypnosis",
+      "pp": 20
+    },
+    "96": {
+      "name": "Meditate",
+      "pp": 40
+    },
+    "97": {
+      "name": "Agility",
+      "pp": 30
+    },
+    "98": {
+      "name": "Quick Attack",
+      "pp": 30
+    },
+    "99": {
+      "name": "Rage",
+      "pp": 20
+    },
+    "100": {
+      "name": "Teleport",
+      "pp": 20
+    },
+    "101": {
+      "name": "Night Shade",
+      "pp": 15
+    },
+    "102": {
+      "name": "Mimic",
+      "pp": 10
+    },
+    "103": {
+      "name": "Screech",
+      "pp": 40
+    },
+    "104": {
+      "name": "Double Team",
+      "pp": 15
+    },
+    "105": {
+      "name": "Recover",
+      "pp": 20
+    },
+    "106": {
+      "name": "Harden",
+      "pp": 30
+    },
+    "107": {
+      "name": "Minimize",
+      "pp": 20
+    },
+    "108": {
+      "name": "Smokescreen",
+      "pp": 20
+    },
+    "109": {
+      "name": "Confuse Ray",
+      "pp": 10
+    },
+    "110": {
+      "name": "Withdraw",
+      "pp": 40
+    },
+    "111": {
+      "name": "Defense Curl",
+      "pp": 40
+    },
+    "112": {
+      "name": "Barrier",
+      "pp": 30
+    },
+    "113": {
+      "name": "Light Screen",
+      "pp": 30
+    },
+    "114": {
+      "name": "Haze",
+      "pp": 30
+    },
+    "115": {
+      "name": "Reflect",
+      "pp": 20
+    },
+    "116": {
+      "name": "Focus Energy",
+      "pp": 30
+    },
+    "117": {
+      "name": "Bide",
+      "pp": 10
+    },
+    "118": {
+      "name": "Metronome",
+      "pp": 10
+    },
+    "119": {
+      "name": "Mirror Move",
+      "pp": 20
+    },
+    "120": {
+      "name": "Self Destruct",
+      "pp": 5
+    },
+    "121": {
+      "name": "Egg Bomb",
+      "pp": 10
+    },
+    "122": {
+      "name": "Lick",
+      "pp": 30
+    },
+    "123": {
+      "name": "Smog",
+      "pp": 20
+    },
+    "124": {
+      "name": "Sludge",
+      "pp": 20
+    },
+    "125": {
+      "name": "Bone Club",
+      "pp": 20
+    },
+    "126": {
+      "name": "Fire Blast",
+      "pp": 5
+    },
+    "127": {
+      "name": "Waterfall",
+      "pp": 15
+    },
+    "128": {
+      "name": "Clamp",
+      "pp": 10
+    },
+    "129": {
+      "name": "Swift",
+      "pp": 20
+    },
+    "130": {
+      "name": "Skull Bash",
+      "pp": 15
+    },
+    "131": {
+      "name": "Spike Cannon",
+      "pp": 15
+    },
+    "132": {
+      "name": "Constrict",
+      "pp": 35
+    },
+    "133": {
+      "name": "Amnesia",
+      "pp": 20
+    },
+    "134": {
+      "name": "Kinesis",
+      "pp": 15
+    },
+    "135": {
+      "name": "Soft Boiled",
+      "pp": 10
+    },
+    "136": {
+      "name": "Hi Jump Kick",
+      "pp": 20
+    },
+    "137": {
+      "name": "Glare",
+      "pp": 30
+    },
+    "138": {
+      "name": "Dream Eater",
+      "pp": 15
+    },
+    "139": {
+      "name": "Poison Gas",
+      "pp": 40
+    },
+    "140": {
+      "name": "Barrage",
+      "pp": 20
+    },
+    "141": {
+      "name": "Leech Life",
+      "pp": 15
+    },
+    "142": {
+      "name": "Lovely Kiss",
+      "pp": 10
+    },
+    "143": {
+      "name": "Sky Attack",
+      "pp": 5
+    },
+    "144": {
+      "name": "Transform",
+      "pp": 10
+    },
+    "145": {
+      "name": "Bubble",
+      "pp": 30
+    },
+    "146": {
+      "name": "Dizzy Punch",
+      "pp": 10
+    },
+    "147": {
+      "name": "Spore",
+      "pp": 15
+    },
+    "148": {
+      "name": "Flash",
+      "pp": 20
+    },
+    "149": {
+      "name": "Psywave",
+      "pp": 15
+    },
+    "150": {
+      "name": "Splash",
+      "pp": 40
+    },
+    "151": {
+      "name": "Acid Armor",
+      "pp": 40
+    },
+    "152": {
+      "name": "Crabhammer",
+      "pp": 10
+    },
+    "153": {
+      "name": "Explosion",
+      "pp": 5
+    },
+    "154": {
+      "name": "Fury Swipes",
+      "pp": 15
+    },
+    "155": {
+      "name": "Bonemerang",
+      "pp": 10
+    },
+    "156": {
+      "name": "Rest",
+      "pp": 10
+    },
+    "157": {
+      "name": "Rock Slide",
+      "pp": 10
+    },
+    "158": {
+      "name": "Hyper Fang",
+      "pp": 15
+    },
+    "159": {
+      "name": "Sharpen",
+      "pp": 30
+    },
+    "160": {
+      "name": "Conversion",
+      "pp": 30
+    },
+    "161": {
+      "name": "Tri Attack",
+      "pp": 10
+    },
+    "162": {
+      "name": "Super Fang",
+      "pp": 10
+    },
+    "163": {
+      "name": "Slash",
+      "pp": 20
+    },
+    "164": {
+      "name": "Substitute",
+      "pp": 10
+    },
+    "165": {
+      "name": "Struggle",
+      "pp": 1
+    },
+    "166": {
+      "name": "Sketch",
+      "pp": 1
+    },
+    "167": {
+      "name": "Triple Kick",
+      "pp": 10
+    },
+    "168": {
+      "name": "Thief",
+      "pp": 10
+    },
+    "169": {
+      "name": "Spider Web",
+      "pp": 10
+    },
+    "170": {
+      "name": "Mind Reader",
+      "pp": 5
+    },
+    "171": {
+      "name": "Nightmare",
+      "pp": 15
+    },
+    "172": {
+      "name": "Flame Wheel",
+      "pp": 25
+    },
+    "173": {
+      "name": "Snore",
+      "pp": 15
+    },
+    "174": {
+      "name": "Curse",
+      "pp": 10
+    },
+    "175": {
+      "name": "Flail",
+      "pp": 15
+    },
+    "176": {
+      "name": "Conversion 2",
+      "pp": 30
+    },
+    "177": {
+      "name": "Aeroblast",
+      "pp": 5
+    },
+    "178": {
+      "name": "Cotton Spore",
+      "pp": 40
+    },
+    "179": {
+      "name": "Reversal",
+      "pp": 15
+    },
+    "180": {
+      "name": "Spite",
+      "pp": 10
+    },
+    "181": {
+      "name": "Powder Snow",
+      "pp": 25
+    },
+    "182": {
+      "name": "Protect",
+      "pp": 10
+    },
+    "183": {
+      "name": "Mach Punch",
+      "pp": 30
+    },
+    "184": {
+      "name": "Scary Face",
+      "pp": 10
+    },
+    "185": {
+      "name": "Faint Attack",
+      "pp": 20
+    },
+    "186": {
+      "name": "Sweet Kiss",
+      "pp": 10
+    },
+    "187": {
+      "name": "Belly Drum",
+      "pp": 10
+    },
+    "188": {
+      "name": "Sludge Bomb",
+      "pp": 10
+    },
+    "189": {
+      "name": "Mud Slap",
+      "pp": 10
+    },
+    "190": {
+      "name": "Octazooka",
+      "pp": 10
+    },
+    "191": {
+      "name": "Spikes",
+      "pp": 20
+    },
+    "192": {
+      "name": "Zap Cannon",
+      "pp": 5
+    },
+    "193": {
+      "name": "Foresight",
+      "pp": 40
+    },
+    "194": {
+      "name": "Destiny Bond",
+      "pp": 5
+    },
+    "195": {
+      "name": "Perish Song",
+      "pp": 5
+    },
+    "196": {
+      "name": "Icy Wind",
+      "pp": 15
+    },
+    "197": {
+      "name": "Detect",
+      "pp": 5
+    },
+    "198": {
+      "name": "Bone Rush",
+      "pp": 10
+    },
+    "199": {
+      "name": "Lock On",
+      "pp": 5
+    },
+    "200": {
+      "name": "Outrage",
+      "pp": 15
+    },
+    "201": {
+      "name": "Sandstorm",
+      "pp": 10
+    },
+    "202": {
+      "name": "Giga Drain",
+      "pp": 5
+    },
+    "203": {
+      "name": "Endure",
+      "pp": 10
+    },
+    "204": {
+      "name": "Charm",
+      "pp": 20
+    },
+    "205": {
+      "name": "Rollout",
+      "pp": 20
+    },
+    "206": {
+      "name": "False Swipe",
+      "pp": 40
+    },
+    "207": {
+      "name": "Swagger",
+      "pp": 15
+    },
+    "208": {
+      "name": "Milk Drink",
+      "pp": 10
+    },
+    "209": {
+      "name": "Spark",
+      "pp": 20
+    },
+    "210": {
+      "name": "Fury Cutter",
+      "pp": 20
+    },
+    "211": {
+      "name": "Steel Wing",
+      "pp": 25
+    },
+    "212": {
+      "name": "Mean Look",
+      "pp": 5
+    },
+    "213": {
+      "name": "Attract",
+      "pp": 15
+    },
+    "214": {
+      "name": "Sleep Talk",
+      "pp": 10
+    },
+    "215": {
+      "name": "Heal Bell",
+      "pp": 5
+    },
+    "216": {
+      "name": "Return",
+      "pp": 20
+    },
+    "217": {
+      "name": "Present",
+      "pp": 15
+    },
+    "218": {
+      "name": "Frustration",
+      "pp": 20
+    },
+    "219": {
+      "name": "Safeguard",
+      "pp": 25
+    },
+    "220": {
+      "name": "Pain Split",
+      "pp": 20
+    },
+    "221": {
+      "name": "Sacred Fire",
+      "pp": 5
+    },
+    "222": {
+      "name": "Magnitude",
+      "pp": 30
+    },
+    "223": {
+      "name": "DynamicPunch",
+      "pp": 5
+    },
+    "224": {
+      "name": "Megahorn",
+      "pp": 10
+    },
+    "225": {
+      "name": "DragonBreath",
+      "pp": 20
+    },
+    "226": {
+      "name": "Baton Pass",
+      "pp": 40
+    },
+    "227": {
+      "name": "Encore",
+      "pp": 5
+    },
+    "228": {
+      "name": "Pursuit",
+      "pp": 20
+    },
+    "229": {
+      "name": "Rapid Spin",
+      "pp": 40
+    },
+    "230": {
+      "name": "Sweet Scent",
+      "pp": 20
+    },
+    "231": {
+      "name": "Iron Tail",
+      "pp": 15
+    },
+    "232": {
+      "name": "Metal Claw",
+      "pp": 35
+    },
+    "233": {
+      "name": "Vital Throw",
+      "pp": 10
+    },
+    "234": {
+      "name": "Morning Sun",
+      "pp": 5
+    },
+    "235": {
+      "name": "Synthesis",
+      "pp": 5
+    },
+    "236": {
+      "name": "Moonlight",
+      "pp": 5
+    },
+    "237": {
+      "name": "Hidden Power",
+      "pp": 15
+    },
+    "238": {
+      "name": "Cross Chop",
+      "pp": 5
+    },
+    "239": {
+      "name": "Twister",
+      "pp": 20
+    },
+    "240": {
+      "name": "Rain Dance",
+      "pp": 5
+    },
+    "241": {
+      "name": "Sunny Day",
+      "pp": 5
+    },
+    "242": {
+      "name": "Crunch",
+      "pp": 15
+    },
+    "243": {
+      "name": "Mirror Coat",
+      "pp": 20
+    },
+    "244": {
+      "name": "Psych Up",
+      "pp": 10
+    },
+    "245": {
+      "name": "ExtremeSpeed",
+      "pp": 5
+    },
+    "246": {
+      "name": "AncientPower",
+      "pp": 5
+    },
+    "247": {
+      "name": "Shadow Ball",
+      "pp": 15
+    },
+    "248": {
+      "name": "Future Sight",
+      "pp": 15
+    },
+    "249": {
+      "name": "Rock Smash",
+      "pp": 15
+    },
+    "250": {
+      "name": "Whirlpool",
+      "pp": 15
+    },
+    "251": {
+      "name": "Beat Up",
+      "pp": 10
+    },
+    "252": {
+      "name": "Fake Out",
+      "pp": 10
+    },
+    "253": {
+      "name": "Uproar",
+      "pp": 10
+    },
+    "254": {
+      "name": "Stockpile",
+      "pp": 10
+    },
+    "255": {
+      "name": "Spit Up",
+      "pp": 10
+    },
+    "256": {
+      "name": "Swallow",
+      "pp": 10
+    },
+    "257": {
+      "name": "Heat Wave",
+      "pp": 10
+    },
+    "258": {
+      "name": "Hail",
+      "pp": 10
+    },
+    "259": {
+      "name": "Torment",
+      "pp": 15
+    },
+    "260": {
+      "name": "Flatter",
+      "pp": 15
+    },
+    "261": {
+      "name": "Will O Wisp",
+      "pp": 15
+    },
+    "262": {
+      "name": "Memento",
+      "pp": 10
+    },
+    "263": {
+      "name": "Facade",
+      "pp": 20
+    },
+    "264": {
+      "name": "Focus Punch",
+      "pp": 20
+    },
+    "265": {
+      "name": "SmellingSalt",
+      "pp": 10
+    },
+    "266": {
+      "name": "Follow Me",
+      "pp": 20
+    },
+    "267": {
+      "name": "Nature Power",
+      "pp": 20
+    },
+    "268": {
+      "name": "Charge",
+      "pp": 20
+    },
+    "269": {
+      "name": "Taunt",
+      "pp": 20
+    },
+    "270": {
+      "name": "Helping Hand",
+      "pp": 20
+    },
+    "271": {
+      "name": "Trick",
+      "pp": 10
+    },
+    "272": {
+      "name": "Role Play",
+      "pp": 10
+    },
+    "273": {
+      "name": "Wish",
+      "pp": 10
+    },
+    "274": {
+      "name": "Assist",
+      "pp": 20
+    },
+    "275": {
+      "name": "Ingrain",
+      "pp": 20
+    },
+    "276": {
+      "name": "Superpower",
+      "pp": 5
+    },
+    "277": {
+      "name": "Magic Coat",
+      "pp": 15
+    },
+    "278": {
+      "name": "Recycle",
+      "pp": 10
+    },
+    "279": {
+      "name": "Revenge",
+      "pp": 10
+    },
+    "280": {
+      "name": "Brick Break",
+      "pp": 15
+    },
+    "281": {
+      "name": "Yawn",
+      "pp": 10
+    },
+    "282": {
+      "name": "Knock Off",
+      "pp": 20
+    },
+    "283": {
+      "name": "Endeavor",
+      "pp": 5
+    },
+    "284": {
+      "name": "Eruption",
+      "pp": 5
+    },
+    "285": {
+      "name": "Skill Swap",
+      "pp": 10
+    },
+    "286": {
+      "name": "Imprison",
+      "pp": 10
+    },
+    "287": {
+      "name": "Refresh",
+      "pp": 20
+    },
+    "288": {
+      "name": "Grudge",
+      "pp": 5
+    },
+    "289": {
+      "name": "Snatch",
+      "pp": 10
+    },
+    "290": {
+      "name": "Secret Power",
+      "pp": 20
+    },
+    "291": {
+      "name": "Dive",
+      "pp": 10
+    },
+    "292": {
+      "name": "Arm Thrust",
+      "pp": 20
+    },
+    "293": {
+      "name": "Camouflage",
+      "pp": 20
+    },
+    "294": {
+      "name": "Tail Glow",
+      "pp": 20
+    },
+    "295": {
+      "name": "Luster Purge",
+      "pp": 5
+    },
+    "296": {
+      "name": "Mist Ball",
+      "pp": 5
+    },
+    "297": {
+      "name": "FeatherDance",
+      "pp": 15
+    },
+    "298": {
+      "name": "Teeter Dance",
+      "pp": 20
+    },
+    "299": {
+      "name": "Blaze Kick",
+      "pp": 10
+    },
+    "300": {
+      "name": "Mud Sport",
+      "pp": 15
+    },
+    "301": {
+      "name": "Ice Ball",
+      "pp": 20
+    },
+    "302": {
+      "name": "Needle Arm",
+      "pp": 15
+    },
+    "303": {
+      "name": "Slack Off",
+      "pp": 10
+    },
+    "304": {
+      "name": "Hyper Voice",
+      "pp": 10
+    },
+    "305": {
+      "name": "Poison Fang",
+      "pp": 15
+    },
+    "306": {
+      "name": "Crush Claw",
+      "pp": 10
+    },
+    "307": {
+      "name": "Blast Burn",
+      "pp": 5
+    },
+    "308": {
+      "name": "Hydro Cannon",
+      "pp": 5
+    },
+    "309": {
+      "name": "Meteor Mash",
+      "pp": 10
+    },
+    "310": {
+      "name": "Astonish",
+      "pp": 15
+    },
+    "311": {
+      "name": "Weather Ball",
+      "pp": 10
+    },
+    "312": {
+      "name": "Aromatherapy",
+      "pp": 5
+    },
+    "313": {
+      "name": "Fake Tears",
+      "pp": 20
+    },
+    "314": {
+      "name": "Air Cutter",
+      "pp": 25
+    },
+    "315": {
+      "name": "Overheat",
+      "pp": 5
+    },
+    "316": {
+      "name": "Odor Sleuth",
+      "pp": 40
+    },
+    "317": {
+      "name": "Rock Tomb",
+      "pp": 10
+    },
+    "318": {
+      "name": "Silver Wind",
+      "pp": 5
+    },
+    "319": {
+      "name": "Metal Sound",
+      "pp": 40
+    },
+    "320": {
+      "name": "GrassWhistle",
+      "pp": 15
+    },
+    "321": {
+      "name": "Tickle",
+      "pp": 20
+    },
+    "322": {
+      "name": "Cosmic Power",
+      "pp": 20
+    },
+    "323": {
+      "name": "Water Spout",
+      "pp": 5
+    },
+    "324": {
+      "name": "Signal Beam",
+      "pp": 15
+    },
+    "325": {
+      "name": "Shadow Punch",
+      "pp": 20
+    },
+    "326": {
+      "name": "Extrasensory",
+      "pp": 30
+    },
+    "327": {
+      "name": "Sky Uppercut",
+      "pp": 15
+    },
+    "328": {
+      "name": "Sand Tomb",
+      "pp": 15
+    },
+    "329": {
+      "name": "Sheer Cold",
+      "pp": 5
+    },
+    "330": {
+      "name": "Muddy Water",
+      "pp": 10
+    },
+    "331": {
+      "name": "Bullet Seed",
+      "pp": 30
+    },
+    "332": {
+      "name": "Aerial Ace",
+      "pp": 20
+    },
+    "333": {
+      "name": "Icicle Spear",
+      "pp": 30
+    },
+    "334": {
+      "name": "Iron Defense",
+      "pp": 15
+    },
+    "335": {
+      "name": "Block",
+      "pp": 5
+    },
+    "336": {
+      "name": "Howl",
+      "pp": 40
+    },
+    "337": {
+      "name": "Dragon Claw",
+      "pp": 15
+    },
+    "338": {
+      "name": "Frenzy Plant",
+      "pp": 5
+    },
+    "339": {
+      "name": "Bulk Up",
+      "pp": 20
+    },
+    "340": {
+      "name": "Bounce",
+      "pp": 5
+    },
+    "341": {
+      "name": "Mud Shot",
+      "pp": 15
+    },
+    "342": {
+      "name": "Poison Tail",
+      "pp": 25
+    },
+    "343": {
+      "name": "Covet",
+      "pp": 40
+    },
+    "344": {
+      "name": "Volt Tackle",
+      "pp": 15
+    },
+    "345": {
+      "name": "Magical Leaf",
+      "pp": 20
+    },
+    "346": {
+      "name": "Water Sport",
+      "pp": 15
+    },
+    "347": {
+      "name": "Calm Mind",
+      "pp": 20
+    },
+    "348": {
+      "name": "Leaf Blade",
+      "pp": 15
+    },
+    "349": {
+      "name": "Dragon Dance",
+      "pp": 20
+    },
+    "350": {
+      "name": "Rock Blast",
+      "pp": 10
+    },
+    "351": {
+      "name": "Shock Wave",
+      "pp": 20
+    },
+    "352": {
+      "name": "Water Pulse",
+      "pp": 20
+    },
+    "353": {
+      "name": "Doom Desire",
+      "pp": 5
+    },
+    "354": {
+      "name": "Psycho Boost",
+      "pp": 5
+    }
+  },
+  "abilityNames": {
+    "0": "None",
+    "1": "Stench",
+    "2": "Drizzle",
+    "3": "Speed Boost",
+    "4": "Battle Armor",
+    "5": "Sturdy",
+    "6": "Damp",
+    "7": "Limber",
+    "8": "Sand Veil",
+    "9": "Static",
+    "10": "Volt Absorb",
+    "11": "Water Absorb",
+    "12": "Oblivious",
+    "13": "Cloud Nine",
+    "14": "Compound Eyes",
+    "15": "Insomnia",
+    "16": "Color Change",
+    "17": "Immunity",
+    "18": "Flash Fire",
+    "19": "Shield Dust",
+    "20": "Own Tempo",
+    "21": "Suction Cups",
+    "22": "Intimidate",
+    "23": "Shadow Tag",
+    "24": "Rough Skin",
+    "25": "Wonder Guard",
+    "26": "Levitate",
+    "27": "Effect Spore",
+    "28": "Synchronize",
+    "29": "Clear Body",
+    "30": "Natural Cure",
+    "31": "Lightning Rod",
+    "32": "Serene Grace",
+    "33": "Swift Swim",
+    "34": "Chlorophyll",
+    "35": "Illuminate",
+    "36": "Trace",
+    "37": "Huge Power",
+    "38": "Poison Point",
+    "39": "Inner Focus",
+    "40": "Magma Armor",
+    "41": "Water Veil",
+    "42": "Magnet Pull",
+    "43": "Soundproof",
+    "44": "Rain Dish",
+    "45": "Sand Stream",
+    "46": "Pressure",
+    "47": "Thick Fat",
+    "48": "Early Bird",
+    "49": "Flame Body",
+    "50": "Run Away",
+    "51": "Keen Eye",
+    "52": "Hyper Cutter",
+    "53": "Pickup",
+    "54": "Truant",
+    "55": "Hustle",
+    "56": "Cute Charm",
+    "57": "Plus",
+    "58": "Minus",
+    "59": "Forecast",
+    "60": "Sticky Hold",
+    "61": "Shed Skin",
+    "62": "Guts",
+    "63": "Marvel Scale",
+    "64": "Liquid Ooze",
+    "65": "Overgrow",
+    "66": "Blaze",
+    "67": "Torrent",
+    "68": "Swarm",
+    "69": "Rock Head",
+    "70": "Drought",
+    "71": "Arena Trap",
+    "72": "Vital Spirit",
+    "73": "White Smoke",
+    "74": "Pure Power",
+    "75": "Shell Armor",
+    "76": "Cacophony",
+    "77": "Air Lock"
+  }
+}

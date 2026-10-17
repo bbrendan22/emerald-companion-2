@@ -1,0 +1,16 @@
+/* Shared section accents: medium for primary accents, neon for small highlights,
+   dark mixed with transparency for graphite surfaces and borders. */
+:root {
+  --trainer-neon: #39FF9C;
+  --trainer-medium: #10C778;
+  --trainer-dark: #0A8F54;
+  --pokemon-neon: #3FA9FF;
+  --pokemon-medium: #1E88FF;
+  --pokemon-dark: #0F5FC7;
+  --battle-neon: #FF6B6B;
+  --battle-medium: #E53935;
+  --battle-dark: #B71C1C;
+  --resources-neon: #FFD85C;
+  --resources-medium: #F4B400;
+  --resources-dark: #C89000;
+}

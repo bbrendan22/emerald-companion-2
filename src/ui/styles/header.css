@@ -1,0 +1,5 @@
+.header { background: #1e2125; border-bottom: 1px solid var(--accent); padding-top: env(safe-area-inset-top); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 8px; max-width: 1120px; margin: auto; padding: 14px max(12px, env(safe-area-inset-right)) 14px max(12px, env(safe-area-inset-left)); }
+.brand { display: flex; align-items: center; justify-content: center; gap: 9px; font-size: clamp(.85rem, 3.7vw, 1rem); font-weight: 650; letter-spacing: -.025em; }
+.brand-pokeball { width: 26px; height: 26px; object-fit: contain; flex-shrink: 0; }
+@media (min-width: 700px) { .header-inner { padding: 18px 32px; } .brand { font-size: 1.1rem; gap: 12px; } }

@@ -1,0 +1,49 @@
+node_modules/
+/test/fixtures/real/*
+!/test/fixtures/real/README.md
+dist/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Personal game saves and emulator states (including backup variants)
+*.[sS][aA][vV]*
+*.[sS][rR][mM]*
+*.sa1
+*.sa2
+*.sgm
+*.state*
+*.ss[0-9]*
+*.rtc
+*.fla
+*.eep
+*.dsv
+*.sps
+*.xps
+*.gci
+*.gsv
+*.private.*
+
+# Local audit reports and screenshots containing imported save data
+/artifacts/
+/REAL_SAVE_VALIDATION.md
+
+# Local backups, temporary files, and OS metadata
+backups/
+backup/
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db

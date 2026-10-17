@@ -1,0 +1,13 @@
+.frontier-totals { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 10px 0 12px; }
+.frontier-totals div { display: flex; align-items: baseline; gap: 8px; }
+.frontier-totals dt { font-size: .75rem; color: #a2a9b4; }
+.frontier-totals dd { margin: 0; font-size: .9375rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.frontier-silver dd { color: #d2dae4; }
+.frontier-gold dd { color: var(--resources-neon); }
+.frontier-symbols { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; list-style: none; margin: 0; padding: 0; }
+.frontier-symbols li { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
+.frontier-symbols img { width: 64px; height: auto; max-width: 100%; object-fit: contain; margin-bottom: 8px; }
+.frontier-symbols strong { font-size: .625rem; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
+.frontier-symbols span { font-size: .625rem; color: #a2a9b4; line-height: 1.7; }
+.frontier-unearned { filter: grayscale(1); opacity: .42; }
+@media (min-width: 600px) { .frontier-symbols { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; } .frontier-symbols img { width: 72px; } .frontier-symbols strong { font-size: .75rem; } }
