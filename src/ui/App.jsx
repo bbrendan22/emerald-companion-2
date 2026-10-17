@@ -7,9 +7,11 @@ import TrainerPage from './pages/TrainerPage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx';
 import PokemonPage from './pages/PokemonPage.jsx';
 import useImportedSave from './useImportedSave.js';
+import useTrainerShowcase from './useTrainerShowcase.js';
 
 export default function App() {
   const importedSave = useImportedSave();
+  const showcase = useTrainerShowcase();
   const [pageId, setPageId] = useState('trainer');
   const [subpage, setSubpage] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -30,9 +32,9 @@ export default function App() {
     <NavigationDrawer open={drawerOpen} activeId={pageId} onSelect={navigate} onClose={() => setDrawerOpen(false)} />
     <main id="main" tabIndex="-1" aria-label={page.title} className={`page ${pageId === 'trainer' ? 'trainer-page' : pageId === 'pokemon' ? 'pokemon-page' : ''}`}>
       {pageId !== 'trainer' && pageId !== 'pokemon' && <h1 ref={heading} tabIndex="-1">{page.title}</h1>}
-      {pageId === 'trainer' ? <TrainerPage {...importedSave} onImport={() => navigate('settings')} />
+      {pageId === 'trainer' ? <TrainerPage showcase={showcase} {...importedSave} onImport={() => navigate('settings')} />
         : pageId === 'pokemon' ? <PokemonPage snapshot={importedSave.snapshot} onSubpageChange={setSubpage} />
-        : pageId === 'settings' ? <SettingsPage {...importedSave} />
+        : pageId === 'settings' ? <SettingsPage showcase={showcase} {...importedSave} />
         : <div className="placeholder"><span className="placeholder-mark" aria-hidden="true" /><p>Your {pageId === 'pokemon' ? 'Pokémon collection' : pageId === 'battle' ? 'battle tools' : 'reference library'} will live here.</p></div>}
     </main>
   </div>;

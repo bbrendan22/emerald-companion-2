@@ -1,3 +1,4 @@
+@import './section-heading.css';
 .pokemon-profile { --profile-divider: #17191c; max-width: 960px; margin: 0 auto; min-width: 0; }
 .profile-showcase, .profile-content { background: #24272d; border: 1px solid transparent; border-radius: 0; min-width: 0; }
 .profile-showcase { background: linear-gradient(135deg, #2a2e34, #202328); display: grid; grid-template-columns: minmax(0, 47%) minmax(0, 1fr); align-items: center; gap: 6px; padding: 0 10px 0 2px; margin-bottom: 8px; }
@@ -19,7 +20,7 @@
 .profile-side-stack > * + * { border-top: 1px solid var(--profile-divider); }
 .profile-info, .profile-lower-stack .profile-origin { flex: 1; }
 .profile-card { border-radius: 0; padding: 12px; min-width: 0; overflow-wrap: anywhere; }
-.profile-card h2, .profile-info .profile-fields dt { color: #cce5ff; font-size: .8rem; font-weight: 650; line-height: 1.35; width: fit-content; max-width: 100%; margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid #ffffff12; }
+
 .profile-card p { font-size: .8rem; line-height: 1.5; margin: 0; }
 .profile-fields { display: grid; grid-template-columns: minmax(0,1fr); gap: 10px; margin: 0; }
 .profile-fields dt { font-size: .68rem; color: #9da9b9; margin-bottom: 3px; }

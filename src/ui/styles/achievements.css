@@ -1,29 +1,5 @@
-.badge-row { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 3px; list-style: none; padding: 0; margin: 12px 0 0; }
+.badge-row { display: grid; list-style: none; padding: 0; margin: 0; }
 .badge-row li { display: grid; place-items: center; }
-.badge-row img { display: block; width: 100%; height: auto; max-width: 64px; object-fit: contain; }
+.badge-row img { display: block; width: 100%; height: auto; object-fit: contain; }
 .badge-unearned img, .ribbon-unearned { filter: grayscale(1); opacity: .24; }
-.hof-card .achievement-heading { align-items: center; margin-bottom: 8px; }
-.champion-status { display: flex; align-items: center; }
-.champion-status img { flex-shrink: 0; image-rendering: pixelated; }
-.champion-status strong { font-size: .8125rem; font-weight: 500; line-height: 1.6; }
-.champion-earned { color: var(--resources-neon); }
-.achievement-card h3 { font-size: .6875rem; color: #a2a9b4; font-weight: 500; margin: 0 0 10px; }
-.hof-team { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; list-style: none; padding: 0; margin: 0 -12px; }
-.hof-team li { display: flex; flex-direction: column; align-items: center; min-width: 0; text-align: center; }
-.hof-team img { width: 128px; image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; }
-.hof-team strong { font-size: .75rem; font-weight: 500; margin: 6px 0 4px; overflow-wrap: anywhere; max-width: 100%; }
-.hof-team li > span { font-size: .6875rem; color: #a2a9b4; line-height: 1.5; }
 .shiny-star { color: var(--resources-neon); }
-.hof-team .hof-egg { display: grid; place-items: center; width: 96px; height: 96px; max-width: 100%; }
-.achievement-note { font-size: .75rem; color: #a2a9b4; line-height: 1.7; margin: 16px 0 0; }
-@media (min-width: 600px) { .badge-row { gap: 10px; } }
-@media (min-width: 700px) { .hof-team { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
-
-.hof-details { width: 100%; min-width: 0; }
-.hof-details summary { cursor: pointer; list-style: none; padding: 6px 0; }
-.hof-details summary::-webkit-details-marker { display: none; }
-.hof-details summary:focus-visible { outline: 2px solid var(--trainer-neon); outline-offset: 1px; border-radius: 3px; }
-.hof-details strong { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; font-size: .6875rem; }
-.hof-details p { font-size: .75rem; line-height: 1.5; margin: 0 0 6px; overflow-wrap: anywhere; }
-.hof-team .hof-egg { width: 100%; height: auto; aspect-ratio: 1; }
-@media (min-width: 600px) { .hof-team { gap: 4px; margin-inline: -8px; } .hof-details strong { font-size: .75rem; } }
