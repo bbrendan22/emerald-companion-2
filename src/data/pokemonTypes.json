@@ -1,0 +1,1331 @@
+{
+  "1": [
+    "grass",
+    "poison"
+  ],
+  "2": [
+    "grass",
+    "poison"
+  ],
+  "3": [
+    "grass",
+    "poison"
+  ],
+  "4": [
+    "fire"
+  ],
+  "5": [
+    "fire"
+  ],
+  "6": [
+    "fire",
+    "flying"
+  ],
+  "7": [
+    "water"
+  ],
+  "8": [
+    "water"
+  ],
+  "9": [
+    "water"
+  ],
+  "10": [
+    "bug"
+  ],
+  "11": [
+    "bug"
+  ],
+  "12": [
+    "bug",
+    "flying"
+  ],
+  "13": [
+    "bug",
+    "poison"
+  ],
+  "14": [
+    "bug",
+    "poison"
+  ],
+  "15": [
+    "bug",
+    "poison"
+  ],
+  "16": [
+    "normal",
+    "flying"
+  ],
+  "17": [
+    "normal",
+    "flying"
+  ],
+  "18": [
+    "normal",
+    "flying"
+  ],
+  "19": [
+    "normal"
+  ],
+  "20": [
+    "normal"
+  ],
+  "21": [
+    "normal",
+    "flying"
+  ],
+  "22": [
+    "normal",
+    "flying"
+  ],
+  "23": [
+    "poison"
+  ],
+  "24": [
+    "poison"
+  ],
+  "25": [
+    "electric"
+  ],
+  "26": [
+    "electric"
+  ],
+  "27": [
+    "ground"
+  ],
+  "28": [
+    "ground"
+  ],
+  "29": [
+    "poison"
+  ],
+  "30": [
+    "poison"
+  ],
+  "31": [
+    "poison",
+    "ground"
+  ],
+  "32": [
+    "poison"
+  ],
+  "33": [
+    "poison"
+  ],
+  "34": [
+    "poison",
+    "ground"
+  ],
+  "35": [
+    "normal"
+  ],
+  "36": [
+    "normal"
+  ],
+  "37": [
+    "fire"
+  ],
+  "38": [
+    "fire"
+  ],
+  "39": [
+    "normal"
+  ],
+  "40": [
+    "normal"
+  ],
+  "41": [
+    "poison",
+    "flying"
+  ],
+  "42": [
+    "poison",
+    "flying"
+  ],
+  "43": [
+    "grass",
+    "poison"
+  ],
+  "44": [
+    "grass",
+    "poison"
+  ],
+  "45": [
+    "grass",
+    "poison"
+  ],
+  "46": [
+    "bug",
+    "grass"
+  ],
+  "47": [
+    "bug",
+    "grass"
+  ],
+  "48": [
+    "bug",
+    "poison"
+  ],
+  "49": [
+    "bug",
+    "poison"
+  ],
+  "50": [
+    "ground"
+  ],
+  "51": [
+    "ground"
+  ],
+  "52": [
+    "normal"
+  ],
+  "53": [
+    "normal"
+  ],
+  "54": [
+    "water"
+  ],
+  "55": [
+    "water"
+  ],
+  "56": [
+    "fighting"
+  ],
+  "57": [
+    "fighting"
+  ],
+  "58": [
+    "fire"
+  ],
+  "59": [
+    "fire"
+  ],
+  "60": [
+    "water"
+  ],
+  "61": [
+    "water"
+  ],
+  "62": [
+    "water",
+    "fighting"
+  ],
+  "63": [
+    "psychic"
+  ],
+  "64": [
+    "psychic"
+  ],
+  "65": [
+    "psychic"
+  ],
+  "66": [
+    "fighting"
+  ],
+  "67": [
+    "fighting"
+  ],
+  "68": [
+    "fighting"
+  ],
+  "69": [
+    "grass",
+    "poison"
+  ],
+  "70": [
+    "grass",
+    "poison"
+  ],
+  "71": [
+    "grass",
+    "poison"
+  ],
+  "72": [
+    "water",
+    "poison"
+  ],
+  "73": [
+    "water",
+    "poison"
+  ],
+  "74": [
+    "rock",
+    "ground"
+  ],
+  "75": [
+    "rock",
+    "ground"
+  ],
+  "76": [
+    "rock",
+    "ground"
+  ],
+  "77": [
+    "fire"
+  ],
+  "78": [
+    "fire"
+  ],
+  "79": [
+    "water",
+    "psychic"
+  ],
+  "80": [
+    "water",
+    "psychic"
+  ],
+  "81": [
+    "electric",
+    "steel"
+  ],
+  "82": [
+    "electric",
+    "steel"
+  ],
+  "83": [
+    "normal",
+    "flying"
+  ],
+  "84": [
+    "normal",
+    "flying"
+  ],
+  "85": [
+    "normal",
+    "flying"
+  ],
+  "86": [
+    "water"
+  ],
+  "87": [
+    "water",
+    "ice"
+  ],
+  "88": [
+    "poison"
+  ],
+  "89": [
+    "poison"
+  ],
+  "90": [
+    "water"
+  ],
+  "91": [
+    "water",
+    "ice"
+  ],
+  "92": [
+    "ghost",
+    "poison"
+  ],
+  "93": [
+    "ghost",
+    "poison"
+  ],
+  "94": [
+    "ghost",
+    "poison"
+  ],
+  "95": [
+    "rock",
+    "ground"
+  ],
+  "96": [
+    "psychic"
+  ],
+  "97": [
+    "psychic"
+  ],
+  "98": [
+    "water"
+  ],
+  "99": [
+    "water"
+  ],
+  "100": [
+    "electric"
+  ],
+  "101": [
+    "electric"
+  ],
+  "102": [
+    "grass",
+    "psychic"
+  ],
+  "103": [
+    "grass",
+    "psychic"
+  ],
+  "104": [
+    "ground"
+  ],
+  "105": [
+    "ground"
+  ],
+  "106": [
+    "fighting"
+  ],
+  "107": [
+    "fighting"
+  ],
+  "108": [
+    "normal"
+  ],
+  "109": [
+    "poison"
+  ],
+  "110": [
+    "poison"
+  ],
+  "111": [
+    "ground",
+    "rock"
+  ],
+  "112": [
+    "ground",
+    "rock"
+  ],
+  "113": [
+    "normal"
+  ],
+  "114": [
+    "grass"
+  ],
+  "115": [
+    "normal"
+  ],
+  "116": [
+    "water"
+  ],
+  "117": [
+    "water"
+  ],
+  "118": [
+    "water"
+  ],
+  "119": [
+    "water"
+  ],
+  "120": [
+    "water"
+  ],
+  "121": [
+    "water",
+    "psychic"
+  ],
+  "122": [
+    "psychic"
+  ],
+  "123": [
+    "bug",
+    "flying"
+  ],
+  "124": [
+    "ice",
+    "psychic"
+  ],
+  "125": [
+    "electric"
+  ],
+  "126": [
+    "fire"
+  ],
+  "127": [
+    "bug"
+  ],
+  "128": [
+    "normal"
+  ],
+  "129": [
+    "water"
+  ],
+  "130": [
+    "water",
+    "flying"
+  ],
+  "131": [
+    "water",
+    "ice"
+  ],
+  "132": [
+    "normal"
+  ],
+  "133": [
+    "normal"
+  ],
+  "134": [
+    "water"
+  ],
+  "135": [
+    "electric"
+  ],
+  "136": [
+    "fire"
+  ],
+  "137": [
+    "normal"
+  ],
+  "138": [
+    "rock",
+    "water"
+  ],
+  "139": [
+    "rock",
+    "water"
+  ],
+  "140": [
+    "rock",
+    "water"
+  ],
+  "141": [
+    "rock",
+    "water"
+  ],
+  "142": [
+    "rock",
+    "flying"
+  ],
+  "143": [
+    "normal"
+  ],
+  "144": [
+    "ice",
+    "flying"
+  ],
+  "145": [
+    "electric",
+    "flying"
+  ],
+  "146": [
+    "fire",
+    "flying"
+  ],
+  "147": [
+    "dragon"
+  ],
+  "148": [
+    "dragon"
+  ],
+  "149": [
+    "dragon",
+    "flying"
+  ],
+  "150": [
+    "psychic"
+  ],
+  "151": [
+    "psychic"
+  ],
+  "152": [
+    "grass"
+  ],
+  "153": [
+    "grass"
+  ],
+  "154": [
+    "grass"
+  ],
+  "155": [
+    "fire"
+  ],
+  "156": [
+    "fire"
+  ],
+  "157": [
+    "fire"
+  ],
+  "158": [
+    "water"
+  ],
+  "159": [
+    "water"
+  ],
+  "160": [
+    "water"
+  ],
+  "161": [
+    "normal"
+  ],
+  "162": [
+    "normal"
+  ],
+  "163": [
+    "normal",
+    "flying"
+  ],
+  "164": [
+    "normal",
+    "flying"
+  ],
+  "165": [
+    "bug",
+    "flying"
+  ],
+  "166": [
+    "bug",
+    "flying"
+  ],
+  "167": [
+    "bug",
+    "poison"
+  ],
+  "168": [
+    "bug",
+    "poison"
+  ],
+  "169": [
+    "poison",
+    "flying"
+  ],
+  "170": [
+    "water",
+    "electric"
+  ],
+  "171": [
+    "water",
+    "electric"
+  ],
+  "172": [
+    "electric"
+  ],
+  "173": [
+    "normal"
+  ],
+  "174": [
+    "normal"
+  ],
+  "175": [
+    "normal"
+  ],
+  "176": [
+    "normal",
+    "flying"
+  ],
+  "177": [
+    "psychic",
+    "flying"
+  ],
+  "178": [
+    "psychic",
+    "flying"
+  ],
+  "179": [
+    "electric"
+  ],
+  "180": [
+    "electric"
+  ],
+  "181": [
+    "electric"
+  ],
+  "182": [
+    "grass"
+  ],
+  "183": [
+    "water"
+  ],
+  "184": [
+    "water"
+  ],
+  "185": [
+    "rock"
+  ],
+  "186": [
+    "water"
+  ],
+  "187": [
+    "grass",
+    "flying"
+  ],
+  "188": [
+    "grass",
+    "flying"
+  ],
+  "189": [
+    "grass",
+    "flying"
+  ],
+  "190": [
+    "normal"
+  ],
+  "191": [
+    "grass"
+  ],
+  "192": [
+    "grass"
+  ],
+  "193": [
+    "bug",
+    "flying"
+  ],
+  "194": [
+    "water",
+    "ground"
+  ],
+  "195": [
+    "water",
+    "ground"
+  ],
+  "196": [
+    "psychic"
+  ],
+  "197": [
+    "dark"
+  ],
+  "198": [
+    "dark",
+    "flying"
+  ],
+  "199": [
+    "water",
+    "psychic"
+  ],
+  "200": [
+    "ghost"
+  ],
+  "201": [
+    "psychic"
+  ],
+  "202": [
+    "psychic"
+  ],
+  "203": [
+    "normal",
+    "psychic"
+  ],
+  "204": [
+    "bug"
+  ],
+  "205": [
+    "bug",
+    "steel"
+  ],
+  "206": [
+    "normal"
+  ],
+  "207": [
+    "ground",
+    "flying"
+  ],
+  "208": [
+    "steel",
+    "ground"
+  ],
+  "209": [
+    "normal"
+  ],
+  "210": [
+    "normal"
+  ],
+  "211": [
+    "water",
+    "poison"
+  ],
+  "212": [
+    "bug",
+    "steel"
+  ],
+  "213": [
+    "bug",
+    "rock"
+  ],
+  "214": [
+    "bug",
+    "fighting"
+  ],
+  "215": [
+    "dark",
+    "ice"
+  ],
+  "216": [
+    "normal"
+  ],
+  "217": [
+    "normal"
+  ],
+  "218": [
+    "fire"
+  ],
+  "219": [
+    "fire",
+    "rock"
+  ],
+  "220": [
+    "ice",
+    "ground"
+  ],
+  "221": [
+    "ice",
+    "ground"
+  ],
+  "222": [
+    "water",
+    "rock"
+  ],
+  "223": [
+    "water"
+  ],
+  "224": [
+    "water"
+  ],
+  "225": [
+    "ice",
+    "flying"
+  ],
+  "226": [
+    "water",
+    "flying"
+  ],
+  "227": [
+    "steel",
+    "flying"
+  ],
+  "228": [
+    "dark",
+    "fire"
+  ],
+  "229": [
+    "dark",
+    "fire"
+  ],
+  "230": [
+    "water",
+    "dragon"
+  ],
+  "231": [
+    "ground"
+  ],
+  "232": [
+    "ground"
+  ],
+  "233": [
+    "normal"
+  ],
+  "234": [
+    "normal"
+  ],
+  "235": [
+    "normal"
+  ],
+  "236": [
+    "fighting"
+  ],
+  "237": [
+    "fighting"
+  ],
+  "238": [
+    "ice",
+    "psychic"
+  ],
+  "239": [
+    "electric"
+  ],
+  "240": [
+    "fire"
+  ],
+  "241": [
+    "normal"
+  ],
+  "242": [
+    "normal"
+  ],
+  "243": [
+    "electric"
+  ],
+  "244": [
+    "fire"
+  ],
+  "245": [
+    "water"
+  ],
+  "246": [
+    "rock",
+    "ground"
+  ],
+  "247": [
+    "rock",
+    "ground"
+  ],
+  "248": [
+    "rock",
+    "dark"
+  ],
+  "249": [
+    "psychic",
+    "flying"
+  ],
+  "250": [
+    "fire",
+    "flying"
+  ],
+  "251": [
+    "psychic",
+    "grass"
+  ],
+  "252": [
+    "grass"
+  ],
+  "253": [
+    "grass"
+  ],
+  "254": [
+    "grass"
+  ],
+  "255": [
+    "fire"
+  ],
+  "256": [
+    "fire",
+    "fighting"
+  ],
+  "257": [
+    "fire",
+    "fighting"
+  ],
+  "258": [
+    "water"
+  ],
+  "259": [
+    "water",
+    "ground"
+  ],
+  "260": [
+    "water",
+    "ground"
+  ],
+  "261": [
+    "dark"
+  ],
+  "262": [
+    "dark"
+  ],
+  "263": [
+    "normal"
+  ],
+  "264": [
+    "normal"
+  ],
+  "265": [
+    "bug"
+  ],
+  "266": [
+    "bug"
+  ],
+  "267": [
+    "bug",
+    "flying"
+  ],
+  "268": [
+    "bug"
+  ],
+  "269": [
+    "bug",
+    "poison"
+  ],
+  "270": [
+    "water",
+    "grass"
+  ],
+  "271": [
+    "water",
+    "grass"
+  ],
+  "272": [
+    "water",
+    "grass"
+  ],
+  "273": [
+    "grass"
+  ],
+  "274": [
+    "grass",
+    "dark"
+  ],
+  "275": [
+    "grass",
+    "dark"
+  ],
+  "276": [
+    "normal",
+    "flying"
+  ],
+  "277": [
+    "normal",
+    "flying"
+  ],
+  "278": [
+    "water",
+    "flying"
+  ],
+  "279": [
+    "water",
+    "flying"
+  ],
+  "280": [
+    "psychic"
+  ],
+  "281": [
+    "psychic"
+  ],
+  "282": [
+    "psychic"
+  ],
+  "283": [
+    "bug",
+    "water"
+  ],
+  "284": [
+    "bug",
+    "flying"
+  ],
+  "285": [
+    "grass"
+  ],
+  "286": [
+    "grass",
+    "fighting"
+  ],
+  "287": [
+    "normal"
+  ],
+  "288": [
+    "normal"
+  ],
+  "289": [
+    "normal"
+  ],
+  "290": [
+    "bug",
+    "ground"
+  ],
+  "291": [
+    "bug",
+    "flying"
+  ],
+  "292": [
+    "bug",
+    "ghost"
+  ],
+  "293": [
+    "normal"
+  ],
+  "294": [
+    "normal"
+  ],
+  "295": [
+    "normal"
+  ],
+  "296": [
+    "fighting"
+  ],
+  "297": [
+    "fighting"
+  ],
+  "298": [
+    "normal"
+  ],
+  "299": [
+    "rock"
+  ],
+  "300": [
+    "normal"
+  ],
+  "301": [
+    "normal"
+  ],
+  "302": [
+    "dark",
+    "ghost"
+  ],
+  "303": [
+    "steel"
+  ],
+  "304": [
+    "steel",
+    "rock"
+  ],
+  "305": [
+    "steel",
+    "rock"
+  ],
+  "306": [
+    "steel",
+    "rock"
+  ],
+  "307": [
+    "fighting",
+    "psychic"
+  ],
+  "308": [
+    "fighting",
+    "psychic"
+  ],
+  "309": [
+    "electric"
+  ],
+  "310": [
+    "electric"
+  ],
+  "311": [
+    "electric"
+  ],
+  "312": [
+    "electric"
+  ],
+  "313": [
+    "bug"
+  ],
+  "314": [
+    "bug"
+  ],
+  "315": [
+    "grass",
+    "poison"
+  ],
+  "316": [
+    "poison"
+  ],
+  "317": [
+    "poison"
+  ],
+  "318": [
+    "water",
+    "dark"
+  ],
+  "319": [
+    "water",
+    "dark"
+  ],
+  "320": [
+    "water"
+  ],
+  "321": [
+    "water"
+  ],
+  "322": [
+    "fire",
+    "ground"
+  ],
+  "323": [
+    "fire",
+    "ground"
+  ],
+  "324": [
+    "fire"
+  ],
+  "325": [
+    "psychic"
+  ],
+  "326": [
+    "psychic"
+  ],
+  "327": [
+    "normal"
+  ],
+  "328": [
+    "ground"
+  ],
+  "329": [
+    "ground",
+    "dragon"
+  ],
+  "330": [
+    "ground",
+    "dragon"
+  ],
+  "331": [
+    "grass"
+  ],
+  "332": [
+    "grass",
+    "dark"
+  ],
+  "333": [
+    "normal",
+    "flying"
+  ],
+  "334": [
+    "dragon",
+    "flying"
+  ],
+  "335": [
+    "normal"
+  ],
+  "336": [
+    "poison"
+  ],
+  "337": [
+    "rock",
+    "psychic"
+  ],
+  "338": [
+    "rock",
+    "psychic"
+  ],
+  "339": [
+    "water",
+    "ground"
+  ],
+  "340": [
+    "water",
+    "ground"
+  ],
+  "341": [
+    "water"
+  ],
+  "342": [
+    "water",
+    "dark"
+  ],
+  "343": [
+    "ground",
+    "psychic"
+  ],
+  "344": [
+    "ground",
+    "psychic"
+  ],
+  "345": [
+    "rock",
+    "grass"
+  ],
+  "346": [
+    "rock",
+    "grass"
+  ],
+  "347": [
+    "rock",
+    "bug"
+  ],
+  "348": [
+    "rock",
+    "bug"
+  ],
+  "349": [
+    "water"
+  ],
+  "350": [
+    "water"
+  ],
+  "351": [
+    "normal"
+  ],
+  "352": [
+    "normal"
+  ],
+  "353": [
+    "ghost"
+  ],
+  "354": [
+    "ghost"
+  ],
+  "355": [
+    "ghost"
+  ],
+  "356": [
+    "ghost"
+  ],
+  "357": [
+    "grass",
+    "flying"
+  ],
+  "358": [
+    "psychic"
+  ],
+  "359": [
+    "dark"
+  ],
+  "360": [
+    "psychic"
+  ],
+  "361": [
+    "ice"
+  ],
+  "362": [
+    "ice"
+  ],
+  "363": [
+    "ice",
+    "water"
+  ],
+  "364": [
+    "ice",
+    "water"
+  ],
+  "365": [
+    "ice",
+    "water"
+  ],
+  "366": [
+    "water"
+  ],
+  "367": [
+    "water"
+  ],
+  "368": [
+    "water"
+  ],
+  "369": [
+    "water",
+    "rock"
+  ],
+  "370": [
+    "water"
+  ],
+  "371": [
+    "dragon"
+  ],
+  "372": [
+    "dragon"
+  ],
+  "373": [
+    "dragon",
+    "flying"
+  ],
+  "374": [
+    "steel",
+    "psychic"
+  ],
+  "375": [
+    "steel",
+    "psychic"
+  ],
+  "376": [
+    "steel",
+    "psychic"
+  ],
+  "377": [
+    "rock"
+  ],
+  "378": [
+    "ice"
+  ],
+  "379": [
+    "steel"
+  ],
+  "380": [
+    "dragon",
+    "psychic"
+  ],
+  "381": [
+    "dragon",
+    "psychic"
+  ],
+  "382": [
+    "water"
+  ],
+  "383": [
+    "ground"
+  ],
+  "384": [
+    "dragon",
+    "flying"
+  ],
+  "385": [
+    "steel",
+    "psychic"
+  ],
+  "386": [
+    "psychic"
+  ]
+}

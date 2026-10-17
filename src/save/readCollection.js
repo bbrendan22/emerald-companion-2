@@ -14,6 +14,11 @@ export function readCollection({blocks}) {
     const start=4+(box*30+slot)*80;
     add(storage.subarray(start,start+80),{kind:'box',box,slot});
   }
-  // Day Care parsing and its gained-experience semantics await their own fixtures.
+  // DayCare.mons: two 140-byte entries beginning with BoxPokemon.
+  // Experience earned while deposited is not applied until withdrawal.
+  for (let slot=0; slot<2; slot++) {
+    const start=0x3030+slot*140;
+    add(saveBlock1.subarray(start,start+80),{kind:'daycare',slot});
+  }
   return {records,issues};
 }

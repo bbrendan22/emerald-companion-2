@@ -25,3 +25,14 @@ test('party count cannot overflow its six slots',()=>{
   const saveBlock1=new Uint8Array(15752);new DataView(saveBlock1.buffer).setUint32(0x234,7,true);
   assert.throws(()=>readCollection(readSave(makeSave({blocks:{saveBlock1}}))),/exceeds six/);
 });
+test('Day Care entries retain locations and eggs, and report unsupported records',()=>{
+  const saveBlock1 = new Uint8Array(15752);
+  saveBlock1.set(makePokemon({egg:true}),0x3030);
+  saveBlock1.set(makePokemon({species:999}),0x30bc);
+  const result=readCollection(readSave(makeSave({blocks:{saveBlock1}})));
+  assert.equal(result.records.length,1);
+  assert.equal(result.records[0].isEgg,true);
+  assert.deepEqual(result.records[0].source,{kind:'daycare',slot:0});
+  assert.deepEqual(result.issues[0].source,{kind:'daycare',slot:1});
+  assert.match(result.issues[0].message,/Unsupported internal species/);
+});
