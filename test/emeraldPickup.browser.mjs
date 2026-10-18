@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {emeraldPickupBands, aggregatePickupItems, pickupPercent, pickupBandLabel} from '../src/resources/charts/emeraldPickup.js';
@@ -42,7 +43,7 @@ try {
       assert.deepEqual(values,expected.map(row=>[pickupPercent(row.perPickup),pickupPercent(row.perBattle)]));
       const icons=root.locator('tbody img');
       await icons.evaluateAll(xs=>Promise.all(xs.map(x=>x.decode())));
-      assert.deepEqual(await icons.evaluateAll(xs=>xs.map(x=>x.getAttribute('src'))),expected.map(row=>row.icon));
+      assert.deepEqual(await icons.evaluateAll(xs=>xs.map(x=>x.getAttribute('src'))),expected.map(row=>assetPath(row.icon)));
       assert.ok(await icons.evaluateAll(xs=>xs.every(x=>x.naturalWidth>0)));
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
       assert.ok(await root.locator('th, td').evaluateAll(xs=>xs.every(x=>x.scrollWidth<=x.clientWidth+1)));

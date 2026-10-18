@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import overview from '../src/resources/data/overview.json' with {type: 'json'};
@@ -69,8 +70,8 @@ try {
         await page.keyboard.press('Enter'); await expectHeader(name);
         await page.getByRole('heading', {name, exact: true}).waitFor();
         assert.equal(await profile.locator('.species-kicker').innerText(), `#${String(next).padStart(3, '0')} · GEN ${next <= 151 ? 1 : next <= 251 ? 2 : 3}`);
-        assert.equal(await profile.locator('.species-identity > img').getAttribute('src'), `/pokemon/artwork/normal/${next}.png`);
-        assert.deepEqual(await profile.locator('.species-types img').evaluateAll(images => images.map(image => image.getAttribute('src'))), pokemonTypes[next].map(type => `/types/icons/${type}.png`));
+        assert.equal(await profile.locator('.species-identity > img').getAttribute('src'), assetPath(`/pokemon/artwork/normal/${next}.png`));
+        assert.deepEqual(await profile.locator('.species-types img').evaluateAll(images => images.map(image => image.getAttribute('src'))), pokemonTypes[next].map(type => assetPath(`/types/icons/${type}.png`)));
         const canonical = Object.values(reference.species).find(species => species.nationalDexId === next);
         assert.deepEqual(await profile.locator('.species-abilities dt').allTextContents(), canonical.abilities.map(id => reference.abilityNames[id]));
         assert.equal(await profile.getByRole('region', {name: 'Pokédex Entry Emerald'}).locator('p').innerText(), overview.emeraldEntries[next]);
@@ -190,7 +191,7 @@ try {
   // Simulate unavailable artwork: local sprite fallback must actually decode.
   await page.route('**/pokemon/artwork/normal/1.png', route => route.abort());
   await open(1, 'Bulbasaur');
-  await page.locator('.species-identity > img[src="/pokemon/emerald/normal/1.png"]').waitFor();
+  await page.locator(`.species-identity > img[src="${assetPath('/pokemon/emerald/normal/1.png')}"]`).waitFor();
   await page.locator('.species-identity > img').evaluate(image => image.decode());
   await back(); await page.unroute('**/pokemon/artwork/normal/1.png');
   // Native keyboard activation, returning through both levels of the header.

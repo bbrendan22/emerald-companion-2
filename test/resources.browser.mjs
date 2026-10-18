@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave, makePokemon} from './fixtures/synthetic.js';
@@ -81,7 +82,7 @@ try {
     const rows = page.locator('.resources-pokedex-row');
     const numbers = await rows.locator('.resources-pokedex-number').allTextContents();
     assert.deepEqual(numbers, Array.from({length: 386}, (_, index) => `#${String(index + 1).padStart(3, '0')}`));
-    assert.deepEqual(await rows.locator('.resources-pokedex-sprite img').evaluateAll(images => images.map(image => image.getAttribute('src'))), Array.from({length: 386}, (_, index) => `/pokemon/emerald/normal/${index + 1}.png`));
+    assert.deepEqual(await rows.locator('.resources-pokedex-sprite img').evaluateAll(images => images.map(image => image.getAttribute('src'))), Array.from({length: 386}, (_, index) => assetPath(`/pokemon/emerald/normal/${index + 1}.png`)));
     // Decode actual browser images, including offscreen lazy sprites, rather than checking filenames alone.
     await rows.locator('img').evaluateAll(images => Promise.all(images.map(image => {image.loading = 'eager'; return image.decode();})));
     assert.equal(await rows.locator('img').evaluateAll(images => images.every(image => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0)), true);

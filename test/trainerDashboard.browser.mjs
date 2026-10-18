@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 // Uses an available Playwright installation and isolated synthetic save data.
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
@@ -21,7 +22,7 @@ try {
  const load=async gender=>{b2[8]=gender;const encoded=Buffer.from(makeSave({blocks:{saveBlock1:b1,saveBlock2:b2}})).toString('base64');await page.evaluate(({encoded,selections})=>{localStorage.setItem('emerald-companion-2.save.v1',encoded);localStorage.setItem('emerald-companion-2.showcase.v1',JSON.stringify(selections))},{encoded,selections});await page.reload();await page.evaluate(()=>Promise.all([...document.images].map(i=>i.decode())));};
  for(const gender of [0,1]){
   await load(gender);
-  assert.equal(await page.locator('.trainer-fullbody').getAttribute('src'),`/trainers/${gender?'may':'brendan'}.png`);
+  assert.equal(await page.locator('.trainer-fullbody').getAttribute('src'),assetPath(`/trainers/${gender?'may':'brendan'}.png`));
   assert.equal(await page.locator('.trainer-artwork-heading h2').innerText(),'BRENDAN');
   assert.deepEqual(await page.locator('.trainer-fields dd').allTextContents(),['65535','54321','₽999,999','65,535','9999:59:59']);
   assert.equal(await page.locator('.dex-completion').innerText(),'386 / 386 caught');assert.equal(await page.locator('.dex-percentage').innerText(),'100.0%');

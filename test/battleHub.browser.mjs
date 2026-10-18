@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave,makePokemon} from './fixtures/synthetic.js';
@@ -27,25 +28,25 @@ try {
  };
  const checkSaved=async()=>assert.equal(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.battle-teams.v1')),savedText);
  await visibleMatchup(true,false);
- assert.deepEqual(await teamSprites(),['/pokemon/box/1.png','/pokemon/box/4.png','/pokemon/box/7.png']);
+ assert.deepEqual(await teamSprites(),[assetPath('/pokemon/box/1.png'),assetPath('/pokemon/box/4.png'),assetPath('/pokemon/box/7.png')]);
  await enemy.locator('.battle-slot-empty').first().tap();assert.equal(await page.getByRole('tab',{name:'Sets'}).getAttribute('aria-selected'),'true');
  await page.getByRole('searchbox',{name:'Search Pokémon sets'}).fill('Sunkern');await page.getByRole('button',{name:'Select Sunkern 1',exact:true}).click();await visibleMatchup(true,true);
  await occupied().nth(1).tap();assert.equal(await occupied().nth(1).getAttribute('aria-pressed'),'true');assert.equal(await occupied().count(),3);
  await page.waitForTimeout(400);await occupied().nth(1).dblclick();
- assert.deepEqual(await teamSprites(),['/pokemon/box/1.png','/pokemon/box/7.png']);assert.equal(await player.locator('[aria-pressed="true"]').count(),0);await visibleMatchup(false,true);await checkSaved();
+ assert.deepEqual(await teamSprites(),[assetPath('/pokemon/box/1.png'),assetPath('/pokemon/box/7.png')]);assert.equal(await player.locator('[aria-pressed="true"]').count(),0);await visibleMatchup(false,true);await checkSaved();
  await navigate('Trainer');await navigate('Battle');assert.equal(await player.locator('[aria-pressed="true"]').count(),0);await visibleMatchup(false,true);
  await page.waitForTimeout(400);await player.locator('.battle-slot-empty').tap();assert.equal(await page.getByRole('tab',{name:'Teams'}).getAttribute('aria-selected'),'true');
  const hub=page.getByRole('region',{name:'My Frontier Pokémon'}), entries=hub.locator('.battle-frontier-entry');
  assert.equal(await entries.count(),5);assert.equal(await hub.locator('.battle-frontier-entry > span small').count(),2);
  for(const id of ['0:0:0','0:3:0'])assert.equal(await hub.locator(`[data-pokemon-id="${id}"]`).isDisabled(),true);
  await hub.locator('[data-pokemon-id="0:1:0"]').tap();
- assert.deepEqual(await teamSprites(),['/pokemon/box/1.png','/pokemon/box/7.png','/pokemon/box/1.png']);assert.equal(await occupied().nth(2).getAttribute('aria-pressed'),'true');await visibleMatchup(true,true);await checkSaved();
+ assert.deepEqual(await teamSprites(),[assetPath('/pokemon/box/1.png'),assetPath('/pokemon/box/7.png'),assetPath('/pokemon/box/1.png')]);assert.equal(await occupied().nth(2).getAttribute('aria-pressed'),'true');await visibleMatchup(true,true);await checkSaved();
  await tab('Teams');assert.equal(await hub.locator('button:disabled').count(),5);
- await page.getByRole('button',{name:'Load Saved Tower',exact:true}).click();assert.deepEqual(await teamSprites(),['/pokemon/box/1.png','/pokemon/box/4.png','/pokemon/box/7.png']);assert.equal(await occupied().first().getAttribute('aria-pressed'),'true');
+ await page.getByRole('button',{name:'Load Saved Tower',exact:true}).click();assert.deepEqual(await teamSprites(),[assetPath('/pokemon/box/1.png'),assetPath('/pokemon/box/4.png'),assetPath('/pokemon/box/7.png')]);assert.equal(await occupied().first().getAttribute('aria-pressed'),'true');
  // Real touch sequence, including a rapid third tap at the newly shifted slot.
  const bounds=await occupied().first().boundingBox(),x=bounds.x+bounds.width/2,y=bounds.y+bounds.height/2;
  await page.touchscreen.tap(x,y);await page.touchscreen.tap(x,y);await page.touchscreen.tap(x,y);
- assert.deepEqual(await teamSprites(),['/pokemon/box/4.png','/pokemon/box/7.png']);assert.equal(await player.locator('[aria-pressed="true"]').count(),0);await visibleMatchup(false,true);await checkSaved();
+ assert.deepEqual(await teamSprites(),[assetPath('/pokemon/box/4.png'),assetPath('/pokemon/box/7.png')]);assert.equal(await player.locator('[aria-pressed="true"]').count(),0);await visibleMatchup(false,true);await checkSaved();
  await page.waitForTimeout(450);await occupied().first().tap();await visibleMatchup(true,true);
  await tab('Rules');await page.getByRole('button',{name:'Open Level',exact:true}).click();await page.getByRole('combobox',{name:'Open Level',exact:true}).selectOption('73');
  await tab('Trainers');await page.getByRole('searchbox',{name:'Search trainers'}).fill('Anabel Gold');await page.locator('.battle-trainer-result').click();

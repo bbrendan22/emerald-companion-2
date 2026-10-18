@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import reference from '../src/data/reference.json' with {type: 'json'};
@@ -41,7 +42,7 @@ try {
       await page.getByRole('tab', {name: 'Stats & Matchups', exact: true}).click();
       const statsPanel = page.getByRole('tabpanel', {name: 'Stats & Matchups', exact: true}); await statsPanel.waitFor();
       assert.equal(await profile.locator('.species-identity').innerHTML(), identity);
-      assert.deepEqual(await profile.locator('.species-types img').evaluateAll(images => images.map(image => image.getAttribute('src'))), ownTypes[dex].map(type => `/types/icons/${type}.png`));
+      assert.deepEqual(await profile.locator('.species-types img').evaluateAll(images => images.map(image => image.getAttribute('src'))), ownTypes[dex].map(type => assetPath(`/types/icons/${type}.png`)));
       const canonical = Object.values(reference.species).find(species => species.nationalDexId === dex);
       const rows = baseStatRows(canonical.baseStats);
       assert.deepEqual(await statsPanel.locator('.species-base-stat > span').allTextContents(), ['HP', 'Attack', 'Defense', 'Sp. Attack', 'Sp. Defense', 'Speed']);
@@ -55,7 +56,7 @@ try {
       assert.deepEqual(await statsPanel.locator('.species-matchup-multiplier').allTextContents(), expected.map(group => group.label));
       for (const [index, group] of expected.entries()) {
         const row = statsPanel.locator('.species-type-matchup').nth(index);
-        assert.deepEqual(await row.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src'))), group.types.map(type => `/types/icons/${type}.png`));
+        assert.deepEqual(await row.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src'))), group.types.map(type => assetPath(`/types/icons/${type}.png`)));
         assert.equal(await row.locator('.species-matchup-multiplier').evaluate(element => getComputedStyle(element).color), groupColors[group.multiplier]);
         assert.ok(await row.locator('img').evaluateAll(images => images.every(image => getComputedStyle(image).filter === 'none')));
       }

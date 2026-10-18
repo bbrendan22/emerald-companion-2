@@ -1,1 +1,29 @@
-{"name":"emerald-companion-2","version":"0.0.0","private":true,"type":"module","engines":{"node":"^22.12.0 || >=24.0.0"},"scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","preview":"vite preview --host 0.0.0.0","test":"node --test test/*.test.js"},"dependencies":{"react":"^19.3.1","react-dom":"^19.3.1"},"devDependencies":{"vite":"^8.3.4"}}
+{
+  "name": "emerald-companion-2",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^22.12.0 || >=24.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test test/*.test.js",
+    "test:browser": "node tools/runBrowserTests.mjs",
+    "test:browser:dev": "node tools/runBrowserTests.mjs --serve development",
+    "test:browser:production": "node tools/runBrowserTests.mjs --serve production",
+    "test:pages": "node tools/runBrowserTests.mjs --serve production --smoke",
+    "verify:resources:ci": "node tools/verifyResources.mjs --ci",
+    "verify:resources:local": "node tools/verifyResources.mjs --local"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "vite": "^8.3.4"
+  }
+}

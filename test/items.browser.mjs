@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {itemResources,machineResources} from '../src/resources/items/data/itemResources.js';
@@ -48,7 +49,7 @@ try{
   assert.deepEqual(await rows.locator('strong').allTextContents(),ordered.map(i=>i.machine?`${i.code} · ${i.name}`:i.name));
   assert.deepEqual(await rows.locator('small').allTextContents(),ordered.map(i=>i.machine?moveResources[i.moveId].description:i.description));
   await rows.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(i=>{i.loading='eager';return i.decode()})));
-  assert.deepEqual(await rows.locator('img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src'))),ordered.map(i=>`/items/${i.id}.png`));
+  assert.deepEqual(await rows.locator('img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src'))),ordered.map(i=>assetPath(`/items/${i.id}.png`)));
   for(const item of ordered){
    const prices=[];if(item.price>0||frontierItemPrices[item.id]){if(emeraldShopItems.has(Number(item.id)))prices.push(`Buy ₽${item.price.toLocaleString()}`);if(frontierItemPrices[item.id])prices.push(`${frontierItemPrices[item.id]} BP`);if(item.price>0)prices.push(`Sell ₽${Math.floor(item.price/2).toLocaleString()}`)}
    assert.deepEqual(await button(item.id).locator('aside span').allTextContents(),prices);

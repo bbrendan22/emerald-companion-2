@@ -9,8 +9,10 @@ const url=process.env.PAGES_URL||'http://127.0.0.1:5192/emerald-companion-2/';
 const base=new URL(url).pathname;
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_EXECUTABLE});
 try {
-  const page=await browser.newPage({viewport:{width:375,height:850}}),errors=[],badResponses=[],requests=[];
+  const page=await browser.newPage({viewport:{width:375,height:850}}),errors=[],badResponses=[],requests=[],failedRequests=[],consoleErrors=[];
   page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',message=>{if(message.type()==='error')consoleErrors.push(message.text());});
+  page.on('requestfailed',request=>failedRequests.push(`${request.url()}: ${request.failure()?.errorText}`));
   page.on('response',response=>{if(response.status()>=400)badResponses.push(`${response.status()} ${response.url()}`);});
   page.on('request',request=>requests.push({url:request.url(),method:request.method()}));
   await page.goto(url);
@@ -53,12 +55,21 @@ try {
   await page.reload();await images();
   await navigate('My Pokémon');await images();
   await page.locator('.pokemon-card').first().click();await images();
+  await page.locator('.profile-roles').getByRole('button',{name:'Frontier',exact:true}).click();
   await page.getByRole('button',{name:'Back to collection',exact:true}).click();
   await page.getByRole('button',{name:'Box',exact:true}).click();await images();
+  await navigate('Trainer');await images();
   await navigate('Battle');await images();
   await page.getByRole('tab',{name:'Trainers',exact:true}).click();await images();
   await page.getByRole('tab',{name:'Sets',exact:true}).click();await images();
+  await page.getByRole('searchbox',{name:'Search Pokémon sets',exact:true}).fill('Sunkern');
+  await page.getByRole('button',{name:'Select Sunkern 1',exact:true}).click();await images();
+  await page.locator('.battle-matchup-moves.battle-matchup-player button').first().click();
+  const damage=page.getByRole('dialog').locator('.battle-basic-damage p');
+  await damage.waitFor();assert.match(await damage.innerText(),/\d.*%.*HP/);
+  await page.keyboard.press('Escape');
   assert.deepEqual(errors,[]);assert.deepEqual(badResponses,[]);
+  assert.deepEqual(failedRequests,[]);assert.deepEqual(consoleErrors,[]);
   assert.ok(requests.every(request=>request.method==='GET'&&new URL(request.url).origin===new URL(url).origin&&new URL(request.url).pathname.startsWith(base)),'No root-path requests or save-data uploads');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
 

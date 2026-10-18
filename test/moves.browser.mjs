@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {catalogEntries} from '../src/resources/search.js';
@@ -28,7 +29,7 @@ try {
     }
     assert.equal(await panel.locator('a,button,[tabindex]').count(),0);
     await panel.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(i=>{i.loading='eager';return i.decode()})));
-    assert.equal(await panel.locator('img').evaluateAll(imgs=>imgs.every(i=>i.naturalWidth>0&&i.getAttribute('src')===`/pokemon/emerald/normal/${i.parentElement.dataset.dex}.png`)),true);
+    assert.equal(await panel.locator('img').evaluateAll((imgs,base)=>imgs.every(i=>i.naturalWidth>0&&i.getAttribute('src')===`${base}pokemon/emerald/normal/${i.parentElement.dataset.dex}.png`),assetPath('/')),true);
     assert.equal(await panel.locator('li').evaluateAll(ns=>ns.every(n=>getComputedStyle(n).cursor!=='pointer'&&getComputedStyle(n).backgroundColor==='rgba(0, 0, 0, 0)')),true);
   };
   for(const width of [320,375,390,430,1280]){

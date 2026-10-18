@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave,makePokemon} from './fixtures/synthetic.js';
@@ -22,7 +23,7 @@ try{
  assert.equal(await page.getByRole('button',{name:'Load Tower A',exact:true}).count(),1);
  await page.getByRole('button',{name:'Edit Tower A',exact:true}).click();await dialog.getByRole('textbox',{name:'Team name',exact:true}).fill('Renamed');await dialog.getByRole('button',{name:'Choose team slot 3',exact:true}).click();await dialog.locator('.battle-team-picker button').nth(3).click();await dialog.getByRole('button',{name:'Save',exact:true}).click();
  await page.reload();await battle();await page.getByRole('tab',{name:'Teams',exact:true}).click();await page.getByRole('button',{name:'Load Renamed',exact:true}).click();
- assert.equal(await page.getByRole('tab',{name:'Matchup',exact:true}).getAttribute('aria-selected'),'true');assert.equal(await page.locator('.battle-side-player button.battle-team-slot').count(),3);assert.equal(await page.locator('.battle-side-player button.battle-team-slot img').nth(2).getAttribute('src'),'/pokemon/box/25.png');
+ assert.equal(await page.getByRole('tab',{name:'Matchup',exact:true}).getAttribute('aria-selected'),'true');assert.equal(await page.locator('.battle-side-player button.battle-team-slot').count(),3);assert.equal(await page.locator('.battle-side-player button.battle-team-slot img').nth(2).getAttribute('src'),assetPath('/pokemon/box/25.png'));
  await page.getByRole('tab',{name:'Teams',exact:true}).click();await page.getByRole('button',{name:'Edit Renamed',exact:true}).click();await dialog.getByRole('button',{name:'Delete',exact:true}).click();assert.equal(await dialog.getByRole('button',{name:'Confirm delete',exact:true}).count(),1);await dialog.getByRole('button',{name:'Keep team',exact:true}).click();await dialog.getByRole('button',{name:'Cancel',exact:true}).click();
  await page.evaluate(()=>localStorage.removeItem('emerald-companion-2.save.v1'));await page.reload();await battle();await page.getByRole('tab',{name:'Teams',exact:true}).click();assert.equal(await page.getByRole('button',{name:'Load Renamed',exact:true}).isDisabled(),true);
  await page.getByRole('button',{name:'Edit Renamed',exact:true}).click();await dialog.getByRole('button',{name:'Delete',exact:true}).click();await dialog.getByRole('button',{name:'Confirm delete',exact:true}).click();assert.equal(await page.locator('.battle-saved-team').count(),0);assert.deepEqual(errors,[]);

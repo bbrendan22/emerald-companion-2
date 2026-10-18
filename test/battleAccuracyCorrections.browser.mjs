@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave,makePokemon} from './fixtures/synthetic.js';
@@ -37,21 +38,21 @@ try {
  for(const [weather,type,label] of [['rain','water','.5x'],['sun','fire','2x'],['hail','ice','2x'],['sand','normal','1x'],['none','normal','1x']]){
   await choose('Battle weather',weather);
   const moveType=weather==='sand'?'rock':type;
-  assert.deepEqual(await types('player'),[`/types/icons/${type}.png`]);
-  assert.equal(await move('player').locator('img').getAttribute('src'),`/types/icons/${moveType}.png`);
+  assert.deepEqual(await types('player'),[assetPath(`/types/icons/${type}.png`)]);
+  assert.equal(await move('player').locator('img').getAttribute('src'),assetPath(`/types/icons/${moveType}.png`));
   assert.equal(await move('player').locator('.battle-matchup-effect').innerText(),label);
-  assert.equal(await popup.locator('header img').getAttribute('src'),`/types/icons/${moveType}.png`);
+  assert.equal(await popup.locator('header img').getAttribute('src'),assetPath(`/types/icons/${moveType}.png`));
   assert.equal(await popup.locator('.battle-basic-damage').count(),1);
   assert.equal(await popup.getAttribute('data-live-marker'),'weather');assert.deepEqual(await bars(),rawBars);
  }
  await page.mouse.click(2,2);await select('Castform');await combo('Battle weather').selectOption('rain');
- assert.deepEqual(await types('player'),['/types/icons/water.png']);assert.deepEqual(await types('enemy'),['/types/icons/water.png']);
+ assert.deepEqual(await types('player'),[assetPath('/types/icons/water.png')]);assert.deepEqual(await types('enemy'),[assetPath('/types/icons/water.png')]);
  await move('enemy',1).click();assert.equal(await popup.locator('h2').innerText(),'Water Pulse');
  assert.equal(await popup.locator('.battle-basic-damage').count(),1);await page.mouse.click(2,2);
  await header('player').locator('.battle-team-slot:has(img)').nth(1).click();assert.equal(await card('player').locator('.battle-matchup-ability').innerText(),'Cloud Nine');
- assert.deepEqual(await types('enemy'),['/types/icons/normal.png']);
+ assert.deepEqual(await types('enemy'),[assetPath('/types/icons/normal.png')]);
  await header('player').locator('.battle-team-slot:has(img)').first().click();await select('Golduck');
- assert.deepEqual(new Set(await types('player')),new Set(['/types/icons/normal.png','/types/icons/water.png']));
+ assert.deepEqual(new Set(await types('player')),new Set([assetPath('/types/icons/normal.png'),assetPath('/types/icons/water.png')]));
  assert.equal(await move('player').locator('.battle-matchup-effect').innerText(),'*');
  await move('player').click();assert.equal(await popup.locator('.battle-basic-damage').count(),1);
  for(const width of [320,375,430]){

@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {groupMoveCoverage,coverageMultipliers,coverageRoster} from '../src/resources/coverage/moveCoverage.js';
@@ -49,7 +50,7 @@ try {
   await button('Clear types').click();await check([]);
  }
  // All local Pokémon sprite URLs decode without requiring save data.
- assert.ok(await page.evaluate(async()=>{const images=await Promise.all(Array.from({length:386},(_,i)=>new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img.naturalWidth>0);img.onerror=()=>resolve(false);img.src=`/pokemon/emerald/normal/${i+1}.png`;})));return images.every(Boolean);}));
+ assert.ok(await page.evaluate(async urls=>{const images=await Promise.all(urls.map(src=>new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img.naturalWidth>0);img.onerror=()=>resolve(false);img.src=src;})));return images.every(Boolean);},Array.from({length:386},(_,i)=>assetPath(`/pokemon/emerald/normal/${i+1}.png`))));
  await toggle('Ghost');await button('Fully evolved').click();await button('Clear types').click();assert.equal(await button('Fully evolved').getAttribute('aria-pressed'),'true');await check([],'fully');
  await page.getByRole('button',{name:'Back to Resources',exact:true}).click();await page.getByRole('link',{name:'Move Coverage',exact:true}).click();await check([]);assert.equal(await button('All Pokémon').getAttribute('aria-pressed'),'true');
  assert.deepEqual(errors,[]);console.log('Move Coverage browser checks passed: touch, keyboard, drag/cancel, all filters, clear, exact groups, local assets, Back/no-save, 320/375/390/430/1280px without overflow or custom scrolling.');

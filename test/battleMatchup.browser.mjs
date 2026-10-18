@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {readPokemon} from '../src/save/readPokemon.js';
@@ -20,10 +21,10 @@ try {
  assert.equal(await page.locator('.battle-matchup-card.battle-side-player').count(),1);assert.equal(await page.locator('.battle-matchup-card.battle-side-enemy').count(),0);await select('Azurill');
  const player=page.locator('.battle-matchup-card.battle-side-player'), enemy=page.locator('.battle-matchup-card.battle-side-enemy');
  assert.equal(await player.locator('h2').innerText(),'Bulbasaur');
- assert.equal(await player.locator('.battle-matchup-artwork img').getAttribute('src'),'/pokemon/artwork/shiny/1.png');
+ assert.equal(await player.locator('.battle-matchup-artwork img').getAttribute('src'),assetPath('/pokemon/artwork/shiny/1.png'));
  assert.equal(await player.locator('.battle-matchup-types img').count(),2);
  assert.equal(await player.locator('.battle-matchup-item').innerText(),'Potion');
- assert.equal(await player.locator('.battle-matchup-item img').getAttribute('src'),'/items/13.png');
+ assert.equal(await player.locator('.battle-matchup-item img').getAttribute('src'),assetPath('/items/13.png'));
  assert.equal(await player.locator('.battle-matchup-ability').innerText(),'Overgrow');
  const statValues=async side=>(await page.locator(`.battle-matchup-stats.battle-matchup-${side} dd`).allTextContents()).map(Number);
  const originalPlayerStats=await statValues('player');assert.equal(originalPlayerStats.length,6);

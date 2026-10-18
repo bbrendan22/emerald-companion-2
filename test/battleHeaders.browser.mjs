@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave,makePokemon} from './fixtures/synthetic.js';
@@ -17,7 +18,7 @@ try {
   const encoded=Buffer.from(makeSave({blocks:{storage,saveBlock2:b2}})).toString('base64');
   await page.evaluate(encoded=>{localStorage.setItem('emerald-companion-2.save.v1',encoded);localStorage.setItem('emerald-companion-2.roles.v1',JSON.stringify({'0:0:0':'Frontier','0:1:0':'Frontier','0:2:0':'Frontier'}));},encoded);
   await page.reload();await navigate();
-  assert.equal(await player.locator('.battle-trainer-portrait').getAttribute('src'),`/trainers/${sprite}.png`);
+  assert.equal(await player.locator('.battle-trainer-portrait').getAttribute('src'),assetPath(`/trainers/${sprite}.png`));
   // Same imported name in both saves proves sprite selection uses gender, not name.
   assert.equal(await player.locator('.battle-trainer-identity strong').innerText(),'BRENDAN');
   assert.equal(await player.locator('.battle-trainer-identity img').count(),0);
@@ -28,7 +29,7 @@ try {
   assert.equal(selectedStyle.background,'rgba(0, 0, 0, 0)');assert.equal(selectedStyle.border,'rgba(0, 0, 0, 0)');
   for(const [trainer,sprite,className] of [['Brady','youngster','Youngster'],['Anabel Gold','salon_maiden_anabel','Salon Maiden']]) {
    await tab('Trainers');await page.getByRole('searchbox',{name:'Search trainers'}).fill(trainer);await page.locator('.battle-trainer-result').click();await tab('Matchup');
-   assert.equal(await enemy.locator('.battle-trainer-portrait').getAttribute('src'),`/trainers/frontier/${sprite}.png`);
+   assert.equal(await enemy.locator('.battle-trainer-portrait').getAttribute('src'),assetPath(`/trainers/frontier/${sprite}.png`));
    assert.ok((await enemy.locator('.battle-trainer-text').innerText()).includes(className));
   }
   for(const width of [320,375,430]) {

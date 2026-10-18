@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 const require=createRequire(import.meta.url);
@@ -21,7 +22,7 @@ try {
   await page.locator('.battle-trainer-result').click();
   assert.equal(await page.getByRole('tab',{name:'Sets',exact:true}).getAttribute('aria-selected'),'true');
   assert.equal(await page.locator('.battle-side-enemy .battle-trainer-identity strong').innerText(),'BRADY');
-  assert.equal(await page.locator('.battle-side-enemy .battle-trainer-portrait').getAttribute('src'),'/trainers/frontier/youngster.png');
+  assert.equal(await page.locator('.battle-side-enemy .battle-trainer-portrait').getAttribute('src'),assetPath('/trainers/frontier/youngster.png'));
   assert.equal(await page.locator('.battle-set-entry').count(),Number(count));
   assert.equal(await page.locator('.battle-side-enemy .battle-slot-empty').count(),3);
   await page.getByRole('tab',{name:'Trainers',exact:true}).click(); await search.fill('youngster');

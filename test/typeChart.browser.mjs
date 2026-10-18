@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {typeChartTypes, typeChartRows, typeChartName} from '../src/resources/charts/typeChart.js';
@@ -40,8 +41,8 @@ try {
   assert.equal(await icons.count(), 34);
   await icons.evaluateAll(xs => Promise.all(xs.map(x => x.decode())));
   assert.ok(await icons.evaluateAll(xs => xs.every(x => x.naturalWidth > 0)));
-  assert.deepEqual(await root.locator('thead img').evaluateAll(xs => xs.map(x => x.getAttribute('src'))), typeChartTypes.map(type => `/types/icons/${type}.png`));
-  assert.deepEqual(await root.locator('tbody img').evaluateAll(xs => xs.map(x => x.getAttribute('src'))), typeChartTypes.map(type => `/types/icons/${type}.png`));
+  assert.deepEqual(await root.locator('thead img').evaluateAll(xs => xs.map(x => x.getAttribute('src'))), typeChartTypes.map(type => assetPath(`/types/icons/${type}.png`)));
+  assert.deepEqual(await root.locator('tbody img').evaluateAll(xs => xs.map(x => x.getAttribute('src'))), typeChartTypes.map(type => assetPath(`/types/icons/${type}.png`)));
   for (const width of [320, 375, 390, 430, 1280]) {
     await page.setViewportSize({width, height: 800});
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);

@@ -30,8 +30,16 @@ jobs:
         uses: actions/configure-pages@v6
       - name: Install dependencies
         run: npm ci
+      - name: Run full unit suite
+        run: npm test
+      - name: Verify CI-compatible Resources integrity
+        run: npm run verify:resources:ci
       - name: Build production site
         run: npm run build
+      - name: Install pinned Playwright Chromium and system dependencies
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Verify production subdirectory before publishing
+        run: npm run test:pages
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:

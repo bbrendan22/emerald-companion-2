@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave, makePokemon} from './fixtures/synthetic.js';
@@ -49,7 +50,7 @@ try {
   const icon = page.locator('.battle-set-item img').first();
   await icon.evaluate(image => image.decode());
   assert.ok(await icon.evaluate(image => image.naturalWidth > 0));
-  assert.match(await icon.getAttribute('src'), /^\/items\/\d+\.png$/);
+  assert.match(await icon.getAttribute('src'), new RegExp('^'+assetPath('/items/')+'\\d+\\.png$'));
   assert.ok(await page.locator('.battle-set-item').first().evaluate(element => {
     const text = element.querySelector('span').getBoundingClientRect(), icon = element.querySelector('img').getBoundingClientRect();
     return icon.left >= text.right && icon.left - text.right <= 3;

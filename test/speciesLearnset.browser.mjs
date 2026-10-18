@@ -1,3 +1,4 @@
+import {assetPath} from './helpers/browserPaths.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {mergedLevelLearnset} from '../src/resources/learnset/utils/gameLearnsets.js';
@@ -43,7 +44,7 @@ try{
    for(const token of await panel.locator('span[style]').all()){const text=await token.innerText();assert.ok(colors[text],text);assert.equal(await token.evaluate(e=>getComputedStyle(e).color),rgb(colors[text]));seen.add(text);}
    assert.equal(await panel.locator('summary [style], .resource-learnset-heading [style], .resource-learnset-description [style]').count(),0);
    assert.equal(await panel.locator('summary').first().evaluate(e=>getComputedStyle(e).borderBottomColor),'rgba(244, 180, 0, 0.333)');
-   await panel.locator('img').evaluateAll(images=>Promise.all(images.map(image=>image.decode())));assert.ok(await panel.locator('img').evaluateAll(images=>images.every(image=>image.naturalWidth>0 && image.getAttribute('src').startsWith('/types/icons/') && image.alt.endsWith(' type'))));
+   await panel.locator('img').evaluateAll(images=>Promise.all(images.map(image=>image.decode())));assert.ok(await panel.locator('img').evaluateAll((images,iconPath)=>images.every(image=>image.naturalWidth>0 && image.getAttribute('src').startsWith(iconPath) && image.alt.endsWith(' type')),assetPath('/types/icons/')));
    if(dex===172)assert.match(await panel.innerText(),/Volt Tackle[\s\S]*Either parent holds a Light Ball/);
    if(dex===132)assert.match(await groups.nth(1).innerText(),/No compatible TMs or HMs/);
    if(dex===4)assert.match(await panel.innerText(),/Varies/);
