@@ -1,0 +1,22 @@
+/* Original compact Learnset hierarchy, scoped to the Resources profile. */
+.species-learnset { margin-top: 8px; min-width: 0; color: #e3e6eb; font-size: 11px; }
+.species-learnset .resource-learnset-group { margin-top: 8px; }
+.species-learnset .resource-learnset-group > summary { padding: 5px 8px; border-bottom: 1px solid #ffffff0b; color: var(--resources-neon); font-size: 11px; line-height: 1.2; font-weight: 700; cursor: pointer; }
+.species-learnset .resource-learnset-group[open] > summary { border-bottom-color: #f4b40055; }
+.species-learnset .resource-learnset-group > div { padding: 2px 8px; border-top: 1px solid #ffffff0b; }
+.species-learnset .resource-learnset-move { display: block; min-height: 0; padding: 3px 0; color: #e3e6eb; text-align: left; }
+.species-learnset .resource-learnset-heading, .species-learnset .resource-learnset-group > .resource-learnset-columns { display: grid; grid-template-columns: 17px minmax(0, 1fr) 22px 29px 17px 28px 42px; align-items: center; gap: 3px; }
+.species-learnset .resource-learnset-heading strong { min-width: 0; font-size: 11px; overflow-wrap: anywhere; }
+.species-learnset .resource-learnset-heading > span { min-width: 0; font-size: 9px; }
+.species-learnset .resource-learnset-heading > :nth-child(n+3), .species-learnset .resource-learnset-columns > :nth-child(n+3) { text-align: center; }
+.species-learnset .resource-learnset-icon { display: inline-flex; width: 17px; height: 17px; align-items: center; justify-content: center; }
+.species-learnset .resource-learnset-icon img { width: 17px; height: 17px; object-fit: contain; }
+.species-learnset .resource-learnset-method { color: var(--resources-neon); }
+.species-learnset .resource-learnset-description { margin: 1px 0 0 22px; color: #c2c7cf; font-size: 11px; line-height: 1.25; }
+.species-learnset .resource-learnset-group > .resource-learnset-columns { padding: 5px 8px; color: #939ba6; font-size: 9px; }
+.species-learnset .resource-tutor-location { margin: 2px 0 2px 22px; color: #939ba6; font-size: 10px; line-height: 1.3; }
+.species-learnset .resource-learnset-egg { padding-bottom: 2px; border-bottom: 1px solid #ffffff0b; }
+.species-learnset .resource-special-breeding > h4 { margin: 2px 0 3px; color: #939ba6; font-size: 9px; line-height: 1.2; font-weight: 500; }
+.species-learnset .resource-note { padding: 0 12px; color: #939ba6; font-size: 12px; line-height: 1.6; }
+.species-learnset .resource-move-sources { margin: 0; padding-left: 20px; color: #939ba6; font-size: 11px; line-height: 1.4; }
+.species-learnset .resource-move-sources li { margin: 6px 0; }

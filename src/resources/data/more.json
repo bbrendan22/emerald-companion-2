@@ -1,0 +1,8229 @@
+{
+  "provenance": {
+    "source": "pret/pokeemerald",
+    "revision": "731ad5bfd6e6f265508d0efcca0ba42f9dcf5881",
+    "speciesInfoSha256": "1aac881bb02361339dc4dd33c7a5804a7127c0367426b77b982ee213a713e0af",
+    "pokedexEntriesSha256": "b830c2dc436790a4d9bacb4794753af689f059000d13004b8e69cfa36907d4ae",
+    "hatchSteps": "eggCycles × 256 (1.0 approximate convention; not an exact hatch timer)"
+  },
+  "species": {
+    "1": {
+      "height": 0.7,
+      "weight": 6.9,
+      "catchRate": 45,
+      "expYield": 64,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "2": {
+      "height": 1,
+      "weight": 13,
+      "catchRate": 45,
+      "expYield": 141,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 1
+      }
+    },
+    "3": {
+      "height": 2,
+      "weight": 100,
+      "catchRate": 45,
+      "expYield": 208,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 1
+      }
+    },
+    "4": {
+      "height": 0.6,
+      "weight": 8.5,
+      "catchRate": 45,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "5": {
+      "height": 1.1,
+      "weight": 19,
+      "catchRate": 45,
+      "expYield": 142,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "6": {
+      "height": 1.7,
+      "weight": 90.5,
+      "catchRate": 45,
+      "expYield": 209,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "7": {
+      "height": 0.5,
+      "weight": 9,
+      "catchRate": 45,
+      "expYield": 66,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "8": {
+      "height": 1,
+      "weight": 22.5,
+      "catchRate": 45,
+      "expYield": 143,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "9": {
+      "height": 1.6,
+      "weight": 85.5,
+      "catchRate": 45,
+      "expYield": 210,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "10": {
+      "height": 0.3,
+      "weight": 2.9,
+      "catchRate": 255,
+      "expYield": 53,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "11": {
+      "height": 0.7,
+      "weight": 9.9,
+      "catchRate": 120,
+      "expYield": 72,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "12": {
+      "height": 1.1,
+      "weight": 32,
+      "catchRate": 45,
+      "expYield": 160,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 188,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 1
+      }
+    },
+    "13": {
+      "height": 0.3,
+      "weight": 3.2,
+      "catchRate": 255,
+      "expYield": 52,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "14": {
+      "height": 0.6,
+      "weight": 10,
+      "catchRate": 120,
+      "expYield": 71,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "15": {
+      "height": 1,
+      "weight": 29.5,
+      "catchRate": 45,
+      "expYield": 159,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 211,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "16": {
+      "height": 0.3,
+      "weight": 1.8,
+      "catchRate": 255,
+      "expYield": 55,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "17": {
+      "height": 1.1,
+      "weight": 30,
+      "catchRate": 120,
+      "expYield": 113,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "18": {
+      "height": 1.5,
+      "weight": 39.5,
+      "catchRate": 45,
+      "expYield": 172,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 3,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "19": {
+      "height": 0.3,
+      "weight": 3.5,
+      "catchRate": 255,
+      "expYield": 57,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "20": {
+      "height": 0.7,
+      "weight": 18.5,
+      "catchRate": 127,
+      "expYield": 116,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "21": {
+      "height": 0.3,
+      "weight": 2,
+      "catchRate": 255,
+      "expYield": 58,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "22": {
+      "height": 1.2,
+      "weight": 38,
+      "catchRate": 90,
+      "expYield": 162,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 210,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "23": {
+      "height": 2,
+      "weight": 6.9,
+      "catchRate": 255,
+      "expYield": 62,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "24": {
+      "height": 3.5,
+      "weight": 65,
+      "catchRate": 90,
+      "expYield": 147,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "25": {
+      "height": 0.4,
+      "weight": 6,
+      "catchRate": 190,
+      "expYield": 82,
+      "friendship": 70,
+      "commonItem": 139,
+      "rareItem": 202,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "26": {
+      "height": 0.8,
+      "weight": 30,
+      "catchRate": 75,
+      "expYield": 122,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 139,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 3,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "27": {
+      "height": 0.6,
+      "weight": 12,
+      "catchRate": 255,
+      "expYield": 93,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 183,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "28": {
+      "height": 1,
+      "weight": 29.5,
+      "catchRate": 90,
+      "expYield": 163,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 183,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "29": {
+      "height": 0.4,
+      "weight": 7,
+      "catchRate": 235,
+      "expYield": 59,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "30": {
+      "height": 0.8,
+      "weight": 20,
+      "catchRate": 120,
+      "expYield": 117,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "31": {
+      "height": 1.3,
+      "weight": 60,
+      "catchRate": 45,
+      "expYield": 194,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "32": {
+      "height": 0.5,
+      "weight": 9,
+      "catchRate": 235,
+      "expYield": 60,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "33": {
+      "height": 0.9,
+      "weight": 19.5,
+      "catchRate": 120,
+      "expYield": 118,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "34": {
+      "height": 1.4,
+      "weight": 62,
+      "catchRate": 45,
+      "expYield": 195,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "35": {
+      "height": 0.6,
+      "weight": 7.5,
+      "catchRate": 150,
+      "expYield": 68,
+      "friendship": 140,
+      "commonItem": 138,
+      "rareItem": 94,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "36": {
+      "height": 1.3,
+      "weight": 40,
+      "catchRate": 25,
+      "expYield": 129,
+      "friendship": 140,
+      "commonItem": 138,
+      "rareItem": 94,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "37": {
+      "height": 0.6,
+      "weight": 9.9,
+      "catchRate": 190,
+      "expYield": 63,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "38": {
+      "height": 1.1,
+      "weight": 19.9,
+      "catchRate": 75,
+      "expYield": 178,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "39": {
+      "height": 0.5,
+      "weight": 5.5,
+      "catchRate": 170,
+      "expYield": 76,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "40": {
+      "height": 1,
+      "weight": 12,
+      "catchRate": 50,
+      "expYield": 109,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "41": {
+      "height": 0.8,
+      "weight": 7.5,
+      "catchRate": 255,
+      "expYield": 54,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "42": {
+      "height": 1.6,
+      "weight": 55,
+      "catchRate": 90,
+      "expYield": 171,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "43": {
+      "height": 0.5,
+      "weight": 5.4,
+      "catchRate": 255,
+      "expYield": 78,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "44": {
+      "height": 0.8,
+      "weight": 8.6,
+      "catchRate": 120,
+      "expYield": 132,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "45": {
+      "height": 1.2,
+      "weight": 18.6,
+      "catchRate": 45,
+      "expYield": 184,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "46": {
+      "height": 0.3,
+      "weight": 5.4,
+      "catchRate": 190,
+      "expYield": 70,
+      "friendship": 70,
+      "commonItem": 103,
+      "rareItem": 104,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "47": {
+      "height": 1,
+      "weight": 29.5,
+      "catchRate": 75,
+      "expYield": 128,
+      "friendship": 70,
+      "commonItem": 103,
+      "rareItem": 104,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "48": {
+      "height": 1,
+      "weight": 30,
+      "catchRate": 190,
+      "expYield": 75,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "49": {
+      "height": 1.5,
+      "weight": 12.5,
+      "catchRate": 75,
+      "expYield": 138,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "50": {
+      "height": 0.2,
+      "weight": 0.8,
+      "catchRate": 255,
+      "expYield": 81,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "51": {
+      "height": 0.7,
+      "weight": 33.3,
+      "catchRate": 50,
+      "expYield": 153,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "52": {
+      "height": 0.4,
+      "weight": 4.2,
+      "catchRate": 255,
+      "expYield": 69,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "53": {
+      "height": 1,
+      "weight": 32,
+      "catchRate": 90,
+      "expYield": 148,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "54": {
+      "height": 0.8,
+      "weight": 19.6,
+      "catchRate": 190,
+      "expYield": 80,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "55": {
+      "height": 1.7,
+      "weight": 76.6,
+      "catchRate": 75,
+      "expYield": 174,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "56": {
+      "height": 0.5,
+      "weight": 28,
+      "catchRate": 190,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "57": {
+      "height": 1,
+      "weight": 32,
+      "catchRate": 75,
+      "expYield": 149,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "58": {
+      "height": 0.7,
+      "weight": 19,
+      "catchRate": 190,
+      "expYield": 91,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "59": {
+      "height": 1.9,
+      "weight": 155,
+      "catchRate": 75,
+      "expYield": 213,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "60": {
+      "height": 0.6,
+      "weight": 12.4,
+      "catchRate": 255,
+      "expYield": 77,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "61": {
+      "height": 1,
+      "weight": 20,
+      "catchRate": 120,
+      "expYield": 131,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "62": {
+      "height": 1.3,
+      "weight": 54,
+      "catchRate": 45,
+      "expYield": 185,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "63": {
+      "height": 0.9,
+      "weight": 19.5,
+      "catchRate": 200,
+      "expYield": 73,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 214,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "64": {
+      "height": 1.3,
+      "weight": 56.5,
+      "catchRate": 100,
+      "expYield": 145,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 214,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "65": {
+      "height": 1.5,
+      "weight": 48,
+      "catchRate": 50,
+      "expYield": 186,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 214,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "66": {
+      "height": 0.8,
+      "weight": 19.5,
+      "catchRate": 180,
+      "expYield": 88,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "67": {
+      "height": 1.5,
+      "weight": 70.5,
+      "catchRate": 90,
+      "expYield": 146,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "68": {
+      "height": 1.6,
+      "weight": 130,
+      "catchRate": 45,
+      "expYield": 193,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "69": {
+      "height": 0.7,
+      "weight": 4,
+      "catchRate": 255,
+      "expYield": 84,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "70": {
+      "height": 1,
+      "weight": 6.4,
+      "catchRate": 120,
+      "expYield": 151,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "71": {
+      "height": 1.7,
+      "weight": 15.5,
+      "catchRate": 45,
+      "expYield": 191,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "72": {
+      "height": 0.9,
+      "weight": 45.5,
+      "catchRate": 190,
+      "expYield": 105,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "73": {
+      "height": 1.6,
+      "weight": 55,
+      "catchRate": 60,
+      "expYield": 205,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "74": {
+      "height": 0.4,
+      "weight": 20,
+      "catchRate": 255,
+      "expYield": 86,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 195,
+      "eggCycles": 15,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "75": {
+      "height": 1,
+      "weight": 105,
+      "catchRate": 120,
+      "expYield": 134,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 195,
+      "eggCycles": 15,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "76": {
+      "height": 1.4,
+      "weight": 300,
+      "catchRate": 45,
+      "expYield": 177,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 195,
+      "eggCycles": 15,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "77": {
+      "height": 1,
+      "weight": 30,
+      "catchRate": 190,
+      "expYield": 152,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "78": {
+      "height": 1.7,
+      "weight": 95,
+      "catchRate": 60,
+      "expYield": 192,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "79": {
+      "height": 1.2,
+      "weight": 36,
+      "catchRate": 190,
+      "expYield": 99,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "80": {
+      "height": 1.6,
+      "weight": 78.5,
+      "catchRate": 75,
+      "expYield": 164,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "81": {
+      "height": 0.3,
+      "weight": 6,
+      "catchRate": 190,
+      "expYield": 89,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 199,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "82": {
+      "height": 1,
+      "weight": 60,
+      "catchRate": 60,
+      "expYield": 161,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 199,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "83": {
+      "height": 0.8,
+      "weight": 15,
+      "catchRate": 45,
+      "expYield": 94,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 225,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "84": {
+      "height": 1.4,
+      "weight": 39.2,
+      "catchRate": 190,
+      "expYield": 96,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 210,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "85": {
+      "height": 1.8,
+      "weight": 85.2,
+      "catchRate": 45,
+      "expYield": 158,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 210,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "86": {
+      "height": 1.1,
+      "weight": 90,
+      "catchRate": 190,
+      "expYield": 100,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "87": {
+      "height": 1.7,
+      "weight": 120,
+      "catchRate": 75,
+      "expYield": 176,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "88": {
+      "height": 0.9,
+      "weight": 30,
+      "catchRate": 190,
+      "expYield": 90,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 110,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "89": {
+      "height": 1.2,
+      "weight": 30,
+      "catchRate": 75,
+      "expYield": 157,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 110,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "90": {
+      "height": 0.3,
+      "weight": 4,
+      "catchRate": 190,
+      "expYield": 97,
+      "friendship": 70,
+      "commonItem": 106,
+      "rareItem": 107,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "91": {
+      "height": 1.5,
+      "weight": 132.5,
+      "catchRate": 60,
+      "expYield": 203,
+      "friendship": 70,
+      "commonItem": 106,
+      "rareItem": 107,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "92": {
+      "height": 1.3,
+      "weight": 0.1,
+      "catchRate": 190,
+      "expYield": 95,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "93": {
+      "height": 1.6,
+      "weight": 0.1,
+      "catchRate": 90,
+      "expYield": 126,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "94": {
+      "height": 1.5,
+      "weight": 40.5,
+      "catchRate": 45,
+      "expYield": 190,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "95": {
+      "height": 8.8,
+      "weight": 210,
+      "catchRate": 45,
+      "expYield": 108,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "96": {
+      "height": 1,
+      "weight": 32.4,
+      "catchRate": 190,
+      "expYield": 102,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "97": {
+      "height": 1.6,
+      "weight": 75.6,
+      "catchRate": 75,
+      "expYield": 165,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "98": {
+      "height": 0.4,
+      "weight": 6.5,
+      "catchRate": 225,
+      "expYield": 115,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "99": {
+      "height": 1.3,
+      "weight": 60,
+      "catchRate": 60,
+      "expYield": 206,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "100": {
+      "height": 0.5,
+      "weight": 10.4,
+      "catchRate": 190,
+      "expYield": 103,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "101": {
+      "height": 1.2,
+      "weight": 66.6,
+      "catchRate": 60,
+      "expYield": 150,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "102": {
+      "height": 0.4,
+      "weight": 2.5,
+      "catchRate": 90,
+      "expYield": 98,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "103": {
+      "height": 2,
+      "weight": 120,
+      "catchRate": 45,
+      "expYield": 212,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "104": {
+      "height": 0.4,
+      "weight": 6.5,
+      "catchRate": 190,
+      "expYield": 87,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 224,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "105": {
+      "height": 1,
+      "weight": 45,
+      "catchRate": 75,
+      "expYield": 124,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 224,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "106": {
+      "height": 1.5,
+      "weight": 49.8,
+      "catchRate": 45,
+      "expYield": 139,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "107": {
+      "height": 1.4,
+      "weight": 50.2,
+      "catchRate": 45,
+      "expYield": 140,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "108": {
+      "height": 1.2,
+      "weight": 65.5,
+      "catchRate": 45,
+      "expYield": 127,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "109": {
+      "height": 0.6,
+      "weight": 1,
+      "catchRate": 190,
+      "expYield": 114,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 194,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "110": {
+      "height": 1.2,
+      "weight": 9.5,
+      "catchRate": 60,
+      "expYield": 173,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 194,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "111": {
+      "height": 1,
+      "weight": 115,
+      "catchRate": 120,
+      "expYield": 135,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "112": {
+      "height": 1.9,
+      "weight": 120,
+      "catchRate": 60,
+      "expYield": 204,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "113": {
+      "height": 1.1,
+      "weight": 34.6,
+      "catchRate": 30,
+      "expYield": 255,
+      "friendship": 140,
+      "commonItem": 0,
+      "rareItem": 197,
+      "eggCycles": 40,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "114": {
+      "height": 1,
+      "weight": 35,
+      "catchRate": 45,
+      "expYield": 166,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "115": {
+      "height": 2.2,
+      "weight": 80,
+      "catchRate": 45,
+      "expYield": 175,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "116": {
+      "height": 0.4,
+      "weight": 8,
+      "catchRate": 225,
+      "expYield": 83,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "117": {
+      "height": 1.2,
+      "weight": 25,
+      "catchRate": 75,
+      "expYield": 155,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "118": {
+      "height": 0.6,
+      "weight": 15,
+      "catchRate": 225,
+      "expYield": 111,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "119": {
+      "height": 1.3,
+      "weight": 39,
+      "catchRate": 60,
+      "expYield": 170,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "120": {
+      "height": 0.8,
+      "weight": 34.5,
+      "catchRate": 225,
+      "expYield": 106,
+      "friendship": 70,
+      "commonItem": 108,
+      "rareItem": 109,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "121": {
+      "height": 1.1,
+      "weight": 80,
+      "catchRate": 60,
+      "expYield": 207,
+      "friendship": 70,
+      "commonItem": 108,
+      "rareItem": 109,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "122": {
+      "height": 1.3,
+      "weight": 54.5,
+      "catchRate": 45,
+      "expYield": 136,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 138,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "123": {
+      "height": 1.5,
+      "weight": 56,
+      "catchRate": 45,
+      "expYield": 187,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "124": {
+      "height": 1.4,
+      "weight": 40.6,
+      "catchRate": 45,
+      "expYield": 137,
+      "friendship": 70,
+      "commonItem": 137,
+      "rareItem": 137,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "125": {
+      "height": 1.1,
+      "weight": 30,
+      "catchRate": 45,
+      "expYield": 156,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "126": {
+      "height": 1.3,
+      "weight": 44.5,
+      "catchRate": 45,
+      "expYield": 167,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "127": {
+      "height": 1.5,
+      "weight": 55,
+      "catchRate": 45,
+      "expYield": 200,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "128": {
+      "height": 1.4,
+      "weight": 88.4,
+      "catchRate": 45,
+      "expYield": 211,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "129": {
+      "height": 0.9,
+      "weight": 10,
+      "catchRate": 255,
+      "expYield": 20,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 5,
+      "eggGroups": [
+        "WATER_2",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "130": {
+      "height": 6.5,
+      "weight": 235,
+      "catchRate": 45,
+      "expYield": 214,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 5,
+      "eggGroups": [
+        "WATER_2",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "131": {
+      "height": 2.5,
+      "weight": 220,
+      "catchRate": 45,
+      "expYield": 219,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "132": {
+      "height": 0.3,
+      "weight": 4,
+      "catchRate": 35,
+      "expYield": 61,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 223,
+      "eggCycles": 20,
+      "eggGroups": [
+        "DITTO"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "133": {
+      "height": 0.3,
+      "weight": 6.5,
+      "catchRate": 45,
+      "expYield": 92,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "134": {
+      "height": 1,
+      "weight": 29,
+      "catchRate": 45,
+      "expYield": 196,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "135": {
+      "height": 0.8,
+      "weight": 24.5,
+      "catchRate": 45,
+      "expYield": 197,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "136": {
+      "height": 0.9,
+      "weight": 25,
+      "catchRate": 45,
+      "expYield": 198,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "137": {
+      "height": 0.8,
+      "weight": 36.5,
+      "catchRate": 45,
+      "expYield": 130,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "138": {
+      "height": 0.4,
+      "weight": 7.5,
+      "catchRate": 45,
+      "expYield": 120,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "139": {
+      "height": 1,
+      "weight": 35,
+      "catchRate": 45,
+      "expYield": 199,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "140": {
+      "height": 0.5,
+      "weight": 11.5,
+      "catchRate": 45,
+      "expYield": 119,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "141": {
+      "height": 1.3,
+      "weight": 40.5,
+      "catchRate": 45,
+      "expYield": 201,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "142": {
+      "height": 1.8,
+      "weight": 59,
+      "catchRate": 45,
+      "expYield": 202,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "143": {
+      "height": 2.1,
+      "weight": 460,
+      "catchRate": 25,
+      "expYield": 154,
+      "friendship": 70,
+      "commonItem": 200,
+      "rareItem": 200,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "144": {
+      "height": 1.7,
+      "weight": 55.4,
+      "catchRate": 3,
+      "expYield": 215,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "145": {
+      "height": 1.6,
+      "weight": 52.6,
+      "catchRate": 3,
+      "expYield": 216,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "146": {
+      "height": 2,
+      "weight": 60,
+      "catchRate": 3,
+      "expYield": 217,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "147": {
+      "height": 1.8,
+      "weight": 3.3,
+      "catchRate": 45,
+      "expYield": 67,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 40,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "148": {
+      "height": 4,
+      "weight": 16.5,
+      "catchRate": 45,
+      "expYield": 144,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 40,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "149": {
+      "height": 2.2,
+      "weight": 210,
+      "catchRate": 45,
+      "expYield": 218,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 40,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "150": {
+      "height": 2,
+      "weight": 122,
+      "catchRate": 3,
+      "expYield": 220,
+      "friendship": 0,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "151": {
+      "height": 0.4,
+      "weight": 4,
+      "catchRate": 45,
+      "expYield": 64,
+      "friendship": 100,
+      "commonItem": 141,
+      "rareItem": 141,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "152": {
+      "height": 0.9,
+      "weight": 6.4,
+      "catchRate": 45,
+      "expYield": 64,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "153": {
+      "height": 1.2,
+      "weight": 15.8,
+      "catchRate": 45,
+      "expYield": 141,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "154": {
+      "height": 1.8,
+      "weight": 100.5,
+      "catchRate": 45,
+      "expYield": 208,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "155": {
+      "height": 0.5,
+      "weight": 7.9,
+      "catchRate": 45,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "156": {
+      "height": 0.9,
+      "weight": 19,
+      "catchRate": 45,
+      "expYield": 142,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "157": {
+      "height": 1.7,
+      "weight": 79.5,
+      "catchRate": 45,
+      "expYield": 209,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "158": {
+      "height": 0.6,
+      "weight": 9.5,
+      "catchRate": 45,
+      "expYield": 66,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "159": {
+      "height": 1.1,
+      "weight": 25,
+      "catchRate": 45,
+      "expYield": 143,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "160": {
+      "height": 2.3,
+      "weight": 88.8,
+      "catchRate": 45,
+      "expYield": 210,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "161": {
+      "height": 0.8,
+      "weight": 6,
+      "catchRate": 255,
+      "expYield": 57,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 139,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "162": {
+      "height": 1.8,
+      "weight": 32.5,
+      "catchRate": 90,
+      "expYield": 116,
+      "friendship": 70,
+      "commonItem": 139,
+      "rareItem": 142,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "163": {
+      "height": 0.7,
+      "weight": 21.2,
+      "catchRate": 255,
+      "expYield": 58,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "164": {
+      "height": 1.6,
+      "weight": 40.8,
+      "catchRate": 90,
+      "expYield": 162,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "165": {
+      "height": 1,
+      "weight": 10.8,
+      "catchRate": 255,
+      "expYield": 54,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "166": {
+      "height": 1.4,
+      "weight": 35.6,
+      "catchRate": 90,
+      "expYield": 134,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "167": {
+      "height": 0.5,
+      "weight": 8.5,
+      "catchRate": 255,
+      "expYield": 54,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "168": {
+      "height": 1.1,
+      "weight": 33.5,
+      "catchRate": 90,
+      "expYield": 134,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "169": {
+      "height": 1.8,
+      "weight": 75,
+      "catchRate": 90,
+      "expYield": 204,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 3,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "170": {
+      "height": 0.5,
+      "weight": 12,
+      "catchRate": 190,
+      "expYield": 90,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 50,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "171": {
+      "height": 1.2,
+      "weight": 22.5,
+      "catchRate": 75,
+      "expYield": 156,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 50,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "172": {
+      "height": 0.3,
+      "weight": 2,
+      "catchRate": 190,
+      "expYield": 42,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 139,
+      "eggCycles": 10,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "173": {
+      "height": 0.3,
+      "weight": 3,
+      "catchRate": 150,
+      "expYield": 37,
+      "friendship": 140,
+      "commonItem": 138,
+      "rareItem": 94,
+      "eggCycles": 10,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "174": {
+      "height": 0.3,
+      "weight": 1,
+      "catchRate": 170,
+      "expYield": 39,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "175": {
+      "height": 0.3,
+      "weight": 1.5,
+      "catchRate": 190,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "176": {
+      "height": 0.6,
+      "weight": 3.2,
+      "catchRate": 75,
+      "expYield": 114,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "FLYING",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "177": {
+      "height": 0.2,
+      "weight": 2,
+      "catchRate": 190,
+      "expYield": 73,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "178": {
+      "height": 1.5,
+      "weight": 15,
+      "catchRate": 75,
+      "expYield": 171,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "179": {
+      "height": 0.6,
+      "weight": 7.8,
+      "catchRate": 235,
+      "expYield": 59,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "180": {
+      "height": 0.8,
+      "weight": 13.3,
+      "catchRate": 120,
+      "expYield": 117,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "181": {
+      "height": 1.4,
+      "weight": 61.5,
+      "catchRate": 45,
+      "expYield": 194,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "182": {
+      "height": 0.4,
+      "weight": 5.8,
+      "catchRate": 45,
+      "expYield": 184,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "183": {
+      "height": 0.4,
+      "weight": 8.5,
+      "catchRate": 190,
+      "expYield": 58,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "WATER_1",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "184": {
+      "height": 0.8,
+      "weight": 28.5,
+      "catchRate": 75,
+      "expYield": 153,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "WATER_1",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "185": {
+      "height": 1.2,
+      "weight": 38,
+      "catchRate": 65,
+      "expYield": 135,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "186": {
+      "height": 1.1,
+      "weight": 33.9,
+      "catchRate": 45,
+      "expYield": 185,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "187": {
+      "height": 0.4,
+      "weight": 0.5,
+      "catchRate": 255,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "188": {
+      "height": 0.6,
+      "weight": 1,
+      "catchRate": 120,
+      "expYield": 136,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "189": {
+      "height": 0.8,
+      "weight": 3,
+      "catchRate": 45,
+      "expYield": 176,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 3,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "190": {
+      "height": 0.8,
+      "weight": 11.5,
+      "catchRate": 45,
+      "expYield": 94,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "191": {
+      "height": 0.3,
+      "weight": 1.8,
+      "catchRate": 235,
+      "expYield": 52,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "192": {
+      "height": 0.8,
+      "weight": 8.5,
+      "catchRate": 120,
+      "expYield": 146,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "193": {
+      "height": 1.2,
+      "weight": 38,
+      "catchRate": 75,
+      "expYield": 147,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "194": {
+      "height": 0.4,
+      "weight": 8.5,
+      "catchRate": 255,
+      "expYield": 52,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "195": {
+      "height": 1.4,
+      "weight": 75,
+      "catchRate": 90,
+      "expYield": 137,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "196": {
+      "height": 0.9,
+      "weight": 26.5,
+      "catchRate": 45,
+      "expYield": 197,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "197": {
+      "height": 1,
+      "weight": 27,
+      "catchRate": 45,
+      "expYield": 197,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 35,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "198": {
+      "height": 0.5,
+      "weight": 2.1,
+      "catchRate": 30,
+      "expYield": 107,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "199": {
+      "height": 2,
+      "weight": 79.5,
+      "catchRate": 70,
+      "expYield": 164,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "200": {
+      "height": 0.7,
+      "weight": 1,
+      "catchRate": 45,
+      "expYield": 147,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 213,
+      "eggCycles": 25,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 1
+      }
+    },
+    "201": {
+      "height": 0.5,
+      "weight": 5,
+      "catchRate": 225,
+      "expYield": 61,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "202": {
+      "height": 1.3,
+      "weight": 28.5,
+      "catchRate": 45,
+      "expYield": 177,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "203": {
+      "height": 1.5,
+      "weight": 41.5,
+      "catchRate": 60,
+      "expYield": 149,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 140,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "204": {
+      "height": 0.6,
+      "weight": 7.2,
+      "catchRate": 190,
+      "expYield": 60,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "205": {
+      "height": 1.2,
+      "weight": 125.8,
+      "catchRate": 75,
+      "expYield": 118,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "206": {
+      "height": 1.5,
+      "weight": 14,
+      "catchRate": 190,
+      "expYield": 75,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "207": {
+      "height": 1.1,
+      "weight": 64.8,
+      "catchRate": 60,
+      "expYield": 108,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "208": {
+      "height": 9.2,
+      "weight": 400,
+      "catchRate": 25,
+      "expYield": 196,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 199,
+      "eggCycles": 25,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "209": {
+      "height": 0.6,
+      "weight": 7.8,
+      "catchRate": 190,
+      "expYield": 63,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "210": {
+      "height": 1.4,
+      "weight": 48.7,
+      "catchRate": 75,
+      "expYield": 178,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "211": {
+      "height": 0.5,
+      "weight": 3.9,
+      "catchRate": 45,
+      "expYield": 100,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "212": {
+      "height": 1.8,
+      "weight": 118,
+      "catchRate": 25,
+      "expYield": 200,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "213": {
+      "height": 0.6,
+      "weight": 20.5,
+      "catchRate": 190,
+      "expYield": 80,
+      "friendship": 70,
+      "commonItem": 139,
+      "rareItem": 139,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "214": {
+      "height": 1.5,
+      "weight": 54,
+      "catchRate": 45,
+      "expYield": 200,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "215": {
+      "height": 0.9,
+      "weight": 28,
+      "catchRate": 60,
+      "expYield": 132,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 183,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "216": {
+      "height": 0.6,
+      "weight": 8.8,
+      "catchRate": 120,
+      "expYield": 124,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "217": {
+      "height": 1.8,
+      "weight": 125.8,
+      "catchRate": 60,
+      "expYield": 189,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "218": {
+      "height": 0.7,
+      "weight": 35,
+      "catchRate": 190,
+      "expYield": 78,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "219": {
+      "height": 0.8,
+      "weight": 55,
+      "catchRate": 75,
+      "expYield": 154,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "220": {
+      "height": 0.4,
+      "weight": 6.5,
+      "catchRate": 225,
+      "expYield": 78,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "221": {
+      "height": 1.1,
+      "weight": 55.8,
+      "catchRate": 75,
+      "expYield": 160,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "222": {
+      "height": 0.6,
+      "weight": 5,
+      "catchRate": 60,
+      "expYield": 113,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 48,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "223": {
+      "height": 0.6,
+      "weight": 12,
+      "catchRate": 190,
+      "expYield": 78,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "224": {
+      "height": 0.9,
+      "weight": 28.5,
+      "catchRate": 75,
+      "expYield": 164,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "225": {
+      "height": 0.9,
+      "weight": 16,
+      "catchRate": 45,
+      "expYield": 183,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "226": {
+      "height": 2.1,
+      "weight": 220,
+      "catchRate": 25,
+      "expYield": 168,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "227": {
+      "height": 1.7,
+      "weight": 50.5,
+      "catchRate": 25,
+      "expYield": 168,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "228": {
+      "height": 0.6,
+      "weight": 10.8,
+      "catchRate": 120,
+      "expYield": 114,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "229": {
+      "height": 1.4,
+      "weight": 35,
+      "catchRate": 45,
+      "expYield": 204,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "230": {
+      "height": 1.8,
+      "weight": 152,
+      "catchRate": 45,
+      "expYield": 207,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 1
+      }
+    },
+    "231": {
+      "height": 0.5,
+      "weight": 33.5,
+      "catchRate": 120,
+      "expYield": 124,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "232": {
+      "height": 1.1,
+      "weight": 120,
+      "catchRate": 60,
+      "expYield": 189,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "233": {
+      "height": 0.6,
+      "weight": 32.5,
+      "catchRate": 45,
+      "expYield": 180,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "234": {
+      "height": 1.4,
+      "weight": 71.2,
+      "catchRate": 45,
+      "expYield": 165,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "235": {
+      "height": 1.2,
+      "weight": 58,
+      "catchRate": 45,
+      "expYield": 106,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "236": {
+      "height": 0.7,
+      "weight": 21,
+      "catchRate": 75,
+      "expYield": 91,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "237": {
+      "height": 1.4,
+      "weight": 48,
+      "catchRate": 45,
+      "expYield": 138,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "238": {
+      "height": 0.4,
+      "weight": 6,
+      "catchRate": 45,
+      "expYield": 87,
+      "friendship": 70,
+      "commonItem": 137,
+      "rareItem": 137,
+      "eggCycles": 25,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "239": {
+      "height": 0.6,
+      "weight": 23.5,
+      "catchRate": 45,
+      "expYield": 106,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "240": {
+      "height": 0.7,
+      "weight": 21.4,
+      "catchRate": 45,
+      "expYield": 117,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 25,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "241": {
+      "height": 1.2,
+      "weight": 75.5,
+      "catchRate": 45,
+      "expYield": 200,
+      "friendship": 70,
+      "commonItem": 29,
+      "rareItem": 29,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "242": {
+      "height": 1.5,
+      "weight": 46.8,
+      "catchRate": 30,
+      "expYield": 255,
+      "friendship": 140,
+      "commonItem": 0,
+      "rareItem": 197,
+      "eggCycles": 40,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "243": {
+      "height": 1.9,
+      "weight": 178,
+      "catchRate": 3,
+      "expYield": 216,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "244": {
+      "height": 2.1,
+      "weight": 198,
+      "catchRate": 3,
+      "expYield": 217,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "245": {
+      "height": 2,
+      "weight": 187,
+      "catchRate": 3,
+      "expYield": 215,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "246": {
+      "height": 0.6,
+      "weight": 72,
+      "catchRate": 45,
+      "expYield": 67,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "247": {
+      "height": 1.2,
+      "weight": 152,
+      "catchRate": 45,
+      "expYield": 144,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "248": {
+      "height": 2,
+      "weight": 202,
+      "catchRate": 45,
+      "expYield": 218,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "249": {
+      "height": 5.2,
+      "weight": 216,
+      "catchRate": 3,
+      "expYield": 220,
+      "friendship": 0,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "250": {
+      "height": 3.8,
+      "weight": 199,
+      "catchRate": 3,
+      "expYield": 220,
+      "friendship": 0,
+      "commonItem": 45,
+      "rareItem": 45,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "251": {
+      "height": 0.6,
+      "weight": 5,
+      "catchRate": 45,
+      "expYield": 64,
+      "friendship": 100,
+      "commonItem": 141,
+      "rareItem": 141,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "252": {
+      "height": 0.5,
+      "weight": 5,
+      "catchRate": 45,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "253": {
+      "height": 0.9,
+      "weight": 21.6,
+      "catchRate": 45,
+      "expYield": 141,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "254": {
+      "height": 1.7,
+      "weight": 52.2,
+      "catchRate": 45,
+      "expYield": 208,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 3,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "255": {
+      "height": 0.4,
+      "weight": 2.5,
+      "catchRate": 45,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "256": {
+      "height": 0.9,
+      "weight": 19.5,
+      "catchRate": 45,
+      "expYield": 142,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "257": {
+      "height": 1.9,
+      "weight": 52,
+      "catchRate": 45,
+      "expYield": 209,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "258": {
+      "height": 0.4,
+      "weight": 7.6,
+      "catchRate": 45,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "259": {
+      "height": 0.7,
+      "weight": 28,
+      "catchRate": 45,
+      "expYield": 143,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "260": {
+      "height": 1.5,
+      "weight": 81.9,
+      "catchRate": 45,
+      "expYield": 210,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "261": {
+      "height": 0.5,
+      "weight": 13.6,
+      "catchRate": 255,
+      "expYield": 55,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 135,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "262": {
+      "height": 1,
+      "weight": 37,
+      "catchRate": 127,
+      "expYield": 128,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 135,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "263": {
+      "height": 0.4,
+      "weight": 17.5,
+      "catchRate": 255,
+      "expYield": 60,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 139,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "264": {
+      "height": 0.5,
+      "weight": 32.5,
+      "catchRate": 90,
+      "expYield": 128,
+      "friendship": 70,
+      "commonItem": 139,
+      "rareItem": 142,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "265": {
+      "height": 0.3,
+      "weight": 3.6,
+      "catchRate": 255,
+      "expYield": 54,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "266": {
+      "height": 0.6,
+      "weight": 10,
+      "catchRate": 120,
+      "expYield": 71,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "267": {
+      "height": 1,
+      "weight": 28.4,
+      "catchRate": 45,
+      "expYield": 161,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 188,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "268": {
+      "height": 0.7,
+      "weight": 11.5,
+      "catchRate": 120,
+      "expYield": 72,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "269": {
+      "height": 1.2,
+      "weight": 31.6,
+      "catchRate": 45,
+      "expYield": 160,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 188,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "270": {
+      "height": 0.5,
+      "weight": 2.6,
+      "catchRate": 255,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "271": {
+      "height": 1.2,
+      "weight": 32.5,
+      "catchRate": 120,
+      "expYield": 141,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "272": {
+      "height": 1.5,
+      "weight": 55,
+      "catchRate": 45,
+      "expYield": 181,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "273": {
+      "height": 0.5,
+      "weight": 4,
+      "catchRate": 255,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "274": {
+      "height": 1,
+      "weight": 28,
+      "catchRate": 120,
+      "expYield": 141,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "275": {
+      "height": 1.3,
+      "weight": 59.6,
+      "catchRate": 45,
+      "expYield": 181,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "276": {
+      "height": 0.3,
+      "weight": 2.3,
+      "catchRate": 200,
+      "expYield": 59,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "277": {
+      "height": 0.7,
+      "weight": 19.8,
+      "catchRate": 45,
+      "expYield": 162,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "278": {
+      "height": 0.6,
+      "weight": 9.5,
+      "catchRate": 190,
+      "expYield": 64,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "279": {
+      "height": 1.2,
+      "weight": 28,
+      "catchRate": 45,
+      "expYield": 164,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FLYING"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "280": {
+      "height": 0.4,
+      "weight": 6.6,
+      "catchRate": 235,
+      "expYield": 70,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "281": {
+      "height": 0.8,
+      "weight": 20.2,
+      "catchRate": 120,
+      "expYield": 140,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "282": {
+      "height": 1.6,
+      "weight": 48.4,
+      "catchRate": 45,
+      "expYield": 208,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "283": {
+      "height": 0.5,
+      "weight": 1.7,
+      "catchRate": 200,
+      "expYield": 63,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "284": {
+      "height": 0.8,
+      "weight": 3.6,
+      "catchRate": 75,
+      "expYield": 128,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 188,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 1
+      }
+    },
+    "285": {
+      "height": 0.4,
+      "weight": 4.5,
+      "catchRate": 255,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FAIRY",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "286": {
+      "height": 1.2,
+      "weight": 39.2,
+      "catchRate": 90,
+      "expYield": 165,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FAIRY",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "287": {
+      "height": 0.8,
+      "weight": 24,
+      "catchRate": 255,
+      "expYield": 83,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "288": {
+      "height": 1.4,
+      "weight": 46.5,
+      "catchRate": 120,
+      "expYield": 126,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "289": {
+      "height": 2,
+      "weight": 130.5,
+      "catchRate": 45,
+      "expYield": 210,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "290": {
+      "height": 0.5,
+      "weight": 5.5,
+      "catchRate": 255,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "291": {
+      "height": 0.8,
+      "weight": 12,
+      "catchRate": 120,
+      "expYield": 155,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "292": {
+      "height": 0.8,
+      "weight": 1.2,
+      "catchRate": 45,
+      "expYield": 95,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "293": {
+      "height": 0.6,
+      "weight": 16.3,
+      "catchRate": 190,
+      "expYield": 68,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 134,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "294": {
+      "height": 1,
+      "weight": 40.5,
+      "catchRate": 120,
+      "expYield": 126,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 134,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "295": {
+      "height": 1.5,
+      "weight": 84,
+      "catchRate": 45,
+      "expYield": 184,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 134,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MONSTER",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "296": {
+      "height": 1,
+      "weight": 86.4,
+      "catchRate": 180,
+      "expYield": 87,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "297": {
+      "height": 2.3,
+      "weight": 253.8,
+      "catchRate": 200,
+      "expYield": 184,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 187,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "298": {
+      "height": 0.2,
+      "weight": 2,
+      "catchRate": 150,
+      "expYield": 33,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 10,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "299": {
+      "height": 1,
+      "weight": 97,
+      "catchRate": 255,
+      "expYield": 108,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "300": {
+      "height": 0.6,
+      "weight": 11,
+      "catchRate": 255,
+      "expYield": 65,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 138,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "301": {
+      "height": 1.1,
+      "weight": 32.6,
+      "catchRate": 60,
+      "expYield": 138,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 138,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "302": {
+      "height": 0.5,
+      "weight": 11,
+      "catchRate": 45,
+      "expYield": 98,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "303": {
+      "height": 0.6,
+      "weight": 11.5,
+      "catchRate": 45,
+      "expYield": 98,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD",
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "304": {
+      "height": 0.4,
+      "weight": 60,
+      "catchRate": 180,
+      "expYield": 96,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 204,
+      "eggCycles": 35,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "305": {
+      "height": 0.9,
+      "weight": 120,
+      "catchRate": 90,
+      "expYield": 152,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 204,
+      "eggCycles": 35,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "306": {
+      "height": 2.1,
+      "weight": 360,
+      "catchRate": 45,
+      "expYield": 205,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 204,
+      "eggCycles": 35,
+      "eggGroups": [
+        "MONSTER"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "307": {
+      "height": 0.6,
+      "weight": 11.2,
+      "catchRate": 180,
+      "expYield": 91,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "308": {
+      "height": 1.3,
+      "weight": 31.5,
+      "catchRate": 90,
+      "expYield": 153,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "309": {
+      "height": 0.6,
+      "weight": 15.2,
+      "catchRate": 120,
+      "expYield": 104,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "310": {
+      "height": 1.5,
+      "weight": 40.2,
+      "catchRate": 45,
+      "expYield": 168,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "311": {
+      "height": 0.4,
+      "weight": 4.2,
+      "catchRate": 200,
+      "expYield": 120,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "312": {
+      "height": 0.4,
+      "weight": 4.2,
+      "catchRate": 200,
+      "expYield": 120,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "313": {
+      "height": 0.7,
+      "weight": 17.7,
+      "catchRate": 150,
+      "expYield": 146,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG",
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "314": {
+      "height": 0.6,
+      "weight": 17.7,
+      "catchRate": 150,
+      "expYield": 146,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "BUG",
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "315": {
+      "height": 0.3,
+      "weight": 2,
+      "catchRate": 150,
+      "expYield": 152,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 211,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "316": {
+      "height": 0.4,
+      "weight": 10.3,
+      "catchRate": 225,
+      "expYield": 75,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 107,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "317": {
+      "height": 1.7,
+      "weight": 80,
+      "catchRate": 75,
+      "expYield": 168,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 107,
+      "eggCycles": 20,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "318": {
+      "height": 0.8,
+      "weight": 20.8,
+      "catchRate": 225,
+      "expYield": 88,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "319": {
+      "height": 1.8,
+      "weight": 88.8,
+      "catchRate": 60,
+      "expYield": 175,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "320": {
+      "height": 2,
+      "weight": 130,
+      "catchRate": 125,
+      "expYield": 137,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "FIELD",
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "321": {
+      "height": 14.5,
+      "weight": 398,
+      "catchRate": 60,
+      "expYield": 206,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 40,
+      "eggGroups": [
+        "FIELD",
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "322": {
+      "height": 0.7,
+      "weight": 24,
+      "catchRate": 255,
+      "expYield": 88,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "323": {
+      "height": 1.9,
+      "weight": 220,
+      "catchRate": 150,
+      "expYield": 175,
+      "friendship": 70,
+      "commonItem": 136,
+      "rareItem": 136,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "324": {
+      "height": 0.5,
+      "weight": 80.4,
+      "catchRate": 90,
+      "expYield": 161,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "325": {
+      "height": 0.7,
+      "weight": 30.6,
+      "catchRate": 255,
+      "expYield": 89,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "326": {
+      "height": 0.9,
+      "weight": 71.5,
+      "catchRate": 60,
+      "expYield": 164,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "327": {
+      "height": 1.1,
+      "weight": 5,
+      "catchRate": 255,
+      "expYield": 85,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 134,
+      "eggCycles": 15,
+      "eggGroups": [
+        "FIELD",
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "328": {
+      "height": 0.7,
+      "weight": 15,
+      "catchRate": 255,
+      "expYield": 73,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 203,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "329": {
+      "height": 1.1,
+      "weight": 15.3,
+      "catchRate": 120,
+      "expYield": 126,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "330": {
+      "height": 2,
+      "weight": 82,
+      "catchRate": 45,
+      "expYield": 197,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "BUG"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 2,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "331": {
+      "height": 0.4,
+      "weight": 51.3,
+      "catchRate": 190,
+      "expYield": 97,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 211,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS",
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "332": {
+      "height": 1.3,
+      "weight": 77.4,
+      "catchRate": 60,
+      "expYield": 177,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 211,
+      "eggCycles": 20,
+      "eggGroups": [
+        "GRASS",
+        "HUMAN_LIKE"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "333": {
+      "height": 0.4,
+      "weight": 1.2,
+      "catchRate": 255,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "334": {
+      "height": 1.1,
+      "weight": 20.6,
+      "catchRate": 45,
+      "expYield": 188,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FLYING",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "335": {
+      "height": 1.3,
+      "weight": 40.3,
+      "catchRate": 90,
+      "expYield": 165,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "336": {
+      "height": 2.7,
+      "weight": 52.5,
+      "catchRate": 90,
+      "expYield": 165,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "337": {
+      "height": 1,
+      "weight": 168,
+      "catchRate": 45,
+      "expYield": 150,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 94,
+      "eggCycles": 25,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "338": {
+      "height": 1.2,
+      "weight": 154,
+      "catchRate": 45,
+      "expYield": 150,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 93,
+      "eggCycles": 25,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "339": {
+      "height": 0.4,
+      "weight": 1.9,
+      "catchRate": 190,
+      "expYield": 92,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "340": {
+      "height": 0.9,
+      "weight": 23.6,
+      "catchRate": 75,
+      "expYield": 158,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "341": {
+      "height": 0.6,
+      "weight": 11.5,
+      "catchRate": 205,
+      "expYield": 111,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "342": {
+      "height": 1.1,
+      "weight": 32.8,
+      "catchRate": 155,
+      "expYield": 161,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 15,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "343": {
+      "height": 0.5,
+      "weight": 21.5,
+      "catchRate": 255,
+      "expYield": 58,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "344": {
+      "height": 1.5,
+      "weight": 108,
+      "catchRate": 90,
+      "expYield": 189,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "345": {
+      "height": 1,
+      "weight": 23.8,
+      "catchRate": 45,
+      "expYield": 121,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "346": {
+      "height": 1.5,
+      "weight": 60.4,
+      "catchRate": 45,
+      "expYield": 201,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "347": {
+      "height": 0.7,
+      "weight": 12.5,
+      "catchRate": 45,
+      "expYield": 119,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "348": {
+      "height": 1.5,
+      "weight": 68.2,
+      "catchRate": 45,
+      "expYield": 200,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 30,
+      "eggGroups": [
+        "WATER_3"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "349": {
+      "height": 0.6,
+      "weight": 7.4,
+      "catchRate": 255,
+      "expYield": 61,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "350": {
+      "height": 6.2,
+      "weight": 162,
+      "catchRate": 60,
+      "expYield": 213,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "351": {
+      "height": 0.3,
+      "weight": 0.8,
+      "catchRate": 45,
+      "expYield": 145,
+      "friendship": 70,
+      "commonItem": 209,
+      "rareItem": 209,
+      "eggCycles": 25,
+      "eggGroups": [
+        "FAIRY",
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "352": {
+      "height": 1,
+      "weight": 22,
+      "catchRate": 200,
+      "expYield": 132,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 140,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "353": {
+      "height": 0.6,
+      "weight": 2.3,
+      "catchRate": 225,
+      "expYield": 97,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 213,
+      "eggCycles": 25,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "354": {
+      "height": 1.1,
+      "weight": 12.5,
+      "catchRate": 45,
+      "expYield": 179,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 213,
+      "eggCycles": 25,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "355": {
+      "height": 0.8,
+      "weight": 15,
+      "catchRate": 190,
+      "expYield": 97,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 213,
+      "eggCycles": 25,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "356": {
+      "height": 1.6,
+      "weight": 30.6,
+      "catchRate": 90,
+      "expYield": 179,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 213,
+      "eggCycles": 25,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 2
+      }
+    },
+    "357": {
+      "height": 2,
+      "weight": 100,
+      "catchRate": 200,
+      "expYield": 169,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "MONSTER",
+        "GRASS"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "358": {
+      "height": 0.6,
+      "weight": 1,
+      "catchRate": 45,
+      "expYield": 147,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "AMORPHOUS"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 1
+      }
+    },
+    "359": {
+      "height": 1.2,
+      "weight": 47,
+      "catchRate": 30,
+      "expYield": 174,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 25,
+      "eggGroups": [
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "360": {
+      "height": 0.6,
+      "weight": 14,
+      "catchRate": 125,
+      "expYield": 44,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "361": {
+      "height": 0.7,
+      "weight": 16.8,
+      "catchRate": 190,
+      "expYield": 74,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY",
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "362": {
+      "height": 1.5,
+      "weight": 256.5,
+      "catchRate": 75,
+      "expYield": 187,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 212,
+      "eggCycles": 20,
+      "eggGroups": [
+        "FAIRY",
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "363": {
+      "height": 0.8,
+      "weight": 39.5,
+      "catchRate": 255,
+      "expYield": 75,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "364": {
+      "height": 1.1,
+      "weight": 87.6,
+      "catchRate": 120,
+      "expYield": 128,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "365": {
+      "height": 1.4,
+      "weight": 150.6,
+      "catchRate": 45,
+      "expYield": 192,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1",
+        "FIELD"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "366": {
+      "height": 0.4,
+      "weight": 52.5,
+      "catchRate": 255,
+      "expYield": 142,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 49,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "367": {
+      "height": 1.7,
+      "weight": 27,
+      "catchRate": 60,
+      "expYield": 178,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "368": {
+      "height": 1.8,
+      "weight": 22.6,
+      "catchRate": 60,
+      "expYield": 178,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_1"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 2,
+        "spDefense": 0
+      }
+    },
+    "369": {
+      "height": 1,
+      "weight": 23.4,
+      "catchRate": 25,
+      "expYield": 198,
+      "friendship": 70,
+      "commonItem": 0,
+      "rareItem": 51,
+      "eggCycles": 40,
+      "eggGroups": [
+        "WATER_1",
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "370": {
+      "height": 0.6,
+      "weight": 8.7,
+      "catchRate": 225,
+      "expYield": 110,
+      "friendship": 70,
+      "commonItem": 111,
+      "rareItem": 0,
+      "eggCycles": 20,
+      "eggGroups": [
+        "WATER_2"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "371": {
+      "height": 0.6,
+      "weight": 42.1,
+      "catchRate": 45,
+      "expYield": 89,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 40,
+      "eggGroups": [
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "372": {
+      "height": 1.1,
+      "weight": 110.5,
+      "catchRate": 45,
+      "expYield": 144,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 40,
+      "eggGroups": [
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "373": {
+      "height": 1.5,
+      "weight": 102.6,
+      "catchRate": 45,
+      "expYield": 218,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 201,
+      "eggCycles": 40,
+      "eggGroups": [
+        "DRAGON"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "374": {
+      "height": 0.6,
+      "weight": 95.2,
+      "catchRate": 3,
+      "expYield": 103,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 199,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "375": {
+      "height": 1.2,
+      "weight": 202.5,
+      "catchRate": 3,
+      "expYield": 153,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 199,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "376": {
+      "height": 1.6,
+      "weight": 550,
+      "catchRate": 3,
+      "expYield": 210,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 199,
+      "eggCycles": 40,
+      "eggGroups": [
+        "MINERAL"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "377": {
+      "height": 1.7,
+      "weight": 230,
+      "catchRate": 3,
+      "expYield": 217,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "378": {
+      "height": 1.8,
+      "weight": 175,
+      "catchRate": 3,
+      "expYield": 216,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "379": {
+      "height": 1.9,
+      "weight": 205,
+      "catchRate": 3,
+      "expYield": 215,
+      "friendship": 35,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 80,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 1
+      }
+    },
+    "380": {
+      "height": 1.4,
+      "weight": 40,
+      "catchRate": 3,
+      "expYield": 211,
+      "friendship": 90,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 3
+      }
+    },
+    "381": {
+      "height": 2,
+      "weight": 60,
+      "catchRate": 3,
+      "expYield": 211,
+      "friendship": 90,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "382": {
+      "height": 4.5,
+      "weight": 352,
+      "catchRate": 5,
+      "expYield": 218,
+      "friendship": 0,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 3,
+        "spDefense": 0
+      }
+    },
+    "383": {
+      "height": 3.5,
+      "weight": 950,
+      "catchRate": 5,
+      "expYield": 218,
+      "friendship": 0,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "384": {
+      "height": 7,
+      "weight": 206.5,
+      "catchRate": 3,
+      "expYield": 220,
+      "friendship": 0,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    },
+    "385": {
+      "height": 0.3,
+      "weight": 1.1,
+      "catchRate": 3,
+      "expYield": 215,
+      "friendship": 100,
+      "commonItem": 109,
+      "rareItem": 109,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "spAttack": 0,
+        "spDefense": 0
+      }
+    },
+    "386": {
+      "height": 1.7,
+      "weight": 60.8,
+      "catchRate": 3,
+      "expYield": 215,
+      "friendship": 0,
+      "commonItem": 0,
+      "rareItem": 0,
+      "eggCycles": 120,
+      "eggGroups": [
+        "NO_EGGS_DISCOVERED"
+      ],
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 1,
+        "spAttack": 1,
+        "spDefense": 0
+      }
+    }
+  }
+}

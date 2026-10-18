@@ -1,4 +1,5 @@
 import reference from '../data/reference.json' with {type: 'json'};
+import {GEN3_TYPE_DISPLAY_ORDER} from './typeDisplayOrder.js';
 import types from '../data/pokemonTypes.json' with {type: 'json'};
 import profileReference from '../data/profileReference.json' with {type: 'json'};
 export const statFields = [['hp','HP'],['attack','Attack'],['defense','Defense'],['spAttack','Sp. Atk'],['spDefense','Sp. Def'],['speed','Speed']];
@@ -10,7 +11,7 @@ export function hiddenPower(ivs) {
   return {type: hiddenTypes[Math.floor(bits(0) * 15 / 63)], power: 30 + Math.floor(bits(1) * 40 / 63)};
 }
 export function typeMatchups(defenders) {
-  return Object.keys(profileReference.typeChart).map(type => ({type, multiplier: [...new Set(defenders)].reduce((n,defender) => n * (profileReference.typeChart[type]?.[defender] ?? 1), 1)}));
+  return GEN3_TYPE_DISPLAY_ORDER.map(type => ({type, multiplier: [...new Set(defenders)].reduce((n,defender) => n * (profileReference.typeChart[type]?.[defender] ?? 1), 1)}));
 }
 export function pokerusState(value) {
   if (value == null) return 'Unavailable';

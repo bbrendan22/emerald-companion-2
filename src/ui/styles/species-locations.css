@@ -1,0 +1,45 @@
+/* 1.0 Locations hierarchy and compact spacing, scoped to Resources. */
+.species-locations { margin-top: 8px; color: #e3e6eb; font-size: 12px; line-height: 1.4; }
+.species-locations .resource-game-encounters { margin: 0 0 6px; border-bottom: 1px solid #ffffff0b; }
+.species-locations .resource-game-encounters > summary { display: flex; align-items: center; gap: 6px; list-style: none; padding: 8px 0; background: transparent; color: var(--resources-neon); font-size: 12px; font-weight: 650; cursor: pointer; }
+.species-locations .resource-game-encounters > summary::-webkit-details-marker { display: none; }
+.species-locations .resource-game-encounters > summary::after { content: ''; width: 5px; height: 5px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; flex-shrink: 0; transform: translateY(-2px) rotate(45deg); }
+.species-locations .resource-game-encounters[open] > summary { border-bottom: 1px solid #f4b40055; }
+.species-locations .resource-game-encounter-content { padding: 0 8px 3px; }
+.species-locations .resource-availability-row { padding: 4px 0; border-bottom: 1px solid #ffffff0b; font-size: 12px; line-height: 1.25; }
+.species-locations .resource-game-encounter-content > .resource-availability-row:last-child { border-bottom: 0; }
+.species-locations .resource-availability-kind { color: #b8c0cc; font-size: 11px; margin: 3px 0; }
+.species-locations .resource-availability-row p { margin: 1px 0; font-size: 10px; line-height: 1.25; }
+.species-locations .resource-availability-row summary { cursor: pointer; padding: 4px 0; font-size: 11px; color: #b8c0cc; }
+.species-locations .resource-availability-row details p { line-height: 1.5; }
+.species-locations .resource-ability-link { display: inline; width: auto; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font-size: 12px; line-height: 1.25; text-align: left; }
+.species-locations .resource-encounter-group { margin: 0; padding: 6px 0; }
+.species-locations .resource-encounter-group + .resource-encounter-group { border-top: 1px solid #ffffff0b; }
+.species-locations .resource-encounter-group > h4 { margin: 0; padding: 0 0 4px; font-size: 12px; font-weight: 700; line-height: 1.4; }
+.species-locations .resource-location-family > .resource-encounter-row { margin-left: 10px; }
+.species-locations .resource-encounter-row:has(.resource-location-rates) { display: block; padding: 4px 0; line-height: 1.4; }
+.species-locations .resource-encounter-row:last-child { border-bottom: 0; }
+.species-locations .resource-encounter-label { display: block; font-size: 12px; font-weight: 700; line-height: 1.4; margin-bottom: 2px; }
+.species-locations .resource-encounter-row > .resource-location-rates { display: flex; gap: 2px 12px; flex-wrap: wrap; margin-left: 10px; }
+.species-locations .resource-location-family .resource-encounter-row > .resource-location-rates { margin-left: 0; }
+.species-locations .resource-location-rates p { margin: 0; color: #b8c0cc; font-size: 11px; line-height: 1.45; }
+.species-locations .resource-location-rates strong { font-weight: 600; }
+.species-locations .resource-island-areas { width: 100%; margin-bottom: 3px; }
+.species-locations .resource-island-area { display: block; padding: 2px 0; font-size: 12px; line-height: 1.4; }
+.species-locations .resource-island-area > strong { display: block; font-weight: 700; }
+.species-locations .resource-island-area > span { display: block; margin-left: 10px; color: #b8c0cc; overflow-wrap: anywhere; }
+.species-locations .resource-encounter-category-label { margin: 0 0 5px; font-size: 10px; line-height: 1.3; font-weight: 500; color: var(--resources-neon); letter-spacing: .025em; }
+.species-locations .resource-encounter-group + .resource-encounter-category-start { border-top: 1px solid #f4b40055; margin-top: 5px; padding-top: 8px; }
+.species-locations .resource-note { margin: 0; padding: 8px 4px; color: #b8c0cc; font-size: 12px; line-height: 1.6; }
+.species-locations .resource-availability-row:not(:has(.resource-location-rates)) { display: flex; align-items: baseline; flex-wrap: wrap; gap: 1px 8px; }
+.species-locations .resource-availability-row > .resource-availability-kind { margin: 0; }
+.species-locations .resource-availability-row > details { flex-basis: 100%; }
+
+/* Exact 1.0 palette applies only to game-name text. */
+.species-locations .resource-game-encounters > summary > [data-game="Emerald"] { color: #08755d; }
+.species-locations .resource-game-encounters > summary > [data-game="Ruby"] { color: #b52d43; }
+.species-locations .resource-game-encounters > summary > [data-game="Sapphire"] { color: #245cbb; }
+.species-locations .resource-game-encounters > summary > [data-game="FireRed"] { color: #c44a1b; }
+.species-locations .resource-game-encounters > summary > [data-game="LeafGreen"] { color: #438022; }
+.species-locations .resource-game-encounters > summary > [data-game="Colosseum"] { color: #6552a3; }
+.species-locations .resource-game-encounters > summary > [data-game="XD"] { color: #903a9b; }

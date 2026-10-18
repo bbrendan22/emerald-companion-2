@@ -1,8 +1,9 @@
 import pokemonTypes from '../data/pokemonTypes.json' with {type: 'json'};
+import {GEN3_TYPE_DISPLAY_ORDER} from '../pokemon/typeDisplayOrder.js';
 
 // Gen 3 origin IDs. Colosseum and XD share the same stored value.
 export const originGames = {1: 'Sapphire', 2: 'Ruby', 3: 'Emerald', 4: 'FireRed', 5: 'LeafGreen', 15: 'Colosseum / XD'};
-export const typeOptions = [...new Set(Object.values(pokemonTypes).flat())].sort();
+export const typeOptions = GEN3_TYPE_DISPLAY_ORDER;
 export function representedGames(records) {
   return [...new Set(records.map(p => p.origin?.gameId).filter(id => originGames[id]))]
     .sort((a, b) => a - b).map(id => ({id: String(id), name: originGames[id]}));

@@ -1,0 +1,20 @@
+{
+  "hashes": {
+    "data/crossGameMoves.js": "12b7658527fa2719e1705faf45bdbb140440ad3795965759e1aeb758f5ffe5e0",
+    "data/tutorResources.js": "f950bf9ace29ed1e2cdc8fb33cebeb7285ea097ae869270aa67f254f15d78c9a",
+    "utils/gameLearnsets.js": "b4eef50c9a7df1ccaf997812d48f72bc8685fc5fcad4f0d8220764449176790e",
+    "utils/crossGameLearnset.js": "e309a1e9d46ff872bc34637b0428742b100640c60936ada5848d8ba1d0fe7840",
+    "components/GameNames.jsx": "fa1bff174b56d2c03c29e98b2ab3042d78d5ab0b47bca6640abf9d1c1f5b812e",
+    "components/LearnsetSection.jsx": "e06b672e24d43bed52f91b9ac39b9063ef46700729eb597f51e5beb508c338e9",
+    "data/eggMoveResources.js": "c44f4ecf1ec3ea856e1bafc645903d41a39d55dc29c5232ced61d42a9a99ca5f",
+    "data/itemResources.js": "4a1fc80d2ce3e475c0a1bc83a6925899287f12d7b587fc4d094a721961890fb0",
+    "data/moveResources.js": "99c964d7581c090e8f312666fc6bf7f027c8ab2bcfc6bb0906c7e9f2a58cf4bb",
+    "data/emeraldData.js": "2ef1fa29b1c058d383e686af5b9562284fd4f7f2f3a116dee4572ca1b3df6ab6",
+    "data/pokemonMeta.js": "bb615a9ace85de0170b27f1cb4f7761306dcedb14223cc06cd8d0c3f079aa48b",
+    "components/SpeciesPanel.jsx": "b9862559bfb99d78aa74f13bdfc678af902510ca77efa6a7c32c0506a2c56f2c",
+    "components/ResourcesPage.css": "1b67c62d24a6c39d1697ecb848ad4978b1ca7bd6bb0c7ee7a9e528de2d6118c9",
+    "utils/evolutions.js": "0a70d3d16b86099da6f7e43ac155fb7871186bc7d4e4ca2f23d518334af17771",
+    "utils/eggMoveFathers.js": "ee90d4e6976ea1b9048be18117bab71be74742934ed5756a5592c9fbbc9686f0"
+  },
+  "notes": "Read-only legacy port. Canonical 2.0 move table, names, PP, species IDs/names verified identical. Original helpers/JSX retained with import/wrapper/icon-path adaptations only. No runtime legacy dependencies."
+}

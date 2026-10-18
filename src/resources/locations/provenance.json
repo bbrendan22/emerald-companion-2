@@ -1,0 +1,32 @@
+{
+  "legacyRoot": "emerald-companion (read-only)",
+  "hashes": {
+    "data/locationResources.js": "31775f18b46b5ffa2d103516c1f8a0fc14aa63526fb1d896fd882395e1d3e329",
+    "data/rubySapphireEncounters.js": "8a222293ca7bd0bfa5d6444ea8c3f1750f422c224553b90e2462e66bd04f1a68",
+    "data/fireRedLeafGreenEncounters.js": "87382146790f18f458a6050abec3dc52aef0d6020c357c1ee5cdebcf6d1dc84f",
+    "data/orreEncounters.js": "58ba98d596d824ba9c3dd805ccf1175907718ef06f66f47fad1ea904fd56920f",
+    "data/bonusDiscEncounters.js": "a4bab318e85ef28acb05ca9599bfaea99936317347a19fba42addc968121fc41",
+    "data/specialEncounters.js": "ce5af5f08e52c20045b0c8d2007d65f6079dfb513acf1fb775400868404e0236",
+    "data/availabilityNotes.js": "61e0c829256cc514b99715e4d1bb9c7be165b4610b58bba17e3e5200791fa1b6",
+    "data/availabilitySources.js": "1d7be53d1fb5003788fb0222634a6685238a211dbc3c931b2a55c4017d93a79e",
+    "utils/encounterSummary.js": "9e93de58eb24cecd5ea99d971845a4e91d24da89c3ff04e01087172e76a9e58c",
+    "utils/groupEncounterLocations.js": "307984ae8204d721fbe3243de16f13c7f6391292acf58442981cc776a1feed69",
+    "utils/speciesEncounters.js": "cd59d56dee156f63e76cb31fd11012e5c30775228e28d265fe03b71d4211a4c0",
+    "utils/speciesAvailability.js": "b9dc9e042cd1c950b7d4bcb5b04dc31e924acf58439782c3e75a41968544dbe1",
+    "utils/rubySapphireAvailability.js": "90ff08c4f89a3cbdff89ab5937f8a7c468cf775fd8528f36c5050187b3d7c8c1",
+    "utils/fireRedLeafGreenAvailability.js": "1738edcb9e408cad31ce8a664a4af5f039e06736ad590691386acb663029ddcd",
+    "utils/orreAvailability.js": "0483331e64c2ae68ad71e1697fbe0f1b89949ec50ecb71a262af300f7f983fea",
+    "utils/acquisitionRoutes.js": "1be57ef3fb5ef2ee3a4a8f0e6567f88480b2fc5df8841d66ef1e8956ea002919",
+    "utils/evolutions.js": "0a70d3d16b86099da6f7e43ac155fb7871186bc7d4e4ca2f23d518334af17771",
+    "utils/eggMoveFathers.js": "ee90d4e6976ea1b9048be18117bab71be74742934ed5756a5592c9fbbc9686f0",
+    "components/SpeciesEncounters.jsx": "bfb27fb99269a5ff8d691e7f0675fab673fb2fc60cc6057cafb19c5ca320fcb2",
+    "components/SpeciesLocationEntries.jsx": "a69e1a6817c89be22f43d714d625bc12cffd80af2573dc624947908bcd4961d9",
+    "data/pokemonMeta.js": "bb615a9ace85de0170b27f1cb4f7761306dcedb14223cc06cd8d0c3f079aa48b",
+    "data/evolutionResources.js": "ce6aa3277463dc5ec7943d61ad10a8f0e9fb85b5d7212f092c3056fb6230a3ba",
+    "data/eggMoveResources.js": "c44f4ecf1ec3ea856e1bafc645903d41a39d55dc29c5232ced61d42a9a99ca5f",
+    "components/GameNames.jsx": "fa1bff174b56d2c03c29e98b2ab3042d78d5ab0b47bca6640abf9d1c1f5b812e",
+    "components/SpeciesPanel.jsx": "b9862559bfb99d78aa74f13bdfc678af902510ca77efa6a7c32c0506a2c56f2c",
+    "components/ResourcesPage.css": "1b67c62d24a6c39d1697ecb848ad4978b1ca7bd6bb0c7ee7a9e528de2d6118c9"
+  },
+  "notes": "Encounter data copied verbatim. Metadata/evolution adapters use canonical 2.0 data. Only descendant graph extracted from breeding resources. Display logic preserved; embedded wrapper/theme adapted."
+}

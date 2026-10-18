@@ -1,0 +1,42 @@
+.page.resources-page { padding-top: 18px; padding-inline: max(var(--page-gutter), env(safe-area-inset-left)) max(var(--page-gutter), env(safe-area-inset-right)); }
+.resources-home { min-width: 0; }
+.resources-home h1 { margin: 0 0 14px; font-size: 1.25rem; line-height: 1.25; letter-spacing: -.025em; font-weight: 650; }
+.resources-search-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.resources-search-field { display: flex; align-items: center; gap: 8px; padding-left: 10px; background: #24272d; border: 1px solid #424852; border-radius: 8px; color: #a2a9b4; }
+.resources-search-field:focus-within { border-color: var(--resources-medium); outline: 1px solid var(--resources-medium); }
+.resources-search-field input { min-width: 0; width: 100%; height: 44px; padding: 8px 0; border: 0; outline: none; background: transparent; color: #f3f4f6; font: inherit; font-size: 1rem; }
+.resources-search-field input::placeholder { color: #939ba6; font-size: .8rem; }
+.resources-search-field input::-webkit-search-cancel-button { display: none; }
+.resources-clear { flex-shrink: 0; width: 44px; height: 44px; border: 0; border-radius: 6px; background: transparent; color: #c2c7cf; font-size: 1.5rem; }
+.resources-clear:focus-visible { outline-offset: -4px; }
+.resources-search-status { margin: 10px 0; color: #b8c0cc; font-size: .8rem; line-height: 1.5; overflow-wrap: anywhere; }
+.resources-search-status:empty { margin: 0; }
+.resources-section { margin-top: 18px; }
+.resources-section > h2 { margin: 0; padding-bottom: 8px; border-bottom: 1px solid color-mix(in srgb, var(--resources-medium) 55%, transparent); color: var(--resources-neon); font-size: .85rem; font-weight: 650; }
+.resources-home :is(ul, ol) { list-style: none; margin: 0; padding: 0; }
+.resources-destinations li { display: flex; align-items: center; min-height: 40px; padding: 0 4px; color: #e3e6eb; font-size: .9rem; }
+.resources-destinations a { display: inline-block; font-size: .9rem; }
+.resources-home a { color: #e3e6eb; text-decoration: none; }
+.resources-home small { flex-shrink: 0; color: #939ba6; font-size: .7rem; font-weight: 400; }
+.resources-results { padding: 0 0 4px; }
+.resources-results h2 { display: flex; align-items: baseline; gap: 8px; margin: 16px 0 3px; color: var(--resources-neon); font-size: .8rem; font-weight: 650; }
+.resources-results h2 span { color: #939ba6; font-size: .7rem; font-weight: 400; }
+.resources-results li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 4px; font-size: .85rem; }
+.resources-results a { display: inline-block; }
+.resources-result-name { min-width: 0; overflow-wrap: anywhere; }
+.resources-dex { flex-shrink: 0; margin-right: 8px; color: #939ba6; font-size: .75rem; font-variant-numeric: tabular-nums; }
+@media (min-width: 700px) { .page.resources-page { padding-top: 24px; padding-inline: 24px; } }
+
+.resources-catalog-list li { min-height: 44px; display: flex; align-items: baseline; padding: 12px 4px; font-size: .85rem; overflow-wrap: anywhere; }
+.resources-catalog-list li:focus-visible, .resources-catalog h1:focus-visible { outline: 1px solid var(--resources-medium); outline-offset: 2px; }
+
+.header-resources-subpage .subpage-back { color: var(--resources-medium); }
+
+.resources-catalog-list .resources-pokedex-row { display: block; padding: 0; }
+.resources-catalog-list .resources-pokedex-row > .resources-species-entry { display: grid; color: inherit; text-decoration: none; grid-template-columns: 32px 40px minmax(0, 1fr) 40px; align-items: center; gap: 8px; min-height: 44px; padding: 2px 4px; }
+.resources-pokedex-number { color: #939ba6; font-size: .75rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.resources-pokedex-sprite { display: grid; place-items: center; width: 40px; height: 40px; color: #939ba6; }
+.resources-pokedex-sprite img { display: block; width: 40px; height: 40px; object-fit: contain; image-rendering: pixelated; }
+.resources-pokedex-name { min-width: 0; overflow-wrap: anywhere; }
+.resources-pokedex-types { display: flex; align-items: center; gap: 4px; }
+.resources-pokedex-types img { display: block; width: 18px; height: 18px; object-fit: contain; }

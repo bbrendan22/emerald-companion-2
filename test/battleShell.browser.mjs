@@ -63,7 +63,7 @@ try {
   await navigate('Trainer'); await page.locator('.trainer-content').waitFor();
   await navigate('My Pokémon'); await page.locator('.pokemon-card').first().waitFor();
   await page.locator('.pokemon-card').first().click(); await page.locator('.pokemon-profile').waitFor();
-  await navigate('Resources'); await page.getByText('Your reference library will live here.',{exact:true}).waitFor();
+  await navigate('Resources'); await page.getByRole('searchbox',{name:'Search Pokémon, moves and abilities',exact:true}).waitFor();
   await navigate('Battle');
   assert.equal(await page.getByRole('tab',{name:'Trainers',exact:true}).getAttribute('aria-selected'),'true');
   assert.equal(await page.locator('.battle-side-player button.battle-team-slot').nth(1).getAttribute('aria-pressed'),'true');
