@@ -1,0 +1,19 @@
+import React from 'react';
+import { itemAcquisition, itemAcquisitionEntries } from '../data/itemAcquisition'
+import GameNames from './GameNames.jsx'
+
+export default function ItemAcquisition({ itemId }) {
+  const data = itemAcquisition[itemId]
+  if (!data) return null
+  const entries = itemAcquisitionEntries(itemId)
+  const row = (entry, index) => <div className="resource-item-source" key={index}>
+    <div className="resource-item-source-heading"><span><GameNames>{entry.game}</GameNames></span><span>{entry.availability === 'Once per pickup' ? 'Once per save' : entry.availability}</span></div>
+    <p><strong>{entry.location}</strong></p>
+    <p>{entry.method}</p>
+    {entry.requirement && <p className="resource-item-source-note">{entry.requirement}</p>}
+  </div>
+  return <section className="resource-item-acquisition">
+    {data.note && <p className="resource-item-acquisition-note">{data.note}</p>}
+    {entries.map(row)}
+  </section>
+}

@@ -1,0 +1,3 @@
+.iv-results tbody th, .sc-stat-row > span { color: #e3e6eb; }
+.iv-results tbody th.nature-increased, .sc-stat-row.nature-increased > span { color: #8bc8a6; }
+.iv-results tbody th.nature-decreased, .sc-stat-row.nature-decreased > span { color: #ed8493; }

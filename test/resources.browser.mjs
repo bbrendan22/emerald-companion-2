@@ -28,7 +28,7 @@ try {
   assert.equal(await page.evaluate(() => localStorage.length), 0);
   assert.equal(await page.locator('.resources-home h1').count(), 0);
   assert.equal(await page.locator('.resources-hint').count(), 0);
-  assert.deepEqual(await page.locator('.resources-destinations a').allTextContents(), ['Pokémon Database', 'Moves', 'Abilities']);
+  assert.deepEqual(await page.locator('.resources-section:has(#resources-pokemon-heading) .resources-destinations a').allTextContents(), ['Pokémon Database', 'Moves', 'Abilities']);
   for (const width of [320, 375, 390, 430, 1280]) {
     await page.setViewportSize({width, height: 800});
     await search.fill(''); await overflow();
@@ -37,12 +37,12 @@ try {
       ['Battle', 'Utility', 'Berries', 'Poké Balls', 'TM/HM', 'Misc.'],
       ['Pokémon Sets', 'Trainers'],
       ['IV Calculator', 'Hidden Power Calculator', 'Stat Calculator', 'Move Coverage'],
-      [],
+      ['Nature Chart', 'Type Chart', 'Emerald Pickup Table', 'Move Tutors'],
     ];
     for (const [index, expected] of expectedSections.entries()) {
       const section = page.locator('.resources-section').nth(index + 1);
       assert.deepEqual(await section.locator('li').allTextContents(), expected);
-      assert.equal(await section.locator('a, button, [tabindex], [role="link"]').count(), 0);
+      assert.equal(await section.locator('a, button, [tabindex], [role="link"]').count(), index === 0 ? 6 : index === 2 ? 4 : index === 3 ? 4 : 0);
     }
     const geometry = await page.evaluate(() => {
       const field = document.querySelector('.resources-search-field').getBoundingClientRect();
@@ -55,7 +55,7 @@ try {
     assert.ok(geometry.heights.every(height => height === 40));
     assert.ok(geometry.fonts.every(font => font === '14.4px'));
 
-    for (const [linkIndex, link] of (await page.locator('.resources-destinations a').all()).entries()) {
+    for (const [linkIndex, link] of (await page.locator('.resources-section:has(#resources-pokemon-heading) .resources-destinations a').all()).entries()) {
       const bounds = await link.boundingBox();
       const textWidth = await link.evaluate(element => {const range = document.createRange(); range.selectNodeContents(element); return range.getBoundingClientRect().width;});
       assert.ok(Math.abs(bounds.width - textWidth) < 2);
@@ -189,5 +189,5 @@ try {
   await expectHeader('Emerald Companion');
   assert.equal(await page.getByRole('button', {name: 'Back to Resources', exact: true}).count(), 0);
   assert.deepEqual(errors, []);
-  console.log('Resources sprites passed: all 386 numbered sprite paths decoded; required species/types visible at every width; aligned columns; stable failed-sprite fallback; exact section order/entries, noninteractive new sections, 40px rows/18px gap/unchanged search field; text-only hit areas; unchanged hover/pressed styling; keyboard focus; shared-header titles/back; Profile Back; complete catalogs; search, matching entry/focus, back/query retention, keyboard navigation, no-save operation; 320/375/390/430/1280px without overflow.');
+  console.log('Resources sprites passed: all 386 numbered sprite paths decoded; required species/types visible at every width; aligned columns; stable failed-sprite fallback; exact section order/entries, six Useful Items links and noninteractive remaining sections, 40px rows/18px gap/unchanged search field; text-only hit areas; unchanged hover/pressed styling; keyboard focus; shared-header titles/back; Profile Back; complete catalogs; search, matching entry/focus, back/query retention, keyboard navigation, no-save operation; 320/375/390/430/1280px without overflow.');
 } finally { await browser.close(); }

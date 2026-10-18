@@ -27,7 +27,7 @@ export default function BattleMoveDetails({move, attacker, defender, basicAttack
     onCancel={event=>{event.preventDefault();onClose();}}
     onPointerDown={event=>{outside.current=isOutside(event);}}
     onClick={event=>{if(outside.current && isOutside(event))onClose();}}>
-    <header><img src={`/types/icons/${values.type.toLowerCase()}.png`} alt={`${values.type.toLowerCase()} type`} width="22" height="22" />
+    <header>{values.type === 'MYSTERY' ? <span aria-hidden="true" style={{width:22,height:22,flexShrink:0}} /> : <img src={`/types/icons/${values.type.toLowerCase()}.png`} alt={`${values.type.toLowerCase()} type`} width="22" height="22" />}
       <h2 id="battle-move-title">{move.name}</h2></header>
     <dl>{[['Power',values.power],['Accuracy',values.accuracy],['Effect',values.effect]].map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
     <p>{move.description}</p>

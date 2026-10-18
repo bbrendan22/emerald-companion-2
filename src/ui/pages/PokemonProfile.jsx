@@ -6,7 +6,7 @@ import '../styles/pokemon-profile.css';
 import RibbonCollection from '../components/RibbonCollection.jsx';
 
 function TypeIcon({type}) {
-  if (type === 'mystery') return <span className="profile-note" aria-label="Mystery type, Generation 3">???</span>;
+  if (type === 'mystery') return <span className="profile-type-icon" aria-hidden="true" />;
   return type ? <img className="profile-type-icon" src={`/types/icons/${type}.png`} alt={`${type} type`} /> : null;
 }
 function Card({title, area, heading=true, children}) {

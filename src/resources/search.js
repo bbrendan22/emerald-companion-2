@@ -5,9 +5,9 @@ export const resourceIndex = [
   {id: 'pokemon', title: 'Pokémon', label: 'Pokémon', entries: Object.values(reference.species)
     .map(({nationalDexId, name}) => ({id: nationalDexId, name})).sort((a, b) => a.id - b.id)},
   {id: 'moves', title: 'Moves', label: 'Move', entries: Object.entries(reference.moves)
-    .filter(([id]) => Number(id) > 0).map(([id, {name}]) => ({id: Number(id), name}))},
+    .filter(([id]) => Number(id) > 0).map(([id, {name}]) => ({id: Number(id), name})).sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase(), 'en'))},
   {id: 'abilities', title: 'Abilities', label: 'Ability', entries: Object.entries(reference.abilityNames)
-    .filter(([id]) => Number(id) > 0).map(([id, name]) => ({id: Number(id), name}))},
+    .filter(([id]) => Number(id) > 0).map(([id, name]) => ({id: Number(id), name})).sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase(), 'en'))},
 ].map(group => ({...group, entries: group.entries.map(entry => ({...entry, searchName: entry.name.toLowerCase()}))}));
 
 export function catalogEntries(category, value = '') {

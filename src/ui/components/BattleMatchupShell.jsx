@@ -57,7 +57,7 @@ function Moves({side, mon, other, onMove}) {
     <h3>Moves</h3>{mon.moves.filter(Boolean).map((move,index)=>{
       const effectiveness=matchupEffectiveness(move,mon,other);
       return <button type="button" className="battle-matchup-move" key={index} onClick={()=>onMove({side,slot:index})}>
-        <img src={`/types/icons/${effectiveness.type.toLowerCase()}.png`} width="16" height="16" alt={`${effectiveness.type.toLowerCase()} type`} />
+        {effectiveness.type === 'MYSTERY' ? <span aria-hidden="true" style={{width:16,height:16,flexShrink:0}} /> : <img src={`/types/icons/${effectiveness.type.toLowerCase()}.png`} width="16" height="16" alt={`${effectiveness.type.toLowerCase()} type`} />}
         <span className="battle-matchup-move-name">{move.name}</span><span className="battle-matchup-pp">{movePpLabel(move,side === 'player')}</span>
         <span className="battle-matchup-effect" title={effectiveness.explanation}>{effectiveness.label}</span>
       </button>;

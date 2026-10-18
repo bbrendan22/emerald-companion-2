@@ -1,0 +1,14 @@
+.nature-chart { max-width: 560px; color: #e3e6eb; }
+.nature-chart h1 { color: var(--resources-neon); font-size: 1.15rem; margin-bottom: 18px; }
+.nature-chart-layout { display: grid; grid-template-columns: 15px minmax(0, 1fr); column-gap: 4px; }
+.nature-chart-increased { grid-column: 2; margin: 0 0 8px; text-align: center; color: #8bc8a6; font-size: .75rem; }
+.nature-chart-decreased { grid-column: 1; grid-row: 2; margin: 0; writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; color: #ed8493; font-size: .7rem; }
+.nature-chart table { grid-column: 2; grid-row: 2; width: 100%; table-layout: fixed; border-collapse: collapse; font-size: clamp(.625rem, 2.9vw, .875rem); }
+.nature-chart th, .nature-chart td { height: 44px; padding: 8px 1px; text-align: center; white-space: nowrap; border-bottom: 1px solid #ffffff12; }
+.nature-chart th { font-weight: 600; }
+.nature-chart thead th { color: #8bc8a6; }
+.nature-chart tbody th { color: #ed8493; }
+.nature-chart tr > :first-child { width: 27px; }
+.nature-chart tbody td + td { border-left: 1px solid #ffffff0c; }
+.nature-chart abbr { text-decoration: none; }
+.nature-chart .nature-chart-neutral { background: #f4b4000d; box-shadow: inset 0 -1px #f4b40040; }

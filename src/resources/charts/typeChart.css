@@ -1,0 +1,11 @@
+.type-chart { max-width: 560px; color: #e3e6eb; container-type: inline-size; }
+.type-chart h1 { color: var(--resources-neon); font-size: 1.15rem; margin-bottom: 18px; }
+.type-chart-orientation { margin: 0 0 10px; color: #b8c0cc; font-size: .75rem; line-height: 1.5; }
+.type-chart table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: clamp(9px, 3cqw, 13px); font-variant-numeric: tabular-nums; }
+.type-chart th, .type-chart td { padding: 0; border: 1px solid #ffffff0c; text-align: center; font-weight: 500; }
+.type-chart thead th, .type-chart tbody th, .type-chart thead td { border: 0; }
+.type-chart th > span, .type-chart td > span { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1; line-height: 1; white-space: nowrap; }
+.type-chart th img { display: block; width: 82%; height: auto; aspect-ratio: 1; object-fit: contain; }
+.type-chart td[data-multiplier="2"] { color: #8bc8a6; }
+.type-chart td[data-multiplier="0.5"] { color: #ed8493; }
+.type-chart td[data-multiplier="0"] { color: #a2a9b4; }

@@ -2,8 +2,8 @@
 .resources-home { min-width: 0; }
 .resources-home h1 { margin: 0 0 14px; font-size: 1.25rem; line-height: 1.25; letter-spacing: -.025em; font-weight: 650; }
 .resources-search-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.resources-search-field { display: flex; align-items: center; gap: 8px; padding-left: 10px; background: #24272d; border: 1px solid #424852; border-radius: 8px; color: #a2a9b4; }
-.resources-search-field:focus-within { border-color: var(--resources-medium); outline: 1px solid var(--resources-medium); }
+.resources-search-field { display: flex; align-items: center; gap: 8px; padding-left: 10px; background: #24272d; border: 1px solid #424852; border-radius: 8px; color: #a2a9b4; -webkit-tap-highlight-color: transparent; }
+.resources-search-field:has(input:focus-visible) { border-style: dashed; }
 .resources-search-field input { min-width: 0; width: 100%; height: 44px; padding: 8px 0; border: 0; outline: none; background: transparent; color: #f3f4f6; font: inherit; font-size: 1rem; }
 .resources-search-field input::placeholder { color: #939ba6; font-size: .8rem; }
 .resources-search-field input::-webkit-search-cancel-button { display: none; }
@@ -40,3 +40,30 @@
 .resources-pokedex-name { min-width: 0; overflow-wrap: anywhere; }
 .resources-pokedex-types { display: flex; align-items: center; gap: 4px; }
 .resources-pokedex-types img { display: block; width: 18px; height: 18px; object-fit: contain; }
+
+.resources-catalog-list .resources-move-row { display: block; padding: 12px 4px; border-bottom: 1px solid #ffffff12; }
+.resources-move-heading { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.resources-move-heading img { display: block; flex-shrink: 0; object-fit: contain; }
+.resources-move-icon-space { flex-shrink: 0; width: 18px; height: 18px; }
+.resources-move-heading strong { min-width: 0; font-size: .9rem; line-height: 1.4; font-weight: 650; overflow-wrap: anywhere; }
+.resources-move-description { margin: 6px 0 10px; color: #b8c0cc; font-size: .8rem; line-height: 1.5; }
+.resources-move-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; font-variant-numeric: tabular-nums; }
+.resources-move-values > div { display: flex; align-items: baseline; justify-content: space-between; gap: 4px; }
+.resources-move-values dt { color: #939ba6; font-size: .7rem; }
+.resources-move-values dd { margin: 0; color: #e3e6eb; font-size: .75rem; }
+
+.resources-move-summary { position: relative; }
+.resources-move-toggle { position: absolute; inset: -12px -4px; width: calc(100% + 8px); border: 0; padding: 0; background: transparent; border-radius: 0; }
+.resources-move-toggle:focus-visible { outline: 1px dashed #939ba6; outline-offset: -2px; }
+.resources-move-learners { padding-top: 16px; }
+.resources-move-learners section + section { margin-top: 16px; }
+.resources-move-learners h2 { margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid color-mix(in srgb, var(--resources-medium) 55%, transparent); color: var(--resources-neon); font-size: .8rem; font-weight: 650; }
+.resources-move-learners .resources-learner-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 8px; }
+.resources-move-learners .resources-learner-grid li { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; padding: 0; text-align: center; font-size: .7rem; line-height: 1.3; }
+.resources-learner-grid img { display: block; object-fit: contain; image-rendering: pixelated; }
+.resources-learner-grid span { max-width: 100%; overflow-wrap: anywhere; }
+@media (min-width: 700px) { .resources-move-learners .resources-learner-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
+
+.resources-ability-description { margin-bottom: 0; }
+#resources-abilities .resources-move-row { padding-block: 9px; }
+#resources-abilities .resources-move-row .resources-move-toggle { inset-block: -9px; }
