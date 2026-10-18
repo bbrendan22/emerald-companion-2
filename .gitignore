@@ -47,3 +47,4 @@ backup/
 .DS_Store
 ._*
 Thumbs.db
+/archive/retired-battle-calculator/

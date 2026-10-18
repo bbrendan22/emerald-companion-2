@@ -6,6 +6,8 @@ import './styles/page.css';
 import TrainerPage from './pages/TrainerPage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx';
 import PokemonPage from './pages/PokemonPage.jsx';
+import BattlePage from './pages/BattlePage.jsx';
+import useBattleState from './useBattleState.js';
 import useImportedSave from './useImportedSave.js';
 import useTrainerShowcase from './useTrainerShowcase.js';
 
@@ -13,6 +15,7 @@ export default function App() {
   const importedSave = useImportedSave();
   const showcase = useTrainerShowcase();
   const [pageId, setPageId] = useState('trainer');
+  const battle = useBattleState(importedSave.snapshot, pageId === 'battle');
   const [subpage, setSubpage] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const heading = useRef(null);
@@ -30,10 +33,11 @@ export default function App() {
     <a className="skip-link" href="#main">Skip to content</a>
     <Header onBack={pageId === 'pokemon' ? subpage?.onBack : undefined} backLabel="Back to collection" onMenu={() => setDrawerOpen(true)} onSettings={() => navigate('settings')} drawerOpen={drawerOpen} isSettings={pageId === 'settings'} />
     <NavigationDrawer open={drawerOpen} activeId={pageId} onSelect={navigate} onClose={() => setDrawerOpen(false)} />
-    <main id="main" tabIndex="-1" aria-label={page.title} className={`page ${pageId === 'trainer' ? 'trainer-page' : pageId === 'pokemon' ? 'pokemon-page' : ''}`}>
-      {pageId !== 'trainer' && pageId !== 'pokemon' && <h1 ref={heading} tabIndex="-1">{page.title}</h1>}
+    <main id="main" tabIndex="-1" aria-label={page.title} className={`page ${pageId === 'trainer' ? 'trainer-page' : pageId === 'pokemon' ? 'pokemon-page' : pageId === 'battle' ? 'battle-page' : ''}`}>
+      {pageId !== 'trainer' && pageId !== 'pokemon' && pageId !== 'battle' && <h1 ref={heading} tabIndex="-1">{page.title}</h1>}
       {pageId === 'trainer' ? <TrainerPage showcase={showcase} {...importedSave} onImport={() => navigate('settings')} />
         : pageId === 'pokemon' ? <PokemonPage snapshot={importedSave.snapshot} onSubpageChange={setSubpage} />
+        : pageId === 'battle' ? <BattlePage snapshot={importedSave.snapshot} battle={battle} />
         : pageId === 'settings' ? <SettingsPage showcase={showcase} {...importedSave} />
         : <div className="placeholder"><span className="placeholder-mark" aria-hidden="true" /><p>Your {pageId === 'pokemon' ? 'Pokémon collection' : pageId === 'battle' ? 'battle tools' : 'reference library'} will live here.</p></div>}
     </main>
