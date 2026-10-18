@@ -16,7 +16,7 @@ Open http://localhost:5173. The dev server also listens on your local network fo
 ```sh
 npm test          # Existing parser regression suite
 npm run build    # Production output in dist/
-npm run preview  # Serve the production build at http://localhost:4173
+npm run preview  # Serve the build at http://localhost:4173/emerald-companion-2/
 ```
 
 ## Folder structure
@@ -61,3 +61,8 @@ Emerald retains at most 50 chronological teams, so the earliest remaining team i
 Existing imports automatically gain the new sections on refresh: raw bytes were already persisted. Use Settings to import a newer `.sav` if needed. The real fixture’s Champion flag and six-member recorded team were checked by `test/fixtures/inspect_hall_of_fame.py`, a separate Python reader. Its pinned private expectations are kept alongside the original manifest without replacing it. In-game Hall of Fame screen confirmation remains outstanding.
 
 Source: [save sector handling](https://github.com/pret/pokeemerald/blob/master/src/save.c), [Hall of Fame structure and retention](https://github.com/pret/pokeemerald/blob/master/src/hall_of_fame.c), and [game-clear/badge flags](https://github.com/pret/pokeemerald/blob/master/include/constants/flags.h).
+
+## GitHub Pages
+
+Production is built for `/emerald-companion-2/`; localhost development remains at `/`.
+See [deployment setup and verification](docs/GITHUB_PAGES.md).

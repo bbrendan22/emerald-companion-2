@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useState} from 'react';
 import {emeraldPickupBands, pickupBandLabel, aggregatePickupItems, pickupPercent} from './emeraldPickup.js';
 import './emeraldPickup.css';
@@ -16,7 +17,7 @@ export default function EmeraldPickupTable() {
       <colgroup><col className="emerald-pickup-sprite-column" /><col /><col className="emerald-pickup-odds-column" /><col className="emerald-pickup-odds-column" /></colgroup>
       <thead><tr><th scope="col" aria-label="Item Sprite">Sprite</th><th scope="col">Item Name</th><th scope="col">Per Pickup</th><th scope="col">Per Battle</th></tr></thead>
       <tbody>{rows.map(row => <tr key={row.item}>
-        <td><img src={row.icon} alt="" width="24" height="24" /></td>
+        <td><img src={publicAsset(row.icon)} alt="" width="24" height="24" /></td>
         <th scope="row">{row.name}</th>
         <td>{pickupPercent(row.perPickup)}</td><td>{pickupPercent(row.perBattle)}</td>
       </tr>)}</tbody>

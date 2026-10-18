@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {catalogEntries, searchResources} from '../../resources/search.js';
 import '../styles/resources.css';
@@ -42,10 +43,10 @@ function PokedexEntry({entry}) {
     <span className="resources-pokedex-number">#{String(entry.id).padStart(3, '0')}</span>
     <span className="resources-pokedex-sprite">
       {spriteFailed ? <span role="img" aria-label={`${entry.name} sprite unavailable`}>?</span>
-        : <img src={`/pokemon/emerald/normal/${entry.id}.png`} alt={`${entry.name} sprite`} width="40" height="40" loading="lazy" onError={() => setSpriteFailed(true)} />}
+        : <img src={publicAsset(`/pokemon/emerald/normal/${entry.id}.png`)} alt={`${entry.name} sprite`} width="40" height="40" loading="lazy" onError={() => setSpriteFailed(true)} />}
     </span>
     <span className="resources-pokedex-name">{entry.name}</span>
-    <span className="resources-pokedex-types">{pokemonTypes[entry.id].map(type => <img key={type} src={`/types/icons/${type}.png`} alt={`${type[0].toUpperCase()}${type.slice(1)} type`} width="18" height="18" />)}</span>
+    <span className="resources-pokedex-types">{pokemonTypes[entry.id].map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} alt={`${type[0].toUpperCase()}${type.slice(1)} type`} width="18" height="18" />)}</span>
   </>;
 }
 function MoveEntry({entry, expanded, onToggle}) {
@@ -53,7 +54,7 @@ function MoveEntry({entry, expanded, onToggle}) {
   return <>
     <div className="resources-move-summary">
       <button type="button" className="resources-move-toggle" aria-label={entry.name} aria-expanded={expanded} aria-controls={expanded ? `resources-move-learners-${entry.id}` : undefined} onClick={onToggle} />
-      <div className="resources-move-heading">{move.type === 'MYSTERY' ? <span className="resources-move-icon-space" aria-hidden="true" /> : <img src={`/types/icons/${move.type.toLowerCase()}.png`} alt={`${move.type[0]}${move.type.slice(1).toLowerCase()} type`} width="18" height="18" />}<strong>{entry.name}</strong></div>
+      <div className="resources-move-heading">{move.type === 'MYSTERY' ? <span className="resources-move-icon-space" aria-hidden="true" /> : <img src={publicAsset(`/types/icons/${move.type.toLowerCase()}.png`)} alt={`${move.type[0]}${move.type.slice(1).toLowerCase()} type`} width="18" height="18" />}<strong>{entry.name}</strong></div>
       <p className="resources-move-description">{move.description}</p>
       <dl className="resources-move-values">{[
         ['Pwr', move.power === 0 ? '—' : move.power === 1 ? 'Var' : move.power],

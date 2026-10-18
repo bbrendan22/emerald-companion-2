@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useEffect, useLayoutEffect, useId, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {ribbonCatalog} from '../../pokemon/profile.js';
@@ -40,7 +41,7 @@ export default function RibbonCollection({earned}) {
   return <>
     <ul className="ribbon-collection">{ribbonCatalog.map(item => {
       const isEarned = earnedFiles.has(item.file);
-      return <li key={item.file}><button type="button" ref={element => { if (element) buttons.current.set(item.file,element); else buttons.current.delete(item.file); }} className={isEarned ? 'ribbon-earned' : 'ribbon-unearned'} aria-label={`${item.name}, ${isEarned ? 'Earned' : 'Not earned'}`} aria-expanded={selected === item.file} aria-describedby={selected === item.file ? popupId : undefined} onClick={() => { setPosition(null); setSelected(previous => previous === item.file ? null : item.file); }}><img src={`/ribbons/${item.file}.png`} alt=""/></button></li>;
+      return <li key={item.file}><button type="button" ref={element => { if (element) buttons.current.set(item.file,element); else buttons.current.delete(item.file); }} className={isEarned ? 'ribbon-earned' : 'ribbon-unearned'} aria-label={`${item.name}, ${isEarned ? 'Earned' : 'Not earned'}`} aria-expanded={selected === item.file} aria-describedby={selected === item.file ? popupId : undefined} onClick={() => { setPosition(null); setSelected(previous => previous === item.file ? null : item.file); }}><img src={publicAsset(`/ribbons/${item.file}.png`)} alt=""/></button></li>;
     })}</ul>
     {ribbon && createPortal(<div id={popupId} ref={popup} role="tooltip" className="ribbon-popup" style={{left:position?.left ?? 8,top:position?.top ?? 8,visibility:position ? 'visible' : 'hidden'}}><strong>{ribbon.name}</strong><span>{earnedFiles.has(ribbon.file) ? 'Earned' : 'Not earned'}</span></div>, document.body)}
   </>;

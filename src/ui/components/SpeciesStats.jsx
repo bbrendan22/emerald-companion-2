@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
 import {baseStatRows, defensiveMatchupGroups} from '../../resources/speciesStats.js';
 
@@ -17,7 +18,7 @@ export default function SpeciesStats({species}) {
       <h2 id="species-type-matchups-heading">Type Matchups</h2>
       <div className="species-type-matchups">{groups.map(group => <div className="species-type-matchup" key={group.multiplier} data-multiplier={group.multiplier}>
         <span className="species-matchup-multiplier">{group.label}</span>
-        <div className="species-matchup-types">{group.types.map(type => <img key={type} src={`/types/icons/${type}.png`} width="20" height="20" alt={`${type[0].toUpperCase()}${type.slice(1)} type`} />)}</div>
+        <div className="species-matchup-types">{group.types.map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} width="20" height="20" alt={`${type[0].toUpperCase()}${type.slice(1)} type`} />)}</div>
       </div>)}</div>
     </section>
   </>;

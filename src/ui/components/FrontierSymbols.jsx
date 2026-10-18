@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
 import '../styles/dashboard.css';
 import '../styles/frontier.css';
@@ -8,7 +9,7 @@ export default function FrontierSymbols({frontier}) {
     <ol className="frontier-symbols">{frontier.symbols.map(({id, facility, symbol, status}) => {
       const label = status === 'unearned' ? 'Not earned' : status === 'gold' ? 'Gold earned' : 'Silver earned';
       return <li key={id}>
-        <img src={`/frontier-symbols/${id}-${status === 'gold' ? 'gold' : 'silver'}.png`}
+        <img src={publicAsset(`/frontier-symbols/${id}-${status === 'gold' ? 'gold' : 'silver'}.png`)}
           className={status === 'unearned' ? 'frontier-unearned' : ''}
           width="64" height="64" alt={`${facility}, ${symbol} Symbol: ${label.toLowerCase()}`} />
       </li>;

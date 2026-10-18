@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useEffect, useRef, useState} from 'react';
 import {loadBattleTeams, storeBattleTeams, validateTeam, createTeamId} from '../../storage/battleTeams.js';
 
@@ -11,9 +12,9 @@ function TeamEditor({team, pool, onSave, onDelete, onClose}) {
     <form onSubmit={event=>{event.preventDefault();if(!validation){const result=onSave({...team,name:name.trim(),ids});if(result)setError(result);}}}>
       <h2 id="battle-team-editor-title">{team.id?'Edit Team':'Add Team'}</h2>
       <label>Team name<input autoFocus value={name} maxLength={40} onChange={event=>setName(event.target.value)} /></label>
-      <div className="battle-team-editor-slots">{Array.from({length:3},(_,i)=>{const mon=pool.find(mon=>mon.identity===ids[i]);return <button type="button" key={i} aria-label={`Choose team slot ${i+1}`} aria-pressed={slot===i} onClick={()=>setSlot(i)}>{mon?<><img src={`/pokemon/box/${mon.dex}.png`} alt=""/><span>{mon.name}</span></>:<span>{ids[i]?'Unavailable':`Slot ${i+1}`}</span>}</button>;})}</div>
+      <div className="battle-team-editor-slots">{Array.from({length:3},(_,i)=>{const mon=pool.find(mon=>mon.identity===ids[i]);return <button type="button" key={i} aria-label={`Choose team slot ${i+1}`} aria-pressed={slot===i} onClick={()=>setSlot(i)}>{mon?<><img src={publicAsset(`/pokemon/box/${mon.dex}.png`)} alt=""/><span>{mon.name}</span></>:<span>{ids[i]?'Unavailable':`Slot ${i+1}`}</span>}</button>;})}</div>
       <label>Frontier Pokémon<input type="search" placeholder="Species or nickname…" value={query} onChange={event=>setQuery(event.target.value)} /></label>
-      <div className="battle-team-picker">{options.map(mon=><button type="button" key={mon.identity} disabled={ids.includes(mon.identity) && ids[slot]!==mon.identity} onClick={()=>{setIds(old=>{const next=[...old];next[slot]=mon.identity;return next;});setSlot(Math.min(slot+1,2));}}><img src={`/pokemon/box/${mon.dex}.png`} alt=""/><span>{mon.name}{mon.nickname && mon.nickname!==mon.name && <small>{mon.nickname}</small>}</span><small>Lv. {mon.level}</small></button>)}{!options.length&&<p>No matching Frontier Pokémon. Assign the Frontier role in My Pokémon.</p>}</div>
+      <div className="battle-team-picker">{options.map(mon=><button type="button" key={mon.identity} disabled={ids.includes(mon.identity) && ids[slot]!==mon.identity} onClick={()=>{setIds(old=>{const next=[...old];next[slot]=mon.identity;return next;});setSlot(Math.min(slot+1,2));}}><img src={publicAsset(`/pokemon/box/${mon.dex}.png`)} alt=""/><span>{mon.name}{mon.nickname && mon.nickname!==mon.name && <small>{mon.nickname}</small>}</span><small>Lv. {mon.level}</small></button>)}{!options.length&&<p>No matching Frontier Pokémon. Assign the Frontier role in My Pokémon.</p>}</div>
       {(error || validation)&&<p className="battle-team-message" role="status">{error || validation}</p>}
       {confirm&&<div className="battle-team-delete-confirm"><p>Delete “{team.name}”?</p><button type="button" onClick={()=>{const result=onDelete(team.id);if(result)setError(result);}}>Confirm delete</button><button type="button" onClick={()=>setConfirm(false)}>Keep team</button></div>}
       <footer>{team.id&&<button type="button" onClick={()=>setConfirm(true)}>Delete</button>}<button type="button" onClick={onClose}>Cancel</button><button type="submit" disabled={Boolean(validation)}>Save</button></footer>
@@ -33,7 +34,7 @@ export default function BattleTeams({battle}) {
       {frontierPool.map(mon => <button type="button" className="battle-frontier-entry" key={mon.identity} data-pokemon-id={mon.identity}
         disabled={state.team.includes(mon.identity) || state.team.length >= state.rules.teamSize}
         onClick={() => dispatch({type:'addPlayer', identity:mon.identity, pool:frontierPool})}>
-        <img src={`/pokemon/box/${mon.dex}.png`} width="36" height="36" alt="" />
+        <img src={publicAsset(`/pokemon/box/${mon.dex}.png`)} width="36" height="36" alt="" />
         <span><strong>{mon.name}</strong>{speciesCounts.get(mon.dex) > 1 && mon.nickname && mon.nickname !== mon.name && <small>{mon.nickname}</small>}</span>
         <small>Lv. {mon.level}</small>
       </button>)}
@@ -43,7 +44,7 @@ export default function BattleTeams({battle}) {
     {error&&<p role="alert">{error}</p>}
     {!teams.length&&!error&&<p>No saved teams yet. Add a team using your Frontier Pokémon.</p>}
     {teams.map(team=>{const resolved=team.ids.map(id=>records.find(mon=>mon.identity===id));const issue=validateTeam(team,frontierPool);return <div className="battle-saved-team" key={team.id}>
-      <button type="button" className="battle-load-team" aria-label={`Load ${team.name}`} disabled={Boolean(issue)} onClick={()=>dispatch({type:'loadTeam',team,records:frontierPool})}><strong>{team.name}</strong><span>{resolved.map((mon,i)=>mon?<img key={team.ids[i]} src={`/pokemon/box/${mon.dex}.png`} alt={mon.name}/>:<span key={i}>Unavailable</span>)}</span>{issue&&<small>{issue}</small>}</button>
+      <button type="button" className="battle-load-team" aria-label={`Load ${team.name}`} disabled={Boolean(issue)} onClick={()=>dispatch({type:'loadTeam',team,records:frontierPool})}><strong>{team.name}</strong><span>{resolved.map((mon,i)=>mon?<img key={team.ids[i]} src={publicAsset(`/pokemon/box/${mon.dex}.png`)} alt={mon.name}/>:<span key={i}>Unavailable</span>)}</span>{issue&&<small>{issue}</small>}</button>
       <button type="button" onClick={()=>setEditor(team)} aria-label={`Edit ${team.name}`}>Edit</button>
     </div>;})}
     {editor&&<TeamEditor team={editor} pool={frontierPool} onClose={()=>setEditor(null)} onSave={team=>persist(team.id?teams.map(old=>old.id===team.id?team:old):[...teams,{...team,id:createTeamId()}])} onDelete={id=>persist(teams.filter(team=>team.id!==id))}/>}

@@ -1,3 +1,4 @@
+import {publicAsset} from '../../../assets/publicAsset.js';
 import React from 'react';
 import GameNames from './GameNames.jsx'
 import { mergedLevelLearnset, gameTutorSources, levelSourceGames } from '../utils/gameLearnsets.js'
@@ -39,7 +40,7 @@ export default function LearnsetSection({ id, embedded = false }) {
     const data = moveResources[move]
     return <div className="resource-learnset-move">
       <div className="resource-learnset-heading">
-        <span className="resource-learnset-icon">{data.type !== 'MYSTERY' && <img src={`/types/icons/${data.type.toLowerCase()}.png`} alt={`${data.type} type`} />}</span>
+        <span className="resource-learnset-icon">{data.type !== 'MYSTERY' && <img src={publicAsset(`/types/icons/${data.type.toLowerCase()}.png`)} alt={`${data.type} type`} />}</span>
         <strong>{moveNames[move]}</strong>
         <span title="Power">{data.power === 0 ? '-' : data.power === 1 ? 'Var' : data.power}</span>
         <span title="Accuracy">{data.accuracy === 0 ? '-' : `${data.accuracy}%`}</span>

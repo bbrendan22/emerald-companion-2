@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {speciesOverview} from '../../resources/speciesOverview.js';
 import '../styles/species-profile.css';
@@ -13,7 +14,7 @@ function SpeciesArtwork({dex, name, small = false}) {
   const [source, setSource] = useState('artwork');
   const artwork = dex === 386 ? 'deoxys-speed' : dex;
   if (source === 'unavailable') return <span className={`species-artwork-fallback ${small ? 'species-artwork-small' : ''}`} role="img" aria-label={`${name} image unavailable`}>?</span>;
-  return <img className={`species-artwork ${small ? 'species-artwork-small' : ''}`} src={source === 'artwork' ? `/pokemon/artwork/normal/${artwork}.png` : `/pokemon/emerald/normal/${dex}.png`} width={small ? 64 : 160} height={small ? 64 : 160} alt={small ? '' : `${name} ${source === 'sprite' ? 'sprite' : 'artwork'}`} onError={() => setSource(source === 'artwork' ? 'sprite' : 'unavailable')} />;
+  return <img className={`species-artwork ${small ? 'species-artwork-small' : ''}`} src={publicAsset(source === 'artwork' ? `/pokemon/artwork/normal/${artwork}.png` : `/pokemon/emerald/normal/${dex}.png`)} width={small ? 64 : 160} height={small ? 64 : 160} alt={small ? '' : `${name} ${source === 'sprite' ? 'sprite' : 'artwork'}`} onError={() => setSource(source === 'artwork' ? 'sprite' : 'unavailable')} />;
 }
 const tabs = ['Overview', 'Stats & Matchups', 'Locations', 'Learnset', 'More'];
 export default function SpeciesProfile({dex, onSpecies}) {
@@ -36,7 +37,7 @@ export default function SpeciesProfile({dex, onSpecies}) {
       <div className="species-identity-text">
         <p className="species-kicker">#{String(dex).padStart(3, '0')} · GEN {species.generation}</p>
         <h1 id="species-profile-title" ref={title} tabIndex="-1">{species.name}</h1>
-        <div className="species-types">{species.types.map(type => <img key={type} src={`/types/icons/${type}.png`} width="20" height="20" alt={`${type[0].toUpperCase()}${type.slice(1)} type`} />)}</div>
+        <div className="species-types">{species.types.map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} width="20" height="20" alt={`${type[0].toUpperCase()}${type.slice(1)} type`} />)}</div>
         <p className="species-gender">{species.gender}</p>
       </div>
     </div>

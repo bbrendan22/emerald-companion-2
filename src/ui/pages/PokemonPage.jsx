@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useMemo, useState, useRef, useCallback, useEffect, useLayoutEffect} from 'react';
 import {identifyPokemon, filterPokemon, loadRoles, storeRole, locationName} from '../../storage/pokemonRoles.js';
 import '../styles/pokemon.css';
@@ -70,8 +71,8 @@ export default function PokemonPage({snapshot, onSubpageChange}) {
     <div className={`pokemon-grid ${view === 'Box' ? 'box-grid' : ''}`}>
       {visible.map(p => <button type="button" key={p.identity} className="pokemon-card" aria-pressed={selected === p.identity} aria-label={`${p.speciesName}, ${p.nickname}, ${p.isEgg ? 'Egg' : `level ${p.recorded?.level ?? p.derivedLevel}`}${p.shiny ? ', shiny' : ''}, ${locationName(p.source)}, ${roleState.assigned[p.identity] ?? 'Collection'}`} onClick={event => openProfile(p, event)}>
         {view === 'Gallery' && <span className="pokemon-card-top"><span>#{String(p.nationalDexId).padStart(3, '0')}</span><span>{p.isEgg ? 'Egg' : `Lv. ${p.recorded?.level ?? p.derivedLevel}`} {p.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}</span></span>}
-        <img className="pokemon-sprite" loading="lazy" alt="" src={collectionImage(p, view)} />
-        {view === 'Gallery' && <><span className="pokemon-name">{p.speciesName}</span><span className="pokemon-types">{pokemonTypes[p.nationalDexId].slice(0, 2).map(type => <img key={type} src={`/types/icons/${type}.png`} alt={`${type} type`} width="14" height="14" />)}</span></>}
+        <img className="pokemon-sprite" loading="lazy" alt="" src={publicAsset(collectionImage(p, view))} />
+        {view === 'Gallery' && <><span className="pokemon-name">{p.speciesName}</span><span className="pokemon-types">{pokemonTypes[p.nationalDexId].slice(0, 2).map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} alt={`${type} type`} width="14" height="14" />)}</span></>}
 
       </button>)}
     </div>

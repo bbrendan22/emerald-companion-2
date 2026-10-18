@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useState, useEffect, useMemo} from 'react';
 import {toTowerOpponent} from '../../battle/frontierAdapter.js';
 import {towerSetById} from '../../battle/towerSets.js';
@@ -34,11 +35,11 @@ function PokemonCard({side, mon, other, set, active}) {
   const itemId = mon && battleItemId(String(mon.item ?? ''));
   const item = mon && (!mon.item || ['none', ''].includes(normalize(mon.item)) || mon.item === '?????') ? 'None' : mon?.item;
   return <section className={`battle-matchup-card battle-side-${side}`} aria-label={label}>
-      <div className="battle-matchup-identity"><div><h2>{mon.name}{set?.instance ? ` #${set.instance}` : ''}</h2><div className="battle-matchup-types" title={typeTitle}>{types.map(type => <img key={type} src={`/types/icons/${type.toLowerCase()}.png`} alt={`${type.toLowerCase()} type`} width="18" height="18" />)}</div></div><span>Lv. {mon.level}</span></div>
+      <div className="battle-matchup-identity"><div><h2>{mon.name}{set?.instance ? ` #${set.instance}` : ''}</h2><div className="battle-matchup-types" title={typeTitle}>{types.map(type => <img key={type} src={publicAsset(`/types/icons/${type.toLowerCase()}.png`)} alt={`${type.toLowerCase()} type`} width="18" height="18" />)}</div></div><span>Lv. {mon.level}</span></div>
       <div className="battle-matchup-artwork">{failedArtwork === artwork ? <span>Artwork unavailable</span>
-        : <img src={artwork} alt={`${mon.shiny ? 'Shiny ' : ''}${mon.name}`} decoding="async" onError={() => setFailedArtwork(artwork)} />}</div>
+        : <img src={publicAsset(artwork)} alt={`${mon.shiny ? 'Shiny ' : ''}${mon.name}`} decoding="async" onError={() => setFailedArtwork(artwork)} />}</div>
       <div className="battle-matchup-details">
-        <span className="battle-matchup-item">{item !== 'None' && itemId && failedItem !== itemId && <img src={`/items/${itemId}.png`} width="20" height="20" alt="" onError={() => setFailedItem(itemId)} />}<span>{item}</span></span>
+        <span className="battle-matchup-item">{item !== 'None' && itemId && failedItem !== itemId && <img src={publicAsset(`/items/${itemId}.png`)} width="20" height="20" alt="" onError={() => setFailedItem(itemId)} />}<span>{item}</span></span>
         <span aria-hidden="true">·</span><AlternatingAbility key={mon.ability} ability={mon.ability} active={active} />
       </div>
   </section>;
@@ -57,7 +58,7 @@ function Moves({side, mon, other, onMove}) {
     <h3>Moves</h3>{mon.moves.filter(Boolean).map((move,index)=>{
       const effectiveness=matchupEffectiveness(move,mon,other);
       return <button type="button" className="battle-matchup-move" key={index} onClick={()=>onMove({side,slot:index})}>
-        {effectiveness.type === 'MYSTERY' ? <span aria-hidden="true" style={{width:16,height:16,flexShrink:0}} /> : <img src={`/types/icons/${effectiveness.type.toLowerCase()}.png`} width="16" height="16" alt={`${effectiveness.type.toLowerCase()} type`} />}
+        {effectiveness.type === 'MYSTERY' ? <span aria-hidden="true" style={{width:16,height:16,flexShrink:0}} /> : <img src={publicAsset(`/types/icons/${effectiveness.type.toLowerCase()}.png`)} width="16" height="16" alt={`${effectiveness.type.toLowerCase()} type`} />}
         <span className="battle-matchup-move-name">{move.name}</span><span className="battle-matchup-pp">{movePpLabel(move,side === 'player')}</span>
         <span className="battle-matchup-effect" title={effectiveness.explanation}>{effectiveness.label}</span>
       </button>;

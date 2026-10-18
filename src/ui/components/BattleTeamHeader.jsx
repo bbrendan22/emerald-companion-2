@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useRef} from 'react';
 import FrontierTrainerSprite from './FrontierTrainerSprite.jsx';
 
@@ -36,7 +37,7 @@ export default function BattleTeamHeader({side, trainer, members, active, onSele
         : <div className="battle-trainer-text" title={trainerTitle}>{trainerText}</div>}
     </div>
     <div className="battle-team-sprites">
-      <FrontierTrainerSprite className="battle-trainer-portrait" src={trainer.portrait} loading="eager" />
+      <FrontierTrainerSprite className="battle-trainer-portrait" src={publicAsset(trainer.portrait)} loading="eager" />
       <div className="battle-team-slots" aria-label={`${label} Pokémon`}>
         {Array.from({length:3}, (_, index) => {
           const mon = members[index];
@@ -47,7 +48,7 @@ export default function BattleTeamHeader({side, trainer, members, active, onSele
             onPointerUp={event => touchUp(event, mon.key, remove)}
             onClick={event => click(event, () => onSelect(mon.key), remove)} onDoubleClick={event => event.preventDefault()}
             onKeyDown={event => removeKey(event, remove)}>
-            <img src={`/pokemon/box/${mon.dex}.png`} width="40" height="40" alt="" />
+            <img src={publicAsset(`/pokemon/box/${mon.dex}.png`)} width="40" height="40" alt="" />
           </button> : <button key={`empty-${index}`} type="button" className="battle-team-slot battle-slot-empty"
             aria-label={`Add Pokémon, ${label}, empty slot ${index + 1}`} onClick={event => click(event, onEmpty)}><span aria-hidden="true">+</span></button>;
         })}

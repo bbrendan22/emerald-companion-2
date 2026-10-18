@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useState} from 'react';
 import {searchTowerTrainers, selectedTowerTrainer} from '../../battle/towerTrainers.js';
 import FrontierTrainerSprite from './FrontierTrainerSprite.jsx';
@@ -13,7 +14,7 @@ export default function BattleTrainers({state, dispatch}) {
     <div className="battle-trainer-results" aria-label="Trainer results">
       {results.map(entry => <button key={entry.key} type="button" className="battle-trainer-result" aria-pressed={selected === entry.key}
         onClick={() => { if (document.activeElement instanceof HTMLElement) document.activeElement.blur(); dispatch({type:'trainer',key:entry.key}); }}>
-        <FrontierTrainerSprite src={`/trainers/frontier/${entry.sprite}.png`} className="battle-result-sprite" />
+        <FrontierTrainerSprite src={publicAsset(`/trainers/frontier/${entry.sprite}.png`)} className="battle-result-sprite" />
         <span className="battle-result-identity"><strong>{entry.name}{entry.symbol && <span> · {entry.symbol}</span>}</strong><small>{entry.trainerClass}</small></span>
         <span className="battle-result-count"><b>{entry.setIds.length}</b><small>sets</small></span>
       </button>)}

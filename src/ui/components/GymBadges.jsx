@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
 import '../styles/dashboard.css';
 import '../styles/achievements.css';
@@ -10,7 +11,7 @@ export default function GymBadges({earned}) {
     <ol className="badge-row">{badges.map((badge, index) => {
       const name = `${badge[0].toUpperCase()}${badge.slice(1)} Badge`;
       return <li key={badge} className={earned[index] ? 'badge-earned' : 'badge-unearned'} title={`${name} — ${earned[index] ? 'Earned' : 'Not earned'}`}>
-        <img src={`/badges/${badge}_badge.png`} alt={`${name}: ${earned[index] ? 'earned' : 'not earned'}`} width="64" height="64" />
+        <img src={publicAsset(`/badges/${badge}_badge.png`)} alt={`${name}: ${earned[index] ? 'earned' : 'not earned'}`} width="64" height="64" />
       </li>;
     })}</ol>
   </section>;

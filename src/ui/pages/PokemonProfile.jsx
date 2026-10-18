@@ -1,3 +1,4 @@
+import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
 import {profileData, statFields} from '../../pokemon/profile.js';
 import {speciesBarPercents} from '../../pokemon/statBars.js';
@@ -7,7 +8,7 @@ import RibbonCollection from '../components/RibbonCollection.jsx';
 
 function TypeIcon({type}) {
   if (type === 'mystery') return <span className="profile-type-icon" aria-hidden="true" />;
-  return type ? <img className="profile-type-icon" src={`/types/icons/${type}.png`} alt={`${type} type`} /> : null;
+  return type ? <img className="profile-type-icon" src={publicAsset(`/types/icons/${type}.png`)} alt={`${type} type`} /> : null;
 }
 function Card({title, area, heading=true, children}) {
   return <section className={`profile-card profile-${area}`} aria-label={title}>{heading && <h2>{title}</h2>}{children}</section>;
@@ -31,7 +32,7 @@ export default function PokemonProfile({pokemon:p, role, onAssign, error}) {
   const gender = p.gender ? p.gender[0].toUpperCase() + p.gender.slice(1) : 'Gender unavailable';
   return <article className="pokemon-profile" aria-labelledby="pokemon-profile-title">
     <section className="profile-showcase" aria-label="Pokémon showcase">
-      <div className="profile-artwork-wrap"><img className="profile-artwork" src={`/pokemon/artwork/${p.shiny ? 'shiny' : 'normal'}/${p.nationalDexId}.png`} alt={`${p.shiny ? 'Shiny ' : ''}${p.speciesName}`} /></div>
+      <div className="profile-artwork-wrap"><img className="profile-artwork" src={publicAsset(`/pokemon/artwork/${p.shiny ? 'shiny' : 'normal'}/${p.nationalDexId}.png`)} alt={`${p.shiny ? 'Shiny ' : ''}${p.speciesName}`} /></div>
       <div className="profile-identity">
         <p className="profile-kicker">#{String(p.nationalDexId).padStart(3,'0')} · GEN {generation} {p.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}</p>
         <h1 id="pokemon-profile-title" tabIndex="-1">{p.speciesName}{nickname && <> <span className="profile-nickname">“{nickname}”</span></>}</h1>
@@ -47,7 +48,7 @@ export default function PokemonProfile({pokemon:p, role, onAssign, error}) {
           <Card title="Role" area="role"><div className="collection-segments profile-roles" aria-label="Assign role">{['Frontier','Utility','Collection'].map(name => <button type="button" key={name} aria-pressed={role === name} onClick={() => onAssign(name)}>{name}</button>)}</div></Card>
           <Card title="Ability & Held Item" area="info" heading={false}><Fields rows={[
             ['Ability',p.ability.name ?? `Unknown ability (ID ${p.ability.id})`],
-            ['Held Item',<span className="profile-item"><span className="profile-item-name">{data.heldItem}</span>{p.heldItemId > 0 && p.heldItemId <= 376 && <img src={`/items/${p.heldItemId}.png`} alt="" />}</span>],
+            ['Held Item',<span className="profile-item"><span className="profile-item-name">{data.heldItem}</span>{p.heldItemId > 0 && p.heldItemId <= 376 && <img src={publicAsset(`/items/${p.heldItemId}.png`)} alt="" />}</span>],
           ]}/></Card>
         </div>
       </div>
