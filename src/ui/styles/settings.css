@@ -10,7 +10,3 @@
 .import-panel .import-error { color: #f4a2a5; }
 
 .settings-content { display: grid; gap: 16px; min-width: 0; }
-.showcase-reset-panel { padding: 12px; background: #24272d; min-width: 0; }
-.showcase-reset-panel h2 { margin: 0 0 8px; font-size: 1rem; }
-.showcase-reset-panel p { color: #a2a9b4; font-size: .8rem; line-height: 1.6; }
-.showcase-reset-panel button { min-height: 44px; padding: 8px 12px; background: #30363e; border: 1px solid #ffffff12; color: #c7cdd5; }

@@ -23,10 +23,10 @@ try {
   const navigate=async name=>{await page.getByRole('button',{name:'Open navigation',exact:true}).click();await page.getByRole('button',{name,exact:true}).click();};
   const back=async()=>page.getByRole('button',{name:'Back to Resources',exact:true}).click();
   await images();
-  await navigate('Resources');
-  for(const name of ['Pokémon Database','Moves','Abilities']){
+  await navigate('Home');
+  for(const name of ['Pokédex','Moves','Abilities']){
     await page.getByRole('link',{name,exact:true}).click();await images();
-    if(name==='Pokémon Database'){
+    if(name==='Pokédex'){
       await page.locator('.resources-species-entry').first().click();
       for(const tab of ['Overview','Stats & Matchups','Locations','Learnset','More']) {await page.getByRole('tab',{name:tab,exact:true}).click();await images();}
       await page.getByRole('button',{name:'Back to National Pokédex',exact:true}).click();
@@ -51,15 +51,15 @@ try {
   storage.set(makePokemon({species:1}),4);
   await page.getByRole('button',{name:'Settings',exact:true}).click();
   await page.locator('#save-file').setInputFiles({name:'synthetic.sav',mimeType:'application/octet-stream',buffer:Buffer.from(makeSave({blocks:{saveBlock1:b1,storage}}))});
-  await page.getByText('Save imported. Open Trainer to view your progress.',{exact:true}).waitFor();
+  await page.getByText('Save imported. Open Home to view your progress.',{exact:true}).waitFor();
   assert.ok(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.save.v1')));
   await page.reload();await images();
-  await navigate('My Pokémon');await images();
+  await navigate('Collection');await images();
   await page.locator('.pokemon-card').first().click();await images();
   await page.locator('.profile-roles').getByRole('button',{name:'Frontier',exact:true}).click();
   await page.getByRole('button',{name:'Back to collection',exact:true}).click();
   await page.getByRole('button',{name:'Box',exact:true}).click();await images();
-  await navigate('Trainer');await images();
+  await navigate('Home');await images();
   await navigate('Battle');await images();
   await page.getByRole('tab',{name:'Trainers',exact:true}).click();await images();
   await page.getByRole('tab',{name:'Sets',exact:true}).click();await images();
@@ -99,5 +99,5 @@ try {
   }));
   const manifest=await (await page.request.get(new URL('manifest.webmanifest',url).href)).json();
   assert.equal(new URL(manifest.start_url,url).pathname,base);
-  console.log(`Pages production smoke passed under ${base}: all Resources links, profiles/tabs, save import/reload, Trainer/My Pokémon/Battle images; all ${assets.length} public assets match; no HTTP errors or save uploads.`);
+  console.log(`Pages production smoke passed under ${base}: all Resources links, profiles/tabs, save import/reload, Home/Collection/Battle images; all ${assets.length} public assets match; no HTTP errors or save uploads.`);
 } finally {await browser.close();}

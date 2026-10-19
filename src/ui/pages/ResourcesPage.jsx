@@ -1,7 +1,7 @@
 import PokemonName from '../components/PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {catalogEntries, searchResources} from '../../resources/search.js';
+import {catalogEntries} from '../../resources/search.js';
 import '../styles/resources.css';
 import pokemonTypes from '../../data/pokemonTypes.json' with {type: 'json'};
 import SpeciesProfile from './SpeciesProfile.jsx';
@@ -24,7 +24,7 @@ import MoveTutors from '../../resources/charts/MoveTutors.jsx';
 import PokemonSets from '../../resources/frontier/PokemonSets.jsx';
 import FrontierTrainers from '../../resources/frontier/Trainers.jsx';
 
-const titles = {pokemon: 'Pokémon Database', moves: 'Moves', abilities: 'Abilities'};
+const titles = {pokemon: 'Pokédex', moves: 'Moves', abilities: 'Abilities'};
 const additionalSections = [
   {id: 'items', title: 'Items & Berries', entries: ['Useful Items', 'Berries']},
   {id: 'frontier', title: 'Battle Frontier', entries: ['Pokémon Sets', 'Trainers']},
@@ -39,9 +39,6 @@ function SearchField({id, label, placeholder, value, onChange, inputRef}) {
       {value && <button type="button" className="resources-clear" aria-label="Clear search" onClick={() => {onChange(''); inputRef.current?.focus();}}><span aria-hidden="true">×</span></button>}
     </div>
   </div>;
-}
-function EntryName({entry, category}) {
-  return <>{category === 'pokemon' && <span className="resources-dex">#{String(entry.id).padStart(3, '0')}</span>}<PokemonName>{entry.name}</PokemonName></>;
 }
 function PokedexEntry({entry}) {
   const [spriteFailed, setSpriteFailed] = useState(false);
@@ -64,7 +61,6 @@ export default function ResourcesPage({onSubpageChange}) {
   const closeChart = useCallback(() => setChart(null), []);
   const [calculator, setCalculator] = useState(false);
   const closeCalculator = useCallback(() => setCalculator(false), []);
-  const [query, setQuery] = useState('');
   const [catalog, setCatalog] = useState(null);
   const [itemCategory, setItemCategory] = useState(null);
   const [catalogQuery, setCatalogQuery] = useState('');
@@ -126,9 +122,6 @@ export default function ResourcesPage({onSubpageChange}) {
   if (calculator) return calculator === 'hidden-power' ? <HiddenPowerCalculator /> : <IVCalculator />;
   if (itemCategory) return <ItemsBrowser key={itemCategory} berriesOnly={itemCategory === 'Berries'} />;
   if (profileDex) return <SpeciesProfile dex={profileDex} onSpecies={setProfileDex} />;
-  const groups = searchResources(query);
-  const total = groups.reduce((sum, group) => sum + group.total, 0);
-  const shown = groups.reduce((sum, group) => sum + group.results.length, 0);
   if (catalog) {
     const entries = catalog === 'moves' ? filterMoves(catalogQuery, moveType, moveCategory) : catalog === 'abilities' ? filterAbilities(catalogQuery) : catalogEntries(catalog, catalogQuery);
     return <section className="resources-home resources-catalog" id={`resources-${catalog}`} aria-labelledby="resources-catalog-heading">
@@ -149,17 +142,9 @@ export default function ResourcesPage({onSubpageChange}) {
       <ol className="resources-catalog-list">{entries.map(entry => <li key={entry.id} className={catalog === 'pokemon' ? 'resources-pokedex-row' : catalog === 'moves' || catalog === 'abilities' ? 'resources-move-row' : undefined} id={`resources-entry-${catalog}-${entry.id}`} tabIndex="-1" aria-current={catalog !== 'abilities' && selectedId === entry.id ? 'true' : undefined}>{catalog === 'pokemon' ? <a className="resources-species-entry" href={`#species-${entry.id}`} onClick={event => openProfile(event, entry.id)}><PokedexEntry entry={entry} /></a> : catalog === 'moves' ? <MoveSummary entry={entry} onOpen={event => {moveReturnFocus.current = event.detail === 0 ? event.currentTarget : null; setActiveMove(entry.id);}} /> : <AbilityEntry entry={entry} onOpen={event => {abilityReturnFocus.current = event.detail === 0 ? event.currentTarget : null; setActiveAbility(entry.id);}} />}</li>)}</ol>
     </section>;
   }
-  return <div className="resources-home">
-    <SearchField id="resources-query" label="Search Pokémon, moves and abilities" placeholder="Search Pokémon, moves, abilities…" value={query} onChange={setQuery} inputRef={input} />
-    <p className="resources-search-status" role="status">{groups.length > 0 ? total ? `${total} ${total === 1 ? 'match' : 'matches'}${shown < total ? ` · Showing ${shown}. Refine your search for more.` : ''}` : 'No results. Try another name or National Dex number.' : ''}</p>
-    {total > 0 && <section className="resources-results" aria-label="Search results">
-      {groups.filter(group => group.total > 0).map(group => <section key={group.id} aria-labelledby={`resources-results-${group.id}`}>
-        <h2 id={`resources-results-${group.id}`}>{group.title} <span>{group.total}</span></h2>
-        <ul>{group.results.map(result => <li key={result.id}>
-          <a id={`resources-result-${group.id}-${result.id}`} href={`#resources-entry-${group.id}-${result.id}`} onClick={event => openCatalog(event, group.id, result)}><span className="resources-result-name"><EntryName entry={result} category={group.id} /></span></a><small>{group.label}</small>
-        </li>)}</ul>
-      </section>)}
-    </section>}
+  return <aside className="resources-home home-resources" aria-label="Resources">
+    <h2 className="home-resources-title">Resources</h2>
+    <input className="home-search" type="search" placeholder="Search" aria-label="Search Resources (coming soon)" disabled />
     <section className="resources-section" aria-labelledby="resources-pokemon-heading">
       <h2 id="resources-pokemon-heading">Pokémon</h2>
       <ul className="resources-destinations">
@@ -172,5 +157,5 @@ export default function ResourcesPage({onSubpageChange}) {
         {section.entries.map(name => <li key={name}>{section.id === 'frontier' && name === 'Trainers' ? <a href="#resources-frontier-trainers" onClick={event => {event.preventDefault(); setFrontierTrainers(true);}}>{name}</a> : section.id === 'frontier' && name === 'Pokémon Sets' ? <a href="#resources-frontier-sets" onClick={event => {event.preventDefault(); setFrontierSets(true);}}>{name}</a> : section.id === 'charts' && name === 'Move Tutors' ? <a href="#resources-move-tutors" onClick={event => {event.preventDefault(); setChart('tutors');}}>{name}</a> : section.id === 'charts' && name === 'Emerald Pickup Table' ? <a href="#resources-emerald-pickup" onClick={event => {event.preventDefault(); setChart('pickup');}}>{name}</a> : section.id === 'charts' && name === 'Type Chart' ? <a href="#resources-type-chart" onClick={event => {event.preventDefault(); setChart('type');}}>{name}</a> : section.id === 'charts' && name === 'Nature Chart' ? <a href="#resources-nature-chart" onClick={event => {event.preventDefault(); setChart('nature');}}>{name}</a> : section.id === 'tools' && name === 'IV Calculator' ? <a href="#resources-iv-calculator" onClick={event => {event.preventDefault(); setCalculator(true);}}>{name}</a> : section.id === 'tools' && name === 'Hidden Power Calculator' ? <a href="#resources-hidden-power-calculator" onClick={event => {event.preventDefault(); setCalculator('hidden-power');}}>{name}</a> : section.id === 'tools' && name === 'Stat Calculator' ? <a href="#resources-stat-calculator" onClick={event => {event.preventDefault(); setCalculator('stat');}}>{name}</a> : section.id === 'tools' && name === 'Move Coverage' ? <a href="#resources-move-coverage" onClick={event => {event.preventDefault(); setCalculator('coverage');}}>{name}</a> : section.id === 'items' ? <a href={`#resources-items-${name}`} onClick={event => {event.preventDefault(); setItemCategory(name);}}>{name}</a> : <span>{name}</span>}</li>)}
       </ul>}
     </section>)}
-  </div>;
+  </aside>;
 }
