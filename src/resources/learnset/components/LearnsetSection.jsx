@@ -1,3 +1,4 @@
+import PokemonName from '../../../ui/components/PokemonName.js';
 import {publicAsset} from '../../../assets/publicAsset.js';
 import React from 'react';
 import GameNames from './GameNames.jsx'
@@ -55,7 +56,7 @@ export default function LearnsetSection({ id, embedded = false }) {
   return <div className="species-learnset">
     <details className="resource-learnset-group"><summary>Level-up moves · {levels.length}</summary>{columns}
       {levels.map(({move,sources,levels:learnLevels,common}) => <div key={move}>{moveRow(move, learnLevels.length === 1 ? `Lv. ${learnLevels[0]}` : 'Varies')}
-        {!common && <p className="resource-tutor-location">{sources.map((source,index) => <span key={index}>{index > 0 && ' / '}{levelSourceGames(source.games, pokemonMeta[id].dex === 386) && <><GameNames>{levelSourceGames(source.games, pokemonMeta[id].dex === 386)}</GameNames>{(learnLevels.length > 1 || source.name) && ' · '}</>}{learnLevels.length > 1 && `Lv. ${source.level}`}{learnLevels.length > 1 && source.name && ' · '}{source.name && `${source.name}, then evolve`}</span>)}</p>}
+        {!common && <p className="resource-tutor-location">{sources.map((source,index) => <span key={index}>{index > 0 && ' / '}{levelSourceGames(source.games, pokemonMeta[id].dex === 386) && <><GameNames>{levelSourceGames(source.games, pokemonMeta[id].dex === 386)}</GameNames>{(learnLevels.length > 1 || source.name) && ' · '}</>}{learnLevels.length > 1 && `Lv. ${source.level}`}{learnLevels.length > 1 && source.name && ' · '}{source.name && <PokemonName>{`${source.name}, then evolve`}</PokemonName>}</span>)}</p>}
       </div>)}
       {!levels.length && <p className="resource-note">No level-up moves.</p>}
     </details>
@@ -75,7 +76,7 @@ export default function LearnsetSection({ id, embedded = false }) {
       {[172,25,26].includes(pokemonMeta[id].dex) && <div className="resource-special-breeding"><h4><GameNames>Emerald</GameNames> · Special breeding</h4>{moveRow(344, 'Egg')}<p className="resource-tutor-location">Hatch Pichu · Either parent holds a Light Ball</p></div>}
     </details>
     <details className="resource-learnset-group"><summary>Special moves · {specialMoves.length}</summary>{columns}
-      {specialMoves.map(({move,sources}) => <div key={move}>{moveRow(move, sources.some(source=>source.method==='Purification') ? 'Purified' : 'Gift')}<ul className="resource-move-sources">{sources.map((source,index)=><li key={index}><strong><GameNames>{source.game}</GameNames></strong> · {source.method}{source.level != null ? ` · Lv. ${source.level}` : ''}{source.species !== String(id) ? ` · Learn as ${source.name}, then evolve` : ''}{source.requirement ? ` · ${source.requirement}` : ''}</li>)}</ul></div>)}
+      {specialMoves.map(({move,sources}) => <div key={move}>{moveRow(move, sources.some(source=>source.method==='Purification') ? 'Purified' : 'Gift')}<ul className="resource-move-sources">{sources.map((source,index)=><li key={index}><strong><GameNames>{source.game}</GameNames></strong> · {source.method}{source.level != null ? ` · Lv. ${source.level}` : ''}{source.species !== String(id) ? <PokemonName>{` · Learn as ${source.name}, then evolve`}</PokemonName> : ''}{source.requirement ? ` · ${source.requirement}` : ''}</li>)}</ul></div>)}
       {!specialMoves.length && <p className="resource-note">No additional methods recorded.</p>}
     </details>
   </div>

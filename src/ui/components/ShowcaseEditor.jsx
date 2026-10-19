@@ -1,3 +1,4 @@
+import PokemonName from './PokemonName.js';
 import React, {useEffect, useRef, useState} from 'react';
 import reference from '../../data/reference.json';
 import ShowcaseArtwork from './ShowcaseArtwork.jsx';
@@ -33,7 +34,7 @@ export default function ShowcaseEditor({slot, onSave, onClose}) {
       <div ref={results} id="showcase-results" className="showcase-results" role="listbox" aria-label="Matching Pokémon">
         {options.length ? options.map((p,index) => <button type="button" role="option" aria-label={p.name} tabIndex={p.nationalDexId === selected || (!selectedIsVisible && index === 0) ? 0 : -1} aria-selected={selected === p.nationalDexId} key={p.nationalDexId} onClick={() => setSelected(p.nationalDexId)} onKeyDown={event => {if(['ArrowDown','ArrowUp','Home','End'].includes(event.key)) {event.preventDefault(); focusResult(event.key === 'Home' ? 0 : event.key === 'End' ? options.length-1 : index+(event.key === 'ArrowDown' ? 1 : -1));}}}>
           <ShowcaseArtwork pokemon={{nationalDexId:p.nationalDexId,shiny}} width="32" height="32" alt="" loading="lazy" />
-          <span>{p.name}</span><span className="showcase-result-check" aria-hidden="true">{selected === p.nationalDexId ? '✓' : ''}</span>
+          <span><PokemonName>{p.name}</PokemonName></span><span className="showcase-result-check" aria-hidden="true">{selected === p.nationalDexId ? '✓' : ''}</span>
         </button>) : <p className="showcase-no-matches" role="status">No matches</p>}
       </div>
       <div className="showcase-popup-actions">

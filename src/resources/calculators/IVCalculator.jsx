@@ -1,3 +1,4 @@
+import PokemonName from '../../ui/components/PokemonName.js';
 import React, {useState} from 'react';
 import {natureStatClass} from './natureDisplay.js';
 import './natureDisplay.css';
@@ -26,7 +27,7 @@ export default function IVCalculator() {
       <label className="iv-selector"><select aria-label="Nature" value={nature} onChange={event=>setNature(event.target.value)}><option value="">Nature</option>{natures.map(name=><option key={name}>{name}</option>)}</select></label>
       <label className="iv-selector"><select aria-label="Level" value={level} onChange={event=>setLevel(event.target.value)}><option value="">Level</option>{Array.from({length:100},(_,i)=><option key={i+1}>{i+1}</option>)}</select></label>
     </div>
-    {suggestions.length > 0 && <ul className="iv-suggestions" aria-label="Pokémon suggestions">{suggestions.map(p=><li key={p.nationalDexId}><button type="button" onClick={()=>selectPokemon(p)}>{p.name}</button></li>)}</ul>}
+    {suggestions.length > 0 && <ul className="iv-suggestions" aria-label="Pokémon suggestions">{suggestions.map(p=><li key={p.nationalDexId}><button type="button" onClick={()=>selectPokemon(p)}><PokemonName>{p.name}</PokemonName></button></li>)}</ul>}
     <label className="iv-checkbox"><input type="checkbox" checked={enabled} onChange={event=>setEnabled(event.target.checked)} />Enter EVs</label>
     {inputs(observed,setObserved)}
     {enabled && <><h2>EVs</h2>{inputs(evs,setEvs,true)}</>}

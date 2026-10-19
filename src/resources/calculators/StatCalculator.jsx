@@ -1,3 +1,4 @@
+import PokemonName from '../../ui/components/PokemonName.js';
 import React, {useState} from 'react';
 import {natureStatClass} from './natureDisplay.js';
 import './natureDisplay.css';
@@ -17,7 +18,7 @@ export default function StatCalculator() {
  return <section className="resources-home stat-calculator" aria-labelledby="sc-heading">
   <div className="sc-heading-row"><h1 id="sc-heading">Stat Calculator</h1><button className="sc-reset" type="button" onClick={reset}>Reset</button></div>
   <div className="sc-selectors"><input type="search" aria-label="Search Pokémon" placeholder="Pokémon" autoComplete="off" value={query} onFocus={()=>setSearching(true)} onChange={event=>{setQuery(event.target.value);setPokemon(null);setSearching(true);}} /><select aria-label="Nature" value={nature} onChange={event=>setNature(event.target.value)}><option value="">Nature</option>{natures.map(name=><option key={name}>{name}</option>)}</select><select aria-label="Level" value={level} onChange={event=>setLevel(event.target.value)}><option value="">Level</option>{Array.from({length:100},(_,i)=><option key={i+1}>{i+1}</option>)}</select></div>
-  {suggestions.length>0 && <ul className="sc-suggestions" aria-label="Pokémon suggestions">{suggestions.map(p=><li key={p.nationalDexId}><button type="button" onClick={()=>{setPokemon(p);setQuery(p.name);setSearching(false);}}>{p.name}</button></li>)}</ul>}
+  {suggestions.length>0 && <ul className="sc-suggestions" aria-label="Pokémon suggestions">{suggestions.map(p=><li key={p.nationalDexId}><button type="button" onClick={()=>{setPokemon(p);setQuery(p.name);setSearching(false);}}><PokemonName>{p.name}</PokemonName></button></li>)}</ul>}
   <h2>IVs</h2>{inputs(ivs,setIVs,'IVs',31)}
   {ivError && <p className="sc-error" id="sc-iv-error" role="alert">Enter whole IVs from 0–31.</p>}
   <h2>EVs</h2>{inputs(evs,setEVs,'EVs',255)}

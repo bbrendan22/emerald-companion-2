@@ -17,3 +17,11 @@ button { touch-action: manipulation; }
 .skip-link { opacity: 0; pointer-events: none; position: fixed; top: -100px; left: 16px; z-index: 10; padding: 12px; background: #272b30; color: white; }
 .skip-link:focus { opacity: 1; pointer-events: auto; top: calc(12px + env(safe-area-inset-top)); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; } }
+
+/* A font-independent glyph keeps Nidoran's species symbols on the name baseline
+   on iPhone as well as desktop. Keep the original character as accessible text. */
+:root .pokemon-species-name { display: inline; font: inherit; color: inherit; white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+:root .pokemon-species-name .pokemon-species-symbol { display: inline-block; position: relative; width: .7895em; height: .75em; overflow: hidden; font: inherit; color: inherit; vertical-align: baseline; }
+:root .pokemon-species-name .pokemon-species-symbol-female { width: .4773em; }
+:root .pokemon-species-symbol > svg { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+:root .pokemon-species-symbol .pokemon-species-symbol-text { display: inline; opacity: 0; font: inherit; color: inherit; }

@@ -1,3 +1,4 @@
+import PokemonName from '../components/PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {catalogEntries, searchResources} from '../../resources/search.js';
@@ -17,6 +18,8 @@ import NatureChart from '../../resources/charts/NatureChart.jsx';
 import TypeChart from '../../resources/charts/TypeChart.jsx';
 import EmeraldPickupTable from '../../resources/charts/EmeraldPickupTable.jsx';
 import MoveTutors from '../../resources/charts/MoveTutors.jsx';
+import PokemonSets from '../../resources/frontier/PokemonSets.jsx';
+import FrontierTrainers from '../../resources/frontier/Trainers.jsx';
 
 const titles = {pokemon: 'Pokémon Database', moves: 'Moves', abilities: 'Abilities'};
 const additionalSections = [
@@ -35,7 +38,7 @@ function SearchField({id, label, placeholder, value, onChange, inputRef}) {
   </div>;
 }
 function EntryName({entry, category}) {
-  return <>{category === 'pokemon' && <span className="resources-dex">#{String(entry.id).padStart(3, '0')}</span>}{entry.name}</>;
+  return <>{category === 'pokemon' && <span className="resources-dex">#{String(entry.id).padStart(3, '0')}</span>}<PokemonName>{entry.name}</PokemonName></>;
 }
 function PokedexEntry({entry}) {
   const [spriteFailed, setSpriteFailed] = useState(false);
@@ -45,7 +48,7 @@ function PokedexEntry({entry}) {
       {spriteFailed ? <span role="img" aria-label={`${entry.name} sprite unavailable`}>?</span>
         : <img src={publicAsset(`/pokemon/emerald/normal/${entry.id}.png`)} alt={`${entry.name} sprite`} width="40" height="40" loading="lazy" onError={() => setSpriteFailed(true)} />}
     </span>
-    <span className="resources-pokedex-name">{entry.name}</span>
+    <span className="resources-pokedex-name"><PokemonName>{entry.name}</PokemonName></span>
     <span className="resources-pokedex-types">{pokemonTypes[entry.id].map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} alt={`${type[0].toUpperCase()}${type.slice(1)} type`} width="18" height="18" />)}</span>
   </>;
 }
@@ -67,6 +70,10 @@ function MoveEntry({entry, expanded, onToggle}) {
   </>;
 }
 export default function ResourcesPage({onSubpageChange}) {
+  const [frontierTrainers, setFrontierTrainers] = useState(false);
+  const closeFrontierTrainers = useCallback(() => setFrontierTrainers(false), []);
+  const [frontierSets, setFrontierSets] = useState(false);
+  const closeFrontierSets = useCallback(() => setFrontierSets(false), []);
   const [chart, setChart] = useState(null);
   const closeChart = useCallback(() => setChart(null), []);
   const [calculator, setCalculator] = useState(false);
@@ -85,9 +92,9 @@ export default function ResourcesPage({onSubpageChange}) {
   const closeProfile = useCallback(() => setProfileDex(null), []);
   const closeItems = useCallback(() => setItemCategory(null), []);
   useEffect(() => {
-    onSubpageChange?.(chart ? {title: 'Emerald Companion', onBack: closeChart, backLabel: 'Back to Resources'} : calculator ? {title: 'Emerald Companion', onBack: closeCalculator, backLabel: 'Back to Resources'} : itemCategory ? {title: 'Emerald Companion', onBack: closeItems} : profileDex ? {title: 'Emerald Companion', onBack: closeProfile, backLabel: 'Back to National Pokédex'} : catalog ? {title: 'Emerald Companion', onBack: closeCatalog} : null);
+    onSubpageChange?.(frontierTrainers ? {title: 'Emerald Companion', onBack: closeFrontierTrainers, backLabel: 'Back to Resources'} : frontierSets ? {title: 'Emerald Companion', onBack: closeFrontierSets, backLabel: 'Back to Resources'} : chart ? {title: 'Emerald Companion', onBack: closeChart, backLabel: 'Back to Resources'} : calculator ? {title: 'Emerald Companion', onBack: closeCalculator, backLabel: 'Back to Resources'} : itemCategory ? {title: 'Emerald Companion', onBack: closeItems} : profileDex ? {title: 'Emerald Companion', onBack: closeProfile, backLabel: 'Back to National Pokédex'} : catalog ? {title: 'Emerald Companion', onBack: closeCatalog} : null);
     return () => onSubpageChange?.(null);
-  }, [chart, closeChart, calculator, closeCalculator, catalog, profileDex, itemCategory, closeCatalog, closeProfile, closeItems, onSubpageChange]);
+  }, [frontierTrainers, closeFrontierTrainers, frontierSets, closeFrontierSets, chart, closeChart, calculator, closeCalculator, catalog, profileDex, itemCategory, closeCatalog, closeProfile, closeItems, onSubpageChange]);
   useEffect(() => {
     if (!profileDex && profileOrigin.current) document.getElementById(`resources-entry-pokemon-${profileOrigin.current}`)?.focus({preventScroll: true});
   }, [profileDex]);
@@ -114,6 +121,8 @@ export default function ResourcesPage({onSubpageChange}) {
     profileOrigin.current = dex;
     setProfileDex(dex);
   }
+  if (frontierTrainers) return <FrontierTrainers />;
+  if (frontierSets) return <PokemonSets />;
   if (chart === 'tutors') return <MoveTutors />;
   if (chart === 'pickup') return <EmeraldPickupTable />;
   if (chart === 'type') return <TypeChart />;
@@ -155,7 +164,7 @@ export default function ResourcesPage({onSubpageChange}) {
     {additionalSections.map(section => <section key={section.id} className="resources-section" aria-labelledby={`resources-${section.id}-heading`}>
       <h2 id={`resources-${section.id}-heading`}>{section.title}</h2>
       {section.entries.length > 0 && <ul className="resources-destinations">
-        {section.entries.map(name => <li key={name}>{section.id === 'charts' && name === 'Move Tutors' ? <a href="#resources-move-tutors" onClick={event => {event.preventDefault(); setChart('tutors');}}>{name}</a> : section.id === 'charts' && name === 'Emerald Pickup Table' ? <a href="#resources-emerald-pickup" onClick={event => {event.preventDefault(); setChart('pickup');}}>{name}</a> : section.id === 'charts' && name === 'Type Chart' ? <a href="#resources-type-chart" onClick={event => {event.preventDefault(); setChart('type');}}>{name}</a> : section.id === 'charts' && name === 'Nature Chart' ? <a href="#resources-nature-chart" onClick={event => {event.preventDefault(); setChart('nature');}}>{name}</a> : section.id === 'tools' && name === 'IV Calculator' ? <a href="#resources-iv-calculator" onClick={event => {event.preventDefault(); setCalculator(true);}}>{name}</a> : section.id === 'tools' && name === 'Hidden Power Calculator' ? <a href="#resources-hidden-power-calculator" onClick={event => {event.preventDefault(); setCalculator('hidden-power');}}>{name}</a> : section.id === 'tools' && name === 'Stat Calculator' ? <a href="#resources-stat-calculator" onClick={event => {event.preventDefault(); setCalculator('stat');}}>{name}</a> : section.id === 'tools' && name === 'Move Coverage' ? <a href="#resources-move-coverage" onClick={event => {event.preventDefault(); setCalculator('coverage');}}>{name}</a> : section.id === 'items' ? <a href={`#resources-items-${name}`} onClick={event => {event.preventDefault(); setItemCategory(name === 'TM/HM' ? 'TMs/HMs' : name);}}>{name}</a> : <span>{name}</span>}</li>)}
+        {section.entries.map(name => <li key={name}>{section.id === 'frontier' && name === 'Trainers' ? <a href="#resources-frontier-trainers" onClick={event => {event.preventDefault(); setFrontierTrainers(true);}}>{name}</a> : section.id === 'frontier' && name === 'Pokémon Sets' ? <a href="#resources-frontier-sets" onClick={event => {event.preventDefault(); setFrontierSets(true);}}>{name}</a> : section.id === 'charts' && name === 'Move Tutors' ? <a href="#resources-move-tutors" onClick={event => {event.preventDefault(); setChart('tutors');}}>{name}</a> : section.id === 'charts' && name === 'Emerald Pickup Table' ? <a href="#resources-emerald-pickup" onClick={event => {event.preventDefault(); setChart('pickup');}}>{name}</a> : section.id === 'charts' && name === 'Type Chart' ? <a href="#resources-type-chart" onClick={event => {event.preventDefault(); setChart('type');}}>{name}</a> : section.id === 'charts' && name === 'Nature Chart' ? <a href="#resources-nature-chart" onClick={event => {event.preventDefault(); setChart('nature');}}>{name}</a> : section.id === 'tools' && name === 'IV Calculator' ? <a href="#resources-iv-calculator" onClick={event => {event.preventDefault(); setCalculator(true);}}>{name}</a> : section.id === 'tools' && name === 'Hidden Power Calculator' ? <a href="#resources-hidden-power-calculator" onClick={event => {event.preventDefault(); setCalculator('hidden-power');}}>{name}</a> : section.id === 'tools' && name === 'Stat Calculator' ? <a href="#resources-stat-calculator" onClick={event => {event.preventDefault(); setCalculator('stat');}}>{name}</a> : section.id === 'tools' && name === 'Move Coverage' ? <a href="#resources-move-coverage" onClick={event => {event.preventDefault(); setCalculator('coverage');}}>{name}</a> : section.id === 'items' ? <a href={`#resources-items-${name}`} onClick={event => {event.preventDefault(); setItemCategory(name === 'TM/HM' ? 'TMs/HMs' : name);}}>{name}</a> : <span>{name}</span>}</li>)}
       </ul>}
     </section>)}
   </div>;

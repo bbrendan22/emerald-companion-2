@@ -1,3 +1,4 @@
+import PokemonName from '../../../ui/components/PokemonName.js';
 import {publicAsset} from '../../../assets/publicAsset.js';
 import React, { useState } from 'react'
 import '../items.css'
@@ -31,7 +32,7 @@ export default function ItemsBrowser({ initialCategory = 'Battle', machinesOnly,
  {!selected.machine&&<section><h3>Item Info</h3><dl><dt>Bag pocket</dt><dd>{pockets[selected.pocket]??selected.pocket}</dd><dt>Base price</dt><dd>{selected.price?`₽${selected.price.toLocaleString()}`:'Not normally sold'}</dd><dt>Held effect</dt><dd>{selected.held?'Yes':'No'}</dd></dl><p className="resource-note">Base price is game data, not a guarantee that a shop sells this item. Some defined items are unused or belong to other Gen III games.</p></section>}
  {pokeBallCatchRates[selected.id]&&<p className="resource-note resource-item-secondary">Catch rate · {pokeBallCatchRates[selected.id]}</p>}
  <ItemAcquisition itemId={machine?.id??selected.id}/>
- {machine&&<section><h3>Compatible Pokémon</h3><p className="resource-note">{machine.species.length} species · Emerald learnsets</p><div className="resource-pokemon-grid">{machine.species.map(id=>{const meta=pokemonMeta[id];return <button key={id} onClick={()=>onPokemon([String(id),meta],selected)}><span>#{String(meta.dex).padStart(3,'0')}</span><img loading="lazy" src={publicAsset(`/pokemon/emerald/normal/${meta.dex}.png`)} alt=""/><strong>{meta.name}</strong><small>{meta.types.join(' / ')}</small></button>})}</div></section>}
+ {machine&&<section><h3>Compatible Pokémon</h3><p className="resource-note">{machine.species.length} species · Emerald learnsets</p><div className="resource-pokemon-grid">{machine.species.map(id=>{const meta=pokemonMeta[id];return <button key={id} onClick={()=>onPokemon([String(id),meta],selected)}><span>#{String(meta.dex).padStart(3,'0')}</span><img loading="lazy" src={publicAsset(`/pokemon/emerald/normal/${meta.dex}.png`)} alt=""/><strong><PokemonName>{meta.name}</PokemonName></strong><small>{meta.types.join(' / ')}</small></button>})}</div></section>}
  <p className="resource-note">Explore Hoenn lists pickups, hidden items, and scripted gifts by location. Source: <a href="https://github.com/pret/pokeemerald/blob/master/src/data/items.h" target="_blank" rel="noreferrer">Emerald item data</a> and <a href="https://github.com/pret/pokeemerald/blob/master/src/data/pokemon/tmhm_learnsets.h" target="_blank" rel="noreferrer">TM/HM learnsets</a>.</p>
  </article>:<>
  <div className="resource-list-heading"><h1>Items</h1></div>

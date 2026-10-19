@@ -5,6 +5,7 @@ import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {pokemonMeta,internalIdForDex} from '../src/resources/learnset/data/pokemonMeta.js';
 import provenance from '../src/resources/learnset/provenance.json' with {type:'json'};
+import PokemonName from '../src/ui/components/PokemonName.js';
 const legacy=process.argv[2];assert(legacy,'Supply read-only legacy root');
 const old=path=>import(pathToFileURL(`${legacy}/src/${path}.js`));
 const fresh=path=>import(new URL(`../src/resources/learnset/${path}.js`,import.meta.url));
@@ -34,8 +35,14 @@ async function jsx(file){
 }
 const A=(await import(await jsx(`${legacy}/src/components/LearnsetSection.jsx`))).default;
 const B=(await import(await jsx(new URL('../src/resources/learnset/components/LearnsetSection.jsx',import.meta.url).pathname))).default;
+const presentationSpecies=[];
 for(let dex=1;dex<=386;dex++){
  const props={id:internalIdForDex(dex),embedded:true};
- assert.equal(renderToStaticMarkup(React.createElement(B,props)),renderToStaticMarkup(React.createElement(A,props)).replace('class="resource-species-embedded"','class="species-learnset"'),`${dex} full Learnset markup`);
+ const original=renderToStaticMarkup(React.createElement(A,props)).replace('class="resource-species-embedded"','class="species-learnset"');
+ // Adapt only exact Nidoran species tokens in text nodes to the approved shared
+ // presentation. Keep every surrounding element, attribute and content strict.
+ const expected=original.replace(/>([^<]*)</g,(node,text)=>`>${text.replace(/\bNidoran[♀♂][\uFE0E\uFE0F]?/gi,name=>renderToStaticMarkup(React.createElement(PokemonName,null,name)))}<`);
+ if(expected!==original)presentationSpecies.push(dex);
+ assert.equal(renderToStaticMarkup(React.createElement(B,props)),expected,`${dex} full Learnset markup`);
 }
-console.log('Rendered parity: all 386 species match original rows, descriptions, counts, labels, ordering, game-name colors, empty messages and default-closed groups. Only outer wrapper and local icon paths adapted.');
+console.log(`Rendered parity: all 386 species match original rows, descriptions, counts, labels, ordering, game-name colors, empty messages and default-closed groups. Only outer wrapper, local icon paths and shared Nidoran text presentation adapted (Dex: ${presentationSpecies.join(', ')}).`);

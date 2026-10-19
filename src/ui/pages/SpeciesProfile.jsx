@@ -1,3 +1,4 @@
+import PokemonName from '../components/PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {speciesOverview} from '../../resources/speciesOverview.js';
@@ -36,7 +37,7 @@ export default function SpeciesProfile({dex, onSpecies}) {
       <SpeciesArtwork key={dex} dex={dex} name={species.name} />
       <div className="species-identity-text">
         <p className="species-kicker">#{String(dex).padStart(3, '0')} · GEN {species.generation}</p>
-        <h1 id="species-profile-title" ref={title} tabIndex="-1">{species.name}</h1>
+        <h1 id="species-profile-title" ref={title} tabIndex="-1"><PokemonName>{species.name}</PokemonName></h1>
         <div className="species-types">{species.types.map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} width="20" height="20" alt={`${type[0].toUpperCase()}${type.slice(1)} type`} />)}</div>
         <p className="species-gender">{species.gender}</p>
       </div>
@@ -60,7 +61,7 @@ export default function SpeciesProfile({dex, onSpecies}) {
             <button type="button" className="species-evolution-artwork-link" aria-label={`View ${member.name} profile`} aria-current={member.id === dex ? 'true' : undefined} onClick={() => {if (member.id !== dex) onSpecies(member.id);}}>
               <SpeciesArtwork key={member.id} dex={member.id} name={member.name} small />
             </button>
-            <span className="species-evolution-name">{member.name}</span>
+            <span className="species-evolution-name"><PokemonName>{member.name}</PokemonName></span>
             <p className="species-evolution-grid-method">{member.requirement ?? 'Base stage'}</p>
           </div>)}
         </div>

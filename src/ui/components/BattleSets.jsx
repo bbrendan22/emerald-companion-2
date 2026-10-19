@@ -1,3 +1,4 @@
+import PokemonName from './PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useLayoutEffect, useMemo} from 'react';
 import {visibleTowerSets, duplicateMoveColors, frontierSetId, opponentSetDisabled} from '../../battle/towerSets.js';
@@ -33,7 +34,7 @@ export default function BattleSets({state, dispatch, records}) {
           <button className="battle-set-select" type="button" aria-label={`Select ${id}`} aria-pressed={selected} disabled={disabled}
             onClick={() => { if (document.activeElement instanceof HTMLElement) document.activeElement.blur(); dispatch({type:'addOpponent', setId:id}); }}>
             <img loading="lazy" decoding="async" src={publicAsset(`/pokemon/emerald/normal/${mon.dex}.png`)} width="32" height="32" alt="" />
-            <div className="battle-set-body"><div className="battle-set-identity"><strong>{set.species}{set.instance ? ` ${set.instance}` : ''}</strong><BattleSetItem name={set.item} /></div>
+            <div className="battle-set-body"><div className="battle-set-identity"><strong><PokemonName>{set.species}</PokemonName>{set.instance ? ` ${set.instance}` : ''}</strong><BattleSetItem name={set.item} /></div>
               <dl className="battle-set-stats">{stats.map(([key,label]) => <div key={key}><dt>{label}</dt><dd className={key === 'speed' && faster ? 'battle-set-faster' : undefined}>{mon.stats[key]}</dd></div>)}</dl>
               <div className="battle-set-moves">{set.moves.filter(Boolean).map((move,index) => <span key={index}>
                 {index > 0 && <span className="battle-move-dot" aria-hidden="true">·</span>}

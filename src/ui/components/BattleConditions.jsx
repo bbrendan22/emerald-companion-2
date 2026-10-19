@@ -1,3 +1,4 @@
+import PokemonName from './PokemonName.js';
 import React, {useEffect,useState} from 'react';
 import {conditionWeather,conditionStatuses,conditionStats,conditionKey,conditionedBattlePokemon,clampConditionHp} from '../../battle/conditionState.js';
 
@@ -12,7 +13,7 @@ function ConditionSide({mon,side,state,dispatch,title}) {
   const key=conditionKey(mon,side), value=conditionedBattlePokemon(mon,side,state);
   const label=side==='player'?'Player':'Opponent';
   return <section className="battle-condition-side" aria-label={`${label} conditions`}>
-    <h4>{title}</h4>
+    <h4><PokemonName>{title}</PokemonName></h4>
     <label className="battle-condition-hp">HP <HpInput key={key} label={`${label} current HP`} value={value.currentHp} max={mon.stats.hp}
       onChange={hp=>dispatch({type:'conditionHp',key,value:hp,max:mon.stats.hp})} /><span>/ {mon.stats.hp}</span></label>
     <label className="battle-condition-status">Status<select aria-label={`${label} status`} value={value.status} onChange={event=>dispatch({type:'conditionStatus',key,value:event.target.value})}>

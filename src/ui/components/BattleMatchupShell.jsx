@@ -1,3 +1,4 @@
+import PokemonName from './PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useState, useEffect, useMemo} from 'react';
 import {toTowerOpponent} from '../../battle/frontierAdapter.js';
@@ -35,7 +36,7 @@ function PokemonCard({side, mon, other, set, active}) {
   const itemId = mon && battleItemId(String(mon.item ?? ''));
   const item = mon && (!mon.item || ['none', ''].includes(normalize(mon.item)) || mon.item === '?????') ? 'None' : mon?.item;
   return <section className={`battle-matchup-card battle-side-${side}`} aria-label={label}>
-      <div className="battle-matchup-identity"><div><h2>{mon.name}{set?.instance ? ` #${set.instance}` : ''}</h2><div className="battle-matchup-types" title={typeTitle}>{types.map(type => <img key={type} src={publicAsset(`/types/icons/${type.toLowerCase()}.png`)} alt={`${type.toLowerCase()} type`} width="18" height="18" />)}</div></div><span>Lv. {mon.level}</span></div>
+      <div className="battle-matchup-identity"><div><h2><PokemonName>{mon.name}</PokemonName>{set?.instance ? ` #${set.instance}` : ''}</h2><div className="battle-matchup-types" title={typeTitle}>{types.map(type => <img key={type} src={publicAsset(`/types/icons/${type.toLowerCase()}.png`)} alt={`${type.toLowerCase()} type`} width="18" height="18" />)}</div></div><span>Lv. {mon.level}</span></div>
       <div className="battle-matchup-artwork">{failedArtwork === artwork ? <span>Artwork unavailable</span>
         : <img src={publicAsset(artwork)} alt={`${mon.shiny ? 'Shiny ' : ''}${mon.name}`} decoding="async" onError={() => setFailedArtwork(artwork)} />}</div>
       <div className="battle-matchup-details">

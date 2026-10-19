@@ -111,6 +111,7 @@ try {
   const item = page.locator('.battle-set-item').first();
   const itemName = await item.innerText();
   await item.locator('img').dispatchEvent('error');
+  await item.locator('img').waitFor({state:'detached'});
   assert.equal(await item.locator('img').count(),0);
   assert.equal(await item.innerText(),itemName);
   // Genuine parser-shaped synthetic records exercise live active-player updates.

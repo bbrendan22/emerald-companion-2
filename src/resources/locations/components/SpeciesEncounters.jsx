@@ -1,3 +1,4 @@
+import PokemonName from '../../../ui/components/PokemonName.js';
 import React from 'react';
 import SpeciesLocationEntries from './SpeciesLocationEntries.jsx'
 import { bonusDiscEncounters } from '../data/bonusDiscEncounters.js'
@@ -17,7 +18,7 @@ const legendaryDex = new Set([144,145,146,150,151,243,244,245,249,250,251,377,37
 function encounterNote(entry,dex,game='Emerald') {
   if (!entry.note) return null
   if (entry.kind === 'Record-mixed outbreak' || entry.kind === 'TV outbreak') return null
-  const inline = text => <p className="resource-availability-kind">{text}</p>
+  const inline = text => <p className="resource-availability-kind"><PokemonName>{text}</PokemonName></p>
   if ([152,155,158].includes(dex) && game==='Emerald') return inline('Complete Hoenn Pokédex.')
   if (dex===345||dex===347) return inline(`${dex===345?'Root':'Claw'} Fossil · ${game==='Emerald'?'Mirage Tower / Desert Underpass':'Route 111 desert'}`)
   if (entry.kind==='In-game trade') {
@@ -27,14 +28,14 @@ function encounterNote(entry,dex,game='Emerald') {
   if (['Starter','Gift','Gift Egg','Fossil revival'].includes(entry.kind)||[100,101,185,349,352].includes(dex)) return null
   if (legendaryDex.has(dex)) {
     if (entry.kind === 'Roaming encounter') {
-      return entry.note.startsWith('Choose ') ? <p className="resource-availability-kind">{entry.note}</p> : null
+      return entry.note.startsWith('Choose ') ? <p className="resource-availability-kind"><PokemonName>{entry.note}</PokemonName></p> : null
     }
     const ticket = ['Eon Ticket','AuroraTicket','MysticTicket','Old Sea Map'].find(item=>entry.note.includes(item))
     if (ticket) return <p className="resource-availability-kind">{ticket} needed.</p>
-    if (entry.note.startsWith('Choose ')) return <p className="resource-availability-kind">{entry.note}</p>
+    if (entry.note.startsWith('Choose ')) return <p className="resource-availability-kind"><PokemonName>{entry.note}</PokemonName></p>
     return null
   }
-  return entry.inlineNote ? <p className="resource-availability-kind">{entry.note}</p> : <details><summary>Requirements</summary><p>{entry.note}</p></details>
+  return entry.inlineNote ? <p className="resource-availability-kind"><PokemonName>{entry.note}</PokemonName></p> : <details><summary>Requirements</summary><p><PokemonName>{entry.note}</PokemonName></p></details>
 }
 
 export default function SpeciesEncounters({ id, onPokemon, embedded = false }) {
@@ -45,8 +46,8 @@ export default function SpeciesEncounters({ id, onPokemon, embedded = false }) {
     return <SpeciesLocationEntries locations={entries} allLocations={allLocations} combineMatchingRoutes combineMatchingCities splitMethodParents={['*']} independentMethods combineSeviiIslands />
   }
   const pokemonLink = (other, label) => label === 'Evolve'
-    ? <span>Evolve {pokemonMeta[other].name}</span>
-    : <button className="resource-ability-link" onClick={()=>onPokemon([other,pokemonMeta[other]])}>{label} {pokemonMeta[other].name} →</button>
+    ? <span>Evolve <PokemonName>{pokemonMeta[other].name}</PokemonName></span>
+    : <button className="resource-ability-link" onClick={()=>onPokemon([other,pokemonMeta[other]])}>{label} <PokemonName>{pokemonMeta[other].name}</PokemonName> →</button>
   return <div className="species-locations">
     {availability.hasEmeraldRoute && <details key={`${id}-Emerald`} className="resource-game-encounters"><summary><span data-game="Emerald">Emerald</span></summary><div className="resource-game-encounter-content">
     {locationEntries(locations)}
@@ -67,7 +68,7 @@ export default function SpeciesEncounters({ id, onPokemon, embedded = false }) {
         {locationEntries(encounters?.locations ?? [], game)}
         {encounters?.special.map((entry,index) => <div className="resource-availability-row" key={`special-${index}`}><strong>{entry.place}</strong><p className="resource-availability-kind">{entry.kind}{entry.level != null ? ` · ${entry.kind === 'Gift Egg' ? 'Hatches at' : 'Lv.'} ${entry.level}` : ''}{entry.trainer ? ` · ${entry.trainer}` : ''}{entry.rate != null ? ` · ${entry.rate}%` : ''}</p>{encounterNote(entry,pokemonMeta[id].dex,game)}</div>)}
         {bonusDiscs.map(entry => <div className="resource-availability-row" key={entry.source}><strong>{entry.source}</strong><p className="resource-availability-kind">Lv. {entry.level} · {entry.method}</p></div>)}
-        {encounters?.routeNotes?.map(note=><p className="resource-note" key={note}>{note}</p>)}
+        {encounters?.routeNotes?.map(note=><p className="resource-note" key={note}><PokemonName>{note}</PokemonName></p>)}
         {routes.map(entry => <div className="resource-availability-row" key={`${entry.id}-${entry.method}`}>{pokemonLink(entry.id,entry.method)}</div>)}
       </div></details>
     })}

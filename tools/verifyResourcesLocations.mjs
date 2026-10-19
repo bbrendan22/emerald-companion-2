@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {pokemonMeta,internalIdForDex} from '../src/resources/locations/data/pokemonMeta.js';
 import provenance from '../src/resources/locations/provenance.json' with {type:'json'};
+import PokemonName from '../src/ui/components/PokemonName.js';
 const legacy=process.argv[2]; assert(legacy,'Supply read-only legacy root');
 const loadOld=path=>import(pathToFileURL(`${legacy}/src/${path}.js`));
 const loadNew=path=>import(new URL(`../src/resources/locations/${path}.js`,import.meta.url));
@@ -49,9 +50,15 @@ async function jsxModule(file){
 const LegacyComponent=(await import(await jsxModule(`${legacy}/src/components/SpeciesEncounters.jsx`))).default;
 const PortComponent=(await import(await jsxModule(new URL('../src/resources/locations/components/SpeciesEncounters.jsx',import.meta.url).pathname))).default;
 const normalize=html=>html.replace(/ open=""/g,'').replace(/<span(?: [^>]*)?>|<\/span>/g,'').replace('class="resource-species-embedded"','class="species-locations"');
+const presentationSpecies=[];
 for(let dex=1;dex<=386;dex++){
  const props={id:internalIdForDex(dex),embedded:true,onPokemon:()=>{}};
  const markup=renderToStaticMarkup(React.createElement(PortComponent,props));assert.doesNotMatch(markup,/ open=""/);
- assert.equal(normalize(markup),normalize(renderToStaticMarkup(React.createElement(LegacyComponent,props))),`${dex}: rendered Locations parity`);
+ const original=renderToStaticMarkup(React.createElement(LegacyComponent,props));
+ // Match the approved presentation only for exact Nidoran tokens in text nodes.
+ // No other SVG, content, attributes or surrounding markup is adapted.
+ const expected=original.replace(/>([^<]*)</g,(node,text)=>`>${text.replace(/\bNidoran[♀♂][\uFE0E\uFE0F]?/gi,name=>renderToStaticMarkup(React.createElement(PokemonName,null,name)))}<`);
+ if(expected!==original)presentationSpecies.push(dex);
+ assert.equal(normalize(markup),normalize(expected),`${dex}: rendered Locations parity`);
 }
-console.log('Rendered parity passed for all 386 species, including game ordering, note suppression, requirements, form/rate text and acquisition links. Only wrapper/game-name theme markup and intentionally changed default-open attributes normalized; all ported games start closed.');
+console.log(`Rendered parity passed for all 386 species, including game ordering, note suppression, requirements, form/rate text and acquisition links. Existing wrapper/theme/default-open adaptations retained; shared Nidoran text presentation adapted (Dex: ${presentationSpecies.join(', ')}). All ported games start closed.`);

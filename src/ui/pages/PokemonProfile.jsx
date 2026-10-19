@@ -1,3 +1,4 @@
+import PokemonName from '../components/PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
 import {profileData, statFields} from '../../pokemon/profile.js';
@@ -35,7 +36,7 @@ export default function PokemonProfile({pokemon:p, role, onAssign, error}) {
       <div className="profile-artwork-wrap"><img className="profile-artwork" src={publicAsset(`/pokemon/artwork/${p.shiny ? 'shiny' : 'normal'}/${p.nationalDexId}.png`)} alt={`${p.shiny ? 'Shiny ' : ''}${p.speciesName}`} /></div>
       <div className="profile-identity">
         <p className="profile-kicker">#{String(p.nationalDexId).padStart(3,'0')} · GEN {generation} {p.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}</p>
-        <h1 id="pokemon-profile-title" tabIndex="-1">{p.speciesName}{nickname && <> <span className="profile-nickname">“{nickname}”</span></>}</h1>
+        <h1 id="pokemon-profile-title" tabIndex="-1"><PokemonName>{p.speciesName}</PokemonName>{nickname && <> <span className="profile-nickname">“<PokemonName>{nickname}</PokemonName>”</span></>}</h1>
         <div className="profile-types">{data.types.map(type => <TypeIcon key={type} type={type}/>)}</div>
         <p className="profile-identity-meta">{p.isEgg ? 'Egg' : `Lv. ${p.recorded?.level ?? p.derivedLevel}`} · {gender} · {p.nature}</p>
       </div>

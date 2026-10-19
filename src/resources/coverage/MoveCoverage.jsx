@@ -1,3 +1,4 @@
+import PokemonName from '../../ui/components/PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, { useRef, useState } from 'react'
 import './moveCoverage.css'
@@ -34,7 +35,7 @@ export default function MoveCoverage() {
       <p className="resource-coverage-note">Best type effectiveness · {coverageRoster(mode).length} Pokémon{selected.length>0 && <button onClick={()=>setSelected([])}>Clear types</button>}</p>
     </div>
     <div className="resource-coverage-results" tabIndex={0} aria-label="Coverage results">
-      {!selected.length ? <p className="resource-empty">Select attacking types to see coverage.</p> : coverageMultipliers.map(multiplier=><section key={multiplier}><h3>{multiplier}× {multiplier===0 ? '— Immune' : multiplier<1 ? '— Resisted' : multiplier===1 ? '— Neutral' : '— Super effective'}<span>{groups.get(multiplier).length}</span></h3><div className="resource-coverage-pokemon">{groups.get(multiplier).map(pokemon=><div key={pokemon.id} title={pokemon.name}><img loading="lazy" src={publicAsset(`/pokemon/emerald/normal/${pokemon.dex}.png`)} alt={pokemon.name} /><span>{pokemon.name.replace(/([♀♂])/g,'$1\uFE0E')}</span></div>)}</div></section>)}
+      {!selected.length ? <p className="resource-empty">Select attacking types to see coverage.</p> : coverageMultipliers.map(multiplier=><section key={multiplier}><h3>{multiplier}× {multiplier===0 ? '— Immune' : multiplier<1 ? '— Resisted' : multiplier===1 ? '— Neutral' : '— Super effective'}<span>{groups.get(multiplier).length}</span></h3><div className="resource-coverage-pokemon">{groups.get(multiplier).map(pokemon=><div key={pokemon.id} title={pokemon.name}><img loading="lazy" src={publicAsset(`/pokemon/emerald/normal/${pokemon.dex}.png`)} alt={pokemon.name} /><span><PokemonName>{pokemon.name}</PokemonName></span></div>)}</div></section>)}
     </div>
 
   </section>
