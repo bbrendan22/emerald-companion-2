@@ -44,12 +44,13 @@ test('trainer searches are trimmed, case-insensitive, multiword and confined to 
 test('six Brains reuse exactly 36 special records in separate Silver/Gold teams without Noland or ordinary numbers', () => {
   const before = JSON.stringify(frontierBrainPokemon);
   const brains = searchResourceTrainers('', 'brains');
-  assert.deepEqual(brains.map(b => b.name), ['Anabel','Tucker','Greta','Lucy','Spenser','Brandon']);
+  assert.equal(brains.length, 12);
+  assert.deepEqual(brains.map(b => b.key), ['Anabel','Tucker','Greta','Lucy','Spenser','Brandon'].flatMap(name => [`${name} Silver`, `${name} Gold`]));
   const all = [];
   for (const brain of brains) {
     assert.ok(existsSync(`public/trainers/frontier/${brain.sprite}.png`));
     const teams = resourceBrainTeams(brain);
-    assert.deepEqual(teams.map(t => t.symbol), ['Silver', 'Gold']);
+    assert.deepEqual(teams.map(t => t.symbol), [brain.symbol]);
     for (const team of teams) {
       assert.equal(team.sets.length, 3);
       assert.deepEqual(team.sets, frontierBrainPokemon.filter(s => s.brainSet === `${brain.name} ${team.symbol}`));
@@ -64,9 +65,9 @@ test('six Brains reuse exactly 36 special records in separate Silver/Gold teams 
 
 test('Brain IV ranges use fixed IVs from both Symbol teams', () => {
   const brains = searchResourceTrainers('', 'brains');
-  assert.deepEqual(brains.map(resourceBrainIVRange), ['24–31','20–31','20–31','16–31','16–31','16–31']);
+  assert.deepEqual(brains.map(resourceBrainIVRange), ['24','31','20','31','20','31','16','31','16','31','16','31']);
   for (const brain of brains) {
     const values = resourceBrainTeams(brain).flatMap(t => t.sets.map(s => s.fixedIVs));
-    assert.equal(resourceBrainIVRange(brain), `${Math.min(...values)}–${Math.max(...values)}`);
+    assert.equal(resourceBrainIVRange(brain), String(values[0]));
   }
 });

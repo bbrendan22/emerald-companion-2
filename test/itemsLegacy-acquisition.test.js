@@ -100,7 +100,7 @@ test('Unreviewed items expose all sources and reviewed battle items keep their a
 })
 
 test('Berry inventory covers each native map and wild source without duplicate methods', () => {
-  assert.equal(Object.keys(berryItemAcquisition).length, 23)
+  assert.equal(Object.keys(berryItemAcquisition).length, 28)
   for (const [id, item] of Object.entries(berryItemAcquisition)) {
     const seen = new Set()
     for (const row of item.entries) {
@@ -108,7 +108,7 @@ test('Berry inventory covers each native map and wild source without duplicate m
       const key = JSON.stringify([row.game, row.location, row.method])
       assert.ok(!seen.has(key), `${id}: duplicate ${key}`)
       seen.add(key)
-      assert.ok(!/growth|Plant a|hours/i.test(row.method))
+      if (Number(id) < 143 || Number(id) > 147) assert.ok(!/growth|Plant a|hours/i.test(row.method))
       if (row.location.includes('Safari Zone')) assert.ok(!/catch or use Thief/.test(row.method))
     }
   }

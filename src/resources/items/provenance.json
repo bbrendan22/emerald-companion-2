@@ -379,5 +379,9 @@
     "375": "ec8ad37f3939385b37253d73a9ad6a80425cbb2cbf70fa1a54e34971622d7c61",
     "376": "1562fc0dd42982421497da060e6a8c0b3381381ca681f90f625c98b26c7aea3b"
   },
-  "notes": "Data/helpers preserved verbatim except canonical name/move/species/machine adapters. Native 2.0 header/search and normal document layout replace legacy Back/scroll controls. External location-entry detail branch retained; no integration with protected pages."
+  "notes": "Data/helpers preserved verbatim except canonical name/move/species/machine adapters. Native 2.0 header/search and normal document layout replace legacy Back/scroll controls. External location-entry detail branch retained; no integration with protected pages.",
+  "presentationHashes": {
+    "utils/itemCategories.js": "5b1402f63bd85ebf9e3807e72108ad687dfc5a923c4505dae32aad1b7ad1e7c8",
+    "data/berryItemAcquisition.js": "005ccd67fcf1462b6946cc187bce5502ff7a6025de3639e00d740325190c31d9"
+  }
 }

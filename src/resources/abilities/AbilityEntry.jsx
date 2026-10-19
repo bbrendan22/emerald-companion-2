@@ -3,11 +3,11 @@ import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
 import {abilityDescription, abilityPokemon} from './abilities.js';
 
-export default function AbilityEntry({entry, expanded, onToggle}) {
+export default function AbilityEntry({entry, expanded = false, onOpen}) {
   const pokemon = expanded ? abilityPokemon(entry.id) : [];
   return <>
     <div className="resources-move-summary">
-      <button type="button" className="resources-move-toggle" aria-label={entry.name} aria-expanded={expanded} aria-controls={expanded ? `resources-ability-pokemon-${entry.id}` : undefined} onClick={onToggle} />
+      {onOpen && <button type="button" className="resources-move-toggle" aria-label={entry.name} aria-haspopup="dialog" onClick={onOpen} />}
       <div className="resources-move-heading"><strong>{entry.name}</strong></div>
       <p className="resources-move-description resources-ability-description">{abilityDescription(entry.id)}</p>
     </div>

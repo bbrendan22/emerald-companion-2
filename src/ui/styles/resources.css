@@ -67,3 +67,15 @@
 .resources-ability-description { margin-bottom: 0; }
 #resources-abilities .resources-move-row { padding-block: 9px; }
 #resources-abilities .resources-move-row .resources-move-toggle { inset-block: -9px; }
+
+.resources-move-dialog { box-sizing: border-box; width: calc(100% - 24px); max-width: 760px; max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); margin: auto; padding: 17px; border: 0; outline: none; border-radius: 8px; background: #202329; color: #e3e6eb; overflow-y: auto; overscroll-behavior: contain; }
+.resources-dialog-viewport { position: fixed; inset: 0; box-sizing: border-box; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; outline: none; background: transparent; overflow: hidden; }
+.resources-dialog-viewport[open] { display: grid; place-items: center; }
+.resources-dialog-viewport::backdrop { background: #0009; }
+.resources-move-dialog .resources-move-heading { padding-right: 28px; }
+
+.resources-move-filters { display: grid; grid-template-columns: 50% minmax(0, .65fr) minmax(0, 1fr); gap: 6px; align-items: center; }
+.resources-move-filters .resources-search { min-width: 0; }
+.resources-move-filters .resources-clear { width: 28px; flex-basis: 28px; }
+.resources-move-filters select { min-width: 0; width: 100%; height: 46px; padding: 0 4px; border: 1px solid #424852; border-radius: 8px; background: #24272d; color: #e3e6eb; font: inherit; font-size: .7rem; }
+.resources-move-filters select:focus-visible { outline: 1px dashed #939ba6; outline-offset: -3px; }

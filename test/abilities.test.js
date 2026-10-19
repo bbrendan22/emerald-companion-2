@@ -37,3 +37,11 @@ test('all 386 Emerald species map to exactly their canonical standard ability sl
   assert.deepEqual(abilityPokemon(0),[]); assert.deepEqual(abilityPokemon(999),[]);
   assert.equal(abilityPokemon(26),abilityPokemon(26));
 });
+
+
+test('ability database search is case-insensitive and prefix-only', async () => {
+  const {filterAbilities}=await import('../src/resources/abilities/filterAbilities.js');
+  for(const [query,names] of [['intim',['Intimidate']],['swift',['Swift Swim']],['swim',[]],['  LEV  ',['Levitate']],['',catalogEntries('abilities').map(e=>e.name)]]) {
+    assert.deepEqual(filterAbilities(query).map(e=>e.name),names);
+  }
+});

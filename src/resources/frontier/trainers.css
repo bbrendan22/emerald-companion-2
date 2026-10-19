@@ -24,3 +24,6 @@
   .frontier-trainer-details .frontier-trainer-grid { gap: 6px 4px; }
   .frontier-trainer-grid img { width: 28px; height: 28px; }
 }
+
+.frontier-trainer-toggle { -webkit-tap-highlight-color: transparent; }
+.frontier-trainer-toggle:focus:not(:focus-visible) { outline: none; }

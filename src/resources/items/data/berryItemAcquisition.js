@@ -106,7 +106,22 @@ for (const id of [171,172]) {
 }
 event(172, 'Ruby / Sapphire', 'Held by Pokémon Box promotion Seviper')
 
+// Nature berries: Emerald-only, comprehensive first-pass sources. No initial
+// trees exist for these five berries (data/scripts/new_game.inc).
+for (const offset of [0, 1, 2, 3, 4]) {
+  const id = 143 + offset
+  entries[id] = [
+    source('Route 120 · south', 'Gift from the Berry Beauty', 'Daily', `Trainer ID must end in ${offset} or ${offset + 5}.`),
+    source('Mossdeep City · Game Corner', 'Random Pokémon Jump prize · score at least 5,000 points', 'Repeatable', 'Requires 2–5 linked players with Wireless Adapters and eligible small Pokémon.'),
+    source('Hoenn · soft soil patches', 'Plant this berry and harvest the grown tree', 'Repeatable', 'Requires an existing berry and a working game clock; water during growth for a larger harvest.'),
+    source('Pokémon Center · Cable Club', 'Receive a Pokémon holding this berry in a link trade', 'Repeatable', 'Requires another compatible Generation III game with the berry and trading access.'),
+  ]
+  if (id === 143 || id === 147) entries[id].splice(1, 0,
+    source('Sootopolis City · southwest', 'Possible second berry in Kiri’s daily gifts', 'Daily', 'Requires Surf. Kiri gives either Figy or Iapapa; gifts are unavailable during the legendary Pokémon crisis until Rayquaza resolves it.'))
+}
+
 export const berryItemAcquisition = Object.fromEntries(Object.entries(entries).map(([id, rows]) => [id, {
   sources:['https://github.com/pret/pokeemerald', 'https://github.com/pret/pokeruby', 'https://github.com/pret/pokefirered', 'https://www.serebii.net/pokearth/orre/agatevillage.shtml', ...([168,169,170,171,172].includes(Number(id)) ? ['https://bulbapedia.bulbagarden.net/wiki/Mt._Battle', `https://bulbapedia.bulbagarden.net/wiki/${{168:'Liechi',169:'Ganlon',170:'Salac',171:'Petaya',172:'Apicot'}[id]}_Berry`] : [])],
+  ...(Number(id) >= 143 && Number(id) <= 147 ? { sources: ['data/maps/Route120/scripts.inc', 'data/maps/SootopolisCity/scripts.inc', 'src/pokemon_jump.c', 'src/berry.c', 'src/battle_util.c', 'src/data/items.h', 'data/scripts/new_game.inc'].map(path => `https://github.com/pret/pokeemerald/blob/master/${path}`), note: `At half HP or less, restores 1/8 of maximum HP (rounded down, minimum 1 HP). Confuses the holder if its Nature dislikes ${['spicy','dry','sweet','bitter','sour'][Number(id)-143]} flavors.` } : {}),
   entries:rows,
 }]))

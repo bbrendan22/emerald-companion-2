@@ -20,7 +20,7 @@
 .frontier-set-facts dt { color: #939ba6; }
 .frontier-set-facts abbr { text-decoration: none; }
 .frontier-set-facts dd { margin: 0; }
-.frontier-set-trainers ul { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+.frontier-set-trainers ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 8px; }
 .frontier-set-trainers li { display: flex; align-items: center; gap: 4px; font-size: .65rem; line-height: 1.3; }
 .frontier-set-trainers img { width: 24px; height: 28px; object-fit: contain; image-rendering: pixelated; }
 .frontier-set-trainers p { margin: 0; color: #939ba6; font-size: .7rem; }
@@ -37,3 +37,8 @@
 .frontier-set-brain { display: flex; align-items: center; gap: 6px; font-size: .65rem; line-height: 1.4; }
 .frontier-set-brain img { flex-shrink: 0; width: 24px; height: 28px; object-fit: contain; image-rendering: pixelated; }
 .frontier-set-brain span { min-width: 0; overflow-wrap: anywhere; }
+
+.frontier-set-trainers li { min-width: 0; }
+.frontier-set-trainers li span { min-width: 0; overflow-wrap: anywhere; }
+.frontier-set-toggle { -webkit-tap-highlight-color: transparent; }
+.frontier-set-toggle:focus:not(:focus-visible) { outline: none; }

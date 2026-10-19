@@ -31,9 +31,10 @@ try {
       for(const tab of ['Overview','Stats & Matchups','Locations','Learnset','More']) {await page.getByRole('tab',{name:tab,exact:true}).click();await images();}
       await page.getByRole('button',{name:'Back to National Pokédex',exact:true}).click();
     } else {await page.locator('.resources-move-toggle').first().click();await images();}
+    if(name==='Moves'||name==='Abilities') await page.getByRole('dialog').locator('.resources-move-heading').click();
     await back();
   }
-  for(const name of ['Battle','Utility','Berries','Poké Balls','TM/HM','Misc.']){
+  for(const name of ['Useful Items','Berries']){
     await page.locator('.resources-section:has(#resources-items-heading)').getByRole('link',{name,exact:true}).click();await images();await back();
   }
   for(const name of ['IV Calculator','Hidden Power Calculator','Stat Calculator','Move Coverage','Nature Chart','Type Chart','Emerald Pickup Table','Move Tutors']){

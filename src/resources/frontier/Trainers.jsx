@@ -5,7 +5,9 @@ import {speciesByName} from '../../battle/reference.js';
 import {trainerKey} from '../../battle/towerRules.js';
 import {frontierTrainerSprite} from '../../battle/towerTrainers.js';
 import FrontierTrainerSprite from '../../ui/components/FrontierTrainerSprite.jsx';
-import {searchResourceTrainers, resourceTrainerSets, resourceBrainTeams, resourceBrainIVRange} from './trainers.js';
+import {searchResourceTrainers, resourceTrainerSets, resourceBrainTeams, resourceBrainIVRange, resourceBrainEntries} from './trainers.js';
+import ResourceDialog from '../components/ResourceDialog.jsx';
+import {frontierTrainers} from '../../battle/data/frontierTrainers.js';
 import './trainers.css';
 
 function PokemonGrid({sets, numbered}) {
@@ -15,15 +17,41 @@ function PokemonGrid({sets, numbered}) {
   </li>)}</ul>;
 }
 
+
+export function TrainerSummary({trainer, brain}) {
+  const count = brain ? resourceBrainTeams(trainer)[0].sets.length : trainer.pokemonSetIds.length;
+  return <>
+            <FrontierTrainerSprite src={`/trainers/frontier/${brain ? trainer.sprite : frontierTrainerSprite(trainer.trainerClass)}.png`} />
+            <span className="frontier-trainer-identity">
+              <strong>{brain ? trainer.key : trainer.name}</strong>
+              <span className="frontier-trainer-subtitle"><span className="frontier-trainer-class">{brain ? trainer.facility : trainer.trainerClass}</span><span className="frontier-trainer-iv-label" title={brain ? 'Fixed IVs for this Symbol team.' : 'Trainer IV tier; facility rules may override it.'}>· IVs: <span className="frontier-trainer-ivs">{brain ? resourceBrainIVRange(trainer) : trainer.ivs}</span></span></span>
+            </span>
+            <span className="frontier-trainer-pool-size" title={brain ? 'Pokémon in this Symbol team' : 'Eligible Pokémon sets'}><span className="frontier-trainer-count">{count}</span> sets</span>
+  </>;
+}
+
+export function FrontierTrainerDialog({trainerId, onClose, returnFocus = null}) {
+  const special = resourceBrainEntries.find(entry => entry.key === trainerId);
+  const trainer = special || frontierTrainers.find(entry => trainerKey(entry) === trainerId);
+  if (!trainer) return null;
+  return <ResourceDialog name={special ? trainer.key : trainer.name} onClose={onClose} returnFocus={returnFocus}>
+    <div className="frontier-trainer-toggle"><TrainerSummary trainer={trainer} brain={Boolean(special)} /></div>
+    <div className="frontier-trainer-details">
+      <PokemonGrid sets={special ? resourceBrainTeams(trainer)[0].sets : resourceTrainerSets(trainer)} numbered={!special} />
+    </div>
+  </ResourceDialog>;
+}
+
 export default function Trainers() {
   const [tab, setTab] = useState('trainers');
   const [queries, setQueries] = useState({trainers:'', brains:''});
-  const [expanded, setExpanded] = useState(null);
+  const [selected, setSelected] = useState(null);
+  const returnFocus = useRef(null);
   const tabs = useRef([]), search = useRef(null);
   const query = queries[tab];
   const entries = searchResourceTrainers(query, tab);
-  const setQuery = value => {setQueries(current => ({...current, [tab]:value})); setExpanded(null);};
-  const selectTab = value => {setTab(value); setExpanded(null);};
+  const setQuery = value => {setQueries(current => ({...current, [tab]:value})); setSelected(null);};
+  const selectTab = value => {setTab(value); setSelected(null);};
   function onTabKey(event, index) {
     const next = ['ArrowLeft', 'ArrowRight'].includes(event.key) ? 1 - index
       : event.key === 'Home' ? 0 : event.key === 'End' ? 1 : null;
@@ -48,32 +76,15 @@ export default function Trainers() {
       <p className="resources-search-status" role="status">{entries.length ? '' : 'No results.'}</p>
       <ol className="frontier-trainer-list">{entries.map(trainer => {
         const brain = tab === 'brains';
-        const key = brain ? trainer.name : trainerKey(trainer);
-        const open = expanded === key;
-        const panelId = `frontier-trainer-${encodeURIComponent(key)}`;
-        const teams = brain ? resourceBrainTeams(trainer) : null;
-        const count = brain ? teams.reduce((sum, team) => sum + team.sets.length, 0) : trainer.pokemonSetIds.length;
+        const key = brain ? trainer.key : trainerKey(trainer);
         return <li key={key} data-trainer-key={key}>
-          <button type="button" className="frontier-trainer-toggle" aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={() => setExpanded(open ? null : key)}>
-            <FrontierTrainerSprite src={`/trainers/frontier/${brain ? trainer.sprite : frontierTrainerSprite(trainer.trainerClass)}.png`} />
-            <span className="frontier-trainer-identity">
-              <strong>{trainer.name}</strong>
-              <span className="frontier-trainer-subtitle"><span className="frontier-trainer-class">{brain ? trainer.facility : trainer.trainerClass}</span><span className="frontier-trainer-iv-label" title={brain ? 'Minimum–maximum fixed IVs across Silver and Gold Pokémon.' : 'Trainer IV tier; facility rules may override it.'}>· IVs: <span className="frontier-trainer-ivs">{brain ? resourceBrainIVRange(trainer) : trainer.ivs}</span></span></span>
-            </span>
-            <span className="frontier-trainer-pool-size" title={brain ? 'Three Silver and three Gold encounter sets' : 'Eligible Pokémon sets'}><span className="frontier-trainer-count">{count}</span> sets</span>
+          <button type="button" className="frontier-trainer-toggle" aria-haspopup="dialog" onClick={event => {returnFocus.current = event.detail === 0 ? event.currentTarget : null; setSelected(key);}}>
+            <TrainerSummary trainer={trainer} brain={brain} />
           </button>
-          {open && <div className="frontier-trainer-details" id={panelId}>
-            {brain ? <>
-              {teams.map(team => <section key={team.symbol} aria-label={`${team.symbol} Symbol`}>
-                <h2>{team.symbol} Symbol</h2>
-                <PokemonGrid sets={team.sets} numbered={false} />
-              </section>)}
-            </> : <>
-              <PokemonGrid sets={resourceTrainerSets(trainer)} numbered />
-            </>}
-          </div>}
+
         </li>;
       })}</ol>
     </div>
+    {selected && <FrontierTrainerDialog trainerId={selected} onClose={() => setSelected(null)} returnFocus={returnFocus.current} />}
   </section>;
 }

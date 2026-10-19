@@ -39,7 +39,7 @@ try {
     }
   });
   for (const width of [320,375,390,430]) {
-    await page.setViewportSize({width,height:844}); await search.fill('');
+    await page.setViewportSize({width,height:844}); if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill('');
     assert.equal(await rows.count(),300);
     assert.deepEqual(await rows.evaluateAll(ns => ns.map(n => n.dataset.trainerKey)),frontierTrainers.map(trainerKey));
     assert.deepEqual(await rows.locator('.frontier-trainer-identity strong').allTextContents(),frontierTrainers.map(t => t.name));
@@ -57,38 +57,36 @@ try {
     assert.equal(await page.getByRole('status').innerText(),''); await overflow();
     await page.screenshot({path:`/private/tmp/frontier-trainers-list-${width}.png`,fullPage:false});
     for (const value of [' bRaDy ','youngster','triathlete swimmer','missing']) {
-      await search.fill(value);
+      if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill(value);
       assert.deepEqual(await rows.locator('strong').allTextContents(),searchResourceTrainers(value).map(t => t.name));
     }
     assert.equal(await page.getByRole('status').innerText(),'No results.');
     await page.getByRole('button',{name:'Clear search',exact:true}).click();
-    await rows.first().getByRole('button').click(); assert.equal(await details.count(),1);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.first().getByRole('button').click(); assert.equal(await details.count(),1);
     await checkGrid(grid,resourceTrainerSets(frontierTrainers[0]),true);
     assert.equal(await details.locator('p').count(),0);
-    await rows.nth(1).getByRole('button').click(); assert.equal(await details.count(),1);
-    assert.equal(await rows.first().getByRole('button').getAttribute('aria-expanded'),'false');
-    await rows.nth(1).getByRole('button').click(); assert.equal(await details.count(),0);
-    await rows.first().getByRole('button').focus(); await page.keyboard.press('Enter'); assert.equal(await details.count(),1);
-    await page.keyboard.press('Space'); assert.equal(await details.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.nth(1).getByRole('button').click(); assert.equal(await details.count(),1);
+    assert.equal(await rows.first().getByRole('button').getAttribute('aria-haspopup'),'dialog');
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); assert.equal(await details.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.first().getByRole('button').focus(); await page.keyboard.press('Enter'); assert.equal(await details.count(),1);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); assert.equal(await details.count(),0);
     const large = frontierTrainers.reduce((a,b) => a.pokemonSetIds.length>b.pokemonSetIds.length ? a:b);
-    await search.fill(`${large.name} ${large.trainerClass}`); assert.equal(await rows.count(),1);
-    await rows.getByRole('button').click(); await checkGrid(grid,resourceTrainerSets(large),true); await overflow();
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill(`${large.name} ${large.trainerClass}`); assert.equal(await rows.count(),1);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.getByRole('button').click(); await checkGrid(grid,resourceTrainerSets(large),true); await overflow();
     await page.screenshot({path:`/private/tmp/frontier-trainers-expanded-${width}.png`,fullPage:false});
-    await search.fill('BRADY'); assert.equal(await details.count(),0);
-    await rows.getByRole('button').click(); await brains.click(); assert.equal(await details.count(),0);
-    await search.fill('');
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill('BRADY'); assert.equal(await details.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.getByRole('button').click(); if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await brains.click(); assert.equal(await details.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill('');
     const brainEntries=searchResourceTrainers('','brains');
-    assert.equal(await rows.count(),6);
-    assert.deepEqual(await rows.locator('strong').allTextContents(),brainEntries.map(b => b.name));
-    assert.deepEqual(await rows.locator('.frontier-trainer-count').allTextContents(),Array(6).fill('6'));
+    assert.equal(await rows.count(),12);
+    assert.deepEqual(await rows.locator('strong').allTextContents(),brainEntries.map(b => b.key));
+    assert.deepEqual(await rows.locator('.frontier-trainer-count').allTextContents(),Array(12).fill('3'));
     assert.deepEqual(await rows.locator('.frontier-trainer-ivs').allTextContents(),brainEntries.map(resourceBrainIVRange));
     assert.deepEqual(await rows.locator('.frontier-trainer-class').allTextContents(),brainEntries.map(b => b.facility));
     await decode(rows.locator('img'));
     for (const [index, brain] of brainEntries.entries()) {
-      await rows.nth(index).getByRole('button').click(); assert.equal(await details.count(),1);
-      const controls=await rows.nth(index).getByRole('button').getAttribute('aria-controls');
-      assert.equal(/\s/.test(controls),false); assert.equal(await details.getAttribute('id'),controls);
-      assert.deepEqual(await details.locator('h2').allTextContents(),['Silver Symbol','Gold Symbol']);
+      if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.nth(index).getByRole('button').click(); assert.equal(await details.count(),1);
+      assert.equal(await details.locator('h2').count(),0);
       const teams=resourceBrainTeams(brain);
       for (const [i,team] of teams.entries()) await checkGrid(grid.nth(i),team.sets,false);
       assert.equal(await details.locator('[data-entry],.frontier-trainer-set-number').count(),0);
@@ -97,12 +95,12 @@ try {
       await overflow();
     }
     await page.screenshot({path:`/private/tmp/frontier-trainers-brains-${width}.png`,fullPage:false});
-    await search.fill('battle palace'); assert.deepEqual(await rows.locator('strong').allTextContents(),['Spenser']); assert.equal(await details.count(),0);
-    await search.fill('Noland'); assert.equal(await rows.count(),0);
-    await regular.click(); assert.equal(await search.inputValue(),'BRADY'); assert.equal(await rows.count(),1); assert.equal(await details.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill('battle palace'); assert.deepEqual(await rows.locator('strong').allTextContents(),['Spenser Silver','Spenser Gold']); assert.equal(await details.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill('Noland'); assert.equal(await rows.count(),0);
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await regular.click(); assert.equal(await search.inputValue(),'BRADY'); assert.equal(await rows.count(),1); assert.equal(await details.count(),0);
     await regular.focus(); await page.keyboard.press('End'); assert.equal(await brains.getAttribute('aria-selected'),'true');
-    await search.fill(''); await brains.focus(); await page.keyboard.press('Home'); assert.equal(await regular.getAttribute('aria-selected'),'true');
-    await search.fill(''); await overflow();
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill(''); await brains.focus(); await page.keyboard.press('Home'); assert.equal(await regular.getAttribute('aria-selected'),'true');
+    if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill(''); await overflow();
     // Pointer states retain the same understated row appearance.
     const button=rows.first().getByRole('button');
     const background=()=>button.evaluate(e=>getComputedStyle(e).backgroundColor);
@@ -117,5 +115,5 @@ try {
   await page.getByRole('link',{name:'Trainers',exact:true}).click();
   assert.equal(await rows.count(),300); assert.equal(await regular.getAttribute('aria-selected'),'true'); assert.equal(await details.count(),0);
   assert.deepEqual(errors,[]);
-  console.log('Resources Trainers passed: 300 ordered identities, exact IVs/counts/pools/numbers, decoded trainer/Pokémon assets, six Brains and all 36 Symbol entries, tab search/reset, expansion and keyboard, three-column grids, unchanged pointer appearance/scroll calls, Back and Pokémon Sets navigation; 320/375/390/430px without overflow.');
+  console.log('Resources Trainers passed: 300 ordered identities, exact IVs/counts/pools/numbers, decoded trainer/Pokémon assets, 12 Brain entries and all 36 Pokémon, tab search/reset, popups and keyboard, three-column grids, unchanged pointer appearance/scroll calls, Back and Pokémon Sets navigation; 320/375/390/430px without overflow.');
 } finally {await browser.close();}

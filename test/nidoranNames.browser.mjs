@@ -70,6 +70,8 @@ try {
   await page.getByRole('searchbox',{name:'Search Frontier Trainers',exact:true}).fill('MANUEL Rich Boy');
   await page.locator('.frontier-trainer-toggle').click();await check(page.locator('.frontier-trainer-details'),2);
   await page.locator('.frontier-trainer-details').screenshot({path:`/private/tmp/${engine}-nidoran-trainer-grid-${width}.png`});
+  await page.keyboard.press('Escape');
+  assert.equal(await page.getByRole('dialog').count(),0);
   await back();
   for (const label of ['IV Calculator','Stat Calculator']) {
    await page.getByRole('link',{name:label,exact:true}).click();
@@ -83,10 +85,12 @@ try {
   }
   await page.getByRole('link',{name:'Moves',exact:true}).click();
   await page.getByRole('searchbox',{name:'Search Moves',exact:true}).fill('Toxic');
-  await page.getByRole('button',{name:'Toxic',exact:true}).click();await check(page.locator('.resources-move-learners'),2);
+  await page.getByRole('button',{name:'Toxic',exact:true}).click();await check(page.getByRole('dialog').locator('.resources-move-learners'),2);
+  await page.getByRole('dialog').locator('.resources-move-heading').click();
   await back();await page.getByRole('link',{name:'Abilities',exact:true}).click();
   await page.getByRole('searchbox',{name:'Search Abilities',exact:true}).fill('Poison Point');
   await page.getByRole('button',{name:'Poison Point',exact:true}).click();await check(page.locator('.resources-move-learners'),2);
+  await page.keyboard.press('Escape');
   await navigate('My Pokémon');
   await page.getByRole('searchbox',{name:'Search Pokémon',exact:true}).fill('nidoran');
   await check(page.locator('.pokemon-grid'),2);

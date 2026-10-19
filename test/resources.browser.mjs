@@ -35,7 +35,7 @@ try {
     await search.fill(''); await overflow();
     assert.deepEqual(await page.locator('.resources-section > h2').allTextContents(), ['Pokémon', 'Items & Berries', 'Battle Frontier', 'Tools', 'Charts']);
     const expectedSections = [
-      ['Battle', 'Utility', 'Berries', 'Poké Balls', 'TM/HM', 'Misc.'],
+      ['Useful Items', 'Berries'],
       ['Pokémon Sets', 'Trainers'],
       ['IV Calculator', 'Hidden Power Calculator', 'Stat Calculator', 'Move Coverage'],
       ['Nature Chart', 'Type Chart', 'Emerald Pickup Table', 'Move Tutors'],
@@ -43,7 +43,7 @@ try {
     for (const [index, expected] of expectedSections.entries()) {
       const section = page.locator('.resources-section').nth(index + 1);
       assert.deepEqual(await section.locator('li').allTextContents(), expected);
-      assert.equal(await section.locator('a, button, [tabindex], [role="link"]').count(), index === 0 ? 6 : index === 1 ? 2 : 4);
+      assert.equal(await section.locator('a, button, [tabindex], [role="link"]').count(), index === 0 ? 2 : index === 1 ? 2 : 4);
     }
     const geometry = await page.evaluate(() => {
       const field = document.querySelector('.resources-search-field').getBoundingClientRect();
@@ -140,7 +140,14 @@ try {
       await search.fill(query);
       const result = page.locator('.resources-results a').filter({hasText: name});
       await result.click();
-      const selected = page.locator('.resources-catalog-list [aria-current="true"]');
+      // Abilities deliberately omit a persistent selected marker. Still verify
+      // the exact destination row and keyboard focus after hub search navigation.
+      const ability = name === 'Overgrow';
+      const selected = ability
+        ? page.locator('.resources-catalog-list > li').filter({has: page.getByRole('button', {name, exact: true})})
+        : page.locator('.resources-catalog-list [aria-current="true"]');
+      assert.equal(await selected.count(), 1);
+      if (ability) assert.equal(await selected.getAttribute('aria-current'), null);
       assert.match(await selected.innerText(), new RegExp(name));
       assert.equal(await selected.evaluate(element => document.activeElement === element), true);
       await overflow(); await back();
@@ -190,5 +197,5 @@ try {
   await expectHeader('Emerald Companion');
   assert.equal(await page.getByRole('button', {name: 'Back to Resources', exact: true}).count(), 0);
   assert.deepEqual(errors, []);
-  console.log('Resources sprites passed: all 386 numbered sprite paths decoded; required species/types visible at every width; aligned columns; stable failed-sprite fallback; exact section order/entries, six Useful Items links, active Pokémon Sets and Trainers, 40px rows/18px gap/unchanged search field; text-only hit areas; unchanged hover/pressed styling; keyboard focus; shared-header titles/back; Profile Back; complete catalogs; search, matching entry/focus, back/query retention, keyboard navigation, no-save operation; 320/375/390/430/1280px without overflow.');
+  console.log('Resources sprites passed: all 386 numbered sprite paths decoded; required species/types visible at every width; aligned columns; stable failed-sprite fallback; exact section order/entries, Useful Items and Berries links, active Pokémon Sets and Trainers, 40px rows/18px gap/unchanged search field; text-only hit areas; unchanged hover/pressed styling; keyboard focus; shared-header titles/back; Profile Back; complete catalogs; search, matching entry/focus, back/query retention, keyboard navigation, no-save operation; 320/375/390/430/1280px without overflow.');
 } finally { await browser.close(); }

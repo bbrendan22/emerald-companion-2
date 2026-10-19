@@ -1,27 +1,28 @@
 import PokemonName from '../../../ui/components/PokemonName.js';
 import {publicAsset} from '../../../assets/publicAsset.js';
-import React, { useState } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import '../items.css'
 import ItemAcquisition from './ItemAcquisition.jsx'
 import { pokeBallCatchRates } from '../data/pokeBallCatchRates.js'
 import { itemCategories, itemCategory, battleGroups, berryGroups, utilityGroups, miscGroups, itemDescription } from '../utils/itemCategories.js'
-import { itemResources, machineResources } from '../data/itemResources.js'
-import { machineIconIds } from '../data/itemIcons.js'
-import { emeraldShopItems, frontierItemPrices, machineItemPrices } from '../data/itemShopData.js'
-import { itemNames, moveNames } from '../data/emeraldData.js'
+import { items, machines } from '../utils/itemEntries.js'
+import { matchesItemSearch } from '../utils/itemSearch.js'
+import ItemSummary from './ItemSummary.jsx'
+import ItemDialog from './ItemDialog.jsx'
 import { pokemonMeta } from '../data/pokemonMeta.js'
 import { moveResources } from '../data/moveResources.js'
 const pockets={ITEMS:'Items',KEY_ITEMS:'Key Items',POKE_BALLS:'Poké Balls',TM_HM:'TMs/HMs',BERRIES:'Berries'}
-const machines=machineResources.map(m=>({...itemResources[machineIconIds[m.code]],...m,id:machineIconIds[m.code],price:machineItemPrices[machineIconIds[m.code]],name:moveNames[m.moveId],machine:true}))
-const items=Object.entries(itemResources).map(([id,item])=>({id,...item,name:itemNames[id]??item.name})).sort((a,b)=>a.name.localeCompare(b.name))
 
-export default function ItemsBrowser({ initialCategory = 'Battle', machinesOnly, initialEntry, onMove, onPokemon }) {
- const [expandedItem,setExpandedItem]=useState(null)
+
+export default function ItemsBrowser({ initialCategory = 'Battle', berriesOnly = false, machinesOnly, initialEntry, onMove, onPokemon }) {
+ const [activeItem,setActiveItem]=useState(null)
+ const returnFocus=useRef(null)
+ const closeItem=useCallback(()=>setActiveItem(null),[])
  const [search,setSearch]=useState('')
- const [filter,setFilter]=useState(machinesOnly?'TMs/HMs':initialCategory)
+ const [filter,setFilter]=useState(berriesOnly?'Berries':machinesOnly?'TMs/HMs':initialCategory)
  const [selected,setSelected]=useState(initialEntry??null)
  const entries=[...items.filter(item=>item.pocket!=='TM_HM'),...machines]
- const matches=entries.filter(item=>`${item.name} ${item.code??''}`.toLowerCase().includes(search.trim().toLowerCase())&&itemCategory(item)===filter)
+ const matches=entries.filter(item=>matchesItemSearch(item,search)&&itemCategory(item)===filter)
  const groupDefinitions={Battle:battleGroups,Utility:utilityGroups,Berries:berryGroups,'Misc.':miscGroups}[filter]
  const groups=filter==='TMs/HMs'?['TM','HM'].map(prefix=>({name:prefix==='TM'?'TMs':'HMs',entries:matches.filter(item=>item.code.startsWith(prefix))})).filter(group=>group.entries.length):groupDefinitions?Object.entries(groupDefinitions).map(([name,ids])=>({name,entries:matches.filter(item=>ids.includes(Number(item.id)))})).filter(group=>group.entries.length):[{name:null,entries:matches}]
  const machine=selected?.machine?selected:machines.find(m=>m.code===selected?.name)
@@ -35,11 +36,14 @@ export default function ItemsBrowser({ initialCategory = 'Battle', machinesOnly,
  {machine&&<section><h3>Compatible Pokémon</h3><p className="resource-note">{machine.species.length} species · Emerald learnsets</p><div className="resource-pokemon-grid">{machine.species.map(id=>{const meta=pokemonMeta[id];return <button key={id} onClick={()=>onPokemon([String(id),meta],selected)}><span>#{String(meta.dex).padStart(3,'0')}</span><img loading="lazy" src={publicAsset(`/pokemon/emerald/normal/${meta.dex}.png`)} alt=""/><strong><PokemonName>{meta.name}</PokemonName></strong><small>{meta.types.join(' / ')}</small></button>})}</div></section>}
  <p className="resource-note">Explore Hoenn lists pickups, hidden items, and scripted gifts by location. Source: <a href="https://github.com/pret/pokeemerald/blob/master/src/data/items.h" target="_blank" rel="noreferrer">Emerald item data</a> and <a href="https://github.com/pret/pokeemerald/blob/master/src/data/pokemon/tmhm_learnsets.h" target="_blank" rel="noreferrer">TM/HM learnsets</a>.</p>
  </article>:<>
- <div className="resource-list-heading"><h1>Items</h1></div>
+ <div className="resource-list-heading"><h1>{berriesOnly?'Berries':'Useful Items'}</h1></div>
  <div className="resources-search"><label className="resources-search-label" htmlFor="resources-items-query">Search items</label><div className="resources-search-field"><input id="resources-items-query" type="search" placeholder="Search" value={search} onChange={e=>setSearch(e.target.value)} autoComplete="off" spellCheck="false" /></div></div>
- <div className="resource-profile-tabs resource-item-tabs" role="tablist" aria-label="Item categories">{itemCategories.map(category=><button key={category} role="tab" aria-selected={filter===category} onClick={()=>setFilter(category)}>{category==='TMs/HMs'?<>TMs/<wbr/>HMs</>:category}</button>)}</div>
- <div key={filter} className="resource-item-groups" tabIndex={0} aria-label="Items list">{groups.map(group=><section key={group.name??filter}>{group.name&&<h3>{group.name}</h3>}<div className="resource-moves-table resource-items-table">{group.entries.map(item=><div className="resource-expandable-entry resource-item-entry" key={item.code??item.id}><button className="resource-learnset-move resource-item-main" aria-expanded={expandedItem===String(item.id)} aria-controls={`item-sources-${item.id}`} onClick={()=>setExpandedItem(expandedItem===String(item.id)?null:String(item.id))}><img loading="lazy" src={publicAsset(`/items/${item.machine?machineIconIds[item.code]:item.id}.png`)} alt=""/><div><strong>{item.machine?`${item.code} · ${item.name}`:item.name}</strong><small>{item.machine?moveResources[item.moveId].description:itemDescription(item)}</small></div>{(item.price>0||frontierItemPrices[item.id])&&<aside className="resource-item-prices">{emeraldShopItems.has(Number(item.id))&&<span>Buy ₽{item.price.toLocaleString()}</span>}{frontierItemPrices[item.id]&&<span>{frontierItemPrices[item.id]} BP</span>}{item.price>0&&<span>Sell ₽{Math.floor(item.price/2).toLocaleString()}</span>}</aside>}</button>{expandedItem===String(item.id)&&<div className="resource-inline-learners" id={`item-sources-${item.id}`}><>{pokeBallCatchRates[item.id]&&<p className="resource-note resource-item-secondary">Catch rate · {pokeBallCatchRates[item.id]}</p>}<ItemAcquisition itemId={item.id}/></></div>}</div>)}</div></section>)}</div>{!matches.length&&<p className="resource-empty">No results.</p>}
+ {!berriesOnly&&<div className="resource-profile-tabs resource-item-tabs" role="tablist" aria-label="Item categories">{itemCategories.map(category=><button key={category} role="tab" aria-selected={filter===category} onClick={()=>setFilter(category)}>{category==='TMs/HMs'?<>TMs/<wbr/>HMs</>:category}</button>)}</div>}
+ <div key={filter} className="resource-item-groups" tabIndex={0} aria-label="Items list">{groups.map(group=><section key={group.name??filter}>{group.name&&<h3>{group.name}</h3>}<div className="resource-moves-table resource-items-table">{group.entries.map(item=><div className="resource-expandable-entry resource-item-entry" key={item.code??item.id}><button className="resource-learnset-move resource-item-main" aria-haspopup="dialog" data-item-id={item.id} onClick={event=>{
+ returnFocus.current=event.detail===0?event.currentTarget:null;setActiveItem(item.id)
+}}><ItemSummary item={item}/></button></div>)}</div></section>)}</div>{!matches.length&&<p className="resource-empty">No results.</p>}
 
  </>}
+ {activeItem!==null&&<ItemDialog itemId={activeItem} onClose={closeItem} returnFocus={returnFocus.current}/>}
  </div>
 }
