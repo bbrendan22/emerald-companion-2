@@ -2,6 +2,7 @@ import {readSave} from './readSave.js';
 import {readTrainer} from './readTrainer.js';
 import {readCollection} from './readCollection.js';
 import {readHallOfFame} from './readHallOfFame.js';
+import {readTrainerCardAchievements} from './readTrainerCardAchievements.js';
 import {readFrontierSymbols} from './readFrontierSymbols.js';
 import {view} from './binary.js';
 
@@ -15,9 +16,11 @@ export function readTrainerSnapshot(bytes) {
   if (records.filter(p => p.source.kind === 'party').length !== view(block).getUint32(0x234, true)) {
     throw new Error('The party contains an empty occupied slot. The save was not imported.');
   }
-  const warnings = [...trainer.warnings];
+  const frontier = readFrontierSymbols(save);
+  const trainerCard = readTrainerCardAchievements(save, frontier);
+  const warnings = [...trainer.warnings, ...trainerCard.warnings];
   if (save.slots.some(slot => !slot.valid)) warnings.push('One save slot was invalid; a complete valid slot was used.');
   if (records.some(p => p.warnings.length)) warnings.push('Some Pokémon fields have parser warnings.');
   if (!trainer.gender) warnings.push('Trainer gender is unavailable.');
-  return {collection: {records, issues}, trainer, hallOfFame: readHallOfFame(bytes), frontier: readFrontierSymbols(save), owned: records.length, shinies: records.filter(p => p.shiny).length, warnings};
+  return {collection: {records, issues}, trainer, hallOfFame: readHallOfFame(bytes), frontier, trainerCard, owned: records.length, shinies: records.filter(p => p.shiny).length, warnings};
 }

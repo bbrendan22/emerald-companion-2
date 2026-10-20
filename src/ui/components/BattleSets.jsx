@@ -45,7 +45,7 @@ export default function BattleSets({state, dispatch, records}) {
           <button className="battle-set-hide" type="button" aria-label={`Hide ${id}`} disabled={disabled} onClick={() => dispatch({type:'hideSet', setId:id})}>×</button>
         </div>;
       })}
-      {!sets.length && <p className="battle-set-no-results" role="status">No sets match. Refocus the search to restore hidden sets, or try another species.</p>}
+      {!sets.length && <p className="battle-set-no-results" role="status">No results.</p>}
     </div>
   </section>;
 }

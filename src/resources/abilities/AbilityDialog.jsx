@@ -7,7 +7,7 @@ import AbilityEntry from './AbilityEntry.jsx';
 export default function AbilityDialog({abilityId, onClose, returnFocus = null}) {
   const entry = catalogEntries('abilities').find(ability => ability.id === Number(abilityId));
   if (!entry) return null;
-  return <ResourceDialog name={entry.name} onClose={onClose} returnFocus={returnFocus}>
+  return <ResourceDialog contentClassName="resources-reference-popup" name={entry.name} onClose={onClose} returnFocus={returnFocus}>
     <AbilityEntry entry={entry} expanded />
   </ResourceDialog>;
 }

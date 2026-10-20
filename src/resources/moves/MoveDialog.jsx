@@ -8,7 +8,7 @@ import MoveLearners from './MoveLearners.jsx';
 export default function MoveDialog({moveId, onClose, returnFocus = null}) {
   const entry = catalogEntries('moves').find(move => move.id === Number(moveId));
   if (!entry) return null;
-  return <ResourceDialog name={entry.name} onClose={onClose} returnFocus={returnFocus}>
+  return <ResourceDialog contentClassName="resources-reference-popup" name={entry.name} onClose={onClose} returnFocus={returnFocus}>
     <MoveSummary entry={entry} />
     <MoveLearners move={entry.id} />
   </ResourceDialog>;

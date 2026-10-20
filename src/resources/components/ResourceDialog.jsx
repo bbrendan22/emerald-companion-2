@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 
-export default function ResourceDialog({name, onClose, returnFocus = null, children}) {
+export default function ResourceDialog({name, onClose, returnFocus = null, contentClassName = '', children}) {
   const dialog = useRef(null);
   const pointerStart = useRef(null);
   const pendingTap = useRef(false);
@@ -48,6 +48,6 @@ export default function ResourceDialog({name, onClose, returnFocus = null, child
       pendingTap.current = false;
       if (tap) onClose();
     }}>
-    <div className="resources-move-dialog">{children}</div>
+    <div className={`resources-move-dialog ${contentClassName}`}>{children}</div>
   </dialog>;
 }

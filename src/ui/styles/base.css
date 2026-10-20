@@ -25,3 +25,10 @@ button { touch-action: manipulation; }
 :root .pokemon-species-name .pokemon-species-symbol-female { width: .4773em; }
 :root .pokemon-species-symbol > svg { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
 :root .pokemon-species-symbol .pokemon-species-symbol-text { display: inline; opacity: 0; font: inherit; color: inherit; }
+
+/* iPhone Safari zooms focused form controls whose font is below 16px.
+   Keep touch controls zoom-safe without restricting user pinch zoom. */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="hidden"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="color"]),
+  select, textarea { font-size: 16px !important; }
+}

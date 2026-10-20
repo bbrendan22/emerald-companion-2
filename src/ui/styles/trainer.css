@@ -47,7 +47,7 @@
 }
 .home-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 10px; align-items: start; }
 .home-trainer { min-width: 0; }
-.home-resources { position: relative; }
+.home-resources { position: relative; align-self: stretch; contain: size; min-height: 0; display: flex; flex-direction: column; }
 .home-resources::before { content: ''; position: absolute; top: 0; bottom: 0; left: -5px; width: 1px; background: var(--home-divider); pointer-events: none; }
 .home-detail { display: block; }
 .home-detail .home-trainer { display: none; }
@@ -58,7 +58,7 @@
 .trainer-name { font-size: 1rem; min-width: 0; overflow-wrap: anywhere; }
 .trainer-content .dex-stats { margin: 0 0 8px; }
 .home-resources .home-resources-title { margin: 0 0 8px; font-size: .8rem; color: var(--home-accent); }
-.home-resources .home-search { box-sizing: border-box; width: 100%; min-width: 0; height: 30px; padding: 5px; border: 1px solid #424852; border-radius: 4px; background: #24272d; color: #a2a9b4; font-size: .7rem; opacity: 1; }
+.home-resources .home-search { appearance: none; box-sizing: border-box; display: block; width: 100%; min-width: 0; margin: 0; padding: 0 0 4px; border: 0; border-bottom: 1px solid var(--home-divider); border-radius: 0; background: transparent; color: #B5BBC5; font-family: inherit; font-size: .67rem; font-weight: 600; line-height: 1.35; opacity: 1; -webkit-text-fill-color: #B5BBC5; }
 .home-resources .resources-section { margin-top: 12px; }
 .home-resources .resources-section > h2 { padding-bottom: 4px; font-size: .67rem; line-height: 1.35; overflow-wrap: anywhere; }
 .home-resources .resources-destinations li { min-height: 0; padding: 0; }
@@ -89,4 +89,46 @@
 
 .page.home-page .home-layout { color: #B5BBC5; }
 .page.home-page .home-layout :is(h2, p, dt, dd, strong, abbr, a, button, input, small, span, li):not(.home-trainer-title, .home-resources-title) { color: #B5BBC5; }
-.page.home-page .home-search::placeholder { color: #B5BBC5; }
+.page.home-page .home-search::placeholder { color: #B5BBC5; opacity: 1; }
+
+.home-search-field { position: relative; flex-shrink: 0; }
+.home-resources .home-search { padding-right: 18px; }
+.home-search-clear { position: absolute; right: 0; top: -4px; border: 0; padding: 2px 3px; background: transparent; font: inherit; font-size: .9rem; cursor: pointer; }
+.home-search-results { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; padding-bottom: env(safe-area-inset-bottom); }
+.home-search-results ul { list-style: none; margin: 3px 0 0; padding: 0; }
+.home-search-results button { display: flex; align-items: center; gap: 4px; width: 100%; padding: 5px 0; border: 0; background: transparent; text-align: left; font: inherit; font-size: .67rem; line-height: 1.35; cursor: pointer; }
+.home-search-results img, .home-search-results .home-result-icon-space { display: block; flex: 0 0 20px; width: 20px; height: 20px; object-fit: contain; }
+.home-search-results .home-result-name { font-size: inherit; line-height: inherit; }
+.home-search-results span { min-width: 0; overflow-wrap: anywhere; }
+.home-search-empty { font-size: .67rem; line-height: 1.5; margin: 12px 0; }
+
+.home-resources .home-resources-title { flex-shrink: 0; }
+.home-resource-navigation { display: flow-root; min-height: 0; overflow-y: auto; scrollbar-width: thin; }
+.home-resources .home-search:focus { outline: none; box-shadow: none; }
+
+@media (hover: none) and (pointer: coarse) {
+  /* Preserve the compact Home field while its actual font remains 16px. */
+  .home-search-field { height: calc(.67rem * 1.35 + 5px); }
+  .home-resources .home-search {
+    position: absolute; top: 0; left: 0;
+    width: calc(100% / .67); height: calc(100% / .67);
+    padding-right: calc(18px / .67); padding-bottom: calc(4px / .67);
+    border-bottom-width: calc(1px / .67);
+    transform: scale(.67); transform-origin: top left;
+  }
+}
+
+/* Home uses its existing artwork and text without focus-outline decoration. */
+.page.home-page :focus,
+.app:has(> .page.home-page) > .header :focus { outline: none; }
+
+.trainer-name-block { min-width: 0; }
+.trainer-card-stars { display: flex; gap: 5px; margin-top: 5px; }
+.trainer-card-stars .achievement-target { width: 14px; height: 14px; }
+.page.home-page .home-layout .trainer-card-stars .trainer-star-earned { color: #d7b65b; }
+.page.home-page .home-layout .trainer-card-stars .trainer-star-unearned { color: #555b64; }
+
+.home-directory-heading { position: relative; margin-top: 12px; padding-bottom: 4px; border-bottom: 1px solid var(--home-divider); flex-shrink: 0; }
+.home-directory-heading button { position: absolute; right: 0; top: -4px; border: 0; padding: 2px 3px; background: transparent; font: inherit; font-size: .9rem; }
+.home-directory-heading h2 { margin: 0; padding-right: 18px; font-size: .67rem; line-height: 1.35; font-weight: 600; overflow-wrap: anywhere; }
+.home-directory-heading ~ .home-search-results .resources-section { margin-top: 3px; }

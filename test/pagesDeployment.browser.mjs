@@ -24,18 +24,17 @@ try {
   const back=async()=>page.getByRole('button',{name:'Back to Resources',exact:true}).click();
   await images();
   await navigate('Home');
-  for(const name of ['Pokédex','Moves','Abilities']){
+  for(const name of ['Pokédex','Moves','Abilities','Useful Items','Berries']){
     await page.getByRole('link',{name,exact:true}).click();await images();
+    const directory=page.getByRole('region',{name:`${name} directory`,exact:true});
+    await directory.getByRole('button').first().click();await images();
     if(name==='Pokédex'){
-      await page.locator('.resources-species-entry').first().click();
       for(const tab of ['Overview','Stats & Matchups','Locations','Learnset','More']) {await page.getByRole('tab',{name:tab,exact:true}).click();await images();}
-      await page.getByRole('button',{name:'Back to National Pokédex',exact:true}).click();
-    } else {await page.locator('.resources-move-toggle').first().click();await images();}
-    if(name==='Moves'||name==='Abilities') await page.getByRole('dialog').locator('.resources-move-heading').click();
-    await back();
-  }
-  for(const name of ['Useful Items','Berries']){
-    await page.locator('.resources-section:has(#resources-items-heading)').getByRole('link',{name,exact:true}).click();await images();await back();
+      await page.getByRole('button',{name:'Back to Pokédex',exact:true}).click();
+    } else {
+      await page.keyboard.press('Escape');
+    }
+    await page.getByRole('button',{name:'Close directory',exact:true}).click();
   }
   for(const name of ['IV Calculator','Hidden Power Calculator','Stat Calculator','Move Coverage','Nature Chart','Type Chart','Emerald Pickup Table','Move Tutors']){
     await page.getByRole('link',{name,exact:true}).click();await images();

@@ -77,6 +77,6 @@ export default function PokemonPage({snapshot, onSubpageChange}) {
 
       </button>)}
     </div>
-    {!visible.length && <p className="collection-empty">No Pokémon match this search or filter.</p>}
+    {!visible.length && <p className="collection-empty">No results.</p>}
   </section></>;
 }

@@ -18,7 +18,7 @@ export default function BattleTrainers({state, dispatch}) {
         <span className="battle-result-identity"><strong>{entry.name}{entry.symbol && <span> · {entry.symbol}</span>}</strong><small>{entry.trainerClass}</small></span>
         <span className="battle-result-count"><b>{entry.setIds.length}</b><small>sets</small></span>
       </button>)}
-      {!results.length && <p className="battle-trainer-no-results" role="status">No trainers match “{query.trim()}”.</p>}
+      {!results.length && <p className="battle-trainer-no-results" role="status">No results.</p>}
     </div>
   </section>;
 }

@@ -1,5 +1,6 @@
 import {publicAsset} from '../../assets/publicAsset.js';
 import React from 'react';
+import AchievementTarget from './AchievementTarget.jsx';
 import '../styles/dashboard.css';
 import '../styles/frontier.css';
 
@@ -9,9 +10,9 @@ export default function FrontierSymbols({frontier}) {
     <ol className="frontier-symbols">{frontier.symbols.map(({id, facility, symbol, status}) => {
       const label = status === 'unearned' ? 'Not earned' : status === 'gold' ? 'Gold earned' : 'Silver earned';
       return <li key={id}>
-        <img src={publicAsset(`/frontier-symbols/${id}-${status === 'gold' ? 'gold' : 'silver'}.png`)}
+        <AchievementTarget name={`${symbol} Symbol`} status={status === 'unearned' ? 'Not Earned' : status === 'gold' ? 'Gold' : 'Silver'}><img src={publicAsset(`/frontier-symbols/${id}-${status === 'gold' ? 'gold' : 'silver'}.png`)}
           className={status === 'unearned' ? 'frontier-unearned' : ''}
-          width="64" height="64" alt={`${facility}, ${symbol} Symbol: ${label.toLowerCase()}`} />
+          width="64" height="64" alt={`${facility}, ${symbol} Symbol: ${label.toLowerCase()}`} /></AchievementTarget>
       </li>;
     })}</ol>
   </section>;

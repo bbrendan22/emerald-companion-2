@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/dashboard.css';
 import '../styles/trainer.css';
+import TrainerCardStars from '../components/TrainerCardStars.jsx';
 import GymBadges from '../components/GymBadges.jsx';
 import FrontierSymbols from '../components/FrontierSymbols.jsx';
 import {publicAsset} from '../../assets/publicAsset.js';
@@ -27,8 +28,8 @@ export default function TrainerPage({snapshot, error, onImport}) {
       <div className="trainer-details">
         <div className="trainer-identity">
           <div className="trainer-portrait">{sprite && <img className="trainer-sprite" src={publicAsset(`/trainers/${sprite}-emerald.png`)} alt={`Emerald Trainer ${sprite === 'brendan' ? 'Brendan' : 'May'}`} />}
-            {trainer.isChampion && <img className="trainer-champion" src={publicAsset('/ribbons/champion-ribbon.png')} alt="Pokémon League Champion" />}</div>
-          <strong className="trainer-name">{trainer.name || 'Trainer'}</strong>
+          </div>
+          <div className="trainer-name-block"><strong className="trainer-name">{trainer.name || 'Trainer'}</strong><TrainerCardStars earned={snapshot.trainerCard?.earned} /></div>
         </div>
         <dl className="trainer-fields">
           <div><dt><abbr title="Trainer ID">TID</abbr></dt><dd>{id(trainer.trainerId)}</dd></div>

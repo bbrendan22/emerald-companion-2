@@ -27,7 +27,7 @@ try {
   assert.equal(await page.locator('.battle-side-enemy .battle-slot-empty').count(),3);
   await page.getByRole('tab',{name:'Trainers',exact:true}).click(); await search.fill('youngster');
   assert.ok(await page.locator('.battle-trainer-result').count()>1);
-  await search.fill('zzzzzz');await page.getByRole('status').filter({hasText:'No trainers match'}).waitFor();
+  await search.fill('zzzzzz');await page.getByRole('status').filter({hasText:'No results.'}).waitFor();
   for(const symbol of ['Silver','Gold']) {
     await search.fill(`Anabel ${symbol}`); assert.equal(await page.locator('.battle-trainer-result').count(),1);
     assert.equal(await page.locator('.battle-result-count b').innerText(),'3');

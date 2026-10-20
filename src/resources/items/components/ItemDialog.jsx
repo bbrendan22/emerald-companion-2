@@ -11,7 +11,7 @@ export default function ItemDialog({itemId, onClose, returnFocus = null}) {
  const item = getItemEntry(itemId);
  if (!item) return null;
  const name = item.machine ? `${item.code} · ${item.name}` : item.name;
- return <ResourceDialog name={name} onClose={onClose} returnFocus={returnFocus}>
+ return <ResourceDialog contentClassName="resources-reference-popup" name={name} onClose={onClose} returnFocus={returnFocus}>
   <div className="resource-items-page resource-item-popup">
    <div className="resource-item-main"><ItemSummary item={item}/></div>
    <div className="resource-inline-learners" id={`item-sources-${item.id}`}>

@@ -3,3 +3,12 @@
 .badge-row img { display: block; width: 100%; height: auto; object-fit: contain; }
 .badge-unearned img, .ribbon-unearned { filter: grayscale(1); opacity: .24; }
 .shiny-star { color: var(--resources-neon); }
+/* Image-sized controls preserve the existing Home artwork geometry. */
+.achievement-target { display: grid; place-items: center; padding: 0; margin: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.achievement-target:focus-visible { outline: 1px solid #aab1ba; outline-offset: 3px; }
+.trainer-champion.achievement-target img { display: block; width: 100%; height: 100%; image-rendering: pixelated; }
+.achievement-popup { position: fixed; z-index: 50; box-sizing: border-box; width: max-content; max-width: min(220px, calc(100vw - 16px)); padding: 10px 12px; border: 1px solid #4a515d; border-radius: 9px; background: #30353d; color: #f3f4f6; box-shadow: 0 6px 24px #0005; font-size: .8rem; overflow-wrap: anywhere; }
+
+.achievement-dismiss-layer { position: fixed; inset: 0; z-index: 49; background: transparent; }
+.achievement-popup:has(.achievement-popup-detail) { display: grid; gap: 5px; }
+.achievement-popup-detail { color: #b7c4d4; font-size: .72rem; }

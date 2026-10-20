@@ -91,7 +91,7 @@ try {
   await page.locator('.battle-side-enemy button.battle-team-slot').first().dblclick();
   assert.equal(await page.locator('.battle-side-enemy .battle-team-slot img').count(),2);
   assert.ok(await page.locator('.battle-set-select:not(:disabled)').count()>0);
-  await search.fill('zzzzz');await page.getByRole('status').filter({hasText:'No sets match'}).waitFor();
+  await search.fill('zzzzz');await page.getByRole('status').filter({hasText:'No results.'}).waitFor();
   await tab('Trainers');
   const trainers=page.getByRole('searchbox',{name:'Search trainers'});
   await trainers.fill('Brady');await page.locator('.battle-trainer-result').click();
