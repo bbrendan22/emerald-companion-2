@@ -44,3 +44,13 @@ test('bar lengths ignore level, IVs, EVs and nature and do not change current st
   assert.deepEqual(speciesBarPercents(a.internalSpeciesId),speciesBarPercents(b.internalSpeciesId));
   assert.deepEqual([a.calculated,b.calculated],before);
 });
+test('Swampert uses independent species ranges and identical fills for different individuals',()=>{
+  const a=readPokemon(makePokemon({species:285,pid:0,experience:117360,ivWord:0}));
+  const b=readPokemon(makePokemon({species:285,pid:3,experience:1059860,evs:[252,252,0,0,0,4]}));
+  assert.deepEqual(a.calculated.stats,{hp:160,attack:115,defense:95,speed:65,spAttack:90,spDefense:95});
+  assert.deepEqual(b.calculated.stats,{hp:404,attack:350,defense:216,speed:156,spAttack:185,spDefense:217});
+  const expected={hp:10675/254,attack:10750/155,defense:9200/225,spAttack:7845/144,spDefense:7700/210,speed:6100/175};
+  const bars=speciesBarPercents(a.internalSpeciesId);
+  for(const key of Object.keys(expected))assert.ok(Math.abs(bars[key]-expected[key])<1e-10);
+  assert.deepEqual(bars,speciesBarPercents(b.internalSpeciesId));
+});

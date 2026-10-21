@@ -93,7 +93,7 @@ try {
     // Worst-case ability and three-stat spreads must also fit the one-line facts.
     for (const number of [1,2,127,frontierPokemon.find(s => s.id === 'Shiftry 1').entry,frontierPokemon.find(s => s.id === 'Crawdaunt 1').entry]) {
       if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await search.fill(String(number)); if (await page.getByRole('dialog').count()) await page.keyboard.press('Escape'); await rows.getByRole('button').click();
-      await page.waitForFunction(() => {const e=document.querySelector('.frontier-set-facts'); return e && parseFloat(e.style.fontSize)>0 && e.scrollWidth<=Math.ceil(e.getBoundingClientRect().width)+1;});
+      await page.waitForFunction(() => {const e=document.querySelector('.frontier-set-facts'); return e && parseFloat(getComputedStyle(e).fontSize)>0 && e.scrollWidth<=Math.ceil(e.getBoundingClientRect().width)+1;});
       assert.equal(await details.locator('.frontier-set-facts').evaluate(e => {
         const rect=e.getBoundingClientRect(); const fields=[...e.children].map(n=>n.getBoundingClientRect());
         return fields.every(f => f.top === fields[0].top && f.right <= rect.right+1) && e.scrollWidth <= Math.ceil(rect.width)+1;
@@ -134,7 +134,7 @@ try {
       assert.equal(await details.locator('.frontier-set-brain span').innerText(),`${brain.name} · ${brain.facility} · ${brain.symbol} Symbol`);
       assert.equal(await details.locator('.frontier-set-brain img').getAttribute('src'),assetPath(`/trainers/frontier/${brain.sprite}.png`));
       await details.locator('img').evaluateAll(imgs => Promise.all(imgs.map(img => {img.loading='eager'; return img.decode();})));
-      await page.waitForFunction(() => {const e=document.querySelector('.frontier-set-facts'); return e && parseFloat(e.style.fontSize)>0 && e.scrollWidth<=Math.ceil(e.getBoundingClientRect().width)+1;});
+      await page.waitForFunction(() => {const e=document.querySelector('.frontier-set-facts'); return e && parseFloat(getComputedStyle(e).fontSize)>0 && e.scrollWidth<=Math.ceil(e.getBoundingClientRect().width)+1;});
       assert.equal(await details.locator('.frontier-set-facts').evaluate(e => {
         const rect=e.getBoundingClientRect(), fields=[...e.children].map(n=>n.getBoundingClientRect());
         return fields.every(f => f.top === fields[0].top && f.right <= rect.right+1) && e.scrollWidth <= Math.ceil(rect.width)+1;

@@ -23,11 +23,12 @@ export default function IVCalculator() {
   return <section className="resources-home iv-calculator" aria-labelledby="iv-heading">
     <div className="iv-heading-row"><h1 id="iv-heading">IV Calculator</h1><button type="button" className="iv-reset" onClick={reset}>Reset</button></div>
     <div className="iv-selectors">
-      <label className="iv-selector"><input type="search" aria-label="Search Pokémon" placeholder="Pokémon" value={query} onFocus={()=>setSearching(true)} onChange={event=>{setQuery(event.target.value);setSearching(true);setPokemon(null);}} /></label>
+      <label className="iv-selector"><input type="search" aria-label="Search Pokémon" placeholder="Search" value={query} onFocus={()=>setSearching(true)} onChange={event=>{setQuery(event.target.value);setSearching(true);setPokemon(null);}} /></label>
       <label className="iv-selector"><select aria-label="Nature" value={nature} onChange={event=>setNature(event.target.value)}><option value="">Nature</option>{natures.map(name=><option key={name}>{name}</option>)}</select></label>
       <label className="iv-selector"><select aria-label="Level" value={level} onChange={event=>setLevel(event.target.value)}><option value="">Level</option>{Array.from({length:100},(_,i)=><option key={i+1}>{i+1}</option>)}</select></label>
     </div>
     {suggestions.length > 0 && <ul className="iv-suggestions" aria-label="Pokémon suggestions">{suggestions.map(p=><li key={p.nationalDexId}><button type="button" onClick={()=>selectPokemon(p)}><PokemonName>{p.name}</PokemonName></button></li>)}</ul>}
+  {searching && query.trim() && !suggestions.length && <p className="resources-search-status" role="status">No results.</p>}
     <label className="iv-checkbox"><input type="checkbox" checked={enabled} onChange={event=>setEnabled(event.target.checked)} />Enter EVs</label>
     {inputs(observed,setObserved)}
     {enabled && <><h2>EVs</h2>{inputs(evs,setEvs,true)}</>}

@@ -1,8 +1,8 @@
 :root { --page-gutter: 12px; }
 .page { max-width: 960px; margin: 0 auto; padding: 42px max(24px, env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); }
-h1 { margin: 0 0 26px; font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 650; line-height: 1.15; letter-spacing: -.045em; overflow-wrap: anywhere; }
+h1 { margin: 0 0 26px; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); line-height: var(--line-height-heading); letter-spacing: var(--letter-spacing-normal); overflow-wrap: anywhere; }
 h1:focus { outline: none; }
 .placeholder { display: flex; align-items: center; gap: 16px; padding: 24px; background: #202328; border: 1px solid #ffffff0b; border-radius: 14px; }
 .placeholder-mark { width: 3px; height: 28px; flex-shrink: 0; border-radius: 4px; background: var(--accent); }
-.placeholder p { margin: 0; color: #a2a9b4; font-size: .9375rem; line-height: 1.7; }
+.placeholder p { margin: 0; color: var(--text-muted-soft); font-size: var(--font-size-body); line-height: 1.7; }
 @media (min-width: 700px) { .page { padding-top: 64px; } .placeholder { padding: 30px; } }

@@ -1,28 +1,28 @@
 .stat-calculator { max-width: 620px; }
 .sc-heading-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.sc-heading-row h1 { color: var(--resources-neon); font-size: 1.15rem; margin: 0; }
-.sc-reset { border: 1px solid #434a54; border-radius: 4px; background: transparent; color: #b8c0cc; padding: 5px 9px; font: inherit; font-size: .75rem; cursor: pointer; }
+.sc-heading-row h1 { color: var(--resources-neon); font-size: var(--font-size-heading); margin: 0; }
+.sc-reset { border: 1px solid #434a54; border-radius: 4px; background: transparent; color: var(--text-secondary-resource); padding: 5px 9px; font: inherit; font-size: var(--font-size-body); cursor: pointer; }
 .sc-reset:focus-visible, .stat-calculator input:focus, .stat-calculator select:focus { outline: 1px solid #b8c0cc; outline-offset: 2px; }
 .sc-selectors { display: grid; grid-template-columns: minmax(0,5fr) minmax(0,3fr) minmax(0,2fr); gap: 6px; }
-.stat-calculator input, .stat-calculator select { width: 100%; min-width: 0; box-sizing: border-box; border: 1px solid #434a54; border-radius: 4px; background: #20252c; color: #e3e6eb; font: inherit; padding: 6px 7px; }
-.sc-selectors input, .sc-selectors select { height: 32px; padding: 5px 4px; font-size: .8rem; }
+.stat-calculator input, .stat-calculator select { width: 100%; min-width: 0; box-sizing: border-box; border: 1px solid #434a54; border-radius: 4px; background: #20252c; color: var(--text-primary-resource); font: inherit; font-size: var(--font-size-body); padding: 6px 7px; }
+.sc-selectors input, .sc-selectors select { height: 32px; padding: 5px 4px; font-size: var(--font-size-body); }
 .sc-selectors input:focus { outline: none; border-color: #434a54; box-shadow: none; background: #20252c; }
-.sc-selectors input::placeholder { color: #b8c0cc; opacity: 1; }
-.sc-selectors select:has(option[value=""]:checked) { color: #b8c0cc; }
-.stat-calculator h2 { color: var(--resources-neon); font-size: .75rem; font-weight: 600; margin: 12px 0 6px; }
+.sc-selectors input::placeholder { color: var(--text-secondary-resource); opacity: 1; }
+.sc-selectors select:has(option[value=""]:checked) { color: var(--text-secondary-resource); }
+.stat-calculator h2 { color: var(--resources-neon); font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); margin: 12px 0 6px; }
 .sc-input-row { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 5px; }
-.sc-input-row label { display: grid; gap: 4px; min-width: 0; text-align: center; font-size: .75rem; }
+.sc-input-row label { display: grid; gap: 4px; min-width: 0; text-align: center; font-size: var(--font-size-small); }
 .sc-input-row label span { color: var(--stat-color); }
-.sc-input-row input { text-align: center; padding: 6px 1px; font-size: 16px; }
+.sc-input-row input { text-align: center; padding: 6px 1px; font-size: var(--font-size-body); }
 .sc-input-row input[aria-invalid="true"] { border-color: #ed8493; }
-.sc-error { color: #ed8493; font-size: .75rem; margin: 8px 0; }
+.sc-error { color: var(--text-status-error); font-size: var(--font-size-body); margin: 8px 0; }
 .sc-suggestions { border-bottom: 1px solid #434a54; }
-.sc-suggestions button { background: none; border: 0; color: #e3e6eb; font: inherit; font-size: .8rem; padding: 7px 0; text-align: left; width: 100%; cursor: pointer; }
+.sc-suggestions button { background: none; border: 0; color: var(--text-primary-resource); font: inherit; font-size: var(--font-size-body); padding: 7px 0; text-align: left; width: 100%; cursor: pointer; }
 .stat-calculator .sc-results-heading { margin-top: 16px; padding-bottom: 7px; border-bottom: 1px solid var(--resources-medium); }
 .sc-results { display: grid; gap: 8px; margin-top: 10px; }
-.sc-stat-row { display: grid; grid-template-columns: 82px 28px minmax(0,1fr); gap: 6px; align-items: center; font-size: .75rem; }
-.sc-stat-row strong { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sc-stat-row { display: grid; grid-template-columns: 82px 28px minmax(0,1fr); gap: 6px; align-items: center; font-size: var(--font-size-body); }
+.sc-stat-row strong { text-align: right; font-weight: var(--font-weight-semibold); font-variant-numeric: var(--font-numeric-tabular); }
 .sc-stat-track { height: 6px; background: #363e49; border-radius: 4px; }
 .sc-stat-track span { display: block; height: 100%; border-radius: inherit; background: var(--stat-color); }
 
-.sc-input-row input::placeholder { color: #939ba6; opacity: 1; }
+.sc-input-row input::placeholder { color: var(--text-muted); opacity: 1; }

@@ -13,11 +13,13 @@ function SetFacts({set}) {
   useLayoutEffect(() => {
     const element = line.current;
     const fit = () => {
-      element.style.fontSize = '11px';
+      // One-line facts share the Body token; only shrink to fit this existing
+      // compact row when long abilities/EV spreads exceed its measured width.
+      element.style.fontSize = 'var(--font-size-body)';
       const width = element.getBoundingClientRect().width;
       if (width <= 0) return;
       for (let attempt = 0; attempt < 3 && element.scrollWidth > width; attempt++) {
-        element.style.fontSize = `${parseFloat(element.style.fontSize) * (width - 1) / element.scrollWidth}px`;
+        element.style.fontSize = `${parseFloat(getComputedStyle(element).fontSize) * (width - 1) / element.scrollWidth}px`;
       }
     };
     fit();
@@ -103,7 +105,7 @@ export default function PokemonSets() {
     <div className="resources-search">
       <label className="resources-search-label" htmlFor="frontier-sets-query">Search Pokémon Sets</label>
       <div className="resources-search-field">
-        <input id="frontier-sets-query" type="search" placeholder={tab === 'standard' ? 'Search by Pokémon or set number…' : 'Search Pokémon, Brain or Symbol…'} autoComplete="off" spellCheck="false" value={query} onChange={event => {setQuery(event.target.value); setSelected(null);}} />
+        <input id="frontier-sets-query" type="search" placeholder="Search" autoComplete="off" spellCheck="false" value={query} onChange={event => {setQuery(event.target.value); setSelected(null);}} />
         {query && <button type="button" className="resources-clear" aria-label="Clear search" onClick={() => {setQuery(''); setSelected(null); document.getElementById('frontier-sets-query')?.focus();}}>×</button>}
       </div>
     </div>

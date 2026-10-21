@@ -21,7 +21,7 @@ export default function BattleSets({state, dispatch, records}) {
   const iv = views.values().next().value?.ivAssumption;
   return <section className="battle-set-search" aria-label="Tower Pokémon sets">
     <label className="battle-set-search-field"><span className="battle-visually-hidden">Search Pokémon sets</span>
-      <input type="search" placeholder="Search Pokémon…" value={state.setSearch.query} autoComplete="off" autoCapitalize="none" spellCheck="false"
+      <input type="search" placeholder="Search" value={state.setSearch.query} autoComplete="off" autoCapitalize="none" spellCheck="false"
         onFocus={() => dispatch({type:'setQuery', query:''})} onChange={event => dispatch({type:'setQuery', query:event.target.value})} />
     </label>
     <div className="battle-set-context">Level {state.rules.opponentLevel} · {iv ? `IVs ${iv.value}${iv.assumed ? ' assumed' : ''}` : state.selectedTrainer ? 'Trainer IVs' : 'IVs 31 assumed'}</div>

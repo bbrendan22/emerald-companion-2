@@ -2,7 +2,7 @@ import React from 'react';
 
 // Keep the actual character for text/copy/accessibility, but draw its visible
 // shape without OS fallback-font metrics (which differ on iPhone and macOS).
-function SpeciesSymbol({text}) {
+export function SpeciesSymbol({text}) {
   const female = text[0] === '♀';
   return React.createElement('span', {className:`pokemon-species-symbol${female ? ' pokemon-species-symbol-female' : ''}`},
     React.createElement('span', {className:'pokemon-species-symbol-text'}, text),

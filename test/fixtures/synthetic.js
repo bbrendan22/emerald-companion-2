@@ -30,7 +30,7 @@ function permutations(list) {
   return list.length===0 ? [[]]:list.flatMap((x,i)=>permutations(list.filter((_,j)=>j!==i)).map(rest=>[x,...rest]));
 }
 const orders=permutations([0,1,2,3]);
-export function makePokemon({pid=0,otId=0,species=1,egg=false,party=false,ivWord=1073741823,evs=[0,0,0,0,0,0],experience=560,origins=8581,friendship=70,flags,recordedLevel=10}={}) {
+export function makePokemon({pid=0,otId=0,species=1,heldItemId=13,moveIds=[33,0,45,0],ppUps=[1,2,0,3],currentPp=[17,0,25,0],egg=false,party=false,ivWord=1073741823,evs=[0,0,0,0,0,0],experience=560,origins=8581,metLocationId=12,friendship=70,pokerus=33,ribbonRaw=32770,flags,recordedLevel=10}={}) {
   const out=new Uint8Array(party?100:80), v=new DataView(out.buffer);
   v.setUint32(0,pid,true); v.setUint32(4,otId,true);
   out.fill(255,8,18); out[8]=187; out[9]=188; // AB
@@ -38,13 +38,13 @@ export function makePokemon({pid=0,otId=0,species=1,egg=false,party=false,ivWord
   out.fill(255,20,27); out[20]=189; // C
   const chunks=Array.from({length:4},()=>new Uint8Array(12));
   const [g,a,e,m]=chunks.map(x=>new DataView(x.buffer));
-  g.setUint16(0,species,true); g.setUint16(2,13,true); g.setUint32(4,experience,true); g.setUint8(8,201); g.setUint8(9,friendship);
-  [33,0,45,0].forEach((id,i)=>a.setUint16(i*2,id,true));
-  [17,0,25,0].forEach((pp,i)=>a.setUint8(8+i,pp));
+  g.setUint16(0,species,true); g.setUint16(2,heldItemId,true); g.setUint32(4,experience,true); g.setUint8(8,ppUps.reduce((bits,count,i)=>bits | (count << (2*i)),0)); g.setUint8(9,friendship);
+  moveIds.forEach((id,i)=>a.setUint16(i*2,id,true));
+  currentPp.forEach((pp,i)=>a.setUint8(8+i,pp));
   evs.forEach((ev,i)=>e.setUint8(i,ev));
   [1,2,3,4,5,6].forEach((value,i)=>e.setUint8(6+i,value));
-  m.setUint8(0,33);m.setUint8(1,12);m.setUint16(2,origins,true);
-  m.setUint32(4,(ivWord | (egg ? 1073741824:0))>>>0,true);m.setUint32(8,32770,true);
+  m.setUint8(0,pokerus);m.setUint8(1,metLocationId);m.setUint16(2,origins,true);
+  m.setUint32(4,(ivWord | (egg ? 1073741824:0))>>>0,true);m.setUint32(8,ribbonRaw,true);
   const plaintext=new Uint8Array(48);
   orders[pid%24].forEach((id,i)=>plaintext.set(chunks[id],i*12));
   let checksum=0;

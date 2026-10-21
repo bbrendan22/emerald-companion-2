@@ -94,11 +94,10 @@ try {
   await navigate('My Pokémon');
   await page.getByRole('searchbox',{name:'Search Pokémon',exact:true}).fill('nidoran');
   await check(page.locator('.pokemon-grid'),2);
-  for (const [name,gender] of [['Nidoran♀','Female'],['Nidoran♂','Male']]) {
-   await page.locator('.pokemon-card').filter({hasText:name}).click();await check(page.locator('#pokemon-profile-title'));
-   assert.ok((await page.locator('.profile-identity-meta').innerText()).includes(gender));
-   assert.equal(await page.locator('.profile-identity-meta .pokemon-species-symbol').count(),0);
-   await page.getByRole('button',{name:'Back to collection',exact:true}).click();
+  for (const name of ['Nidoran♀','Nidoran♂']) {
+   await page.locator('.pokemon-card').filter({hasText:name}).click();await page.keyboard.press('Escape');
+   assert.equal(await page.getByRole('dialog').count(),0);
+   await check(page.locator('.pokemon-grid'),2);
   }
   await navigate('Battle');await page.getByRole('tab',{name:'Teams',exact:true}).click();
   await check(page.locator('.battle-frontier-hub'),2);

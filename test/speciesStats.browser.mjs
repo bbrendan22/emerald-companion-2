@@ -5,7 +5,6 @@ import reference from '../src/data/reference.json' with {type: 'json'};
 import ownTypes from '../src/data/pokemonTypes.json' with {type: 'json'};
 import {GEN3_TYPE_DISPLAY_ORDER} from '../src/pokemon/typeDisplayOrder.js';
 import {baseStatRows, defensiveMatchupGroups} from '../src/resources/speciesStats.js';
-import {makeSave, makePokemon} from './fixtures/synthetic.js';
 const require = createRequire(import.meta.url);
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const browser = await chromium.launch({headless: true, executablePath: process.env.CHROME_EXECUTABLE});
@@ -73,19 +72,6 @@ try {
       assert.equal(await search.inputValue(), `#${String(dex).padStart(3, '0')}`);
     }
   }
-  // Compare the same species in the existing owned profile and Resources, rather than
-  // relying only on duplicated expected colors or a new formula in this test.
-  const storage = new Uint8Array(33744); storage.set(makePokemon({species: 1}), 4);
-  await page.evaluate(encoded => localStorage.setItem('emerald-companion-2.save.v1', encoded), Buffer.from(makeSave({blocks: {storage}})).toString('base64'));
-  await page.reload(); await navigate('My Pokémon');
-  assert.deepEqual(await page.getByRole('combobox', {name: 'Type', exact: true}).locator('option').evaluateAll(options => options.map(option => option.value).filter(value => value !== 'All')), GEN3_TYPE_DISPLAY_ORDER);
-  await page.locator('.pokemon-card').first().click(); await page.locator('.pokemon-profile').waitFor();
-  const ownedBars = await page.locator('.profile-stats .profile-stat-track span').evaluateAll(bars => bars.map(bar => ({width: bar.style.width, color: getComputedStyle(bar).backgroundColor})));
-  await page.getByRole('button', {name: 'Back to collection', exact: true}).click();
-  await start(); await search.fill('#001'); await page.locator('.resources-species-entry').click();
-  await page.getByRole('tab', {name: 'Stats & Matchups', exact: true}).click();
-  const resourceBars = await page.locator('.species-stat-track > span').evaluateAll(bars => bars.map(bar => ({width: bar.style.width, color: getComputedStyle(bar).backgroundColor})));
-  assert.deepEqual(resourceBars, ownedBars);
   assert.deepEqual(errors, []);
-  console.log('R2C passed: canonical stats/totals, actual owned-profile color/scale parity, global type dropdown order, preserved own typing, ordered Gen 3 matchup icons/colors, Overview/identity unchanged, keyboard/back retention; 320/375/390/430/1280px, no overflow or new scroll calls.');
+  console.log('R2C passed: canonical stats/totals, global type dropdown order, preserved own typing, ordered Gen 3 matchup icons/colors, Overview/identity unchanged, keyboard/back retention; 320/375/390/430/1280px, no overflow or new scroll calls.');
 } finally { await browser.close(); }

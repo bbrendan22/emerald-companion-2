@@ -9,7 +9,7 @@ try {
  await page.getByRole('button',{name:'Open navigation',exact:true}).click();await page.getByRole('button',{name:'Resources',exact:true}).click();
  await page.getByRole('link',{name:'IV Calculator',exact:true}).click();
  const root=page.locator('.iv-calculator'), search=page.getByRole('searchbox',{name:'Search Pokémon',exact:true});
- assert.equal(await search.getAttribute('placeholder'),'Pokémon');
+ assert.equal(await search.getAttribute('placeholder'),'Search');
  assert.equal(await root.getByRole('heading',{name:'Observed stats',exact:true}).count(),0);
  assert.equal(await root.getByLabel('Nature',{exact:true}).locator('option').first().innerText(),'Nature');
  assert.equal(await root.getByLabel('Level',{exact:true}).locator('option').first().innerText(),'Level');

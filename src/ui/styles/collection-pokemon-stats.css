@@ -1,0 +1,34 @@
+.collection-training-stats {
+  --collection-stat-gap: 6px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px max-content;
+  /* Shared tracks keep both sets of six rows aligned, including font scaling. */
+  grid-template-rows: minmax(24px, auto) repeat(6, minmax(24px, auto)) auto;
+  column-gap: var(--collection-stat-gap);
+  padding-block: 10px 12px;
+  border-bottom: 1px solid #ffffff12;
+}
+.collection-battle-stats { grid-column: 1; grid-row: 1 / span 8; display: grid; grid-template-rows: subgrid; min-width: 0; }
+.collection-battle-stats h2 { align-self: center; margin: 0; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); line-height: var(--line-height-heading); }
+.collection-battle-stat { display: grid; grid-template-columns: 23px 3ch minmax(0, 1fr); align-items: center; gap: var(--collection-stat-gap); min-width: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.collection-battle-stat-value { text-align: right; font-variant-numeric: var(--font-numeric-tabular); }
+.collection-battle-stat-track { height: 6px; border-radius: 4px; background: #363e49; overflow: hidden; }
+.collection-battle-stat-track span { display: block; height: 100%; border-radius: inherit; background: var(--stat-color); }
+.collection-battle-stat[data-stat="hp"] { --stat-color: #ed8493; }
+.collection-battle-stat[data-stat="attack"] { --stat-color: #edaa70; }
+.collection-battle-stat[data-stat="defense"] { --stat-color: #decb75; }
+.collection-battle-stat[data-stat="spAttack"] { --stat-color: #78a9e8; }
+.collection-battle-stat[data-stat="spDefense"] { --stat-color: #8bc8a6; }
+.collection-battle-stat[data-stat="speed"] { --stat-color: #ba98e3; }
+.collection-iv-ev-table { grid-column: 3; grid-row: 1 / span 8; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: subgrid; column-gap: 3px; justify-self: end; min-width: 0; width: max-content; max-width: 100%; border-collapse: collapse; font-size: var(--font-size-body); line-height: var(--line-height-body); font-variant-numeric: var(--font-numeric-tabular); }
+.collection-iv-ev-table :is(thead, tbody, tfoot) { display: contents; }
+.collection-iv-ev-table tr { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: center; }
+.collection-iv-ev-table :is(th, td) { min-width: 0; padding: 0; border: 0; padding-inline-end: calc(20px / 3); text-align: left; font-weight: var(--font-weight-regular); }
+.collection-iv-ev-table thead th { font-size: var(--font-size-small); color: var(--text-label); }
+.collection-iv-ev-table .collection-training-highlight { color: var(--text-status-success); }
+.collection-iv-ev-table tfoot tr { margin-top: 4px; padding-top: 6px; border-top: 1px solid #ffffff12; }
+.collection-hidden-power { display: flex; align-self: end; align-items: center; gap: 5px; min-width: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); white-space: nowrap; }
+.collection-hidden-power img { display: block; flex: 0 0 auto; width: 21px; height: 21px; object-fit: contain; }
+.collection-hidden-power small { font-size: var(--font-size-small); color: var(--text-label); font-variant-numeric: var(--font-numeric-tabular); }
+
+.collection-stat-divider { grid-column: 2; grid-row: 1 / -1; border-left: 1px solid #ffffff12; }

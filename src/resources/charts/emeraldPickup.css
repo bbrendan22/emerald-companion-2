@@ -1,14 +1,14 @@
-.emerald-pickup { max-width: 560px; color: #e3e6eb; }
-.emerald-pickup h1 { color: var(--resources-neon); font-size: 1.15rem; margin-bottom: 18px; }
-.emerald-pickup-levels { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: #b8c0cc; font-size: .75rem; }
-.emerald-pickup select { min-width: 0; height: 34px; border: 1px solid #434a54; border-radius: 4px; background: #20252c; color: #e3e6eb; padding: 5px 8px; font: inherit; font-size: .8rem; }
+.emerald-pickup { max-width: 560px; color: var(--text-primary-resource); }
+.emerald-pickup h1 { color: var(--resources-neon); font-size: var(--font-size-heading); margin-bottom: 18px; }
+.emerald-pickup-levels { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: var(--text-secondary-resource); font-size: var(--font-size-body); }
+.emerald-pickup select { min-width: 0; height: 34px; border: 1px solid #434a54; border-radius: 4px; background: #20252c; color: var(--text-primary-resource); padding: 5px 8px; font: inherit; font-size: var(--font-size-body); }
 .emerald-pickup select:focus-visible { outline: 1px solid var(--resources-medium); outline-offset: 2px; }
-.emerald-pickup table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .8rem; }
+.emerald-pickup table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: var(--font-size-body); }
 .emerald-pickup-sprite-column { width: 36px; }
 .emerald-pickup-odds-column { width: 66px; }
-.emerald-pickup th, .emerald-pickup td { padding: 7px 3px; border-bottom: 1px solid #ffffff12; text-align: left; font-weight: 400; }
-.emerald-pickup thead th { color: #b8c0cc; font-size: .65rem; white-space: nowrap; padding-bottom: 9px; }
+.emerald-pickup th, .emerald-pickup td { padding: 7px 3px; border-bottom: 1px solid #ffffff12; text-align: left; font-weight: var(--font-weight-regular); }
+.emerald-pickup thead th { color: var(--text-secondary-resource); font-size: var(--font-size-small); white-space: nowrap; padding-bottom: 9px; }
 .emerald-pickup tbody th { overflow-wrap: anywhere; }
-.emerald-pickup tr > :nth-child(n+3) { text-align: right; font-variant-numeric: tabular-nums; }
+.emerald-pickup tr > :nth-child(n+3) { text-align: right; font-variant-numeric: var(--font-numeric-tabular); }
 .emerald-pickup td img { display: block; object-fit: contain; image-rendering: pixelated; }
-.emerald-pickup-note { margin: 10px 0 0; color: #939ba6; font-size: .7rem; line-height: 1.5; }
+.emerald-pickup-note { margin: 10px 0 0; color: var(--text-muted); font-size: var(--font-size-small); line-height: var(--line-height-relaxed); }

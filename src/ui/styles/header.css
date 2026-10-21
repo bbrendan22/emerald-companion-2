@@ -1,6 +1,6 @@
-.header { background: #1e2125; border-bottom: 1px solid var(--accent); padding-top: env(safe-area-inset-top); }
+.header { background: #1e2125; border-bottom: 1px solid #393D44; padding-top: env(safe-area-inset-top); }
 .header-inner { position: relative; display: flex; align-items: center; justify-content: space-between; height: 44px; padding-inline: max(4px, env(safe-area-inset-left)) max(4px, env(safe-area-inset-right)); }
-.brand { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 5px; white-space: nowrap; font-size: clamp(1rem, 4.2vw, 1.1rem); font-weight: 650; letter-spacing: -.025em; }
+.brand { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 5px; white-space: nowrap; font-size: var(--font-size-large); font-weight: var(--font-weight-semibold); letter-spacing: var(--letter-spacing-brand); }
 .brand-pokeball { position: absolute; right: calc(100% + 5px); width: 26px; height: 26px; object-fit: contain; flex-shrink: 0; }
 .header-left { display: flex; align-items: center; }
 .header .icon-button { width: 44px; height: 44px; border-radius: 0; }
@@ -10,4 +10,4 @@
 .header-resources-subpage .subpage-back { color: var(--resources-medium); }
 .header button:focus-visible { outline: 2px solid #cdb572; outline-offset: -3px; }
 @media (max-width: 359px) { .header-left-back .icon-button { width: 24px; } }
-@media (min-width: 700px) { .brand { font-size: 1.15rem; } .header-left-back .icon-button { width: 44px; } }
+@media (min-width: 700px) { .header-left-back .icon-button { width: 44px; } }

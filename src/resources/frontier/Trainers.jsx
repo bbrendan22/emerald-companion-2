@@ -69,7 +69,7 @@ export default function Trainers() {
       <div className="resources-search">
         <label className="resources-search-label" htmlFor="frontier-trainers-query">Search Frontier Trainers</label>
         <div className="resources-search-field">
-          <input ref={search} id="frontier-trainers-query" type="search" placeholder={tab === 'trainers' ? 'Search by trainer name or class…' : 'Search by Brain name or facility…'} value={query} onChange={event => setQuery(event.target.value)} autoComplete="off" spellCheck="false" />
+          <input ref={search} id="frontier-trainers-query" type="search" placeholder="Search" value={query} onChange={event => setQuery(event.target.value)} autoComplete="off" spellCheck="false" />
           {query && <button type="button" className="resources-clear" aria-label="Clear search" onClick={() => {setQuery(''); search.current?.focus();}}>×</button>}
         </div>
       </div>

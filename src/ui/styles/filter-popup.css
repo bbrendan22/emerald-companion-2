@@ -1,0 +1,5 @@
+/* Shared appearance; each caller retains its own anchor and positioning. */
+.collection-filter-popup, .home-filter-popup { box-sizing: border-box; display: grid; gap: 12px; width: 224px; max-width: calc(100vw - 32px); padding: 12px; border: 1px solid #444850; border-radius: 6px; background: #202226; color: var(--text-secondary); box-shadow: 0 6px 20px #0005; font-family: inherit; font-size: var(--font-size-body); line-height: var(--line-height-compact); }
+:is(.collection-filter-popup, .home-filter-popup) label { display: grid; gap: 5px; margin: 0; font-size: var(--font-size-small); }
+:is(.collection-filter-popup, .home-filter-popup) select { box-sizing: border-box; display: block; width: 100%; min-width: 0; margin: 0; padding: 7px; border: 1px solid #444850; border-radius: 3px; background: #282b30; color: var(--text-secondary); font: inherit; font-size: var(--font-size-body); }
+:is(.collection-filter-popup, .home-filter-popup) > button { width: 100%; margin: 0; padding: 5px; border: 0; background: transparent; color: var(--text-secondary); font: inherit; font-size: var(--font-size-body); text-align: center; cursor: pointer; }

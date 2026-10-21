@@ -1,49 +1,49 @@
 .species-profile { min-width: 0; }
 .species-identity { display: grid; grid-template-columns: minmax(0, 44%) minmax(0, 1fr); align-items: center; gap: 10px; padding: 6px 0 12px; }
 .species-artwork, .species-artwork-fallback { display: block; width: 100%; height: 160px; object-fit: contain; }
-.species-artwork-fallback { display: grid; place-items: center; color: #939ba6; font-size: 1.5rem; }
+.species-artwork-fallback { display: grid; place-items: center; color: var(--text-muted); font-size: var(--font-size-body); }
 .species-identity-text { min-width: 0; }
-.species-kicker { margin: 0 0 7px; color: #939ba6; font-size: .72rem; font-variant-numeric: tabular-nums; }
-.species-profile h1 { margin: 0 0 8px; font-size: clamp(1.25rem, 5vw, 1.65rem); line-height: 1.2; letter-spacing: -.025em; }
+.species-kicker { margin: 0 0 7px; color: var(--text-muted); font-size: var(--font-size-small); font-variant-numeric: var(--font-numeric-tabular); }
+.species-profile h1 { margin: 0 0 8px; font-size: var(--font-size-large); line-height: var(--line-height-heading); letter-spacing: var(--letter-spacing-normal); }
 .species-profile h1:focus-visible { outline: 1px solid var(--resources-medium); outline-offset: 3px; }
 .species-types { display: flex; align-items: center; gap: 4px; }
 .species-types img { display: block; width: 20px; height: 20px; object-fit: contain; }
-.species-gender { margin: 9px 0 0; color: #b8c0cc; font-size: .72rem; line-height: 1.6; }
+.species-gender { margin: 9px 0 0; color: var(--text-secondary-resource); font-size: var(--font-size-small); line-height: 1.6; }
 .species-tabs { display: grid; grid-template-columns: .95fr 1.55fr 1fr 1fr .65fr; }
-.species-tabs button { min-width: 0; min-height: 44px; padding: 6px 3px; border: 0; background: transparent; color: #939ba6; font-size: .65rem; line-height: 1.4; }
+.species-tabs button { min-width: 0; min-height: 44px; padding: 6px 3px; border: 0; background: transparent; color: var(--text-muted); font-size: var(--font-size-body); line-height: var(--line-height-body); }
 .species-tab-label { display: inline-block; max-width: 100%; padding-bottom: 2px; border-bottom: 2px solid transparent; }
 .species-tabs button[aria-selected="true"] { color: var(--resources-neon); }
 .species-tabs button[aria-selected="true"] .species-tab-label { border-bottom-color: var(--resources-medium); }
 .species-tabs button:focus-visible { outline-offset: -3px; }
 .species-section { margin-top: 16px; }
 .species-profile #species-overview > .species-section:first-child { margin-top: 8px; }
-.species-section h2 { display: flex; align-items: baseline; gap: 9px; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 1px solid #f4b40055; color: var(--resources-neon); font-size: .85rem; font-weight: 650; }
-.species-section h2 span { color: #b8c0cc; font-size: .72rem; font-weight: 400; }
-.species-section > p, .species-abilities dd { margin: 0; color: #c2c7cf; font-size: .85rem; line-height: 1.65; }
+.species-section h2 { display: flex; align-items: baseline; gap: 9px; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 1px solid #f4b40055; color: var(--resources-neon); font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); }
+.species-section h2 span { color: var(--text-secondary-resource); font-size: var(--font-size-small); font-weight: var(--font-weight-regular); }
+.species-section > p, .species-abilities dd { margin: 0; color: #c2c7cf; font-size: var(--font-size-body); line-height: 1.65; }
 .species-abilities { margin: 0; display: grid; gap: 12px; }
-.species-abilities dt { margin-bottom: 3px; font-size: .85rem; font-weight: 600; }
+.species-abilities dt { margin-bottom: 3px; font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); }
 .species-artwork-small { width: 64px; max-width: 100%; height: 64px; }
-.species-evolution-name { max-width: 100%; margin: 4px 0 0; color: #e3e6eb; font-size: .75rem; line-height: 1.5; overflow-wrap: anywhere; }
+.species-evolution-name { max-width: 100%; margin: 4px 0 0; color: var(--text-primary-resource); font-size: var(--font-size-body); line-height: var(--line-height-relaxed); overflow-wrap: anywhere; }
 .species-note { margin-top: 10px !important; }
-@media (min-width: 700px) { .species-identity { grid-template-columns: 200px minmax(0, 1fr); } .species-tabs button { font-size: .8rem; } }
+@media (min-width: 700px) { .species-identity { grid-template-columns: 200px minmax(0, 1fr); } .species-tabs button { font-size: var(--font-size-body); } }
 
 .species-evolution-grid { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 360px; margin-inline: auto; gap: 16px 12px; }
 .species-evolution-grid-member { flex: 0 0 calc((100% - 24px) / 3); max-width: 112px; display: flex; flex-direction: column; align-items: center; min-width: 0; text-align: center; }
-.species-evolution-grid-method { margin: 5px 0 0; color: #a2a9b4; font-size: .65rem; line-height: 1.4; overflow-wrap: anywhere; }
+.species-evolution-grid-method { margin: 5px 0 0; color: var(--text-muted-soft); font-size: var(--font-size-small); line-height: var(--line-height-body); overflow-wrap: anywhere; }
 
 .species-evolution-artwork-link { display: grid; place-items: center; flex-shrink: 0; width: 64px; max-width: 100%; height: 64px; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; }
 
 .species-profile #species-stats-content > .species-section:first-child { margin-top: 8px; }
 .species-base-stats { display: grid; gap: 2px; }
-.species-base-stat { display: grid; grid-template-columns: 94px 28px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 20px; font-size: .8rem; }
-.species-base-stat strong { text-align: right; font-size: .8rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.species-base-stat { display: grid; grid-template-columns: 94px 28px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 20px; font-size: var(--font-size-body); }
+.species-base-stat strong { text-align: right; font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); font-variant-numeric: var(--font-numeric-tabular); }
 /* The global .stat-* classes are the existing My Pokémon color mapping. */
 .species-stat-track { height: 6px; border-radius: 4px; background: #363e49; }
 .species-stat-track > span { display: block; height: 100%; border-radius: inherit; background: var(--stat-color); }
-.species-section > .species-base-stat-total { display: flex; justify-content: flex-end; align-items: baseline; gap: 8px; margin-top: 8px; color: #939ba6; font-size: .72rem; }
-.species-base-stat-total strong { color: #e3e6eb; font-size: .75rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.species-section > .species-base-stat-total { display: flex; justify-content: flex-end; align-items: baseline; gap: 8px; margin-top: 8px; color: var(--text-muted); font-size: var(--font-size-small); }
+.species-base-stat-total strong { color: var(--text-primary-resource); font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); font-variant-numeric: var(--font-numeric-tabular); }
 .species-type-matchup { display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #ffffff0b; }
-.species-matchup-multiplier { font-size: .85rem; font-weight: 600; line-height: 20px; }
+.species-matchup-multiplier { font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); line-height: 20px; }
 .species-matchup-types { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .species-matchup-types img { display: block; width: 20px; height: 20px; object-fit: contain; }
 .species-type-matchup[data-multiplier="4"] .species-matchup-multiplier { color: #D85260; }
@@ -52,7 +52,7 @@
 .species-type-matchup[data-multiplier="0.25"] .species-matchup-multiplier { color: #379968; }
 .species-type-matchup[data-multiplier="0"] .species-matchup-multiplier { color: #A4A9B6; }
 
-.species-more { margin: 8px 0 0; font-size: .8rem; line-height: 1.55; }
+.species-more { margin: 8px 0 0; font-size: var(--font-size-body); line-height: 1.55; }
 .species-more > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 7px 0; }
-.species-more dt { color: #939ba6; }
-.species-more dd { margin: 0; min-width: 0; color: #e3e6eb; overflow-wrap: anywhere; }
+.species-more dt { color: var(--text-muted); }
+.species-more dd { margin: 0; min-width: 0; color: var(--text-primary-resource); overflow-wrap: anywhere; }

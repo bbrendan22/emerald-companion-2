@@ -27,16 +27,17 @@ export default function App() {
     setPageId(id);
     setDrawerOpen(false);
     window.scrollTo({top: 0});
-    requestAnimationFrame(() => (heading.current ?? document.getElementById('main'))?.focus());
+    // Destination focus must not undo the navigation scroll reset.
+    requestAnimationFrame(() => (heading.current ?? document.getElementById('main'))?.focus({preventScroll:true}));
   }
   return <div className="app" style={{'--accent': pageId === 'home' && !subpage ? '#393D44' : page.color}}>
     <a className="skip-link" href="#main">Skip to content</a>
-    <Header menuRef={navigationButton} onBack={pageId === 'pokemon' || pageId === 'home' ? subpage?.onBack : undefined} backLabel={pageId === 'home' ? (subpage?.backLabel ?? 'Back to Resources') : 'Back to collection'} title={pageId === 'home' ? subpage?.title : undefined} onMenu={() => setDrawerOpen(previous => !previous)} drawerOpen={drawerOpen} onSettings={() => navigate('settings')} isSettings={pageId === 'settings'} />
+    <Header menuRef={navigationButton} onBack={pageId === 'home' ? subpage?.onBack : undefined} backLabel={subpage?.backLabel ?? 'Back to Resources'} title={pageId === 'home' ? subpage?.title : undefined} onMenu={() => setDrawerOpen(previous => !previous)} drawerOpen={drawerOpen} onSettings={() => navigate('settings')} isSettings={pageId === 'settings'} />
     <NavigationDrawer open={drawerOpen} anchorRef={navigationButton} onSelect={navigate} onClose={() => setDrawerOpen(false)} />
     <main id="main" tabIndex="-1" aria-label={page.title} className={`page ${pageId === 'home' ? (subpage ? 'resources-page' : 'home-page') : pageId === 'pokemon' ? 'pokemon-page' : pageId === 'battle' ? 'battle-page' : ''}`}>
       {pageId !== 'home' && pageId !== 'pokemon' && pageId !== 'battle' && <h1 ref={heading} tabIndex="-1">{page.title}</h1>}
       {pageId === 'home' ? <div className={`home-layout${subpage ? " home-detail" : ""}`}><div className="home-trainer"><TrainerPage {...importedSave} onImport={() => navigate('settings')} /></div><ResourcesPage onSubpageChange={setSubpage} /></div>
-        : pageId === 'pokemon' ? <PokemonPage snapshot={importedSave.snapshot} onSubpageChange={setSubpage} />
+        : pageId === 'pokemon' ? <PokemonPage snapshot={importedSave.snapshot} />
         : pageId === 'battle' ? <BattlePage snapshot={importedSave.snapshot} battle={battle} />
         : pageId === 'settings' ? <SettingsPage {...importedSave} />
         : <ResourcesPage onSubpageChange={setSubpage} />}

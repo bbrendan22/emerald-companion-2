@@ -1,10 +1,10 @@
-/* Profile section-heading pattern, shared with the Trainer dashboard. */
-.profile-card h2, .profile-info .profile-fields dt, .trainer-content h2 {
+/* Trainer dashboard section headings. */
+.trainer-content h2 {
   color: var(--section-heading-color, #cce5ff);
-  font-size: .8rem;
-  font-weight: 650;
-  line-height: 1.35;
-  letter-spacing: normal;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-compact);
+  letter-spacing: var(--letter-spacing-normal);
   text-transform: none;
   width: fit-content;
   max-width: 100%;

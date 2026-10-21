@@ -27,7 +27,7 @@ try {
  assert.match(await page.locator('#species-profile-title').innerText(),/Bulbasaur/i);
  await page.getByRole('button',{name:'Back to Home',exact:true}).tap();
  assert.equal(await search.inputValue(),'');assert.ok(await normal.count()>0);
- await search.fill('zzzzzz');assert.equal(await results.innerText(),'No matching results');
+ await search.fill('zzzzzz');assert.equal(await results.innerText(),'No results.');
  await page.getByRole('button',{name:'Clear search',exact:true}).tap();assert.ok(await normal.count()>0);
  for(const width of [320,375,430]){
   await page.setViewportSize({width,height:600});

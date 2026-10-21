@@ -1,0 +1,35 @@
+/* Same surface and overlay treatment as Resources database-entry dialogs. */
+.collection-detail-viewport {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: calc(max(var(--collection-detail-header-bottom, 0px), env(safe-area-inset-top)) + 8px) max(var(--page-gutter), env(safe-area-inset-right)) 0 max(var(--page-gutter), env(safe-area-inset-left));
+  border: 0;
+  outline: none;
+  background: transparent;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.collection-detail-viewport[open] { display: grid; grid-template-rows: minmax(0, 1fr); justify-items: center; }
+.collection-detail-viewport::backdrop { background: #0009; }
+.collection-detail-surface {
+  width: 100%;
+  max-width: 760px;
+  min-height: 0;
+  padding: 17px 17px calc(17px + env(safe-area-inset-bottom));
+  border: 1px solid #393d44;
+  border-radius: 8px;
+  background: #202329;
+  color: var(--text-primary-resource);
+  box-shadow: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}

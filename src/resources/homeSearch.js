@@ -1,3 +1,4 @@
+import {matchesDirectoryFilters} from './homeDirectoryFilters.js';
 import {resourceIndex} from './search.js';
 import {items, machines} from './items/utils/itemEntries.js';
 import {itemCategories, itemCategory} from './items/utils/itemCategories.js';
@@ -21,10 +22,10 @@ export function searchHomeResources(value) {
 
 // A directory exposes the same canonical projection without Master Search's
 // empty-query suppression or cross-category grouping.
-export function homeDirectory(category, value = '') {
+export function homeDirectory(category, value = '', filters = {}) {
   const group = groups.find(group => group.id === category);
   if (!group) return null;
   const prefix = value.trim().toLowerCase();
   return {id:group.id, title:category === 'pokemon' ? 'Pokédex' : group.title,
-    results:group.entries.filter(entry => matchesEntry(entry, prefix))};
+    results:group.entries.filter(entry => matchesEntry(entry, prefix) && matchesDirectoryFilters(category, entry, filters))};
 }

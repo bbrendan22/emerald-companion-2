@@ -1,82 +1,62 @@
+import {customNickname} from '../pokemonDisplayName.js';
 import PokemonName from '../components/PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
-import React, {useMemo, useState, useRef, useCallback, useEffect, useLayoutEffect} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {identifyPokemon, filterPokemon, loadRoles, storeRole, locationName} from '../../storage/pokemonRoles.js';
 import '../styles/pokemon.css';
-import {filterDetails, representedGames, originGames, typeOptions, collectionImage} from '../collectionFilters.js';
-import PokemonProfile from './PokemonProfile.jsx';
-import pokemonTypes from '../../data/pokemonTypes.json';
+import {collectionImage, filterDetails, typeOptions} from '../collectionFilters.js';
+import CollectionDetailDialog from '../components/CollectionDetailDialog.jsx';
+import CollectionPokemonOverview from '../components/CollectionPokemonOverview.jsx';
 
-export default function PokemonPage({snapshot, onSubpageChange}) {
-  const [view, setView] = useState('Gallery');
+export default function PokemonPage({snapshot}) {
   const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState('All');
-  const [details, setDetails] = useState({generation: 'All', type: 'All', game: 'All'});
+  const [details, setDetails] = useState({type:'All', generation:'All'});
+  const [category, setCategory] = useState(null);
+  const [filterOpen, setFilterOpen] = useState(false);
   const [selected, setSelected] = useState(null);
-  const collectionScroll = useRef(0);
-  const originButton = useRef(null);
-  const wasSelected = useRef(false);
-  const closeProfile = useCallback(() => setSelected(null), []);
-  useEffect(() => {
-    onSubpageChange?.(selected ? {onBack: closeProfile} : null);
-    return () => onSubpageChange?.(null);
-  }, [selected, closeProfile, onSubpageChange]);
-  useLayoutEffect(() => {
-    if (selected) { window.scrollTo({top:0}); document.getElementById('pokemon-profile-title')?.focus({preventScroll:true}); }
-    else if (wasSelected.current) { originButton.current?.focus({preventScroll:true}); window.scrollTo({top:collectionScroll.current}); }
-    wasSelected.current = Boolean(selected);
-  }, [selected]);
-  function openProfile(pokemon, event) {
-    collectionScroll.current = window.scrollY;
-    originButton.current = event.currentTarget;
-    setSelected(pokemon.identity);
-  }
+  const search = useRef(null);
   const [roleState, setRoleState] = useState(() => {
     try { return {assigned: loadRoles(window.localStorage), error: ''}; }
     catch { return {assigned: {}, error: 'Saved roles could not be loaded. Browser storage may be unavailable.'}; }
   });
   const records = useMemo(() => identifyPokemon(snapshot?.collection.records ?? []), [snapshot]);
-  const games = representedGames(records);
-  const effectiveDetails = {...details, game: games.some(g => g.id === details.game) ? details.game : 'All'};
-  const visible = filterDetails(filterPokemon(records, roleState.assigned, query, filter), effectiveDetails);
-  const pokemon = records.find(p => p.identity === selected);
-  function assign(role) {
-    try { setRoleState({assigned: storeRole(window.localStorage, roleState.assigned, pokemon.identity, role), error: ''}); }
-    catch { setRoleState(previous => ({...previous, error: 'Role could not be saved. Browser storage may be unavailable or full.'})); }
+  const visible = useMemo(() => filterDetails(filterPokemon(records, roleState.assigned, query, category === 'Shiny' ? 'Shinies' : category ?? 'All'), details), [records, roleState.assigned, query, category, details]);
+  const pokemon = records.find(record => record.identity === selected);
+  function assignRole(role) {
+    try {setRoleState({assigned:storeRole(window.localStorage, roleState.assigned, selected, role), error:''});}
+    catch {setRoleState(previous => ({...previous, error:'Role could not be saved. Browser storage may be unavailable or full.'}));}
   }
+  useEffect(() => {
+    if (!filterOpen) return;
+    const dismiss = event => {if (!search.current?.contains(event.target)) setFilterOpen(false);};
+    const escape = event => {if (event.key === 'Escape') {setFilterOpen(false); search.current?.querySelector('.collection-filter-toggle')?.focus({preventScroll:true});}};
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {document.removeEventListener('pointerdown', dismiss); document.removeEventListener('keydown', escape);};
+  }, [filterOpen]);
   if (!snapshot) return <div className="placeholder"><p>Import your Emerald save in Settings to view your Pokémon.</p></div>;
-  return <>
-    {pokemon && <PokemonProfile key={pokemon.identity} pokemon={pokemon} role={roleState.assigned[pokemon.identity] ?? 'Collection'} onAssign={assign} error={roleState.error} />}
-    <section hidden={Boolean(pokemon)} className="pokemon-collection" aria-label="Pokémon collection">
-    <div className="collection-controls">
-    <div className="collection-segments collection-filters" aria-label="Filter Pokémon">{['All', 'Frontier', 'Utility', 'Shinies'].map(name => <button key={name} type="button" aria-pressed={filter === name} onClick={() => setFilter(name)}>{name}</button>)}</div>
-    <div className="collection-toolbar">
-      <div className="collection-search"><input aria-label="Search Pokémon" type="search" placeholder="Species or nickname" value={query} onChange={e => setQuery(e.target.value)} /></div>
-      <div className="collection-segments collection-view" aria-label="Collection view">{['Gallery', 'Box'].map(mode => <button key={mode} type="button" aria-label={mode} title={mode} aria-pressed={view === mode} onClick={() => setView(mode)}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">{mode === 'Gallery' ? <><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></> : <><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11M15 9v11M3 14h18"/></>}</svg></button>)}</div>
+  return <section className="collection-layout pokemon-collection" aria-label="Pokémon collection">
+    <div className="collection-search-row" ref={search}>
+      <input className="collection-simple-search" aria-label="Search Pokémon" type="search" placeholder="Search" value={query} onChange={event => setQuery(event.target.value)} />
+      {query && <button type="button" className="collection-search-clear" aria-label="Clear Pokémon search" onClick={() => setQuery('')}>×</button>}
+      <button type="button" className="collection-filter-toggle" aria-label="Filter Collection" aria-haspopup="dialog" aria-expanded={filterOpen} data-active={details.type !== 'All' || details.generation !== 'All'} onClick={() => {search.current.querySelector('input')?.blur(); setFilterOpen(value => !value);}}><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M3 5h14M5 10h10M8 15h4" /></svg></button>
+      {filterOpen && <div role="dialog" aria-label="Collection filters" className="collection-filter-popup">
+        <label>Type<select aria-label="Type" value={details.type} onChange={event => {setDetails(value => ({...value,type:event.target.value})); setFilterOpen(false);}}><option value="All">All</option>{typeOptions.map(type => <option key={type} value={type}>{type[0].toUpperCase()+type.slice(1)}</option>)}</select></label>
+        <label>Generation<select aria-label="Generation" value={details.generation} onChange={event => {setDetails(value => ({...value,generation:event.target.value})); setFilterOpen(false);}}><option value="All">All</option>{[1,2,3].map(gen => <option key={gen} value={String(gen)}>Generation {gen}</option>)}</select></label>
+        <button type="button" onClick={() => {setDetails({type:'All',generation:'All'}); setFilterOpen(false);}}>Clear Filters</button>
+      </div>}
     </div>
-
-    <div className="collection-dropdowns">
-      <select aria-label="Generation" value={details.generation} onChange={e => setDetails(previous => ({...previous, generation: e.target.value}))}>
-        <option value="All">Generation: All</option>{[1, 2, 3].map(gen => <option key={gen} value={String(gen)}>Gen {gen}</option>)}
-      </select>
-      <select aria-label="Type" value={details.type} onChange={e => setDetails(previous => ({...previous, type: e.target.value}))}>
-        <option value="All">Type: All</option>{typeOptions.map(type => <option key={type} value={type}>{type[0].toUpperCase() + type.slice(1)}</option>)}
-      </select>
-      <select aria-label="Game" value={effectiveDetails.game} onChange={e => setDetails(previous => ({...previous, game: e.target.value}))}>
-        <option value="All">Game: All</option>{games.map(game => <option key={game.id} value={game.id}>{game.name}</option>)}
-      </select>
-    </div>
-    </div>
-    {records.some(p => !originGames[p.origin?.gameId]) && <p className="collection-note">Origin game is unavailable or unrecognized for some Pokémon. They appear with Game: All.</p>}
-    {roleState.error && <p role="alert">{roleState.error}</p>}
-    <div className={`pokemon-grid ${view === 'Box' ? 'box-grid' : ''}`}>
-      {visible.map(p => <button type="button" key={p.identity} className="pokemon-card" aria-pressed={selected === p.identity} aria-label={`${p.speciesName}, ${p.nickname}, ${p.isEgg ? 'Egg' : `level ${p.recorded?.level ?? p.derivedLevel}`}${p.shiny ? ', shiny' : ''}, ${locationName(p.source)}, ${roleState.assigned[p.identity] ?? 'Collection'}`} onClick={event => openProfile(p, event)}>
-        {view === 'Gallery' && <span className="pokemon-card-top"><span>#{String(p.nationalDexId).padStart(3, '0')}</span><span>{p.isEgg ? 'Egg' : `Lv. ${p.recorded?.level ?? p.derivedLevel}`} {p.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}</span></span>}
-        <img className="pokemon-sprite" loading="lazy" alt="" src={publicAsset(collectionImage(p, view))} />
-        {view === 'Gallery' && <><span className="pokemon-name"><PokemonName>{p.speciesName}</PokemonName></span><span className="pokemon-types">{pokemonTypes[p.nationalDexId].slice(0, 2).map(type => <img key={type} src={publicAsset(`/types/icons/${type}.png`)} alt={`${type} type`} width="14" height="14" />)}</span></>}
-
+    <div className="collection-quick-roles collection-role-toggles" aria-label="Filter Pokémon categories">{['Frontier','Utility','Shiny'].map(name => <button type="button" key={name} aria-pressed={category === name} onClick={() => setCategory(current => current === name ? null : name)}>{name}</button>)}</div>
+    {roleState.error && !pokemon && <p role="alert">{roleState.error}</p>}
+    {!visible.length && <p className="collection-empty" role="status">{records.length || category ? 'No results.' : 'Your Collection is empty. Pokémon in your party, PC, and Day Care will appear here.'}</p>}
+    {pokemon && <CollectionDetailDialog onClose={() => setSelected(null)}>
+      <CollectionPokemonOverview key={pokemon.identity} pokemon={pokemon} role={roleState.assigned[pokemon.identity] ?? 'Collection'} onAssign={assignRole} error={roleState.error}/>
+    </CollectionDetailDialog>}
+    <div className="pokemon-grid" aria-label="Pokémon gallery">
+      {visible.map(p => <button type="button" key={p.identity} className="pokemon-card" aria-label={`${p.speciesName}, ${p.nickname}, ${p.isEgg ? 'Egg' : `level ${p.recorded?.level ?? p.derivedLevel}`}${p.shiny ? ', shiny' : ''}, ${locationName(p.source)}, ${roleState.assigned[p.identity] ?? 'Collection'}`} onClick={() => {setFilterOpen(false); setSelected(p.identity);}}>
+        <img className="pokemon-sprite" loading="lazy" alt="" src={publicAsset(collectionImage(p,'Gallery'))}/>
+        <span className="pokemon-name" title={customNickname(p) ?? p.speciesName}><PokemonName>{customNickname(p) ?? p.speciesName}</PokemonName></span>{p.shiny && <span className="shiny-star" aria-label="Shiny">★</span>}
       </button>)}
     </div>
-    {!visible.length && <p className="collection-empty">No results.</p>}
-  </section></>;
+  </section>;
 }

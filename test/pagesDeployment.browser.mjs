@@ -54,10 +54,8 @@ try {
   assert.ok(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.save.v1')));
   await page.reload();await images();
   await navigate('Collection');await images();
-  await page.locator('.pokemon-card').first().click();await images();
-  await page.locator('.profile-roles').getByRole('button',{name:'Frontier',exact:true}).click();
-  await page.getByRole('button',{name:'Back to collection',exact:true}).click();
-  await page.getByRole('button',{name:'Box',exact:true}).click();await images();
+  await page.locator('.pokemon-card').first().click();await page.keyboard.press('Escape');await images();
+  assert.equal(await page.getByRole('dialog').count(),0);
   await navigate('Home');await images();
   await navigate('Battle');await images();
   await page.getByRole('tab',{name:'Trainers',exact:true}).click();await images();

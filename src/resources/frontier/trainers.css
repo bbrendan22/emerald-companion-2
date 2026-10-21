@@ -1,22 +1,22 @@
 .frontier-trainers-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 12px; border-bottom: 1px solid #ffffff12; }
-.frontier-trainers-tabs button { min-width: 0; min-height: 40px; padding: 8px 2px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #b8c0cc; font: inherit; font-size: .75rem; line-height: 1.4; }
+.frontier-trainers-tabs button { min-width: 0; min-height: 40px; padding: 8px 2px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--text-secondary-resource); font: inherit; font-size: var(--font-size-body); line-height: var(--line-height-body); }
 .frontier-trainers-tabs button[aria-selected="true"] { color: var(--resources-neon); border-bottom-color: var(--resources-medium); }
 .frontier-trainers-tabs button:focus-visible { outline: 1px solid var(--resources-medium); outline-offset: -3px; }
 .frontier-trainer-list > li { border-bottom: 1px solid #ffffff12; }
-.frontier-trainer-toggle { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: 8px; width: 100%; min-height: 60px; padding: 6px 0; border: 0; border-radius: 0; background: transparent; color: #e3e6eb; text-align: left; font: inherit; cursor: pointer; }
+.frontier-trainer-toggle { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: 8px; width: 100%; min-height: 60px; padding: 6px 0; border: 0; border-radius: 0; background: transparent; color: var(--text-primary-resource); text-align: left; font: inherit; cursor: pointer; }
 .frontier-trainer-toggle:is(:hover, :active) { background: transparent; }
 .frontier-trainer-toggle:focus-visible { outline: 1px dashed #939ba6; outline-offset: -2px; }
 .frontier-trainer-toggle > img { width: 48px; height: 48px; object-fit: contain; image-rendering: pixelated; }
 .frontier-trainer-identity { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.frontier-trainer-identity strong { font-size: .75rem; font-weight: 650; }
-.frontier-trainer-subtitle { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 4px; color: #b8c0cc; font-size: .65rem; overflow-wrap: anywhere; }
+.frontier-trainer-identity strong { font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); }
+.frontier-trainer-subtitle { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 4px; color: var(--text-secondary-resource); font-size: var(--font-size-small); overflow-wrap: anywhere; }
 .frontier-trainer-iv-label { white-space: nowrap; }
-.frontier-trainer-pool-size { color: #b8c0cc; font-size: .65rem; line-height: 1.35; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.frontier-trainer-pool-size { color: var(--text-secondary-resource); font-size: var(--font-size-small); line-height: var(--line-height-compact); white-space: nowrap; font-variant-numeric: var(--font-numeric-tabular); }
 .frontier-trainer-details { padding: 2px 0 10px; }
-.frontier-trainer-details h2 { margin: 0 0 6px; color: var(--resources-neon); font-size: .7rem; font-weight: 500; }
+.frontier-trainer-details h2 { margin: 0 0 6px; color: var(--resources-neon); font-size: var(--font-size-heading); font-weight: var(--font-weight-regular); }
 .frontier-trainer-details section + section { margin-top: 10px; }
 .frontier-trainer-details .frontier-trainer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 8px; }
-.frontier-trainer-grid li { display: flex; align-items: center; gap: 3px; min-width: 0; color: #e3e6eb; font-size: .65rem; line-height: 1.35; }
+.frontier-trainer-grid li { display: flex; align-items: center; gap: 3px; min-width: 0; color: var(--text-primary-resource); font-size: var(--font-size-body); line-height: var(--line-height-compact); }
 .frontier-trainer-grid img { flex-shrink: 0; width: 32px; height: 32px; object-fit: contain; image-rendering: pixelated; }
 .frontier-trainer-grid li > span { min-width: 0; overflow-wrap: anywhere; }
 @media (max-width: 350px) {

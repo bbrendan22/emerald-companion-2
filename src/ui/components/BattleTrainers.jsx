@@ -9,7 +9,7 @@ export default function BattleTrainers({state, dispatch}) {
   const selected = selectedTowerTrainer(state)?.key;
   return <section className="battle-trainer-search" aria-label="Tower trainers">
     <label className="battle-trainer-search-field"><span className="battle-visually-hidden">Search trainers</span>
-      <input type="search" placeholder="Search trainers…" value={query} onFocus={() => setQuery('')} onChange={event => setQuery(event.target.value)} autoComplete="off" autoCapitalize="none" spellCheck="false" />
+      <input type="search" placeholder="Search" value={query} onFocus={() => setQuery('')} onChange={event => setQuery(event.target.value)} autoComplete="off" autoCapitalize="none" spellCheck="false" />
     </label>
     <div className="battle-trainer-results" aria-label="Trainer results">
       {results.map(entry => <button key={entry.key} type="button" className="battle-trainer-result" aria-pressed={selected === entry.key}

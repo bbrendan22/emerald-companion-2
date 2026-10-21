@@ -48,9 +48,8 @@ try {
    await page.screenshot({path:`/private/tmp/trainer-stage37-${gender?'may':'brendan'}-${width}.png`,fullPage:true});
   }
  }
- // Smoke-check the existing collection, profile, and Settings routes.
- await page.getByRole('button',{name:'Open navigation',exact:true}).click();await page.getByRole('button',{name:'My Pokémon',exact:true}).click();await page.locator('.pokemon-card').first().click();await page.locator('.pokemon-profile').waitFor();
- const profileStyle=await page.locator('.profile-card h2').first().evaluate(e=>{const c=getComputedStyle(e);return [c.fontSize,c.fontWeight,c.letterSpacing,c.textTransform,c.borderBottomWidth,c.paddingBottom,c.marginBottom]});assert.deepEqual(profileStyle,['12.8px','650','normal','none','1px','4px','8px']);
+ // Smoke-check the existing collection and Settings routes.
+ await page.getByRole('button',{name:'Open navigation',exact:true}).click();await page.getByRole('button',{name:'My Pokémon',exact:true}).click();await page.locator('.pokemon-card').first().click();await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),0);
  await page.getByRole('button',{name:'Settings',exact:true}).click();await page.getByText('Your save file',{exact:true}).waitFor();await page.getByRole('button',{name:'Reset Showcase',exact:true}).waitFor();
- console.log('Dashboard checks passed: both artworks, stacked summaries, aligned 50/50 top and bottom cards, prominent artwork, all save-derived values, Champion, badge/symbol states, 4×2 badges, centered 4+3 symbols, six-sprite showcase row, 320/375/430/960px fit without zoom/overflow, collection/profile/Settings smoke checks.');
+ console.log('Dashboard checks passed: both artworks, stacked summaries, aligned 50/50 top and bottom cards, prominent artwork, all save-derived values, Champion, badge/symbol states, 4×2 badges, centered 4+3 symbols, six-sprite showcase row, 320/375/430/960px fit without zoom/overflow, collection/Settings smoke checks.');
 } finally {await browser.close();}

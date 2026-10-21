@@ -8,6 +8,6 @@ const colors = {
 
 export default function GameNames({ children }) {
   return String(children).split(/(Pokémon Box|FireRed|LeafGreen|Colosseum|Emerald|Sapphire|Ruby|\bColo\b|\bXD\b|\bFR\b|\bLG\b|\bR\b|\bS\b|\bE\b)/).map((part, index) =>
-    colors[part] ? <span key={index} style={{ color: colors[part], fontWeight: 600 }}>{part}</span> : part,
+    colors[part] ? <span key={index} style={{ color: colors[part], fontWeight: 'var(--font-weight-semibold)' }}>{part}</span> : part,
   )
 }

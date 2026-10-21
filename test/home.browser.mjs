@@ -44,7 +44,7 @@ try {
  const links=await page.locator('.home-resources a').evaluateAll(xs=>xs.map(x=>({id:x.id,href:x.getAttribute('href')})));
  for(const link of links){await page.locator(`a[href="${link.href}"]`).click();await page.locator('.home-trainer').waitFor({state:'hidden'});
  assert.ok(await page.locator('main').evaluate(x=>{const root=getComputedStyle(document.documentElement),current=getComputedStyle(x);return ['--trainer-medium','--resources-neon','--resources-medium'].every(key=>root.getPropertyValue(key).trim()===current.getPropertyValue(key).trim());}));await page.getByRole('button',{name:'Back to Resources',exact:true}).click();await page.locator('.home-resources').waitFor();}
- await navigate('Collection');await page.locator('.pokemon-card').first().click();await page.getByRole('button',{name:'Back to collection',exact:true}).click();
+ await navigate('Collection');await page.locator('.pokemon-card').first().click();await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),0);
  await navigate('Battle');
  assert.ok(await page.locator('main').evaluate(x=>getComputedStyle(x).getPropertyValue('--resources-neon')===getComputedStyle(document.documentElement).getPropertyValue('--resources-neon')));
  assert.ok(await page.locator('.battle-page').isVisible());

@@ -24,7 +24,7 @@ try {
   assert.equal(await page.locator('.resources-catalog, .resource-items-page, select').count(),0);
   await search.fill(query.toUpperCase());
   assert.equal(await list.locator('button').count(),homeDirectory(category,query).results.length);
-  await search.fill('zzzzzz');assert.equal(await list.innerText(),'No matching results');
+  await search.fill('zzzzzz');assert.equal(await list.innerText(),'No results.');
   await search.fill(query);
   await list.getByRole('button',{name,exact:true}).scrollIntoViewIfNeeded();
   const scroll=await list.evaluate(e=>e.scrollTop);
@@ -58,7 +58,7 @@ try {
     const label=button.querySelector('.home-result-name'),icon=button.querySelector('img, .home-result-icon-space'),r=icon?.getBoundingClientRect();
     return {font:getComputedStyle(label).fontSize,icon:r?[r.width,r.height]:null,overflow:button.scrollWidth>button.clientWidth};
    }));
-   for(const row of sizes){assert.equal(row.font,'10.72px');assert.equal(row.overflow,false);if(title!=='Abilities')assert.deepEqual(row.icon,[20,20]);}
+   for(const row of sizes){assert.equal(row.font,'12px');assert.equal(row.overflow,false);if(title!=='Abilities')assert.deepEqual(row.icon,[20,20]);}
    assert.equal(await list.evaluate(e=>e.scrollWidth>e.clientWidth),false);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    assert.equal(await page.locator('.home-search').evaluate(e=>getComputedStyle(e).fontSize),'16px');

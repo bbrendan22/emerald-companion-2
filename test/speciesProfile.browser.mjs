@@ -125,7 +125,7 @@ try {
       assert.deepEqual(polish.spacing, ['8px', '16px', '16px']);
       assert.equal(await profile.locator('.species-tabs').evaluate(element => getComputedStyle(element).borderBottomWidth), '0px');
       assert.ok(await profile.locator('.species-section h2').evaluateAll(headings => headings.every(heading => getComputedStyle(heading).borderBottomWidth === '1px')));
-      assert.equal(await profile.locator('.species-tabs button').first().evaluate(element => getComputedStyle(element).fontSize), width >= 700 ? '12.8px' : '10.4px');
+      assert.equal(await profile.locator('.species-tabs button').first().evaluate(element => getComputedStyle(element).fontSize), '12px');
       if (width >= 700) assert.equal(await profile.locator('.species-identity').evaluate(element => getComputedStyle(element).gridTemplateColumns.split(' ')[0]), '200px');
       const cells = profile.locator('.species-evolution-grid-member');
       assert.equal(await cells.count(), family.length);

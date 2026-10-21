@@ -1,12 +1,12 @@
 .import-panel { padding: 24px; border: 1px solid #ffffff0d; border-radius: 18px; background: #202328; }
-.import-panel h2 { margin: 0 0 12px; font-size: 1.1rem; }
-.import-panel p { color: #a2a9b4; font-size: .875rem; line-height: 1.7; }
-.file-label { display: block; margin: 24px 0 10px; font-size: .875rem; font-weight: 600; }
-.import-panel input { display: block; width: 100%; min-width: 0; font: inherit; font-size: .8125rem; color: #c7cdd5; }
-.import-panel input::file-selector-button { min-height: 44px; margin-right: 12px; padding: 10px 14px; background: #30363e; border: 1px solid #ffffff1a; border-radius: 8px; color: #f3f4f6; font: inherit; cursor: pointer; }
+.import-panel h2 { margin: 0 0 12px; font-size: var(--font-size-heading); }
+.import-panel p { color: var(--text-muted-soft); font-size: var(--font-size-body); line-height: 1.7; }
+.file-label { display: block; margin: 24px 0 10px; font-size: var(--font-size-small); font-weight: var(--font-weight-semibold); }
+.import-panel input { display: block; width: 100%; min-width: 0; font: inherit; font-size: var(--font-size-body); color: #c7cdd5; }
+.import-panel input::file-selector-button { min-height: 44px; margin-right: 12px; padding: 10px 14px; background: #30363e; border: 1px solid #ffffff1a; border-radius: 8px; color: var(--text-primary); font: inherit; cursor: pointer; }
 .import-panel input:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .import-panel input:disabled { opacity: .5; }
-.import-panel .import-note { margin-top: 20px; font-size: .75rem; }
+.import-panel .import-note { margin-top: 20px; font-size: var(--font-size-small); }
 .import-panel .import-error { color: #f4a2a5; }
 
 .settings-content { display: grid; gap: 16px; min-width: 0; }

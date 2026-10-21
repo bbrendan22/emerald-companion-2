@@ -1,0 +1,28 @@
+.collection-overview {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #ffffff12;
+}
+.collection-overview-artwork { display: block; width: 100%; max-width: 160px; aspect-ratio: 1; object-fit: contain; justify-self: center; }
+.collection-overview-identity { display: grid; gap: 6px; min-width: 0; }
+.collection-overview-name-line { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 6px; min-width: 0; }
+.collection-overview-name { min-width: 0; font-size: var(--font-size-large); font-weight: var(--font-weight-semibold); line-height: var(--line-height-heading); overflow-wrap: anywhere; }
+.collection-overview-level-group { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; }
+.collection-overview-level { white-space: nowrap; font-size: var(--font-size-body); font-variant-numeric: var(--font-numeric-tabular); }
+.collection-overview-gender { display: inline-flex; align-items: center; font-size: var(--font-size-small); }
+.collection-overview-gender[data-gender="male"] { color: #78a9e8; }
+.collection-overview-gender[data-gender="female"] { color: #ed8493; }
+.collection-overview-nickname { margin: 0; overflow-wrap: anywhere; font-size: var(--font-size-body); color: var(--text-secondary-resource); }
+.collection-overview-metadata { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: var(--font-size-small); color: var(--text-label); font-variant-numeric: var(--font-numeric-tabular); }
+.collection-overview-shiny { color: var(--text-status-warning); }
+.collection-overview-types { display: flex; gap: 5px; }
+.collection-overview-types img { display: block; width: 21px; height: 21px; object-fit: contain; }
+.collection-overview-role { position: relative; justify-self: start; min-width: 0; }
+.collection-overview-role-trigger { display: flex; align-items: center; gap: 5px; min-height: 30px; padding: 0; border: 0; background: transparent; color: var(--text-secondary-resource); font: inherit; }
+.collection-overview-role-options { position: absolute; z-index: 1; top: 100%; right: 0; width: 140px; padding: 4px; border: 1px solid #42464e; border-radius: 4px; background: #171a20; box-shadow: 0 5px 20px #0006; }
+.collection-overview-role-options button { display: block; width: 100%; min-height: 36px; padding: 8px; border: 0; background: transparent; text-align: left; font: inherit; }
+.collection-overview-role-options button[aria-pressed="true"] { background: #ffffff0a; font-weight: var(--font-weight-semibold); }
+.collection-overview-error { margin: 12px 0 0; color: var(--text-status-error); }

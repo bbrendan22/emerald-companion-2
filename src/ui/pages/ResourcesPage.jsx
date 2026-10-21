@@ -66,7 +66,7 @@ export default function ResourcesPage({onSubpageChange}) {
     {activeMove !== null && <MoveDialog moveId={activeMove} onClose={closeMove} />}
     {activeAbility !== null && <AbilityDialog abilityId={activeAbility} onClose={closeAbility} />}
     {activeItem !== null && <ItemDialog itemId={activeItem} onClose={closeItem} />}
-    <HomeResourceSearch directory={directory} directoryScroll={directoryScroll} onDirectoryQuery={query => setDirectory(previous => ({...previous,query}))} onDirectoryBack={() => {setDirectory(null); directoryScroll.current = 0;}} onSelect={(category, entry) => {
+    <HomeResourceSearch directory={directory} directoryScroll={directoryScroll} onDirectoryFilters={filters => setDirectory(previous => ({...previous, filters}))} onDirectoryQuery={query => setDirectory(previous => ({...previous,query}))} onDirectoryBack={() => {setDirectory(null); directoryScroll.current = 0;}} onSelect={(category, entry) => {
       if (category === 'pokemon') { setProfileDex(entry.id); window.scrollTo({top:0}); }
       else if (category === 'moves') setActiveMove(entry.id);
       else if (category === 'abilities') setActiveAbility(entry.id);

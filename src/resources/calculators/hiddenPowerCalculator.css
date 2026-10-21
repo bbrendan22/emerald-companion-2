@@ -1,20 +1,20 @@
 .hp-calculator { max-width: 620px; }
 .hp-heading-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.hp-heading-row h1 { color: var(--resources-neon); font-size: 1.15rem; margin: 0; }
-.hp-reset { border: 1px solid #434a54; border-radius: 4px; background: transparent; color: #b8c0cc; padding: 5px 9px; font: inherit; font-size: .75rem; cursor: pointer; }
+.hp-heading-row h1 { color: var(--resources-neon); font-size: var(--font-size-heading); margin: 0; }
+.hp-reset { border: 1px solid #434a54; border-radius: 4px; background: transparent; color: var(--text-secondary-resource); padding: 5px 9px; font: inherit; font-size: var(--font-size-body); cursor: pointer; }
 .hp-reset:focus-visible, .hp-calculator input:focus, .hp-calculator select:focus { outline: 1px solid #b8c0cc; outline-offset: 2px; }
 .hp-stat-row { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 5px; }
-.hp-stat-row label { display: grid; gap: 4px; min-width: 0; text-align: center; font-size: .75rem; }
+.hp-stat-row label { display: grid; gap: 4px; min-width: 0; text-align: center; font-size: var(--font-size-small); }
 .hp-stat-row label span, .hp-stat-row dt { color: var(--stat-color); }
-.hp-calculator input, .hp-calculator select { width: 100%; min-width: 0; box-sizing: border-box; border: 1px solid #434a54; border-radius: 4px; background: #20252c; color: #e3e6eb; font: inherit; padding: 6px 7px; }
-.hp-stat-row input { text-align: center; padding: 6px 1px; font-size: 16px; }
+.hp-calculator input, .hp-calculator select { width: 100%; min-width: 0; box-sizing: border-box; border: 1px solid #434a54; border-radius: 4px; background: #20252c; color: var(--text-primary-resource); font: inherit; font-size: var(--font-size-body); padding: 6px 7px; }
+.hp-stat-row input { text-align: center; padding: 6px 1px; font-size: var(--font-size-body); }
 .hp-stat-row input[aria-invalid="true"] { border-color: #ed8493; }
-.hp-error { color: #ed8493; font-size: .75rem; margin: 8px 0; }
-.hp-result, .hp-reference-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .85rem; }
+.hp-error { color: var(--text-status-error); font-size: var(--font-size-body); margin: 8px 0; }
+.hp-result, .hp-reference-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: var(--font-size-body); }
 .hp-result { min-height: 24px; margin: 12px 0; }
 .hp-result img, .hp-reference-heading img { display: block; object-fit: contain; }
-.hp-type-selector { display: grid; gap: 6px; color: var(--resources-neon); font-size: .75rem; }
-.hp-type-selector select { height: 32px; padding: 5px 4px; font-size: .8rem; }
+.hp-type-selector { display: grid; gap: 6px; color: var(--resources-neon); font-size: var(--font-size-body); }
+.hp-type-selector select { height: 32px; padding: 5px 4px; font-size: var(--font-size-body); }
 .hp-reference { margin-top: 12px; }
-.hp-reference .hp-stat-row { margin: 10px 0 0; text-align: center; font-size: .75rem; }
-.hp-stat-row dd { margin: 5px 0 0; color: #e3e6eb; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.hp-reference .hp-stat-row { margin: 10px 0 0; text-align: center; font-size: var(--font-size-body); }
+.hp-stat-row dd { margin: 5px 0 0; color: var(--text-primary-resource); font-size: var(--font-size-body); font-variant-numeric: var(--font-numeric-tabular); }

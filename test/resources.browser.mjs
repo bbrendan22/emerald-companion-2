@@ -54,7 +54,7 @@ try {
     });
     assert.equal(geometry.gap, 18); assert.equal(geometry.fieldHeight, 46);
     assert.ok(geometry.heights.every(height => height === 40));
-    assert.ok(geometry.fonts.every(font => font === '14.4px'));
+    assert.ok(geometry.fonts.every(font => font === '12px'));
 
     for (const [linkIndex, link] of (await page.locator('.resources-section:has(#resources-pokemon-heading) .resources-destinations a').all()).entries()) {
       const bounds = await link.boundingBox();
@@ -184,11 +184,9 @@ try {
   const encoded = Buffer.from(makeSave({blocks: {storage}})).toString('base64');
   await page.evaluate(encoded => localStorage.setItem('emerald-companion-2.save.v1', encoded), encoded);
   await page.reload(); await navigate('My Pokémon');
-  await page.locator('.pokemon-card').first().click(); await page.locator('.pokemon-profile').waitFor();
+  await page.locator('.pokemon-card').first().click();await page.keyboard.press('Escape'); assert.equal(await page.getByRole('dialog').count(),0);
   await expectHeader('Emerald Companion');
-  await page.getByRole('button', {name: 'Back to collection', exact: true}).click();
   await page.locator('.pokemon-card').first().waitFor();
-  assert.equal(await page.locator('.pokemon-profile').count(), 0);
   await navigate('Resources'); await search.fill('surf');
   await page.getByRole('link', {name: 'Moves', exact: true}).click();
   await navigate('Resources'); assert.equal(await search.inputValue(), 'surf');

@@ -10,6 +10,9 @@ import {readCollection} from '../src/save/readCollection.js';
 import {readPokemon} from '../src/save/readPokemon.js';
 import {readHallOfFame} from '../src/save/readHallOfFame.js';
 import {NATURES} from '../src/save/stats.js';
+import {identifyGameCubeOrigin} from '../src/pokemon/gameCubeOrigin.js';
+import {pokemonOrigin} from '../src/ui/pokemonOrigin.js';
+import {earnedRibbons} from '../src/pokemon/profile.js';
 const dir=fileURLToPath(new URL('./fixtures/real/',import.meta.url));
 const manifest=join(dir,'expected.private.json');
 const hasFixture=Boolean(process.env.EMERALD_REAL_SAVE)||readdirSync(dir).some(f=>/\.sav$/i.test(f));
@@ -28,6 +31,33 @@ const rawFields=p=>({source:p.source,internalSpeciesId:p.internalSpeciesId,nickn
   experience:p.experience,natureIndex:NATURES.indexOf(p.nature),abilitySlot:p.ability.slot,heldItemId:p.heldItemId,
   ivs:p.ivs,evs:p.evs,moves:p.moves.map(({id,currentPp,ppUps})=>({id,currentPp,ppUps})),isEgg:p.isEgg,headerIsEgg:p.headerIsEgg,
   origin:p.origin,pokerus:p.pokerus,ribbonRaw:p.ribbons.raw,recorded:p.recorded});
+
+test('real save: all 51 GameCube origins and locations match the reviewed research independently',options,()=>{
+  const {save,data}=fixture();
+  const expectations=JSON.parse(readFileSync(join(dir,'gamecube-origin.expected.private.json'),'utf8'));
+  assert.equal(hash(data),expectations.sha256);
+  const records=readCollection(save).records.filter(p=>p.origin.gameId===15);
+  assert.equal(records.length,51);
+  const before=structuredClone(records);
+  for(const pokemon of records)assert.equal(identifyGameCubeOrigin(pokemon),'colosseum');
+  assert.deepEqual(records.map(p=>({species:p.speciesName,metLocationId:p.origin.metLocationId,metLevel:p.origin.metLevel,location:pokemonOrigin(p).metLocation})),expectations.records);
+  assert.ok(records.every(p=>pokemonOrigin(p).game==='Colosseum'));
+  assert.deepEqual(records,before);
+});
+
+test('real save: ribbon ownership matches saved award bits, including all 48 purified Pokémon',options,()=>{
+  const {save,expected}=fixture();
+  const records=readCollection(save).records;
+  const awards=records.map(p=>earnedRibbons(p.ribbons.raw).map(r=>r.file));
+  assert.equal(awards.filter(r=>r.length===0).length,16);
+  assert.equal(awards.filter(r=>r.includes('champion-ribbon')).length,6);
+  assert.equal(awards.filter(r=>r.includes('national-ribbon')).length,48);
+  for(const [i,names] of awards.entries()) {
+    const raw=expected.records[i].ribbonRaw;
+    assert.equal(names.includes('champion-ribbon'),Boolean(raw & (1<<15)));
+    assert.equal(names.includes('national-ribbon'),Boolean(raw & (1<<24)));
+  }
+});
 
 test('real save: size, both slot diagnostics and newest valid selection match independent reader',options,()=>{
   const {expected:e,data,save:s}=fixture();assert.equal(data.length,e.size);assert.deepEqual(s.slots,e.slots);

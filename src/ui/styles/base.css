@@ -1,13 +1,45 @@
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #f3f4f6;
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.4;
+  --line-height-compact: 1.35;
+  --line-height-relaxed: 1.5;
+  --letter-spacing-normal: normal;
+  --letter-spacing-label: .025em;
+  --letter-spacing-brand: -.025em;
+  --font-numeric-tabular: tabular-nums;
+  --font-numeric-proportional: proportional-nums;
+  /* Exact aliases for the existing palette, including established surface variants. */
+  --text-primary: #f3f4f6;
+  --text-primary-resource: #e3e6eb;
+  --text-secondary: #b5bbc5;
+  --text-secondary-resource: #b8c0cc;
+  --text-muted: #939ba6;
+  --text-muted-soft: #a2a9b4;
+  --text-label: #9da7b3;
+  --text-status-success: #69d99a;
+  --text-status-warning: #ffd85c;
+  --text-status-error: #ed8493;
+  --font-size-large: 1rem;
+  --font-size-heading: .8125rem;
+  --font-size-body: .75rem;
+  --font-size-small: .625rem;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  font-family: var(--font-family-system);
+  color: var(--text-primary);
   background: #17191c;
   color-scheme: dark;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
 * { box-sizing: border-box; }
-body { margin: 0; }
+body { margin: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-regular); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-normal); }
+/* Defaults also cover unclassified text and browser-default heading weights. */
+:where(h1,h2,h3,h4,h5,h6) { line-height: var(--line-height-heading); font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); }
+:where(strong,b,th) { font-weight: var(--font-weight-semibold); }
+:where(small,label,dt,legend) { font-size: var(--font-size-small); }
+:where(input,select,textarea) { font-family: inherit; font-size: var(--font-size-body); font-weight: var(--font-weight-regular); }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; color: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--accent, var(--trainer-medium)); outline-offset: 4px; }
@@ -30,5 +62,10 @@ button { touch-action: manipulation; }
    Keep touch controls zoom-safe without restricting user pinch zoom. */
 @media (hover: none) and (pointer: coarse) {
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="hidden"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="color"]),
-  select, textarea { font-size: 16px !important; }
+  select, textarea { font-size: var(--font-size-large) !important; }
 }
+
+/* Opt in on numeric values, never on whole paragraphs or identity strings. */
+.text-tabular { font-variant-numeric: var(--font-numeric-tabular); }
+.text-proportional { font-variant-numeric: var(--font-numeric-proportional); }
+.text-tracked-label { letter-spacing: var(--letter-spacing-label); }

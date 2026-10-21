@@ -20,7 +20,7 @@ try {
    const shell=await card.evaluate(e=>{const s=getComputedStyle(e);return [s.backgroundColor,s.borderTopColor,s.borderTopWidth,s.padding,s.borderRadius];});
    if(!expectedShell)expectedShell=shell;else assert.deepEqual(shell,expectedShell,'same shell across reference types');
    const heading=card.locator('.resources-move-heading strong, .resource-item-main strong').first();
-   assert.equal(await heading.evaluate(e=>getComputedStyle(e).fontSize),'14.4px','consistent heading font');
+   assert.equal(await heading.evaluate(e=>getComputedStyle(e).fontSize),'13px','consistent heading font');
    assert.equal(await card.evaluate(e=>e.scrollWidth>e.clientWidth),false,'no popup horizontal overflow');
    assert.equal(await card.locator('button').count(),0,'no close button added');
    assert.equal(await page.locator('.home-search').evaluate(e=>e===document.activeElement),false);
@@ -44,7 +44,7 @@ try {
   await search.fill('thunderb');await results.getByRole('button',{name:'Thunderbolt',exact:true}).tap();await dialog.waitFor();
   await dialog.locator('.resources-move-heading').tap();assert.equal(await dialog.count(),0,'content tap dismisses');
   await search.fill('levitate');await results.getByRole('button',{name:'Levitate',exact:true}).tap();await dialog.waitFor();await page.keyboard.press('Escape');assert.equal(await dialog.count(),0);
-  await search.fill('x'.repeat(2000));assert.equal(await results.innerText(),'No matching results');assert.equal(await results.locator('button').count(),0);
+  await search.fill('x'.repeat(2000));assert.equal(await results.innerText(),'No results.');assert.equal(await results.locator('button').count(),0);
   await page.getByRole('button',{name:'Clear search',exact:true}).tap();assert.equal(await search.inputValue(),'');assert.ok(await page.getByRole('link',{name:'Pokédex',exact:true}).isVisible());
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  }

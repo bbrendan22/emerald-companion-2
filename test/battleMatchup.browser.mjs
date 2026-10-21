@@ -97,7 +97,7 @@ try {
    const stats=await page.locator(`.battle-matchup-stats.battle-matchup-${side}`).boundingBox();assert.ok(stats.height<145);
    assert.equal(await page.locator(`.battle-matchup-stats.battle-matchup-${side} .battle-matchup-stat`).count(),6);
    const entries=await page.locator(`.battle-matchup-moves.battle-matchup-${side} button`).evaluateAll(nodes=>nodes.map(n=>({height:n.getBoundingClientRect().height,font:getComputedStyle(n).fontSize,icon:n.querySelector('img').getBoundingClientRect().width,overflow:n.scrollWidth>n.clientWidth})));
-   for(const entry of entries){assert.ok(entry.height>=30 && entry.height<40);assert.equal(entry.icon,16);assert.equal(entry.font,'11.2px');assert.equal(entry.overflow,false);}
+   for(const entry of entries){assert.ok(entry.height>=30 && entry.height<40);assert.equal(entry.icon,16);assert.equal(entry.font,'12px');assert.equal(entry.overflow,false);}
   }
   const art=await player.locator('.battle-matchup-artwork').boundingBox();assert.ok(art.width/boxes[0].width<.78);assert.ok(art.width/boxes[0].width>.65);
   const types=await player.locator('.battle-matchup-types').boundingBox(), heading=await player.locator('h2').boundingBox();assert.ok(types.y>=heading.y+heading.height);

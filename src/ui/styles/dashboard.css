@@ -1,5 +1,5 @@
 /* Reusable dashboard primitives; opt in without affecting other page layouts. */
 .dashboard-card { min-width: 0; padding: 14px; background: #202328; border: 2px solid var(--dashboard-accent, var(--trainer-medium)); border-radius: 16px; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; }
-.section-heading h2 { color: var(--dashboard-highlight, var(--trainer-neon)); margin: 0; font-size: 1rem; font-weight: 600; letter-spacing: -.025em; }
+.section-heading h2 { color: var(--dashboard-highlight, var(--trainer-neon)); margin: 0; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); letter-spacing: var(--letter-spacing-normal); }
 @media (min-width: 600px) { .dashboard-card { padding: 18px; } }
