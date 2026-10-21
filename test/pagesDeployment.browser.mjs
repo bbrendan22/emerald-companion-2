@@ -54,7 +54,13 @@ try {
   assert.ok(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.save.v1')));
   await page.reload();await images();
   await navigate('Collection');await images();
-  await page.locator('.pokemon-card').first().click();await page.keyboard.press('Escape');await images();
+  await page.locator('.pokemon-card').first().click();
+  // Battle bootstraps its player team only from Frontier-assigned Pokémon.
+  const profile=page.getByRole('dialog',{name:'Pokémon details',exact:true});
+  await profile.getByRole('button',{name:'Pokémon role: Collection',exact:true}).click();
+  await profile.getByRole('group',{name:'Assign role',exact:true}).getByRole('button',{name:'Frontier',exact:true}).click();
+  await profile.getByRole('button',{name:'Pokémon role: Frontier',exact:true}).waitFor();
+  await page.keyboard.press('Escape');await images();
   assert.equal(await page.getByRole('dialog').count(),0);
   await navigate('Home');await images();
   await navigate('Battle');await images();
@@ -62,8 +68,9 @@ try {
   await page.getByRole('tab',{name:'Sets',exact:true}).click();await images();
   await page.getByRole('searchbox',{name:'Search Pokémon sets',exact:true}).fill('Sunkern');
   await page.getByRole('button',{name:'Select Sunkern 1',exact:true}).click();await images();
-  await page.locator('.battle-matchup-moves.battle-matchup-player button').first().click();
-  const damage=page.getByRole('dialog').locator('.battle-basic-damage p');
+  await page.getByRole('region',{name:'Your Pokémon',exact:true}).getByRole('heading',{name:'Bulbasaur',exact:true}).waitFor();
+  await page.getByRole('region',{name:'Your moves',exact:true}).getByRole('button',{name:/\bTackle\b/}).click();
+  const damage=page.getByRole('dialog',{name:'Tackle',exact:true}).getByRole('region',{name:'Damage Calculation',exact:true}).getByRole('paragraph');
   await damage.waitFor();assert.match(await damage.innerText(),/\d.*%.*HP/);
   await page.keyboard.press('Escape');
   assert.deepEqual(errors,[]);assert.deepEqual(badResponses,[]);
