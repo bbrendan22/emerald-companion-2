@@ -1,4 +1,5 @@
-import React, {useRef, useState, useEffect} from 'react';
+import {blockUpdates} from '../pwa/updateSafety.js';
+import React, {useRef, useState, useEffect, useLayoutEffect} from 'react';
 import Header from './components/Header.jsx';
 import NavigationDrawer from './components/NavigationDrawer.jsx';
 import {sections, settings} from './navigation.js';
@@ -16,6 +17,10 @@ export default function App() {
   const [pageId, setPageId] = useState('home');
   const battle = useBattleState(importedSave.snapshot, pageId === 'battle');
   const [subpage, setSubpage] = useState(null);
+  // Battle and resource subpages contain session-only edits/calculator inputs.
+  useLayoutEffect(() => {
+    if (pageId === 'battle' || subpage) return blockUpdates();
+  }, [pageId, subpage]);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const heading = useRef(null);
   const navigationButton = useRef(null);

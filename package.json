@@ -16,14 +16,21 @@
     "test:browser:production": "node tools/runBrowserTests.mjs --serve production",
     "test:pages": "node tools/runBrowserTests.mjs --serve production --smoke",
     "verify:resources:ci": "node tools/verifyResources.mjs --ci",
-    "verify:resources:local": "node tools/verifyResources.mjs --local"
+    "verify:resources:local": "node tools/verifyResources.mjs --local",
+    "test:pwa": "node test/pwaUpdates.browser.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "workbox-core": "^7.4.1",
+    "workbox-expiration": "^7.4.1",
+    "workbox-precaching": "^7.4.1",
+    "workbox-routing": "^7.4.1",
+    "workbox-strategies": "^7.4.1"
   },
   "devDependencies": {
     "playwright": "1.62.1",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "vite-plugin-pwa": "^2.0.0"
   }
 }

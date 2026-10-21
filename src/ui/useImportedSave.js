@@ -1,3 +1,4 @@
+import {blockUpdates} from '../pwa/updateSafety.js';
 import {useState} from 'react';
 import {importSave, loadStoredSave} from '../storage/saveStorage.js';
 
@@ -9,6 +10,7 @@ export default function useImportedSave() {
   const [busy, setBusy] = useState(false);
   async function importFile(file) {
     if (!file || busy) return;
+    const releaseUpdate = blockUpdates();
     setBusy(true);
     try {
       if (!/\.sav$/i.test(file.name)) throw new Error('Choose a .sav file.');
@@ -27,7 +29,7 @@ export default function useImportedSave() {
     } catch (error) {
       setState(previous => ({...previous, error: `Import failed: ${error.message.replace(/[.!?]$/, '')}. Your previous save has been kept.`}));
       return false;
-    } finally { setBusy(false); }
+    } finally { setBusy(false); releaseUpdate(); }
   }
   return {...state, busy, importFile};
 }
