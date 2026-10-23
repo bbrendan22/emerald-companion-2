@@ -1,3 +1,4 @@
+import MoveTypeIcon from '../../ui/components/MoveTypeIcon.jsx';
 import React from 'react';
 import {publicAsset} from '../../assets/publicAsset.js';
 import {moveResources} from '../learnset/data/moveResources.js';
@@ -7,7 +8,7 @@ export default function MoveSummary({entry, onOpen}) {
   return <>
     <div className="resources-move-summary">
       {onOpen && <button type="button" className="resources-move-toggle" aria-label={entry.name} aria-haspopup="dialog" onClick={onOpen} />}
-      <div className="resources-move-heading">{move.type === 'MYSTERY' ? <span className="resources-move-icon-space" aria-hidden="true" /> : <img src={publicAsset(`/types/icons/${move.type.toLowerCase()}.png`)} alt={`${move.type[0]}${move.type.slice(1).toLowerCase()} type`} width="18" height="18" />}<strong>{entry.name}</strong></div>
+      <div className="resources-move-heading"><MoveTypeIcon type={move.type} moveId={entry.id} moveName={entry.name} size={18} /><strong>{entry.name}</strong></div>
       <p className="resources-move-description">{move.description}</p>
       <dl className="resources-move-values">{[
         ['Pwr', move.power === 0 ? '—' : move.power === 1 ? 'Var' : move.power],

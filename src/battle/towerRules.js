@@ -15,10 +15,15 @@ export function towerTrainerSets(selectedTrainer = null) {
   return trainer.pokemonSetIds.map(id => setsById.get(id));
 }
 
-export function createTowerRules({levelMode = '50', openLevel = 60} = {}) {
+export const battleFacilities = ['Tower'];
+export const battleFormats = ['Singles', 'Doubles'];
+
+export function createTowerRules({facility = 'Tower', format = 'Singles', levelMode = '50', openLevel = 60} = {}) {
+  if (!battleFacilities.includes(facility)) throw new Error('Unknown Battle facility.');
+  if (!battleFormats.includes(format)) throw new Error('Unknown Battle type.');
   if (!['50','open'].includes(levelMode)) throw new Error('Choose Level 50 or Open Level.');
   if (!Number.isInteger(openLevel) || openLevel < 60 || openLevel > 100) throw new Error('Open Level must be an integer from 60 to 100.');
-  return {facility:'Tower', format:'Singles', teamSize:3, levelMode, openLevel, opponentLevel:levelMode === '50' ? 50 : openLevel};
+  return {facility, format, teamSize:format === 'Doubles' ? 4 : 3, levelMode, openLevel, opponentLevel:levelMode === '50' ? 50 : openLevel};
 }
 
 export function towerOpponentIVs(selectedTrainer = null, set = null) {
@@ -32,7 +37,7 @@ export function towerOpponentIVs(selectedTrainer = null, set = null) {
   return {value:31, source:'assumption', assumed:true};
 }
 
-// Retained cartridge exception for a future Dome adapter; no Dome mode is exposed.
+// Retained cartridge exception for a future Dome adapter; facility selection does not change the calculation adapter.
 export function domeOrdinaryOpponentIVs() { return 3; }
 
 export function freshBattleConditions() {

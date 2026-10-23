@@ -84,9 +84,9 @@
 
 .page.home-page .trainer-content .dashboard-card { padding-left: 0; }
 
-.page.home-page .dex-card progress { color: #4DCE88; }
-.page.home-page .dex-card progress::-webkit-progress-value { background: #4DCE88; }
-.page.home-page .dex-card progress::-moz-progress-bar { background: #4DCE88; }
+.page.home-page .dex-card progress { color: #39FF9C; }
+.page.home-page .dex-card progress::-webkit-progress-value { background: #39FF9C; }
+.page.home-page .dex-card progress::-moz-progress-bar { background: #39FF9C; }
 
 .page.home-page .home-layout { color: var(--text-secondary); }
 .page.home-page .home-layout :is(h2, p, dt, dd, strong, abbr, a, button, input, small, span, li):not(.home-trainer-title, .home-resources-title) { color: var(--text-secondary); }

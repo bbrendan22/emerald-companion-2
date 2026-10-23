@@ -8,7 +8,7 @@ const server=await preview({preview:{host:'127.0.0.1',port:5236,strictPort:true}
 const safari=process.env.PROFILE_WEBKIT==='1';
 const browser=await (safari?webkit.launch({headless:true}):chromium.launch({headless:true,channel:'chrome'}));
 try {
-  const page=await browser.newPage({viewport:{width:375,height:844},hasTouch:true,isMobile:true});
+  const page=await browser.newPage({viewport:{width:375,height:844},hasTouch:true,isMobile:true,serviceWorkers:'block'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const cases=[
     {species:101,pid:0,heldItemId:203,moveIds:[209,89,56,246],ppUps:[0,3,3,2],currentPp:[1,2,3,4],

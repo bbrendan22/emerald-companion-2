@@ -55,7 +55,7 @@ try {
   await page.reload();await images();
   await navigate('Collection');await images();
   await page.locator('.pokemon-card').first().click();
-  // Battle bootstraps its player team only from Frontier-assigned Pokémon.
+  // Assign a Frontier role; Battle still starts empty until manually populated.
   const profile=page.getByRole('dialog',{name:'Pokémon details',exact:true});
   await profile.getByRole('button',{name:'Pokémon role: Collection',exact:true}).click();
   await profile.getByRole('group',{name:'Assign role',exact:true}).getByRole('button',{name:'Frontier',exact:true}).click();
@@ -64,14 +64,23 @@ try {
   assert.equal(await page.getByRole('dialog').count(),0);
   await navigate('Home');await images();
   await navigate('Battle');await images();
-  await page.getByRole('tab',{name:'Trainers',exact:true}).click();await images();
-  await page.getByRole('tab',{name:'Sets',exact:true}).click();await images();
-  await page.getByRole('searchbox',{name:'Search Pokémon sets',exact:true}).fill('Sunkern');
-  await page.getByRole('button',{name:'Select Sunkern 1',exact:true}).click();await images();
-  await page.getByRole('region',{name:'Your Pokémon',exact:true}).getByRole('heading',{name:'Bulbasaur',exact:true}).waitFor();
-  await page.getByRole('region',{name:'Your moves',exact:true}).getByRole('button',{name:/\bTackle\b/}).click();
-  const damage=page.getByRole('dialog',{name:'Tackle',exact:true}).getByRole('region',{name:'Damage Calculation',exact:true}).getByRole('paragraph');
-  await damage.waitFor();assert.match(await damage.innerText(),/\d.*%.*HP/);
+  const myTeam=page.getByRole('region',{name:'My Team',exact:true});
+  const opponent=page.getByRole('region',{name:'Opponent Team',exact:true});
+  assert.equal(await page.locator('.battle-compact-slot img').count(),0);
+  await myTeam.getByRole('button',{name:'Add Pokémon, My Team, empty slot 1',exact:true}).click();
+  await page.getByRole('dialog',{name:'My Team selection'}).locator('.battle-picker-pokemon').first().click();await images();
+  await opponent.getByRole('button',{name:'Add Pokémon, Opponent Team, empty slot 1',exact:true}).click();
+  const speciesPopup=page.getByRole('dialog',{name:'Select opponent Pokémon'});
+  await speciesPopup.getByRole('searchbox').fill('Sunkern');
+  await speciesPopup.getByRole('button',{name:'Select Pokémon Sunkern',exact:true}).click();await images();
+  await myTeam.locator('.battle-compact-slot').first().click();
+  await opponent.locator('.battle-compact-slot').first().click();await images();
+  await page.getByRole('group',{name:'My matchup Pokémon',exact:true}).getByText('Bulbasaur',{exact:true}).waitFor();
+  await page.getByRole('group',{name:'Opponent matchup Pokémon',exact:true}).getByText('Sunkern',{exact:true}).waitFor();
+  await page.getByRole('region',{name:'Possible Sets',exact:true}).getByRole('button',{name:'Sunkern 1',exact:true}).click();await images();
+  const details=page.getByRole('dialog',{name:'Sunkern 1',exact:true});
+  assert.equal(await details.getByRole('list',{name:'Moves'}).locator('li').count(),4);
+  assert.deepEqual(await details.locator('dt').allTextContents(),['Ability','Held item']);
   await page.keyboard.press('Escape');
   assert.deepEqual(errors,[]);assert.deepEqual(badResponses,[]);
   assert.deepEqual(failedRequests,[]);assert.deepEqual(consoleErrors,[]);

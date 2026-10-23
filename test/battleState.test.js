@@ -13,12 +13,14 @@ test('Battle shell defaults to honest empty Tower Singles state and Matchup', ()
   assert.notEqual(state.field.playerScreens,createBattleState().field.playerScreens);
 });
 
-test('real Frontier pool initializes once, retaining identities and distinct species', () => {
+test('real Frontier records never initialize teams; explicit selection survives collection updates', () => {
   const pool = [{identity:'ot:pid:0',dex:1},{identity:'ot:pid:1',dex:1},{identity:'b',dex:2},{identity:'c',dex:3},{identity:'d',dex:4}];
-  const state = battleReducer(createBattleState(),{type:'collection',records:pool,pool});
-  assert.deepEqual(state.team,['ot:pid:0','b','c']); assert.equal(state.active,'ot:pid:0');
-  assert.equal(battleReducer(state,{type:'collection',records:pool,pool:pool.toReversed()}),state);
   const empty = createBattleState();
+  assert.equal(battleReducer(empty,{type:'collection',records:pool,pool}),empty);
+  assert.equal(battleReducer(empty,{type:'collection',records:pool,pool,autoInitialize:true}),empty);
+  const state = battleReducer(empty,{type:'assignPlayer',slot:0,identity:'ot:pid:0',pool});
+  assert.deepEqual(state.team,['ot:pid:0',null,null]); assert.equal(state.active,'ot:pid:0');
+  assert.equal(battleReducer(state,{type:'collection',records:pool,pool:pool.toReversed(),preserveSlots:true}),state);
   assert.equal(battleReducer(empty,{type:'collection',records:pool,pool:[]}),empty);
 });
 

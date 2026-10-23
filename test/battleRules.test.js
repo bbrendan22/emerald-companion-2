@@ -14,7 +14,7 @@ test('Rules retain Open Level while toggling modes and accept every integer 60â€
  }
  state=update(state,{levelMode:'50'});assert.equal(state.rules.opponentLevel,50);assert.equal(state.rules.openLevel,100);
  assert.equal(update(state,{levelMode:'open'}).rules.opponentLevel,100);
- for(const patch of [{openLevel:59},{openLevel:101},{openLevel:60.5},{openLevel:'70'},{levelMode:'invalid'},{facility:'Dome'},{format:'Doubles'},null])assert.equal(update(state,patch),state);
+ for(const patch of [{openLevel:59},{openLevel:101},{openLevel:60.5},{openLevel:'70'},{levelMode:'invalid'},{facility:'invalid'},{format:'invalid'},null])assert.equal(update(state,patch),state);
 });
 test('Rules survive trainer, opponent, saved-team and tab actions without mutating player records',()=>{
  let state=update(createBattleState(),{levelMode:'open',openLevel:78});const rules=state.rules;
@@ -33,4 +33,24 @@ test('Rules use ordinary trainer, selected Anabel medal and explicit assumed IVs
   const state=battleReducer(ordinary,{type:'trainer',key:`Anabel ${symbol}`});
   assert.deepEqual(towerOpponentIVs(state.selectedTrainer,availableTowerSets(state)[0]),{value,source:'brain',assumed:false});
  }
+});
+
+
+test('facility and format changes preserve level math and battle conditions', () => {
+  const initial = update(createBattleState(), {levelMode:'open', openLevel:78});
+  for (const facility of ['Tower']) {
+    const next = update(initial, {facility, format:'Doubles'});
+    assert.equal(next.rules.facility, facility);
+    assert.equal(next.rules.format, 'Doubles');
+    assert.equal(next.rules.opponentLevel, 78);
+    assert.equal(next.field, initial.field);
+    assert.equal(next.team, initial.team);
+  }
+});
+
+test('unsupported facilities cannot change Tower rules', () => {
+  const state = createBattleState();
+  for (const facility of ['Dome','Factory','Palace','Arena','Pike','Pyramid']) {
+    assert.equal(update(state,{facility}),state);
+  }
 });

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validateTeam, loadBattleTeams, storeBattleTeams, createTeamId} from '../src/storage/battleTeams.js';
 import {battleReducer, createBattleState} from '../src/battle/battleState.js';
-const pool=['a','b','c','d'].map(identity=>({identity}));
+const pool=['a','b','c','d'].map((identity,index)=>({identity,dex:index+1}));
 const team={id:'team-1',name:'Tower team',ids:['a','b','c']};
 const storage=()=>{let value=null;return {getItem:()=>value,setItem:(_,next)=>{value=next;}};};
 test('team IDs work on HTTP LAN without randomUUID',()=>{
@@ -34,5 +34,57 @@ test('load changes only player team/active/tab, preserving opponents/rules/condi
 });
 test('missing collection never overwrites saved references and same-species individuals stay distinct',()=>{
  const store=storage();storeBattleTeams(store,[team]);assert.ok(validateTeam(team,[]));assert.deepEqual(loadBattleTeams(store),[team]);
- assert.equal(validateTeam(team,pool.map(mon=>({...mon,dex:1}))), '');
+ assert.match(validateTeam(team,pool.map(mon=>({...mon,dex:1}))), /different species/);
+});
+
+test('Doubles teams store four distinct references and only load for the matching format',()=>{
+ const doubles={id:'double',name:'Team 1',ids:['a','b','c','d']};
+ const store=storage();storeBattleTeams(store,[team,doubles]);
+ assert.deepEqual(loadBattleTeams(store),[team,doubles]);
+ assert.equal(validateTeam(doubles,pool,4),'');
+ assert.ok(validateTeam({...doubles,ids:['a','a','b','c']},pool,4));
+ const singles=createBattleState();
+ assert.equal(battleReducer(singles,{type:'loadTeam',team:doubles,records:pool}),singles);
+ const state=battleReducer(singles,{type:'rules',patch:{format:'Doubles'}});
+ assert.equal(state.rules.teamSize,4);
+ assert.deepEqual(battleReducer(state,{type:'loadTeam',team:doubles,records:pool}).team,doubles.ids);
+ assert.equal(battleReducer(state,{type:'loadTeam',team,records:pool}),state);
+});
+
+test('individual selection fills the requested empty slot without shifting or duplicating individuals',()=>{
+ const start=createBattleState();
+ const third=battleReducer(start,{type:'assignPlayer',slot:2,identity:'a',pool});
+ assert.deepEqual(third.team,[null,null,'a']);
+ const first=battleReducer(third,{type:'assignPlayer',slot:0,identity:'b',pool});
+ assert.deepEqual(first.team,['b',null,'a']);
+ for(const action of [{slot:1,identity:'a'},{slot:2,identity:'b'},{slot:3,identity:'c'},{slot:-1,identity:'c'},{slot:1,identity:'missing'}]){
+  assert.equal(battleReducer(first,{type:'assignPlayer',pool,...action}),first);
+ }
+ assert.equal(first.rules,start.rules);assert.equal(first.opponents,start.opponents);assert.equal(first.field,start.field);
+ const refreshed=battleReducer(first,{type:'collection',records:pool,pool:[pool[0]],autoInitialize:false,frontierOnly:true,preserveSlots:true});
+ assert.deepEqual(refreshed.team,[null,null,'a']);
+ assert.equal(battleReducer(start,{type:'collection',records:pool,pool,autoInitialize:false,frontierOnly:true,preserveSlots:true}),start);
+});
+
+test('clearing a player slot preserves its position, other members, presets and collection',()=>{
+ const records=structuredClone(pool), saved=structuredClone(team);
+ const state={...createBattleState(),team:[...team.ids],active:'b',teamInitialized:true};
+ const next=battleReducer(state,{type:'clearPlayerSlot',slot:1,identity:'b'});
+ assert.deepEqual(next.team,['a',null,'c']);assert.equal(next.active,null);
+ assert.deepEqual(state.team,team.ids);assert.deepEqual(team,saved);assert.deepEqual(pool,records);
+ for(const key of ['rules','field','opponents','conditionsByPokemon'])assert.equal(next[key],state[key]);
+ assert.equal(battleReducer(next,{type:'clearPlayerSlot',slot:1,identity:'b'}),next);
+ assert.equal(battleReducer(state,{type:'clearPlayerSlot',slot:1,identity:'a'}),state);
+ assert.equal(battleReducer(state,{type:'clearPlayerSlot',slot:3,identity:'c'}),state);
+ const other=battleReducer(state,{type:'clearPlayerSlot',slot:2,identity:'c'});
+ assert.equal(other.active,'b');assert.deepEqual(other.team,['a','b',null]);
+});
+
+test('clearing My Team changes only the active lineup and never stored preset references',()=>{
+ const saved={...team,ids:[...team.ids]}, state={...createBattleState(),team:[...team.ids],active:'b',teamInitialized:true};
+ const next=battleReducer(state,{type:'clearPlayerTeam'});
+ assert.deepEqual(next.team,[]);assert.equal(next.active,null);assert.equal(next.teamInitialized,true);
+ assert.deepEqual(saved,team);assert.deepEqual(state.team,team.ids);
+ for(const key of Object.keys(state).filter(key=>!['team','active','teamInitialized'].includes(key)))assert.equal(next[key],state[key]);
+ assert.equal(battleReducer(next,{type:'clearPlayerTeam'}),next);
 });

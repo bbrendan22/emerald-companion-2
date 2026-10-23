@@ -1,3 +1,4 @@
+import {matchesBattleWords} from '../../battle/searchWords.js';
 import PokemonName from './PokemonName.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import React, {useEffect, useRef, useState} from 'react';
@@ -8,7 +9,7 @@ function TeamEditor({team, pool, onSave, onDelete, onClose}) {
   const [name,setName]=useState(team.name),[ids,setIds]=useState([...team.ids]),[query,setQuery]=useState(''),[slot,setSlot]=useState(0),[confirm,setConfirm]=useState(false),[error,setError]=useState('');
   useEffect(()=>{const node=dialog.current, previous=document.activeElement;node.showModal();return()=>{node.close();previous?.focus({preventScroll:true});};},[]);
   const validation=validateTeam({name,ids},pool);
-  const options=pool.filter(mon=>`${mon.name} ${mon.nickname ?? ''}`.toLowerCase().includes(query.trim().toLowerCase()));
+  const options=pool.filter(mon=>matchesBattleWords(`${mon.name} ${mon.nickname ?? ''}`,query));
   return <dialog ref={dialog} className="battle-team-editor" aria-labelledby="battle-team-editor-title" onCancel={event=>{event.preventDefault();onClose();}}>
     <form onSubmit={event=>{event.preventDefault();if(!validation){const result=onSave({...team,name:name.trim(),ids});if(result)setError(result);}}}>
       <h2 id="battle-team-editor-title">{team.id?'Edit Team':'Add Team'}</h2>

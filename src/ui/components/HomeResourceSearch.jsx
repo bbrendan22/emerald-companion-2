@@ -1,3 +1,4 @@
+import MoveTypeIcon from './MoveTypeIcon.jsx';
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {directoryFilterFields} from '../../resources/homeDirectoryFilters.js';
@@ -95,7 +96,7 @@ export default function HomeResourceSearch({onSelect, directory = null, onDirect
             : group.id === 'moves' ? `/types/icons/${moveResources[entry.id].type.toLowerCase()}.png`
             : group.id === 'items' || group.id === 'berries' ? `/items/${entry.id}.png` : null;
           return <li key={entry.id}><button type="button" onClick={() => select(group.id, entry)}>
-            {group.id === 'moves' && moveResources[entry.id].type === 'MYSTERY' ? <span className="home-result-icon-space" aria-hidden="true" /> : src && <img src={publicAsset(src)} alt="" width="20" height="20" loading="lazy" />}<span className="home-result-name">{entry.machine ? `${entry.code} · ${entry.name}` : entry.name}</span>
+            <>{group.id === 'moves' ? <MoveTypeIcon type={moveResources[entry.id].type} moveId={entry.id} moveName={entry.name} size={20} alt="" /> : src && <img src={publicAsset(src)} alt="" width="20" height="20" loading="lazy" />}</><span className="home-result-name">{entry.machine ? `${entry.code} · ${entry.name}` : entry.name}</span>
           </button></li>;
         })}</ul>
       </section>) : <p className="home-search-empty" role="status">No results.</p>}

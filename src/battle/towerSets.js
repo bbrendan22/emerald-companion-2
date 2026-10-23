@@ -2,6 +2,7 @@ import {frontierPokemon} from './data/frontierPokemon.js';
 import {towerBrainSets} from './towerRules.js';
 import {selectedTowerSetIds} from './towerTrainers.js';
 import {speciesByName} from './reference.js';
+import {matchesBattleWords} from './searchWords.js';
 
 export const frontierSetId = set => set.id ?? `${set.brainSet}:${set.species}`;
 const setsById = new Map([...frontierPokemon, ...towerBrainSets].map(set => [frontierSetId(set), set]));
@@ -15,10 +16,19 @@ export function opponentSetDisabled(state, id) {
 export function availableTowerSets(state) {
   return state.selectedTrainer ? selectedTowerSetIds(state).map(id => setsById.get(id)).filter(Boolean) : frontierPokemon;
 }
+export const towerSetLabel = set => `${set.species}${Number.isInteger(set.instance) ? ` ${set.instance}` : ''}`;
+export function possibleMatchupSets(state) {
+  const speciesId = state.matchup?.opponent;
+  if (!speciesId || !state.opponentSpecies?.slice(0,state.rules.teamSize).includes(speciesId)) return [];
+  return [...new Map(availableTowerSets(state)
+    .filter(set => speciesIds.get(frontierSetId(set)) === speciesId)
+    .map(set => [frontierSetId(set),set])).values()]
+    .sort((a,b) => (a.instance ?? Infinity)-(b.instance ?? Infinity));
+}
 export function visibleTowerSets(state) {
   const query = (state.setSearch?.query ?? '').trim().toLowerCase();
   const hidden = new Set(state.setSearch?.hiddenIds ?? []);
-  return availableTowerSets(state).filter(set => !hidden.has(frontierSetId(set)) && set.species.toLowerCase().startsWith(query));
+  return availableTowerSets(state).filter(set => !hidden.has(frontierSetId(set)) && matchesBattleWords(set.species,query));
 }
 // Same duplicate-move palette/ordering as the legacy workbench. Count once per set.
 export function duplicateMoveColors(sets) {

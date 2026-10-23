@@ -1,5 +1,6 @@
 import {frontierTrainers} from './data/frontierTrainers.js';
 import {trainerKey, towerTrainerSets} from './towerRules.js';
+import {matchesBattleWords} from './searchWords.js';
 
 // Sprite naming retained from 1.0 frontierSets.js.
 export function frontierTrainerSprite(trainerClass) {
@@ -13,11 +14,15 @@ export const towerTrainerEntries = [
   ...frontierTrainers.map(trainer => ({key:trainerKey(trainer), trainer:trainerKey(trainer), symbol:null,
     name:trainer.name, trainerClass:trainer.trainerClass, sprite:frontierTrainerSprite(trainer.trainerClass), setIds:trainer.pokemonSetIds})),
 ];
-export function searchTowerTrainers(query = '') {
-  const terms = query.trim().toLowerCase().split(/\s+/);
-  return towerTrainerEntries.filter(entry => {
-    const text = `${entry.name} ${entry.trainerClass} ${entry.symbol ?? ''}`.toLowerCase();
-    return terms.every(term => text.includes(term));
+const anabelEntryKeys = new Set(['Anabel Silver','Anabel Gold']);
+export function towerTrainerSupportsFormat(entry, format) {
+  return format !== 'Doubles' || !anabelEntryKeys.has(entry?.key);
+}
+export function searchTowerTrainers(query = '', {entries = towerTrainerEntries, nameOnly = false, format = 'Singles'} = {}) {
+  return entries.filter(entry => {
+    if (!towerTrainerSupportsFormat(entry,format)) return false;
+    const text = (nameOnly ? entry.name : `${entry.name} ${entry.trainerClass} ${entry.symbol ?? ''}`).toLowerCase();
+    return matchesBattleWords(text,query);
   });
 }
 export function selectedTowerTrainer(state) {

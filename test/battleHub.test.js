@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {battleReducer,createBattleState} from '../src/battle/battleState.js';
 import {availableTowerSets} from '../src/battle/towerSets.js';
 import {frontierPokemon} from '../src/battle/data/frontierPokemon.js';
-const pool=['a','b','c','d'].map(identity=>({identity,dex:1}));
+const pool=['a','b','c','d'].map((identity,index)=>({identity,dex:index+1}));
 const loaded=()=>({...createBattleState(),team:['a','b','c'],active:'b',teamInitialized:true});
 test('player removal is idempotent, keeps order/conditions, and never selects a replacement',()=>{
  const state=loaded(), saved={id:'x',name:'Saved',ids:[...state.team]};

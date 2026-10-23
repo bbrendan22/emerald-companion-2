@@ -58,6 +58,8 @@ try {
         File.prototype.arrayBuffer=function(){return new Promise(resolve=>{window.finishImport=async()=>resolve(await original.call(this));});};
         localStorage.setItem('emerald-companion-2.roles.v1',JSON.stringify({'0:0:0':'Frontier'}));
         localStorage.setItem('pwa-test-preference','keep');
+        localStorage.setItem('emerald-companion-2.battle-teams.v1',JSON.stringify([{id:'pwa-team',name:'Saved Team',ids:['one','two','three']} ]));
+        localStorage.setItem('emerald-companion-2.battle-rules.v1',JSON.stringify({facility:'Tower',format:'Doubles',levelMode:'open',openLevel:85}));
         return new Promise((resolve,reject)=>{
           const request=indexedDB.open('pwa-test-storage',1);
           request.onupgradeneeded=()=>request.result.createObjectStore('records');
@@ -95,6 +97,8 @@ try {
       assert.ok(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.save.v1')));
       assert.equal(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.roles.v1')),'{"0:0:0":"Frontier"}');
       assert.equal(await page.evaluate(()=>localStorage.getItem('pwa-test-preference')),'keep');
+      assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('emerald-companion-2.battle-teams.v1'))),[{id:'pwa-team',name:'Saved Team',ids:['one','two','three']}]);
+      assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('emerald-companion-2.battle-rules.v1'))),{facility:'Tower',format:'Doubles',levelMode:'open',openLevel:85});
       assert.equal(await page.evaluate(async()=>{const c=await caches.open('unrelated-cache');return (await c.match('/sentinel')).text();}),'keep');
       assert.equal(await page.evaluate(()=>new Promise(resolve=>{const r=indexedDB.open('pwa-test-storage');r.onsuccess=()=>{const db=r.result;const q=db.transaction('records').objectStore('records').get('save');q.onsuccess=()=>{resolve(q.result);db.close();};};})),'keep');
       await page.getByRole('button',{name:'Open navigation',exact:true}).click();

@@ -1,6 +1,7 @@
 import React from 'react';
 import {publicAsset} from '../../assets/publicAsset.js';
 import '../styles/collection-pokemon-info-moves.css';
+import MoveTypeIcon from './MoveTypeIcon.jsx';
 
 export default function CollectionPokemonInfoMoves({pokemon, heldItem, moves}) {
   return <div className="collection-info-moves">
@@ -15,7 +16,7 @@ export default function CollectionPokemonInfoMoves({pokemon, heldItem, moves}) {
     <ol className="collection-pokemon-moves" aria-label="Moves">
       {moves.map(move => <li key={move.slot}>
         {move.id ? <>
-          {move.type && <img src={publicAsset(`/types/icons/${move.type}.png`)} alt={`${move.type} type`}/>}
+          <MoveTypeIcon type={move.type} moveId={move.id} moveName={move.name} size={21} alt={`${move.type} type`} />
           <span className="collection-pokemon-move-name">{move.name ?? `Unknown move (ID ${move.id})`}</span>
           <small className="collection-pokemon-move-pp">PP {move.maxPp ?? '—'}</small>
         </> : <span className="collection-pokemon-empty-move">—</span>}

@@ -1,3 +1,4 @@
+import MoveTypeIcon from '../../ui/components/MoveTypeIcon.jsx';
 import PokemonName from '../../ui/components/PokemonName.js';
 import React, {useLayoutEffect, useRef, useState} from 'react';
 import {publicAsset} from '../../assets/publicAsset.js';
@@ -37,7 +38,7 @@ function SetMoves({set}) {
   return <span className="frontier-set-moves" aria-label="Moves">{Array.from({length:4}, (_, slot) => {
     const name = set.moves[slot];
     const type = name && battleMove(name)?.type;
-    return <span className="frontier-set-move" key={slot}>{type && type !== 'MYSTERY' ? <img src={publicAsset(`/types/icons/${type.toLowerCase()}.png`)} alt={`${type[0]}${type.slice(1).toLowerCase()} type`} width="14" height="14" /> : <span className="frontier-move-icon-space" aria-hidden="true" />}<span>{name || '—'}</span></span>;
+    return <span className="frontier-set-move" key={slot}><MoveTypeIcon type={type} moveName={name} size={14} /><span>{name || '—'}</span></span>;
   })}</span>;
 }
 
