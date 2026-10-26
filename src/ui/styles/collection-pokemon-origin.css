@@ -1,7 +1,7 @@
 .collection-pokemon-origin { padding-block: 10px 12px; border-bottom: 1px solid #ffffff12; }
 .collection-pokemon-origin dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 0; }
 .collection-pokemon-origin dl > div { min-width: 0; }
-.collection-pokemon-origin dt { margin-bottom: 3px; font-size: var(--font-size-small); color: var(--text-label); }
+.collection-pokemon-origin dt { margin-bottom: 3px; font-size: var(--font-size-small); color: var(--text-secondary); }
 .collection-pokemon-origin dd { margin: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); overflow-wrap: anywhere; }
 .collection-origin-ball { display: flex; align-items: center; gap: 5px; }
 .collection-origin-ball span { min-width: 0; }

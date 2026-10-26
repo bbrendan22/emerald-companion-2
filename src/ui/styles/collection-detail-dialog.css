@@ -24,7 +24,7 @@
   border: 1px solid #393d44;
   border-radius: 8px;
   background: #202329;
-  color: var(--text-primary-resource);
+  color: var(--text-secondary);
   box-shadow: none;
   overflow-y: auto;
   overscroll-behavior: contain;

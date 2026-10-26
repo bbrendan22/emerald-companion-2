@@ -24,11 +24,11 @@
 .collection-iv-ev-table :is(thead, tbody, tfoot) { display: contents; }
 .collection-iv-ev-table tr { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: center; }
 .collection-iv-ev-table :is(th, td) { min-width: 0; padding: 0; border: 0; padding-inline-end: calc(20px / 3); text-align: left; font-weight: var(--font-weight-regular); }
-.collection-iv-ev-table thead th { font-size: var(--font-size-small); color: var(--text-label); }
+.collection-iv-ev-table thead th { font-size: var(--font-size-small); color: var(--text-secondary); }
 .collection-iv-ev-table .collection-training-highlight { color: var(--text-status-success); }
 .collection-iv-ev-table tfoot tr { margin-top: 4px; padding-top: 6px; border-top: 1px solid #ffffff12; }
 .collection-hidden-power { display: flex; align-self: end; align-items: center; gap: 5px; min-width: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); white-space: nowrap; }
 .collection-hidden-power img { display: block; flex: 0 0 auto; width: 21px; height: 21px; object-fit: contain; }
-.collection-hidden-power small { font-size: var(--font-size-small); color: var(--text-label); font-variant-numeric: var(--font-numeric-tabular); }
+.collection-hidden-power small { font-size: var(--font-size-small); color: var(--text-secondary); font-variant-numeric: var(--font-numeric-tabular); }
 
 .collection-stat-divider { grid-column: 2; grid-row: 1 / -1; border-left: 1px solid #ffffff12; }

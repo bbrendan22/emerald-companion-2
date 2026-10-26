@@ -1,8 +1,8 @@
 .collection-pokemon-ribbons { padding-block: 10px 12px; border-bottom: 1px solid #ffffff12; }
 .collection-pokemon-ribbons h2 { margin: 0 0 8px; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); line-height: var(--line-height-heading); }
 .collection-pokemon-ribbons ul { display: grid; grid-template-columns: repeat(7, minmax(min-content, 1fr)); gap: 8px 0; list-style: none; margin: 0; padding: 0; }
-.collection-pokemon-ribbons li { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; text-align: center; color: var(--text-primary); }
+.collection-pokemon-ribbons li { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; text-align: center; color: var(--text-secondary); }
 .collection-pokemon-ribbons img { display: block; width: 32px; height: 32px; object-fit: contain; image-rendering: pixelated; }
 .collection-pokemon-ribbons span { align-self: stretch; min-height: 2.8em; font-size: var(--font-size-small); line-height: var(--line-height-body); overflow-wrap: normal; }
-.collection-pokemon-ribbons li[data-earned="false"] { color: var(--text-label); }
+.collection-pokemon-ribbons li[data-earned="false"] { color: var(--text-secondary); }
 .collection-pokemon-ribbons li[data-earned="false"] img { filter: grayscale(1); opacity: .35; }

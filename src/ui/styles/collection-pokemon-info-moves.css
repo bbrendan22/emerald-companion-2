@@ -8,7 +8,7 @@
 }
 .collection-pokemon-info { display: grid; gap: 9px; min-width: 0; margin: 0; }
 .collection-pokemon-info > div { min-width: 0; }
-.collection-pokemon-info dt { margin-bottom: 3px; font-size: var(--font-size-small); color: var(--text-label); }
+.collection-pokemon-info dt { margin-bottom: 3px; font-size: var(--font-size-small); color: var(--text-secondary); }
 .collection-pokemon-info dd { margin: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); overflow-wrap: anywhere; }
 .collection-pokemon-held-item { display: flex; align-items: center; gap: 5px; }
 .collection-pokemon-held-item span { min-width: 0; }
@@ -17,5 +17,5 @@
 .collection-pokemon-moves li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: center; min-width: 0; }
 .collection-pokemon-moves img { display: block; width: 21px; height: 21px; object-fit: contain; }
 .collection-pokemon-move-name { grid-column: 2; min-width: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); overflow-wrap: anywhere; }
-.collection-pokemon-move-pp { grid-column: 3; grid-row: 1; justify-self: end; white-space: nowrap; text-align: right; font-size: var(--font-size-small); line-height: var(--line-height-body); color: var(--text-label); font-variant-numeric: var(--font-numeric-tabular); }
-.collection-pokemon-empty-move { grid-column: 2; font-size: var(--font-size-body); color: var(--text-label); }
+.collection-pokemon-move-pp { grid-column: 3; grid-row: 1; justify-self: end; white-space: nowrap; text-align: right; font-size: var(--font-size-small); line-height: var(--line-height-body); color: var(--text-secondary); font-variant-numeric: var(--font-numeric-tabular); }
+.collection-pokemon-empty-move { grid-column: 2; font-size: var(--font-size-body); color: var(--text-secondary); }

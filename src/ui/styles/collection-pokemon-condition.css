@@ -1,4 +1,4 @@
 .collection-pokemon-condition { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding-block: 10px 12px; border-bottom: 1px solid #ffffff12; }
 .collection-pokemon-condition > div { min-width: 0; }
-.collection-pokemon-condition dt { margin-bottom: 3px; font-size: var(--font-size-small); color: var(--text-label); }
+.collection-pokemon-condition dt { margin-bottom: 3px; font-size: var(--font-size-small); color: var(--text-secondary); }
 .collection-pokemon-condition dd { margin: 0; font-size: var(--font-size-body); line-height: var(--line-height-body); overflow-wrap: anywhere; }
