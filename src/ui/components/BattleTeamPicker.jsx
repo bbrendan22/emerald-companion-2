@@ -6,6 +6,10 @@ import {publicAsset} from '../../assets/publicAsset.js';
 
 export default function BattleTeamPicker({state, pool, records = pool, dispatch, anchor, trigger, onClose, roleError}) {
   const popup = useRef(null);
+  useLayoutEffect(() => {
+    const width = popup.current.getBoundingClientRect().width;
+    popup.current.style.right = `${Math.max(12, Math.min(anchor.right, window.innerWidth - width - 12))}px`;
+  }, [anchor]);
   const touchSelection = useRef(null);
   const [loaded] = useState(() => {
     try {return {teams:loadBattleTeams(window.localStorage), error:''};}

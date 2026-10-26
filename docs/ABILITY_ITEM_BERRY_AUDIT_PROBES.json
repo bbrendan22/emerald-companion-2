@@ -1,0 +1,283 @@
+{
+  "Battle Armor": {
+    "normal": {
+      "kind": "standard-damage",
+      "min": 46,
+      "max": 55
+    },
+    "critical": {
+      "kind": "standard-damage",
+      "min": 94,
+      "max": 111
+    }
+  },
+  "Shell Armor": {
+    "normal": {
+      "kind": "standard-damage",
+      "min": 46,
+      "max": 55
+    },
+    "critical": {
+      "kind": "standard-damage",
+      "min": 94,
+      "max": 111
+    }
+  },
+  "trace": {
+    "unresolved": {
+      "kind": "standard-damage",
+      "min": 46,
+      "max": 55
+    },
+    "copiedHugePower": {
+      "kind": "standard-damage",
+      "min": 91,
+      "max": 108
+    }
+  },
+  "forecast": {
+    "normalSpeciesType": {
+      "kind": "standard-damage",
+      "min": 59,
+      "max": 70
+    },
+    "resolvedWaterType": {
+      "kind": "standard-damage",
+      "min": 89,
+      "max": 105
+    }
+  },
+  "plusMinus": {
+    "current": {
+      "kind": "standard-damage",
+      "min": 36,
+      "max": 43
+    },
+    "sourceExpectedRawSpA150": {
+      "kind": "standard-damage",
+      "min": 54,
+      "max": 64
+    }
+  },
+  "flashFire": {
+    "baseline": {
+      "kind": "standard-damage",
+      "min": 36,
+      "max": 43
+    },
+    "ignoredFlag": {
+      "kind": "standard-damage",
+      "min": 36,
+      "max": 43
+    },
+    "stage1Approximation": {
+      "kind": "standard-damage",
+      "min": 54,
+      "max": 64
+    },
+    "sourceExpectedActivatedBase": 63
+  },
+  "enigma": {
+    "current": {
+      "kind": "standard-damage",
+      "min": 36,
+      "max": 43
+    },
+    "knownWaterEffectExample": {
+      "kind": "standard-damage",
+      "min": 39,
+      "max": 47
+    }
+  },
+  "pinchBerries": {
+    "Liechi Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    },
+    "Ganlon Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    },
+    "Salac Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    },
+    "Petaya Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    },
+    "Apicot Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    },
+    "Lansat Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    },
+    "Starf Berry": {
+      "physical": {
+        "kind": "standard-damage",
+        "min": 46,
+        "max": 55
+      },
+      "special": {
+        "kind": "standard-damage",
+        "min": 36,
+        "max": 43
+      }
+    }
+  },
+  "armorUncertainty": [
+    {
+      "label": "",
+      "max": 55,
+      "abilities": [
+        "Swift Swim",
+        "Battle Armor"
+      ]
+    }
+  ],
+  "metalPowder": {
+    "unknown": null,
+    "untransformed": {
+      "kind": "standard-damage",
+      "min": 23,
+      "max": 28
+    }
+  },
+  "shellBellPinch": {
+    "currentSelected3": {
+      "kind": "aggregate-damage",
+      "min": 30,
+      "max": 36
+    },
+    "firstHit": {
+      "kind": "standard-damage",
+      "min": 10,
+      "max": 12
+    },
+    "laterHits": {
+      "kind": "standard-damage",
+      "min": 7,
+      "max": 9
+    },
+    "sourceOrderedExpected": {
+      "min": 24,
+      "max": 30
+    }
+  },
+  "inventory": {
+    "abilityIds": 77,
+    "berries": 43,
+    "frontierSets": 888,
+    "distinctItems": 43,
+    "unknownItemNames": [],
+    "unusedAbilitySpecies": []
+  },
+  "frontierItemCounts": {
+    "Aspear Berry": 1,
+    "Black Belt": 4,
+    "BlackGlasses": 1,
+    "Bright Powder": 82,
+    "Charcoal": 2,
+    "Cheri Berry": 21,
+    "Chesto Berry": 51,
+    "Choice Band": 12,
+    "Deep Sea Scale": 1,
+    "Focus Band": 80,
+    "Hard Stone": 2,
+    "Kings Rock": 27,
+    "Lax Incense": 45,
+    "Leftovers": 70,
+    "Leppa Berry": 2,
+    "Liechi Berry": 12,
+    "Light Ball": 1,
+    "Lum Berry": 82,
+    "Magnet": 3,
+    "Mental Herb": 4,
+    "Metal Coat": 1,
+    "Metal Powder": 1,
+    "Miracle Seed": 2,
+    "Mystic Water": 7,
+    "NeverMeltIce": 4,
+    "Pecha Berry": 7,
+    "Persim Berry": 31,
+    "Petaya Berry": 16,
+    "Poison Barb": 3,
+    "Quick Claw": 81,
+    "Rawst Berry": 8,
+    "Salac Berry": 22,
+    "Scope Lens": 55,
+    "Sharp Beak": 4,
+    "Shell Bell": 46,
+    "Silk Scarf": 6,
+    "SilverPowder": 1,
+    "Sitrus Berry": 45,
+    "Soft Sand": 5,
+    "Stick": 1,
+    "Thick Club": 4,
+    "TwistedSpoon": 10,
+    "White Herb": 25
+  },
+  "sourceDerivedChecks": {
+    "passed": true,
+    "typeBoostItems": 18,
+    "speciesItemRestrictionsAndFrontierDew": true,
+    "oddStatFlooringAndAbilityOrder": true,
+    "pinchThresholdAt66of200And67of200": true
+  },
+  "auditIntegrity": {
+    "productionAndTestFilesChecked": 583,
+    "changedOrRemoved": 0,
+    "added": 0,
+    "existingUnitTestsPassed": 814
+  }
+}

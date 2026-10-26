@@ -56,11 +56,11 @@ test('14 common attacks cannot silently fall out of ordinary eligibility in eith
  }
 });
 test('self-KO/Struggle and genuine unsupported direct-damage cases stay unavailable',()=>{
- for(const name of ['Self Destruct','Explosion','Struggle','SolarBeam','False Swipe','Pursuit','Revenge','Dream Eater','Snore','Uproar','Fake Out','Focus Punch','Counter','Mirror Coat','Double Kick','Guillotine','Psywave','Endeavor'])assert.equal(calc(battleMove(name),mon,neutral('NORMAL')),null,name);
+ for(const name of ['Self Destruct','Explosion','Struggle','False Swipe','Counter','Mirror Coat','Double Kick','Guillotine','Psywave','Endeavor'])assert.equal(calc(battleMove(name),mon,neutral('NORMAL')),null,name);
 });
 
-test('current canonical inventory remains162 eligible/192 excluded with neutral known context',()=>{
+test('current canonical inventory includes178 eligible/176 excluded with neutral known context',()=>{
  const a={...mon,dex:0,ivs:{hp:31,attack:31,defense:31,speed:31,spAttack:31,spDefense:31},friendship:70,currentHp:200,weight:100},d={...a,types:['NORMAL']};
  let count=0;for(let id=1;id<=354;id++)if(calc(battleMove(id),a,d))count++;
- assert.equal(count,162);assert.equal(354-count,192);
+ assert.equal(count,178);assert.equal(354-count,176);
 });

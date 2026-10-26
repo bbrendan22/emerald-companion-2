@@ -1,3 +1,4 @@
+import {calculateCoreDamage} from '../src/battle/coreDamage.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {typeChartTypes, typeChartRows} from '../src/resources/charts/typeChart.js';
@@ -33,6 +34,10 @@ test('17×17 matrix uses exact order and every canonical Gen 3 single-type match
     const [strong, resisted, immune] = expected[attack];
     for (const {defense, multiplier, label} of cells) {
       const value = strong.includes(defense) ? 2 : resisted.includes(defense) ? 0.5 : immune.includes(defense) ? 0 : 1;
+      const result = calculateCoreDamage({id:1,effect:'HIT',power:80,type:attack.toUpperCase()},
+        {level:50,types:['NORMAL'],stats:{attack:100,spAttack:100}},
+        {types:[defense.toUpperCase()],stats:{defense:100,spDefense:100}});
+      assert.equal(result.effectiveness,value,`core: ${attack} → ${defense}`);
       assert.equal(multiplier, value, `${attack} → ${defense}`);
       assert.equal(multiplier, typeMultiplier(attack.toUpperCase(), [defense.toUpperCase()]));
       assert.equal(label, value === 1 ? '' : value === 0.5 ? '½×' : `${value}×`);

@@ -1,11 +1,12 @@
 import {publicAsset} from '../../assets/publicAsset.js';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {searchTowerTrainers, selectedTowerTrainer} from '../../battle/towerTrainers.js';
 import FrontierTrainerSprite from './FrontierTrainerSprite.jsx';
 
 export default function BattleTrainers({state, dispatch}) {
   const [query, setQuery] = useState('');
-  const results = searchTowerTrainers(query);
+  useEffect(() => {setQuery('');},[state.opponentReset]);
+  const results = searchTowerTrainers(query,{state,format:state.rules.format});
   const selected = selectedTowerTrainer(state)?.key;
   return <section className="battle-trainer-search" aria-label="Tower trainers">
     <label className="battle-trainer-search-field"><span className="battle-visually-hidden">Search trainers</span>

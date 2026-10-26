@@ -1,7 +1,10 @@
 // Generated from pret/pokeemerald. Run node tools/buildMoveResources.mjs
+// Target metadata: pret/pokeemerald@731ad5bfd6e6f265508d0efcca0ba42f9dcf5881
+// src/data/battle_moves.h, indexed by include/constants/moves.h; original MOVE_TARGET_* values.
 export const moveResources = {
   "1": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 35,
@@ -12,6 +15,7 @@ export const moveResources = {
   },
   "2": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 100,
     "pp": 25,
@@ -22,6 +26,7 @@ export const moveResources = {
   },
   "3": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 85,
     "pp": 10,
@@ -32,6 +37,7 @@ export const moveResources = {
   },
   "4": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 18,
     "accuracy": 85,
     "pp": 15,
@@ -42,6 +48,7 @@ export const moveResources = {
   },
   "5": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 85,
     "pp": 20,
@@ -52,6 +59,7 @@ export const moveResources = {
   },
   "6": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 20,
@@ -62,6 +70,7 @@ export const moveResources = {
   },
   "7": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 75,
     "accuracy": 100,
     "pp": 15,
@@ -72,6 +81,7 @@ export const moveResources = {
   },
   "8": {
     "type": "ICE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 75,
     "accuracy": 100,
     "pp": 15,
@@ -82,6 +92,7 @@ export const moveResources = {
   },
   "9": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 75,
     "accuracy": 100,
     "pp": 15,
@@ -92,6 +103,7 @@ export const moveResources = {
   },
   "10": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 35,
@@ -102,6 +114,7 @@ export const moveResources = {
   },
   "11": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 55,
     "accuracy": 100,
     "pp": 30,
@@ -112,6 +125,7 @@ export const moveResources = {
   },
   "12": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 30,
     "pp": 5,
@@ -122,6 +136,7 @@ export const moveResources = {
   },
   "13": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 80,
     "accuracy": 100,
     "pp": 10,
@@ -132,6 +147,7 @@ export const moveResources = {
   },
   "14": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -142,6 +158,7 @@ export const moveResources = {
   },
   "15": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 95,
     "pp": 30,
@@ -152,6 +169,7 @@ export const moveResources = {
   },
   "16": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 35,
@@ -162,6 +180,7 @@ export const moveResources = {
   },
   "17": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 35,
@@ -172,6 +191,7 @@ export const moveResources = {
   },
   "18": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -182,6 +202,7 @@ export const moveResources = {
   },
   "19": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 95,
     "pp": 15,
@@ -192,6 +213,7 @@ export const moveResources = {
   },
   "20": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 75,
     "pp": 20,
@@ -202,6 +224,7 @@ export const moveResources = {
   },
   "21": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 75,
     "pp": 20,
@@ -212,6 +235,7 @@ export const moveResources = {
   },
   "22": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 35,
     "accuracy": 100,
     "pp": 10,
@@ -222,6 +246,7 @@ export const moveResources = {
   },
   "23": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 20,
@@ -232,6 +257,7 @@ export const moveResources = {
   },
   "24": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 30,
     "accuracy": 100,
     "pp": 30,
@@ -242,6 +268,7 @@ export const moveResources = {
   },
   "25": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 75,
     "pp": 5,
@@ -252,6 +279,7 @@ export const moveResources = {
   },
   "26": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 95,
     "pp": 25,
@@ -262,6 +290,7 @@ export const moveResources = {
   },
   "27": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 85,
     "pp": 15,
@@ -272,6 +301,7 @@ export const moveResources = {
   },
   "28": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -282,6 +312,7 @@ export const moveResources = {
   },
   "29": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 15,
@@ -292,6 +323,7 @@ export const moveResources = {
   },
   "30": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 25,
@@ -302,6 +334,7 @@ export const moveResources = {
   },
   "31": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 85,
     "pp": 20,
@@ -312,6 +345,7 @@ export const moveResources = {
   },
   "32": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 30,
     "pp": 5,
@@ -322,6 +356,7 @@ export const moveResources = {
   },
   "33": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 35,
     "accuracy": 95,
     "pp": 35,
@@ -332,6 +367,7 @@ export const moveResources = {
   },
   "34": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 85,
     "accuracy": 100,
     "pp": 15,
@@ -342,6 +378,7 @@ export const moveResources = {
   },
   "35": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 85,
     "pp": 20,
@@ -352,6 +389,7 @@ export const moveResources = {
   },
   "36": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 90,
     "accuracy": 85,
     "pp": 20,
@@ -362,6 +400,7 @@ export const moveResources = {
   },
   "37": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_RANDOM",
     "power": 90,
     "accuracy": 100,
     "pp": 20,
@@ -372,6 +411,7 @@ export const moveResources = {
   },
   "38": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 100,
     "pp": 15,
@@ -382,6 +422,7 @@ export const moveResources = {
   },
   "39": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 0,
     "accuracy": 100,
     "pp": 30,
@@ -392,6 +433,7 @@ export const moveResources = {
   },
   "40": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 100,
     "pp": 35,
@@ -402,6 +444,7 @@ export const moveResources = {
   },
   "41": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 25,
     "accuracy": 100,
     "pp": 20,
@@ -412,6 +455,7 @@ export const moveResources = {
   },
   "42": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 14,
     "accuracy": 85,
     "pp": 20,
@@ -422,6 +466,7 @@ export const moveResources = {
   },
   "43": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 0,
     "accuracy": 100,
     "pp": 30,
@@ -432,6 +477,7 @@ export const moveResources = {
   },
   "44": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 25,
@@ -442,6 +488,7 @@ export const moveResources = {
   },
   "45": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 0,
     "accuracy": 100,
     "pp": 40,
@@ -452,6 +499,7 @@ export const moveResources = {
   },
   "46": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -462,6 +510,7 @@ export const moveResources = {
   },
   "47": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 55,
     "pp": 15,
@@ -472,6 +521,7 @@ export const moveResources = {
   },
   "48": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 55,
     "pp": 20,
@@ -482,6 +532,7 @@ export const moveResources = {
   },
   "49": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 90,
     "pp": 20,
@@ -492,6 +543,7 @@ export const moveResources = {
   },
   "50": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 55,
     "pp": 20,
@@ -502,6 +554,7 @@ export const moveResources = {
   },
   "51": {
     "type": "POISON",
+    "target": "MOVE_TARGET_BOTH",
     "power": 40,
     "accuracy": 100,
     "pp": 30,
@@ -512,6 +565,7 @@ export const moveResources = {
   },
   "52": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 25,
@@ -522,6 +576,7 @@ export const moveResources = {
   },
   "53": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 95,
     "accuracy": 100,
     "pp": 15,
@@ -532,6 +587,7 @@ export const moveResources = {
   },
   "54": {
     "type": "ICE",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -542,6 +598,7 @@ export const moveResources = {
   },
   "55": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 25,
@@ -552,6 +609,7 @@ export const moveResources = {
   },
   "56": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 80,
     "pp": 5,
@@ -562,6 +620,7 @@ export const moveResources = {
   },
   "57": {
     "type": "WATER",
+    "target": "MOVE_TARGET_BOTH",
     "power": 95,
     "accuracy": 100,
     "pp": 15,
@@ -572,6 +631,7 @@ export const moveResources = {
   },
   "58": {
     "type": "ICE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 95,
     "accuracy": 100,
     "pp": 10,
@@ -582,6 +642,7 @@ export const moveResources = {
   },
   "59": {
     "type": "ICE",
+    "target": "MOVE_TARGET_BOTH",
     "power": 120,
     "accuracy": 70,
     "pp": 5,
@@ -592,6 +653,7 @@ export const moveResources = {
   },
   "60": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 20,
@@ -602,6 +664,7 @@ export const moveResources = {
   },
   "61": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 20,
@@ -612,6 +675,7 @@ export const moveResources = {
   },
   "62": {
     "type": "ICE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 20,
@@ -622,6 +686,7 @@ export const moveResources = {
   },
   "63": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 150,
     "accuracy": 90,
     "pp": 5,
@@ -632,6 +697,7 @@ export const moveResources = {
   },
   "64": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 35,
     "accuracy": 100,
     "pp": 35,
@@ -642,6 +708,7 @@ export const moveResources = {
   },
   "65": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 20,
@@ -652,6 +719,7 @@ export const moveResources = {
   },
   "66": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 80,
     "pp": 25,
@@ -662,6 +730,7 @@ export const moveResources = {
   },
   "67": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 20,
@@ -672,6 +741,7 @@ export const moveResources = {
   },
   "68": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 1,
     "accuracy": 100,
     "pp": 20,
@@ -682,6 +752,7 @@ export const moveResources = {
   },
   "69": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 20,
@@ -692,6 +763,7 @@ export const moveResources = {
   },
   "70": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 15,
@@ -702,6 +774,7 @@ export const moveResources = {
   },
   "71": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 20,
@@ -712,6 +785,7 @@ export const moveResources = {
   },
   "72": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 10,
@@ -722,6 +796,7 @@ export const moveResources = {
   },
   "73": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 90,
     "pp": 10,
@@ -732,6 +807,7 @@ export const moveResources = {
   },
   "74": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -742,6 +818,7 @@ export const moveResources = {
   },
   "75": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_BOTH",
     "power": 55,
     "accuracy": 95,
     "pp": 25,
@@ -752,6 +829,7 @@ export const moveResources = {
   },
   "76": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 100,
     "pp": 10,
@@ -762,6 +840,7 @@ export const moveResources = {
   },
   "77": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 35,
@@ -772,6 +851,7 @@ export const moveResources = {
   },
   "78": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 30,
@@ -782,6 +862,7 @@ export const moveResources = {
   },
   "79": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 15,
@@ -792,6 +873,7 @@ export const moveResources = {
   },
   "80": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_RANDOM",
     "power": 70,
     "accuracy": 100,
     "pp": 20,
@@ -802,6 +884,7 @@ export const moveResources = {
   },
   "81": {
     "type": "BUG",
+    "target": "MOVE_TARGET_BOTH",
     "power": 0,
     "accuracy": 95,
     "pp": 40,
@@ -812,6 +895,7 @@ export const moveResources = {
   },
   "82": {
     "type": "DRAGON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 10,
@@ -822,6 +906,7 @@ export const moveResources = {
   },
   "83": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 70,
     "pp": 15,
@@ -832,6 +917,7 @@ export const moveResources = {
   },
   "84": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 30,
@@ -842,6 +928,7 @@ export const moveResources = {
   },
   "85": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 95,
     "accuracy": 100,
     "pp": 15,
@@ -852,6 +939,7 @@ export const moveResources = {
   },
   "86": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -862,6 +950,7 @@ export const moveResources = {
   },
   "87": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 70,
     "pp": 10,
@@ -872,6 +961,7 @@ export const moveResources = {
   },
   "88": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 90,
     "pp": 15,
@@ -882,6 +972,7 @@ export const moveResources = {
   },
   "89": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_FOES_AND_ALLY",
     "power": 100,
     "accuracy": 100,
     "pp": 10,
@@ -892,6 +983,7 @@ export const moveResources = {
   },
   "90": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 30,
     "pp": 5,
@@ -902,6 +994,7 @@ export const moveResources = {
   },
   "91": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 10,
@@ -912,6 +1005,7 @@ export const moveResources = {
   },
   "92": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 85,
     "pp": 10,
@@ -922,6 +1016,7 @@ export const moveResources = {
   },
   "93": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 100,
     "pp": 25,
@@ -932,6 +1027,7 @@ export const moveResources = {
   },
   "94": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 90,
     "accuracy": 100,
     "pp": 10,
@@ -942,6 +1038,7 @@ export const moveResources = {
   },
   "95": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 60,
     "pp": 20,
@@ -952,6 +1049,7 @@ export const moveResources = {
   },
   "96": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -962,6 +1060,7 @@ export const moveResources = {
   },
   "97": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -972,6 +1071,7 @@ export const moveResources = {
   },
   "98": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 30,
@@ -982,6 +1082,7 @@ export const moveResources = {
   },
   "99": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 20,
@@ -992,6 +1093,7 @@ export const moveResources = {
   },
   "100": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1002,6 +1104,7 @@ export const moveResources = {
   },
   "101": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 15,
@@ -1012,6 +1115,7 @@ export const moveResources = {
   },
   "102": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -1022,6 +1126,7 @@ export const moveResources = {
   },
   "103": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 85,
     "pp": 40,
@@ -1032,6 +1137,7 @@ export const moveResources = {
   },
   "104": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 15,
@@ -1042,6 +1148,7 @@ export const moveResources = {
   },
   "105": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1052,6 +1159,7 @@ export const moveResources = {
   },
   "106": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1062,6 +1170,7 @@ export const moveResources = {
   },
   "107": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1072,6 +1181,7 @@ export const moveResources = {
   },
   "108": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -1082,6 +1192,7 @@ export const moveResources = {
   },
   "109": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -1092,6 +1203,7 @@ export const moveResources = {
   },
   "110": {
     "type": "WATER",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -1102,6 +1214,7 @@ export const moveResources = {
   },
   "111": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -1112,6 +1225,7 @@ export const moveResources = {
   },
   "112": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1122,6 +1236,7 @@ export const moveResources = {
   },
   "113": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1132,6 +1247,7 @@ export const moveResources = {
   },
   "114": {
     "type": "ICE",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1142,6 +1258,7 @@ export const moveResources = {
   },
   "115": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1152,6 +1269,7 @@ export const moveResources = {
   },
   "116": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1162,6 +1280,7 @@ export const moveResources = {
   },
   "117": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 1,
     "accuracy": 100,
     "pp": 10,
@@ -1172,6 +1291,7 @@ export const moveResources = {
   },
   "118": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1182,6 +1302,7 @@ export const moveResources = {
   },
   "119": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1192,6 +1313,7 @@ export const moveResources = {
   },
   "120": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_FOES_AND_ALLY",
     "power": 200,
     "accuracy": 100,
     "pp": 5,
@@ -1202,6 +1324,7 @@ export const moveResources = {
   },
   "121": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 75,
     "pp": 10,
@@ -1212,6 +1335,7 @@ export const moveResources = {
   },
   "122": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 30,
@@ -1222,6 +1346,7 @@ export const moveResources = {
   },
   "123": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 70,
     "pp": 20,
@@ -1232,6 +1357,7 @@ export const moveResources = {
   },
   "124": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 20,
@@ -1242,6 +1368,7 @@ export const moveResources = {
   },
   "125": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 85,
     "pp": 20,
@@ -1252,6 +1379,7 @@ export const moveResources = {
   },
   "126": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 85,
     "pp": 5,
@@ -1262,6 +1390,7 @@ export const moveResources = {
   },
   "127": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 15,
@@ -1272,6 +1401,7 @@ export const moveResources = {
   },
   "128": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 35,
     "accuracy": 75,
     "pp": 10,
@@ -1282,6 +1412,7 @@ export const moveResources = {
   },
   "129": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 60,
     "accuracy": 0,
     "pp": 20,
@@ -1292,6 +1423,7 @@ export const moveResources = {
   },
   "130": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 100,
     "pp": 15,
@@ -1302,6 +1434,7 @@ export const moveResources = {
   },
   "131": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 15,
@@ -1312,6 +1445,7 @@ export const moveResources = {
   },
   "132": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 10,
     "accuracy": 100,
     "pp": 35,
@@ -1322,6 +1456,7 @@ export const moveResources = {
   },
   "133": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1332,6 +1467,7 @@ export const moveResources = {
   },
   "134": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 80,
     "pp": 15,
@@ -1342,6 +1478,7 @@ export const moveResources = {
   },
   "135": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -1352,6 +1489,7 @@ export const moveResources = {
   },
   "136": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 85,
     "accuracy": 90,
     "pp": 20,
@@ -1362,6 +1500,7 @@ export const moveResources = {
   },
   "137": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 30,
@@ -1372,6 +1511,7 @@ export const moveResources = {
   },
   "138": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 100,
     "pp": 15,
@@ -1382,6 +1522,7 @@ export const moveResources = {
   },
   "139": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 55,
     "pp": 40,
@@ -1392,6 +1533,7 @@ export const moveResources = {
   },
   "140": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 85,
     "pp": 20,
@@ -1402,6 +1544,7 @@ export const moveResources = {
   },
   "141": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 15,
@@ -1412,6 +1555,7 @@ export const moveResources = {
   },
   "142": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 10,
@@ -1422,6 +1566,7 @@ export const moveResources = {
   },
   "143": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 140,
     "accuracy": 90,
     "pp": 5,
@@ -1432,6 +1577,7 @@ export const moveResources = {
   },
   "144": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1442,6 +1588,7 @@ export const moveResources = {
   },
   "145": {
     "type": "WATER",
+    "target": "MOVE_TARGET_BOTH",
     "power": 20,
     "accuracy": 100,
     "pp": 30,
@@ -1452,6 +1599,7 @@ export const moveResources = {
   },
   "146": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 10,
@@ -1462,6 +1610,7 @@ export const moveResources = {
   },
   "147": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -1472,6 +1621,7 @@ export const moveResources = {
   },
   "148": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 70,
     "pp": 20,
@@ -1482,6 +1632,7 @@ export const moveResources = {
   },
   "149": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 80,
     "pp": 15,
@@ -1492,6 +1643,7 @@ export const moveResources = {
   },
   "150": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -1502,6 +1654,7 @@ export const moveResources = {
   },
   "151": {
     "type": "POISON",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -1512,6 +1665,7 @@ export const moveResources = {
   },
   "152": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 90,
     "accuracy": 85,
     "pp": 10,
@@ -1522,6 +1676,7 @@ export const moveResources = {
   },
   "153": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_FOES_AND_ALLY",
     "power": 250,
     "accuracy": 100,
     "pp": 5,
@@ -1532,6 +1687,7 @@ export const moveResources = {
   },
   "154": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 18,
     "accuracy": 80,
     "pp": 15,
@@ -1542,6 +1698,7 @@ export const moveResources = {
   },
   "155": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 90,
     "pp": 10,
@@ -1552,6 +1709,7 @@ export const moveResources = {
   },
   "156": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1562,6 +1720,7 @@ export const moveResources = {
   },
   "157": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_BOTH",
     "power": 75,
     "accuracy": 90,
     "pp": 10,
@@ -1572,6 +1731,7 @@ export const moveResources = {
   },
   "158": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 90,
     "pp": 15,
@@ -1582,6 +1742,7 @@ export const moveResources = {
   },
   "159": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1592,6 +1753,7 @@ export const moveResources = {
   },
   "160": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 30,
@@ -1602,6 +1764,7 @@ export const moveResources = {
   },
   "161": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 10,
@@ -1612,6 +1775,7 @@ export const moveResources = {
   },
   "162": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 90,
     "pp": 10,
@@ -1622,6 +1786,7 @@ export const moveResources = {
   },
   "163": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 20,
@@ -1632,6 +1797,7 @@ export const moveResources = {
   },
   "164": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1642,6 +1808,7 @@ export const moveResources = {
   },
   "165": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 100,
     "pp": 1,
@@ -1652,6 +1819,7 @@ export const moveResources = {
   },
   "166": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 0,
     "pp": 1,
@@ -1662,6 +1830,7 @@ export const moveResources = {
   },
   "167": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 10,
     "accuracy": 90,
     "pp": 10,
@@ -1672,6 +1841,7 @@ export const moveResources = {
   },
   "168": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 10,
@@ -1682,6 +1852,7 @@ export const moveResources = {
   },
   "169": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -1692,6 +1863,7 @@ export const moveResources = {
   },
   "170": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 5,
@@ -1702,6 +1874,7 @@ export const moveResources = {
   },
   "171": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -1712,6 +1885,7 @@ export const moveResources = {
   },
   "172": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 25,
@@ -1722,6 +1896,7 @@ export const moveResources = {
   },
   "173": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 15,
@@ -1732,6 +1907,7 @@ export const moveResources = {
   },
   "174": {
     "type": "MYSTERY",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1742,6 +1918,7 @@ export const moveResources = {
   },
   "175": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 15,
@@ -1752,6 +1929,7 @@ export const moveResources = {
   },
   "176": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 30,
@@ -1762,6 +1940,7 @@ export const moveResources = {
   },
   "177": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 95,
     "pp": 5,
@@ -1772,6 +1951,7 @@ export const moveResources = {
   },
   "178": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 85,
     "pp": 40,
@@ -1782,6 +1962,7 @@ export const moveResources = {
   },
   "179": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 15,
@@ -1792,6 +1973,7 @@ export const moveResources = {
   },
   "180": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -1802,6 +1984,7 @@ export const moveResources = {
   },
   "181": {
     "type": "ICE",
+    "target": "MOVE_TARGET_BOTH",
     "power": 40,
     "accuracy": 100,
     "pp": 25,
@@ -1812,6 +1995,7 @@ export const moveResources = {
   },
   "182": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1822,6 +2006,7 @@ export const moveResources = {
   },
   "183": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 30,
@@ -1832,6 +2017,7 @@ export const moveResources = {
   },
   "184": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 90,
     "pp": 10,
@@ -1842,6 +2028,7 @@ export const moveResources = {
   },
   "185": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 0,
     "pp": 20,
@@ -1852,6 +2039,7 @@ export const moveResources = {
   },
   "186": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 10,
@@ -1862,6 +2050,7 @@ export const moveResources = {
   },
   "187": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -1872,6 +2061,7 @@ export const moveResources = {
   },
   "188": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 90,
     "accuracy": 100,
     "pp": 10,
@@ -1882,6 +2072,7 @@ export const moveResources = {
   },
   "189": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 10,
@@ -1892,6 +2083,7 @@ export const moveResources = {
   },
   "190": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 85,
     "pp": 10,
@@ -1902,6 +2094,7 @@ export const moveResources = {
   },
   "191": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_OPPONENTS_FIELD",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -1912,6 +2105,7 @@ export const moveResources = {
   },
   "192": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 50,
     "pp": 5,
@@ -1922,6 +2116,7 @@ export const moveResources = {
   },
   "193": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 40,
@@ -1932,6 +2127,7 @@ export const moveResources = {
   },
   "194": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -1942,6 +2138,7 @@ export const moveResources = {
   },
   "195": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -1952,6 +2149,7 @@ export const moveResources = {
   },
   "196": {
     "type": "ICE",
+    "target": "MOVE_TARGET_BOTH",
     "power": 55,
     "accuracy": 95,
     "pp": 15,
@@ -1962,6 +2160,7 @@ export const moveResources = {
   },
   "197": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -1972,6 +2171,7 @@ export const moveResources = {
   },
   "198": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 25,
     "accuracy": 80,
     "pp": 10,
@@ -1982,6 +2182,7 @@ export const moveResources = {
   },
   "199": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 5,
@@ -1992,6 +2193,7 @@ export const moveResources = {
   },
   "200": {
     "type": "DRAGON",
+    "target": "MOVE_TARGET_RANDOM",
     "power": 90,
     "accuracy": 100,
     "pp": 15,
@@ -2002,6 +2204,7 @@ export const moveResources = {
   },
   "201": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2012,6 +2215,7 @@ export const moveResources = {
   },
   "202": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 5,
@@ -2022,6 +2226,7 @@ export const moveResources = {
   },
   "203": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2032,6 +2237,7 @@ export const moveResources = {
   },
   "204": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2042,6 +2248,7 @@ export const moveResources = {
   },
   "205": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 30,
     "accuracy": 90,
     "pp": 20,
@@ -2052,6 +2259,7 @@ export const moveResources = {
   },
   "206": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 40,
@@ -2062,6 +2270,7 @@ export const moveResources = {
   },
   "207": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 90,
     "pp": 15,
@@ -2072,6 +2281,7 @@ export const moveResources = {
   },
   "208": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2082,6 +2292,7 @@ export const moveResources = {
   },
   "209": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 65,
     "accuracy": 100,
     "pp": 20,
@@ -2092,6 +2303,7 @@ export const moveResources = {
   },
   "210": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 10,
     "accuracy": 95,
     "pp": 20,
@@ -2102,6 +2314,7 @@ export const moveResources = {
   },
   "211": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 90,
     "pp": 25,
@@ -2112,6 +2325,7 @@ export const moveResources = {
   },
   "212": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 5,
@@ -2122,6 +2336,7 @@ export const moveResources = {
   },
   "213": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -2132,6 +2347,7 @@ export const moveResources = {
   },
   "214": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2142,6 +2358,7 @@ export const moveResources = {
   },
   "215": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -2152,6 +2369,7 @@ export const moveResources = {
   },
   "216": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 20,
@@ -2162,6 +2380,7 @@ export const moveResources = {
   },
   "217": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 90,
     "pp": 15,
@@ -2172,6 +2391,7 @@ export const moveResources = {
   },
   "218": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 20,
@@ -2182,6 +2402,7 @@ export const moveResources = {
   },
   "219": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 25,
@@ -2192,6 +2413,7 @@ export const moveResources = {
   },
   "220": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2202,6 +2424,7 @@ export const moveResources = {
   },
   "221": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 95,
     "pp": 5,
@@ -2212,6 +2435,7 @@ export const moveResources = {
   },
   "222": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_FOES_AND_ALLY",
     "power": 1,
     "accuracy": 100,
     "pp": 30,
@@ -2222,6 +2446,7 @@ export const moveResources = {
   },
   "223": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 50,
     "pp": 5,
@@ -2232,6 +2457,7 @@ export const moveResources = {
   },
   "224": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 85,
     "pp": 10,
@@ -2242,6 +2468,7 @@ export const moveResources = {
   },
   "225": {
     "type": "DRAGON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 20,
@@ -2252,6 +2479,7 @@ export const moveResources = {
   },
   "226": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -2262,6 +2490,7 @@ export const moveResources = {
   },
   "227": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 5,
@@ -2272,6 +2501,7 @@ export const moveResources = {
   },
   "228": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 20,
@@ -2282,6 +2512,7 @@ export const moveResources = {
   },
   "229": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 40,
@@ -2292,6 +2523,7 @@ export const moveResources = {
   },
   "230": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2302,6 +2534,7 @@ export const moveResources = {
   },
   "231": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 75,
     "pp": 15,
@@ -2312,6 +2545,7 @@ export const moveResources = {
   },
   "232": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 95,
     "pp": 35,
@@ -2322,6 +2556,7 @@ export const moveResources = {
   },
   "233": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 10,
@@ -2332,6 +2567,7 @@ export const moveResources = {
   },
   "234": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -2342,6 +2578,7 @@ export const moveResources = {
   },
   "235": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -2352,6 +2589,7 @@ export const moveResources = {
   },
   "236": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -2362,6 +2600,7 @@ export const moveResources = {
   },
   "237": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 15,
@@ -2372,6 +2611,7 @@ export const moveResources = {
   },
   "238": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 80,
     "pp": 5,
@@ -2382,6 +2622,7 @@ export const moveResources = {
   },
   "239": {
     "type": "DRAGON",
+    "target": "MOVE_TARGET_BOTH",
     "power": 40,
     "accuracy": 100,
     "pp": 20,
@@ -2392,6 +2633,7 @@ export const moveResources = {
   },
   "240": {
     "type": "WATER",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -2402,6 +2644,7 @@ export const moveResources = {
   },
   "241": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -2412,6 +2655,7 @@ export const moveResources = {
   },
   "242": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 15,
@@ -2422,6 +2666,7 @@ export const moveResources = {
   },
   "243": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 1,
     "accuracy": 100,
     "pp": 20,
@@ -2432,6 +2677,7 @@ export const moveResources = {
   },
   "244": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2442,6 +2688,7 @@ export const moveResources = {
   },
   "245": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 5,
@@ -2452,6 +2699,7 @@ export const moveResources = {
   },
   "246": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 5,
@@ -2462,6 +2710,7 @@ export const moveResources = {
   },
   "247": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 15,
@@ -2472,6 +2721,7 @@ export const moveResources = {
   },
   "248": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 90,
     "pp": 15,
@@ -2482,6 +2732,7 @@ export const moveResources = {
   },
   "249": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 15,
@@ -2492,6 +2743,7 @@ export const moveResources = {
   },
   "250": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 70,
     "pp": 15,
@@ -2502,6 +2754,7 @@ export const moveResources = {
   },
   "251": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 10,
     "accuracy": 100,
     "pp": 10,
@@ -2512,6 +2765,7 @@ export const moveResources = {
   },
   "252": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 10,
@@ -2522,6 +2776,7 @@ export const moveResources = {
   },
   "253": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_RANDOM",
     "power": 50,
     "accuracy": 100,
     "pp": 10,
@@ -2532,6 +2787,7 @@ export const moveResources = {
   },
   "254": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2542,6 +2798,7 @@ export const moveResources = {
   },
   "255": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 100,
     "pp": 10,
@@ -2552,6 +2809,7 @@ export const moveResources = {
   },
   "256": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2562,6 +2820,7 @@ export const moveResources = {
   },
   "257": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_BOTH",
     "power": 100,
     "accuracy": 90,
     "pp": 10,
@@ -2572,6 +2831,7 @@ export const moveResources = {
   },
   "258": {
     "type": "ICE",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 10,
@@ -2582,6 +2842,7 @@ export const moveResources = {
   },
   "259": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -2592,6 +2853,7 @@ export const moveResources = {
   },
   "260": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -2602,6 +2864,7 @@ export const moveResources = {
   },
   "261": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 75,
     "pp": 15,
@@ -2612,6 +2875,7 @@ export const moveResources = {
   },
   "262": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2622,6 +2886,7 @@ export const moveResources = {
   },
   "263": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 20,
@@ -2632,6 +2897,7 @@ export const moveResources = {
   },
   "264": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 150,
     "accuracy": 100,
     "pp": 20,
@@ -2642,6 +2908,7 @@ export const moveResources = {
   },
   "265": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 10,
@@ -2652,6 +2919,7 @@ export const moveResources = {
   },
   "266": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2662,6 +2930,7 @@ export const moveResources = {
   },
   "267": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 95,
     "pp": 20,
@@ -2672,6 +2941,7 @@ export const moveResources = {
   },
   "268": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2682,6 +2952,7 @@ export const moveResources = {
   },
   "269": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2692,6 +2963,7 @@ export const moveResources = {
   },
   "270": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2702,6 +2974,7 @@ export const moveResources = {
   },
   "271": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2712,6 +2985,7 @@ export const moveResources = {
   },
   "272": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2722,6 +2996,7 @@ export const moveResources = {
   },
   "273": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2732,6 +3007,7 @@ export const moveResources = {
   },
   "274": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2742,6 +3018,7 @@ export const moveResources = {
   },
   "275": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2752,6 +3029,7 @@ export const moveResources = {
   },
   "276": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 100,
     "pp": 5,
@@ -2762,6 +3040,7 @@ export const moveResources = {
   },
   "277": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -2772,6 +3051,7 @@ export const moveResources = {
   },
   "278": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2782,6 +3062,7 @@ export const moveResources = {
   },
   "279": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 10,
@@ -2792,6 +3073,7 @@ export const moveResources = {
   },
   "280": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 75,
     "accuracy": 100,
     "pp": 15,
@@ -2802,6 +3084,7 @@ export const moveResources = {
   },
   "281": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2812,6 +3095,7 @@ export const moveResources = {
   },
   "282": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 20,
     "accuracy": 100,
     "pp": 20,
@@ -2822,6 +3106,7 @@ export const moveResources = {
   },
   "283": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 100,
     "pp": 5,
@@ -2832,6 +3117,7 @@ export const moveResources = {
   },
   "284": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_BOTH",
     "power": 150,
     "accuracy": 100,
     "pp": 5,
@@ -2842,6 +3128,7 @@ export const moveResources = {
   },
   "285": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2852,6 +3139,7 @@ export const moveResources = {
   },
   "286": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2862,6 +3150,7 @@ export const moveResources = {
   },
   "287": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2872,6 +3161,7 @@ export const moveResources = {
   },
   "288": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 5,
@@ -2882,6 +3172,7 @@ export const moveResources = {
   },
   "289": {
     "type": "DARK",
+    "target": "MOVE_TARGET_DEPENDS",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -2892,6 +3183,7 @@ export const moveResources = {
   },
   "290": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 20,
@@ -2902,6 +3194,7 @@ export const moveResources = {
   },
   "291": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 10,
@@ -2912,6 +3205,7 @@ export const moveResources = {
   },
   "292": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 100,
     "pp": 20,
@@ -2922,6 +3216,7 @@ export const moveResources = {
   },
   "293": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2932,6 +3227,7 @@ export const moveResources = {
   },
   "294": {
     "type": "BUG",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2942,6 +3238,7 @@ export const moveResources = {
   },
   "295": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 5,
@@ -2952,6 +3249,7 @@ export const moveResources = {
   },
   "296": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 5,
@@ -2962,6 +3260,7 @@ export const moveResources = {
   },
   "297": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -2972,6 +3271,7 @@ export const moveResources = {
   },
   "298": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_FOES_AND_ALLY",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -2982,6 +3282,7 @@ export const moveResources = {
   },
   "299": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 85,
     "accuracy": 90,
     "pp": 10,
@@ -2992,6 +3293,7 @@ export const moveResources = {
   },
   "300": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -3002,6 +3304,7 @@ export const moveResources = {
   },
   "301": {
     "type": "ICE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 30,
     "accuracy": 90,
     "pp": 20,
@@ -3012,6 +3315,7 @@ export const moveResources = {
   },
   "302": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 15,
@@ -3022,6 +3326,7 @@ export const moveResources = {
   },
   "303": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 10,
@@ -3032,6 +3337,7 @@ export const moveResources = {
   },
   "304": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_BOTH",
     "power": 90,
     "accuracy": 100,
     "pp": 10,
@@ -3042,6 +3348,7 @@ export const moveResources = {
   },
   "305": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 100,
     "pp": 15,
@@ -3052,6 +3359,7 @@ export const moveResources = {
   },
   "306": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 75,
     "accuracy": 95,
     "pp": 10,
@@ -3062,6 +3370,7 @@ export const moveResources = {
   },
   "307": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 150,
     "accuracy": 90,
     "pp": 5,
@@ -3072,6 +3381,7 @@ export const moveResources = {
   },
   "308": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 150,
     "accuracy": 90,
     "pp": 5,
@@ -3082,6 +3392,7 @@ export const moveResources = {
   },
   "309": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 100,
     "accuracy": 85,
     "pp": 10,
@@ -3092,6 +3403,7 @@ export const moveResources = {
   },
   "310": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 30,
     "accuracy": 100,
     "pp": 15,
@@ -3102,6 +3414,7 @@ export const moveResources = {
   },
   "311": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 100,
     "pp": 10,
@@ -3112,6 +3425,7 @@ export const moveResources = {
   },
   "312": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 5,
@@ -3122,6 +3436,7 @@ export const moveResources = {
   },
   "313": {
     "type": "DARK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -3132,6 +3447,7 @@ export const moveResources = {
   },
   "314": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_BOTH",
     "power": 55,
     "accuracy": 95,
     "pp": 25,
@@ -3142,6 +3458,7 @@ export const moveResources = {
   },
   "315": {
     "type": "FIRE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 140,
     "accuracy": 90,
     "pp": 5,
@@ -3152,6 +3469,7 @@ export const moveResources = {
   },
   "316": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 40,
@@ -3162,6 +3480,7 @@ export const moveResources = {
   },
   "317": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 80,
     "pp": 10,
@@ -3172,6 +3491,7 @@ export const moveResources = {
   },
   "318": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 5,
@@ -3182,6 +3502,7 @@ export const moveResources = {
   },
   "319": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 85,
     "pp": 40,
@@ -3192,6 +3513,7 @@ export const moveResources = {
   },
   "320": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 55,
     "pp": 15,
@@ -3202,6 +3524,7 @@ export const moveResources = {
   },
   "321": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 20,
@@ -3212,6 +3535,7 @@ export const moveResources = {
   },
   "322": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -3222,6 +3546,7 @@ export const moveResources = {
   },
   "323": {
     "type": "WATER",
+    "target": "MOVE_TARGET_BOTH",
     "power": 150,
     "accuracy": 100,
     "pp": 5,
@@ -3232,6 +3557,7 @@ export const moveResources = {
   },
   "324": {
     "type": "BUG",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 75,
     "accuracy": 100,
     "pp": 15,
@@ -3242,6 +3568,7 @@ export const moveResources = {
   },
   "325": {
     "type": "GHOST",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 0,
     "pp": 20,
@@ -3252,6 +3579,7 @@ export const moveResources = {
   },
   "326": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 30,
@@ -3262,6 +3590,7 @@ export const moveResources = {
   },
   "327": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 85,
     "accuracy": 90,
     "pp": 15,
@@ -3272,6 +3601,7 @@ export const moveResources = {
   },
   "328": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 15,
     "accuracy": 70,
     "pp": 15,
@@ -3282,6 +3612,7 @@ export const moveResources = {
   },
   "329": {
     "type": "ICE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 1,
     "accuracy": 30,
     "pp": 5,
@@ -3292,6 +3623,7 @@ export const moveResources = {
   },
   "330": {
     "type": "WATER",
+    "target": "MOVE_TARGET_BOTH",
     "power": 95,
     "accuracy": 85,
     "pp": 10,
@@ -3302,6 +3634,7 @@ export const moveResources = {
   },
   "331": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 10,
     "accuracy": 100,
     "pp": 30,
@@ -3312,6 +3645,7 @@ export const moveResources = {
   },
   "332": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 0,
     "pp": 20,
@@ -3322,6 +3656,7 @@ export const moveResources = {
   },
   "333": {
     "type": "ICE",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 10,
     "accuracy": 100,
     "pp": 30,
@@ -3332,6 +3667,7 @@ export const moveResources = {
   },
   "334": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 15,
@@ -3342,6 +3678,7 @@ export const moveResources = {
   },
   "335": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 0,
     "accuracy": 100,
     "pp": 5,
@@ -3352,6 +3689,7 @@ export const moveResources = {
   },
   "336": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
@@ -3362,6 +3700,7 @@ export const moveResources = {
   },
   "337": {
     "type": "DRAGON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 80,
     "accuracy": 100,
     "pp": 15,
@@ -3372,6 +3711,7 @@ export const moveResources = {
   },
   "338": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 150,
     "accuracy": 90,
     "pp": 5,
@@ -3382,6 +3722,7 @@ export const moveResources = {
   },
   "339": {
     "type": "FIGHTING",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -3392,6 +3733,7 @@ export const moveResources = {
   },
   "340": {
     "type": "FLYING",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 85,
     "accuracy": 85,
     "pp": 5,
@@ -3402,6 +3744,7 @@ export const moveResources = {
   },
   "341": {
     "type": "GROUND",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 55,
     "accuracy": 95,
     "pp": 15,
@@ -3412,6 +3755,7 @@ export const moveResources = {
   },
   "342": {
     "type": "POISON",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 50,
     "accuracy": 100,
     "pp": 25,
@@ -3422,6 +3766,7 @@ export const moveResources = {
   },
   "343": {
     "type": "NORMAL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 40,
     "accuracy": 100,
     "pp": 40,
@@ -3432,6 +3777,7 @@ export const moveResources = {
   },
   "344": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 100,
     "pp": 15,
@@ -3442,6 +3788,7 @@ export const moveResources = {
   },
   "345": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 0,
     "pp": 20,
@@ -3452,6 +3799,7 @@ export const moveResources = {
   },
   "346": {
     "type": "WATER",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 100,
     "pp": 15,
@@ -3462,6 +3810,7 @@ export const moveResources = {
   },
   "347": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -3472,6 +3821,7 @@ export const moveResources = {
   },
   "348": {
     "type": "GRASS",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 70,
     "accuracy": 100,
     "pp": 15,
@@ -3482,6 +3832,7 @@ export const moveResources = {
   },
   "349": {
     "type": "DRAGON",
+    "target": "MOVE_TARGET_USER",
     "power": 0,
     "accuracy": 0,
     "pp": 20,
@@ -3492,6 +3843,7 @@ export const moveResources = {
   },
   "350": {
     "type": "ROCK",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 25,
     "accuracy": 80,
     "pp": 10,
@@ -3502,6 +3854,7 @@ export const moveResources = {
   },
   "351": {
     "type": "ELECTRIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 0,
     "pp": 20,
@@ -3512,6 +3865,7 @@ export const moveResources = {
   },
   "352": {
     "type": "WATER",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 60,
     "accuracy": 100,
     "pp": 20,
@@ -3522,6 +3876,7 @@ export const moveResources = {
   },
   "353": {
     "type": "STEEL",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 120,
     "accuracy": 85,
     "pp": 5,
@@ -3532,6 +3887,7 @@ export const moveResources = {
   },
   "354": {
     "type": "PSYCHIC",
+    "target": "MOVE_TARGET_SELECTED",
     "power": 140,
     "accuracy": 90,
     "pp": 5,

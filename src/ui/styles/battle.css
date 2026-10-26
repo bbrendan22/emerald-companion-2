@@ -1,5 +1,5 @@
 
-.page.battle-page { line-height: normal; padding: 14px max(12px, env(safe-area-inset-right)) calc(32px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+.page.battle-page { line-height: normal; padding: 6px max(12px, env(safe-area-inset-right)) calc(32px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
 .battle-content { max-width: 720px; margin-inline: auto; min-width: 0; --section-heading-color: var(--battle-neon); --section-heading-underline: #ff6b6b55; }
 .battle-content .battle-page-title { font-size: var(--font-size-heading); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-normal); margin: 0 0 10px; font-weight: var(--font-weight-semibold); color: #d4d8df; }
 .battle-page-title span { font-weight: var(--font-weight-regular); color: var(--text-muted-soft); }
@@ -76,7 +76,6 @@
 .battle-matchup-effect { text-align: right; font-size: var(--font-size-small); color: #c4ccd8; }
 .battle-matchup-move:focus-visible { outline: 1px solid #a7b1bf; outline-offset: 1px; }
 .battle-move-dialog { box-sizing: border-box; width: min(340px, calc(100% - 24px)); padding: 10px 12px; margin: auto; border: 1px solid #68717e; border-radius: 10px; background: #24272d; color: #e4e8ee; }
-.battle-move-dialog::backdrop { background: #0009; }
 .battle-move-dialog header { display: flex; align-items: center; gap: 7px; }
 .battle-move-dialog h2 { flex: 1; margin: 0; font-size: var(--font-size-heading); }
 .battle-move-dialog header img { object-fit: contain; }
@@ -240,15 +239,39 @@
 .battle-preview-percent-green { color: var(--text-status-success); }
 .battle-preview-percent-red { color: #ff8585; }
 
-/* Reuse Home's grid and divider; empty columns need an explicit visible height. */
-.battle-matchup-title { margin: 0 0 8px; padding: 0; border: 0; color: #39FF9C; font-size: var(--font-size-heading); line-height: var(--line-height-compact); font-weight: var(--font-weight-semibold); }
-.battle-matchup-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: 8px; margin: 20px auto 0; width: 100%; max-width: 400px; }
-.battle-matchup-position { display: flex; flex-direction: column; align-items: center; min-width: 0; gap: 4px; text-align: center; color: var(--text-secondary); }
-.battle-matchup-sprite, .battle-matchup-placeholder { display: block; width: 100%; max-width: 160px; aspect-ratio: 1; object-fit: contain; image-rendering: pixelated; user-select: none; }
+/* Unified Battle workspace; team columns align with the active matchup. */
+.battle-matchup-pair { --battle-column-gap: 8px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: repeat(9,auto); align-items: start; gap: var(--battle-row-gap,2px) var(--battle-column-gap); margin: var(--battle-small-space,6px) auto 0; width: 100%; }
+/* Shared tracks keep stats and moves aligned even when one identity wraps. */
+.battle-matchup-position { display: grid; grid-row: span 9; grid-template-rows: subgrid; justify-items: center; min-width: 0; text-align: center; color: var(--text-secondary); }
+.battle-matchup-sprite, .battle-matchup-placeholder { display: block; width: 96px; max-width: 100%; aspect-ratio: 1; object-fit: contain; image-rendering: pixelated; user-select: none; }
+.battle-active-identity { display: flex; align-self: stretch; align-items: center; justify-content: space-between; gap: 4px; width: 100%; min-width: 0; margin-bottom: 8px; }
+.battle-active-identity > .battle-matchup-species { flex: 1; min-width: 0; text-align: left; }
+.battle-active-meta { display: flex; flex-direction: row; align-items: center; flex-shrink: 0; gap: 3px; }
+.battle-active-meta-separator { color: var(--text-muted); font-size: var(--font-size-small); }
+.battle-active-meta small { white-space: nowrap; }
+.battle-active-types { display: flex; align-items: center; justify-content: center; gap: 2px; width: 100%; min-height: 18px; }
+.battle-active-artwork { display: grid; place-items: center; width: 100%; height: 96px; overflow: hidden; }
+.battle-active-facts { display: grid; grid-row: span 2; grid-template-rows: subgrid; justify-items: center; width: 100%; min-width: 0; margin: 0; box-sizing: border-box; padding-bottom: var(--battle-section-space,0px); font-size: var(--font-size-body); line-height: var(--line-height-body); text-align: center; }
+.battle-active-item { display: flex; align-items: center; justify-content: center; width: 100%; min-width: 0; min-height: var(--battle-item-height,30px); }
+.battle-active-ability { display: flex; align-items: center; justify-content: center; width: 100%; min-width: 0; overflow-wrap: anywhere; text-align: center; }
+.battle-active-facts .battle-set-item { display: inline-flex; align-items: center; justify-content: center; gap: 3px; max-width: 100%; white-space: nowrap; }
+.battle-active-facts .battle-set-item > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.battle-active-facts .battle-set-item img { width: 16px; height: 16px; flex: 0 0 16px; image-rendering: pixelated; }
+.battle-active-stats { box-sizing: border-box; display: grid; grid-template-columns: minmax(0,1fr); grid-template-rows: repeat(6,18px); width: 100%; min-width: 0; margin: 0; padding: var(--battle-section-space,4px) 0; border-top: 1px solid var(--battle-divider,#ffffff0b); font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.battle-active-stats dd { min-width: 0; margin: 0; }
+.battle-active-stats > div { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; }
+.battle-active-stats dt { font-size: var(--font-size-small); }
+.battle-active-stats dd { text-align: center; font-variant-numeric: var(--font-numeric-tabular); }
+.battle-active-moves { display: grid; grid-row: span 4; grid-template-rows: subgrid; width: 100%; min-width: 0; margin: 0; padding: var(--battle-section-space,4px) 0; border-top: 1px solid var(--battle-divider,#ffffff0b); list-style: none; text-align: left; font-size: var(--font-size-body); line-height: var(--line-height-body); }
+/* Join the two column borders without changing their content widths or spacing. */
+.battle-foundation .battle-matchup-position:first-child :is(.battle-active-stats,.battle-active-moves) { position: relative; }
+.battle-foundation .battle-matchup-position:first-child :is(.battle-active-stats,.battle-active-moves)::after { content: ''; position: absolute; top: -1px; right: calc(-1 * var(--battle-column-gap)); width: var(--battle-column-gap); height: 1px; background: var(--battle-divider); pointer-events: none; }
+.battle-active-moves li { min-height: 30px; display: grid; grid-template-columns: 16px minmax(0,1fr) 32px 32px; align-items: center; gap: 3px; min-width: 0; }
+.battle-active-move-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.battle-active-move-pp, .battle-active-move-effectiveness { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: right; font-size: var(--font-size-small); font-variant-numeric: var(--font-numeric-tabular); color: var(--text-muted-soft); }
 .battle-matchup-placeholder { display: grid; place-items: center; color: var(--text-muted); }
 .battle-matchup-species { max-width: 100%; overflow-wrap: anywhere; font-size: var(--font-size-body); }
 .battle-matchup-position small, .battle-matchup-empty { font-size: var(--font-size-small); color: var(--text-muted); }
-.battle-foundation > .home-resources { gap: 12px; }
 .battle-section-heading { margin: 0 0 8px; padding: 0; border: 0; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); line-height: var(--line-height-compact); color: var(--text-secondary); }
 .battle-teams-section, .battle-possible-sets { min-width: 0; }
 .battle-possible-set-list { display: flex; flex-direction: column; align-items: stretch; }
@@ -267,13 +290,22 @@
 .battle-set-details .battle-set-item { font: inherit; color: inherit; gap: 4px; white-space: normal; }
 
 .battle-foundation {
-  --home-divider: #393D44;
-  min-height: calc(100svh - 91px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  /* Home uses an opaque 1px --home-divider: #393D44 (trainer.css). */
+  --battle-divider: #393D44;
+  --battle-small-space: 2px;
+  --battle-section-space: 4px;
+  --battle-row-gap: 0px;
+  --battle-item-height: 22px;
+  display: grid;
+  gap: 0;
+  min-width: 0;
 }
+.battle-workspace-panel { min-width: 0; margin-top: var(--battle-section-space); padding-top: var(--battle-small-space); border-top: 1px solid var(--battle-divider); }
+.battle-workspace-panel > .battle-compact-teams { grid-template-columns: repeat(2,minmax(0,1fr)); }
 
-/* The section heading occupies the right column without shifting the grid. */
-.battle-rules-heading { margin: 0; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); color: var(--text-status-warning); }
-.battle-rules-heading > button { min-height: 0; line-height: var(--line-height-compact); color: var(--text-status-warning); }
+/* Compact control above both workspace panels. */
+.battle-rules-heading { display: flex; align-items: center; gap: 8px; white-space: nowrap; margin: 0; font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); color: var(--text-status-warning); }
+.battle-rules-heading > button { width: fit-content; justify-content: flex-start; gap: 3px; min-height: 32px; flex-shrink: 0; line-height: var(--line-height-compact); color: var(--text-status-warning); }
 .battle-rules-popup {
   position: fixed;
   z-index: 100;
@@ -286,18 +318,28 @@
 }
 .battle-rules-popup label, .battle-rules-facility { display: grid; grid-template-columns: auto 112px; align-items: center; column-gap: 10px; font-size: var(--font-size-body); }
 .battle-rules-popup select { padding: 4px 5px; }
+.battle-rules-summary { color: var(--text-secondary); font-size: 12px; font-weight: var(--font-weight-regular); }
+.battle-round-control { position: relative; margin-left: auto; flex-shrink: 0; display: flex; align-items: center; min-height: 32px; font-size: 13px; cursor: pointer; }
+.battle-round-chevron { opacity: .7; }
+.battle-round-control select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 16px; }
+.battle-round-control:focus-within { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+@media (max-width: 420px) {
+  .battle-rules-heading { gap: 5px; font-size: 13px; }
+  .battle-rules-summary { font-size: 10px; }
+  .battle-round-control { font-size: 12px; }
+}
 
 .battle-rules-facility > span:last-child { padding: 4px 5px; }
 
 .battle-compact-teams { display: grid; gap: 8px; margin-top: 0; min-width: 0; }
-.battle-compact-teams section { min-width: 0; }
-.battle-compact-teams h3 { display: flex; align-items: center; height: 48px; margin: 0 0 4px; color: var(--text-secondary); font-size: var(--font-size-body); font-weight: var(--font-weight-regular); }
+.battle-compact-teams > section { position: relative; min-width: 0; }
+.battle-compact-teams h3 { display: flex; align-items: flex-start; height: 22px; margin: 0; color: var(--text-secondary); font-size: var(--font-size-body); font-weight: var(--font-weight-regular); }
 .battle-opponent-trigger { display: flex; align-items: center; justify-content: flex-start; margin-inline: 0; gap: 4px; max-width: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; }
 .battle-opponent-trigger span { min-width: 0; overflow-wrap: anywhere; }
-.battle-compact-trainer { width: 36px; height: 48px; flex-shrink: 0; object-fit: contain; image-rendering: pixelated; }
-.battle-compact-slots { display: grid; grid-template-columns: repeat(var(--team-slots, 3), minmax(0, 32px)); justify-content: start; gap: 2px; min-width: 0; }
-.battle-compact-slot { display: grid; place-items: center; min-width: 0; height: 32px; padding: 0; border: 0; border-radius: 3px; background: transparent; color: var(--text-muted); font: inherit; }
-.battle-compact-slot img { width: 32px; height: 32px; max-width: 100%; object-fit: contain; image-rendering: pixelated; }
+.battle-compact-trainer { position: absolute; top: 22px; left: 0; width: 36px; height: 48px; flex-shrink: 0; object-fit: contain; image-rendering: pixelated; }
+.battle-compact-slots { margin-left: 38px; width: calc(100% - 38px); height: 48px; align-items: center; display: grid; grid-template-columns: repeat(var(--team-slots, 3), minmax(0, 44px)); justify-content: start; gap: 0; min-width: 0; }
+.battle-compact-slot { display: grid; place-items: center; min-width: 0; height: 44px; padding: 0; border: 0; border-radius: 3px; background: transparent; color: var(--text-muted); font: inherit; }
+.battle-compact-slot img { width: 40px; height: 40px; max-width: 100%; object-fit: contain; image-rendering: pixelated; }
 .battle-compact-slot:hover, .battle-opponent-trigger:hover { color: var(--text-secondary-resource); }
 
 .battle-player-heading { display: flex; align-items: center; justify-content: flex-start; gap: 4px; }
@@ -362,11 +404,287 @@
 .battle-opponent-trigger { touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .battle-opponent-trigger .battle-opponent-chevron { flex-shrink: 0; }
 
-.battle-opponent-trigger .battle-opponent-identity { display: flex; flex-direction: column; align-items: flex-start; line-height: var(--line-height-compact); }
+.battle-opponent-trigger .battle-opponent-identity { display: flex; flex-direction: row; align-items: center; gap: 3px; min-width: 0; line-height: var(--line-height-compact); }
 .battle-opponent-identity .battle-opponent-name { max-width: 100%; }
-.battle-opponent-name-row { display: flex; align-items: center; gap: 4px; max-width: 100%; }
+.battle-opponent-name-row { flex-shrink: 0; display: flex; align-items: center; gap: 4px; max-width: 100%; }
 .battle-player-heading, .battle-opponent-trigger { line-height: var(--line-height-compact); }
 .battle-player-heading > .battle-compact-trainer, .battle-opponent-trigger > .battle-compact-trainer { align-self: center; }
+.battle-opponent-class-separator { color: var(--text-muted); flex-shrink: 0; }
 .battle-opponent-class { display: block; max-width: 100%; min-height: 1.35em; font-size: var(--font-size-small); line-height: var(--line-height-compact); font-weight: var(--font-weight-regular); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .battle-opponent-pokemon-result img { flex: 0 0 32px; width: 32px; height: 32px; object-fit: contain; image-rendering: pixelated; }
 .battle-team-selection .battle-picker-pokemon.battle-picker-species-unavailable, .battle-opponent-pokemon-result:disabled { opacity: .4; }
+
+/* The transparent native select covers the row and opens Safari's picker.
+   Visible text, item art and the adjacent arrow are presentation only. */
+.battle-observation-select { position: relative; display: flex; align-items: center; width: 100%; min-width: 0; height: 30px; color: var(--text-secondary); }
+.battle-observation-display { display: inline-flex; align-items: center; gap: 3px; min-width: 0; max-width: 100%; pointer-events: none; }
+.battle-observation-value { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.battle-observation-arrow { flex-shrink: 0; color: var(--text-muted); font-size: var(--font-size-small); }
+.battle-observation-select select { position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; font-size: var(--font-size-large); opacity: 0; cursor: pointer; }
+.battle-observation-select option { background: #202226; color: var(--text-secondary); }
+.battle-observation-select:focus-within { outline: 1px solid #a7b1bf; outline-offset: 1px; }
+.battle-active-item .battle-observation-select { width: fit-content; max-width: 100%; }
+.battle-observation-display .battle-set-item { min-width: 0; font: inherit; }
+.battle-observation-display .battle-set-item > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.battle-observation-warning { margin: 8px 0 0; color: var(--text-status-warning); font-size: var(--font-size-body); }
+
+/* Trainer selection unlocks the existing opponent slots without changing layout. */
+.battle-compact-slot:disabled { opacity: .4; cursor: default; }
+
+/* Shared fixed rows keep both stat sections and the moves below aligned. */
+.battle-active-stats > .battle-stat-bar { display: grid; grid-template-columns: 23px minmax(0,1fr); gap: 4px; height: 18px; text-align: left; }
+.battle-active-stats dt { line-height: 18px; }
+.battle-active-stats dd { display: grid; grid-template-columns: 7ch minmax(0,1fr); align-items: center; gap: 4px; min-width: 0; width: 100%; font-size: var(--font-size-small); line-height: 18px; }
+.battle-active-stats .battle-stat-value { text-align: left; white-space: nowrap; font-variant-numeric: var(--font-numeric-tabular); }
+.battle-stat-track { position: relative; width: 100%; background: transparent; }
+.battle-stat-track .battle-stat-solid, .battle-stat-track .battle-stat-extension { position: absolute; top: 0; }
+.battle-stat-track .battle-stat-extension { opacity: .35; }
+
+/* Center complete item groups, including art and optional native-select arrow. */
+.battle-active-item .battle-set-item { position: static; max-width: 100%; font: inherit; color: inherit; }
+.battle-active-item .battle-observation-select { width: fit-content; max-width: 100%; justify-content: center; }
+.battle-active-item .battle-observation-display { max-width: 100%; gap: 3px; }
+
+/* Conditions continue the matchup surface and reuse its native-select overlay. */
+.battle-foundation > .battle-conditions { grid-row: auto; padding: var(--battle-section-space) 0; border-top: 1px solid var(--battle-divider); background: transparent; color: var(--text-secondary); }
+.battle-foundation > .battle-conditions .battle-conditions-heading { border-bottom: 0; }
+.battle-foundation .battle-conditions-heading button { min-height: 30px; padding: 2px 0; color: var(--text-secondary); }
+.battle-foundation .battle-conditions-heading .battle-conditions-reset { min-width: 40px; color: var(--text-muted); }
+.battle-foundation .battle-condition-shared { gap: 14px; padding: 2px 0; border-bottom: 0; }
+.battle-foundation .battle-condition-shared > label { gap: 5px; }
+.battle-foundation .battle-condition-columns { column-gap: 8px; }
+.battle-foundation .battle-condition-side { padding: 2px 0 0; border: 0; }
+.battle-foundation .battle-condition-side h4 { margin-bottom: 2px; font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); }
+.battle-foundation .battle-condition-select { width: fit-content; max-width: 100%; height: 28px; overflow: hidden; }
+.battle-foundation .battle-condition-select select { width: 100%; min-height: 0; padding: 0; border: 0; border-radius: 0; background: transparent; appearance: none; -webkit-appearance: none; font-size: 16px; }
+.battle-foundation .battle-condition-select .battle-observation-display { gap: 2px; }
+.battle-foundation .battle-condition-status { gap: 5px; margin-top: 0; }
+.battle-foundation .battle-condition-status > .battle-condition-select { flex: 1; }
+.battle-foundation .battle-condition-hp { flex-wrap: nowrap; gap: 5px; min-height: 28px; font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.battle-foundation .battle-condition-hp input { flex: 0 1 4ch; width: 4ch; min-width: 3ch; min-height: 28px; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--text-secondary); font: inherit; font-size: var(--font-size-body); font-variant-numeric: var(--font-numeric-tabular); appearance: textfield; -moz-appearance: textfield; }
+.battle-foundation .battle-condition-hp input::-webkit-inner-spin-button,
+.battle-foundation .battle-condition-hp input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.battle-foundation .battle-condition-hp input::placeholder { color: var(--text-secondary); opacity: 1; }
+.battle-foundation .battle-condition-hp > span { font-size: inherit; }
+.battle-foundation .battle-condition-stages { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 1px; margin-top: 0; }
+.battle-foundation .battle-condition-stages label { color: var(--text-muted); }
+.battle-foundation .battle-condition-stages .battle-condition-select { width: 100%; }
+.battle-foundation .battle-condition-stages .battle-observation-value { overflow: visible; }
+.battle-foundation .battle-condition-stages .battle-observation-arrow { font-size: 8px; }
+.battle-foundation .battle-condition-screens { flex-wrap: nowrap; column-gap: 6px; margin-top: 0; }
+.battle-foundation .battle-condition-screens label { gap: 3px; white-space: nowrap; }
+.battle-foundation .battle-conditions input[type="checkbox"] { flex-basis: 12px; width: 12px; height: 12px; }
+@media (hover: none) and (pointer: coarse) {
+  /* Match the 12px visible text while retaining Safari's 16px focus size. */
+  .battle-foundation .battle-condition-hp input { transform: scale(.75); transform-origin: left center; margin-right: -1ch; }
+}
+
+/* Move information adds no new layout or decoration to the matchup rows. */
+.battle-active-moves .battle-move-info-name { min-width: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.battle-active-moves li.has-move-info { cursor: pointer; }
+.battle-active-moves .has-move-info.battle-observation-select { width: fit-content; max-width: 100%; }
+.battle-active-moves .has-move-info .battle-observation-display { pointer-events: auto; }
+/* Clip invisible native select contents without changing the visible move row. */
+.battle-active-moves .has-move-info select { left: auto; width: 12px; overflow: hidden; }
+.battle-move-dialog { border: 0; outline: none; border-radius: 6px; background: #202226; overscroll-behavior: contain; }
+.battle-move-dialog h2 { font-size: 15px; }
+.battle-move-dialog dl { padding-top: 8px; border-top: 1px solid #ffffff0b; }
+.battle-move-dialog .battle-basic-damage { margin-top: 8px; padding-top: 8px; border-color: #ffffff0b; }
+.battle-move-dialog .battle-basic-damage .battle-core-damage-percent { font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); }
+.battle-move-dialog .battle-basic-damage .battle-core-damage-hp { margin-top: 2px; color: var(--text-muted); font-size: var(--font-size-small); font-weight: var(--font-weight-regular); }
+.battle-move-dialog .battle-basic-damage .battle-damage-unavailable { color: var(--text-muted); font-weight: var(--font-weight-regular); }
+
+/* Paint the dimming layer on the full-screen top-layer dialog, rather than
+   relying on Safari's native backdrop painting over a short document. */
+.battle-move-viewport { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; outline: none; background: #0009; overflow: hidden; }
+.battle-move-viewport[open] { display: grid; place-items: center; }
+.battle-move-viewport::backdrop { background: transparent; }
+
+.battle-move-dialog .battle-ability-result + .battle-ability-result { margin-top: 8px; }
+.battle-move-dialog .battle-basic-damage .battle-ability-label { color: var(--text-muted); font-size: var(--font-size-small); font-weight: var(--font-weight-regular); }
+
+/* Native selects reuse the compact Battle controls, with Safari-safe focus size. */
+.battle-move-scenario-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 8px; color: var(--text-secondary); font-size: var(--font-size-body); }
+.battle-move-scenario-controls > label { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; }
+.battle-move-scenario-controls .battle-observation-select { min-height: 30px; display: inline-flex; align-items: center; }
+.battle-move-scenario-controls select { font-size: 16px; }
+.battle-move-scenario-controls input[type="checkbox"] { margin: 0; }
+
+.battle-move-dialog .battle-core-damage-outcome { color: var(--text-primary); font-size: var(--font-size-heading); font-weight: var(--font-weight-semibold); }
+
+/* Conditional abilities use the existing compact native select overlay. */
+.battle-foundation .battle-condition-ability { display: flex; flex-direction: column; min-width: 0; font-size: var(--font-size-small); }
+.battle-foundation .battle-condition-ability .battle-condition-select { width: 100%; }
+.battle-foundation .battle-condition-activation { display: flex; align-items: center; gap: 3px; min-height: 28px; font-size: var(--font-size-small); line-height: var(--line-height-body); }
+
+/* Ability cells share one intrinsic row; native controls must not enlarge it. */
+.battle-opponent-ability-select { height: auto; min-height: 0; justify-content: center; }
+.battle-opponent-ability-select .battle-observation-display { justify-content: center; }
+.battle-opponent-ability-values { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+.battle-opponent-ability-select select { font-size: 16px; }
+
+.battle-foundation .battle-condition-active-counts { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: var(--font-size-small); }
+.battle-condition-active-counts > span { flex: 1; }
+.battle-condition-active-counts label { display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+
+.battle-move-dialog .battle-basic-damage .battle-core-damage-ko { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 2px; color: var(--text-muted); font-size: var(--font-size-small); font-weight: var(--font-weight-regular); }
+.battle-core-damage-ko > span { white-space: nowrap; }
+
+.battle-matchup-set-number { color: var(--text-muted-soft); font-weight: normal; }
+
+.battle-stat-value.battle-speed-faster { color: var(--text-status-success); }
+.battle-stat-value.battle-speed-slower { color: var(--text-status-error); }
+
+/* Reuse the Round control's native-select overlay and the trainer heading typography. */
+.battle-opponent-trainer-control {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: var(--line-height-compact);
+  cursor: pointer;
+}
+.battle-opponent-trainer-caption { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.battle-opponent-trainer-caption > span:first-child { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.battle-opponent-trainer-caption > .battle-round-chevron { flex-shrink: 0; }
+.battle-opponent-trainer-select {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  color-scheme: dark;
+  font: inherit;
+  font-size: 16px;
+  opacity: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.battle-opponent-trainer-control:focus-within { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+
+/* Visible native selects edit slots; sprites independently select the matchup. */
+.battle-player-slots { display: grid; gap: 1px; min-width: 0; }
+.battle-player-slot { min-height: 44px; display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: center; gap: 4px; min-width: 0; }
+.battle-player-sprite, .battle-player-placeholder { display: grid; place-items: center; box-sizing: border-box; width: 32px; height: 32px; min-width: 0; padding: 0; border: 1px solid transparent; border-radius: 5px; background: transparent; color: var(--text-muted); touch-action: manipulation; }
+.battle-player-sprite[aria-pressed="true"] { border-color: #548dc288; }
+.battle-player-sprite { user-select: none; -webkit-user-select: none; }
+.battle-player-sprite img { pointer-events: none; max-width: 100%; object-fit: contain; image-rendering: pixelated; }
+.battle-player-placeholder { opacity: .5; }
+/* Keep the native control and arrow, with visible option text and no overlay.
+   Each control stays within its row; touch sizing needs no event interception. */
+.battle-player-select { box-sizing: border-box; width: 100%; min-width: 0; height: 44px; min-height: 0; margin: 0; padding: 0 2px; border: 0; border-radius: 0; background: transparent; color: var(--text-secondary); color-scheme: dark; font: inherit; font-size: 16px; font-weight: var(--font-weight-regular); line-height: var(--line-height-compact); appearance: auto; -webkit-appearance: auto; cursor: pointer; }
+.battle-player-select option { color: var(--text-secondary); background: #202226; }
+.battle-player-select:focus-visible, .battle-player-sprite:focus-visible { outline: 2px solid #548dc2; outline-offset: 1px; }
+.battle-player-empty { margin: 4px 0 0; color: var(--text-muted); font-size: var(--font-size-small); }
+
+/* Singles selects combatants directly; matchup surfaces below remain shared. */
+.battle-single-selection { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: auto auto; row-gap: 0; }
+.battle-selection-trainer { display: flex; align-items: center; justify-content: center; gap: 5px; min-width: 0; min-height: 32px; }
+.battle-selection-trainer > img { flex: 0 0 38.5px; width: 38.5px; height: 49.5px; object-fit: contain; image-rendering: pixelated; }
+.battle-single-selection .battle-selection-trainer h3 { height: auto; min-width: 0; max-width: calc(100% - 43.5px); flex: 0 1 auto; align-items: center; overflow-wrap: anywhere; }
+.battle-selection-player .battle-selection-trainer h3 { color: #8db8e0; }
+.battle-selection-opponent .battle-selection-trainer h3 { color: #db9b9b; }
+/* Pokémon controls mirror the Trainer caption/native-select structure. */
+.battle-pokemon-control { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-self: start; align-self: center; width: fit-content; min-width: 0; max-width: 100%; height: 32px; margin: 0; padding: 0; border: 0; background: transparent; color: var(--text-secondary); font-size: 16px; font-weight: 400; line-height: 1.35; cursor: pointer; }
+.battle-pokemon-caption { font-size: 14px; display: inline-flex; align-items: center; gap: 4px; min-width: 0; max-width: 100%; pointer-events: none; }
+.battle-pokemon-caption > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.battle-pokemon-caption > .battle-round-chevron { flex-shrink: 0; }
+.battle-pokemon-select { position: absolute; inset: 0; box-sizing: border-box; width: 100%; height: 100%; min-width: 0; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; color-scheme: dark; font: inherit; font-size: 16px; opacity: 0; appearance: none; -webkit-appearance: none; cursor: pointer; }
+.battle-pokemon-select option { color: var(--text-secondary); background: #202226; }
+.battle-pokemon-control[data-disabled="true"] { opacity: .5; cursor: default; }
+.battle-pokemon-select:disabled { cursor: default; }
+.battle-pokemon-control:focus-within { outline: 1px solid currentColor; outline-offset: 1px; }
+.battle-single-selection .battle-opponent-trainer-control { width: auto; max-width: 100%; overflow: hidden; }
+.battle-single-selection .battle-opponent-trainer-caption { width: auto; max-width: 100%; }
+.battle-single-selection .battle-opponent-trainer-caption > span:first-child { display: inline-flex; align-items: baseline; flex: 0 0 auto; white-space: nowrap; overflow: visible; text-overflow: clip; overflow-wrap: normal; }
+.battle-single-selection .battle-selection-opponent .battle-selection-trainer h3 { flex: 1; }
+.battle-single-selection .battle-opponent-trainer-class { margin-left: .25em; font-size: .78em; color: #b98787; }
+.battle-set-static { font-size: 14px; cursor: default; }
+
+/* Shared dropdown chevron; disclosure indicators retain their existing glyphs. */
+.battle-round-chevron, .battle-observation-arrow { display: inline-block; width: 8px; height: 5px; flex: 0 0 8px; font-size: 0; vertical-align: middle; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M1 1l3 3 3-3' fill='none' stroke='%239daabb'/%3E%3C/svg%3E") center / contain no-repeat; pointer-events: none; }
+.battle-rules-popup select, .battle-player-select { appearance: none; -webkit-appearance: none; padding-right: 18px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M1 1l3 3 3-3' fill='none' stroke='%239daabb'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; }
+
+/* Matchup typography; stats and move rows retain their existing sizes. */
+.battle-single-selection > section { display: grid; grid-row: span 2; grid-template-rows: subgrid; grid-template-columns: minmax(0,1fr); }
+.battle-single-selection .battle-selection-trainer h3 { font-size: 16px; font-weight: 400; line-height: 1.35; }
+.battle-active-ability { font-size: 13px; font-weight: 400; line-height: 1.35; color: var(--text-secondary); }
+.battle-active-ability .battle-opponent-ability-select { width: fit-content; max-width: 100%; font: inherit; }
+.battle-active-ability .battle-observation-display { gap: 3px; }
+.battle-active-item { font-size: 13px; font-weight: 400; line-height: 1.35; color: var(--text-secondary); }
+
+/* Singles headers retain their left-aligned native controls. */
+.battle-single-selection .battle-selection-trainer { justify-content: flex-start; }
+/* Swap only the two Singles fact tracks; Doubles keeps its existing order. */
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-item { grid-row: 1; }
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-ability { grid-row: 2; }
+
+/* Singles facts use the shared centered vertical stack. Keep full item
+   labels, artwork and any arrow together instead of truncating the name. */
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-facts .battle-observation-select { overflow: hidden; }
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-item .battle-observation-display { display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 3px; }
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-item .battle-set-item { flex: 0 0 auto; flex-wrap: nowrap; white-space: nowrap; }
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-item .battle-set-item > span { flex: 0 0 auto; overflow: visible; text-overflow: clip; white-space: nowrap; }
+.battle-workspace-panel:has(> .battle-single-selection) .battle-active-item .battle-observation-arrow { flex: 0 0 8px; }
+
+/* Native Round option text must not expand the small visible Round hitbox. */
+.battle-round-control select { box-sizing: border-box; min-width: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.battle-round-control { overflow: clip; }
+
+.battle-opponent-selectors { display: flex; flex-wrap: nowrap; column-gap: 6px; min-width: 0; align-items: center; }
+.battle-set-control { flex: 0 0 auto; margin-left: auto; }
+.battle-observations-content { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: var(--battle-section-space); padding: var(--battle-small-space) 0 0; }
+.battle-observation-column { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; font-size: var(--font-size-body); color: var(--text-secondary); }
+.battle-observation-compact-select { width: fit-content; max-width: 100%; min-height: 32px; }
+.battle-observation-compact-select .battle-observation-display { gap: 4px; }
+.battle-observation-compact-select select { appearance: none; -webkit-appearance: none; font-size: 16px; border-radius: 0; }
+.battle-observation-compact-select:has(select:disabled) { opacity: .5; }
+.battle-observed-moves { grid-column: 1 / -1; min-width: 0; width: 100%; margin: 2px 0 0; padding: 0; list-style: none; color: var(--text-secondary); }
+.battle-observed-moves li { display: inline; overflow-wrap: anywhere; }
+.battle-observed-moves li + li::before { content: ' · '; color: var(--text-muted); }
+/* The SVG supplies the only chevron; suppress the literal fallback glyph. */
+.battle-foundation:has(.battle-single-selection) .battle-condition-stages .battle-observation-arrow { font-size: 0; }
+.battle-foundation:has(.battle-single-selection) .battle-condition-stages select { appearance: none; -webkit-appearance: none; }
+
+/* Reserve the set control's width; long species captions truncate within their own column. */
+.battle-opponent-selectors > .battle-pokemon-control:first-child { flex: 0 1 auto; }
+.battle-active-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; width: 100%; min-width: 0; min-height: 18px; }
+.battle-active-header .battle-active-types { justify-content: flex-start; width: auto; }
+.battle-active-level { flex: 0 0 auto; white-space: nowrap; font-variant-numeric: var(--font-numeric-tabular); }
+
+.battle-conditions-title, .battle-observations-title { flex: 1; margin: 0; padding: 2px 0; font-size: var(--font-size-body); font-weight: var(--font-weight-semibold); color: var(--text-secondary); }
+
+.battle-active-move-effectiveness[data-effectiveness="2"],
+.battle-active-move-effectiveness[data-effectiveness="4"] { color: var(--text-status-success); }
+.battle-active-move-effectiveness[data-effectiveness="0"],
+.battle-active-move-effectiveness[data-effectiveness="0.25"],
+.battle-active-move-effectiveness[data-effectiveness="0.5"] { color: var(--text-status-error); }
+
+/* Two aligned native selector rows inside the existing matchup columns. */
+.battle-doubles-selection { grid-template-rows: auto auto auto; }
+.battle-doubles-selection > section { grid-row: span 3; }
+
+/* Empty-roster feedback gets its own track below the selector rows. */
+.battle-single-selection > .battle-player-empty,
+.battle-single-selection > .battle-role-error { grid-column: 1; min-width: 0; overflow-wrap: anywhere; }
+
+/* Keep the artwork's existing footprint; only populated Doubles pairs switch. */
+.battle-sprite-switch { position: relative; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.battle-sprite-switch:focus-visible { outline: 1px solid var(--text-secondary); outline-offset: -1px; }
+.battle-sprite-dots { position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; pointer-events: none; }
+.battle-sprite-dots > span { width: 3px; height: 3px; border-radius: 50%; background: var(--text-secondary); opacity: .3; }
+.battle-sprite-dots > span[data-active="true"] { opacity: .85; }

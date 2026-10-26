@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {matchesBattleWords} from '../src/battle/searchWords.js';
 import {searchTowerTrainers} from '../src/battle/towerTrainers.js';
 import {availableOpponentSpecies} from '../src/battle/opponentSpecies.js';
-import {createBattleState} from '../src/battle/battleState.js';
+import {createBattleState,battleReducer} from '../src/battle/battleState.js';
 
 test('Battle search matches case-insensitive word beginnings, with literal punctuation',()=>{
  for(const [text,query,expected] of [
@@ -18,7 +18,12 @@ test('Battle trainer and species searches retain filtering/sorting while rejecti
  const entries=[{key:'a',name:'Ace Trainer',trainerClass:'Example'},{key:'b',name:'Metagross',trainerClass:'Example'}];
  assert.deepEqual(searchTowerTrainers('trainer',{entries,nameOnly:true}).map(t=>t.key),['a']);
  assert.deepEqual(searchTowerTrainers('rain',{entries,nameOnly:true}),[]);
- assert.deepEqual(availableOpponentSpecies(createBattleState(),'meta').map(s=>s.name),['Metagross','Metang','Metapod']);
+ const state=createBattleState();
+ const matches=availableOpponentSpecies(state,'meta');
+ assert.deepEqual(matches.map(s=>s.name),['Metagross','Metang','Metapod']);
+ assert.equal(state.selectedTrainer,null,'canonical prefix matches do not require a trainer');
+ assert.equal(battleReducer(state,{type:'selectSinglesOpponent',speciesId:matches[0].id}),state,'selecting an opponent still requires a trainer');
  assert.deepEqual(availableOpponentSpecies(createBattleState(),'gross'),[]);
+ assert.deepEqual(availableOpponentSpecies(createBattleState(),'tag'),[]);
  assert.deepEqual(availableOpponentSpecies(createBattleState(),'mime').map(s=>s.name),['Mr. Mime']);
 });

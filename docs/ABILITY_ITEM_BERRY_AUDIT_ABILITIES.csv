@@ -1,0 +1,78 @@
+id,name,classification,evidence,current_handling,existing_controls
+1,Stench,Not applicable,I,No connected-hit damage modifier; encounter/escape/post-battle effect.,None needed for connected-hit amount
+2,Drizzle,Keep exact,V,Weather-setting event is not inferred from presence; current selected weather is used.,Weather: rain / sand / sun; actual last weather event wins
+3,Speed Boost,Keep exact,V,No automatic end-turn simulation; enter the actual accumulated Speed stage.,Speed stage
+4,Battle Armor,Simplify,M,Critical immunity is missing in the active core; Crit currently doubles damage and bypasses stages/screens.,Automatic suppression required before all critical-dependent calculations
+5,Sturdy,Keep exact,V,OHKO immunity is automatic; no later-generation full-HP survival rule.,None needed for connected-hit amount
+6,Damp,Keep exact,V,Damp prevents Explosion/Self-Destruct from either represented battler; no unseen Doubles allies modeled.,None needed for connected-hit amount
+7,Limber,Keep exact,I,Status prevention/cure is not simulated. Supply a legal current major status; no independent direct-hit multiplier.,Status after the event; none for a cured status
+8,Sand Veil,Not applicable,V,"Accuracy/evasion affects connection chance, not the conditional damage amount; probability is not simulated.",None needed for connected-hit amount
+9,Static,Unavailable / Not applicable,V,Contact status can change later hits. Existing multi-hit guards preserve unsupported branches; ordinary first-hit damage ignores later status.,Current Status only represents resolved state before an attack
+10,Volt Absorb,Keep exact,V,Matching incoming type is immune; healing is not added to the damage result.,Current HP for state after absorption
+11,Water Absorb,Keep exact,V,Matching incoming type is immune; healing is not added to the damage result.,Current HP for state after absorption
+12,Oblivious,Not applicable,I,Infatuation/confusion/flinch prevention is outside connected-hit damage; no new volatile-state simulator.,None needed for connected-hit amount
+13,Cloud Nine,Keep exact,V,Suppress selected weather per pinned represented ability pair; weather itself is not erased.,Existing Weather remains selected; missing Doubles field occupants are outside scope
+14,Compound Eyes,Not applicable,V,"Accuracy/evasion affects connection chance, not the conditional damage amount; probability is not simulated.",None needed for connected-hit amount
+15,Insomnia,Keep exact,I,Status prevention/cure is not simulated. Supply a legal current major status; no independent direct-hit multiplier.,Status after the event; none for a cured status
+16,Color Change,Unavailable / Not applicable,U,After-hit type history is not represented. Multi-hit results are guarded; ordinary species-type baseline is valid only before activation.,No existing type override; do not approximate via stat stages
+17,Immunity,Keep exact,I,Status prevention/cure is not simulated. Supply a legal current major status; no independent direct-hit multiplier.,Status after the event; none for a cured status
+18,Flash Fire,Simplify,M,"Defensive immunity, including freeze exception, is exact; activated offensive boost is absent.",No exact existing control for activation; Special Attack stages are not equivalent
+19,Shield Dust,Not applicable,I,Secondary-effect prevention/chance does not modify the initial connected-hit amount.,None needed for connected-hit amount
+20,Own Tempo,Not applicable,I,Infatuation/confusion/flinch prevention is outside connected-hit damage; no new volatile-state simulator.,None needed for connected-hit amount
+21,Suction Cups,Not applicable,I,"Switching/trapping restrictions affect execution, not the selected connected-hit formula.",None needed for connected-hit amount
+22,Intimidate,Keep exact,V,Do not reapply Intimidate each calculation. Enter actual net Attack stage after prevention/earlier events.,Attack stage on affected side
+23,Shadow Tag,Not applicable,I,"Switching/trapping restrictions affect execution, not the selected connected-hit formula.",None needed for connected-hit amount
+24,Rough Skin,Not applicable,V,"Contact retaliation changes attacker HP/continuation, not initial defender damage. Full attack survival is not simulated.",Current HP for the next snapshot
+25,Wonder Guard,Keep exact,V,"Type-based prevention retained for ordinary, fixed, Psywave, multi-hit and OHKO paths.",None needed for connected-hit amount
+26,Levitate,Keep exact,V,"Ground immunity is automatic, including Fissure; no modern grounding-state simulator.",None needed for connected-hit amount
+27,Effect Spore,Unavailable / Not applicable,V,Contact status can change later hits. Existing multi-hit guards preserve unsupported branches; ordinary first-hit damage ignores later status.,Current Status only represents resolved state before an attack
+28,Synchronize,Keep exact,I,Status return/cure event is not simulated; use the actual resulting status.,Status
+29,Clear Body,Keep exact,I,Prevention of incoming stat reductions is not simulated; supply actual resulting net stages.,Relevant stat stages; do not automatically apply an Intimidate drop
+30,Natural Cure,Keep exact,I,Status return/cure event is not simulated; use the actual resulting status.,Status
+31,Lightning Rod,Not applicable,V,Gen III redirection is not Electric immunity or a Special Attack boost; missing Doubles targeting is outside scope.,None needed for connected-hit amount
+32,Serene Grace,Not applicable,I,Secondary-effect prevention/chance does not modify the initial connected-hit amount.,None needed for connected-hit amount
+33,Swift Swim,Not applicable,V,"Speed helper doubles Speed in matching effective weather; active popup computes hit damage, not turn order.",Weather and Speed stage; displayed raw stats do not certify effective order
+34,Chlorophyll,Not applicable,V,"Speed helper doubles Speed in matching effective weather; active popup computes hit damage, not turn order.",Weather and Speed stage; displayed raw stats do not certify effective order
+35,Illuminate,Not applicable,I,No connected-hit damage modifier; encounter/escape/post-battle effect.,None needed for connected-hit amount
+36,Trace,Simplify,M,"Trace is guarded in several special paths, but ordinary single hits may silently calculate without resolving the copied ability.",No copied-ability state control; unresolved relevant branches should be unavailable
+37,Huge Power,Keep exact,V,Raw physical Attack doubled before item modifiers/stages; Special damage unaffected.,None needed for connected-hit amount
+38,Poison Point,Unavailable / Not applicable,V,Contact status can change later hits. Existing multi-hit guards preserve unsupported branches; ordinary first-hit damage ignores later status.,Current Status only represents resolved state before an attack
+39,Inner Focus,Not applicable,I,Infatuation/confusion/flinch prevention is outside connected-hit damage; no new volatile-state simulator.,None needed for connected-hit amount
+40,Magma Armor,Keep exact,I,Status prevention/cure is not simulated. Supply a legal current major status; no independent direct-hit multiplier.,Status after the event; none for a cured status
+41,Water Veil,Keep exact,I,Status prevention/cure is not simulated. Supply a legal current major status; no independent direct-hit multiplier.,Status after the event; none for a cured status
+42,Magnet Pull,Not applicable,I,"Switching/trapping restrictions affect execution, not the selected connected-hit formula.",None needed for connected-hit amount
+43,Soundproof,Keep exact,V,Emerald sound table blocks applicable damaging sound moves. SonicBoom is not in that table; status moves are descriptions only.,None needed for connected-hit amount
+44,Rain Dish,Keep exact,V,Rain healing is not added to attack damage; represent resulting HP.,Weather and Current HP
+45,Sand Stream,Keep exact,V,Weather-setting event is not inferred from presence; current selected weather is used.,Weather: rain / sand / sun; actual last weather event wins
+46,Pressure,Not applicable,I,PP use may affect later move availability; connected-hit amount is unchanged.,None needed for connected-hit amount
+47,Thick Fat,Keep exact,V,"Fire/Ice offensive Special Attack operand is halved before stages, preserving integer rounding.",None needed for connected-hit amount
+48,Early Bird,Not applicable,I,"Sleep duration affects whether a move executes, not connected-hit damage.",Status after waking
+49,Flame Body,Unavailable / Not applicable,V,Contact status can change later hits. Existing multi-hit guards preserve unsupported branches; ordinary first-hit damage ignores later status.,Current Status only represents resolved state before an attack
+50,Run Away,Not applicable,I,No connected-hit damage modifier; encounter/escape/post-battle effect.,None needed for connected-hit amount
+51,Keen Eye,Not applicable,I,Accuracy-stage prevention does not modify connected-hit damage; accuracy stages are outside current controls.,None needed for connected-hit amount
+52,Hyper Cutter,Keep exact,I,Prevention of incoming stat reductions is not simulated; supply actual resulting net stages.,Relevant stat stages; do not automatically apply an Intimidate drop
+53,Pickup,Not applicable,I,No connected-hit damage modifier; encounter/escape/post-battle effect.,None needed for connected-hit amount
+54,Truant,Not applicable,I,Skipping an action is not a damage multiplier; preview assumes the chosen hit executes.,None needed for connected-hit amount
+55,Hustle,Keep exact,V,Physical Attack gets a floored 50% boost before stages. Accuracy penalty is outside connected-hit preview.,None needed for connected-hit amount
+56,Cute Charm,Not applicable,I,Contact infatuation is an execution-state effect; no first-hit damage modifier.,None needed for connected-hit amount
+57,Plus,Simplify,M,"Opposite Plus/Minus on-field boost is absent. Emerald on-field lookup includes both sides, not only an ally.",Known Singles pair can be resolved automatically; unknown Doubles field needs support or gating
+58,Minus,Simplify,M,"Opposite Plus/Minus on-field boost is absent. Emerald on-field lookup includes both sides, not only an ally.",Known Singles pair can be resolved automatically; unknown Doubles field needs support or gating
+59,Forecast,Simplify,M,Species types reach the active core unchanged; existing Forecast projection helper is not applied there. Weather Ball STAB and incoming effectiveness can be wrong.,Weather alone does not currently update active damage types
+60,Sticky Hold,Not applicable,I,Item theft/removal prevention changes later item state; current item must already describe the snapshot.,None needed for connected-hit amount
+61,Shed Skin,Keep exact,I,Status return/cure event is not simulated; use the actual resulting status.,Status
+62,Guts,Keep exact,V,Major status boosts raw physical Attack 50%; active Guts bypasses burn reduction.,"Status, not an extra Attack stage"
+63,Marvel Scale,Keep exact,V,Major status boosts raw Defense 50% before Defense stages.,"Status, not an extra Defense stage"
+64,Liquid Ooze,Not applicable,V,"Drain retaliation changes attacker HP, not initial defender damage.",Current HP for a later snapshot
+65,Overgrow,Keep exact,V,Matching move power gains a floored 50% boost at HP <= floor(maxHP/3).,Current HP; do not also add an attack stat stage
+66,Blaze,Keep exact,V,Matching move power gains a floored 50% boost at HP <= floor(maxHP/3).,Current HP; do not also add an attack stat stage
+67,Torrent,Keep exact,V,Matching move power gains a floored 50% boost at HP <= floor(maxHP/3).,Current HP; do not also add an attack stat stage
+68,Swarm,Keep exact,V,Matching move power gains a floored 50% boost at HP <= floor(maxHP/3).,Current HP; do not also add an attack stat stage
+69,Rock Head,Not applicable,I,Applicable recoil prevention changes attacker HP after the hit; no initial target-damage multiplier.,None needed for connected-hit amount
+70,Drought,Keep exact,V,Weather-setting event is not inferred from presence; current selected weather is used.,Weather: rain / sand / sun; actual last weather event wins
+71,Arena Trap,Not applicable,I,"Switching/trapping restrictions affect execution, not the selected connected-hit formula.",None needed for connected-hit amount
+72,Vital Spirit,Keep exact,I,Status prevention/cure is not simulated. Supply a legal current major status; no independent direct-hit multiplier.,Status after the event; none for a cured status
+73,White Smoke,Keep exact,I,Prevention of incoming stat reductions is not simulated; supply actual resulting net stages.,Relevant stat stages; do not automatically apply an Intimidate drop
+74,Pure Power,Keep exact,V,Raw physical Attack doubled before item modifiers/stages; Special damage unaffected.,None needed for connected-hit amount
+75,Shell Armor,Simplify,M,Critical immunity is missing in the active core; Crit currently doubles damage and bypasses stages/screens.,Automatic suppression required before all critical-dependent calculations
+76,Cacophony,Not applicable,V,Unused Cacophony slot; no app species has it. Do not enable a sound-immunity effect merely from the unused name.,None needed for connected-hit amount
+77,Air Lock,Keep exact,V,Suppress selected weather per pinned represented ability pair; weather itself is not erased.,Existing Weather remains selected; missing Doubles field occupants are outside scope

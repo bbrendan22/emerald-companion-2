@@ -36,15 +36,15 @@ test('Rules use ordinary trainer, selected Anabel medal and explicit assumed IVs
 });
 
 
-test('facility and format changes preserve level math and battle conditions', () => {
+test('format changes preserve level rules and reset battle conditions', () => {
   const initial = update(createBattleState(), {levelMode:'open', openLevel:78});
   for (const facility of ['Tower']) {
     const next = update(initial, {facility, format:'Doubles'});
     assert.equal(next.rules.facility, facility);
     assert.equal(next.rules.format, 'Doubles');
     assert.equal(next.rules.opponentLevel, 78);
-    assert.equal(next.field, initial.field);
-    assert.equal(next.team, initial.team);
+    assert.deepEqual(next.field, createBattleState().field);
+    assert.deepEqual(next.team, []);
   }
 });
 

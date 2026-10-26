@@ -1,3 +1,4 @@
+import {battleMove} from '../src/battle/reference.js';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 import {makeSave,makePokemon} from './fixtures/synthetic.js';
@@ -29,7 +30,7 @@ try {
  await header('player').nth(1).evaluate(el=>el.click());assert.equal(await range(),'5.1–6.3% · 9–11 HP'); // Atk79 =>base11.
  await header('enemy').nth(1).evaluate(el=>el.click());assert.equal(await range(),'14.6–17.5% · 20–24 HP'); // Def55 =>base24.
  await header('player').first().evaluate(el=>el.click());assert.equal(await range(),'12.4–15.3% · 17–21 HP'); // Atk69 =>base21.
- await move('player',1).evaluate(el=>el.click());assert.equal(await popup.locator('h2').innerText(),'Growl');assert.equal(await popup.locator('.battle-basic-damage').count(),0);
+ await move('player',1).evaluate(el=>el.click());assert.equal(await popup.locator('h2').innerText(),'Growl');assert.equal(await popup.getByRole('region',{name:'Move effect',exact:true}).locator('p').textContent(),battleMove('Growl').description);
  await move('player').evaluate(el=>el.click());assert.equal(await range(),'12.4–15.3% · 17–21 HP');
  await header('enemy').first().evaluate(el=>el.click());
  await page.locator('.battle-level-options button').nth(1).evaluate(el=>el.click());await choose('Open Level','73');

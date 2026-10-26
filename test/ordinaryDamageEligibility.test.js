@@ -47,6 +47,6 @@ test('all named ordinary attack families use literal ordinary-formula damage',()
  }
 });
 test('real formula/state exceptions remain excluded, including Struggle sharing RECOIL',()=>{
- for(const name of ['Struggle','Uproar','Explosion','Self Destruct','SolarBeam','Pursuit','Revenge','False Swipe','Dream Eater','Snore','Fake Out','Focus Punch','Dig','Fly','Double Kick','Magnitude','Counter','Mirror Coat','Guillotine','Psywave','Endeavor'])assert.equal(calc(battleMove(name),mon,target),null,name);
+ for(const name of ['Struggle','Explosion','Self Destruct','False Swipe','Double Kick','Magnitude','Counter','Mirror Coat','Guillotine','Psywave','Endeavor'])assert.equal(calc(battleMove(name),mon,target),null,name);
  assert.equal(calc({...battleMove('Earthquake'),effect:'UNREVIEWED'},mon,target),null);
 });

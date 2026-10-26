@@ -1,0 +1,7 @@
+import assert from 'node:assert/strict';
+import {webkit} from 'playwright';
+import {createServer} from 'vite';
+const server=await createServer({server:{host:'127.0.0.1',port:5289,strictPort:true},plugins:[{name:'dynamic-popup',configureServer(s){s.middlewares.use('/__dynamic',(_req,res)=>{res.setHeader('Content-Type','text/html');res.end('<div id="root"></div><script type="module" src="/test/fixtures/dynamicMovesPopup.jsx"></script>');});}}]});
+let browser;
+try{await server.listen();browser=await webkit.launch({headless:true});const page=await browser.newPage({viewport:{width:375,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(`${server.resolvedUrls.local[0]}__dynamic`);
+for(const [name,power,type] of [['Return','40','normal'],['Frustration','62','normal'],['Hidden Power','30','fighting'],['Low Kick','20','fighting']]){await page.getByRole('button',{name,exact:true}).click();const dialog=page.getByRole('dialog');assert.equal(await dialog.locator('dd').first().innerText(),power);assert.equal(await dialog.locator('header img').getAttribute('alt'),`${type} type`);assert.equal(await dialog.locator('.battle-damage-unavailable').count(),0);assert.equal(await dialog.locator('.battle-core-damage-hp').count(),1);await page.keyboard.press('Escape');}assert.deepEqual(errors,[]);console.log('PASS dynamic move popup powers, type icons and active damage');}finally{await browser?.close();await server.close();}

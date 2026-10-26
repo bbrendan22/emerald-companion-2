@@ -1,6 +1,6 @@
 import React, {useId, useLayoutEffect, useRef, useState} from 'react';
 import BattleSearchPopup from './BattleSearchPopup.jsx';
-import {possibleMatchupSets, frontierSetId, towerSetLabel} from '../../battle/towerSets.js';
+import {possibleMatchupSets, frontierSetId, towerSetLabel, matchupOpponentSlot, matchupObservations} from '../../battle/towerSets.js';
 import {speciesByName, battleMove} from '../../battle/reference.js';
 import {publicAsset} from '../../assets/publicAsset.js';
 import BattleSetItem from './BattleSetItem.jsx';
@@ -11,11 +11,12 @@ export default function BattlePossibleSets({state}) {
   const trigger = useRef(null), id = useId();
   const sets = possibleMatchupSets(state);
   // A popup belongs to its original species/trainer context, never a stale set.
-  const context = `${state.matchup?.opponent}:${state.selectedTrainer}:${state.selectedBrainSymbol}`;
+  const context = `${matchupOpponentSlot(state)}:${state.matchup?.opponent}:${state.selectedTrainer}:${state.selectedBrainSymbol}:${JSON.stringify(matchupObservations(state))}`;
   useLayoutEffect(() => {setOpened(null);}, [context]);
   const set = opened?.context === context ? sets.find(entry => frontierSetId(entry) === opened.id) : null;
   const close = () => {setOpened(null); trigger.current?.focus({preventScroll:true});};
   const species = set && speciesByName.get(set.species.toLowerCase());
+  if (sets.length === 1) return null;
   return <section className="battle-possible-sets" aria-label="Possible Sets">
     <h2 className="battle-section-heading">Possible Sets</h2>
     <div className="battle-possible-set-list">

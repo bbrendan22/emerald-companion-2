@@ -1,0 +1,215 @@
+{
+  "description": "Approved 952-test baseline, captured before Doubles Step 6 production edits; full results, not independently derived correctness expectations.",
+  "snapshots": [
+    {
+      "profile": "neutral-50",
+      "weather": "none",
+      "critical": false,
+      "cases": 354,
+      "sha256": "4040c728ebdf6d1a92be8dcee293a8dac48c19b7715f9690433f40e68cc610a9"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "none",
+      "critical": true,
+      "cases": 354,
+      "sha256": "689f6f1be40177c80b87bad24665cefd645b90592258b65544561f9d67494d19"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "sun",
+      "critical": false,
+      "cases": 354,
+      "sha256": "49cf13ab5a40eb45789b23d6d09435bd99e62cc0129d10bda9e4062b952eea68"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "sun",
+      "critical": true,
+      "cases": 354,
+      "sha256": "57b9ecfda9d1c60ab19004570f9bf833851beafe05883bae39d146021546d09c"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "rain",
+      "critical": false,
+      "cases": 354,
+      "sha256": "9deb11ae4311a30e5980cffc2a4aeda4739b86949091af7d39761c23814372f4"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "rain",
+      "critical": true,
+      "cases": 354,
+      "sha256": "3ec0fcd02dc4321f76038065394f6a04fa1442c1c11daead0d2f300b2d26d6a7"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "sand",
+      "critical": false,
+      "cases": 354,
+      "sha256": "4974fe79892078c1ba289cc7fb573489a8b72e95774459fb8a17dd78548dd67b"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "sand",
+      "critical": true,
+      "cases": 354,
+      "sha256": "40bfa65eb8a85fb99e1aaa3d457c0f0cc9585d9ccf7d962142d30be92972b5a2"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "hail",
+      "critical": false,
+      "cases": 354,
+      "sha256": "6a11637a09f01dfc7218eb64f955568c74e4acbabc1ecab8bd8f7286bdd82886"
+    },
+    {
+      "profile": "neutral-50",
+      "weather": "hail",
+      "critical": true,
+      "cases": 354,
+      "sha256": "0901d51b110fd268cd3e64d633ad5542dfa2d3863d72f3518395f44b52153c3a"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "none",
+      "critical": false,
+      "cases": 354,
+      "sha256": "bde1075d5271d196b18fde0a26c4f110954f83ff1871764635833711d1efb90c"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "none",
+      "critical": true,
+      "cases": 354,
+      "sha256": "7df614288b65799a20b059382eeef479e748759d0a0fdbb478d8bb0fe7ab437b"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "sun",
+      "critical": false,
+      "cases": 354,
+      "sha256": "3e4ae21d25248d5b02f9893d70104ffb350e807b7754bb972c5959235226e94d"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "sun",
+      "critical": true,
+      "cases": 354,
+      "sha256": "55cb7d92b6df55a459085aa518cd3344f8b75493a0080fb7375f605532b4151d"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "rain",
+      "critical": false,
+      "cases": 354,
+      "sha256": "1108bb686ff3db7b9affd864964d155792071f6083cc051a1dcccc50d3b83ce4"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "rain",
+      "critical": true,
+      "cases": 354,
+      "sha256": "7afad6523e2ff1a3eac4ce8654469ab9d248a4fe84b70f22c5be584e1510ae9e"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "sand",
+      "critical": false,
+      "cases": 354,
+      "sha256": "c30872860733437133471f8fb0921abdb415078f10b623b9ceccc58b49740978"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "sand",
+      "critical": true,
+      "cases": 354,
+      "sha256": "f0ca7e738de9dc75a46af4f8f61762a3129c3e4861f9930a0bfb145944e6e1e2"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "hail",
+      "critical": false,
+      "cases": 354,
+      "sha256": "88c39eee7456abd2d45df3d15e76f1dfefb590c673235a3af93c052c02635f0f"
+    },
+    {
+      "profile": "forecast-1",
+      "weather": "hail",
+      "critical": true,
+      "cases": 354,
+      "sha256": "96403081dab78fa376ebe96a7b9917f6d54d5dcca110c992ea3ca73909f58e3e"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "none",
+      "critical": false,
+      "cases": 354,
+      "sha256": "2a7d41229ccc17f1da1d62adc71d77009d43163e0dae8a16145f5e203024ac64"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "none",
+      "critical": true,
+      "cases": 354,
+      "sha256": "2a7d41229ccc17f1da1d62adc71d77009d43163e0dae8a16145f5e203024ac64"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "sun",
+      "critical": false,
+      "cases": 354,
+      "sha256": "d4d21b957fbab235d75d07743fcac26935360d7357409e3812c378d15d7ea782"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "sun",
+      "critical": true,
+      "cases": 354,
+      "sha256": "d4d21b957fbab235d75d07743fcac26935360d7357409e3812c378d15d7ea782"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "rain",
+      "critical": false,
+      "cases": 354,
+      "sha256": "fea9a5d9feae1281582c78142d8d25591aede865f68e4da9a9fe07c42eec851d"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "rain",
+      "critical": true,
+      "cases": 354,
+      "sha256": "fea9a5d9feae1281582c78142d8d25591aede865f68e4da9a9fe07c42eec851d"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "sand",
+      "critical": false,
+      "cases": 354,
+      "sha256": "bf251021b6611acec28e9be9546d62cf61617e2724bc276405f6edc2997cac3c"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "sand",
+      "critical": true,
+      "cases": 354,
+      "sha256": "bf251021b6611acec28e9be9546d62cf61617e2724bc276405f6edc2997cac3c"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "hail",
+      "critical": false,
+      "cases": 354,
+      "sha256": "b702b486d459d228c192d712c2938c8985d1f57aecf279daf522daa83357fafe"
+    },
+    {
+      "profile": "copied-flash-fire-100",
+      "weather": "hail",
+      "critical": true,
+      "cases": 354,
+      "sha256": "b702b486d459d228c192d712c2938c8985d1f57aecf279daf522daa83357fafe"
+    }
+  ]
+}

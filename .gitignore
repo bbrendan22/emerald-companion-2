@@ -48,3 +48,6 @@ backup/
 ._*
 Thumbs.db
 /archive/retired-battle-calculator/
+
+# Local validation logs, baseline copies, and memory supervisors
+/validation/

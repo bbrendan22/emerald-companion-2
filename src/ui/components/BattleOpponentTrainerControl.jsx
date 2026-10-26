@@ -1,80 +1,51 @@
-import React, {useId, useRef, useState} from 'react';
-import BattleSearchPopup from './BattleSearchPopup.jsx';
+import React, {useLayoutEffect,useRef} from 'react';
 import {searchTowerTrainers, selectedTowerTrainer, towerTrainerEntries} from '../../battle/towerTrainers.js';
-import FrontierTrainerSprite from './FrontierTrainerSprite.jsx';
 
 export const trainerResultText = text => text.replace(/\s*\([^)]*\)/g,'').replace(/[♂♀]/g,'').trim();
-
-function TrainerLookup({entries, format, trigger, id, onSelect, onClose}) {
-  const [query, setQuery] = useState('');
-  const trainers = searchTowerTrainers(query, {entries, nameOnly:true, format});
-  return <BattleSearchPopup trigger={trigger} id={id} label="Select opponent trainer"
-    searchLabel="Search Tower trainers" placeholder="Search trainers" query={query} onQuery={setQuery}
-    resultsLabel="Tower trainer results" onClose={onClose}>
-      {trainers.map(entry => <button type="button" key={entry.key} className="battle-opponent-result"
-        aria-label={`Select trainer ${trainerResultText(entry.name)}${entry.symbol ? ` ${entry.symbol}` : ''}`} aria-description={trainerResultText(entry.trainerClass)}
-        title={`${trainerResultText(entry.name)} · ${trainerResultText(entry.trainerClass)}${entry.symbol ? ` · ${entry.symbol}` : ''}`}
-        onClick={() => onSelect(entry.key)}>
-        <FrontierTrainerSprite src={`/trainers/frontier/${entry.sprite}.png`} className="battle-opponent-result-sprite" />
-        <span className="battle-opponent-result-identity"><strong>{trainerResultText(entry.name)}</strong><small> · {trainerResultText(entry.trainerClass)}</small></span>
-        {entry.symbol && <small>{entry.symbol}</small>}
-      </button>)}
-      {!trainers.length && <p role="status" className="battle-opponent-no-results">No trainers found.</p>}
-  </BattleSearchPopup>;
-}
+const titleCase = text => trainerResultText(text).toLowerCase().replace(/(^|[\s-])\p{L}/gu, letter => letter.toUpperCase());
+export const trainerLabel = entry => `${titleCase(entry.name)} · ${titleCase(entry.trainerClass)}`;
 
 export default function BattleOpponentTrainerControl({state, dispatch, entries = towerTrainerEntries}) {
-  const [open, setOpen] = useState(false);
-  const trigger = useRef(null), id = useId();
   const trainer = selectedTowerTrainer(state);
-  const lastTap = useRef(null), gesture = useRef(null), consumedAt = useRef(-Infinity);
-  const clear = () => {
-    consumedAt.current = performance.now(); lastTap.current = null;
-    setOpen(false); dispatch({type:'clearOpponentTrainer'});
-  };
-  const close = () => {setOpen(false); trigger.current?.focus({preventScroll:true});};
-  return <h3><button ref={trigger} type="button" className="battle-opponent-trigger"
-    aria-label={trainer ? `${trainer.name}; double-tap to clear opponent trainer and team` : 'Choose opponent trainer: Opponent'}
-    aria-description={trainer?.trainerClass}
-    title={trainer ? `${trainer.name} · ${trainer.trainerClass}; double-tap or double-click to clear opponent trainer and team` : 'Choose opponent trainer'}
-    aria-haspopup={trainer ? undefined : 'dialog'} aria-expanded={trainer ? undefined : open}
-    aria-controls={open ? id : undefined}
-    onPointerDown={event => {
-      if (trainer && event.pointerType === 'touch') gesture.current = {x:event.clientX,y:event.clientY,time:performance.now()};
-    }}
-    onPointerMove={event => {
-      const start = gesture.current;
-      if (start && Math.hypot(event.clientX-start.x,event.clientY-start.y) > 12) {gesture.current = null; lastTap.current = null;}
-    }}
-    onPointerCancel={() => {gesture.current = null; lastTap.current = null;}}
-    onPointerUp={event => {
-      if (!trainer || event.pointerType !== 'touch') return;
-      const start = gesture.current, now = performance.now(), previous = lastTap.current;
-      gesture.current = null;
-      if (!start || now-start.time > 300 || Math.hypot(event.clientX-start.x,event.clientY-start.y) > 12) {lastTap.current = null; return;}
-      if (previous && now-previous.time < 350 && Math.hypot(event.clientX-previous.x,event.clientY-previous.y) < 20) {
-        event.preventDefault(); clear();
-      } else lastTap.current = {x:event.clientX,y:event.clientY,time:now};
-    }}
-    onClick={event => {
-      // Consume the clearing gesture's follow-up click on the newly empty control.
-      if (performance.now()-consumedAt.current < 400) {event.preventDefault(); return;}
-      if (!trainer) setOpen(value => !value);
-    }}
-    onDoubleClick={event => {
-      event.preventDefault();
-      if (trainer && performance.now()-consumedAt.current >= 400) clear();
-    }}>
-    <span className="battle-opponent-identity">
-      <span className="battle-opponent-name-row">
-        <span className="battle-opponent-name">{trainer?.name ?? 'Opponent'}</span>
-        {!trainer && <span className="battle-opponent-chevron" aria-hidden="true">▾</span>}
-      </span>
-      <small className="battle-opponent-class" aria-hidden={!trainer}>{trainer?.trainerClass ?? ''}</small>
+  const control=useRef(null),text=useRef(null);
+  useLayoutEffect(()=>{
+    const label=control.current,heading=label?.closest('.battle-single-selection .battle-selection-trainer h3');
+    if(!heading)return;
+    let fittedWidth;
+    const fit=()=>{
+      const width=heading.clientWidth;
+      if(width===fittedWidth)return;
+      fittedWidth=width;
+      label.style.fontSize='16px';
+      const natural=text.current.getBoundingClientRect().width;
+      const available=width-12; // adjacent 8px chevron and 4px gap
+      if(natural>available && available>0)label.style.fontSize=`${Math.floor(16*available/natural*20)/20}px`;
+    };
+    fit();
+    let frame;
+    const observer=new ResizeObserver(()=>{
+      cancelAnimationFrame(frame);
+      frame=requestAnimationFrame(fit);
+    });
+    observer.observe(heading);
+    return ()=>{observer.disconnect();cancelAnimationFrame(frame);};
+  },[trainer?.key]);
+  const trainers = searchTowerTrainers('', {entries, format:state.rules.format, state})
+    .sort((a,b) => titleCase(a.name).localeCompare(titleCase(b.name))
+      || titleCase(a.trainerClass).localeCompare(titleCase(b.trainerClass)) || a.key.localeCompare(b.key));
+  return <h3><label ref={control} className="battle-opponent-trainer-control">
+    <span className="battle-opponent-trainer-caption" aria-hidden="true">
+      <span ref={text}>{trainer && state.rules.format==='Singles' ? <><span className="battle-opponent-trainer-name">{titleCase(trainer.name)}</span><span className="battle-opponent-trainer-class"> · {titleCase(trainer.trainerClass)}</span></> : trainer ? trainerLabel(trainer) : 'Select Trainer'}</span>
+      <span className="battle-round-chevron">▾</span>
     </span>
-    {trainer && <FrontierTrainerSprite src={`/trainers/frontier/${trainer.sprite}.png`} className="battle-compact-trainer" loading="eager" />}
-  </button>
-    {open && !trainer && <TrainerLookup entries={entries} format={state.rules.format} trigger={trigger} id={id} onClose={close}
-      onSelect={key => {dispatch({type:'opponentTrainer',key}); close();}} />}
-  </h3>;
+    <select className="battle-opponent-trainer-select" aria-label="Select Trainer"
+    value={trainer?.key ?? ''}
+    onChange={event => {
+      const key = event.target.value;
+      if (key === (trainer?.key ?? '')) return;
+      dispatch(key ? {type:'opponentTrainer',key} : {type:'clearOpponentTrainer'});
+    }}>
+    <option value="">Select Trainer</option>
+    {trainers.map(entry => <option key={entry.key} value={entry.key}>{trainerLabel(entry)}</option>)}
+  </select></label></h3>;
 }

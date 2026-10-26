@@ -135,6 +135,7 @@ component selector, not in a competing high-specificity page-wide override.
   Home search keeps its existing scaled-input technique: a 16px input scaled by
   .75 gives 12px visible text. Its container follows Body and Compact tokens.
   Keep native pinch zoom and input focus behavior.
+- Battle observation selects keep a transparent 16px native select over Body-size presentation text and its adjacent arrow/item icon. This preserves Safari’s native picker and avoids input-focus zoom.
 - Home preserves inherited `normal` line boxes and explicit Compact/Relaxed lines.
   Switching every line to 1.4 would expand its current two-column geometry.
 - Battle set search results retain original 8–11px text, a fluid 7.5–10px move

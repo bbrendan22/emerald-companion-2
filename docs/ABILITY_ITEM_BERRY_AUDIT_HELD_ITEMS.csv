@@ -1,0 +1,49 @@
+id,name,classification,evidence,emerald_effect_and_current_handling,existing_controls
+44,Berry Juice,Keep exact,V,"Held HP recovery of 20 at eligible half-HP item check, capped at maximum HP; consumed.",Enter post-activation current HP; do not auto-heal from mere possession
+179,Bright Powder,Not applicable,V,Accuracy calculation x0.90; ordinary damage on connection unchanged.,"Popup accuracy is base metadata, not effective hit chance"
+180,White Herb,Keep exact,V,Consumed when negative stages are restored to neutral; positive stages remain.,Set each affected negative damage/Speed stage to 0; accuracy/evasion outside scope
+181,Macho Brace,Not applicable,V,Speed halving exists in helper; training EV benefit is not an in-battle damage boost.,Speed is not an operand in any Gen III direct-damage formula here
+182,Exp. Share,Not applicable,I,Training experience/EV distribution; no connected-hit modifier.,Imported stats already include earned EVs/level
+183,Quick Claw,Not applicable,V,Order activation parameter 20; does not raise actual Speed or damage.,No turn-order probability model
+184,Soothe Bell,Not applicable,I,"Future friendship gains, not instant extra Return power. Imported actual friendship is already used.",Reimport updated friendship; never add a damage boost simply for holding it
+185,Mental Herb,Not applicable,V,"Gen III cures infatuation only, not later-generation Taunt/Encore/Disable effects.",Infatuation execution is not simulated
+186,Choice Band,Keep exact,V,Physical Attack x1.5 before stages; no Special boost. Move-lock execution is outside scope.,Do not duplicate using Attack stages
+187,Kings Rock,Not applicable,V,10% flinch on eligible flagged moves; not a damage multiplier.,No flinch/turn execution simulation
+188,SilverPowder,Keep exact,V,"BUG raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+189,Amulet Coin,Not applicable,I,Prize-money effect; no damage modifier.,None
+190,Cleanse Tag,Not applicable,I,Wild encounter effect; no damage modifier.,None
+191,Soul Dew,Keep exact,V,No stat boost in Frontier. Outside-Frontier helper supports Latias/Latios SpA/SpD x1.5.,Frontier rules passed automatically
+192,Deep Sea Tooth,Keep exact,V,Clamperl Special Attack x2.,No manual stage adjustment
+193,Deep Sea Scale,Keep exact,V,Clamperl Special Defense x2.,No manual stage adjustment
+194,Smoke Ball,Not applicable,I,Escape effect; no damage modifier.,None
+195,Everstone,Not applicable,I,Evolution/breeding use; no damage modifier.,None
+196,Focus Band,Unavailable / Not applicable,V,10% survival check; cannot be modeled as a guaranteed reduction to damage or permanent 1-HP cap.,HP can represent a resolved survival event; no survival probability simulator
+197,Lucky Egg,Not applicable,I,Experience effect; no connected-hit modifier.,Imported level/stats
+198,Scope Lens,Keep exact,V,Critical chance stage +1; does not force a critical hit or change conditional hit damage.,Crit for a chosen critical-hit scenario; no probability model
+199,Metal Coat,Keep exact,V,"STEEL raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+200,Leftovers,Keep exact,V,End-turn HP recovery; not added to or subtracted from a connected attack range.,Enter actual current HP after recovery
+201,Dragon Scale,Not applicable,I,Evolution use; not a Dragon damage booster.,None
+202,Light Ball,Keep exact,V,Pikachu Special Attack x2 only; no Gen IV physical boost.,No manual stage adjustment
+203,Soft Sand,Keep exact,V,"GROUND raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+204,Hard Stone,Keep exact,V,"ROCK raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+205,Miracle Seed,Keep exact,V,"GRASS raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+206,BlackGlasses,Keep exact,V,"DARK raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+207,Black Belt,Keep exact,V,"FIGHTING raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+208,Magnet,Keep exact,V,"ELECTRIC raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+209,Mystic Water,Keep exact,V,"WATER raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+210,Sharp Beak,Keep exact,V,"FLYING raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+211,Poison Barb,Keep exact,V,"POISON raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+212,NeverMeltIce,Keep exact,V,"ICE raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+213,Spell Tag,Keep exact,V,"GHOST raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+214,TwistedSpoon,Keep exact,V,"PSYCHIC raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+215,Charcoal,Keep exact,V,"FIRE raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+216,Dragon Fang,Keep exact,V,"DRAGON raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+217,Silk Scarf,Keep exact,V,"NORMAL raw Attack/SpA x1.10 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+218,Up-Grade,Not applicable,I,Evolution use; no connected-hit modifier.,None
+219,Shell Bell,Simplify,M,Post-hit recovery is omitted. Multi-hit healing can cross a pinch-ability HP threshold and change later hit power.,"HP covers later snapshots, not changes within one selected multi-hit total"
+220,Sea Incense,Keep exact,V,"WATER raw Attack/SpA x1.05 with integer flooring; automatic, type-based Gen III category.",No manual stage adjustment
+221,Lax Incense,Not applicable,V,Accuracy calculation x0.95 in Emerald; not a direct damage reduction.,No accuracy/evasion controls required for conditional damage
+222,Lucky Punch,Keep exact,V,Chansey critical chance stage +2; no benefit on other species.,"Crit selects outcome, not probability"
+223,Metal Powder,Unavailable / Not applicable,V,Physical Defense x2 for resolved Ditto state; active UI lacks transformed flag and correctly returns unavailable for physical defense. Special defense is unchanged.,No transformation/species/type override in current controls
+224,Thick Club,Keep exact,V,Cubone/Marowak physical Attack x2.,No manual stage adjustment
+225,Stick,Keep exact,V,Farfetch’d critical chance stage +2; no benefit on other species.,"Crit selects outcome, not probability"

@@ -14,5 +14,10 @@ export function battleMove(idOrName) {
   const data = moveResources[id];
   return data && reference.moves[id] ? {id, name:reference.moves[id].name, ...data} : null;
 }
+// Selection policy only; imported moves and direct database lookup stay intact.
+export function isSelectableBattleMove(idOrName) {
+  const move=battleMove(idOrName);
+  return Boolean(move&&move.id!==165);
+}
 export function speciesTypes(dex) { return types[dex]?.map(type => type.toUpperCase()); }
 export {reference, profile};

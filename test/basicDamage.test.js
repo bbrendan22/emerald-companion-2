@@ -43,7 +43,7 @@ test('Emerald physical subtotal minimum differs from special before +2; final ra
  assert.deepEqual(basicDamageRolls(2),[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2]);
 });
 test('unsupported moves and incomplete data omit results instead of inventing damage',()=>{
- for(const name of ['Growl','Hidden Power','Counter','Psywave','Guillotine','Explosion','Double Kick','Fury Attack','False Swipe','Pursuit','Revenge','Future Sight','Focus Punch','Dig','Struggle'])assert.equal(calc(name),null,name);
+ for(const name of ['Growl','Hidden Power','Counter','Psywave','Guillotine','Explosion','Double Kick','Fury Attack','False Swipe','Future Sight','Struggle'])assert.equal(calc(name),null,name);
  assert.equal(calculateBasicDamage(null,mon,mon),null);assert.equal(calc('Strength',null),null);assert.equal(calc('Strength',mon,null),null);
  for(const level of [0,101,1.5,NaN])assert.equal(calc('Strength',{...mon,level}),null);
  for(const defense of [0,-1,NaN,Infinity])assert.equal(calc('Strength',mon,{...mon,stats:{...mon.stats,defense}}),null);

@@ -1,15 +1,23 @@
 import useBattlePopupDismiss from './useBattlePopupDismiss.js';
-import React, {useEffect, useId, useRef, useState} from 'react';
+import React, {useEffect, useId, useLayoutEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {battleFormats} from '../../battle/towerRules.js';
+import {battleRounds} from '../../storage/battleRules.js';
 import '../styles/collection-pokemon-overview.css';
 
 export default function BattleRulesControl({state, dispatch}) {
+  const round = state.round ?? '';
+
   const [position, setPosition] = useState(null);
   const trigger = useRef(null);
   const popup = useRef(null);
   const id = useId();
   const open = Boolean(position);
+  useLayoutEffect(() => {
+    if (!open || !popup.current) return;
+    const width = popup.current.getBoundingClientRect().width;
+    popup.current.style.right = `${Math.max(16, Math.min(position.right, window.innerWidth - width - 16))}px`;
+  }, [open, position]);
   useBattlePopupDismiss({popup,trigger,onClose:() => setPosition(null),interactive:'select',enabled:open});
   useEffect(() => {
     if (!open) return;
@@ -40,7 +48,16 @@ export default function BattleRulesControl({state, dispatch}) {
       aria-expanded={open} aria-controls={open ? id : undefined} onClick={() => {
         const rect = trigger.current.getBoundingClientRect();
         setPosition(open ? null : {top:rect.bottom + 6, right:Math.max(16, window.innerWidth - rect.right), maxHeight:Math.max(120, window.innerHeight - rect.bottom - 22)});
-      }}>Battle Rules<span aria-hidden="true">▾</span></button>
+      }}>Battle Rules<span className="battle-round-chevron" aria-hidden="true">▾</span></button>
+    <span className="battle-rules-summary">{state.rules.facility.replace(/^Battle /, '')} · {state.rules.format} · {state.rules.levelMode === '50' ? 'Lv. 50' : `Open ${state.rules.opponentLevel}`}</span>
+    <label className="battle-round-control">
+      <span aria-hidden="true">Round{round ? ` ${round}` : ''} <span className="battle-round-chevron">▾</span></span>
+      <select aria-label="Round" value={round} onFocus={() => setPosition(null)} onClick={() => setPosition(null)} onChange={event => {
+        dispatch({type:'round', value:event.target.value});
+      }}>
+        {battleRounds.map(value => <option key={value} value={value}>{value ? `Round ${value}` : 'All Rounds'}</option>)}
+      </select>
+    </label>
     {open && createPortal(<div ref={popup} id={id} role="dialog" aria-label="Battle Rules" className="home-filter-popup battle-rules-popup" style={position}>
       <div className="battle-rules-facility"><span>Facility</span><span>Tower</span></div>
       <label>Battle Type<select aria-label="Battle Type" value={state.rules.format} onChange={event => update({format:event.target.value})}>

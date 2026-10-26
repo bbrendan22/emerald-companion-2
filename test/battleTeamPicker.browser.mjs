@@ -266,11 +266,12 @@ try {
     const bounds=section.getBoundingClientRect(), children=[...section.querySelector('.battle-player-heading').children].map(el=>el.getBoundingClientRect());
     const slots=[...section.querySelector('.battle-compact-slots').children].map(el=>el.getBoundingClientRect());
     return Math.abs(children[0].x-bounds.x)<1
-      && children[0].right<=children[1].x
+      && children[0].bottom<=children[1].top
+      && children[1].right<=slots[0].x
       && section.querySelector('.battle-player-heading').firstElementChild.classList.contains('battle-player-name')
-      && Math.abs(slots[0].x-bounds.x)<1;
-  }),'trainer heading and team icons are left aligned, with the sprite after the name');
-  assert.ok(await slotButtons.locator('img').evaluateAll(images=>images.every(img=>getComputedStyle(img).width==='32px' || img.getBoundingClientRect().width<=32)));
+      && Math.abs(children[1].x-bounds.x)<1;
+  }),'trainer name is above the portrait, with team slots immediately to its right');
+  assert.ok(await slotButtons.locator('img').evaluateAll(images=>images.every(img=>getComputedStyle(img).width==='40px' || img.getBoundingClientRect().width<=40)));
   await page.screenshot({path:`${artifactDir}/removed-${width}.png`,fullPage:true});
   await page.waitForTimeout(450);
   await open(2);assert.ok(await row(2).isEnabled());await row(2).click();

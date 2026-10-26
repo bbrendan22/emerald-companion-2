@@ -1,0 +1,7454 @@
+{
+  "description": "Step 1 characterization: current behavior, not a cartridge-accuracy oracle. Neutral level 50 Snorlax mirror; explicit known inputs. Step 4: the four OHKO rows now expect explicit OHKO results.",
+  "mon": {
+    "dex": 143,
+    "level": 50,
+    "ability": "Immunity",
+    "item": "None",
+    "types": [
+      "NORMAL"
+    ],
+    "stats": {
+      "hp": 200,
+      "attack": 100,
+      "defense": 100,
+      "spAttack": 100,
+      "spDefense": 100,
+      "speed": 100
+    },
+    "currentHp": 200,
+    "status": "none",
+    "stages": {},
+    "screens": {},
+    "friendship": 255,
+    "ivs": {
+      "hp": 31,
+      "attack": 31,
+      "defense": 31,
+      "spAttack": 31,
+      "spDefense": 31,
+      "speed": 31
+    }
+  },
+  "moves": [
+    {
+      "id": 1,
+      "name": "Pound",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 2,
+      "name": "Karate Chop",
+      "type": "FIGHTING",
+      "power": 50,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 3,
+      "name": "DoubleSlap",
+      "type": "NORMAL",
+      "power": 15,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 20,
+        "max": 60
+      }
+    },
+    {
+      "id": 4,
+      "name": "Comet Punch",
+      "type": "NORMAL",
+      "power": 18,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 22,
+        "max": 65
+      }
+    },
+    {
+      "id": 5,
+      "name": "Mega Punch",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 6,
+      "name": "Pay Day",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "PAY_DAY",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 7,
+      "name": "Fire Punch",
+      "type": "FIRE",
+      "power": 75,
+      "effect": "BURN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          35
+        ],
+        "min": 29,
+        "max": 35
+      }
+    },
+    {
+      "id": 8,
+      "name": "Ice Punch",
+      "type": "ICE",
+      "power": 75,
+      "effect": "FREEZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          35
+        ],
+        "min": 29,
+        "max": 35
+      }
+    },
+    {
+      "id": 9,
+      "name": "ThunderPunch",
+      "type": "ELECTRIC",
+      "power": 75,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          35
+        ],
+        "min": 29,
+        "max": 35
+      }
+    },
+    {
+      "id": 10,
+      "name": "Scratch",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 11,
+      "name": "ViceGrip",
+      "type": "NORMAL",
+      "power": 55,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          33,
+          33,
+          33,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37,
+          37,
+          37,
+          38,
+          38,
+          39
+        ],
+        "min": 33,
+        "max": 39
+      }
+    },
+    {
+      "id": 12,
+      "name": "Guillotine",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "OHKO",
+      "category": "ohko",
+      "baseline": {
+        "kind": "ohko",
+        "outcome": "ohko",
+        "reason": null
+      }
+    },
+    {
+      "id": 13,
+      "name": "Razor Wind",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "RAZOR_WIND",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 14,
+      "name": "Swords Dance",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ATTACK_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 15,
+      "name": "Cut",
+      "type": "NORMAL",
+      "power": 50,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          30,
+          30,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          36
+        ],
+        "min": 30,
+        "max": 36
+      }
+    },
+    {
+      "id": 16,
+      "name": "Gust",
+      "type": "FLYING",
+      "power": 40,
+      "effect": "GUST",
+      "category": "ordinary-hit-only",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 17,
+      "name": "Wing Attack",
+      "type": "FLYING",
+      "power": 60,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 18,
+      "name": "Whirlwind",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ROAR",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 19,
+      "name": "Fly",
+      "type": "FLYING",
+      "power": 70,
+      "effect": "SEMI_INVULNERABLE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 20,
+      "name": "Bind",
+      "type": "NORMAL",
+      "power": 15,
+      "effect": "TRAP",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          12
+        ],
+        "min": 10,
+        "max": 12
+      }
+    },
+    {
+      "id": 21,
+      "name": "Slam",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 22,
+      "name": "Vine Whip",
+      "type": "GRASS",
+      "power": 35,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          14,
+          14,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          16,
+          16,
+          16,
+          16,
+          16,
+          17
+        ],
+        "min": 14,
+        "max": 17
+      }
+    },
+    {
+      "id": 23,
+      "name": "Stomp",
+      "type": "NORMAL",
+      "power": 65,
+      "effect": "FLINCH_MINIMIZE_HIT",
+      "category": "ordinary-hit-only",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          38,
+          38,
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45
+        ],
+        "min": 38,
+        "max": 45
+      }
+    },
+    {
+      "id": 24,
+      "name": "Double Kick",
+      "type": "FIGHTING",
+      "power": 30,
+      "effect": "DOUBLE_HIT",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 50,
+        "max": 60
+      }
+    },
+    {
+      "id": 25,
+      "name": "Mega Kick",
+      "type": "NORMAL",
+      "power": 120,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          68,
+          69,
+          70,
+          71,
+          72,
+          72,
+          73,
+          74,
+          75,
+          76,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "min": 68,
+        "max": 81
+      }
+    },
+    {
+      "id": 26,
+      "name": "Jump Kick",
+      "type": "FIGHTING",
+      "power": 70,
+      "effect": "RECOIL_IF_MISS",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          54,
+          55,
+          55,
+          56,
+          56,
+          57,
+          58,
+          58,
+          59,
+          60,
+          60,
+          61,
+          62,
+          62,
+          63,
+          64
+        ],
+        "min": 54,
+        "max": 64
+      }
+    },
+    {
+      "id": 27,
+      "name": "Rolling Kick",
+      "type": "FIGHTING",
+      "power": 60,
+      "effect": "FLINCH_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          54,
+          55,
+          56
+        ],
+        "min": 47,
+        "max": 56
+      }
+    },
+    {
+      "id": 28,
+      "name": "Sand Attack",
+      "type": "GROUND",
+      "power": 0,
+      "effect": "ACCURACY_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 29,
+      "name": "Headbutt",
+      "type": "NORMAL",
+      "power": 70,
+      "effect": "FLINCH_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 30,
+      "name": "Horn Attack",
+      "type": "NORMAL",
+      "power": 65,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          38,
+          38,
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45
+        ],
+        "min": 38,
+        "max": 45
+      }
+    },
+    {
+      "id": 31,
+      "name": "Fury Attack",
+      "type": "NORMAL",
+      "power": 15,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 20,
+        "max": 60
+      }
+    },
+    {
+      "id": 32,
+      "name": "Horn Drill",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "OHKO",
+      "category": "ohko",
+      "baseline": {
+        "kind": "ohko",
+        "outcome": "ohko",
+        "reason": null
+      }
+    },
+    {
+      "id": 33,
+      "name": "Tackle",
+      "type": "NORMAL",
+      "power": 35,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25
+        ],
+        "min": 21,
+        "max": 25
+      }
+    },
+    {
+      "id": 34,
+      "name": "Body Slam",
+      "type": "NORMAL",
+      "power": 85,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          49,
+          49,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55,
+          55,
+          56,
+          56,
+          57,
+          58
+        ],
+        "min": 49,
+        "max": 58
+      }
+    },
+    {
+      "id": 35,
+      "name": "Wrap",
+      "type": "NORMAL",
+      "power": 15,
+      "effect": "TRAP",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          12
+        ],
+        "min": 10,
+        "max": 12
+      }
+    },
+    {
+      "id": 36,
+      "name": "Take Down",
+      "type": "NORMAL",
+      "power": 90,
+      "effect": "RECOIL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          51,
+          52,
+          53,
+          53,
+          54,
+          54,
+          55,
+          56,
+          56,
+          57,
+          57,
+          58,
+          59,
+          59,
+          60,
+          61
+        ],
+        "min": 51,
+        "max": 61
+      }
+    },
+    {
+      "id": 37,
+      "name": "Thrash",
+      "type": "NORMAL",
+      "power": 90,
+      "effect": "RAMPAGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          51,
+          52,
+          53,
+          53,
+          54,
+          54,
+          55,
+          56,
+          56,
+          57,
+          57,
+          58,
+          59,
+          59,
+          60,
+          61
+        ],
+        "min": 51,
+        "max": 61
+      }
+    },
+    {
+      "id": 38,
+      "name": "Double Edge",
+      "type": "NORMAL",
+      "power": 120,
+      "effect": "DOUBLE_EDGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          68,
+          69,
+          70,
+          71,
+          72,
+          72,
+          73,
+          74,
+          75,
+          76,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "min": 68,
+        "max": 81
+      }
+    },
+    {
+      "id": 39,
+      "name": "Tail Whip",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "DEFENSE_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 40,
+      "name": "Poison Sting",
+      "type": "POISON",
+      "power": 15,
+      "effect": "POISON_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        "min": 6,
+        "max": 8
+      }
+    },
+    {
+      "id": 41,
+      "name": "Twineedle",
+      "type": "BUG",
+      "power": 25,
+      "effect": "TWINEEDLE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 22,
+        "max": 26
+      }
+    },
+    {
+      "id": 42,
+      "name": "Pin Missile",
+      "type": "BUG",
+      "power": 14,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 12,
+        "max": 40
+      }
+    },
+    {
+      "id": 43,
+      "name": "Leer",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "DEFENSE_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 44,
+      "name": "Bite",
+      "type": "DARK",
+      "power": 60,
+      "effect": "FLINCH_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 45,
+      "name": "Growl",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ATTACK_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 46,
+      "name": "Roar",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ROAR",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 47,
+      "name": "Sing",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SLEEP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 48,
+      "name": "Supersonic",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "CONFUSE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 49,
+      "name": "SonicBoom",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "SONICBOOM",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "deterministic-damage",
+        "outcome": "damage",
+        "damage": 20
+      }
+    },
+    {
+      "id": 50,
+      "name": "Disable",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "DISABLE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 51,
+      "name": "Acid",
+      "type": "POISON",
+      "power": 40,
+      "effect": "DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 52,
+      "name": "Ember",
+      "type": "FIRE",
+      "power": 40,
+      "effect": "BURN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 53,
+      "name": "Flamethrower",
+      "type": "FIRE",
+      "power": 95,
+      "effect": "BURN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43
+        ],
+        "min": 36,
+        "max": 43
+      }
+    },
+    {
+      "id": 54,
+      "name": "Mist",
+      "type": "ICE",
+      "power": 0,
+      "effect": "MIST",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 55,
+      "name": "Water Gun",
+      "type": "WATER",
+      "power": 40,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 56,
+      "name": "Hydro Pump",
+      "type": "WATER",
+      "power": 120,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 57,
+      "name": "Surf",
+      "type": "WATER",
+      "power": 95,
+      "effect": "HIT",
+      "category": "ordinary-hit-only",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43
+        ],
+        "min": 36,
+        "max": 43
+      }
+    },
+    {
+      "id": 58,
+      "name": "Ice Beam",
+      "type": "ICE",
+      "power": 95,
+      "effect": "FREEZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43
+        ],
+        "min": 36,
+        "max": 43
+      }
+    },
+    {
+      "id": 59,
+      "name": "Blizzard",
+      "type": "ICE",
+      "power": 120,
+      "effect": "FREEZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 60,
+      "name": "Psybeam",
+      "type": "PSYCHIC",
+      "power": 65,
+      "effect": "CONFUSE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 61,
+      "name": "Bubble Beam",
+      "type": "WATER",
+      "power": 65,
+      "effect": "SPEED_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 62,
+      "name": "Aurora Beam",
+      "type": "ICE",
+      "power": 65,
+      "effect": "ATTACK_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 63,
+      "name": "Hyper Beam",
+      "type": "NORMAL",
+      "power": 150,
+      "effect": "RECHARGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          102
+        ],
+        "min": 86,
+        "max": 102
+      }
+    },
+    {
+      "id": 64,
+      "name": "Peck",
+      "type": "FLYING",
+      "power": 35,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          14,
+          14,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          16,
+          16,
+          16,
+          16,
+          16,
+          17
+        ],
+        "min": 14,
+        "max": 17
+      }
+    },
+    {
+      "id": 65,
+      "name": "Drill Peck",
+      "type": "FLYING",
+      "power": 80,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37
+        ],
+        "min": 31,
+        "max": 37
+      }
+    },
+    {
+      "id": 66,
+      "name": "Submission",
+      "type": "FIGHTING",
+      "power": 80,
+      "effect": "RECOIL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          62,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          68,
+          68,
+          69,
+          70,
+          71,
+          71,
+          72,
+          73,
+          74
+        ],
+        "min": 62,
+        "max": 74
+      }
+    },
+    {
+      "id": 67,
+      "name": "Low Kick",
+      "type": "FIGHTING",
+      "power": 1,
+      "effect": "LOW_KICK",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          91,
+          92,
+          93,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          108
+        ],
+        "min": 91,
+        "max": 108
+      }
+    },
+    {
+      "id": 68,
+      "name": "Counter",
+      "type": "FIGHTING",
+      "power": 1,
+      "effect": "COUNTER",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 69,
+      "name": "Seismic Toss",
+      "type": "FIGHTING",
+      "power": 1,
+      "effect": "LEVEL_DAMAGE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "deterministic-damage",
+        "outcome": "damage",
+        "damage": 50
+      }
+    },
+    {
+      "id": 70,
+      "name": "Strength",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 71,
+      "name": "Absorb",
+      "type": "GRASS",
+      "power": 20,
+      "effect": "ABSORB",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "min": 8,
+        "max": 10
+      }
+    },
+    {
+      "id": 72,
+      "name": "Mega Drain",
+      "type": "GRASS",
+      "power": 40,
+      "effect": "ABSORB",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 73,
+      "name": "Leech Seed",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "LEECH_SEED",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 74,
+      "name": "Growth",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SPECIAL_ATTACK_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 75,
+      "name": "Razor Leaf",
+      "type": "GRASS",
+      "power": 55,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26
+        ],
+        "min": 22,
+        "max": 26
+      }
+    },
+    {
+      "id": 76,
+      "name": "SolarBeam",
+      "type": "GRASS",
+      "power": 120,
+      "effect": "SOLAR_BEAM",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 77,
+      "name": "Poison Powder",
+      "type": "POISON",
+      "power": 0,
+      "effect": "POISON",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 78,
+      "name": "Stun Spore",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "PARALYZE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 79,
+      "name": "Sleep Powder",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "SLEEP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 80,
+      "name": "Petal Dance",
+      "type": "GRASS",
+      "power": 70,
+      "effect": "RAMPAGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 81,
+      "name": "String Shot",
+      "type": "BUG",
+      "power": 0,
+      "effect": "SPEED_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 82,
+      "name": "Dragon Rage",
+      "type": "DRAGON",
+      "power": 1,
+      "effect": "DRAGON_RAGE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "deterministic-damage",
+        "outcome": "damage",
+        "damage": 40
+      }
+    },
+    {
+      "id": 83,
+      "name": "Fire Spin",
+      "type": "FIRE",
+      "power": 15,
+      "effect": "TRAP",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        "min": 6,
+        "max": 8
+      }
+    },
+    {
+      "id": 84,
+      "name": "Thunder Shock",
+      "type": "ELECTRIC",
+      "power": 40,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 85,
+      "name": "Thunderbolt",
+      "type": "ELECTRIC",
+      "power": 95,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43
+        ],
+        "min": 36,
+        "max": 43
+      }
+    },
+    {
+      "id": 86,
+      "name": "Thunder Wave",
+      "type": "ELECTRIC",
+      "power": 0,
+      "effect": "PARALYZE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 87,
+      "name": "Thunder",
+      "type": "ELECTRIC",
+      "power": 120,
+      "effect": "THUNDER",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 88,
+      "name": "Rock Throw",
+      "type": "ROCK",
+      "power": 50,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 89,
+      "name": "Earthquake",
+      "type": "GROUND",
+      "power": 100,
+      "effect": "EARTHQUAKE",
+      "category": "ordinary-hit-only",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 90,
+      "name": "Fissure",
+      "type": "GROUND",
+      "power": 1,
+      "effect": "OHKO",
+      "category": "ohko",
+      "baseline": {
+        "kind": "ohko",
+        "outcome": "ohko",
+        "reason": null
+      }
+    },
+    {
+      "id": 91,
+      "name": "Dig",
+      "type": "GROUND",
+      "power": 60,
+      "effect": "SEMI_INVULNERABLE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 92,
+      "name": "Toxic",
+      "type": "POISON",
+      "power": 0,
+      "effect": "TOXIC",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 93,
+      "name": "Confusion",
+      "type": "PSYCHIC",
+      "power": 50,
+      "effect": "CONFUSE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 94,
+      "name": "Psychic",
+      "type": "PSYCHIC",
+      "power": 90,
+      "effect": "SPECIAL_DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          34,
+          35,
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          38,
+          39,
+          39,
+          40,
+          40,
+          41
+        ],
+        "min": 34,
+        "max": 41
+      }
+    },
+    {
+      "id": 95,
+      "name": "Hypnosis",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "SLEEP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 96,
+      "name": "Meditate",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "ATTACK_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 97,
+      "name": "Agility",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "SPEED_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 98,
+      "name": "Quick Attack",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "QUICK_ATTACK",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 99,
+      "name": "Rage",
+      "type": "NORMAL",
+      "power": 20,
+      "effect": "RAGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          15
+        ],
+        "min": 12,
+        "max": 15
+      }
+    },
+    {
+      "id": 100,
+      "name": "Teleport",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "TELEPORT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 101,
+      "name": "Night Shade",
+      "type": "GHOST",
+      "power": 1,
+      "effect": "LEVEL_DAMAGE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "deterministic-damage",
+        "outcome": "immune",
+        "damage": 0
+      }
+    },
+    {
+      "id": 102,
+      "name": "Mimic",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "MIMIC",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 103,
+      "name": "Screech",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "DEFENSE_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 104,
+      "name": "Double Team",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "EVASION_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 105,
+      "name": "Recover",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "RESTORE_HP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 106,
+      "name": "Harden",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "DEFENSE_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 107,
+      "name": "Minimize",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "MINIMIZE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 108,
+      "name": "Smokescreen",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ACCURACY_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 109,
+      "name": "Confuse Ray",
+      "type": "GHOST",
+      "power": 0,
+      "effect": "CONFUSE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 110,
+      "name": "Withdraw",
+      "type": "WATER",
+      "power": 0,
+      "effect": "DEFENSE_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 111,
+      "name": "Defense Curl",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "DEFENSE_CURL",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 112,
+      "name": "Barrier",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "DEFENSE_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 113,
+      "name": "Light Screen",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "LIGHT_SCREEN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 114,
+      "name": "Haze",
+      "type": "ICE",
+      "power": 0,
+      "effect": "HAZE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 115,
+      "name": "Reflect",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "REFLECT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 116,
+      "name": "Focus Energy",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "FOCUS_ENERGY",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 117,
+      "name": "Bide",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "BIDE",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 118,
+      "name": "Metronome",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "METRONOME",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 119,
+      "name": "Mirror Move",
+      "type": "FLYING",
+      "power": 0,
+      "effect": "MIRROR_MOVE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 120,
+      "name": "Self Destruct",
+      "type": "NORMAL",
+      "power": 200,
+      "effect": "EXPLOSION",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          226,
+          229,
+          232,
+          234,
+          237,
+          240,
+          242,
+          245,
+          248,
+          250,
+          253,
+          256,
+          258,
+          261,
+          264,
+          267
+        ],
+        "min": 226,
+        "max": 267
+      }
+    },
+    {
+      "id": 121,
+      "name": "Egg Bomb",
+      "type": "NORMAL",
+      "power": 100,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          58,
+          59,
+          60,
+          60,
+          61,
+          62,
+          62,
+          63,
+          64,
+          64,
+          65,
+          66,
+          66,
+          67,
+          68,
+          69
+        ],
+        "min": 58,
+        "max": 69
+      }
+    },
+    {
+      "id": 122,
+      "name": "Lick",
+      "type": "GHOST",
+      "power": 20,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "id": 123,
+      "name": "Smog",
+      "type": "POISON",
+      "power": 20,
+      "effect": "POISON_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "min": 8,
+        "max": 10
+      }
+    },
+    {
+      "id": 124,
+      "name": "Sludge",
+      "type": "POISON",
+      "power": 65,
+      "effect": "POISON_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 125,
+      "name": "Bone Club",
+      "type": "GROUND",
+      "power": 65,
+      "effect": "FLINCH_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 126,
+      "name": "Fire Blast",
+      "type": "FIRE",
+      "power": 120,
+      "effect": "BURN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 127,
+      "name": "Waterfall",
+      "type": "WATER",
+      "power": 80,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37
+        ],
+        "min": 31,
+        "max": 37
+      }
+    },
+    {
+      "id": 128,
+      "name": "Clamp",
+      "type": "WATER",
+      "power": 35,
+      "effect": "TRAP",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          14,
+          14,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          16,
+          16,
+          16,
+          16,
+          16,
+          17
+        ],
+        "min": 14,
+        "max": 17
+      }
+    },
+    {
+      "id": 129,
+      "name": "Swift",
+      "type": "NORMAL",
+      "power": 60,
+      "effect": "ALWAYS_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42
+        ],
+        "min": 35,
+        "max": 42
+      }
+    },
+    {
+      "id": 130,
+      "name": "Skull Bash",
+      "type": "NORMAL",
+      "power": 100,
+      "effect": "SKULL_BASH",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          58,
+          59,
+          60,
+          60,
+          61,
+          62,
+          62,
+          63,
+          64,
+          64,
+          65,
+          66,
+          66,
+          67,
+          68,
+          69
+        ],
+        "min": 58,
+        "max": 69
+      }
+    },
+    {
+      "id": 131,
+      "name": "Spike Cannon",
+      "type": "NORMAL",
+      "power": 20,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 24,
+        "max": 75
+      }
+    },
+    {
+      "id": 132,
+      "name": "Constrict",
+      "type": "NORMAL",
+      "power": 10,
+      "effect": "SPEED_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          9
+        ],
+        "min": 7,
+        "max": 9
+      }
+    },
+    {
+      "id": 133,
+      "name": "Amnesia",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "SPECIAL_DEFENSE_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 134,
+      "name": "Kinesis",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "ACCURACY_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 135,
+      "name": "Soft Boiled",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SOFTBOILED",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 136,
+      "name": "Hi Jump Kick",
+      "type": "FIGHTING",
+      "power": 85,
+      "effect": "RECOIL_IF_MISS",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          66,
+          67,
+          67,
+          68,
+          69,
+          70,
+          70,
+          71,
+          72,
+          73,
+          74,
+          74,
+          75,
+          76,
+          77,
+          78
+        ],
+        "min": 66,
+        "max": 78
+      }
+    },
+    {
+      "id": 137,
+      "name": "Glare",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "PARALYZE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 138,
+      "name": "Dream Eater",
+      "type": "PSYCHIC",
+      "power": 100,
+      "effect": "DREAM_EATER",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 139,
+      "name": "Poison Gas",
+      "type": "POISON",
+      "power": 0,
+      "effect": "POISON",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 140,
+      "name": "Barrage",
+      "type": "NORMAL",
+      "power": 15,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 20,
+        "max": 60
+      }
+    },
+    {
+      "id": 141,
+      "name": "Leech Life",
+      "type": "BUG",
+      "power": 20,
+      "effect": "ABSORB",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "min": 8,
+        "max": 10
+      }
+    },
+    {
+      "id": 142,
+      "name": "Lovely Kiss",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SLEEP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 143,
+      "name": "Sky Attack",
+      "type": "FLYING",
+      "power": 140,
+      "effect": "SKY_ATTACK",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          53,
+          54,
+          54,
+          55,
+          56,
+          56,
+          57,
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63
+        ],
+        "min": 53,
+        "max": 63
+      }
+    },
+    {
+      "id": 144,
+      "name": "Transform",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "TRANSFORM",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 145,
+      "name": "Bubble",
+      "type": "WATER",
+      "power": 20,
+      "effect": "SPEED_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "min": 8,
+        "max": 10
+      }
+    },
+    {
+      "id": 146,
+      "name": "Dizzy Punch",
+      "type": "NORMAL",
+      "power": 70,
+      "effect": "CONFUSE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 147,
+      "name": "Spore",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "SLEEP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 148,
+      "name": "Flash",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ACCURACY_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 149,
+      "name": "Psywave",
+      "type": "PSYCHIC",
+      "power": 1,
+      "effect": "PSYWAVE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "level-damage",
+        "rolls": [
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75
+        ],
+        "min": 25,
+        "max": 75
+      }
+    },
+    {
+      "id": 150,
+      "name": "Splash",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SPLASH",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 151,
+      "name": "Acid Armor",
+      "type": "POISON",
+      "power": 0,
+      "effect": "DEFENSE_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 152,
+      "name": "Crabhammer",
+      "type": "WATER",
+      "power": 90,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          34,
+          35,
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          38,
+          39,
+          39,
+          40,
+          40,
+          41
+        ],
+        "min": 34,
+        "max": 41
+      }
+    },
+    {
+      "id": 153,
+      "name": "Explosion",
+      "type": "NORMAL",
+      "power": 250,
+      "effect": "EXPLOSION",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          283,
+          286,
+          289,
+          293,
+          296,
+          299,
+          303,
+          306,
+          309,
+          313,
+          316,
+          319,
+          323,
+          326,
+          329,
+          333
+        ],
+        "min": 283,
+        "max": 333
+      }
+    },
+    {
+      "id": 154,
+      "name": "Fury Swipes",
+      "type": "NORMAL",
+      "power": 18,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 22,
+        "max": 65
+      }
+    },
+    {
+      "id": 155,
+      "name": "Bonemerang",
+      "type": "GROUND",
+      "power": 50,
+      "effect": "DOUBLE_HIT",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 156,
+      "name": "Rest",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "REST",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 157,
+      "name": "Rock Slide",
+      "type": "ROCK",
+      "power": 75,
+      "effect": "FLINCH_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          35
+        ],
+        "min": 29,
+        "max": 35
+      }
+    },
+    {
+      "id": 158,
+      "name": "Hyper Fang",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "FLINCH_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 159,
+      "name": "Sharpen",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ATTACK_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 160,
+      "name": "Conversion",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "CONVERSION",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 161,
+      "name": "Tri Attack",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "TRI_ATTACK",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 162,
+      "name": "Super Fang",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "SUPER_FANG",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "deterministic-damage",
+        "outcome": "damage",
+        "damage": 100
+      }
+    },
+    {
+      "id": 163,
+      "name": "Slash",
+      "type": "NORMAL",
+      "power": 70,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 164,
+      "name": "Substitute",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SUBSTITUTE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 165,
+      "name": "Struggle",
+      "type": "NORMAL",
+      "power": 50,
+      "effect": "RECOIL",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 166,
+      "name": "Sketch",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SKETCH",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 167,
+      "name": "Triple Kick",
+      "type": "FIGHTING",
+      "power": 10,
+      "effect": "TRIPLE_KICK",
+      "category": "triple-kick",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 52,
+        "max": 62
+      }
+    },
+    {
+      "id": 168,
+      "name": "Thief",
+      "type": "DARK",
+      "power": 40,
+      "effect": "THIEF",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 169,
+      "name": "Spider Web",
+      "type": "BUG",
+      "power": 0,
+      "effect": "MEAN_LOOK",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 170,
+      "name": "Mind Reader",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "LOCK_ON",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 171,
+      "name": "Nightmare",
+      "type": "GHOST",
+      "power": 0,
+      "effect": "NIGHTMARE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 172,
+      "name": "Flame Wheel",
+      "type": "FIRE",
+      "power": 60,
+      "effect": "THAW_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 173,
+      "name": "Snore",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "SNORE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 174,
+      "name": "Curse",
+      "type": "MYSTERY",
+      "power": 0,
+      "effect": "CURSE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 175,
+      "name": "Flail",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "FLAIL",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          15
+        ],
+        "min": 12,
+        "max": 15
+      }
+    },
+    {
+      "id": 176,
+      "name": "Conversion 2",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "CONVERSION_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 177,
+      "name": "Aeroblast",
+      "type": "FLYING",
+      "power": 100,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 178,
+      "name": "Cotton Spore",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "SPEED_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 179,
+      "name": "Reversal",
+      "type": "FIGHTING",
+      "power": 1,
+      "effect": "FLAIL",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19,
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
+        "min": 17,
+        "max": 20
+      }
+    },
+    {
+      "id": 180,
+      "name": "Spite",
+      "type": "GHOST",
+      "power": 0,
+      "effect": "SPITE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 181,
+      "name": "Powder Snow",
+      "type": "ICE",
+      "power": 40,
+      "effect": "FREEZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 182,
+      "name": "Protect",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "PROTECT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 183,
+      "name": "Mach Punch",
+      "type": "FIGHTING",
+      "power": 40,
+      "effect": "QUICK_ATTACK",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38
+        ],
+        "min": 32,
+        "max": 38
+      }
+    },
+    {
+      "id": 184,
+      "name": "Scary Face",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SPEED_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 185,
+      "name": "Faint Attack",
+      "type": "DARK",
+      "power": 60,
+      "effect": "ALWAYS_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 186,
+      "name": "Sweet Kiss",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "CONFUSE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 187,
+      "name": "Belly Drum",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "BELLY_DRUM",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 188,
+      "name": "Sludge Bomb",
+      "type": "POISON",
+      "power": 90,
+      "effect": "POISON_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          34,
+          35,
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          38,
+          39,
+          39,
+          40,
+          40,
+          41
+        ],
+        "min": 34,
+        "max": 41
+      }
+    },
+    {
+      "id": 189,
+      "name": "Mud Slap",
+      "type": "GROUND",
+      "power": 20,
+      "effect": "ACCURACY_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "min": 8,
+        "max": 10
+      }
+    },
+    {
+      "id": 190,
+      "name": "Octazooka",
+      "type": "WATER",
+      "power": 65,
+      "effect": "ACCURACY_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 191,
+      "name": "Spikes",
+      "type": "GROUND",
+      "power": 0,
+      "effect": "SPIKES",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 192,
+      "name": "Zap Cannon",
+      "type": "ELECTRIC",
+      "power": 100,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 193,
+      "name": "Foresight",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "FORESIGHT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 194,
+      "name": "Destiny Bond",
+      "type": "GHOST",
+      "power": 0,
+      "effect": "DESTINY_BOND",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 195,
+      "name": "Perish Song",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "PERISH_SONG",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 196,
+      "name": "Icy Wind",
+      "type": "ICE",
+      "power": 55,
+      "effect": "SPEED_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26
+        ],
+        "min": 22,
+        "max": 26
+      }
+    },
+    {
+      "id": 197,
+      "name": "Detect",
+      "type": "FIGHTING",
+      "power": 0,
+      "effect": "PROTECT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 198,
+      "name": "Bone Rush",
+      "type": "GROUND",
+      "power": 25,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 22,
+        "max": 65
+      }
+    },
+    {
+      "id": 199,
+      "name": "Lock On",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "LOCK_ON",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 200,
+      "name": "Outrage",
+      "type": "DRAGON",
+      "power": 90,
+      "effect": "RAMPAGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          34,
+          35,
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          38,
+          39,
+          39,
+          40,
+          40,
+          41
+        ],
+        "min": 34,
+        "max": 41
+      }
+    },
+    {
+      "id": 201,
+      "name": "Sandstorm",
+      "type": "ROCK",
+      "power": 0,
+      "effect": "SANDSTORM",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 202,
+      "name": "Giga Drain",
+      "type": "GRASS",
+      "power": 60,
+      "effect": "ABSORB",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 203,
+      "name": "Endure",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ENDURE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 204,
+      "name": "Charm",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ATTACK_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 205,
+      "name": "Rollout",
+      "type": "ROCK",
+      "power": 30,
+      "effect": "ROLLOUT",
+      "category": "rollout-ice-ball",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "stage-1",
+            "kind": "standard-damage",
+            "min": 12,
+            "max": 15
+          },
+          {
+            "id": "stage-1-curl",
+            "kind": "standard-damage",
+            "min": 23,
+            "max": 28
+          },
+          {
+            "id": "stage-2",
+            "kind": "standard-damage",
+            "min": 23,
+            "max": 28
+          },
+          {
+            "id": "stage-2-curl",
+            "kind": "standard-damage",
+            "min": 45,
+            "max": 54
+          },
+          {
+            "id": "stage-3",
+            "kind": "standard-damage",
+            "min": 45,
+            "max": 54
+          },
+          {
+            "id": "stage-3-curl",
+            "kind": "standard-damage",
+            "min": 90,
+            "max": 107
+          },
+          {
+            "id": "stage-4",
+            "kind": "standard-damage",
+            "min": 90,
+            "max": 107
+          },
+          {
+            "id": "stage-4-curl",
+            "kind": "standard-damage",
+            "min": 181,
+            "max": 213
+          },
+          {
+            "id": "stage-5",
+            "kind": "standard-damage",
+            "min": 181,
+            "max": 213
+          },
+          {
+            "id": "stage-5-curl",
+            "kind": "standard-damage",
+            "min": 360,
+            "max": 424
+          }
+        ]
+      }
+    },
+    {
+      "id": 206,
+      "name": "False Swipe",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "FALSE_SWIPE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 207,
+      "name": "Swagger",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SWAGGER",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 208,
+      "name": "Milk Drink",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SOFTBOILED",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 209,
+      "name": "Spark",
+      "type": "ELECTRIC",
+      "power": 65,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          25,
+          25,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30
+        ],
+        "min": 25,
+        "max": 30
+      }
+    },
+    {
+      "id": 210,
+      "name": "Fury Cutter",
+      "type": "BUG",
+      "power": 10,
+      "effect": "FURY_CUTTER",
+      "category": "fury-cutter",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "stage-1",
+            "kind": "standard-damage",
+            "min": 5,
+            "max": 6
+          },
+          {
+            "id": "stage-2",
+            "kind": "standard-damage",
+            "min": 8,
+            "max": 10
+          },
+          {
+            "id": "stage-3",
+            "kind": "standard-damage",
+            "min": 16,
+            "max": 19
+          },
+          {
+            "id": "stage-4",
+            "kind": "standard-damage",
+            "min": 31,
+            "max": 37
+          },
+          {
+            "id": "stage-5",
+            "kind": "standard-damage",
+            "min": 61,
+            "max": 72
+          }
+        ]
+      }
+    },
+    {
+      "id": 211,
+      "name": "Steel Wing",
+      "type": "STEEL",
+      "power": 70,
+      "effect": "DEFENSE_UP_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 212,
+      "name": "Mean Look",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "MEAN_LOOK",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 213,
+      "name": "Attract",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ATTRACT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 214,
+      "name": "Sleep Talk",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SLEEP_TALK",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 215,
+      "name": "Heal Bell",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "HEAL_BELL",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 216,
+      "name": "Return",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "RETURN",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          58,
+          59,
+          60,
+          60,
+          61,
+          62,
+          62,
+          63,
+          64,
+          64,
+          65,
+          66,
+          66,
+          67,
+          68,
+          69
+        ],
+        "min": 58,
+        "max": 69
+      }
+    },
+    {
+      "id": 217,
+      "name": "Present",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "PRESENT",
+      "category": "present",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "present-40",
+            "kind": "standard-damage",
+            "min": 23,
+            "max": 28
+          },
+          {
+            "id": "present-80",
+            "kind": "standard-damage",
+            "min": 46,
+            "max": 55
+          },
+          {
+            "id": "present-120",
+            "kind": "standard-damage",
+            "min": 68,
+            "max": 81
+          }
+        ]
+      }
+    },
+    {
+      "id": 218,
+      "name": "Frustration",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "FRUSTRATION",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4
+        ],
+        "min": 3,
+        "max": 4
+      }
+    },
+    {
+      "id": 219,
+      "name": "Safeguard",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SAFEGUARD",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 220,
+      "name": "Pain Split",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "PAIN_SPLIT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 221,
+      "name": "Sacred Fire",
+      "type": "FIRE",
+      "power": 100,
+      "effect": "THAW_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 222,
+      "name": "Magnitude",
+      "type": "GROUND",
+      "power": 1,
+      "effect": "MAGNITUDE",
+      "category": "magnitude",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "magnitude-4",
+            "kind": "standard-damage",
+            "min": 5,
+            "max": 6
+          },
+          {
+            "id": "magnitude-5",
+            "kind": "standard-damage",
+            "min": 12,
+            "max": 15
+          },
+          {
+            "id": "magnitude-6",
+            "kind": "standard-damage",
+            "min": 20,
+            "max": 24
+          },
+          {
+            "id": "magnitude-7",
+            "kind": "standard-damage",
+            "min": 27,
+            "max": 32
+          },
+          {
+            "id": "magnitude-8",
+            "kind": "standard-damage",
+            "min": 34,
+            "max": 41
+          },
+          {
+            "id": "magnitude-9",
+            "kind": "standard-damage",
+            "min": 42,
+            "max": 50
+          },
+          {
+            "id": "magnitude-10",
+            "kind": "standard-damage",
+            "min": 57,
+            "max": 68
+          }
+        ]
+      }
+    },
+    {
+      "id": 223,
+      "name": "DynamicPunch",
+      "type": "FIGHTING",
+      "power": 100,
+      "effect": "CONFUSE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          78,
+          79,
+          80,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92
+        ],
+        "min": 78,
+        "max": 92
+      }
+    },
+    {
+      "id": 224,
+      "name": "Megahorn",
+      "type": "BUG",
+      "power": 120,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 225,
+      "name": "DragonBreath",
+      "type": "DRAGON",
+      "power": 60,
+      "effect": "PARALYZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 226,
+      "name": "Baton Pass",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "BATON_PASS",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 227,
+      "name": "Encore",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ENCORE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 228,
+      "name": "Pursuit",
+      "type": "DARK",
+      "power": 40,
+      "effect": "PURSUIT",
+      "category": "pursuit",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "normal",
+            "kind": "standard-damage",
+            "min": 16,
+            "max": 19
+          },
+          {
+            "id": "switching",
+            "kind": "standard-damage",
+            "min": 32,
+            "max": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": 229,
+      "name": "Rapid Spin",
+      "type": "NORMAL",
+      "power": 20,
+      "effect": "RAPID_SPIN",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          15
+        ],
+        "min": 12,
+        "max": 15
+      }
+    },
+    {
+      "id": 230,
+      "name": "Sweet Scent",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "EVASION_DOWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 231,
+      "name": "Iron Tail",
+      "type": "STEEL",
+      "power": 100,
+      "effect": "DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 232,
+      "name": "Metal Claw",
+      "type": "STEEL",
+      "power": 50,
+      "effect": "ATTACK_UP_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 233,
+      "name": "Vital Throw",
+      "type": "FIGHTING",
+      "power": 70,
+      "effect": "VITAL_THROW",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          54,
+          55,
+          55,
+          56,
+          56,
+          57,
+          58,
+          58,
+          59,
+          60,
+          60,
+          61,
+          62,
+          62,
+          63,
+          64
+        ],
+        "min": 54,
+        "max": 64
+      }
+    },
+    {
+      "id": 234,
+      "name": "Morning Sun",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "MORNING_SUN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 235,
+      "name": "Synthesis",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "SYNTHESIS",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 236,
+      "name": "Moonlight",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "MOONLIGHT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 237,
+      "name": "Hidden Power",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "HIDDEN_POWER",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 238,
+      "name": "Cross Chop",
+      "type": "FIGHTING",
+      "power": 100,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          78,
+          79,
+          80,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92
+        ],
+        "min": 78,
+        "max": 92
+      }
+    },
+    {
+      "id": 239,
+      "name": "Twister",
+      "type": "DRAGON",
+      "power": 40,
+      "effect": "TWISTER",
+      "category": "ordinary-hit-only",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
+        "min": 16,
+        "max": 19
+      }
+    },
+    {
+      "id": 240,
+      "name": "Rain Dance",
+      "type": "WATER",
+      "power": 0,
+      "effect": "RAIN_DANCE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 241,
+      "name": "Sunny Day",
+      "type": "FIRE",
+      "power": 0,
+      "effect": "SUNNY_DAY",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 242,
+      "name": "Crunch",
+      "type": "DARK",
+      "power": 80,
+      "effect": "SPECIAL_DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37
+        ],
+        "min": 31,
+        "max": 37
+      }
+    },
+    {
+      "id": 243,
+      "name": "Mirror Coat",
+      "type": "PSYCHIC",
+      "power": 1,
+      "effect": "MIRROR_COAT",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 244,
+      "name": "Psych Up",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "PSYCH_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 245,
+      "name": "ExtremeSpeed",
+      "type": "NORMAL",
+      "power": 80,
+      "effect": "QUICK_ATTACK",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          53,
+          54,
+          55
+        ],
+        "min": 46,
+        "max": 55
+      }
+    },
+    {
+      "id": 246,
+      "name": "AncientPower",
+      "type": "ROCK",
+      "power": 60,
+      "effect": "ALL_STATS_UP_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 247,
+      "name": "Shadow Ball",
+      "type": "GHOST",
+      "power": 80,
+      "effect": "SPECIAL_DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "id": 248,
+      "name": "Future Sight",
+      "type": "PSYCHIC",
+      "power": 80,
+      "effect": "FUTURE_SIGHT",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 249,
+      "name": "Rock Smash",
+      "type": "FIGHTING",
+      "power": 20,
+      "effect": "DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19,
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
+        "min": 17,
+        "max": 20
+      }
+    },
+    {
+      "id": 250,
+      "name": "Whirlpool",
+      "type": "WATER",
+      "power": 15,
+      "effect": "TRAP",
+      "category": "ordinary-hit-only",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        "min": 6,
+        "max": 8
+      }
+    },
+    {
+      "id": 251,
+      "name": "Beat Up",
+      "type": "DARK",
+      "power": 10,
+      "effect": "BEAT_UP",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 252,
+      "name": "Fake Out",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "FAKE_OUT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 253,
+      "name": "Uproar",
+      "type": "NORMAL",
+      "power": 50,
+      "effect": "UPROAR",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          30,
+          30,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          36
+        ],
+        "min": 30,
+        "max": 36
+      }
+    },
+    {
+      "id": 254,
+      "name": "Stockpile",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "STOCKPILE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 255,
+      "name": "Spit Up",
+      "type": "NORMAL",
+      "power": 100,
+      "effect": "SPIT_UP",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 256,
+      "name": "Swallow",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "SWALLOW",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 257,
+      "name": "Heat Wave",
+      "type": "FIRE",
+      "power": 100,
+      "effect": "BURN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 258,
+      "name": "Hail",
+      "type": "ICE",
+      "power": 0,
+      "effect": "HAIL",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 259,
+      "name": "Torment",
+      "type": "DARK",
+      "power": 0,
+      "effect": "TORMENT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 260,
+      "name": "Flatter",
+      "type": "DARK",
+      "power": 0,
+      "effect": "FLATTER",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 261,
+      "name": "Will O Wisp",
+      "type": "FIRE",
+      "power": 0,
+      "effect": "WILL_O_WISP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 262,
+      "name": "Memento",
+      "type": "DARK",
+      "power": 0,
+      "effect": "MEMENTO",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 263,
+      "name": "Facade",
+      "type": "NORMAL",
+      "power": 70,
+      "effect": "FACADE",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 264,
+      "name": "Focus Punch",
+      "type": "FIGHTING",
+      "power": 150,
+      "effect": "FOCUS_PUNCH",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          115,
+          116,
+          118,
+          119,
+          121,
+          122,
+          123,
+          125,
+          126,
+          127,
+          129,
+          130,
+          131,
+          133,
+          134,
+          136
+        ],
+        "min": 115,
+        "max": 136
+      }
+    },
+    {
+      "id": 265,
+      "name": "SmellingSalt",
+      "type": "NORMAL",
+      "power": 60,
+      "effect": "SMELLINGSALT",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42
+        ],
+        "min": 35,
+        "max": 42
+      }
+    },
+    {
+      "id": 266,
+      "name": "Follow Me",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "FOLLOW_ME",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 267,
+      "name": "Nature Power",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "NATURE_POWER",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 268,
+      "name": "Charge",
+      "type": "ELECTRIC",
+      "power": 0,
+      "effect": "CHARGE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 269,
+      "name": "Taunt",
+      "type": "DARK",
+      "power": 0,
+      "effect": "TAUNT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 270,
+      "name": "Helping Hand",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "HELPING_HAND",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 271,
+      "name": "Trick",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "TRICK",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 272,
+      "name": "Role Play",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "ROLE_PLAY",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 273,
+      "name": "Wish",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "WISH",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 274,
+      "name": "Assist",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ASSIST",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 275,
+      "name": "Ingrain",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "INGRAIN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 276,
+      "name": "Superpower",
+      "type": "FIGHTING",
+      "power": 120,
+      "effect": "SUPERPOWER",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          91,
+          92,
+          93,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          108
+        ],
+        "min": 91,
+        "max": 108
+      }
+    },
+    {
+      "id": 277,
+      "name": "Magic Coat",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "MAGIC_COAT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 278,
+      "name": "Recycle",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "RECYCLE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 279,
+      "name": "Revenge",
+      "type": "FIGHTING",
+      "power": 60,
+      "effect": "REVENGE",
+      "category": "revenge",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "normal",
+            "kind": "standard-damage",
+            "min": 47,
+            "max": 56
+          },
+          {
+            "id": "damaged",
+            "kind": "standard-damage",
+            "min": 95,
+            "max": 112
+          }
+        ]
+      }
+    },
+    {
+      "id": 280,
+      "name": "Brick Break",
+      "type": "FIGHTING",
+      "power": 75,
+      "effect": "BRICK_BREAK",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          59,
+          60,
+          60,
+          61,
+          62,
+          63,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          67,
+          68,
+          69,
+          70
+        ],
+        "min": 59,
+        "max": 70
+      }
+    },
+    {
+      "id": 281,
+      "name": "Yawn",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "YAWN",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 282,
+      "name": "Knock Off",
+      "type": "DARK",
+      "power": 20,
+      "effect": "KNOCK_OFF",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "min": 8,
+        "max": 10
+      }
+    },
+    {
+      "id": 283,
+      "name": "Endeavor",
+      "type": "NORMAL",
+      "power": 1,
+      "effect": "ENDEAVOR",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "deterministic-damage",
+        "outcome": "failed",
+        "damage": 0
+      }
+    },
+    {
+      "id": 284,
+      "name": "Eruption",
+      "type": "FIRE",
+      "power": 150,
+      "effect": "ERUPTION",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          68
+        ],
+        "min": 57,
+        "max": 68
+      }
+    },
+    {
+      "id": 285,
+      "name": "Skill Swap",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "SKILL_SWAP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 286,
+      "name": "Imprison",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "IMPRISON",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 287,
+      "name": "Refresh",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "REFRESH",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 288,
+      "name": "Grudge",
+      "type": "GHOST",
+      "power": 0,
+      "effect": "GRUDGE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 289,
+      "name": "Snatch",
+      "type": "DARK",
+      "power": 0,
+      "effect": "SNATCH",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 290,
+      "name": "Secret Power",
+      "type": "NORMAL",
+      "power": 70,
+      "effect": "SECRET_POWER",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "min": 40,
+        "max": 48
+      }
+    },
+    {
+      "id": 291,
+      "name": "Dive",
+      "type": "WATER",
+      "power": 60,
+      "effect": "SEMI_INVULNERABLE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 292,
+      "name": "Arm Thrust",
+      "type": "FIGHTING",
+      "power": 15,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 26,
+        "max": 80
+      }
+    },
+    {
+      "id": 293,
+      "name": "Camouflage",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "CAMOUFLAGE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 294,
+      "name": "Tail Glow",
+      "type": "BUG",
+      "power": 0,
+      "effect": "SPECIAL_ATTACK_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 295,
+      "name": "Luster Purge",
+      "type": "PSYCHIC",
+      "power": 70,
+      "effect": "SPECIAL_DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 296,
+      "name": "Mist Ball",
+      "type": "PSYCHIC",
+      "power": 70,
+      "effect": "SPECIAL_ATTACK_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 297,
+      "name": "FeatherDance",
+      "type": "FLYING",
+      "power": 0,
+      "effect": "ATTACK_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 298,
+      "name": "Teeter Dance",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "TEETER_DANCE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 299,
+      "name": "Blaze Kick",
+      "type": "FIRE",
+      "power": 85,
+      "effect": "BLAZE_KICK",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          33,
+          33,
+          33,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37,
+          37,
+          37,
+          38,
+          38,
+          39
+        ],
+        "min": 33,
+        "max": 39
+      }
+    },
+    {
+      "id": 300,
+      "name": "Mud Sport",
+      "type": "GROUND",
+      "power": 0,
+      "effect": "MUD_SPORT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 301,
+      "name": "Ice Ball",
+      "type": "ICE",
+      "power": 30,
+      "effect": "ROLLOUT",
+      "category": "rollout-ice-ball",
+      "baseline": {
+        "kind": "conditional-damage",
+        "conditions": [
+          {
+            "id": "stage-1",
+            "kind": "standard-damage",
+            "min": 12,
+            "max": 15
+          },
+          {
+            "id": "stage-1-curl",
+            "kind": "standard-damage",
+            "min": 23,
+            "max": 28
+          },
+          {
+            "id": "stage-2",
+            "kind": "standard-damage",
+            "min": 23,
+            "max": 28
+          },
+          {
+            "id": "stage-2-curl",
+            "kind": "standard-damage",
+            "min": 45,
+            "max": 54
+          },
+          {
+            "id": "stage-3",
+            "kind": "standard-damage",
+            "min": 45,
+            "max": 54
+          },
+          {
+            "id": "stage-3-curl",
+            "kind": "standard-damage",
+            "min": 90,
+            "max": 107
+          },
+          {
+            "id": "stage-4",
+            "kind": "standard-damage",
+            "min": 90,
+            "max": 107
+          },
+          {
+            "id": "stage-4-curl",
+            "kind": "standard-damage",
+            "min": 181,
+            "max": 213
+          },
+          {
+            "id": "stage-5",
+            "kind": "standard-damage",
+            "min": 181,
+            "max": 213
+          },
+          {
+            "id": "stage-5-curl",
+            "kind": "standard-damage",
+            "min": 360,
+            "max": 424
+          }
+        ]
+      }
+    },
+    {
+      "id": 302,
+      "name": "Needle Arm",
+      "type": "GRASS",
+      "power": 60,
+      "effect": "FLINCH_MINIMIZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 303,
+      "name": "Slack Off",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "RESTORE_HP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 304,
+      "name": "Hyper Voice",
+      "type": "NORMAL",
+      "power": 90,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          51,
+          52,
+          53,
+          53,
+          54,
+          54,
+          55,
+          56,
+          56,
+          57,
+          57,
+          58,
+          59,
+          59,
+          60,
+          61
+        ],
+        "min": 51,
+        "max": 61
+      }
+    },
+    {
+      "id": 305,
+      "name": "Poison Fang",
+      "type": "POISON",
+      "power": 50,
+      "effect": "POISON_FANG",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 306,
+      "name": "Crush Claw",
+      "type": "NORMAL",
+      "power": 75,
+      "effect": "DEFENSE_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          52
+        ],
+        "min": 44,
+        "max": 52
+      }
+    },
+    {
+      "id": 307,
+      "name": "Blast Burn",
+      "type": "FIRE",
+      "power": 150,
+      "effect": "RECHARGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          68
+        ],
+        "min": 57,
+        "max": 68
+      }
+    },
+    {
+      "id": 308,
+      "name": "Hydro Cannon",
+      "type": "WATER",
+      "power": 150,
+      "effect": "RECHARGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          68
+        ],
+        "min": 57,
+        "max": 68
+      }
+    },
+    {
+      "id": 309,
+      "name": "Meteor Mash",
+      "type": "STEEL",
+      "power": 100,
+      "effect": "ATTACK_UP_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          39,
+          39,
+          40,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46
+        ],
+        "min": 39,
+        "max": 46
+      }
+    },
+    {
+      "id": 310,
+      "name": "Astonish",
+      "type": "GHOST",
+      "power": 30,
+      "effect": "FLINCH_MINIMIZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "id": 311,
+      "name": "Weather Ball",
+      "type": "NORMAL",
+      "power": 50,
+      "effect": "WEATHER_BALL",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          30,
+          30,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          36
+        ],
+        "min": 30,
+        "max": 36
+      }
+    },
+    {
+      "id": 312,
+      "name": "Aromatherapy",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "HEAL_BELL",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 313,
+      "name": "Fake Tears",
+      "type": "DARK",
+      "power": 0,
+      "effect": "SPECIAL_DEFENSE_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 314,
+      "name": "Air Cutter",
+      "type": "FLYING",
+      "power": 55,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26
+        ],
+        "min": 22,
+        "max": 26
+      }
+    },
+    {
+      "id": 315,
+      "name": "Overheat",
+      "type": "FIRE",
+      "power": 140,
+      "effect": "OVERHEAT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          53,
+          54,
+          54,
+          55,
+          56,
+          56,
+          57,
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63
+        ],
+        "min": 53,
+        "max": 63
+      }
+    },
+    {
+      "id": 316,
+      "name": "Odor Sleuth",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "FORESIGHT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 317,
+      "name": "Rock Tomb",
+      "type": "ROCK",
+      "power": 50,
+      "effect": "SPEED_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 318,
+      "name": "Silver Wind",
+      "type": "BUG",
+      "power": 60,
+      "effect": "ALL_STATS_UP_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 319,
+      "name": "Metal Sound",
+      "type": "STEEL",
+      "power": 0,
+      "effect": "SPECIAL_DEFENSE_DOWN_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 320,
+      "name": "GrassWhistle",
+      "type": "GRASS",
+      "power": 0,
+      "effect": "SLEEP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 321,
+      "name": "Tickle",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "TICKLE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 322,
+      "name": "Cosmic Power",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "COSMIC_POWER",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 323,
+      "name": "Water Spout",
+      "type": "WATER",
+      "power": 150,
+      "effect": "ERUPTION",
+      "category": "keep-exact",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          68
+        ],
+        "min": 57,
+        "max": 68
+      }
+    },
+    {
+      "id": 324,
+      "name": "Signal Beam",
+      "type": "BUG",
+      "power": 75,
+      "effect": "CONFUSE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          34,
+          34,
+          35
+        ],
+        "min": 29,
+        "max": 35
+      }
+    },
+    {
+      "id": 325,
+      "name": "Shadow Punch",
+      "type": "GHOST",
+      "power": 60,
+      "effect": "ALWAYS_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "id": 326,
+      "name": "Extrasensory",
+      "type": "PSYCHIC",
+      "power": 80,
+      "effect": "FLINCH_MINIMIZE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37
+        ],
+        "min": 31,
+        "max": 37
+      }
+    },
+    {
+      "id": 327,
+      "name": "Sky Uppercut",
+      "type": "FIGHTING",
+      "power": 85,
+      "effect": "SKY_UPPERCUT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          66,
+          67,
+          67,
+          68,
+          69,
+          70,
+          70,
+          71,
+          72,
+          73,
+          74,
+          74,
+          75,
+          76,
+          77,
+          78
+        ],
+        "min": 66,
+        "max": 78
+      }
+    },
+    {
+      "id": 328,
+      "name": "Sand Tomb",
+      "type": "GROUND",
+      "power": 15,
+      "effect": "TRAP",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        "min": 6,
+        "max": 8
+      }
+    },
+    {
+      "id": 329,
+      "name": "Sheer Cold",
+      "type": "ICE",
+      "power": 1,
+      "effect": "OHKO",
+      "category": "ohko",
+      "baseline": {
+        "kind": "ohko",
+        "outcome": "ohko",
+        "reason": null
+      }
+    },
+    {
+      "id": 330,
+      "name": "Muddy Water",
+      "type": "WATER",
+      "power": 95,
+      "effect": "ACCURACY_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42,
+          42,
+          43
+        ],
+        "min": 36,
+        "max": 43
+      }
+    },
+    {
+      "id": 331,
+      "name": "Bullet Seed",
+      "type": "GRASS",
+      "power": 10,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 10,
+        "max": 30
+      }
+    },
+    {
+      "id": 332,
+      "name": "Aerial Ace",
+      "type": "FLYING",
+      "power": 60,
+      "effect": "ALWAYS_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 333,
+      "name": "Icicle Spear",
+      "type": "ICE",
+      "power": 10,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 10,
+        "max": 30
+      }
+    },
+    {
+      "id": 334,
+      "name": "Iron Defense",
+      "type": "STEEL",
+      "power": 0,
+      "effect": "DEFENSE_UP_2",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 335,
+      "name": "Block",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "MEAN_LOOK",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 336,
+      "name": "Howl",
+      "type": "NORMAL",
+      "power": 0,
+      "effect": "ATTACK_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 337,
+      "name": "Dragon Claw",
+      "type": "DRAGON",
+      "power": 80,
+      "effect": "HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          31,
+          31,
+          32,
+          32,
+          32,
+          33,
+          33,
+          34,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37
+        ],
+        "min": 31,
+        "max": 37
+      }
+    },
+    {
+      "id": 338,
+      "name": "Frenzy Plant",
+      "type": "GRASS",
+      "power": 150,
+      "effect": "RECHARGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63,
+          63,
+          64,
+          65,
+          65,
+          66,
+          67,
+          68
+        ],
+        "min": 57,
+        "max": 68
+      }
+    },
+    {
+      "id": 339,
+      "name": "Bulk Up",
+      "type": "FIGHTING",
+      "power": 0,
+      "effect": "BULK_UP",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 340,
+      "name": "Bounce",
+      "type": "FLYING",
+      "power": 85,
+      "effect": "SEMI_INVULNERABLE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          33,
+          33,
+          33,
+          34,
+          34,
+          35,
+          35,
+          35,
+          36,
+          36,
+          37,
+          37,
+          37,
+          38,
+          38,
+          39
+        ],
+        "min": 33,
+        "max": 39
+      }
+    },
+    {
+      "id": 341,
+      "name": "Mud Shot",
+      "type": "GROUND",
+      "power": 55,
+      "effect": "SPEED_DOWN_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26
+        ],
+        "min": 22,
+        "max": 26
+      }
+    },
+    {
+      "id": 342,
+      "name": "Poison Tail",
+      "type": "POISON",
+      "power": 50,
+      "effect": "POISON_TAIL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24
+        ],
+        "min": 20,
+        "max": 24
+      }
+    },
+    {
+      "id": 343,
+      "name": "Covet",
+      "type": "NORMAL",
+      "power": 40,
+      "effect": "THIEF",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 344,
+      "name": "Volt Tackle",
+      "type": "ELECTRIC",
+      "power": 120,
+      "effect": "DOUBLE_EDGE",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          45,
+          46,
+          46,
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          50,
+          51,
+          51,
+          52,
+          52,
+          53,
+          54
+        ],
+        "min": 45,
+        "max": 54
+      }
+    },
+    {
+      "id": 345,
+      "name": "Magical Leaf",
+      "type": "GRASS",
+      "power": 60,
+      "effect": "ALWAYS_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 346,
+      "name": "Water Sport",
+      "type": "WATER",
+      "power": 0,
+      "effect": "WATER_SPORT",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 347,
+      "name": "Calm Mind",
+      "type": "PSYCHIC",
+      "power": 0,
+      "effect": "CALM_MIND",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 348,
+      "name": "Leaf Blade",
+      "type": "GRASS",
+      "power": 70,
+      "effect": "HIGH_CRITICAL",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          32
+        ],
+        "min": 27,
+        "max": 32
+      }
+    },
+    {
+      "id": 349,
+      "name": "Dragon Dance",
+      "type": "DRAGON",
+      "power": 0,
+      "effect": "DRAGON_DANCE",
+      "category": "status",
+      "baseline": null
+    },
+    {
+      "id": 350,
+      "name": "Rock Blast",
+      "type": "ROCK",
+      "power": 25,
+      "effect": "MULTI_HIT",
+      "category": "variable-multi-hit",
+      "baseline": {
+        "kind": "aggregate-damage",
+        "min": 22,
+        "max": 65
+      }
+    },
+    {
+      "id": 351,
+      "name": "Shock Wave",
+      "type": "ELECTRIC",
+      "power": 60,
+      "effect": "ALWAYS_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 352,
+      "name": "Water Pulse",
+      "type": "WATER",
+      "power": 60,
+      "effect": "CONFUSE_HIT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "min": 23,
+        "max": 28
+      }
+    },
+    {
+      "id": 353,
+      "name": "Doom Desire",
+      "type": "STEEL",
+      "power": 120,
+      "effect": "FUTURE_SIGHT",
+      "category": "unavailable",
+      "baseline": null
+    },
+    {
+      "id": 354,
+      "name": "Psycho Boost",
+      "type": "PSYCHIC",
+      "power": 140,
+      "effect": "OVERHEAT",
+      "category": "standard",
+      "baseline": {
+        "kind": "standard-damage",
+        "rolls": [
+          53,
+          54,
+          54,
+          55,
+          56,
+          56,
+          57,
+          57,
+          58,
+          59,
+          59,
+          60,
+          61,
+          61,
+          62,
+          63
+        ],
+        "min": 53,
+        "max": 63
+      }
+    }
+  ]
+}

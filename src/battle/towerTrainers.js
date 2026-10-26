@@ -1,3 +1,4 @@
+import {towerRoundTrainerEligible} from './towerRoundEligibility.js';
 import {frontierTrainers} from './data/frontierTrainers.js';
 import {trainerKey, towerTrainerSets} from './towerRules.js';
 import {matchesBattleWords} from './searchWords.js';
@@ -18,12 +19,13 @@ const anabelEntryKeys = new Set(['Anabel Silver','Anabel Gold']);
 export function towerTrainerSupportsFormat(entry, format) {
   return format !== 'Doubles' || !anabelEntryKeys.has(entry?.key);
 }
-export function searchTowerTrainers(query = '', {entries = towerTrainerEntries, nameOnly = false, format = 'Singles'} = {}) {
+export function searchTowerTrainers(query = '', {entries = towerTrainerEntries, nameOnly = false, format = 'Singles', state} = {}) {
   return entries.filter(entry => {
+    if (state && !towerRoundTrainerEligible(entry,state)) return false;
     if (!towerTrainerSupportsFormat(entry,format)) return false;
     const text = (nameOnly ? entry.name : `${entry.name} ${entry.trainerClass} ${entry.symbol ?? ''}`).toLowerCase();
     return matchesBattleWords(text,query);
-  });
+  }).sort((a,b) => a.name.localeCompare(b.name));
 }
 export function selectedTowerTrainer(state) {
   return towerTrainerEntries.find(entry => entry.trainer === state.selectedTrainer && entry.symbol === (state.selectedBrainSymbol ?? null)) ?? null;

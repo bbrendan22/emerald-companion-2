@@ -1,7 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {loadBattleRules, storeBattleRules} from '../src/storage/battleRules.js';
+import {battleRounds, loadBattleRound, storeBattleRound, loadBattleRules, storeBattleRules} from '../src/storage/battleRules.js';
 import {createTowerRules} from '../src/battle/towerRules.js';
+
+test('UI round preference defaults, persists all options and tolerates unavailable storage', () => {
+  const entries = new Map();
+  const storage = {getItem:key => entries.get(key) ?? null, setItem:(key,value) => entries.set(key,value)};
+  assert.equal(loadBattleRound(storage),'');
+  for (const round of battleRounds) {
+    assert.equal(storeBattleRound(storage,round),true);
+    assert.equal(loadBattleRound(storage),round);
+  }
+  assert.deepEqual(loadBattleRules(storage),createTowerRules());
+  for (const saved of ['broken','null','9','"invalid"']) {
+    assert.equal(loadBattleRound({getItem:() => saved}),'');
+  }
+  const unavailable = {getItem:() => {throw new Error('unavailable');},setItem:() => {throw new Error('unavailable');}};
+  assert.equal(loadBattleRound(unavailable),'');
+  assert.equal(storeBattleRound(unavailable,'8+'),false);
+});
 
 test('battle rules persist in one key, validate stored data and retain manual Open Level', () => {
   const entries = new Map();

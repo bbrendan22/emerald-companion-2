@@ -40,13 +40,38 @@ function consumeGesture(event) {
   releaseGesture = release;
 }
 
-export default function useBattlePopupDismiss({popup,trigger,onClose,interactive,enabled = true}) {
+export default function useBattlePopupDismiss({popup,trigger,onClose,interactive,enabled = true,tapOnly = false}) {
   useEffect(() => {
     if (!enabled) return;
+    if (tapOnly) {
+      // Informational dialogs allow swipes to scroll; only a stationary tap
+      // dismisses. Consume its click before unmounting, including late Safari
+      // compatibility clicks, with the same guard used by the Battle popups.
+      let start = null, tapped = false;
+      const down = event => {
+        tapped = false;
+        start = event.isPrimary && event.button === 0 ? {id:event.pointerId,x:event.clientX,y:event.clientY} : null;
+      };
+      const move = event => {
+        if (start && (event.pointerId !== start.id || Math.hypot(event.clientX-start.x,event.clientY-start.y) >= 8)) start = null;
+      };
+      const up = event => {move(event);tapped = Boolean(start);start = null;};
+      const cancel = () => {start = null;tapped = false;};
+      const click = event => {
+        if (interactive && event.target instanceof Element && popup.current?.contains(event.target) && event.target.closest(interactive)) {tapped=false;return;}
+        if (!tapped) {event.preventDefault();event.stopImmediatePropagation();return;}
+        tapped = false;
+        consumeGesture(event);
+        onClose();
+      };
+      const listeners = {pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,scroll:cancel,click};
+      for (const [type,listener] of Object.entries(listeners)) document.addEventListener(type,listener,{capture:true,passive:false});
+      return () => {for (const [type,listener] of Object.entries(listeners)) document.removeEventListener(type,listener,true);};
+    }
     const dismiss = event => {
       const target = event.target;
       if (!(target instanceof Element)) return;
-      if (popup.current?.contains(target) && target.closest(interactive)) return;
+      if (interactive && popup.current?.contains(target) && target.closest(interactive)) return;
       consumeGesture(event);
       onClose();
     };
@@ -58,5 +83,5 @@ export default function useBattlePopupDismiss({popup,trigger,onClose,interactive
       document.removeEventListener('touchstart',dismiss,true);
       document.removeEventListener('click',dismiss,true);
     };
-  }, [popup,trigger,onClose,interactive,enabled]);
+  }, [popup,trigger,onClose,interactive,enabled,tapOnly]);
 }

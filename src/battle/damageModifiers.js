@@ -1,7 +1,7 @@
 // Step 5, direct single-use modifiers only. Order follows Emerald CalculateBaseDamage.
 import {battleWeather,battleTypes} from './battleConditions.js';
 const itemKey=value=>String(value??'').toLowerCase().replace(/[^a-z]/g,'');
-const typeItems={silkscarf:'NORMAL',blackbelt:'FIGHTING',sharpbeak:'FLYING',poisonbarb:'POISON',softsand:'GROUND',hardstone:'ROCK',silverpowder:'BUG',spelltag:'GHOST',metalcoat:'STEEL',charcoal:'FIRE',mysticwater:'WATER',miracleseed:'GRASS',magnet:'ELECTRIC',twistedspoon:'PSYCHIC',nevermeltice:'ICE',dragonfang:'DRAGON',blackglasses:'DARK',seaincense:'WATER'};
+export const typeItems={silkscarf:'NORMAL',blackbelt:'FIGHTING',sharpbeak:'FLYING',poisonbarb:'POISON',softsand:'GROUND',hardstone:'ROCK',silverpowder:'BUG',spelltag:'GHOST',metalcoat:'STEEL',charcoal:'FIRE',mysticwater:'WATER',miracleseed:'GRASS',magnet:'ELECTRIC',twistedspoon:'PSYCHIC',nevermeltice:'ICE',dragonfang:'DRAGON',blackglasses:'DARK',seaincense:'WATER'};
 const pinchTypes={Torrent:'WATER',Blaze:'FIRE',Overgrow:'GRASS',Swarm:'BUG'};
 const statusActive=status=>Boolean(status&&status!=='none');
 // Shared immunity gate only; no boosts, healing or state changes.

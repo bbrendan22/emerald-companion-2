@@ -1,7 +1,6 @@
 import {frontierPokemon} from './data/frontierPokemon.js';
 import {towerBrainSets} from './towerRules.js';
-import {selectedTowerSetIds} from './towerTrainers.js';
-import {towerSetById} from './towerSets.js';
+import {availableTowerSets} from './towerSets.js';
 import {speciesByName} from './reference.js';
 import {matchesBattleWords} from './searchWords.js';
 
@@ -18,9 +17,7 @@ export const towerSpecies = uniqueSpecies([...frontierPokemon, ...towerBrainSets
 const byId = new Map(towerSpecies.map(species => [species.id, species]));
 export const opponentSpeciesById = id => byId.get(id);
 
-// Species eligibility only: no streak, level, or set identification assumptions.
+// Use the same canonical candidate pool as Possible Sets and damage resolution.
 export function availableOpponentSpecies(state, query = '') {
-  const species = state.selectedTrainer
-    ? uniqueSpecies(selectedTowerSetIds(state).map(towerSetById).filter(Boolean)) : towerSpecies;
-  return species.filter(mon => matchesBattleWords(mon.name,query));
+  return uniqueSpecies(availableTowerSets(state)).filter(mon => matchesBattleWords(mon.name,query));
 }

@@ -1,3 +1,4 @@
+import {isConventionalDamageMove} from './coreDamage.js';
 // Steps 2–6C: single-use damage; explicit conditions, items and ability scenarios. No old engine.
 import {orderedTypeDamage} from './typeMatchups.js';
 import {stageStat,possibleAbilities} from './battleConditions.js';
@@ -11,23 +12,13 @@ const specialTypes=new Set(['FIRE','WATER','GRASS','ELECTRIC','PSYCHIC','ICE','D
 // after the hit (drain/recoil/recharge/stat changes) do not alter its formula.
 // Underground/airborne/underwater/minimized states are not represented here;
 // their conditional bonuses, like Surf's, are outside this preview's scope.
-const basicEffects=new Set(['HIT','HIGH_CRITICAL','PAY_DAY','ALWAYS_HIT','QUICK_ATTACK','VITAL_THROW',
- 'BURN_HIT','FREEZE_HIT','PARALYZE_HIT','FLINCH_HIT','POISON_HIT','DEFENSE_DOWN_HIT',
- 'CONFUSE_HIT','SPEED_DOWN_HIT','ATTACK_DOWN_HIT','ACCURACY_DOWN_HIT','SPECIAL_ATTACK_DOWN_HIT',
- 'SPECIAL_DEFENSE_DOWN_HIT','DEFENSE_UP_HIT','ATTACK_UP_HIT','ALL_STATS_UP_HIT',
- 'TRI_ATTACK','THIEF','RAPID_SPIN','KNOCK_OFF','BLAZE_KICK','POISON_FANG','POISON_TAIL',
- 'EARTHQUAKE','ABSORB','RECOIL','DOUBLE_EDGE','RECOIL_IF_MISS','RECHARGE',
- 'RAMPAGE','RAGE','THAW_HIT','SUPERPOWER','OVERHEAT','SECRET_POWER',
- 'THUNDER','SKY_UPPERCUT','GUST','TWISTER','FLINCH_MINIMIZE_HIT','TRAP']);
-// Struggle shares RECOIL but skips ordinary STAB/type handling in Emerald.
-const nonOrdinaryMoveIds=new Set([165]);
 const integer=(value,min,max)=>Number.isInteger(value)&&value>=min&&value<=max;
 const validTypes=types=>Array.isArray(types)&&types.length>=1&&types.length<=2
  &&types.every(type=>physicalTypes.has(type)||specialTypes.has(type));
 export function prepareBasicDamage(move,attacker,defender,conditions={}) {
  const variable=isVariableDamageMove(move)||isSpecialDamageMove(move);
  move=resolveSpecialMove(resolveVariableMove(move,attacker,defender,conditions),attacker,defender,conditions);
- if(!move||!attacker||!defender||(!variable&&(!basicEffects.has(move.effect)||nonOrdinaryMoveIds.has(move.id)))||!integer(move.power,variable?1:2,255))return null;
+ if(!move||!attacker||!defender||(!variable&&!isConventionalDamageMove(move))||!integer(move.power,variable?1:2,255))return null;
  const category=physicalTypes.has(move.type)?'Physical':specialTypes.has(move.type)?'Special':null;
  if(!category||!validTypes(attacker.types)||!validTypes(defender.types))return null;
  const attack=attacker.stats?.[category==='Physical'?'attack':'spAttack'];

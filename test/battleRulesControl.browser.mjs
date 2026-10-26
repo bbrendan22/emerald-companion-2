@@ -41,7 +41,7 @@ try {
     const rect = await popup.boundingBox();
     assert.ok(rect.x >= 0 && rect.x + rect.width <= width && rect.y + rect.height <= height);
     await page.screenshot({path:`artifacts/battle-rules/rules-${width}.png`,fullPage:true});
-    assert.ok(rect.height < 130 && rect.width < 240, 'compact content-sized popup');
+    assert.ok(rect.height < 190 && rect.width < 240, 'compact content-sized popup');
     assert.ok(await popup.locator('label').evaluateAll(labels => labels.every(label => {
       const text = label.getBoundingClientRect(), select = label.querySelector('select').getBoundingClientRect();
       return select.x > text.x && select.y >= text.y && select.y + select.height <= text.y + text.height + 1;
@@ -50,8 +50,8 @@ try {
     assert.equal(await popup.count(),0);
     await trigger.click();
     assert.equal(await popup.locator('.battle-rules-facility').innerText(),'Facility\nTower');
-    const columns = await page.locator('.battle-foundation').boundingBox();
-    await page.mouse.click(columns.x + 10, columns.y + 100);
+    const panel = await page.locator('.battle-workspace-panel').last().boundingBox();
+    await page.mouse.click(panel.x + panel.width - 4, panel.y + panel.height - 4);
     assert.equal(await popup.count(),0);
     await trigger.click();
     await page.keyboard.press('Escape');
@@ -66,7 +66,7 @@ try {
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS Battle Rules: compact popup, selectors remain open, background/outside/Escape dismissal, reload persistence, unchanged blank columns at iPhone and desktop sizes.');
+  console.log('PASS Battle Rules: compact popup, selectors remain open, background/outside/Escape dismissal, reload persistence, unchanged workspace geometry at iPhone and desktop sizes.');
 } finally {
   await browser.close();
   await new Promise(resolve => server.httpServer.close(resolve));

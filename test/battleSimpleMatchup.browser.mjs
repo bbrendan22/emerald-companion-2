@@ -10,7 +10,7 @@ const useWebKit=process.argv.includes('--webkit');
 const server=await preview({preview:{host:'127.0.0.1',port:useWebKit?5215:5214,strictPort:true}});
 const browser=await (useWebKit?webkit.launch({headless:true}):chromium.launch({headless:true,channel:'chrome'}));
 const storage=new Uint8Array(33744);
-[1,4,7,25].forEach((species,pid)=>storage.set(makePokemon({species,pid,experience:pid===0?117360:560}),4+pid*80));
+[1,4,7,25].forEach((species,pid)=>storage.set(makePokemon({species,pid,experience:pid===0?117360:560,...(pid===1?{moveIds:[174,0,45,0]}:{})}),4+pid*80));
 const encoded=Buffer.from(makeSave({blocks:{storage}})).toString('base64');
 const mons=identifyPokemon(loadStoredSave({getItem:()=>encoded}).collection.records).map(toBattlePokemon).filter(Boolean);
 const roles=Object.fromEntries(mons.map(mon=>[mon.identity,'Frontier']));
@@ -42,15 +42,32 @@ try {
   await trainerPopup.getByRole('searchbox').fill('Anabel');await activate(trainerPopup.getByRole('button',{name:'Select trainer Anabel Gold',exact:true}));
   await otherSlots.locator('img').nth(2).waitFor();await empty(enemy);
   const before=await slotsSnapshot();
-  await activate(mySlots.nth(0));await mine.locator('img').waitFor();
+  await activate(mySlots.nth(0));await mine.locator('.battle-matchup-sprite').waitFor();
   assert.equal(await mine.locator('.battle-matchup-species').innerText(),mons[0].name);
   assert.equal(await mine.locator('small').innerText(),`Lv. ${mons[0].level}`);
-  assert.match(await mine.locator('img').getAttribute('src'),/pokemon\/emerald\/(normal|shiny)\/1.png/);
+  assert.match(await mine.locator('.battle-matchup-sprite').getAttribute('src'),/pokemon\/emerald\/(normal|shiny)\/1.png/);
   assert.equal(await mySlots.nth(0).getAttribute('aria-pressed'),'true');
-  await activate(otherSlots.nth(0));await enemy.locator('img').waitFor();
+  await activate(otherSlots.nth(0));await enemy.locator('.battle-matchup-sprite').waitFor();
   assert.equal(await enemy.locator('small').innerText(),'Lv. 50');
+  assert.deepEqual(await mine.locator('.battle-active-stats dd').allTextContents(),['hp','attack','defense','spAttack','spDefense','speed'].map(key=>String(mons[0].stats[key])));
+  assert.equal(await mine.locator('.battle-active-ability').innerText(),mons[0].ability);
+  assert.equal(await mine.locator('.battle-active-item').innerText(),mons[0].item);
+  assert.deepEqual(await mine.locator('.battle-active-move-name').allTextContents(),mons[0].moves.map(move=>move?.name??'—'));
+  assert.equal(await mine.locator('.battle-active-facts img').count(),1);
+  assert.deepEqual(await mine.locator('.battle-active-types img').evaluateAll(imgs=>imgs.map(img=>img.alt.toUpperCase())),mons[0].types.map(type=>`${type} TYPE`));
+  assert.equal(await enemy.locator('.battle-active-facts dt').count(),0);
+  assert.ok((await enemy.locator('.battle-active-ability').innerText()).length>0);
+  assert.deepEqual(await enemy.locator('.battle-active-stats dd').allTextContents(),Array(6).fill('—'));
+  assert.equal(await enemy.locator('.battle-active-moves select').count(),0);
+  assert.ok(await enemy.locator('.is-inferred').count()>0,'Anabel’s single eligible set is inferred');
+  assert.ok(await enemy.locator('.battle-active-types img').count()>0);
+
   assert.deepEqual(await slotsSnapshot(),before,'single-tap matchup selection never modifies either team');
   await activate(mySlots.nth(1));assert.equal(await mine.locator('.battle-matchup-species').innerText(),mons[1].name);
+  const curse=mine.locator('.battle-active-moves li').first();
+  assert.equal(await curse.locator('.battle-active-move-name').innerText(),'Curse');assert.equal(await curse.locator('img').count(),0);
+  assert.equal(mons[1].moves[0].type,'MYSTERY','Curse retains its underlying Gen III type');
+
   assert.equal(await mySlots.nth(0).getAttribute('aria-pressed'),'false');assert.equal(await mySlots.nth(1).getAttribute('aria-pressed'),'true');
   await activate(otherSlots.nth(1));assert.equal(await otherSlots.nth(1).getAttribute('aria-pressed'),'true');
   await activate(page.getByRole('button',{name:'Battle Rules',exact:true}));
@@ -61,14 +78,19 @@ try {
    const box=pair.getBoundingClientRect(), region=pair.parentElement.getBoundingClientRect();
    const [a,b]=[...pair.children].map(el=>el.getBoundingClientRect());
    return a.right<=b.x && Math.abs((box.x+box.width/2)-(region.x+region.width/2))<1
-     && [...pair.querySelectorAll('img')].every(img=>{const r=img.getBoundingClientRect();return img.naturalWidth>0 && r.width>=64 && r.width<=160 && r.right<=box.right;});
-  }),'front sprites are large, side by side, centered and contained');
+     && [...pair.querySelectorAll('.battle-matchup-sprite')].every(img=>{const r=img.getBoundingClientRect();return img.naturalWidth>0 && r.width>=64 && r.width<=96 && r.right<=box.right;});
+  }),'front sprites are smaller, side by side, centered and contained');
+  assert.ok(await page.locator('.battle-matchup-pair').evaluate(pair=>{
+   const [mine,enemy]=pair.children;
+   const rows=side=>[...side.querySelectorAll('.battle-active-facts > div, .battle-active-stats > div, .battle-active-moves > li')];
+   return rows(mine).every((row,i)=>Math.abs(row.getBoundingClientRect().y-rows(enemy)[i].getBoundingClientRect().y)<1);
+  }),'corresponding facts, stats and moves align across both sides');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.screenshot({path:`artifacts/matchup/${useWebKit?'webkit':'chrome'}-${width}.png`,fullPage:true});
   // True double taps still remove only that member and clear its selected position.
   await page.waitForTimeout(450);
   if(touch){await activate(mySlots.nth(1));await activate(mySlots.nth(1));}else await mySlots.nth(1).dblclick();
-  await empty(mine);assert.equal(await mySlots.nth(1).locator('img').count(),0);assert.equal(await enemy.locator('img').count(),1);
+  await empty(mine);assert.equal(await mySlots.nth(1).locator('img').count(),0);assert.equal(await enemy.locator('.battle-matchup-sprite').count(),1);
   await page.waitForTimeout(450);await activate(mySlots.nth(0));
   await activate(mySlots.nth(1));await activate(page.getByRole('button',{name:'Load Team 2',exact:true}));await empty(mine);
   assert.equal(await mySlots.nth(0).getAttribute('aria-pressed'),'false');

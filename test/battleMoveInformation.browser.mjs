@@ -1,0 +1,98 @@
+import assert from 'node:assert/strict';
+import {mkdir} from 'node:fs/promises';
+import {chromium,webkit} from 'playwright';
+import {preview} from 'vite';
+import {makeSave,makePokemon} from './fixtures/synthetic.js';
+import {loadStoredSave} from '../src/storage/saveStorage.js';
+import {identifyPokemon} from '../src/storage/pokemonRoles.js';
+import {toBattlePokemon} from '../src/battle/pokemonAdapter.js';
+import {frontierPokemon} from '../src/battle/data/frontierPokemon.js';
+const useWebKit=process.argv.includes('--webkit');
+const server=await preview({preview:{host:'127.0.0.1',port:useWebKit?5264:5263,strictPort:true}});
+const browser=await(useWebKit?webkit.launch({headless:true}):chromium.launch({headless:true,channel:'chrome'}));
+const storage=new Uint8Array(33744);
+[1,4].forEach((species,pid)=>storage.set(makePokemon({species,pid,moveIds:[33,0,45,205]}),4+pid*80));
+const encoded=Buffer.from(makeSave({blocks:{storage}})).toString('base64');
+const mons=identifyPokemon(loadStoredSave({getItem:()=>encoded}).collection.records).map(toBattlePokemon).filter(Boolean);
+const roles=Object.fromEntries(mons.map(mon=>[mon.identity,'Frontier']));
+try {
+ await mkdir('artifacts/battle-move-info',{recursive:true});
+ for(const width of [320,375,430,1440]) {
+  const context=await browser.newContext({viewport:{width,height:844},isMobile:width<500,hasTouch:width<500,serviceWorkers:'block'});
+  await context.addInitScript(({encoded,roles})=>{localStorage.setItem('emerald-companion-2.save.v1',encoded);localStorage.setItem('emerald-companion-2.roles.v1',JSON.stringify(roles));},{encoded,roles});
+  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(10000);
+  const tap=async el=>width<500?el.tap():el.click();
+  const navigate=async name=>{await page.getByRole('button',{name:'Open navigation',exact:true}).click();await page.getByRole('button',{name,exact:true}).click();};
+  await page.goto(new URL('/emerald-companion-2/',server.resolvedUrls.local[0]).href);await navigate('Battle');
+  const opponent=page.getByRole('region',{name:'Opponent Team',exact:true}),slots=opponent.locator('.battle-compact-slot');
+  const mine=page.getByRole('region',{name:'My Team',exact:true}).locator('.battle-compact-slot');
+  const enemy=page.getByRole('group',{name:'Opponent matchup Pokémon',exact:true}),list=page.locator('.battle-possible-set-list > button');
+  const observe=async(field,value)=>{const name=field==='item'?'Opponent held item':`Opponent move ${field+1}`;await enemy.getByRole('combobox',{name,exact:true}).selectOption(value);};
+  const add=async(slot,name)=>{await tap(slots.nth(slot));const popup=page.getByRole('dialog',{name:'Select opponent Pokémon'});await popup.getByRole('searchbox').fill(name);await tap(popup.getByRole('button',{name:`Select Pokémon ${name}`,exact:true}));};
+  const popup=page.getByRole('dialog'),own=page.getByRole('group',{name:'My matchup Pokémon',exact:true});
+  const info=(group,name)=>group.getByRole('button',{name:`Move information: ${name}`,exact:true});
+  for(const [slot,mon]of mons.entries()) {await tap(mine.nth(slot));await tap(page.getByRole('dialog',{name:'My Team selection'}).locator(`[data-pokemon-id="${mon.identity}"]`));}
+  await tap(mine.first());
+  const first=own.locator('.battle-active-moves li').first();
+  const before=await first.boundingBox();
+  await tap(info(own,'Tackle'));assert.equal(await popup.locator('h2').innerText(),'Tackle');
+  assert.deepEqual(await popup.locator('dt').allTextContents(),['Power','Accuracy','Effect %']);
+  assert.deepEqual(await popup.locator('dd').allTextContents(),['35','95%','—']);
+  assert.equal(await popup.locator('header img').getAttribute('alt'),'normal type');
+  assert.equal(await popup.locator('button').count(),0);
+  assert.equal(await popup.getByRole('region',{name:'Damage Calculation'}).locator('p').innerText(),'Damage unavailable for this matchup.');
+  await tap(popup.locator('h2'));assert.equal(await popup.count(),0);
+  assert.deepEqual(await first.boundingBox(),before);
+  await tap(info(own,'Growl'));assert.deepEqual(await popup.locator('dd').allTextContents(),['—','100%','—']);await page.keyboard.press('Escape');
+  await tap(info(own,'Rollout'));assert.deepEqual(await popup.locator('dd').allTextContents(),['30','90%','—']);await page.keyboard.press('Escape');
+  const empty=own.locator('.battle-active-moves li').nth(1);await tap(empty);assert.equal(await popup.count(),0);
+  await tap(first.locator('.battle-active-move-pp'));assert.equal(await popup.locator('h2').innerText(),'Tackle');await page.keyboard.press('Escape');
+  await tap(opponent.locator('.battle-opponent-trigger'));
+  await page.getByRole('dialog',{name:'Select opponent trainer'}).getByRole('searchbox').fill('VINCE');
+  await tap(page.getByRole('button',{name:'Select trainer VINCE',exact:true}));
+  await add(0,'Metagross');await tap(slots.first());
+  await enemy.getByRole('combobox',{name:'Opponent move 1',exact:true}).selectOption('Psychic');
+  assert.equal(await enemy.getByRole('combobox',{name:'Opponent move 1',exact:true}).inputValue(),'Psychic');
+  await tap(info(enemy,'Psychic'));assert.equal(await popup.locator('h2').innerText(),'Psychic');
+  assert.deepEqual(await popup.locator('dd').allTextContents(),['90','100%','10%']);
+  await page.keyboard.press('Escape');
+  // Native identification remains available on the small triangle.
+  const select=enemy.getByRole('combobox',{name:'Opponent move 1',exact:true});
+  assert.ok(await select.evaluate(el=>el.getBoundingClientRect().width<=14));
+  await tap(select);assert.equal(await popup.count(),0);await page.keyboard.press('Escape');
+  await select.selectOption('Earthquake');assert.equal(await select.inputValue(),'Earthquake');
+  await tap(info(enemy,'Earthquake'));assert.equal(await popup.locator('h2').innerText(),'Earthquake');await page.keyboard.press('Escape');
+  await page.getByRole('button',{name:'Battle Conditions',exact:true}).click();
+  const conditions=page.getByRole('region',{name:'Battle Conditions',exact:true});
+  await conditions.getByLabel('Player status',{exact:true}).selectOption('burn');
+  const snapshot=()=>conditions.locator('input,select').evaluateAll(nodes=>nodes.map(el=>({value:el.value,checked:el.checked})));
+  const controls=await snapshot(),sets=await list.allTextContents();
+  await info(own,'Tackle').scrollIntoViewIfNeeded();await tap(info(own,'Tackle'));
+  assert.equal(await popup.evaluate(el=>getComputedStyle(el).outlineStyle),'none');
+  const panel=popup.locator('.battle-move-dialog');
+  const pos=await panel.boundingBox();assert.ok(pos.x>=0 && pos.y>=0 && pos.x+pos.width<=width+1 && pos.y+pos.height<=844);
+  assert.equal(await page.evaluate(()=>document.body.style.position),'fixed');
+  await page.screenshot({path:`artifacts/battle-move-info/${useWebKit?'webkit':'chrome'}-${width}.png`});
+  await tap(popup.locator('p').first());assert.equal(await popup.count(),0);
+  assert.deepEqual(await snapshot(),controls);assert.deepEqual(await list.allTextContents(),sets);
+  assert.notEqual(await page.evaluate(()=>document.body.style.position),'fixed');
+  // Constrain the dialog to exercise scrolling without moving the Battle page.
+  await tap(info(own,'Tackle'));
+  await popup.locator('.battle-move-dialog').evaluate(el=>{el.style.maxHeight='90px';});
+  const scrollBefore=await page.evaluate(()=>scrollY);
+  await popup.locator('.battle-move-dialog').evaluate(el=>{
+    el.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,isPrimary:true,pointerId:1,button:0,clientX:20,clientY:20}));
+    el.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,isPrimary:true,pointerId:1,clientX:20,clientY:60}));
+    el.scrollTop=40;el.dispatchEvent(new Event('scroll',{bubbles:true}));
+    el.dispatchEvent(new PointerEvent('pointerup',{bubbles:true,isPrimary:true,pointerId:1,button:0,clientX:20,clientY:60}));
+    el.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,detail:1}));
+  });
+  assert.equal(await popup.count(),1);assert.ok(await popup.locator('.battle-move-dialog').evaluate(el=>el.scrollTop>0));assert.equal(await page.evaluate(()=>scrollY),scrollBefore);
+  await page.keyboard.press('Escape');
+  await info(own,'Tackle').focus();await page.keyboard.press('Enter');assert.equal(await popup.count(),1);await page.keyboard.press('Escape');
+  assert.equal(await info(own,'Tackle').evaluate(el=>document.activeElement===el),true);
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  assert.deepEqual(errors,[]);await context.close();
+ }
+ console.log('Move popup integration passed: both Pokémon, empty slots, database metadata, arrow identification, unchanged conditions/sets, viewport and scroll lock.');
+} finally {await browser.close();await server.close();}

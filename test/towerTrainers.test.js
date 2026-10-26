@@ -53,21 +53,21 @@ test('Anabel medals cannot inherit the other medal pool; every required sprite i
 });
 
 test('name-only popup search starts with every Tower entry and accepts a future candidate list',()=>{
- assert.deepEqual(searchTowerTrainers('',{nameOnly:true}),towerTrainerEntries);
+ assert.deepEqual(searchTowerTrainers('',{nameOnly:true}),[...towerTrainerEntries].sort((a,b)=>a.name.localeCompare(b.name)));
  assert.equal(searchTowerTrainers(' bRaDy ',{nameOnly:true})[0].name,'BRADY');
  assert.equal(searchTowerTrainers('Youngster',{nameOnly:true}).length,0);
  assert.equal(searchTowerTrainers('Anabel',{nameOnly:true}).length,2);
  const entries=towerTrainerEntries.slice(0,5);
- assert.deepEqual(searchTowerTrainers('',{nameOnly:true,entries}),entries);
+ assert.deepEqual(searchTowerTrainers('',{nameOnly:true,entries}),[...entries].sort((a,b)=>a.name.localeCompare(b.name)));
 });
 
-test('opponent selection preserves slots; clearing removes only the opponent trainer and lineup',()=>{
+test('opponent trainer changes clear the lineup while preserving My Team and rules',()=>{
  const before={...createBattleState(),team:['owned'],active:'owned',opponents:['Sunkern 1','Azurill 1'],enemy:'Sunkern 1',
   selectedTrainer:'Anabel',selectedBrainSymbol:'Silver',tab:'Matchup',hpByPokemon:{'enemy-Sunkern 1':10},conditionsByPokemon:{owned:{status:'burn'}}};
  for(const entry of towerTrainerEntries.filter(entry=>!entry.symbol)){
   const next=battleReducer(before,{type:'opponentTrainer',key:entry.key});
-  assert.deepEqual(next,{...before,selectedTrainer:entry.trainer,selectedBrainSymbol:entry.symbol});
-  assert.equal(next.opponents,before.opponents);assert.equal(next.team,before.team);assert.equal(next.rules,before.rules);
+  assert.deepEqual(next,{...before,selectedTrainer:entry.trainer,selectedBrainSymbol:entry.symbol,opponents:[],enemy:null});
+  assert.deepEqual(next.opponents,[]);assert.equal(next.team,before.team);assert.equal(next.rules,before.rules);
   const cleared=battleReducer(next,{type:'clearOpponentTrainer'});
   assert.deepEqual(cleared,{...before,selectedTrainer:null,selectedBrainSymbol:null,opponents:[],enemy:null});
   assert.deepEqual(cleared.opponents,[]);assert.equal(cleared.enemy,null);

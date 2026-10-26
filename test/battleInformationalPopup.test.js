@@ -11,7 +11,7 @@ test('informational popup keeps reference metadata for damaging, status and spec
  assert.equal(movePopupValues(battleMove('Counter')).power,'2× received');
  assert.equal(movePopupValues(battleMove('Guillotine')).accuracy,'Level-based');
 });
-test('active application import graph cannot execute the retired preview, KO or damage engine',()=>{
+test('active application import graph cannot execute the retired preview or damage engines',()=>{
  const seen=new Set();
  function visit(file){
   file=resolve(file);if(seen.has(file))return;seen.add(file);
@@ -23,8 +23,9 @@ test('active application import graph cannot execute the retired preview, KO or 
   }
  }
  visit('src/ui/App.jsx');
- for(const file of seen)assert.doesNotMatch(file,/(?:BattleDamageResults|damagePreview|koProbability|battleDamage|battleRetaliation)\.[jt]sx?$/);
+ assert.ok(seen.has(resolve('src/battle/koProbability.js')),'approved KO helper is connected to the active application');
+ for(const file of seen)assert.doesNotMatch(file,/(?:BattleDamageResults|damagePreview|battleDamage|battleRetaliation)\.[jt]sx?$/);
  const popup=readFileSync('src/ui/components/BattleMoveDetails.jsx','utf8');
- assert.doesNotMatch(popup,/BattleDamageResults|battle-damage|useMemo/);
- assert.match(popup,/onPointerDown/);assert.match(popup,/onCancel/);
+ assert.doesNotMatch(popup,/BattleDamageResults|battle-damage/);
+ assert.match(popup,/useBattlePopupDismiss\(\{popup:dialog,onClose,tapOnly:true,interactive:'\.battle-move-scenario-controls'\}\)/);assert.match(popup,/onCancel/);
 });

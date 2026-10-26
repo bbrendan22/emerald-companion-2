@@ -39,10 +39,14 @@ test('switching trainers changes eligibility and removing a selected species cle
   const species=speciesByName.get('metagross').internalSpeciesId;
   const base={...createBattleState(),opponentSpecies:[species],matchup:{player:null,opponent:species}};
   const trainer=towerTrainerEntries.find(entry=>!entry.symbol && entry.setIds.some(id=>towerSetById(id).species==='Metagross') && entry.setIds.filter(id=>towerSetById(id).species==='Metagross').length<4);
-  const filtered=battleReducer(base,{type:'opponentTrainer',key:trainer.key});
+  let filtered=battleReducer(base,{type:'opponentTrainer',key:trainer.key});
+  assert.deepEqual(filtered.opponentSpecies,[]);
+  filtered=battleReducer(filtered,{type:'assignOpponentSpecies',slot:0,speciesId:species});
+  filtered=battleReducer(filtered,{type:'matchupOpponent',speciesId:species});
   assert.ok(possibleMatchupSets(filtered).length<4);assert.ok(possibleMatchupSets(filtered).length>0);
   assert.deepEqual(possibleMatchupSets(battleReducer(filtered,{type:'clearOpponentSpeciesSlot',slot:0,speciesId:species})),[]);
   const brain=battleReducer(createBattleState(),{type:'opponentTrainer',key:'Anabel Silver'});
+  brain.opponentSpecies=[speciesByName.get('alakazam').internalSpeciesId];
   brain.matchup={player:null,opponent:brain.opponentSpecies[0]};
   assert.deepEqual(possibleMatchupSets(brain).map(towerSetLabel),['Alakazam']);
 });

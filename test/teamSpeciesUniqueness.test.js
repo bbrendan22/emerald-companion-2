@@ -35,6 +35,7 @@ test('duplicate-species saved teams remain stored but cannot load; validation pr
 test('opponent species are unique per lineup, independently of My Team; removal re-enables species', () => {
   for (const format of ['Singles','Doubles']) {
     let state = battleReducer(createBattleState(),{type:'rules',patch:{format}});
+    state = battleReducer(state,{type:'opponentTrainer',key:'School Kid (M):KEITH'});
     state = {...state,team:['a']};
     const speciesId = towerSpecies.find(mon=>mon.dex===25).id;
     state = battleReducer(state,{type:'assignOpponentSpecies',slot:0,speciesId});
