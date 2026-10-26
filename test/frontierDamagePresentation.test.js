@@ -40,11 +40,12 @@ test('zero sets and incomplete selected HP return informative messages without p
   assert.match(parts.message,/Entered HP is invalid/);assert.equal(parts.hp,undefined);assert.equal(parts.percentage,undefined);
  }
 });
-test('field and Trace safeguards remain explicit',()=>{
+test('unrelated field safeguards remain explicit while unresolved Trace calculates',()=>{
  const state=alexasState('Doubles');state.field.weather='rain';
  assert.match(frontierDamageDisplayParts(summary('Surf',state)).message,/Unseen abilities may suppress the weather/);
  const trace={...swampert,dex:282,name:'Gardevoir',ability:'Trace'};
- assert.match(frontierDamageDisplayParts(summary('Ice Beam',alexasState(),trace)).message,/Select the copied ability for Trace/);
+ const parts=frontierDamageDisplayParts(summary('Ice Beam',alexasState(),trace));
+ assert.ok(parts.hp);assert.ok(parts.percentage);assert.equal(parts.message,undefined);
 });
 test('mixed prevention retains a zero-inclusive envelope and concise explanation',()=>{
  const input=evaluateFrontierCandidates(alexasState(),swampert,battleMove('Ice Beam'));

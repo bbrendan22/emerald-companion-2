@@ -10,7 +10,7 @@ const effective=mon=>{
 const isPair=(field,side,slot)=>[field.attacking,field.defending].some(ref=>ref?.side===side&&ref.slot===slot);
 
 // Enumerate only legitimate hidden-slot ability alternatives. Missing data and
-// unresolved Trace stay unknown; they never acquire a guessed copied ability.
+// unknown abilities stay unknown; unresolved Trace uses the neutral resolver fallback.
 export function fieldAbilityBranches(context,{lightningRod=false}={}) {
  const field=context?.format==='Doubles'?context.battlefield:null;
  if(!field)return [{context,fieldAbilities:[]}];

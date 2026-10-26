@@ -17,11 +17,12 @@ test('Emerald Trace permits every functional nonzero Gen III ability, including 
  for(const copiedAbility of ['Trace','Forecast','Wonder Guard','Flash Fire','Truant'])assert.equal(resolveBattleAbility({...trace,copiedAbility}).ability,copiedAbility);
  for(const copiedAbility of ['None','Cacophony','Multitype','Levitate / Sturdy','',null])assert.equal(resolveBattleAbility({...trace,copiedAbility}).ability,'Trace');
 });
-test('unresolved Trace stays unavailable where the copied ability can change damage',()=>{
- for(const name of ['Surf','Weather Ball','Dragon Rage','Night Shade','Psywave','Rollout','Magnitude','Present','DoubleSlap','Triple Kick','Guillotine','Explosion','Struggle'])for(const side of [0,1]) {
-  if((!side&&['Dragon Rage','Night Shade','Psywave','Guillotine'].includes(name))||name==='Night Shade')assert.deepEqual(calc(name,side?mon:trace,side?trace:mon),calc(name,mon,mon));
-  else assert.deepEqual(calc(name,side?mon:trace,side?trace:mon),{availability:'unsupported',reason:'unresolved-trace'},name);
- }
+test('unresolved Trace uses a neutral calculation fallback without changing the selected ability',()=>{
+ const before=structuredClone(trace),resolved=resolveBattleAbility(trace);
+ assert.equal(resolved.ability,'Trace');assert.equal(resolved.traceResolved,true);
+ assert.equal(resolved.copiedAbility,undefined);assert.deepEqual(trace,before);
+ for(const name of ['Surf','Weather Ball','Dragon Rage','Night Shade','Psywave','Rollout','Magnitude','Present','DoubleSlap','Triple Kick','Guillotine','Explosion','Struggle'])for(const side of [0,1])
+  assert.deepEqual(calc(name,side?mon:trace,side?trace:mon),calc(name,mon,mon),`${name} side ${side}`);
 });
 test('resolved Trace replaces its ability on both sides across specialized and standard paths',()=>{
  for(const ability of ['Huge Power','Thick Fat','Levitate','Wonder Guard','Sturdy','Battle Armor','Shell Armor','Damp','Cloud Nine','Soundproof','Flash Fire'])
@@ -41,7 +42,8 @@ test('Trace resolution stays inside each legitimate uncertain ability branch and
  assert.equal(result.groups.length,2);
  assert.deepEqual(result.scenarios.map(s=>s.moveMetadata),[{type:'NORMAL',power:50},{type:'FIRE',power:100}]);
  const unresolved=calculateAbilityScenarios(battleMove('Surf'),{...a,copiedAbility:null},mon);
- assert.deepEqual(unresolved.groups.map(g=>g.availability),['unsupported','available']);
+ assert.deepEqual(unresolved.groups.map(g=>g.availability),['available']);
+ assert.equal(unresolved.groups[0].scenarios.length,2);
  const defender={...trace,abilityOptions:a.abilityOptions,copiedAbility:'Battle Armor'};
  const incoming=calculateAbilityScenarios(battleMove('Strength'),mon,defender,{critical:true});
  assert.equal(incoming.groups.length,2);assert.ok(incoming.groups[0].max<incoming.groups[1].max);

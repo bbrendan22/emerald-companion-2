@@ -9,10 +9,10 @@ const options=(...values)=>({status:values.length===1?'known':'uncertain',values
 const mon=(ability='Overgrow',patch={})=>({dex:1,stats:{hp:201,attack:101,defense:101,spAttack:101,spDefense:101,speed:101},ability,abilityOptions:options(ability),item:'None',status:'none',stages:{},currentHp:null,...patch});
 const state=createBattleState();
 const matchup=(player,opponent,patch={})=>matchupDisplayStats({player,opponent,state:{...state,...patch},sets:[]});
-test('five stats use integer stages; HP uses current/max without stages',()=>{
+test('five stats use integer stages; HP always uses maximum without stages',()=>{
  const source=mon('Overgrow',{currentHp:80,stages:{hp:6,attack:2,defense:-1,spAttack:1,spDefense:-2,speed:1}}),before=structuredClone(source);
  assert.deepEqual(effectiveDisplayStats(source),{hp:201,attack:202,defense:67,spAttack:151,spDefense:50,speed:151});
- assert.equal(displayStatValues([source]).hp,'80/201');assert.deepEqual(source,before);
+ assert.equal(displayStatValues([source]).hp,201);assert.deepEqual(source,before);
 });
 test('confirmed weather Speed abilities apply before stages; Brace then paralysis',()=>{
  for(const [ability,weather] of [['Swift Swim','rain'],['Chlorophyll','sun']]){
@@ -59,13 +59,13 @@ const id=speciesByName.get('ludicolo').internalSpeciesId;
 const frontier={...state,selectedTrainer:'Cooltrainer (F):MIRIAM',opponentSpecies:[id],matchup:{player:null,opponent:id}};
 const sets=possibleMatchupSets(frontier);
 const enemy=mon('Swift Swim / Rain Dish',{id,dex:272,item:null,abilityOptions:options('Swift Swim','Rain Dish')});
-const project=(player,other=enemy,patch={})=>matchupDisplayStats({player,opponent:other,state:{...frontier,...patch},sets});
+const project=(player,other=enemy,patch={})=>matchupDisplayStats({player,opponent:other,state:{...frontier,...patch},sets:[sets[0]]});
 test('Frontier ranges apply modifiers to each canonical row without speculative items or mutation',()=>{
  assert.ok(sets.length>1);
  const before=JSON.stringify({frontier,sets});
  const staged={...enemy,stages:{attack:-1,speed:1},status:'paralysis'};
  const rows=opponentDisplayRows(frontier,sets,staged);
- const result=project(mon(),staged);
+ const result={opponent:displayStatValues(rows,{item:null})};
  const speeds=rows.map(row=>Math.floor(Math.floor(row.stats.speed*3/2)/4));
  const attacks=rows.map(row=>Math.floor(row.stats.attack*2/3));
  const display=values=>Math.min(...values)===Math.max(...values)?Math.min(...values):`${Math.min(...values)}–${Math.max(...values)}`;
@@ -104,14 +104,33 @@ test('unresolved candidate Macho Brace can reverse ordering without changing dis
  const alternatives=sets.map((set,index)=>({...set,item:index?'Macho Brace':'None'}));
  const player=mon('Overgrow',{stats:{...mon().stats,speed:60}});
  const result=matchupDisplayStats({player,opponent:enemy,state:frontier,sets:alternatives});
- assert.equal(result.opponent.speed,project(mon(),enemy).opponent.speed);
+ assert.equal(result.opponent.speed,'—');
  assert.deepEqual(result.speed,{player:null,opponent:null});
 });
-test('unresolved weather suppression and unseen Doubles partners retain neutral Speed',()=>{
+test('unresolved suppression does not remove a confirmed weather boost from displayed Speed',()=>{
  const player=mon('Swift Swim',{stats:{...mon().stats,speed:60}});
  const uncertainSuppressor={...enemy,abilityOptions:options('Cloud Nine','Rain Dish')};
  const result=project(player,uncertainSuppressor,{field:{weather:'rain'}});
- assert.equal(result.player.speed,60);assert.deepEqual(result.speed,{player:null,opponent:null});
+ assert.equal(result.player.speed,120);assert.deepEqual(result.speed,{player:null,opponent:null});
  const doubles=project(player,enemy,{field:{weather:'rain'},rules:{...frontier.rules,format:'Doubles'}});
  assert.equal(doubles.player.speed,120);assert.deepEqual(doubles.speed,{player:null,opponent:null});
+});
+
+test('current HP does not change a maximum HP stat or its uncertainty range',()=>{
+ for(const currentHp of [null,1,5,80,201]) {
+  const rows=[mon('Overgrow',{currentHp}),mon('Overgrow',{currentHp,stats:{...mon().stats,hp:214}})];
+  assert.equal(displayStatValues([rows[0]]).hp,201);
+  assert.equal(displayStatValues(rows).hp,'201–214');
+  assert.equal(rows[0].currentHp,currentHp);
+ }
+});
+
+test('unresolved Trace uses neutral effective stats and Speed certainty rather than every potential copied ability',()=>{
+ const other={...enemy,abilityOptions:options('Rain Dish'),item:'None'};
+ const before=structuredClone(other);
+ for(const choices of [options('Trace'),options('Trace','Synchronize')]) {
+  const user=mon('Trace',{copiedAbility:null,abilityOptions:choices,stats:{...mon().stats,speed:999}});
+  assert.deepEqual(project(user,other,{field:{weather:'rain'}}),project({...user,ability:'Immunity',abilityOptions:options('Immunity')},other,{field:{weather:'rain'}}));
+ }
+ assert.deepEqual(other,before);
 });

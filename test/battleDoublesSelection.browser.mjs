@@ -1,15 +1,16 @@
 import assert from 'node:assert/strict';
 import {mkdir} from 'node:fs/promises';
 import {chromium, webkit} from 'playwright';
-import {createServer} from 'vite';
+import {createServer,preview} from 'vite';
 import {makeSave,makePokemon} from './fixtures/synthetic.js';
 import {loadStoredSave} from '../src/storage/saveStorage.js';
 import {identifyPokemon} from '../src/storage/pokemonRoles.js';
 import {toBattlePokemon} from '../src/battle/pokemonAdapter.js';
 
 const useWebKit=process.argv.includes('--webkit');
-const server=await createServer({server:{host:'127.0.0.1',port:useWebKit ? 5213 : 5212,strictPort:true,hmr:false}});
-await server.listen();
+const production=process.argv.includes('--production');
+const server=production ? await preview({preview:{host:'127.0.0.1',port:0}}) : await createServer({server:{host:'127.0.0.1',port:useWebKit ? 5213 : 5212,strictPort:true,hmr:false}});
+if(!production)await server.listen();
 
 const browser=useWebKit ? await webkit.launch({headless:true}) : await chromium.launch({headless:true,channel:'chrome'});
 const species=[1,1,4,25,7,16,19,21,23,27,29,32,35,37,39,41,43,46,48,50,133];
@@ -35,8 +36,7 @@ try {
  await page.getByRole('button',{name:'Battle',exact:true}).click();
 
  const changeFormat=async format=>{
-  await page.getByRole('button',{name:'Battle Rules',exact:true}).click();
-  await page.getByRole('dialog',{name:'Battle Rules',exact:true}).getByLabel('Battle Type').selectOption(format);
+  await page.getByRole('combobox',{name:'Format',exact:true}).selectOption(format);
   await page.keyboard.press('Escape');
  };
  const singles=await page.locator('.battle-single-selection').innerHTML();
@@ -66,7 +66,7 @@ try {
  assert.equal(await mine[1].inputValue(),mons[1].identity);
  await enemy[0].selectOption(options[2]);
  assert.equal(await enemy[1].inputValue(),options[1]);assert.equal(await sets[1].inputValue(),secondLast);
- for(const width of [320,375,390]) {
+ for(const width of [320,375,390,430]) {
   await page.setViewportSize({width,height:844});
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   const rows=await page.locator('.battle-doubles-selection select.battle-pokemon-select').evaluateAll(selects=>selects.map(el=>{

@@ -1,3 +1,4 @@
+import {reconcileTraceSelections} from './traceTargets.js';
 import {battleRounds} from '../storage/battleRules.js';
 import {towerRoundTrainerEligible} from './towerRoundEligibility.js';
 import {opponentStatRanges} from './opponentStats.js';
@@ -94,6 +95,7 @@ export function battleReducer(state, action) {
 
 function reduceBattleState(state, action) {
   switch (action.type) {
+    case 'reconcileTraceSelections': return reconcileTraceSelections(state,action.records??[]);
     case 'viewDoublesSlot': {
       if (state.rules.format !== 'Doubles' || !['player','opponent'].includes(action.side)
         || ![0,1].includes(action.slot)) return state;

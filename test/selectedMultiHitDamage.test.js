@@ -93,7 +93,8 @@ test('selected hits retain per-hit modifiers, weather, screens, crit and categor
 
 test('selected ability groups preserve exact distributions and unsupported contact/copy/type transitions',()=>{
  for(const [id] of [...moves,[167]])for(const count of id===167?[1,2,3]:[2,3,4,5]){
-  for(const ability of ['Color Change','Trace'])assert.equal(calc(id,count,mon,{...mon,ability}).availability,'unsupported');
+  assert.equal(calc(id,count,mon,{...mon,ability:'Color Change'}).availability,'unsupported');
+  assert.deepEqual(calc(id,count,mon,{...mon,ability:'Trace'}),calc(id,count,mon,mon));
   for(const ability of ['Flame Body','Static','Poison Point','Effect Spore']){
    const r=calc(id,count,mon,{...mon,ability});
    assert.equal(r.availability,[3,4,31,154,292,167].includes(id)?'unsupported':undefined);

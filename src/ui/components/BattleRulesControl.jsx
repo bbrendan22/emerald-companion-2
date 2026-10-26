@@ -1,75 +1,37 @@
-import useBattlePopupDismiss from './useBattlePopupDismiss.js';
-import React, {useEffect, useId, useLayoutEffect, useRef, useState} from 'react';
-import {createPortal} from 'react-dom';
-import {battleFormats} from '../../battle/towerRules.js';
+import React from 'react';
+import {battleFacilities, battleFormats} from '../../battle/towerRules.js';
 import {battleRounds} from '../../storage/battleRules.js';
-import '../styles/collection-pokemon-overview.css';
+
+function RuleSelect({label, value, display, options, onChange}) {
+  return <label className="battle-observation-select battle-observation-compact-select">
+    <span className="battle-observation-display" aria-hidden="true"><span className="battle-observation-value">{display ?? value}</span><span className="battle-observation-arrow">▾</span></span>
+    <select aria-label={label} value={value} onChange={event => onChange(event.target.value)}>
+      {options.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
+    </select>
+  </label>;
+}
 
 export default function BattleRulesControl({state, dispatch}) {
-  const round = state.round ?? '';
-
-  const [position, setPosition] = useState(null);
-  const trigger = useRef(null);
-  const popup = useRef(null);
-  const id = useId();
-  const open = Boolean(position);
-  useLayoutEffect(() => {
-    if (!open || !popup.current) return;
-    const width = popup.current.getBoundingClientRect().width;
-    popup.current.style.right = `${Math.max(16, Math.min(position.right, window.innerWidth - width - 16))}px`;
-  }, [open, position]);
-  useBattlePopupDismiss({popup,trigger,onClose:() => setPosition(null),interactive:'select',enabled:open});
-  useEffect(() => {
-    if (!open) return;
-    const close = () => setPosition(null);
-    const escape = event => {
-      if (event.key === 'Escape') {
-        event.preventDefault(); close(); trigger.current?.focus({preventScroll:true});
-      }
-    };
-    const blur = event => {
-      if (!popup.current?.contains(event.target) && !trigger.current?.contains(event.target)) close();
-    };
-    const scroll = event => {if (!popup.current?.contains(event.target)) close();};
-    document.addEventListener('keydown', escape);
-    document.addEventListener('focusin', blur);
-    window.addEventListener('resize', close);
-    window.addEventListener('scroll', scroll, true);
-    return () => {
-      document.removeEventListener('keydown', escape);
-      document.removeEventListener('focusin', blur);
-      window.removeEventListener('resize', close);
-      window.removeEventListener('scroll', scroll, true);
-    };
-  }, [open]);
   const update = patch => dispatch({type:'rules', patch});
-  return <h2 className="battle-section-heading battle-rules-heading">
-    <button ref={trigger} type="button" className="collection-overview-role-trigger" aria-haspopup="dialog"
-      aria-expanded={open} aria-controls={open ? id : undefined} onClick={() => {
-        const rect = trigger.current.getBoundingClientRect();
-        setPosition(open ? null : {top:rect.bottom + 6, right:Math.max(16, window.innerWidth - rect.right), maxHeight:Math.max(120, window.innerHeight - rect.bottom - 22)});
-      }}>Battle Rules<span className="battle-round-chevron" aria-hidden="true">▾</span></button>
-    <span className="battle-rules-summary">{state.rules.facility.replace(/^Battle /, '')} · {state.rules.format} · {state.rules.levelMode === '50' ? 'Lv. 50' : `Open ${state.rules.opponentLevel}`}</span>
+  const round = state.round ?? '';
+  return <div className="battle-rules-toolbar">
+    <div className="battle-rules-inline" role="group" aria-label="Battle settings">
+      <RuleSelect label="Facility" value={state.rules.facility} options={battleFacilities.map(value => ({value,label:value}))} onChange={facility => update({facility})} />
+      <span className="battle-rules-separator" aria-hidden="true">·</span>
+      <RuleSelect label="Format" value={state.rules.format} options={battleFormats.map(value => ({value,label:value}))} onChange={format => update({format})} />
+      <span className="battle-rules-separator" aria-hidden="true">·</span>
+      <RuleSelect label="Level" value={state.rules.opponentLevel} display={`Level ${state.rules.opponentLevel}`}
+        options={[50, ...Array.from({length:41}, (_, index) => index + 60)].map(value => ({value,label:`Level ${value}`}))}
+        onChange={value => {
+          const level = Number(value);
+          update(level === 50 ? {levelMode:'50'} : {levelMode:'open', openLevel:level});
+        }} />
+    </div>
     <label className="battle-round-control">
       <span aria-hidden="true">Round{round ? ` ${round}` : ''} <span className="battle-round-chevron">▾</span></span>
-      <select aria-label="Round" value={round} onFocus={() => setPosition(null)} onClick={() => setPosition(null)} onChange={event => {
-        dispatch({type:'round', value:event.target.value});
-      }}>
+      <select aria-label="Round" value={round} onChange={event => dispatch({type:'round', value:event.target.value})}>
         {battleRounds.map(value => <option key={value} value={value}>{value ? `Round ${value}` : 'All Rounds'}</option>)}
       </select>
     </label>
-    {open && createPortal(<div ref={popup} id={id} role="dialog" aria-label="Battle Rules" className="home-filter-popup battle-rules-popup" style={position}>
-      <div className="battle-rules-facility"><span>Facility</span><span>Tower</span></div>
-      <label>Battle Type<select aria-label="Battle Type" value={state.rules.format} onChange={event => update({format:event.target.value})}>
-        {battleFormats.map(value => <option key={value}>{value}</option>)}
-      </select></label>
-      <label>Level<select aria-label="Level" value={state.rules.opponentLevel} onChange={event => {
-        const level = Number(event.target.value);
-        update(level === 50 ? {levelMode:'50'} : {levelMode:'open', openLevel:level});
-      }}>
-        {[50, ...Array.from({length:41}, (_, index) => index + 60)].map(level =>
-          <option key={level} value={level}>Level {level}</option>)}
-      </select></label>
-    </div>, document.body)}
-  </h2>;
+  </div>;
 }

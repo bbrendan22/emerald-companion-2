@@ -1,48 +1,56 @@
 import assert from 'node:assert/strict';
 import {webkit} from 'playwright';
 import {createServer} from 'vite';
-const server=await createServer({server:{host:'127.0.0.1',port:5304,strictPort:true},plugins:[{
- name:'opponent-ability',configureServer(s){s.middlewares.use('/__opponent-ability',(_req,res)=>{
- res.setHeader('Content-Type','text/html');res.end('<meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script type="module" src="/test/fixtures/opponentAbilitySelection.jsx"></script>');
- });}
-}]});
+const server=await createServer({base:'/',server:{host:'127.0.0.1',port:0,hmr:false}});
 let browser;
 try {
  await server.listen();browser=await webkit.launch({headless:true});
- for(const width of [320,375,430]) {
+ for(const format of ['Singles','Doubles'])for(const width of [320,390]) {
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});page.setDefaultTimeout(10000);
-  const errors=[];page.on('pageerror',e=>{errors.push(e.message);console.error(e.message);});await page.goto(`${server.resolvedUrls.local[0]}__opponent-ability`);
-  const tap=name=>page.getByRole('button',{name,exact:true}).tap(),ability=page.getByRole('combobox',{name:'Opponent ability',exact:true});
-  const own=page.getByRole('group',{name:'My matchup Pokémon',exact:true}),enemy=page.getByRole('group',{name:'Opponent matchup Pokémon',exact:true});
-  const copy=page.getByRole('combobox',{name:'Opponent Copied Ability',exact:true}),flash=page.getByRole('checkbox',{name:'Opponent Flash Fire Activated',exact:true});
-  const open=()=>own.getByRole('button',{name:'Move information: Flamethrower',exact:true}).tap();
-  const close=()=>page.keyboard.press('Escape');
-  await page.getByRole('button',{name:'Opponent Houndoom',exact:true}).waitFor();
-  assert.equal(await ability.inputValue(),'');assert.deepEqual(await ability.locator('option').allTextContents(),['Both / Unknown','Early Bird','Flash Fire']);
-  const count=await page.getByRole('status',{name:'Possible set count'}).innerText(),observed=await page.getByRole('status',{name:'Observed item and moves'}).innerText();
-  await open();assert.equal(await page.getByRole('dialog').locator('.battle-core-damage-hp').count(),2);await close();
-  for(const name of ['Early Bird','Flash Fire','']) {
-   await ability.selectOption(name);assert.equal(await page.locator('.battle-opponent-ability-values').innerText(),name||'Early Bird / Flash Fire');
-   assert.equal(await page.getByRole('status',{name:'Possible set count'}).innerText(),count);assert.equal(await page.getByRole('status',{name:'Observed item and moves'}).innerText(),observed);
-   await open();const hp=await page.getByRole('dialog').locator('.battle-core-damage-hp').allTextContents();assert.equal(hp.length,name?1:2);
-   if(name==='Flash Fire')assert.deepEqual(hp,['0–0 HP damage']);
-   const box=await page.getByRole('dialog').locator('.battle-move-dialog').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1);
-   await page.getByRole('dialog').locator('.battle-core-damage-hp').first().tap();assert.equal(await page.getByRole('dialog').count(),0);
-  }
-  await ability.selectOption('Flash Fire');await tap('Battle Conditions');assert.equal(await flash.count(),1);await flash.check();
-  const enemyMove=enemy.getByRole('button',{name:/^Move information:/}).first();await enemyMove.tap();assert.equal(await page.getByRole('dialog').locator('.battle-damage-unavailable').count(),0);await close();
-  await tap('Opponent Gardevoir');assert.equal(await ability.inputValue(),'');assert.equal(await copy.count(),1);
-  await ability.selectOption('Synchronize');assert.equal(await copy.count(),0);await open();assert.equal(await page.getByRole('dialog').locator('.battle-damage-unavailable').count(),0);await close();
-  await ability.selectOption('Trace');assert.equal(await copy.inputValue(),'');await open();assert.match(await page.getByRole('dialog').innerText(),/select the copied ability for Trace/);await close();
-  await copy.selectOption('Flash Fire');await flash.check();await open();assert.deepEqual(await page.getByRole('dialog').locator('.battle-core-damage-hp').allTextContents(),['0–0 HP damage']);await close();
-  await tap('Select Swampert');assert.equal(await ability.inputValue(),'Trace');await tap('Opponent Houndoom');assert.equal(await ability.inputValue(),'Flash Fire');
-  await tap('Opponent Gardevoir');assert.equal(await ability.inputValue(),'Trace');assert.equal(await copy.inputValue(),'Flash Fire');
-  await tap('Change level');assert.equal(await ability.inputValue(),'Trace');await tap('Reset');assert.equal(await ability.inputValue(),'Trace');assert.equal(await copy.inputValue(),'');
-  await tap('Battle Conditions');await tap('Battle Conditions');assert.equal(await ability.inputValue(),'Trace');
-  await tap('Opponent Weezing');assert.equal(await ability.count(),0);assert.equal(await enemy.locator('.battle-active-ability').innerText(),'Levitate');
-  await tap('Opponent Gardevoir');await tap('Remove Gardevoir');await tap('Add Gardevoir');await tap('Opponent Gardevoir');assert.equal(await ability.inputValue(),'');
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.route('**/opponent-ability?*',route=>route.fulfill({contentType:'text/html',body:'<meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script type="module" src="/test/fixtures/opponentAbilitySelection.jsx"></script>'}));
+  await page.goto(new URL(`/opponent-ability?format=${format}`,server.resolvedUrls.local[0]).href);
+  const tap=name=>page.getByRole('button',{name,exact:true}).tap();
+  const ability=page.getByRole('combobox',{name:'Opponent ability',exact:true});
+  const copy=side=>page.getByRole('combobox',{name:`${side} Trace Ability`,exact:true});
+  const flash=side=>page.getByRole('checkbox',{name:`${side} Flash Fire Activated`,exact:true});
+  const own=page.getByRole('group',{name:'My matchup Pokémon',exact:true});
+  const popup=page.getByRole('dialog');
+  const damage=async()=>{
+   await own.getByRole('button',{name:'Move information: Flamethrower',exact:true}).tap();
+   assert.doesNotMatch(await popup.innerText(),/Select the copied ability for Trace|Damage unavailable/i);
+   const hp=await popup.locator('.battle-core-damage-hp').allTextContents();assert.ok(hp.length);
+   assert.ok(await popup.locator('.battle-core-damage-percent').count());
+   const box=await popup.locator('.battle-move-dialog').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1);
+   await page.keyboard.press('Escape');return hp;
+  };
+  await tap('Opponent Gardevoir');
+  const sets=await page.getByLabel('Possible set count').textContent(),observed=await page.getByLabel('Observed item and moves').textContent();
+  assert.equal(await ability.inputValue(),'');assert.equal(await copy('Opponent').inputValue(),'');
+  const unknown=await damage();assert.equal(unknown.length,1,'equivalent Synchronize/Trace branches produce one result');
+  await ability.selectOption('Synchronize');assert.deepEqual(await damage(),unknown);
+  await ability.selectOption('Trace');assert.equal(await copy('Opponent').inputValue(),'');assert.deepEqual(await damage(),unknown);
+  assert.equal(await page.getByLabel('Possible set count').textContent(),sets);
+  assert.equal(await page.getByLabel('Observed item and moves').textContent(),observed);
+  assert.ok((await copy('Opponent').locator('option').allTextContents()).includes('Flash Fire'));
+  assert.ok(!(await copy('Opponent').locator('option').allTextContents()).includes('Wonder Guard'),'opponent-aware options stay restricted');
+  await copy('Opponent').selectOption('Flash Fire');await flash('Opponent').check();assert.deepEqual(await damage(),['0–0 HP damage']);
+  await copy('Opponent').selectOption('');assert.equal(await flash('Opponent').count(),0);assert.deepEqual(await damage(),unknown);
+  await tap('Select Ralts');assert.equal(await copy('Player').inputValue(),'');
+  const both=await damage();assert.equal(both.length,1,'both sides and hidden Trace are neutral');
+  await ability.selectOption('Synchronize');assert.deepEqual(await damage(),both);
+  await copy('Player').selectOption('Synchronize');assert.deepEqual(await damage(),both);
+  await ability.selectOption('Trace');assert.equal(await copy('Player').inputValue(),'');assert.deepEqual(await damage(),both);
+  await tap('Opponent Houndoom');await ability.selectOption('Early Bird');
+  assert.equal(await copy('Player').inputValue(),'');const neutral=await damage();
+  // Enable a legitimate Flash Fire target, copy it, then compare activation.
+  await ability.selectOption('');await copy('Player').selectOption('Flash Fire');
+  const inactive=await damage();await flash('Player').check();const active=await damage();assert.notDeepEqual(active,inactive);
+  await ability.selectOption('Early Bird');assert.equal(await copy('Player').inputValue(),'');assert.deepEqual(await damage(),neutral);
+  await tap('Select Houndoom');await tap('Select Ralts');assert.equal(await copy('Player').inputValue(),'');assert.deepEqual(await damage(),neutral);
+  await tap('Reset');assert.equal(await copy('Player').inputValue(),'');assert.deepEqual(await damage(),neutral);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
-  assert.ok(await ability.evaluate(el=>parseFloat(getComputedStyle(el).fontSize)>=16));assert.deepEqual(errors,[]);
-  await page.close();console.log(`PASS WebKit ${width}px: ability Both/first/second, damage narrowing, Trace, state lifecycle, single ability, unchanged set/item/moves and no overflow`);
+  assert.deepEqual(errors,[]);await page.close();
+  console.log(`PASS ${format} ${width}px: real Frontier popup, neutral confirmed/possible Trace, equivalent results, observations, both sides, Flash Fire activation and switching`);
  }
 } finally {await browser?.close();await server.close();}

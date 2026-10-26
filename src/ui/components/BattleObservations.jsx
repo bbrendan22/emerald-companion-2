@@ -11,7 +11,7 @@ export default function BattleObservations({state,dispatch}) {
   const control=(label,caption,value,choices,onChange,disabled=false)=><span className="battle-observation-select battle-observation-compact-select">
     <span className="battle-observation-display" aria-hidden="true"><span className="battle-observation-value">{caption}</span><span className="battle-observation-arrow">▾</span></span>
     <select aria-label={label} value={value} disabled={disabled} onChange={event=>onChange(event.target.value)}>
-      <option value="" disabled>{label==='Add observed move'?'Add move':'None'}</option>
+      <option value="" disabled>{label==='Add observed move'?'Add move':'Add item'}</option>
       {value && !choices.includes(value) && <option value={value} disabled>{value}</option>}
       {choices.map(name=><option key={name} value={name}>{name}</option>)}
     </select>
@@ -27,7 +27,7 @@ export default function BattleObservations({state,dispatch}) {
       </div>
       <div className="battle-observation-column">
         <span>Held Item</span>
-        {control('Observed held item',observations.item||'None',observations.item,observationChoices(state,'item',{replace:false}),value=>{if(value)update('item',value);})}
+        {control('Observed held item',observations.item||'Add item',observations.item,observationChoices(state,'item',{replace:false}),value=>{if(value)update('item',value);})}
       </div>
       {moves.length>0 && <ul className="battle-observed-moves" aria-label="Observed moves">
         {moves.map(name=><li key={name}>{name}</li>)}

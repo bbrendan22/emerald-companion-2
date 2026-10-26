@@ -8,7 +8,9 @@ export const isTraceAbility=ability=>traceAbilities.includes(ability);
 export const unresolvedTrace=mon=>mon?.ability==='Trace' && !mon.traceResolved;
 export function resolveBattleAbility(mon) {
  if(mon?.ability!=='Trace'||mon.traceResolved)return mon;
- return isTraceAbility(mon.copiedAbility)?{...mon,ability:mon.copiedAbility,traceResolved:true}:mon;
+ // Calculation-only fallback: keep Trace itself (no passive modifiers) when
+ // no copy is selected. Never write a guessed ability into condition state.
+ return {...mon,ability:isTraceAbility(mon.copiedAbility)?mon.copiedAbility:'Trace',traceResolved:true};
 }
 export function abilityConditionContext(mon) {
  const values=mon?.abilityOptions?.values ?? String(mon?.ability??'').split(/\s*\/\s*/);

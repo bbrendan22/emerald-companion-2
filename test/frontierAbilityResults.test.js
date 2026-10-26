@@ -74,14 +74,13 @@ test('ability equivalence compares all raw rolls even when min/max and rounded r
  assert.notDeepEqual(rows[0].summary.branches[0].result.rolls,rows[1].summary.branches[0].result.rolls);
 });
 
-test('an unresolved Trace alternative does not hide the complete Synchronize branch',()=>{
+test('unresolved Trace and Synchronize collapse into the same complete result',()=>{
  let state=battleReducer(snorlaxState(),{type:'opponentTrainer',key:'Cooltrainer (M):KAYDEN'});
  state=battleReducer(state,{type:'selectSinglesOpponent',speciesId:speciesByName.get('gardevoir').internalSpeciesId});
  assert.equal(state.matchup.opponent,speciesByName.get('gardevoir').internalSpeciesId);
- const rows=frontierAbilityResults(summary(state,'Surf'));
- assert.equal(rows.length,2);
- assert.equal(rows.find(row=>row.label==='Synchronize').summary.availability,'available');
- const trace=rows.find(row=>row.label==='Trace').summary;
- assert.equal(trace.availability,'unavailable');
- assert.ok(trace.reasons.includes('unresolved-trace'));
+ const result=summary(state,'Surf');
+ assert.equal(result.availability,'available');
+ assert.equal(frontierAbilityResults(result).length,0,'no redundant ability rows');
+ assert.equal(result.groups.length,1);
+ assert.deepEqual(new Set(result.branches.map(branch=>branch.scenario.defenderAbility)),new Set(['Synchronize','Trace']));
 });

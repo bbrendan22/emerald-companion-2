@@ -23,27 +23,30 @@ export default function BattleMoveDetails(props) {
 }
 
 function BattleMoveDetailsContent({move, attacker, defender, basicAttacker, basicDefender, weather, critical, battleRules, onClose,frontierState,frontierPlayer,frontierRecords,frontierDirection}) {
-  const config=conditionalSelector(move)??multiHitSelector(move);
+  const canonical=moveResources[move.id];
+  const informational=canonical?.power===0;
+  const config=informational?null:conditionalSelector(move)??multiHitSelector(move);
   const [selection,setSelection]=useState(()=>config?.defaultValue);
   const [defenseCurl,setDefenseCurl]=useState(false);
-  const selected=selectedConditionalCase(move,selection,defenseCurl);
-  const hitCount=selectedHitCount(move,selection);
+  const selected=informational?null:selectedConditionalCase(move,selection,defenseCurl);
+  const hitCount=informational?null:selectedHitCount(move,selection);
   const battleContext=hitCount===null?battleRules:{...battleRules,hitCount};
   const dialog = useRef(null);
   useBattlePopupDismiss({popup:dialog,onClose,tapOnly:true,interactive:'.battle-move-scenario-controls'});
   const conditions={weather:attacker?.weather,critical:attacker?.critical,
     attacker:{stages:attacker?.stages,status:attacker?.status,currentHp:attacker?.currentHp},
     defender:{stages:defender?.stages,screens:defender?.screens,status:defender?.status,currentHp:defender?.currentHp}};
-  const frontierDamage=useMemo(()=>frontierState?aggregateFrontierDamage(evaluateFrontierCandidates(frontierState,frontierPlayer,move,
+  const frontierDamage=useMemo(()=>!informational&&frontierState?aggregateFrontierDamage(evaluateFrontierCandidates(frontierState,frontierPlayer,move,
     {direction:frontierDirection,selection,defenseCurl,records:frontierRecords})):undefined,
     [frontierState?.selectedOpponentSetId,frontierState?.opponentSetSelections,frontierState?.viewed,frontierState?.rules,frontierState?.team,frontierState?.opponentSpecies,frontierState?.matchup,
       frontierState?.selectedTrainer,frontierState?.selectedBrainSymbol,frontierState?.opponentObservations,
       frontierState?.matchupConditions,frontierState?.matchupSides,frontierState?.field,
-      Boolean(frontierState),frontierPlayer,frontierRecords,frontierDirection,move,selection,defenseCurl]);
-  const abilityDamage = frontierDamage===undefined
+      informational,Boolean(frontierState),frontierPlayer,frontierRecords,frontierDirection,move,selection,defenseCurl]);
+  const abilityDamage = !informational&&frontierDamage===undefined
     ?selectConditionalAbilityDamage(calculateAbilityScenarios(move,attacker,defender,{weather,critical,battleContext}),selected):undefined;
-  const values = movePopupValues(move,attacker,defender);
-  if(isUnsupportedSpecialMove(move))values.power='—';
+  const values = movePopupValues(informational?{...move,...canonical}:move,attacker,defender);
+  if(informational)values.power='—';
+  else if(isUnsupportedSpecialMove(move))values.power='—';
   else if(hitCount!==null)values.power=multiHitPowerLabel(move,hitCount);
   else if(isPsywaveMove(move))values.power='Level-based';
   else if(isConditionalMove(move))values.power=selected.power;
@@ -92,6 +95,9 @@ function BattleMoveDetailsContent({move, attacker, defender, basicAttacker, basi
     sizeViewport();
     Object.assign(body.style,{position:'fixed',top:`${-y}px`,left:`${-x}px`,width:'100%'});
     window.scrollTo(0,0);
+    // React's autoFocus runs at mount, before this closed dialog is focusable.
+    // The native attribute makes showModal choose the dialog itself instead.
+    node.setAttribute('autofocus','');
     node.showModal();
     window.addEventListener('resize',sizeViewport);
     window.visualViewport?.addEventListener('resize',sizeViewport);
@@ -105,17 +111,18 @@ function BattleMoveDetailsContent({move, attacker, defender, basicAttacker, basi
       returnFocus?.focus({preventScroll:true});
     };
   },[]);
-  return <dialog ref={dialog} className="battle-move-viewport" aria-labelledby="battle-move-title"
+  // Keep showModal's initial focus off native selectors during the opening tap.
+  return <dialog ref={dialog} tabIndex={-1} className="battle-move-viewport" aria-labelledby="battle-move-title"
     onCancel={event=>{event.preventDefault();onClose();}}>
     <div className="battle-move-dialog">
     <header><MoveTypeIcon type={values.type} moveId={move.id} moveName={move.name} size={22} alt={values.type?`${values.type.toLowerCase()} type`:undefined} />
       <h2 id="battle-move-title">{move.name}</h2></header>
-    <dl>{[[move.id===167?'Hit powers':hitCount!==null?'Power / hit':'Power',(frontierDamage||isUnsupportedSpecialMove(move)||isOhkoMove(move)||isHpDependentMove(move)||isPsywaveMove(move)||isConditionalMove(move)||move.id===167||move.id===311)?values.power:typeof values.power==='number'?values.power:move.power>1?move.power:'—'],['Accuracy',values.accuracy],['Effect %',values.effect]].map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+    <dl>{[[move.id===167?'Hit powers':hitCount!==null?'Power / hit':'Power',informational?'—':(frontierDamage||isUnsupportedSpecialMove(move)||isOhkoMove(move)||isHpDependentMove(move)||isPsywaveMove(move)||isConditionalMove(move)||move.id===167||move.id===311)?values.power:typeof values.power==='number'?values.power:move.power>1?move.power:'—'],['Accuracy',values.accuracy],['Effect %',values.effect]].map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
     {frontierDamage&&isSupportedDynamicMove(move)&&!frontierDamage.metadata.type&&<p className="battle-ability-label">
       {frontierDamage.metadata.status==='unknown'?'Type/power unavailable.':'Type varies across possible matchups.'}</p>}
-    <BattleMoveScenarioControl config={config} value={selection} defenseCurl={defenseCurl} onChange={setSelection} onCurlChange={setDefenseCurl}/>
+    {!informational&&<BattleMoveScenarioControl config={config} value={selection} defenseCurl={defenseCurl} onChange={setSelection} onCurlChange={setDefenseCurl}/>}
     {moveResources[move.id]?.description && <p className="battle-move-description">{moveResources[move.id].description}</p>}
-    <BasicDamagePreview frontierDamage={frontierDamage} abilityDamage={abilityDamage} move={move} attacker={attacker} defender={defender} conditions={conditions} showUnavailable />
+    {!informational&&<BasicDamagePreview frontierDamage={frontierDamage} abilityDamage={abilityDamage} move={move} attacker={attacker} defender={defender} conditions={conditions} showUnavailable />}
     </div>
   </dialog>;
 }

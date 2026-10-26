@@ -66,9 +66,10 @@ try {
   await navigate('Battle');await images();
   assert.equal(new URL(page.url()).pathname,base);
   for(const format of ['Singles','Doubles']) {
-    await page.getByRole('button',{name:'Battle Rules',exact:true}).click();
-    await page.getByRole('dialog',{name:'Battle Rules',exact:true}).getByRole('combobox',{name:'Battle Type',exact:true}).selectOption(format);
-    await page.keyboard.press('Escape');
+    const formatControl=page.getByRole('combobox',{name:'Format',exact:true});
+    await formatControl.selectOption(format);
+    assert.equal(await formatControl.inputValue(),format);
+    assert.equal(await page.getByRole('dialog').count(),0,'inline Rules do not open a popup');
     const suffix=format==='Doubles'?' Slot 1':'';
     const mine=page.getByRole('combobox',{name:`Select my Pokémon${suffix}`,exact:true});
     const enemy=page.getByRole('combobox',{name:`Select opponent Pokémon${suffix}`,exact:true});

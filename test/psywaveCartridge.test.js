@@ -44,7 +44,7 @@ test('zero boundary remains a damage outcome distinct from immunity, prevention 
  assert.equal(calculateCoreDamage(move,a,dark).outcome,'immune');
  assert.equal(calculateCoreDamage(move,a,wg).reason,'wonder-guard');
  assert.deepEqual(calculateCoreDamage(move,a,{...wg,types:['FIGHTING']}).rolls,calc(1).rolls,'super-effective Psychic passes Wonder Guard without scaling fixed damage');
- assert.equal(calculateCoreDamage(move,a,{...target,ability:'Trace'}).availability,'unsupported');
+ assert.deepEqual(calculateCoreDamage(move,a,{...target,ability:'Trace'}),calculateCoreDamage(move,a,target));
  const enemy={...target,abilityOptions:{status:'uncertain',source:'species',values:['Immunity','Wonder Guard']}};
  const groups=calculateAbilityScenarios(move,a,enemy).groups;
  assert.deepEqual(groups.map(g=>g.availability),['available','blocked']);

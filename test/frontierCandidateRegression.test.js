@@ -153,7 +153,7 @@ test('full pipeline preserves copied abilities, field safeguards, prevention and
    copiedAbility:choice.copiedAbility??null,flashFireActivated:choice.activated??false}};
   const {summary}=compareFrontierCase({state,player,records:fullField?[player,auditPartner]:[player],move:battleMove(choice.move),
    diagnostics,label:`${format} full=${fullField} ${choice.ability} ${choice.copiedAbility} ${choice.move}`});casesEvaluated++;
-  if(choice.ability==='Trace'&&!choice.copiedAbility)assert.ok(summary.reasons.includes('unresolved-trace'));
+  if(choice.ability==='Trace'&&!choice.copiedAbility)assert.equal(summary.reasons.includes('unresolved-trace'),false);
   if(['Plus','Minus'].includes(choice.ability)&&format==='Doubles'&&!fullField)assert.ok(summary.reasons.includes('unknown-plus-minus-field'));
   if(['Plus','Minus'].includes(choice.ability)&&fullField)assert.equal(summary.availability,'available');
   if(choice.ability==='Damp'){assert.deepEqual(summary.hp,{min:0,max:0});assert.ok(summary.categories.includes('prevented'));}

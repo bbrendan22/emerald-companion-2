@@ -15,6 +15,21 @@ import '../styles/battle.css';
 export default function BattlePage({battle, snapshot}) {
   const {state,dispatch,records} = battle;
   const workspace=React.useRef(null);
+  React.useEffect(() => {
+    // Mobile WebKit can match select:focus-visible after a tap. Track input
+    // modality locally so keyboard focus remains visible without touch boxes.
+    const keyboard = event => {
+      if (['Tab','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Home','End','PageUp','PageDown'].includes(event.key))
+        workspace.current?.setAttribute('data-keyboard-focus', 'true');
+    };
+    const pointer = () => workspace.current?.removeAttribute('data-keyboard-focus');
+    document.addEventListener('keydown', keyboard, true);
+    document.addEventListener('pointerdown', pointer, true);
+    return () => {
+      document.removeEventListener('keydown', keyboard, true);
+      document.removeEventListener('pointerdown', pointer, true);
+    };
+  }, []);
   React.useLayoutEffect(()=>{
     if(window.navigator.standalone!==true)return;
     const page=workspace.current.closest('main'),previous=page.style.minHeight;
@@ -46,6 +61,6 @@ export default function BattlePage({battle, snapshot}) {
       <BattleMatchup state={battle.state} records={battle.records} dispatch={battle.dispatch} />
     </section>
     {opponent && usesSelectedSet(state) && eligibleMatchupSets(state).length !== 1 && <BattleObservations state={state} dispatch={dispatch} />}
-    {player && opponent && <BattleConditions state={state} dispatch={dispatch} player={player} opponent={opponent} hpRange={hpRange} />}
+    {player && opponent && <BattleConditions state={state} dispatch={dispatch} player={player} opponent={opponent} hpRange={hpRange} records={records} />}
   </div>;
 }

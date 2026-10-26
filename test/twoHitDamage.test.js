@@ -86,7 +86,7 @@ test('Crit checkbox conditions each hit independently on both-noncritical or bot
 test('on-hit effects with unmodeled second-hit transitions are explicit unsupported scenarios',()=>{
  for(const name of ['Double Kick','Twineedle','Bonemerang']) {
   assert.equal(calc(name,mon,{...mon,ability:'Color Change'}).availability,'unsupported');
-  assert.equal(calc(name,{...mon,ability:'Trace'}).availability,'unsupported');
+  assert.deepEqual(calc(name,{...mon,ability:'Trace'}),calc(name));
  }
  for(const ability of ['Flame Body','Effect Spore','Static','Poison Point'])
   assert.equal(calc('Double Kick',mon,{...mon,ability}).availability,'unsupported');

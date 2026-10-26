@@ -90,9 +90,9 @@ for(const name of ['Explosion','Self Destruct'])test(`${name}: unseen Damp is un
 test('Damp does not affect unrelated, conditional, fixed, multi-hit or OHKO paths',()=>{
  for(const name of ['Strength','Surf','Magnitude','DoubleSlap','Dragon Rage','Psywave','Fissure'])assert.deepEqual(calc(name,{...mon,ability:'Damp'}),calc(name),name);
 });
-test('Plus/Minus and unresolved Trace guards retain their existing precedence',()=>{
+test('Plus/Minus keeps unknown-field safeguards while unresolved Trace stays neutral',()=>{
  assert.equal(calc('Surf',{...mon,ability:'Plus'}).reason,'unknown-plus-minus-field');
- assert.equal(calc('Surf',{...mon,ability:'Trace'}).reason,'unresolved-trace');
+ assert.deepEqual(calc('Surf',{...mon,ability:'Trace'}),calc('Surf'));
  const a={...mon,ability:'Trace',copiedAbility:'Plus'},d={...mon,ability:'Minus'};
  assert.ok(calc('Surf',a,d).rolls);assert.deepEqual(calc('Surf',a,d,'rain'),weatherUnknown);
  assert.ok(calc('Strength',a).rolls);assert.ok(calc('Dragon Rage',{...mon,ability:'Trace'}).damage);

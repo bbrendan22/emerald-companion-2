@@ -91,8 +91,9 @@ test('full aggregate comparison preserves distinct ability scenarios and explici
  const different=calculateAbilityScenarios(move,mon,d,{calculate});
  assert.equal(different.groups.length,2);assert.equal(different.groups[0].hp,different.groups[1].hp);
  assert.notDeepEqual(different.groups[0].result.distribution,different.groups[1].result.distribution);
- for(const ability of ['Flame Body','Static','Poison Point','Effect Spore','Color Change','Trace'])
+ for(const ability of ['Flame Body','Static','Poison Point','Effect Spore','Color Change'])
   assert.equal(calc(mon,{...mon,ability}).availability,'unsupported',ability);
+ assert.deepEqual(calc(mon,{...mon,ability:'Trace'}),calc());
  const partial=calculateAbilityScenarios(move,mon,{...mon,abilityOptions:options(['Immunity','Flame Body'])});
  assert.deepEqual(partial.groups.map(g=>g.availability),['available','unsupported']);
  assert.equal(calc({...mon,status:'poison'}, {...mon,ability:'Flame Body'}).kind,'aggregate-damage');

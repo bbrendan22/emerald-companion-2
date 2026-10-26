@@ -11,8 +11,8 @@ import '../../src/ui/styles/base.css';
 import '../../src/ui/styles/battle.css';
 const id=name=>speciesByName.get(name.toLowerCase()).internalSpeciesId;
 const base={level:50,types:['NORMAL'],ability:'Immunity',item:'None',stats:{hp:200,attack:100,defense:100,spAttack:100,spDefense:100},moves:['Flamethrower','Strength','Surf','Psywave'].map(battleMove)};
-const records=[{...base,identity:'a',name:'Snorlax',dex:143},{...base,identity:'b',name:'Swampert',dex:260,ability:'Torrent',types:['WATER','GROUND']}];
-let initial={...createBattleState(),selectedTrainer:'Cooltrainer (M):KAYDEN',team:['a','b'],opponentSpecies:['Gardevoir','Houndoom','Weezing'].map(id),matchup:{player:'a',opponent:id('Houndoom')}};
+const records=[{...base,identity:'a',name:'Houndoom',dex:229,ability:'Flash Fire',types:['DARK','FIRE']},{...base,identity:'b',name:'Ralts',dex:280,ability:'Trace',types:['PSYCHIC']},{...base,identity:'c',name:'Swampert',dex:260,ability:'Torrent',types:['WATER','GROUND']}];
+let initial={...createBattleState(),rules:{...createBattleState().rules,format:new URLSearchParams(location.search).get('format')||'Singles'},selectedTrainer:'Cooltrainer (M):KAYDEN',team:['a','b','c'],opponentSpecies:['Gardevoir','Houndoom','Weezing'].map(id),matchup:{player:'a',opponent:id('Houndoom')}};
 // Known observed moves/items give the real popup definite Frontier stats. Ability
 // choices must leave these observations and possible-set counts unchanged.
 for(const [slot,speciesId] of initial.opponentSpecies.entries()) {
@@ -29,9 +29,10 @@ function Fixture(){
   <button onClick={()=>dispatch({type:'clearOpponentSpeciesSlot',slot:0,speciesId:id('Gardevoir')})}>Remove Gardevoir</button>
   <button onClick={()=>dispatch({type:'assignOpponentSpecies',slot:0,speciesId:id('Gardevoir')})}>Add Gardevoir</button>
   <output aria-label="Possible set count">{possibleMatchupSets(state).length}</output>
-  <output aria-label="Observed item and moves">{JSON.stringify({item:info.observations.item,moves:info.observations.moves})}</output>
+  <output style={{overflowWrap:'anywhere',minWidth:0}} aria-label="Observed item and moves">{JSON.stringify({item:info.observations.item,moves:info.observations.moves})}</output>
+  <output style={{display:'none'}} aria-label="Condition memory">{JSON.stringify(state.matchupConditions)}</output>
   <BattleMatchup state={state} records={records} dispatch={dispatch}/>
-  {player&&opponent&&<BattleMatchupConditions state={state} dispatch={dispatch} player={player} opponent={opponent} hpRange={opponentStatRanges(state)?.hp}/>}
+  {player&&opponent&&<BattleMatchupConditions state={state} dispatch={dispatch} player={player} opponent={opponent} records={records} hpRange={opponentStatRanges(state)?.hp}/>}
  </main>;
 }
 createRoot(document.getElementById('root')).render(<Fixture/>);

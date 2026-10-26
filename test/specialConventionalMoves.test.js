@@ -67,7 +67,7 @@ test('Damp branches prevent moves from either side and are never dropped or aver
   assert.equal(calc(name,{...mon,ability:'Damp'},mon).outcome,'blocked');
   assert.equal(calc(name,mon,{...mon,ability:'Damp / Water Absorb'}),null);
   assert.equal(calc(name,mon,{...mon,ability:undefined}),null);
-  assert.equal(calc(name,{...mon,ability:'Trace'}).availability,'unsupported');
+  assert.deepEqual(calc(name,{...mon,ability:'Trace'}),calc(name));
   const d={...mon,abilityOptions:options(['Water Absorb','Damp'])};
   const scenarios=calculateAbilityScenarios(battleMove(name),mon,d);
   assert.deepEqual(scenarios.groups.map(g=>g.availability),['available','blocked']);

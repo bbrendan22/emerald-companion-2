@@ -53,9 +53,9 @@ test('a real eligible holder redirects; an attacking-side holder does not',()=>{
  result=evaluate(s);assert.ok(result.evaluations[0].abilityDamage.scenarios.every(s=>s.target.name==='Swellow'&&s.availability==='available'));
 });
 
-test('populated unresolved Trace and missing populated data remain uncertain; genuine legal alternatives retain separate targets',()=>{
+test('populated unresolved Trace is neutral while missing populated data stays uncertain; genuine legal alternatives retain separate targets',()=>{
  let s=assign(setup(),uncertain),result=evaluate(s);
- assert.ok(result.evaluations[0].abilityDamage.scenarios.every(s=>s.reason==='unknown-lightning-rod-target'));
+ assert.ok(result.evaluations[0].abilityDamage.scenarios.every(s=>s.availability==='available'&&s.target.name==='Swellow'));
  result=evaluateFrontierCandidates(assign(setup(),partner),swellow,battleMove('Thunder'),{direction:'enemy',records:[swellow]});
  assert.ok(result.evaluations[0].abilityDamage.scenarios.every(s=>s.reason==='unknown-lightning-rod-target'));
  const choices={...holder,ability:'Static / Lightning Rod',abilityOptions:{status:'uncertain',source:'species',values:['Static','Lightning Rod']}};

@@ -51,7 +51,7 @@ test('both-side uncertainty retains all four ability pairs and deduplicates only
  const doubles=calculateAbilityScenarios(battleMove('Surf'),a,d,{battleContext:{format:'Doubles',defenderSideAlive:1}});
  assert.deepEqual(doubles.scenarios.map(s=>s.availability),['available','unsupported','available','available']);
  const unresolved=calculateAbilityScenarios(battleMove('Surf'),{...a,copiedAbility:null},d);
- assert.deepEqual(unresolved.scenarios.map(s=>s.availability),['unsupported','unsupported','available','available']);
+ assert.deepEqual(unresolved.scenarios.map(s=>s.availability),['available','available','available','available']);
 });
 test('unresolved attacker Trace does not block fixed amounts, HP operations or Psywave distributions',()=>{
  const a={...trace(null),currentHp:75};
@@ -60,10 +60,10 @@ test('unresolved attacker Trace does not block fixed amounts, HP operations or P
  const result=calculateAbilityScenarios(battleMove('Psywave'),{...a,abilityOptions:options(['Trace','Synchronize'])},mon);
  assert.equal(result.groups.length,1);assert.equal(result.groups[0].scenarios.length,2);
 });
-test('uncertain copied weather suppression still makes Forecast Night Shade genuinely unresolved',()=>{
+test('unresolved Trace does not speculate about weather suppression against Forecast',()=>{
  const cast={...mon,dex:351,ability:'Forecast'};
  for(const weather of ['sun','rain','hail']) {
-  assert.equal(calc('Night Shade',trace(null),cast,weather).reason,'unresolved-trace');
+  assert.equal(calc('Night Shade',trace(null),cast,weather).damage,50);
   assert.equal(calc('Night Shade',trace('Cloud Nine'),cast,weather).outcome,'immune');
   assert.equal(calc('Night Shade',trace('Immunity'),cast,weather).damage,50);
   assert.equal(calc('Dragon Rage',trace(null),cast,weather).damage,40);
@@ -75,7 +75,7 @@ test('unresolved defender Trace preserves guaranteed fixed chart immunity but ne
   const d={...trace(null),types};
   assert.deepEqual(calc(name,mon,d),calc(name,mon,{...d,ability:'Immunity'}));
  }
- assert.equal(calc('Dragon Rage',mon,trace(null)).reason,'unresolved-trace');
+ assert.equal(calc('Dragon Rage',mon,trace(null)).damage,40);
  assert.equal(calc('Dragon Rage',mon,trace('Wonder Guard')).outcome,'blocked');
 });
 test('resolved copied between-hit abilities keep safeguards and missing stats stay unavailable',()=>{
@@ -103,5 +103,5 @@ test('OHKO outcomes ignore unresolved attacker Trace while preserving unknown de
   assert.deepEqual(calc(name,a,d,weather),calc(name,{...a,ability:'Immunity'},d,weather));
  }
  assert.equal(calc('Guillotine',mon,{...trace(null),types:['GHOST']}).outcome,'immune');
- assert.equal(calc('Guillotine',mon,trace(null)).reason,'unresolved-trace');
+ assert.equal(calc('Guillotine',mon,trace(null)).outcome,'ohko');
 });

@@ -2,7 +2,7 @@ import {fieldAbilityPresence,fieldAbilityBranches} from './fieldAbilities.js';
 import {battleItemId} from './itemLookup.js';
 import {stageStat,battleSpeed,battleWeather} from './battleConditions.js';
 import {heldItemAttack,heldItemDefense} from './heldItemModifiers.js';
-import {resolveBattleAbility,traceAbilities} from './conditionalAbilities.js';
+import {resolveBattleAbility} from './conditionalAbilities.js';
 import {opponentStatRanges,opponentStatDisplay} from './opponentStats.js';
 
 const keys=['hp','attack','defense','spAttack','spDefense','speed'];
@@ -12,10 +12,7 @@ const resolved=(mon,ability)=>resolveBattleAbility({...mon,ability}).ability;
 function abilities(mon) {
  const options=mon?.abilityOptions;
  if(!options || !['known','uncertain'].includes(options.status))return null;
- return [...new Set(options.values.flatMap(ability=>{
-  const value=resolved(mon,ability);
-  return value==='Trace'?traceAbilities.filter(a=>a!=='Trace'): [value];
- }))];
+ return [...new Set(options.values.map(ability=>resolved(mon,ability)))];
 }
 function confirmedAbility(mon) {
  return mon?.abilityOptions?.status==='known' ? resolved(mon,mon.abilityOptions.values[0]) : null;
@@ -62,8 +59,6 @@ export function opponentDisplayRows(state,sets,mon) {
 }
 export function displayStatValues(rows,{weather='none',item,otherAbility=null}={}) {
  const values=opponentStatDisplay(ranges(rows.map(mon=>effectiveDisplayStats(mon,{weather,item,otherAbility}))));
- const current=rows[0]?.currentHp;
- if(current!=null && values.hp!=='—')values.hp=`${current}/${values.hp}`;
  return values;
 }
 function speedRange(rows,otherRows,weather,format) {
@@ -114,22 +109,43 @@ function battlefieldDisplay(rows,otherRows,weather,battlefield,side) {
   }
  }
  const bounds=ranges(stats),values=opponentStatDisplay(bounds);
- if(rows[0]?.currentHp!=null&&values.hp!=='—')values.hp=`${rows[0].currentHp}/${values.hp}`;
  return {values,speed:bounds?.speed??null};
+}
+// Presentation uses confirmed field knowledge only. Empty slots and unknown
+// abilities do not assert suppression or Plus/Minus activation. Damage and
+// conservative Speed comparisons retain their separate uncertainty branches.
+function confirmedDisplayValues(rows,weather,field) {
+ const suppressed=field.some(({mon,living})=>living&&suppresses(confirmedAbility(mon)));
+ const effectiveWeather=suppressed?'none':weather;
+ const calculated=rows.map(mon=>{
+  const ability=confirmedAbility(mon);
+  const opposite=ability==='Plus'?'Minus':ability==='Minus'?'Plus':null;
+  return effectiveDisplayStats(mon,{weather:effectiveWeather,ability,item:mon?.item,
+   oppositeAbilityPresent:Boolean(opposite&&field.some(entry=>confirmedAbility(entry.mon)===opposite))});
+ });
+ return Object.fromEntries(keys.map(key=>{
+  const values=calculated.map(stats=>stats?.[key]);
+  // Multiple raw candidates cannot justify one number unless they agree.
+  return [key,values.length&&values.every(value=>Number.isFinite(value)&&value===values[0])?values[0]:'—'];
+ }));
+}
+function confirmedDisplayField(player,opponent,battlefield) {
+ if(!battlefield)return [player,opponent].filter(Boolean).map(mon=>({mon,living:mon.currentHp!==0}));
+ return ['player','enemy'].flatMap(side=>[0,1].flatMap(slot=>{
+  const entry=battlefield[side]?.[slot];
+  const viewed=battlefield.viewed[side==='player'?'player':'opponent'];
+  const mon=slot===viewed?(side==='player'?player:opponent):entry?.pokemon;
+  return mon?[{mon,living:entry?.liveness!=='fainted'&&mon.currentHp!==0}]:[];
+ }));
 }
 export function matchupDisplayStats({player,opponent,state,sets=[],battlefield}) {
  const own=player?[player]:[],enemy=opponent?opponentDisplayRows(state,sets,opponent):[];
  const weather=state.field?.weather??'none';
+ const field=confirmedDisplayField(player,opponent,battlefield);
+ const values={player:confirmedDisplayValues(own,weather,field),opponent:confirmedDisplayValues(enemy,weather,field)};
  if(state.rules.format==='Doubles'&&battlefield&&player&&opponent) {
   const p=battlefieldDisplay(own,enemy,weather,battlefield,'player'),e=battlefieldDisplay(enemy,own,weather,battlefield,'enemy');
-  return {player:p.values,opponent:e.values,speed:compareSpeedRanges(p.speed,e.speed)};
+  return {...values,speed:compareSpeedRanges(p.speed,e.speed)};
  }
- const potential=[player,opponent].filter(mon=>mon&&mon.currentHp!==0).flatMap(mon=>abilities(mon)??[]);
- // A weather boost is only confirmed when suppression cannot be unresolved.
- const displayWeather=potential.some(suppresses) ? 'none':weather;
- return {
-  player:displayStatValues(own,{weather:displayWeather,item:player?.item,otherAbility:confirmedAbility(opponent)}),
-  opponent:displayStatValues(enemy,{weather:displayWeather,item:opponent?.item??null,otherAbility:confirmedAbility(player)}),
-  speed:compareSpeedRanges(speedRange(own,enemy,weather,state.rules.format),speedRange(enemy,own,weather,state.rules.format)),
- };
+ return {...values,speed:compareSpeedRanges(speedRange(own,enemy,weather,state.rules.format),speedRange(enemy,own,weather,state.rules.format))};
 }

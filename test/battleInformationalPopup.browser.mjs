@@ -1,46 +1,100 @@
-import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
-import {makeSave,makePokemon} from './fixtures/synthetic.js';
-const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
-const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_EXECUTABLE});
+import {webkit} from 'playwright';
+import {createServer} from 'vite';
+import {battleMove} from '../src/battle/reference.js';
+import {moveResources} from '../src/battle/data/moveResources.js';
+import {movePopupValues} from '../src/battle/matchupPresentation.js';
+const probes=[
+ ['frontierCandidateDamage.js','  const construction=frontierMatchupCandidates(state);','frontier'],
+ ['abilityScenarios.js','export function calculateAbilityScenarios(move,attacker,defender,options={}) {','ability'],
+ ['conditionalSelection.js','export function conditionalSelector(move) {','scenario'],
+ ['multiHitSelection.js','export function multiHitSelector(move) {','hits'],
+];
+const server=await createServer({base:'/',server:{host:'127.0.0.1',port:0,hmr:false},plugins:[{
+ name:'status-calculation-probes',enforce:'pre',transform(code,id){
+  for(const [file,needle,key] of probes)if(id.endsWith(`/src/battle/${file}`)){
+   assert.ok(code.includes(needle),`probe anchor: ${file}`);
+   return code.replace(needle,`${needle}\n globalThis.popupCalls??={};globalThis.popupCalls.${key}=(globalThis.popupCalls.${key}??0)+1;`);
+  }
+ }
+}]});
+let browser;
 try {
- const page=await browser.newPage({viewport:{width:375,height:800},isMobile:true,hasTouch:true}),errors=[],requests=[];
- page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
- await page.goto(process.env.BATTLE_URL||'http://127.0.0.1:5173');
- const storage=new Uint8Array(33744);[1,4,7].forEach((s,i)=>storage.set(makePokemon({species:s,pid:i}),4+i*80));
- const encoded=Buffer.from(makeSave({blocks:{storage}})).toString('base64');
- await page.evaluate(encoded=>{localStorage.clear();localStorage.setItem('emerald-companion-2.save.v1',encoded);localStorage.setItem('emerald-companion-2.roles.v1',JSON.stringify({'0:0:0':'Frontier','0:1:0':'Frontier','0:2:0':'Frontier'}));},encoded);
- await page.reload();await page.getByRole('button',{name:'Open navigation',exact:true}).click();await page.getByRole('button',{name:'Battle',exact:true}).click();
- const popup=page.getByRole('dialog'),move=(side,i=0)=>page.locator(`.battle-matchup-moves.battle-matchup-${side} button`).nth(i);
- const close=async()=>{await page.mouse.click(2,2);assert.equal(await popup.count(),0);};
- const clean=async(basic=false)=>{
-  assert.equal(await popup.locator('header img').count(),1);assert.equal(await popup.locator('dl > div').count(),3);
-  assert.equal(await popup.locator('p').count(),basic?2:1);assert.ok((await popup.locator('p').first().innerText()).length>0);
-  assert.equal(await popup.locator('button,[class*="battle-damage"]').count(),0);
-  assert.doesNotMatch(await popup.innerText(),/chance to .*HKO|Guaranteed .*HKO|Repeat KO unavailable|of max HP/);
+ await server.listen();browser=await webkit.launch({headless:true});
+ const page=await browser.newPage({viewport:{width:375,height:812},isMobile:true,hasTouch:true});
+ page.setDefaultTimeout(10000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.route('**/status-popup',route=>route.fulfill({contentType:'text/html',body:'<meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script type="module" src="/test/fixtures/statusMovePopup.jsx"></script>'}));
+ await page.goto(new URL('/status-popup',server.resolvedUrls.local[0]).href);
+ const popup=page.getByRole('dialog'),choose=id=>page.getByLabel('Test move',{exact:true}).selectOption(String(id));
+ const calls=()=>page.evaluate(()=>globalThis.popupCalls??{}),resetCalls=()=>page.evaluate(()=>{globalThis.popupCalls={};});
+ const open=side=>page.getByRole('button',{name:`Open ${side} move`,exact:true}).click();
+ const clean=async move=>{
+  const values=movePopupValues(move);
+  assert.equal(await popup.locator('h2').innerText(),move.name);
+  assert.deepEqual(await popup.locator('dt').allTextContents(),['Power','Accuracy','Effect %']);
+  assert.deepEqual(await popup.locator('dd').allTextContents(),['—',values.accuracy,values.effect]);
+  assert.deepEqual(await popup.locator('p').allTextContents(),[move.description],'exactly one canonical description');
+  assert.equal(await popup.locator('button,select,input,.battle-basic-damage,.battle-move-scenario-controls').count(),0);
+  assert.doesNotMatch(await popup.innerText(),/Damage unavailable|No matching Frontier sets|Move effect/);
  };
- await move('player').tap();await clean();assert.equal(await popup.locator('h2').innerText(),'Tackle');assert.deepEqual(await popup.locator('dd').allTextContents(),['35','95%','—']);await close();
- await page.getByRole('tab',{name:'Sets',exact:true}).click();await page.getByRole('searchbox',{name:'Search Pokémon sets'}).fill('Azumarill');await page.getByRole('button',{name:'Select Azumarill 1',exact:true}).click();
- await page.getByRole('button',{name:'Battle Conditions',exact:true}).click();
- const conditions=page.getByRole('region',{name:'Battle Conditions',exact:true});
- await page.getByRole('combobox',{name:'Player Atk stage',exact:true}).selectOption('2');
- const controls=()=>conditions.locator('input,select,button').evaluateAll(nodes=>nodes.map(n=>({tag:n.tagName,value:n.value,checked:n.checked,rect:[n.offsetWidth,n.offsetHeight]})));
- assert.equal((await controls()).length,22);const before=await controls(),bounds=await conditions.boundingBox();
- const bars=await page.locator('.battle-matchup-bar span').evaluateAll(nodes=>nodes.map(n=>n.style.width));
- for(const side of ['player','enemy']){
-  await move(side).tap();await clean(true);if(side==='enemy'){assert.equal(await popup.locator('h2').innerText(),'Bubble Beam');assert.deepEqual(await popup.locator('dd').allTextContents(),['65','100%','10%']);}
-  assert.deepEqual(await controls(),before);assert.deepEqual(await conditions.boundingBox(),bounds);await close();
+ const statuses=Object.keys(moveResources).map(Number).map(battleMove).filter(m=>m.power===0);
+ assert.equal(statuses.length,138);
+ for(const [i,move] of statuses.entries()) {
+  await choose(move.id);await page.getByLabel('Test context',{exact:true}).selectOption(['none','valid','missing'][i%3]);await resetCalls();
+  await open(i%2?'opponent':'player');await clean(move);assert.deepEqual(await calls(),{},`${move.name}: no calculation or scenario orchestration`);
+  await page.keyboard.press('Escape');assert.equal(await popup.count(),0);
  }
- await move('enemy',3).tap();await clean();await page.keyboard.press('Escape');assert.equal(await popup.count(),0);
- for(const width of [320,375,430]){
-  await page.setViewportSize({width,height:width===320?568:800});await move('player').tap();await clean(true);
-  const rect=await popup.boundingBox();assert.ok(rect.x>=0&&rect.x+rect.width<=width);assert.ok(rect.height<240);
-  assert.equal(await popup.evaluate(el=>el.scrollWidth>el.clientWidth),false);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
-  await page.screenshot({path:`/private/tmp/battle-information-${width}.png`});await close();
+ console.log('PASS all 138 status moves: canonical metadata once, no PP/damage/scenario calls, both directions and direct/Frontier/missing contexts');
+ // Canonical routing/content survives altered supplied metadata, in both directions.
+ for(const name of ['Pain Split','Curse','Nature Power','Metronome','Toxic','Swagger'])for(const side of ['player','opponent']) {
+  const move=battleMove(name);await choose(move.id);await page.getByLabel('Override supplied metadata').check();await resetCalls();
+  await open(side);await clean(move);assert.deepEqual(await calls(),{});await page.keyboard.press('Escape');
  }
- assert.deepEqual(await page.locator('.battle-matchup-bar span').evaluateAll(nodes=>nodes.map(n=>n.style.width)),bars);
- assert.equal(await page.getByRole('combobox',{name:'Player Atk stage',exact:true}).inputValue(),'2');
- assert.equal(await page.evaluate(()=>localStorage.getItem('emerald-companion-2.save.v1')),encoded);
- assert.deepEqual(requests.filter(url=>/(?:damagePreview|koProbability|BattleDamageResults|battleDamage|battleRetaliation)\.[jt]sx?/.test(url)),[]);
- assert.deepEqual(errors,[]);console.log('Informational popup passed: player/opponent/status moves, metadata, outside/Escape dismissal, no retired damage modules loaded, unchanged Conditions controls/geometry/stages/bars/save, and 320/375/430px fit.');
-} finally {await browser.close();}
+ await page.getByLabel('Override supplied metadata').uncheck();await page.getByLabel('Test context',{exact:true}).selectOption('none');
+ const exceptions=Object.keys(moveResources).map(Number).map(battleMove).filter(m=>m.power===1);
+ const names=[...exceptions.map(m=>m.name),'Beat Up','Future Sight','Doom Desire','Spit Up','Weather Ball','Eruption','Water Spout','Rollout','Triple Kick','Tackle'];
+ for(const name of names) {
+  await choose(battleMove(name).id);await resetCalls();await open('player');
+  assert.equal(await popup.getByRole('region',{name:'Damage Calculation',exact:true}).count(),1,name);
+  assert.ok((await calls()).ability>0,`${name}: damage path retained`);
+  if(['Counter','Mirror Coat','Bide','Beat Up','Future Sight','Doom Desire','Spit Up'].includes(name))assert.match(await popup.innerText(),/requires special battle-state handling/);
+  await page.keyboard.press('Escape');
+ }
+ await choose(33);await page.getByLabel('Override supplied metadata').check();await resetCalls();await open('player');
+ assert.ok((await calls()).ability>0,'canonical damaging move is not status when supplied power is zero');await page.keyboard.press('Escape');
+ await page.getByLabel('Override supplied metadata').uncheck();
+ await page.getByLabel('Test context',{exact:true}).selectOption('valid');await resetCalls();await open('player');
+ assert.ok((await calls()).frontier>0,'damaging moves retain Frontier evaluation');await page.keyboard.press('Escape');
+ console.log('PASS all 22 power-one moves plus variable/multi-hit and unsupported damaging exceptions; canonical routing and Frontier evaluation');
+ // Exercise the mounted BattleMatchup move controls on each side.
+ const snapshot=await page.getByLabel('Battle snapshot').textContent();
+ for(const [group,name] of [['My matchup Pokémon','Growl'],['Opponent matchup Pokémon','Roar']]) {
+  const control=page.getByRole('group',{name:group,exact:true}).getByRole('button',{name:`Move information: ${name}`,exact:true});
+  await resetCalls();await control.click();await clean(battleMove(name));assert.deepEqual(await calls(),{});await page.keyboard.press('Escape');
+ }
+ for(const width of [320,375,430]) {
+  await page.setViewportSize({width,height:568});await choose(220);await open('player');await clean(battleMove('Pain Split'));
+  const panel=popup.locator('.battle-move-dialog'),box=await panel.boundingBox();
+  assert.ok(box.x>=0&&box.x+box.width<=width+1&&box.y>=0&&box.y+box.height<=568);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  assert.equal(await page.evaluate(()=>document.body.style.position),'fixed');
+  // A scroll gesture must leave the popup open and the document pinned.
+  await panel.evaluate(el=>{
+   el.style.maxHeight='70px';
+   el.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,isPrimary:true,pointerId:1,button:0,clientX:20,clientY:20}));
+   el.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,isPrimary:true,pointerId:1,clientX:20,clientY:60}));
+   el.scrollTop=30;el.dispatchEvent(new Event('scroll',{bubbles:true}));
+   el.dispatchEvent(new PointerEvent('pointerup',{bubbles:true,isPrimary:true,pointerId:1,button:0,clientX:20,clientY:60}));
+   el.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,detail:1}));
+  });
+  assert.equal(await popup.count(),1);assert.ok(await panel.evaluate(el=>el.scrollTop>0));await page.keyboard.press('Escape');
+  await open('player');await popup.locator('.battle-move-description').tap();assert.equal(await popup.count(),0);
+  await open('player');await page.touchscreen.tap(2,2);assert.equal(await popup.count(),0);
+  assert.notEqual(await page.evaluate(()=>document.body.style.position),'fixed');
+ }
+ const trigger=page.getByRole('group',{name:'My matchup Pokémon',exact:true}).getByRole('button',{name:'Move information: Growl',exact:true});
+ await trigger.focus();await page.keyboard.press('Enter');await clean(battleMove('Growl'));await page.keyboard.press('Escape');
+ assert.equal(await trigger.evaluate(el=>document.activeElement===el),true);
+ assert.equal(await page.getByLabel('Battle snapshot').textContent(),snapshot);assert.deepEqual(errors,[]);
+ console.log('PASS actual player/opponent move controls; 320/375/430px fit, scrolling, tap/backdrop/Escape dismissal, focus restoration and unchanged battle state');
+} finally {await browser?.close();await server.close();}

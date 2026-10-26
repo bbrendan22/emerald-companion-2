@@ -115,7 +115,7 @@ test('Doubles combination preserves copied Plus/Minus operand order and unseen-f
  // SpA101 ->Mystic Water111 ->Plus166 ->subtotal69 ->screen46 ->spread23 ->+2=25 ->HH37 ->STAB55.
  const r=calculateCoreDamage(battleMove('Surf'),a,d,'none',false,{format:'Doubles',defenderSideAlive:2});assert.deepEqual(r.rolls,rangeRolls(55));
  assert.equal(calculateCoreDamage(battleMove('Surf'),a,{...d,ability:'Immunity'},'none',false,{format:'Doubles',defenderSideAlive:2}).reason,'unknown-plus-minus-field');
- assert.equal(calculateCoreDamage(battleMove('Surf'),{...a,copiedAbility:null},d,'none',false,{format:'Doubles',defenderSideAlive:2}).reason,'unresolved-trace');
+ assert.deepEqual(calculateCoreDamage(battleMove('Surf'),{...a,copiedAbility:null},d,'none',false,{format:'Doubles',defenderSideAlive:2}),calculateCoreDamage(battleMove('Surf'),{...a,ability:'Immunity'},d,'none',false,{format:'Doubles',defenderSideAlive:2}));
 });
 test('fixed/OHKO/unsupported paths ignore screens, spread and Helping Hand; explosion guard never becomes spread arithmetic',()=>{
  const {state,attacker,defender}=setup('player',{a:{helpingHand:true},screen:'lightScreen',critical:true}),ctx=matchupBattleContext(state,'player');

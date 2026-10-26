@@ -45,11 +45,11 @@ test('conditional script multipliers and successful multi-hits receive boost onc
 test('fixed damage, OHKO, status and unavailable specialized paths remain unchanged',()=>{
  for(const name of ['Dragon Rage','Sonic Boom','Seismic Toss','Night Shade','Psywave','Super Fang','Fissure','Guillotine','Horn Drill','Sheer Cold','Growl','Helping Hand','Counter','Mirror Coat','Bide','Beat Up','Future Sight','Doom Desire','Spit Up'])assert.deepEqual(calc(name,{helpingHand:true}),calc(name),name);
 });
-test('ability alternatives remain distinct and unresolved Trace remains explicit',()=>{
+test('copied ability alternatives remain distinct and unresolved Trace stays neutral',()=>{
  const d={...mon,ability:'Trace',copiedAbility:'Shell Armor',screens:{reflect:true},abilityOptions:{status:'uncertain',source:'species',values:['Trace','Synchronize']}};
  const result=calculateAbilityScenarios(battleMove('Strength'),{...mon,helpingHand:true},d,{critical:true,battleContext:{format:'Doubles',defenderSideAlive:2}});
  assert.deepEqual(result.groups.map(g=>g.max),[54,166]);
- assert.equal(calc('Strength',{helpingHand:true,ability:'Trace'}).availability,'unsupported');
+ assert.deepEqual(calc('Strength',{helpingHand:true,ability:'Trace'}),calc('Strength',{helpingHand:true}));
 });
 const id=speciesByName.get('gardevoir').internalSpeciesId;
 const initial=()=>({...createBattleState(),team:['a','b'],opponentSpecies:[id],matchup:{player:'a',opponent:id},rules:{...createBattleState().rules,format:'Doubles'}});

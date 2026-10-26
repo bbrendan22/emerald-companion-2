@@ -64,7 +64,7 @@ test('missing OHKO data and copied ability states remain unavailable; ordinary s
    assert.equal(calc(name,{...mon,...patch}),null);assert.equal(calc(name,mon,{...mon,...patch}),null);
   }
   for(const types of [[],['???'],['NORMAL','WATER','FIRE']])assert.equal(calc(name,mon,{...mon,types}),null);
-  for(const ability of ['Trace'])assert.equal(calc(name,mon,{...mon,ability}).availability,'unsupported');
+  for(const ability of ['Trace'])assert.deepEqual(calc(name,mon,{...mon,ability}),calc(name));
   const minimal={level:50,ability:'Immunity',types:['NORMAL']};
   assert.equal(calc(name,minimal,minimal).outcome,'ohko','no need to invent stats or IVs');
   for(const weather of ['none','rain','sun','sand','hail'])assert.equal(calculateCoreDamage(battleMove(name),{...mon,ivs:null,status:'burn',stages:{attack:-6}},{...mon,screens:{reflect:true}},weather,true).outcome,'ohko');

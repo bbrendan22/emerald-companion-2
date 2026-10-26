@@ -1,49 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {battleRounds, loadBattleRound, storeBattleRound, loadBattleRules, storeBattleRules} from '../src/storage/battleRules.js';
+import {battleRounds} from '../src/storage/battleRules.js';
+import {battleReducer,createBattleState} from '../src/battle/battleState.js';
 import {createTowerRules} from '../src/battle/towerRules.js';
 
-test('UI round preference defaults, persists all options and tolerates unavailable storage', () => {
-  const entries = new Map();
-  const storage = {getItem:key => entries.get(key) ?? null, setItem:(key,value) => entries.set(key,value)};
-  assert.equal(loadBattleRound(storage),'');
-  for (const round of battleRounds) {
-    assert.equal(storeBattleRound(storage,round),true);
-    assert.equal(loadBattleRound(storage),round);
-  }
-  assert.deepEqual(loadBattleRules(storage),createTowerRules());
-  for (const saved of ['broken','null','9','"invalid"']) {
-    assert.equal(loadBattleRound({getItem:() => saved}),'');
-  }
-  const unavailable = {getItem:() => {throw new Error('unavailable');},setItem:() => {throw new Error('unavailable');}};
-  assert.equal(loadBattleRound(unavailable),'');
-  assert.equal(storeBattleRound(unavailable,'8+'),false);
+test('fresh Battle initialization restores default Rules and genuinely empty Round',()=>{
+ const first=createBattleState();
+ assert.deepEqual(first.rules,createTowerRules());
+ assert.equal(first.round,'');
+ let changed=battleReducer(first,{type:'rules',patch:{format:'Doubles',levelMode:'open',openLevel:78}});
+ changed=battleReducer(changed,{type:'round',value:'2'});
+ assert.equal(changed.rules.format,'Doubles');
+ assert.equal(changed.rules.opponentLevel,78);
+ assert.equal(changed.round,'2');
+ const fresh=createBattleState();
+ assert.deepEqual(fresh.rules,createTowerRules());
+ assert.equal(fresh.round,'');
+ assert.notEqual(fresh.rules,first.rules);
+ assert.equal(changed.round,'2','fresh initialization does not mutate another running session');
 });
 
-test('battle rules persist in one key, validate stored data and retain manual Open Level', () => {
-  const entries = new Map();
-  const storage = {getItem:key => entries.get(key) ?? null, setItem:(key,value) => entries.set(key,value)};
-  assert.deepEqual(loadBattleRules(storage),createTowerRules());
-  const rules = createTowerRules({facility:'Tower',format:'Doubles',levelMode:'open',openLevel:78});
-  storeBattleRules(storage,rules);
-  assert.deepEqual(loadBattleRules(storage),rules);
-  assert.equal(entries.size,1);
-  const key = [...entries.keys()][0];
-  for (const value of ['broken','null','{"facility":"invalid"}','{"levelMode":"wrong"}']) {
-    entries.set(key,value);
-    assert.deepEqual(loadBattleRules(storage),createTowerRules());
-  }
-});
-
-test('old facility choices migrate to Tower without discarding format or level', () => {
-  const storage = {getItem:() => JSON.stringify({facility:'Pike',format:'Doubles',levelMode:'open',openLevel:78})};
-  assert.deepEqual(loadBattleRules(storage),createTowerRules({format:'Doubles',levelMode:'open',openLevel:78}));
-});
-
-test('failed preference writes do not crash Battle or discard existing stored rules', () => {
-  const existing = JSON.stringify({facility:'Tower',format:'Doubles',levelMode:'open',openLevel:78});
-  const storage = {getItem:() => existing, setItem:() => {throw new Error('quota exceeded');}};
-  assert.equal(storeBattleRules(storage,createTowerRules()),false);
-  assert.equal(storage.getItem(),existing);
-  assert.equal(loadBattleRules(storage).openLevel,78);
+test('Round accepts every existing choice, including returning to empty, and rejects invalid values',()=>{
+ let state=createBattleState();
+ assert.equal(battleRounds[0],'');
+ for(const round of [...battleRounds,'']) {
+  state=battleReducer(state,{type:'round',value:round});
+  assert.equal(state.round,round);
+ }
+ assert.equal(battleReducer(state,{type:'round',value:'9'}),state);
 });

@@ -76,7 +76,7 @@ test('fixed/HP amounts ignore conventional operands, boosts, status, screens, we
  }
  assert.deepEqual({mon,target},before);
  for(const name of names)assert.equal(calc(name,{...mon,ability:null}),null);
- assert.equal(calc('Dragon Rage',mon,{...target,ability:'Trace'}).availability,'unsupported');
+ assert.deepEqual(calc('Dragon Rage',mon,{...target,ability:'Trace'}),calc('Dragon Rage',mon,target));
 });
 test('single percentages use defender maximum, preserve display order, and do not require fake rolls',()=>{
  assert.deepEqual(coreDamageDisplayParts(calc('Seismic Toss'),140),{percentage:'35.7%',hp:'50 HP damage'});

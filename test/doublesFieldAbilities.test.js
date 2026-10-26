@@ -84,7 +84,7 @@ test('hidden legal alternatives branch without unavailable results; known suppre
  assert.equal(new Set(result.scenarios.map(s=>s.max)).size,2);
  result=scenarios('Surf',context(mon('Cloud Nine'),null),base,base,'rain');
  assert.ok(result.scenarios.every(s=>s.availability==='available'));
- const trace=mon('Trace');assert.equal(calc('Surf',context(trace),base,base,'rain').reason,'unknown-weather-suppression-field');
+ const trace=mon('Trace');assert.deepEqual(calc('Surf',context(trace),base,base,'rain'),calc('Surf',context(),base,base,'rain'));
  assert.equal(calc('Ice Beam',context(trace)).kind,'standard-damage');
  assert.deepEqual(calc('Surf',context(mon('Trace',{copiedAbility:'Cloud Nine'})),base,base,'rain'),calc('Surf',context()));
 });
@@ -137,7 +137,7 @@ test('all four viewed pairings retain field suppression without changing indepen
  }
 });
 
-test('effective stats display field-wide Plus/Minus and living weather suppression, retaining uncertainty as ranges',()=>{
+test('effective stats display confirmed field-wide modifiers without speculative ranges',()=>{
  const a=mon('Plus',{identity:'a'}),d=mon('Immunity',{id:142,dex:142}),ctx=context(mon('Minus',{currentHp:0}),mon('Immunity'),a,d);
  const state=alexasState('Doubles');
  // Player display can be checked without replacing the canonical opponent row.
@@ -145,7 +145,7 @@ test('effective stats display field-wide Plus/Minus and living weather suppressi
  assert.equal(display.player.spAttack,151);
  ctx.battlefield.player[1]=slot(mon('Trace'));
  display=matchupDisplayStats({player:a,opponent:d,state,sets:analysisMatchupSets(state),battlefield:ctx.battlefield});
- assert.equal(display.player.spAttack,'101–151');
+ assert.equal(display.player.spAttack,101);
  const swimmer=mon('Swift Swim',{identity:'a'});ctx.battlefield.player=[slot(swimmer),slot(mon('Cloud Nine'))];
  display=matchupDisplayStats({player:swimmer,opponent:d,state:{...state,field:{...state.field,weather:'rain'}},sets:analysisMatchupSets(state),battlefield:ctx.battlefield});
  assert.equal(display.player.speed,100);
@@ -170,8 +170,8 @@ test('a hidden copied opposite ability branches Plus/Minus exactly without inven
  assert.ok(result.scenarios.every(value=>value.availability==='available'));
  assert.equal(new Set(result.scenarios.map(value=>value.max)).size,2);
  const uncertain=scenarios('Ice Beam',context({...partner,copiedAbility:null},mon('Immunity'),a),a);
- assert.ok(uncertain.scenarios.some(value=>value.reason==='unknown-plus-minus-field'));
- assert.ok(uncertain.scenarios.some(value=>value.availability==='available'));
+ assert.ok(uncertain.scenarios.every(value=>value.availability==='available'));
+ assert.equal(uncertain.scenarios.length,1,'neutral Trace/Synchronize partners need no separate field branches');
 });
 
 test('reverse attacks use the same field-wide ability lookup and do not mutate input contexts',()=>{

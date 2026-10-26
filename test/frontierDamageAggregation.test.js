@@ -185,14 +185,13 @@ test('failed deterministic moves stay distinct from immunity',()=>{
   assert.deepEqual(summary.hp,{min:0,max:0});
 });
 
-test('any unavailable ability branch suppresses the overall envelope while retaining complete leaves',()=>{
+test('unresolved Trace and Synchronize contribute equivalent complete damage results',()=>{
   const player={...swampert,name:'Gardevoir',dex:282,ability:'Trace',
     abilityOptions:{status:'uncertain',source:'species',values:['Trace','Synchronize']}};
   const summary=aggregateFrontierDamage(evaluate('Ice Beam',alexasState(),{},player));
-  assert.equal(summary.availability,'unavailable');assert.equal(summary.kind,'incomplete');
-  assert.equal(summary.hp,null);assert.equal(summary.percentage,null);assert.ok(summary.reasons.includes('unresolved-trace'));
-  assert.ok(summary.branches.some(branch=>branch.availability==='available'));
-  assert.ok(summary.branches.some(branch=>branch.availability==='unavailable'));
+  assert.equal(summary.availability,'available');assert.ok(summary.hp);assert.ok(summary.percentage);
+  assert.ok(summary.branches.every(branch=>branch.availability==='available'));
+  assert.equal(summary.groups.length,1,'equivalent rolls are grouped');
 });
 
 test('Doubles unseen-field safeguards remain unavailable rather than contributing zero',()=>{

@@ -139,12 +139,12 @@ test('manual ability knowledge refines only ability scenarios, never candidate e
   }
 });
 
-test('unresolved player Trace retains safeguards; copied ability and activation project from valid context',()=>{
+test('unresolved player Trace uses neutral damage; copied ability and activation project from valid context',()=>{
   const trace={...swampert,name:'Gardevoir',dex:282,ability:'Trace'};
   const state=alexasState();
   for(const entry of calc(state,'Ice Beam',{},trace).evaluations) {
-    assert.equal(entry.availability,'unavailable');assert.deepEqual(entry.reasons,['unresolved-trace']);
-    assert.ok(branches(entry).every(branch=>branch.result.reason==='unresolved-trace'));
+    assert.equal(entry.availability,'available');assert.deepEqual(entry.reasons,[]);
+    assert.ok(branches(entry).every(branch=>branch.availability==='available'));
   }
   const mon={...trace,abilityOptions:playerAbilityOptions(trace)};
   const copied=abilityState(state,'player',mon,'Flash Fire',true);
@@ -153,7 +153,8 @@ test('unresolved player Trace retains safeguards; copied ability and activation 
     assert.equal(entry.availability,'available');
   }
   const stale=patch(copied,'player',{abilityState:{context:'old',copiedAbility:'Flash Fire',flashFireActivated:true}});
-  assert.ok(calc(stale,'Ice Beam',{},trace).evaluations.every(entry=>entry.reasons.includes('unresolved-trace')));
+  assert.ok(calc(stale,'Ice Beam',{},trace).evaluations.every(entry=>entry.availability==='available'));
+  assert.deepEqual(calc(stale,'Ice Beam',{},trace).evaluations.map(entry=>branches(entry).map(branch=>branch.result)),calc(state,'Ice Beam',{},trace).evaluations.map(entry=>branches(entry).map(branch=>branch.result)));
 });
 
 test('opponent Trace alternatives are preserved before and after choosing a copied ability',()=>{
@@ -162,7 +163,8 @@ test('opponent Trace alternatives are preserved before and after choosing a copi
   assert.ok(initial.evaluations.length>0);
   for(const entry of initial.evaluations) {
     const trace=branches(entry).find(branch=>branch.defenderAbility==='Trace');
-    assert.equal(trace.result.reason,'unresolved-trace');
+    assert.equal(trace.availability,'available');
+    assert.deepEqual(trace.result,branches(entry).find(branch=>branch.defenderAbility==='Synchronize').result);
     assert.ok(branches(entry).some(branch=>branch.defenderAbility==='Synchronize'&&branch.availability==='available'));
   }
   const mon=frontierMatchupCandidates(state).candidates[0].opponent;
@@ -178,7 +180,7 @@ test('explicit player ability alternatives survive projection in both attack dir
     assert.equal(branches(entry).length,4);
     const key=direction==='player'?'attackerAbility':'defenderAbility';
     assert.deepEqual([...new Set(branches(entry).map(branch=>branch[key]))],['Trace','Synchronize']);
-    assert.ok(branches(entry).some(branch=>branch.reason==='unresolved-trace'));
+    assert.ok(branches(entry).every(branch=>branch.availability==='available'));
     assert.ok(branches(entry).some(branch=>branch.availability==='available'));
   }
 });

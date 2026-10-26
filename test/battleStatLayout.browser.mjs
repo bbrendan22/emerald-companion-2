@@ -21,14 +21,14 @@ const safari=process.argv.includes('--webkit');
 const browser=await(safari?webkit.launch({headless:true}):chromium.launch({headless:true,channel:'chrome'}));
 try {
  await mkdir('artifacts/stat-layout',{recursive:true});
- for(const width of [320,375,390,430]) {
+ for(const width of [320,375,390,430,1440]) {
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
   await page.setContent(`<meta name="viewport" content="width=device-width, initial-scale=1"><style>${css}</style><main style="padding:12px"><div class="battle-matchup-pair">${position(exact)}${position(ranged)}</div></main>`);
   const geometry=()=>page.locator('.battle-matchup-position').evaluateAll(els=>els.map(el=>{
    const stats=el.querySelector('dl').getBoundingClientRect(),moves=el.querySelector('ul').getBoundingClientRect();
    return {statsTop:stats.top,statsHeight:stats.height,movesTop:moves.top};
   }));
-  const initial=await geometry();assert.ok(Math.abs(initial[0].statsHeight-113)<.01);assert.deepEqual(initial[0],initial[1]);
+  const initial=await geometry();assert.ok(Math.abs(initial[0].statsHeight-117)<.01);assert.deepEqual(initial[0],initial[1]);
   for(const stats of [ranged,exact,mixed,values(keys.map(key=>reference[key].min)),values(keys.map(key=>reference[key].max)),ranged,exact]) {
    await page.locator('.battle-matchup-position').nth(1).locator('dl').evaluate((el,html)=>{el.outerHTML=html;},row(stats));
    assert.deepEqual(await geometry(),initial,'stat and move positions remain constant for every shape');
@@ -67,6 +67,26 @@ try {
   }
   await page.locator('.battle-matchup-position').nth(1).locator('dl').evaluate((el,html)=>{el.outerHTML=html;},row(mixed));
   await page.screenshot({path:`artifacts/stat-layout/${safari?'webkit':'chrome'}-${width}.png`});
-  await page.close();console.log(`PASS fixed stat layout ${width}px: six exact, six ranges, mixed, transitions, fixed moves, colored bars and extensions, no overflow.`);
+  // Current scalar matchup: preserve text/right edges while extending tracks.
+  const scalar=values([214,167,152,1000,150,2400]);
+  await page.setContent(`<meta name="viewport" content="width=device-width, initial-scale=1"><style>${css}</style><style id="previous-spacing">.battle-foundation .battle-active-stats dd { grid-template-columns:7ch minmax(0,1fr); }</style><main style="padding:12px"><div class="battle-foundation"><div class="battle-matchup-pair">${position(scalar)}${position(scalar)}</div></div></main>`);
+  const tracks=()=>page.locator('.battle-stat-bar').evaluateAll(rows=>rows.map(row=>{
+   const rect=node=>{const r=node.getBoundingClientRect();return {left:r.left,right:r.right,height:r.height};};
+   return {label:rect(row.querySelector('dt')),value:rect(row.querySelector('.battle-stat-value')),bar:rect(row.querySelector('.battle-stat-track')),
+    fill:row.querySelector('.battle-stat-solid').style.width,color:getComputedStyle(row.querySelector('.battle-stat-solid')).backgroundColor};
+  }));
+  const previous=await tracks();await page.locator('#previous-spacing').evaluate(el=>el.remove());const current=await tracks();
+  for(let i=0;i<current.length;i++) {
+   assert.equal(current[i].label.left,previous[i].label.left);assert.equal(current[i].value.left,previous[i].value.left);
+   assert.ok(current[i].bar.left<previous[i].bar.left);assert.ok(Math.abs(current[i].bar.right-previous[i].bar.right)<.1);
+   assert.equal(current[i].bar.height,previous[i].bar.height);assert.equal(current[i].fill,previous[i].fill);assert.equal(current[i].color,previous[i].color);
+  }
+  assert.ok(await page.locator('.battle-stat-bar').evaluateAll(rows=>rows.every(row=>{
+   const value=row.querySelector('.battle-stat-value'),range=document.createRange();range.selectNodeContents(value);
+   return range.getBoundingClientRect().right<=row.querySelector('.battle-stat-track').getBoundingClientRect().left;
+  })),'four-digit values do not overlap the extended tracks');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.screenshot({path:`artifacts/stat-layout/${safari?'webkit':'chrome'}-scalar-${width}.png`});
+  await page.close();console.log(`PASS fixed stat layout ${width}px: six exact, six ranges, mixed, transitions, fixed moves, colored bars/extensions, longer scalar tracks with fixed text/right edges and fill percentages, no overflow.`);
  }
 }finally{await browser.close();}

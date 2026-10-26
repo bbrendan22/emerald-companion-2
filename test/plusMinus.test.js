@@ -44,7 +44,7 @@ test('Trace copied on either side and unresolved Trace preserve the effective ab
  for(const name of ['Surf','Weather Ball','Eruption','Present','DoubleSlap','Fissure']) {
   assert.deepEqual(calc(name,{...mon,ability:'Trace',copiedAbility:'Plus'},{...mon,ability:'Trace',copiedAbility:'Minus'}, {},'rain'),calc(name,{...mon,ability:'Plus'},{...mon,ability:'Minus'},{},'rain'));
  }
- assert.equal(calc('Surf',{...mon,ability:'Plus'},{...mon,ability:'Trace'}).reason,'unresolved-trace');
+ assert.deepEqual(calc('Surf',{...mon,ability:'Plus'},{...mon,ability:'Trace'}),calc('Surf',{...mon,ability:'Plus'},mon));
 });
 test('legitimate Trace / Synchronize alternatives preserve boosted, ordinary and unknown-field outcomes',()=>{
  const own={...mon,ability:'Plus'},other={...mon,ability:'Trace',copiedAbility:'Minus',abilityOptions:{status:'uncertain',source:'species',values:['Trace','Synchronize']}};

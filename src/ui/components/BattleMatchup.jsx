@@ -18,16 +18,16 @@ import BattleStatRow from './BattleStatRow.jsx';
 import BattleSetItem from './BattleSetItem.jsx';
 import BattleObservationControl from './BattleObservationControl.jsx';
 
-function Position({onSwitch, viewedSlot, compactHeader, label, mon, other, state, dispatch, identification, statReference, displayStats, speedComparison, onMove}) {
+function Position({onSwitch, viewedSlot, label, mon, other, state, dispatch, identification, statReference, displayStats, speedComparison, onMove}) {
   const moveGesture=useRef(null);
   return <div className="battle-matchup-position" role="group" aria-label={label}>
     {mon ? <>
-      {compactHeader && <div className="battle-active-header">
+      <div className="battle-active-header">
         <div className="battle-active-types" aria-label="Types">
-          {mon.types?.map(type => <MoveTypeIcon key={type} type={type} size={14} />)}
+          {mon.types?.map(type => <MoveTypeIcon key={type} type={type} size={16} />)}
         </div>
         <small className="battle-active-level">Lv. {mon.level}</small>
-      </div>}
+      </div>
       {onSwitch ? <button type="button" className="battle-active-artwork battle-sprite-switch"
         aria-label={`Switch ${label === 'My matchup Pokémon' ? 'player' : 'opponent'} viewed Pokémon; currently ${mon.name}, Slot ${viewedSlot + 1}`}
         onClick={onSwitch}>
@@ -38,14 +38,11 @@ function Position({onSwitch, viewedSlot, compactHeader, label, mon, other, state
         <img className="battle-matchup-sprite" src={publicAsset(`/pokemon/emerald/${mon.shiny ? 'shiny' : 'normal'}/${mon.dex}.png`)}
           alt={`${mon.name} front sprite`} draggable="false" />
       </div>}
-      <>{!compactHeader && <div className="battle-active-types" aria-label="Types">
-        {mon.types?.map(type => <MoveTypeIcon key={type} type={type} size={14} />)}
-      </div>}</>
       <div className="battle-active-facts">
         <div className="battle-active-ability">{identification?<BattleOpponentAbilityControl mon={mon} state={state} dispatch={dispatch}/>:mon.ability ?? '—'}</div>
-        <div className="battle-active-item">{identification ? usesSelectedSet(state) ? <BattleSetItem name={identification.item || '—'} /> : <BattleObservationControl state={state} dispatch={dispatch} field="item"
+        <div className="battle-active-item">{identification ? usesSelectedSet(state) ? <BattleSetItem name={identification.item === 'None' ? 'No Item' : identification.item || '—'} /> : <BattleObservationControl state={state} dispatch={dispatch} field="item"
           value={identification.item} observed={Boolean(identification.observations.item)} identified={identification.sets.length === 1} />
-          : mon.item ? <BattleSetItem name={mon.item} /> : '—'}</div>
+          : mon.item ? <BattleSetItem name={mon.item === 'None' ? 'No Item' : mon.item} /> : '—'}</div>
       </div>
       <BattleStatRow values={displayStats ?? mon.stats} referenceRanges={statReference} speedComparison={speedComparison} />
       <ul className="battle-active-moves" aria-label="Moves"
@@ -131,8 +128,8 @@ export default function BattleMatchup({state, records, dispatch}) {
     return () => dispatch({type:'viewDoublesSlot',side,slot:state.viewed[side] === 0 ? 1 : 0});
   };
   return <><div className="battle-matchup-pair">
-    <Position onSwitch={switchView('player')} viewedSlot={state.viewed?.player} compactHeader={state.rules.format === 'Singles'} displayStats={display.player} speedComparison={display.speed.player} statReference={statReference} label="My matchup Pokémon" mon={player} other={opponent} onMove={index=>setSelectedMove({side:'player',index,context})} />
-    <Position onSwitch={switchView('opponent')} viewedSlot={state.viewed?.opponent} compactHeader={state.rules.format === 'Singles'} displayStats={display.opponent} speedComparison={display.speed.opponent} statReference={statReference} label="Opponent matchup Pokémon" state={state} dispatch={dispatch} identification={identification} mon={opponent} other={player} onMove={index=>setSelectedMove({side:'enemy',index,context,moveId:battleMove(identification.moves[index])?.id})} />
+    <Position onSwitch={switchView('player')} viewedSlot={state.viewed?.player} displayStats={display.player} speedComparison={display.speed.player} statReference={statReference} label="My matchup Pokémon" mon={player} other={opponent} onMove={index=>setSelectedMove({side:'player',index,context})} />
+    <Position onSwitch={switchView('opponent')} viewedSlot={state.viewed?.opponent} displayStats={display.opponent} speedComparison={display.speed.opponent} statReference={statReference} label="Opponent matchup Pokémon" state={state} dispatch={dispatch} identification={identification} mon={opponent} other={player} onMove={index=>setSelectedMove({side:'enemy',index,context,moveId:battleMove(identification.moves[index])?.id})} />
   </div>
   {species && !identification.sets.length && <p className="battle-observation-warning" role="status">
     No matching sets.</p>}

@@ -47,7 +47,7 @@ test('attacking-side holders cannot redirect; a selected holder stays selected e
  assert.equal(result.status,'selected');assert.equal(result.slot,0,'no fastest-holder substitution for an already selected holder');
 });
 
-test('explicit empty slots do not redirect; missing records and Trace stay uncertain; fainted holders are retained',()=>{
+test('explicit empty slots do not redirect; missing records stay uncertain while unresolved Trace is neutral; fainted holders are retained',()=>{
  let result=scenarios('Thunderbolt',context(null));
  assert.equal(result.scenarios[0].target.status,'selected');assert.ok(result.scenarios[0].result.rolls);
  const unknown=context();delete unknown.battlefield.enemy[1];
@@ -55,7 +55,7 @@ test('explicit empty slots do not redirect; missing records and Trace stay uncer
  assert.equal(result.scenarios[0].reason,'unknown-lightning-rod-target');assert.equal(result.scenarios[0].result.rolls,undefined);
  result=scenarios('Thunderbolt',context({...rod,currentHp:0}));
  assert.equal(result.scenarios[0].target.status,'redirected');assert.equal(result.scenarios[0].reason,'lightning-rod-fainted-target');
- result=scenarios('Thunderbolt',context(mon('Trace')));assert.equal(result.scenarios[0].reason,'unknown-lightning-rod-target');
+ result=scenarios('Thunderbolt',context(mon('Trace')));assert.equal(result.scenarios[0].availability,'available');assert.equal(result.scenarios[0].target.status,'selected');
  result=scenarios('Thunderbolt',context(mon('Trace',{copiedAbility:'Lightning Rod',name:'Copied holder'})));
  assert.equal(result.scenarios[0].target.status,'redirected');assert.ok(result.scenarios[0].max>0);
  const missing={...context(),battlefield:{...context().battlefield,enemy:[slot(victim),{pokemon:null,liveness:'active'}]}};

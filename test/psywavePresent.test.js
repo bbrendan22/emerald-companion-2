@@ -50,7 +50,7 @@ test('Psywave respects Dark immunity, Wonder Guard, failure and explicit unsuppo
  for(const types of [['FIGHTING'],['POISON']])assert.deepEqual(calc('Psywave',mon,{...wg,types}),calc('Psywave'));
  assert.equal(calc('Psywave',{...mon,currentHp:0}).outcome,'failed');
  assert.equal(calc('Psywave',mon,{...target,currentHp:0}).outcome,'failed');
- assert.equal(calc('Psywave',mon,{...target,ability:'Trace'}).availability,'unsupported');
+ assert.deepEqual(calc('Psywave',mon,{...target,ability:'Trace'}),calc('Psywave'));
  assert.equal(calc('Psywave',mon,{...target,ability:null}),null);
  for(const types of [[],null,['FAIRY']])assert.equal(calc('Psywave',mon,{...target,types}),null);
 });

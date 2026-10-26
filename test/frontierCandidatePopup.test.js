@@ -50,7 +50,7 @@ test('actual move popup integrates candidates and retains the standalone scalar 
     const zero=render('Ice Beam',{...alexasState(format),opponentObservations:{0:{moves:['Surf','','',''],item:''}}},{defender});
     assert.match(zero,/No matching Frontier sets/);assert.doesNotMatch(zero,/battle-core-damage-percent/);
     const trace=render('Ice Beam',alexasState(format),{defender,frontierPlayer:{...swampert,name:'Gardevoir',dex:282,ability:'Trace'}});
-    assert.match(trace,/Select the copied ability for Trace/);assert.doesNotMatch(trace,/battle-core-damage-percent/);
+    assert.doesNotMatch(trace,/Select the copied ability for Trace/);assert.match(trace,/battle-core-damage-percent/);
     const selected=choose(alexasState(format),'Aerodactyl 4'),set=towerSetById('Aerodactyl 4'),previous=set.item;
     try {
      set.item=null;
@@ -61,7 +61,7 @@ test('actual move popup integrates candidates and retains the standalone scalar 
   });
   await t.test('unsupported, status and OHKO presentation remains categorical',()=>{
    assert.match(render('Counter'),/requires special battle-state handling/);
-   assert.match(render('Roar'),/Move effect/);assert.doesNotMatch(render('Roar'),/battle-core-damage-percent/);
+   assert.doesNotMatch(render('Roar'),/Move effect|battle-core-damage-percent/);assert.match(render('Roar'),/Blows|Makes the foe flee/);
    assert.match(render('Guillotine',alexasState(),{frontierPlayer:{...swampert,level:50}}),/>OHKO</);
   });
   await t.test('standalone scalar path stays available with no Frontier context',()=>{

@@ -1,4 +1,5 @@
 import {useEffect} from 'react';
+import {flushSync} from 'react-dom';
 
 let releaseGesture;
 function consumeGesture(event) {
@@ -8,7 +9,10 @@ function consumeGesture(event) {
     event.stopImmediatePropagation();
   };
   stop(event);
-  let touchStarted = event.type === 'touchstart';
+  // Only a touch pointerdown can still be followed by its own touchstart.
+  // A dismissing click has already completed: the next touchstart is a new
+  // gesture and must pass through, even if no pointerdown is delivered.
+  let touchStarted = event.type !== 'pointerdown' || event.pointerType !== 'touch';
   const events = ['pointerup','pointercancel','touchstart','touchend','touchcancel','mousedown','mouseup','click','dblclick'];
   let timer;
   const release = () => {
@@ -72,6 +76,17 @@ export default function useBattlePopupDismiss({popup,trigger,onClose,interactive
       const target = event.target;
       if (!(target instanceof Element)) return;
       if (interactive && popup.current?.contains(target) && target.closest(interactive)) return;
+      const control=target.closest('select')??target.closest('label')?.control;
+      const nextPopup=target.closest('button[aria-haspopup="dialog"]');
+      const switchingPopup=nextPopup && !nextPopup.disabled && nextPopup!==trigger?.current
+        && !popup.current?.contains(nextPopup);
+      if(switchingPopup || control instanceof HTMLSelectElement && !control.disabled && !popup.current?.contains(control)) {
+        // An explicit popup trigger, like a native picker, needs its original
+        // gesture. Remove the old popup's outside-focus/dismissal listeners
+        // synchronously so they cannot swallow or close the next popup.
+        flushSync(()=>onClose());
+        return;
+      }
       consumeGesture(event);
       onClose();
     };
